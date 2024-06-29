@@ -1,19 +1,19 @@
-[gd_scene load_steps=9 format=3 uid="uid://bjtuexpc3ovab"]
+[gd_scene load_steps=10 format=3 uid="uid://bjtuexpc3ovab"]
 
 [ext_resource type="PackedScene" uid="uid://8iobt4o8k61u" path="res://Scenes/Player.tscn" id="1_hr3a5"]
+[ext_resource type="Texture2D" uid="uid://c8mwgdqoysfxc" path="res://Assets/Textures/Skybox.png" id="1_yl01g"]
 [ext_resource type="PackedScene" path="res://Scenes/enemy.tscn" id="2_5y8gm"]
 [ext_resource type="PackedScene" uid="uid://d25ke11gv527s" path="res://Scenes/box.tscn" id="3_i4ysk"]
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_tq4ga"]
-sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
-ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_uri2l"]
+panorama = ExtResource("1_yl01g")
 
-[sub_resource type="Sky" id="Sky_2tc16"]
-sky_material = SubResource("ProceduralSkyMaterial_tq4ga")
+[sub_resource type="Sky" id="Sky_2srni"]
+sky_material = SubResource("PanoramaSkyMaterial_uri2l")
 
 [sub_resource type="Environment" id="Environment_mtaqr"]
 background_mode = 2
-sky = SubResource("Sky_2tc16")
+sky = SubResource("Sky_2srni")
 tonemap_mode = 2
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_2msyu"]
