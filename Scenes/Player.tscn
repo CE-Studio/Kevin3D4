@@ -1,9 +1,16 @@
-[gd_scene load_steps=35 format=3 uid="uid://8iobt4o8k61u"]
+[gd_scene load_steps=37 format=3 uid="uid://8iobt4o8k61u"]
 
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_rk3cd"]
 [ext_resource type="Texture2D" uid="uid://cdch1vlk7mbnf" path="res://Assets/Textures/dust.png" id="2_r3j7g"]
 [ext_resource type="PackedScene" uid="uid://dy11dfruadhrf" path="res://Assets/Models/player.glb" id="3_gm1qw"]
 [ext_resource type="Material" uid="uid://ciop5hchxevnn" path="res://Assets/Materials/kevin34.tres" id="4_0kk71"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_xajid"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ghj7y"]
+resource_local_to_scene = true
+shading_mode = 0
+albedo_texture = SubResource("ViewportTexture_xajid")
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_kp3bk"]
 radius = 0.331573
@@ -497,6 +504,7 @@ graph_offset = Vector2(49, -135)
 
 [node name="Player" type="CharacterBody3D"]
 script = ExtResource("1_rk3cd")
+face = SubResource("StandardMaterial3D_ghj7y")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.174218, 0)
