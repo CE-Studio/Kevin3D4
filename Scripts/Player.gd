@@ -27,6 +27,9 @@ var sprint:int = 1
 var gravity:float = ProjectSettings.get_setting("physics/3d/default_gravity")
 
 
+static var beanos:int = 0
+
+
 @onready var djumpEffect:GPUParticles3D = $"Double Jump Effect"
 @onready var sprintEffect:GPUParticles3D = $Sprint
 @onready var diveEffect:GPUParticles3D = $Dive

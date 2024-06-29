@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dcd01wq3fxws0"
+path="res://.godot/imported/528962__steenish__crunch.wav-4d80be2e712b3cf48c2caadc9ba65e42.sample"
+
+[deps]
+
+source_file="res://Assets/Sound Effects/collect/528962__steenish__crunch.wav"
+dest_files=["res://.godot/imported/528962__steenish__crunch.wav-4d80be2e712b3cf48c2caadc9ba65e42.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
