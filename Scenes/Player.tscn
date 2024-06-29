@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://8iobt4o8k61u"]
+[gd_scene load_steps=42 format=3 uid="uid://8iobt4o8k61u"]
 
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_rk3cd"]
 [ext_resource type="Texture2D" uid="uid://cdch1vlk7mbnf" path="res://Assets/Textures/dust.png" id="2_r3j7g"]
@@ -6,6 +6,8 @@
 [ext_resource type="Material" uid="uid://ciop5hchxevnn" path="res://Assets/Materials/kevin34.tres" id="4_0kk71"]
 [ext_resource type="Texture2D" uid="uid://c4h5sp7v5b4r4" path="res://Assets/Textures/visoruv.png" id="5_dbp68"]
 [ext_resource type="Texture2D" uid="uid://c2cb10jgf2e8q" path="res://Assets/Textures/kevin34eyes.png" id="6_wmqvy"]
+[ext_resource type="AudioStream" uid="uid://bnpp0j6rpcp6i" path="res://Assets/Sound Effects/172667__underlineddesigns__military-rotor-loop.wav" id="7_ratlq"]
+[ext_resource type="AudioStream" uid="uid://ctajrq1q1o1xw" path="res://Assets/Sound Effects/goofy-run-sound.wav" id="7_wjehu"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_kp3bk"]
 radius = 0.331573
@@ -204,6 +206,21 @@ tracks/4/path = NodePath("player/Armature/Skeleton3D:Forearm_R")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = PackedFloat64Array(0, 1, 0.000121731, 7.07898e-08, -0.00244944, 0.999997)
+tracks/5/type = "audio"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("AudioStreamPlayer3D")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"clips": [{
+"end_offset": 0.17,
+"start_offset": 0.0,
+"stream": ExtResource("7_ratlq")
+}],
+"times": PackedFloat64Array(0)
+}
+tracks/5/use_blend = true
 
 [sub_resource type="Animation" id="Animation_cs60m"]
 resource_name = "idle"
@@ -355,6 +372,21 @@ tracks/10/path = NodePath("player/Armature/Skeleton3D:Tail3")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = PackedFloat64Array(0, 1, -0.083525, 0.000474975, 0.000474975, 0.996475)
+tracks/11/type = "audio"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("AudioStreamPlayer3D")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("7_wjehu")
+}],
+"times": PackedFloat64Array(0)
+}
+tracks/11/use_blend = true
 
 [sub_resource type="Animation" id="Animation_qgcht"]
 resource_name = "walk"
@@ -604,5 +636,7 @@ libraries = {
 tree_root = SubResource("AnimationNodeStateMachine_4uom6")
 advance_expression_base_node = NodePath("..")
 anim_player = NodePath("../AnimationPlayer")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
 
 [editable path="player"]
