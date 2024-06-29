@@ -31,8 +31,6 @@ var gravity:float = ProjectSettings.get_setting("physics/3d/default_gravity")
 @onready var sprintEffect:GPUParticles3D = $Sprint
 @onready var diveEffect:GPUParticles3D = $Dive
 
-@export var face:StandardMaterial3D
-
 
 func _ready():
 	djumpEffect.one_shot = true
@@ -40,7 +38,6 @@ func _ready():
 	sprintEffect.emitting = false
 	diveEffect.one_shot = true
 	diveEffect.emitting = false
-	$player/Armature/Skeleton3D/Vert_001.set_surface_override_material(0, face)
 	$player/Armature/Skeleton3D/Vert.set_surface_override_material(0, preload("res://Assets/Materials/kevin34.tres"))
 
 
