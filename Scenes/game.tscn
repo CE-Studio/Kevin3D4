@@ -157,6 +157,7 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="UI/BeanCounter"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 100
 text = "0"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
