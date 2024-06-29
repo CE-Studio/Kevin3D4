@@ -1,6 +1,7 @@
-[gd_scene load_steps=12 format=3 uid="uid://8iobt4o8k61u"]
+[gd_scene load_steps=13 format=3 uid="uid://8iobt4o8k61u"]
 
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_rk3cd"]
+[ext_resource type="Texture2D" uid="uid://cj4e7vkke5c10" path="res://icon.svg" id="2_k3wpd"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_kp3bk"]
 height = 1.5
@@ -27,6 +28,10 @@ inner_radius = 0.773
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_48lg5"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cxwu6"]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+albedo_texture = ExtResource("2_k3wpd")
 billboard_mode = 1
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_d6tyb"]
@@ -57,7 +62,7 @@ draw_pass_1 = SubResource("TorusMesh_nbihh")
 draw_skin = SubResource("Skin_vdfac")
 
 [node name="Sprint" type="GPUParticles3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.65252, 0)
+transform = Transform3D(0.41, 0, 0, 0, 0.41, 0, 0, 0, 0.41, 0, -0.65252, 0)
 cast_shadow = 0
 process_material = SubResource("ParticleProcessMaterial_48lg5")
 draw_pass_1 = SubResource("PlaneMesh_d6tyb")
