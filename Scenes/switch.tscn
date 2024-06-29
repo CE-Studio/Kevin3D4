@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://334cmavflup3"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7ae3o"]
+albedo_color = Color(0, 0.4, 1, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_tf2fx"]
+material = SubResource("StandardMaterial3D_7ae3o")
+size = Vector3(0.75, 1, 0.75)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_56a03"]
+size = Vector3(0.75, 1, 0.75)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qljak"]
+size = Vector3(0.7, 0.25, 0.7)
+
+[node name="Switch" type="StaticBody3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_tf2fx")
+
+[node name="MainBox" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_56a03")
+
+[node name="StepArea" type="Area3D" parent="."]
+
+[node name="StepBox" type="CollisionShape3D" parent="StepArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4, 0)
+shape = SubResource("BoxShape3D_qljak")
