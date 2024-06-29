@@ -1,10 +1,13 @@
-[gd_scene load_steps=13 format=3 uid="uid://bjtuexpc3ovab"]
+[gd_scene load_steps=16 format=3 uid="uid://bjtuexpc3ovab"]
 
+[ext_resource type="AudioStream" uid="uid://cv1mq0cn5xqrt" path="res://Assets/Music/Title.wav" id="1_7lcl3"]
 [ext_resource type="PackedScene" uid="uid://8iobt4o8k61u" path="res://Scenes/Player.tscn" id="1_hr3a5"]
 [ext_resource type="Texture2D" uid="uid://dnjj0sh3xilgo" path="res://Assets/Textures/Skybox.png" id="1_yl01g"]
-[ext_resource type="PackedScene" uid="uid://hqroyuuds4po" path="res://Scenes/enemy.tscn" id="2_5y8gm"]
-[ext_resource type="PackedScene" path="res://Scenes/box.tscn" id="3_i4ysk"]
-[ext_resource type="PackedScene" uid="uid://334cmavflup3" path="res://Scenes/switch.tscn" id="5_nojmr"]
+[ext_resource type="PackedScene" path="res://Scenes/enemy.tscn" id="2_5y8gm"]
+[ext_resource type="PackedScene" uid="uid://d25ke11gv527s" path="res://Scenes/box.tscn" id="3_i4ysk"]
+[ext_resource type="PackedScene" path="res://Scenes/switch.tscn" id="5_nojmr"]
+[ext_resource type="PackedScene" uid="uid://bqlwlkimr6gje" path="res://Scenes/collectible.tscn" id="6_k0kv0"]
+[ext_resource type="PackedScene" uid="uid://be74smfh0hkry" path="res://Scenes/crumbling_platform.tscn" id="6_v8lna"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_uri2l"]
 panorama = ExtResource("1_yl01g")
@@ -32,6 +35,11 @@ shading_mode = 0
 albedo_texture = SubResource("ViewportTexture_1hfgu")
 
 [node name="Game" type="Node3D"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_7lcl3")
+volume_db = -9.25
+autoplay = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_mtaqr")
@@ -70,3 +78,18 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.1983, 10.6611, 55.7259)
 
 [node name="Switch" parent="." instance=ExtResource("5_nojmr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 1.5, -5)
+
+[node name="Collectible" parent="." instance=ExtResource("6_k0kv0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.7487, 1.07892, 0.992058)
+
+[node name="Collectible2" parent="." instance=ExtResource("6_k0kv0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.43542, 0.5, 7.23753)
+
+[node name="Collectible3" parent="." instance=ExtResource("6_k0kv0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.20601, 0.5, -1.00059)
+
+[node name="Collectible4" parent="." instance=ExtResource("6_k0kv0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.4606, 0.5, 7.92155)
+
+[node name="Crumbling Platform" parent="." instance=ExtResource("6_v8lna")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.5185, 5.4901, -2.34082)

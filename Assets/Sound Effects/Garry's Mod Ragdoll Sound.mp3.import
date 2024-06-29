@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://w3gug2qt1uo1"
+path="res://.godot/imported/Garry's Mod Ragdoll Sound.mp3-54a862946f81a51122566ecaadae402c.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sound Effects/Garry's Mod Ragdoll Sound.mp3"
+dest_files=["res://.godot/imported/Garry's Mod Ragdoll Sound.mp3-54a862946f81a51122566ecaadae402c.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

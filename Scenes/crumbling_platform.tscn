@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://be74smfh0hkry"]
+[gd_scene load_steps=8 format=3 uid="uid://be74smfh0hkry"]
 
 [ext_resource type="Script" path="res://Scripts/crumbling_platform.gd" id="1_b6mdo"]
 [ext_resource type="Shader" uid="uid://dqcbpkck1cny8" path="res://Assets/Shaders/crumbling_platform.tres" id="2_cgxvl"]
+[ext_resource type="AudioStream" uid="uid://w3gug2qt1uo1" path="res://Assets/Sound Effects/Garry's Mod Ragdoll Sound.mp3" id="3_1siob"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_44vn3"]
 size = Vector3(3, 1.5, 3)
@@ -37,6 +38,9 @@ skeleton = NodePath("../CollisionShape3D")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("BoxShape3D_33ip2")
+
+[node name="Ragdoll" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("3_1siob")
 
 [connection signal="timeout" from="Timer2" to="." method="_on_timer_2_timeout"]
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
