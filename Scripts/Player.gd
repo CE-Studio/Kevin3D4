@@ -52,7 +52,7 @@ func _physics_process(delta):
 	
 	#sprinting
 	if Input.is_action_pressed("Sprint"):
-		sprint = 2
+		sprint = 1.7
 		sprintEffect.emitting = true
 		animstate = anims.RUN
 	elif not Input.is_action_pressed("Sprint"): 
