@@ -161,3 +161,5 @@ text = "0"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("1_7lcl3")
+autoplay = true
+bus = &"Music"
