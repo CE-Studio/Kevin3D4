@@ -2,11 +2,11 @@
 
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_rk3cd"]
 [ext_resource type="Texture2D" uid="uid://cdch1vlk7mbnf" path="res://Assets/Textures/dust.png" id="2_r3j7g"]
+[ext_resource type="PackedScene" uid="uid://dy11dfruadhrf" path="res://Assets/Models/player.glb" id="3_gm1qw"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_kp3bk"]
-height = 1.5
-
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_oyuf3"]
+radius = 0.331573
+height = 1.64743
 
 [sub_resource type="Curve" id="Curve_lhy33"]
 _data = [Vector2(0, 0.428571), 0.0, -2.17363, 0, 0, Vector2(0.347826, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
@@ -53,13 +53,11 @@ orientation = 2
 script = ExtResource("1_rk3cd")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.174218, 0)
 shape = SubResource("CapsuleShape3D_kp3bk")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-mesh = SubResource("CapsuleMesh_oyuf3")
-
 [node name="SpringArm3D" type="SpringArm3D" parent="."]
-spring_length = 10.0
+spring_length = 8.0
 
 [node name="Camera3D" type="Camera3D" parent="SpringArm3D"]
 
@@ -84,3 +82,8 @@ cast_shadow = 0
 amount = 16
 process_material = SubResource("ParticleProcessMaterial_pq3ej")
 draw_pass_1 = SubResource("PlaneMesh_gtf2s")
+
+[node name="player" parent="." instance=ExtResource("3_gm1qw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.78214, 0)
+
+[editable path="player"]

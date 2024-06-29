@@ -37,7 +37,7 @@ func _physics_process(delta):
 	else:
 		jumps = 0
 		dives = 0
-		$MeshInstance3D.rotation_degrees = Vector3(0, 0, 0)
+		$player.rotation_degrees = Vector3(0, 0, 0)
 		isDiving = false
 
 	# Handle jump and double jump
@@ -66,7 +66,7 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("Dive") and dives < 1:
 		velocity.y = DIVE_VELOCITY 
 		dives += 1
-		$MeshInstance3D.rotate_x(-1)
+		$player.rotate_x(-1)
 		isDiving = true
 		$Dive.emitting = true
 	if isDiving:
