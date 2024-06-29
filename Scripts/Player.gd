@@ -23,7 +23,7 @@ var direction2 := Vector3.ZERO
 var isDiving := false
 var isDoubleJump := false
 var isJumping := false
-var sprint:int = 1
+var sprint:float = 1
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity:float = ProjectSettings.get_setting("physics/3d/default_gravity")
 
@@ -52,7 +52,7 @@ func _physics_process(delta):
 	
 	#sprinting
 	if Input.is_action_pressed("Sprint"):
-		sprint = 2
+		sprint = 1.7
 		sprintEffect.emitting = true
 		animstate = anims.RUN
 	elif not Input.is_action_pressed("Sprint"): 
