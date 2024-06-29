@@ -2,14 +2,26 @@ extends CharacterBody3D
 class_name Player
 
 const SPEED = 10.0
-
 const JUMP_VELOCITY = 15
 const DIVE_VELOCITY = 10
+
+
+enum anims {
+	IDLE = 0,
+	WALK = 1,
+	RUN = 2,
+	JUMP = 3,
+	DJUMP = 4,
+	DIVE = 5,
+}
+var animstate:anims = anims.IDLE
+
+
 var jumps = 0
 var dives = 0
 var direction2 = Vector3.ZERO
 var isDiving:bool = false
-var Sprint = 1
+var sprint = 1
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
@@ -20,16 +32,22 @@ func _ready():
 	$Sprint.emitting = false
 	$Dive.one_shot = true
 	$Dive.emitting = false
+
+
 func _physics_process(delta):
+	# Get the input direction and handle the movement/deceleration.
+	var input_dir = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
+	var direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	
 	#sprinting
 	if Input.is_action_pressed("Sprint"):
-		Sprint = 1.5
+		sprint = 1.5
 		$Sprint.emitting = true
+		animstate = anims.IDLE
 	else: 
-		Sprint = 1
+		animstate = anims.RUN
+		sprint = 1
 		$Sprint.emitting = false
-	
 	
 	# Add the gravity.
 	if not is_on_floor():
@@ -39,6 +57,10 @@ func _physics_process(delta):
 		dives = 0
 		$player.rotation_degrees = Vector3(0, 0, 0)
 		isDiving = false
+		if input_dir == Vector2.ZERO:
+			animstate = anims.IDLE
+		elif sprint != 1.5:
+			animstate = anims.WALK
 
 	# Handle jump and double jump
 	if Input.is_action_just_pressed("ui_accept") and jumps < 2:
@@ -46,21 +68,15 @@ func _physics_process(delta):
 		jumps += 1
 		if jumps > 1:
 			$"Double Jump Effect".emitting = true
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
-	var input_dir = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
-	var direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
-	
+			animstate = anims.DJUMP
 	
 	if direction:
-		velocity.x = direction.x * SPEED * Sprint
-		velocity.z = direction.z * SPEED * Sprint
+		velocity.x = direction.x * SPEED * sprint
+		velocity.z = direction.z * SPEED * sprint
 		direction2 = direction
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)
-	
-	
 	
 	#dive
 	if Input.is_action_just_pressed("Dive") and dives < 1:
@@ -69,23 +85,23 @@ func _physics_process(delta):
 		$player.rotate_x(-1)
 		isDiving = true
 		$Dive.emitting = true
+		animstate = anims.DIVE
+	
 	if isDiving:
-		velocity.x = direction2.x * DIVE_VELOCITY * Sprint
-		velocity.z = direction2.z * DIVE_VELOCITY * Sprint
+		velocity.x = direction2.x * DIVE_VELOCITY * sprint
+		velocity.z = direction2.z * DIVE_VELOCITY * sprint
 		if Input.is_action_just_pressed("ui_accept"):
 			velocity.x = 0
 			velocity.z = 0
 			isDiving = false
+			animstate = anims.JUMP
 	
 	if position.y < -100:
 		position = Vector3.ZERO
 		velocity = Vector3.ZERO
-		
-
+		animstate = anims.IDLE
+	
 	move_and_slide()
-	
-	
-
 
 
 func _process(_delta):
@@ -93,9 +109,8 @@ func _process(_delta):
 		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	else:
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
-	print(position.y)
-	
-	
+
+
 func _input(event):	
 	if Input.is_action_pressed("Camera") and (event is InputEventMouseMotion):
 		rotate_y(event.relative.x/-180)
