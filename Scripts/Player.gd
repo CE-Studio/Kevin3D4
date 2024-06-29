@@ -34,7 +34,9 @@ func _physics_process(delta):
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var input_dir = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
 	var direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
-	if direction:
+	if isDiving:
+		pass
+	elif direction:
 		velocity.x = direction.x * SPEED
 		velocity.z = direction.z * SPEED
 		direction2 = direction
@@ -51,8 +53,15 @@ func _physics_process(delta):
 		$MeshInstance3D.rotate_x(-1)
 		isDiving = true
 	if isDiving:
-		velocity.x += direction2.x * DIVE_VELOCITY
-		velocity.z += direction2.z * DIVE_VELOCITY 
+		
+		velocity.x = direction2.x * DIVE_VELOCITY
+		velocity.z = direction2.z * DIVE_VELOCITY 
+		if Input.is_action_just_pressed("ui_accept"):
+			velocity.x = 0
+			velocity.z = 0
+			isDiving = false
+	
+	
 		
 
 	move_and_slide()

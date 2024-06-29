@@ -1,7 +1,8 @@
-[gd_scene load_steps=12 format=3 uid="uid://bjtuexpc3ovab"]
+[gd_scene load_steps=13 format=3 uid="uid://bjtuexpc3ovab"]
 
 [ext_resource type="PackedScene" uid="uid://8iobt4o8k61u" path="res://Scenes/Player.tscn" id="1_hr3a5"]
 [ext_resource type="Script" path="res://Scripts/Enemy.gd" id="2_53hm1"]
+[ext_resource type="PackedScene" uid="uid://d25ke11gv527s" path="res://Scenes/box.tscn" id="3_i4ysk"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_tq4ga"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -69,3 +70,12 @@ shape = SubResource("CylinderShape3D_utlsw")
 [node name="StompHitbox" type="CollisionShape3D" parent="Enemy"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.318364, 0)
 shape = SubResource("CylinderShape3D_ixoq8")
+
+[node name="Box" parent="." instance=ExtResource("3_i4ysk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.225983, 0, 24.6132)
+
+[node name="Box2" parent="." instance=ExtResource("3_i4ysk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.55847, 0, 49.7487)
+
+[node name="Box3" parent="." instance=ExtResource("3_i4ysk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.1983, 10.6611, 55.7259)
