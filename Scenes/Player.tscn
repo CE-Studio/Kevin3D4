@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=3 uid="uid://8iobt4o8k61u"]
+[gd_scene load_steps=42 format=3 uid="uid://8iobt4o8k61u"]
 
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_rk3cd"]
 [ext_resource type="Texture2D" uid="uid://cdch1vlk7mbnf" path="res://Assets/Textures/dust.png" id="2_r3j7g"]
@@ -165,41 +165,6 @@ tracks/13/path = NodePath("player/Armature/Skeleton3D:Forearm_R")
 tracks/13/interp = 1
 tracks/13/loop_wrap = true
 tracks/13/keys = PackedFloat64Array(0, 1, 0.000121731, 7.07898e-08, -0.00244944, 0.999997)
-tracks/14/type = "rotation_3d"
-tracks/14/imported = false
-tracks/14/enabled = true
-tracks/14/path = NodePath("player/Armature/Skeleton3D:Jaw")
-tracks/14/interp = 1
-tracks/14/loop_wrap = true
-tracks/14/keys = PackedFloat64Array(0, 1, 0.0190206, -1.06971e-24, 4.22347e-18, 0.999819)
-tracks/15/type = "rotation_3d"
-tracks/15/imported = false
-tracks/15/enabled = true
-tracks/15/path = NodePath("player/Armature/Skeleton3D:Leg_L")
-tracks/15/interp = 1
-tracks/15/loop_wrap = true
-tracks/15/keys = PackedFloat64Array(0, 1, 0.568288, 0.114681, 0.281031, 0.7648)
-tracks/16/type = "rotation_3d"
-tracks/16/imported = false
-tracks/16/enabled = true
-tracks/16/path = NodePath("player/Armature/Skeleton3D:Foot_L")
-tracks/16/interp = 1
-tracks/16/loop_wrap = true
-tracks/16/keys = PackedFloat64Array(0, 1, -0.596658, -0.0390387, -0.318369, 0.735606)
-tracks/17/type = "rotation_3d"
-tracks/17/imported = false
-tracks/17/enabled = true
-tracks/17/path = NodePath("player/Armature/Skeleton3D:Leg_R")
-tracks/17/interp = 1
-tracks/17/loop_wrap = true
-tracks/17/keys = PackedFloat64Array(0, 1, 0.568288, -0.114681, -0.281031, 0.7648)
-tracks/18/type = "rotation_3d"
-tracks/18/imported = false
-tracks/18/enabled = true
-tracks/18/path = NodePath("player/Armature/Skeleton3D:Foot_R")
-tracks/18/interp = 1
-tracks/18/loop_wrap = true
-tracks/18/keys = PackedFloat64Array(0, 1, -0.596658, 0.0390387, 0.318369, 0.735606)
 
 [sub_resource type="Animation" id="Animation_7uxve"]
 resource_name = "doublejump"
@@ -249,7 +214,7 @@ tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
 "clips": [{
-"end_offset": 0.17,
+"end_offset": 0.424047,
 "start_offset": 0.0,
 "stream": ExtResource("7_ratlq")
 }],
@@ -415,7 +380,7 @@ tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/keys = {
 "clips": [{
-"end_offset": 0.0,
+"end_offset": 1.30602,
 "start_offset": 0.0,
 "stream": ExtResource("7_wjehu")
 }],
@@ -505,93 +470,11 @@ tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = PackedFloat64Array(0, 1, -0.083525, 0.000474975, 0.000474975, 0.996475)
 
-[sub_resource type="Animation" id="Animation_56lur"]
-resource_name = "jump"
-length = 0.1
-tracks/0/type = "rotation_3d"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("player/Armature/Skeleton3D:Arm_L")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = PackedFloat64Array(0, 1, -0.00952503, -0.00452503, -0.533525, 0.845475)
-tracks/1/type = "rotation_3d"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("player/Armature/Skeleton3D:Arm_R")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = PackedFloat64Array(0, 1, -0.010525, 0.00347497, 0.526475, 0.850475)
-tracks/2/type = "rotation_3d"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("player/Armature/Skeleton3D:Tail0")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = PackedFloat64Array(0, 1, 0.940475, 0.000474975, 0.000474975, 0.340475)
-tracks/3/type = "rotation_3d"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("player/Armature/Skeleton3D:Neck0")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = PackedFloat64Array(0, 1, 0.0469459, 1.27529e-17, 2.16744e-17, 0.998897)
-tracks/4/type = "rotation_3d"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("player/Armature/Skeleton3D:Neck1")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = PackedFloat64Array(0, 1, -0.42148, -2.18918e-23, -9.35874e-17, 0.906838)
-tracks/5/type = "rotation_3d"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("player/Armature/Skeleton3D:Head")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = PackedFloat64Array(0, 1, -0.156525, 0.000474975, 0.000474975, 0.987475)
-tracks/6/type = "rotation_3d"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("player/Armature/Skeleton3D:Jaw")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = PackedFloat64Array(0, 1, -0.128525, 0.000474975, 0.000474975, 0.991475)
-tracks/7/type = "rotation_3d"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("player/Armature/Skeleton3D:Leg_L")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = PackedFloat64Array(0, 1, 0.568288, 0.114681, 0.281031, 0.7648)
-tracks/8/type = "rotation_3d"
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/path = NodePath("player/Armature/Skeleton3D:Foot_L")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/keys = PackedFloat64Array(0, 1, -0.177525, 0.240475, -0.362525, 0.882475)
-tracks/9/type = "rotation_3d"
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/path = NodePath("player/Armature/Skeleton3D:Leg_R")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/keys = PackedFloat64Array(0, 1, 0.393475, -0.025525, -0.135525, 0.908475)
-tracks/10/type = "rotation_3d"
-tracks/10/imported = false
-tracks/10/enabled = true
-tracks/10/path = NodePath("player/Armature/Skeleton3D:Foot_R")
-tracks/10/interp = 1
-tracks/10/loop_wrap = true
-tracks/10/keys = PackedFloat64Array(0, 1, -0.323525, -0.225525, 0.156475, 0.905475)
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_pl0xx"]
 _data = {
 "RESET": SubResource("Animation_mlyph"),
 "doublejump": SubResource("Animation_7uxve"),
 "idle": SubResource("Animation_cs60m"),
-"jump": SubResource("Animation_56lur"),
 "run": SubResource("Animation_lx1po"),
 "walk": SubResource("Animation_qgcht")
 }
@@ -604,9 +487,6 @@ animation = &"doublejump"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_jf1b1"]
 animation = &"idle"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_88whe"]
-animation = &"jump"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_tmiyv"]
 animation = &"run"
@@ -645,14 +525,6 @@ advance_expression = "animstate != 1"
 advance_mode = 2
 advance_expression = "animstate != 2"
 
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_4dl1l"]
-advance_mode = 2
-advance_expression = "animstate == 3"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_obop1"]
-advance_mode = 2
-advance_expression = "animstate != 3"
-
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_4uom6"]
 states/RESET/node = SubResource("AnimationNodeAnimation_dj41o")
 states/RESET/position = Vector2(350, 122)
@@ -661,14 +533,12 @@ states/doublejump/node = SubResource("AnimationNodeAnimation_tb7kt")
 states/doublejump/position = Vector2(556, 169)
 states/idle/node = SubResource("AnimationNodeAnimation_jf1b1")
 states/idle/position = Vector2(350, 57)
-states/jump/node = SubResource("AnimationNodeAnimation_88whe")
-states/jump/position = Vector2(767, 105)
 states/run/node = SubResource("AnimationNodeAnimation_tmiyv")
 states/run/position = Vector2(566, 28)
 states/walk/node = SubResource("AnimationNodeAnimation_jpsug")
 states/walk/position = Vector2(526, -71)
-transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_i3ng5"), "idle", "doublejump", SubResource("AnimationNodeStateMachineTransition_5kerv"), "idle", "run", SubResource("AnimationNodeStateMachineTransition_0ajav"), "idle", "walk", SubResource("AnimationNodeStateMachineTransition_jinea"), "RESET", "idle", SubResource("AnimationNodeStateMachineTransition_gx7cy"), "doublejump", "RESET", SubResource("AnimationNodeStateMachineTransition_5in11"), "walk", "RESET", SubResource("AnimationNodeStateMachineTransition_ccnmi"), "run", "RESET", SubResource("AnimationNodeStateMachineTransition_xnnvx"), "idle", "jump", SubResource("AnimationNodeStateMachineTransition_4dl1l"), "jump", "RESET", SubResource("AnimationNodeStateMachineTransition_obop1")]
-graph_offset = Vector2(16, -12)
+transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_i3ng5"), "idle", "doublejump", SubResource("AnimationNodeStateMachineTransition_5kerv"), "idle", "run", SubResource("AnimationNodeStateMachineTransition_0ajav"), "idle", "walk", SubResource("AnimationNodeStateMachineTransition_jinea"), "RESET", "idle", SubResource("AnimationNodeStateMachineTransition_gx7cy"), "doublejump", "RESET", SubResource("AnimationNodeStateMachineTransition_5in11"), "walk", "RESET", SubResource("AnimationNodeStateMachineTransition_ccnmi"), "run", "RESET", SubResource("AnimationNodeStateMachineTransition_xnnvx")]
+graph_offset = Vector2(49, -135)
 
 [node name="Player" type="CharacterBody3D"]
 script = ExtResource("1_rk3cd")
@@ -678,6 +548,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.269613, 0)
 shape = SubResource("CapsuleShape3D_kp3bk")
 
 [node name="SpringArm3D" type="SpringArm3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.351928)
 spring_length = 8.0
 
 [node name="Camera3D" type="Camera3D" parent="SpringArm3D"]
@@ -736,21 +607,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.78214, 0)
 bones/3/rotation = Quaternion(0.0469459, 1.27529e-17, 2.16744e-17, 0.998897)
 bones/4/rotation = Quaternion(-0.42148, -2.18918e-23, -9.35874e-17, 0.906838)
 bones/5/rotation = Quaternion(-0.418558, -1.09296e-23, -9.29385e-17, 0.90819)
-bones/6/rotation = Quaternion(0.0190206, -1.06971e-24, 4.22347e-18, 0.999819)
 bones/8/rotation = Quaternion(-0.0105366, 3.6573e-08, -0.212012, 0.97721)
 bones/9/rotation = Quaternion(0.000121731, -7.07898e-08, 0.00244944, 0.999997)
 bones/12/rotation = Quaternion(-0.0105366, -3.6573e-08, 0.212012, 0.97721)
 bones/13/rotation = Quaternion(0.000121731, 7.07898e-08, -0.00244944, 0.999997)
 bones/15/rotation = Quaternion(-0.0350315, -0.0884289, 0.988896, 0.114181)
-bones/16/rotation = Quaternion(0.568288, 0.114681, 0.281031, 0.7648)
-bones/17/rotation = Quaternion(-0.596658, -0.0390387, -0.318369, 0.735606)
 bones/18/rotation = Quaternion(0.812464, -6.95005e-08, -9.68533e-08, 0.583012)
 bones/19/rotation = Quaternion(0.00225576, -2.38418e-07, -1.07563e-09, 0.999997)
 bones/20/rotation = Quaternion(-0.00358084, 5.06265e-13, 2.56123e-09, 0.999994)
 bones/21/rotation = Quaternion(-0.0186974, -1.19188e-07, 1.56023e-08, 0.999825)
 bones/22/rotation = Quaternion(0.0350315, -0.0884289, 0.988896, -0.114181)
-bones/23/rotation = Quaternion(0.568288, -0.114681, -0.281031, 0.7648)
-bones/24/rotation = Quaternion(-0.596658, 0.0390387, 0.318369, 0.735606)
 
 [node name="Vert" parent="player/Armature/Skeleton3D" index="0"]
 surface_material_override/0 = ExtResource("4_0kk71")
@@ -773,5 +639,6 @@ advance_expression_base_node = NodePath("..")
 anim_player = NodePath("../AnimationPlayer")
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+bus = &"SFX"
 
 [editable path="player"]
