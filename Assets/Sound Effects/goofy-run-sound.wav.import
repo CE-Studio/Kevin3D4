@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://ctajrq1q1o1xw"
+path="res://.godot/imported/goofy-run-sound.wav-995b358afa9b57da9071188fd66f1caa.sample"
+
+[deps]
+
+source_file="res://Assets/Sound Effects/goofy-run-sound.wav"
+dest_files=["res://.godot/imported/goofy-run-sound.wav-995b358afa9b57da9071188fd66f1caa.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
