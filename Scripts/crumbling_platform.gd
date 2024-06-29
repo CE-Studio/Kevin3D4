@@ -26,7 +26,7 @@ func _process(delta):
 
 func _on_area_3d_body_entered(body):
 	if body is Player:
-		
+		$Ragdoll.playing = true
 		$Timer.start()
 	
 
@@ -34,6 +34,7 @@ func _on_area_3d_body_entered(body):
 func _on_timer_timeout():
 	visible = false
 	$CollisionShape3D.disabled = true
+	$Ragdoll.playing = false
 	$Timer2.start()
 	
 	
