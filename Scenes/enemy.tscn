@@ -17,7 +17,6 @@ height = 0.5
 radius = 0.4
 
 [node name="Enemy" type="StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 1, 8)
 script = ExtResource("1_ypvxk")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
@@ -25,7 +24,12 @@ mesh = SubResource("CylinderMesh_t1lvw")
 
 [node name="MainHitbox" type="CollisionShape3D" parent="."]
 shape = SubResource("CylinderShape3D_utlsw")
+disabled = true
 
-[node name="StompHitbox" type="CollisionShape3D" parent="."]
+[node name="StompArea" type="Area3D" parent="."]
+
+[node name="StompHitbox" type="CollisionShape3D" parent="StompArea"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.318364, 0)
 shape = SubResource("CylinderShape3D_ixoq8")
+
+[connection signal="body_entered" from="StompArea" to="." method="on_player_collision"]
