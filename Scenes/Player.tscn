@@ -1,3 +1,22 @@
-[gd_scene format=3 uid="uid://8iobt4o8k61u"]
+[gd_scene load_steps=4 format=3 uid="uid://8iobt4o8k61u"]
+
+[ext_resource type="Script" path="res://Scenes/Player.gd" id="1_shxn1"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_kp3bk"]
+height = 1.5
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_oyuf3"]
 
 [node name="Player" type="CharacterBody3D"]
+script = ExtResource("1_shxn1")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_kp3bk")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_oyuf3")
+
+[node name="SpringArm3D" type="SpringArm3D" parent="."]
+spring_length = 10.0
+
+[node name="Camera3D" type="Camera3D" parent="SpringArm3D"]
