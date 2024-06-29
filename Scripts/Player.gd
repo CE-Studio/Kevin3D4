@@ -51,13 +51,13 @@ func _physics_process(delta):
 	
 	#sprinting
 	if Input.is_action_pressed("Sprint"):
-		sprint = 1.5
+		sprint = 2
 		sprintEffect.emitting = true
 		animstate = anims.RUN
-	else: 
-		animstate = anims.IDLE
+	elif not Input.is_action_pressed("Sprint"): 
 		sprint = 1
 		sprintEffect.emitting = false 
+		animstate = anims.WALK
 		
 	
 	# Add the gravity.
@@ -70,8 +70,7 @@ func _physics_process(delta):
 		isDiving = false
 		if input_dir == Vector2.ZERO:
 			animstate = anims.IDLE
-		elif sprint != 1.5:
-			animstate = anims.WALK
+		
 		isDoubleJump = false
 
 	# Handle jump and double jump
