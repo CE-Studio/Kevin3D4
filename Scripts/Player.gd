@@ -14,13 +14,21 @@ var Sprint = 1
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
 
+func _ready():
+	$"Double Jump Effect".one_shot = true
+	$"Double Jump Effect".emitting = false
+	$Sprint.emitting = false
+	$Dive.one_shot = true
+	$Dive.emitting = false
 func _physics_process(delta):
 	
 	#sprinting
 	if Input.is_action_pressed("Sprint"):
-		Sprint = 2
+		Sprint = 1.5
+		$Sprint.emitting = true
 	else: 
 		Sprint = 1
+		$Sprint.emitting = false
 	
 	
 	# Add the gravity.
@@ -36,6 +44,8 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("ui_accept") and jumps < 2:
 		velocity.y = JUMP_VELOCITY
 		jumps += 1
+		if jumps > 1:
+			$"Double Jump Effect".emitting = true
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var input_dir = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
@@ -58,8 +68,8 @@ func _physics_process(delta):
 		dives += 1
 		$MeshInstance3D.rotate_x(-1)
 		isDiving = true
+		$Dive.emitting = true
 	if isDiving:
-		
 		velocity.x = direction2.x * DIVE_VELOCITY * Sprint
 		velocity.z = direction2.z * DIVE_VELOCITY * Sprint
 		if Input.is_action_just_pressed("ui_accept"):
