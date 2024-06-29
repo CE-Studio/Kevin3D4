@@ -764,7 +764,6 @@ libraries = {
 }
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
-active = false
 deterministic = false
 libraries = {
 "": SubResource("AnimationLibrary_pl0xx")
