@@ -22,6 +22,7 @@ var dives:int = 0
 var direction2 := Vector3.ZERO
 var isDiving := false
 var isDoubleJump := false
+var isJumping := false
 var sprint:int = 1
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity:float = ProjectSettings.get_setting("physics/3d/default_gravity")
@@ -68,10 +69,10 @@ func _physics_process(delta):
 		dives = 0
 		$player.rotation_degrees = Vector3(0, 0, 0)
 		isDiving = false
+		isJumping = false
+		isDoubleJump = false
 		if input_dir == Vector2.ZERO:
 			animstate = anims.IDLE
-		
-		isDoubleJump = false
 
 	# Handle jump and double jump
 	if Input.is_action_just_pressed("ui_accept") and jumps < 2:
@@ -80,8 +81,14 @@ func _physics_process(delta):
 		if jumps > 1:
 			isDoubleJump = true
 			djumpEffect.emitting = true
+			isJumping = false
+		else:
+			isJumping = true
+			print("jump")
 	if isDoubleJump:
 		animstate = anims.DJUMP	
+	if isJumping:
+		animstate = anims.JUMP	
 	
 	if direction:
 		velocity.x = direction.x * SPEED * sprint
@@ -108,7 +115,7 @@ func _physics_process(delta):
 			velocity.x = 0
 			velocity.z = 0
 			isDiving = false
-			animstate = anims.JUMP
+			
 	
 	if position.y < -100:
 		position = Vector3.ZERO
