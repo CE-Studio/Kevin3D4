@@ -1,9 +1,9 @@
 extends CharacterBody3D
 class_name Player
 
-const SPEED = 10.0
-const JUMP_VELOCITY = 15
-const DIVE_VELOCITY = 10
+const SPEED := 10.0
+const JUMP_VELOCITY := 15.0
+const DIVE_VELOCITY := 10.0
 
 
 enum anims {
@@ -17,22 +17,27 @@ enum anims {
 var animstate:anims = anims.IDLE
 
 
-var jumps = 0
-var dives = 0
-var direction2 = Vector3.ZERO
-var isDiving:bool = false
-var isDoubleJump:bool = false
-var sprint = 1
+var jumps:int = 0
+var dives:int = 0
+var direction2 := Vector3.ZERO
+var isDiving := false
+var isDoubleJump := false
+var sprint:int = 1
 # Get the gravity from the project settings to be synced with RigidBody nodes.
-var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
+var gravity:float = ProjectSettings.get_setting("physics/3d/default_gravity")
+
+
+@onready var djumpEffect:GPUParticles3D = $"Double Jump Effect"
+@onready var sprintEffect:GPUParticles3D = $Sprint
+@onready var diveEffect:GPUParticles3D = $Dive
 
 
 func _ready():
-	$"Double Jump Effect".one_shot = true
-	$"Double Jump Effect".emitting = false
-	$Sprint.emitting = false
-	$Dive.one_shot = true
-	$Dive.emitting = false
+	djumpEffect.one_shot = true
+	djumpEffect.emitting = false
+	sprintEffect.emitting = false
+	diveEffect.one_shot = true
+	diveEffect.emitting = false
 
 
 func _physics_process(delta):
@@ -43,12 +48,12 @@ func _physics_process(delta):
 	#sprinting
 	if Input.is_action_pressed("Sprint"):
 		sprint = 1.5
-		$Sprint.emitting = true
+		sprintEffect.emitting = true
 		animstate = anims.RUN
 	else: 
 		animstate = anims.IDLE
 		sprint = 1
-		$Sprint.emitting = false 
+		sprintEffect.emitting = false 
 		
 	
 	# Add the gravity.
@@ -71,7 +76,7 @@ func _physics_process(delta):
 		jumps += 1
 		if jumps > 1:
 			isDoubleJump = true
-			$"Double Jump Effect".emitting = true
+			djumpEffect.emitting = true
 	if isDoubleJump:
 		animstate = anims.DJUMP	
 	
@@ -89,8 +94,8 @@ func _physics_process(delta):
 		dives += 1
 		$player.rotate_x(-1)
 		isDiving = true
-		$Dive.emitting = true
-		
+		diveEffect.emitting = true
+	
 	
 	if isDiving:
 		velocity.x = direction2.x * DIVE_VELOCITY * sprint
