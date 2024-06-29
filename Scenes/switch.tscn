@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://334cmavflup3"]
+[gd_scene load_steps=7 format=3 uid="uid://334cmavflup3"]
 
 [ext_resource type="Script" path="res://Scripts/switch.gd" id="1_ocu6x"]
+[ext_resource type="AudioStream" uid="uid://cvl6qgekxmbvo" path="res://Assets/Sound Effects/switch-turn-on.wav" id="2_ddhmh"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7ae3o"]
 albedo_color = Color(0, 0.4, 1, 1)
@@ -29,5 +30,9 @@ shape = SubResource("BoxShape3D_56a03")
 [node name="StepBox" type="CollisionShape3D" parent="StepArea"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4, 0)
 shape = SubResource("BoxShape3D_qljak")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("2_ddhmh")
+bus = &"SFX"
 
 [connection signal="body_entered" from="StepArea" to="." method="_on_player_step"]

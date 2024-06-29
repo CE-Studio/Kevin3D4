@@ -1,4 +1,5 @@
 extends StaticBody3D
+class_name Enemy
 
 
 var health:int
@@ -30,4 +31,9 @@ func on_player_collision(body:Node3D): # This function is connected to StompArea
 		else:
 			print("I kill you now")
 	if health <= 0:
+		var h := AudioStreamPlayer3D.new()
+		h.stream = preload("res://Assets/Sound Effects/aaaaaaaaaaaaaaaaaaaaa.mp3")
+		h.finished.connect(h.queue_free)
+		get_parent().add_child(h)
+		h.play()
 		queue_free()

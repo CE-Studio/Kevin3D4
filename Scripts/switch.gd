@@ -1,4 +1,5 @@
 extends StaticBody3D
+class_name Switch
 
 
 var stepArea:Area3D
@@ -26,4 +27,5 @@ func _on_player_step(body):
 	if body is Player && !isActive:
 		isActive = true
 		on_switch_activate.emit()
+		$AudioStreamPlayer3D.play()
 		print("Boing!")
