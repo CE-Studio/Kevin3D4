@@ -1,11 +1,52 @@
-[gd_scene load_steps=4 format=3 uid="uid://8iobt4o8k61u"]
+[gd_scene load_steps=14 format=3 uid="uid://8iobt4o8k61u"]
 
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_rk3cd"]
+[ext_resource type="Texture2D" uid="uid://cdch1vlk7mbnf" path="res://Assets/Textures/dust.png" id="2_r3j7g"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_kp3bk"]
 height = 1.5
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_oyuf3"]
+
+[sub_resource type="Curve" id="Curve_lhy33"]
+_data = [Vector2(0, 0.428571), 0.0, -2.17363, 0, 0, Vector2(0.347826, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_bui1d"]
+curve = SubResource("Curve_lhy33")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_3540e"]
+gravity = Vector3(0, 0, 0)
+scale_curve = SubResource("CurveTexture_bui1d")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iubiy"]
+transparency = 1
+albedo_color = Color(0, 0.615686, 0.952941, 0.521569)
+
+[sub_resource type="TorusMesh" id="TorusMesh_nbihh"]
+lightmap_size_hint = Vector2i(4, 2)
+material = SubResource("StandardMaterial3D_iubiy")
+inner_radius = 0.773
+
+[sub_resource type="Skin" id="Skin_vdfac"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_pq3ej"]
+gravity = Vector3(0, 0, 0)
+scale_min = 0.5
+scale_max = 2.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4h82y"]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+albedo_texture = ExtResource("2_r3j7g")
+billboard_mode = 1
+billboard_keep_scale = true
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_gtf2s"]
+material = SubResource("StandardMaterial3D_4h82y")
+size = Vector2(0.5, 0.5)
+orientation = 2
 
 [node name="Player" type="CharacterBody3D"]
 script = ExtResource("1_rk3cd")
@@ -20,3 +61,25 @@ mesh = SubResource("CapsuleMesh_oyuf3")
 spring_length = 10.0
 
 [node name="Camera3D" type="Camera3D" parent="SpringArm3D"]
+
+[node name="Double Jump Effect" type="GPUParticles3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.08992, 0)
+emitting = false
+amount = 1
+process_material = SubResource("ParticleProcessMaterial_3540e")
+draw_pass_1 = SubResource("TorusMesh_nbihh")
+draw_skin = SubResource("Skin_vdfac")
+
+[node name="Sprint" type="GPUParticles3D" parent="."]
+transform = Transform3D(0.41, 0, 0, 0, 0.41, 0, 0, 0, 0.41, 0, -0.464384, 0)
+cast_shadow = 0
+amount = 16
+process_material = SubResource("ParticleProcessMaterial_pq3ej")
+draw_pass_1 = SubResource("PlaneMesh_gtf2s")
+
+[node name="Dive" type="GPUParticles3D" parent="."]
+transform = Transform3D(0.41, 0, 0, 0, 0.41, 0, 0, 0, 0.41, 0, -0.464384, 0)
+cast_shadow = 0
+amount = 16
+process_material = SubResource("ParticleProcessMaterial_pq3ej")
+draw_pass_1 = SubResource("PlaneMesh_gtf2s")
