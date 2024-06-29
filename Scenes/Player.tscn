@@ -1,7 +1,7 @@
-[gd_scene load_steps=13 format=3 uid="uid://8iobt4o8k61u"]
+[gd_scene load_steps=14 format=3 uid="uid://8iobt4o8k61u"]
 
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_rk3cd"]
-[ext_resource type="Texture2D" uid="uid://cj4e7vkke5c10" path="res://icon.svg" id="2_k3wpd"]
+[ext_resource type="Texture2D" uid="uid://cdch1vlk7mbnf" path="res://Assets/Textures/dust.png" id="2_r3j7g"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_kp3bk"]
 height = 1.5
@@ -19,24 +19,33 @@ curve = SubResource("Curve_lhy33")
 gravity = Vector3(0, 0, 0)
 scale_curve = SubResource("CurveTexture_bui1d")
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iubiy"]
+transparency = 1
+albedo_color = Color(0, 0.615686, 0.952941, 0.521569)
+
 [sub_resource type="TorusMesh" id="TorusMesh_nbihh"]
 lightmap_size_hint = Vector2i(4, 2)
+material = SubResource("StandardMaterial3D_iubiy")
 inner_radius = 0.773
 
 [sub_resource type="Skin" id="Skin_vdfac"]
 
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_48lg5"]
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_pq3ej"]
+gravity = Vector3(0, 0, 0)
+scale_min = 0.5
+scale_max = 2.0
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cxwu6"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4h82y"]
 transparency = 2
 alpha_scissor_threshold = 0.5
 alpha_antialiasing_mode = 0
-albedo_texture = ExtResource("2_k3wpd")
+albedo_texture = ExtResource("2_r3j7g")
 billboard_mode = 1
+billboard_keep_scale = true
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_d6tyb"]
-lightmap_size_hint = Vector2i(11, 11)
-material = SubResource("StandardMaterial3D_cxwu6")
+[sub_resource type="PlaneMesh" id="PlaneMesh_gtf2s"]
+material = SubResource("StandardMaterial3D_4h82y")
+size = Vector2(0.5, 0.5)
 orientation = 2
 
 [node name="Player" type="CharacterBody3D"]
@@ -62,12 +71,15 @@ draw_pass_1 = SubResource("TorusMesh_nbihh")
 draw_skin = SubResource("Skin_vdfac")
 
 [node name="Sprint" type="GPUParticles3D" parent="."]
-transform = Transform3D(0.41, 0, 0, 0, 0.41, 0, 0, 0, 0.41, 0, -0.65252, 0)
+transform = Transform3D(0.41, 0, 0, 0, 0.41, 0, 0, 0, 0.41, 0, -0.464384, 0)
 cast_shadow = 0
-process_material = SubResource("ParticleProcessMaterial_48lg5")
-draw_pass_1 = SubResource("PlaneMesh_d6tyb")
+amount = 16
+process_material = SubResource("ParticleProcessMaterial_pq3ej")
+draw_pass_1 = SubResource("PlaneMesh_gtf2s")
 
 [node name="Dive" type="GPUParticles3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.81575, 0)
-process_material = SubResource("ParticleProcessMaterial_48lg5")
-draw_pass_1 = SubResource("PlaneMesh_d6tyb")
+transform = Transform3D(0.41, 0, 0, 0, 0.41, 0, 0, 0, 0.41, 0, -0.464384, 0)
+cast_shadow = 0
+amount = 16
+process_material = SubResource("ParticleProcessMaterial_pq3ej")
+draw_pass_1 = SubResource("PlaneMesh_gtf2s")
