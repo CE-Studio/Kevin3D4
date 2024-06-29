@@ -1,8 +1,9 @@
-[gd_scene load_steps=34 format=3 uid="uid://8iobt4o8k61u"]
+[gd_scene load_steps=35 format=3 uid="uid://8iobt4o8k61u"]
 
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_rk3cd"]
 [ext_resource type="Texture2D" uid="uid://cdch1vlk7mbnf" path="res://Assets/Textures/dust.png" id="2_r3j7g"]
 [ext_resource type="PackedScene" uid="uid://dy11dfruadhrf" path="res://Assets/Models/player.glb" id="3_gm1qw"]
+[ext_resource type="Material" uid="uid://ciop5hchxevnn" path="res://Assets/Materials/kevin34.tres" id="4_0kk71"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_kp3bk"]
 radius = 0.331573
@@ -481,18 +482,18 @@ advance_expression = "animstate != 2"
 
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_4uom6"]
 states/RESET/node = SubResource("AnimationNodeAnimation_dj41o")
-states/RESET/position = Vector2(366, 134)
+states/RESET/position = Vector2(350, 122)
 states/Start/position = Vector2(188, 105)
 states/doublejump/node = SubResource("AnimationNodeAnimation_tb7kt")
 states/doublejump/position = Vector2(556, 169)
 states/idle/node = SubResource("AnimationNodeAnimation_jf1b1")
-states/idle/position = Vector2(399, 61)
+states/idle/position = Vector2(350, 57)
 states/run/node = SubResource("AnimationNodeAnimation_tmiyv")
 states/run/position = Vector2(566, 28)
 states/walk/node = SubResource("AnimationNodeAnimation_jpsug")
 states/walk/position = Vector2(526, -71)
 transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_i3ng5"), "idle", "doublejump", SubResource("AnimationNodeStateMachineTransition_5kerv"), "idle", "run", SubResource("AnimationNodeStateMachineTransition_0ajav"), "idle", "walk", SubResource("AnimationNodeStateMachineTransition_jinea"), "RESET", "idle", SubResource("AnimationNodeStateMachineTransition_gx7cy"), "doublejump", "RESET", SubResource("AnimationNodeStateMachineTransition_5in11"), "walk", "RESET", SubResource("AnimationNodeStateMachineTransition_ccnmi"), "run", "RESET", SubResource("AnimationNodeStateMachineTransition_xnnvx")]
-graph_offset = Vector2(32, -128)
+graph_offset = Vector2(49, -135)
 
 [node name="Player" type="CharacterBody3D"]
 script = ExtResource("1_rk3cd")
@@ -545,6 +546,9 @@ bones/19/rotation = Quaternion(0.00225576, -2.38418e-07, -1.07563e-09, 0.999997)
 bones/20/rotation = Quaternion(-0.00358084, 5.06265e-13, 2.56123e-09, 0.999994)
 bones/21/rotation = Quaternion(-0.0186974, -1.19188e-07, 1.56023e-08, 0.999825)
 bones/22/rotation = Quaternion(0.0350315, -0.0884289, 0.988896, -0.114181)
+
+[node name="Vert" parent="player/Armature/Skeleton3D" index="0"]
+surface_material_override/0 = ExtResource("4_0kk71")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
