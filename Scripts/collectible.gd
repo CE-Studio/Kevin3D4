@@ -14,4 +14,4 @@ func _process(delta):
 func on_player_touch(body):
 	if body is Player:
 		Player.beanos += 1
-		queue_free()
+		$AnimationPlayer2.play("Pickup")
