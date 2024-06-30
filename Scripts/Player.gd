@@ -26,14 +26,20 @@ var isJumping := false
 var sprint:float = 1
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity:float = ProjectSettings.get_setting("physics/3d/default_gravity")
-
-
+var beanjectile = load("res://Scenes/bean_jectile.tscn")
+var lerp_speed = 0.1
+var isLerping := false
+var lerp_time: float = 1.0
+var current_lerp_time: float = 0.0
 static var beanos:int = 0
-
+var instance
+var target_position = Vector3(1,1, .5)
+var start_position = Vector3.ZERO
 
 @onready var djumpEffect:GPUParticles3D = $"Double Jump Effect"
 @onready var sprintEffect:GPUParticles3D = $Sprint
 @onready var diveEffect:GPUParticles3D = $Dive
+@onready var cam = $SpringArm3D/Camera3D 
 
 
 func _ready():
@@ -42,6 +48,8 @@ func _ready():
 	sprintEffect.emitting = false
 	diveEffect.one_shot = true
 	diveEffect.emitting = false
+	start_position = cam.position
+	
 	$player/Armature/Skeleton3D/Vert.set_surface_override_material(0, preload("res://Assets/Materials/kevin34.tres"))
 
 
@@ -84,7 +92,8 @@ func _physics_process(delta):
 			isJumping = false
 		else:
 			isJumping = true
-			print("jump")
+			
+			
 	if isDoubleJump:
 		animstate = anims.DJUMP	
 	if isJumping:
@@ -99,7 +108,7 @@ func _physics_process(delta):
 		velocity.z = move_toward(velocity.z, 0, SPEED)
 	
 	#dive
-	if Input.is_action_just_pressed("Dive") and dives < 1:
+	if Input.is_action_just_pressed("Dive") and dives < 1 and not Input.is_action_pressed("Camera"):
 		velocity.y = DIVE_VELOCITY 
 		dives += 1
 		$player.rotate_x(-1)
@@ -125,14 +134,39 @@ func _physics_process(delta):
 	move_and_slide()
 
 
-func _process(_delta):
+func _process(delta):
 	if Input.is_action_pressed("Camera"):
 		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+		$SpringArm3D/AnimationPlayer.play("Shoot")
+		
+		$Aiming/CenterContainer/TextureRect.visible = true
+		if Input.is_action_just_pressed("Shoot") and beanos > 0:
+			instance = beanjectile.instantiate()
+			instance.position = $SpringArm3D/Camera3D.global_position
+			instance.transform.basis = $SpringArm3D/Camera3D.global_transform.basis
+			beanos -= 1
+			get_node("/root/Game/UI/BeanCounter/Label").text = str(Player.beanos)
+			get_parent().add_child(instance)
+			pass			
 	else:
-		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE	
+		$Aiming/CenterContainer/TextureRect.visible = false
+		$SpringArm3D/AnimationPlayer.play_backwards("Shoot")
+		
+	
+	
+	if $RayCast3D.is_colliding():
+		$MeshInstance3D.visible = true
+		$MeshInstance3D.global_position = $RayCast3D.get_collision_point() + Vector3(0,.01,0)
+		
+	else:
+		$MeshInstance3D.visible = false
+	
+	
+	
 
 
 func _input(event):	
-	if Input.is_action_pressed("Camera") and (event is InputEventMouseMotion):
+	if (event is InputEventMouseMotion):
 		rotate_y(event.relative.x/-180)
 		$SpringArm3D.rotate_x(event.relative.y/-180)

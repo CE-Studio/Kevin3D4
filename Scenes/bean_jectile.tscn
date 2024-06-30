@@ -1,0 +1,84 @@
+[gd_scene load_steps=12 format=3 uid="uid://cryybw8bvqef8"]
+
+[ext_resource type="Script" path="res://Scripts/BeanJectile.gd" id="1_7ftp6"]
+[ext_resource type="Texture2D" uid="uid://ckwu4s2rt1fhb" path="res://Assets/Textures/bean.png" id="2_h6lc3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i0lec"]
+atlas = ExtResource("2_h6lc3")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w3un4"]
+atlas = ExtResource("2_h6lc3")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7wth2"]
+atlas = ExtResource("2_h6lc3")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fax87"]
+atlas = ExtResource("2_h6lc3")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dvfcy"]
+atlas = ExtResource("2_h6lc3")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0c0o3"]
+atlas = ExtResource("2_h6lc3")
+region = Rect2(16, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iacj8"]
+atlas = ExtResource("2_h6lc3")
+region = Rect2(32, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s13ef"]
+atlas = ExtResource("2_h6lc3")
+region = Rect2(48, 16, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1m38i"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i0lec")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w3un4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7wth2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fax87")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dvfcy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0c0o3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iacj8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s13ef")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="BeanJectile" type="Node3D"]
+script = ExtResource("1_7ftp6")
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
+billboard = 1
+sprite_frames = SubResource("SpriteFrames_1m38i")
+frame_progress = 0.908691
+speed_scale = 5.0
+
+[node name="RayCast3D" type="RayCast3D" parent="."]
+target_position = Vector3(0, 0, -5)
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
