@@ -1,0 +1,8 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://cq0aiywy00eam"]
+
+[ext_resource type="FontFile" uid="uid://bqyf1k3gpmwx" path="res://Assets/Ui/ClarenceOSTerminalNotMono.ttf" id="1_fk36g"]
+
+[resource]
+Fonts/fonts/large = ExtResource("1_fk36g")
+Fonts/fonts/normal = ExtResource("1_fk36g")
+Label/fonts/font = ExtResource("1_fk36g")
