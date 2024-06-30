@@ -47,6 +47,9 @@ var start_position = Vector3.ZERO
 @onready var _lbl:Label = $UI/BeanCounter/Label
 
 
+@onready var spawnpoint:Vector3 = position
+
+
 func _ready():
 	Player.instance = self
 	djumpEffect.one_shot = true
@@ -133,7 +136,7 @@ func _physics_process(delta):
 			
 	
 	if position.y < -100:
-		position = Vector3.ZERO
+		position = spawnpoint
 		velocity = Vector3.ZERO
 		animstate = anims.IDLE
 	
