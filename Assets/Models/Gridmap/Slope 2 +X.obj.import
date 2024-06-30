@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bo0ikidh0v1vd"
+path="res://.godot/imported/Slope 2 +X.obj-e71d2f3c971c7b99dd15461c8d3c4d54.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Slope 2 +X.obj-e71d2f3c971c7b99dd15461c8d3c4d54.mesh"]
+
+source_file="res://Assets/Models/Gridmap/Slope 2 +X.obj"
+dest_files=["res://.godot/imported/Slope 2 +X.obj-e71d2f3c971c7b99dd15461c8d3c4d54.mesh", "res://.godot/imported/Slope 2 +X.obj-e71d2f3c971c7b99dd15461c8d3c4d54.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false
