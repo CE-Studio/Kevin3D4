@@ -34,7 +34,7 @@ var lerp_time: float = 1.0
 var current_lerp_time: float = 0.0
 static var beanos:int = 0:
 	set(value):
-		instance._lbl.text = str(value)
+		Player.instance._lbl.text = str(value)
 		beanos = value
 static var instance:Player
 var target_position = Vector3(1,1, .5)
@@ -48,7 +48,7 @@ var start_position = Vector3.ZERO
 
 
 func _ready():
-	instance = self
+	Player.instance = self
 	djumpEffect.one_shot = true
 	djumpEffect.emitting = false
 	sprintEffect.emitting = false
