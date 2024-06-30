@@ -145,7 +145,6 @@ func _physics_process(delta):
 
 func _process(delta):
 	if Input.is_action_pressed("Camera"):
-		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 		animstate = anims.SHOOTIN
 	
 		
@@ -159,7 +158,6 @@ func _process(delta):
 			get_parent().add_child(i)
 			pass			
 	else:
-		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE	
 		$Aiming/CenterContainer/TextureRect.visible = false
 		
 		

@@ -1,4 +1,4 @@
-[gd_scene load_steps=75 format=3 uid="uid://8iobt4o8k61u"]
+[gd_scene load_steps=76 format=3 uid="uid://8iobt4o8k61u"]
 
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_rk3cd"]
 [ext_resource type="AudioStream" uid="uid://bqva2yr82ot7d" path="res://Assets/Sound Effects/IN.wav" id="2_gmnt1"]
@@ -16,6 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://t7kqja3s6jbk" path="res://Assets/Textures/shadow.png" id="11_75o0b"]
 [ext_resource type="Texture2D" uid="uid://c8pfku2ngxid8" path="res://Assets/Textures/reticle.png" id="12_q2uw1"]
 [ext_resource type="Texture2D" uid="uid://ckwu4s2rt1fhb" path="res://Assets/Textures/bean.png" id="16_rqxdb"]
+[ext_resource type="Script" path="res://Scripts/Pause.gd" id="17_t16mw"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_kp3bk"]
 radius = 0.331573
@@ -1079,5 +1080,51 @@ layout_mode = 2
 layout_mode = 2
 theme_override_font_sizes/font_size = 100
 text = "0"
+
+[node name="Panel" type="Panel" parent="."]
+process_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("17_t16mw")
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -10.5
+offset_right = 20.0
+offset_bottom = 10.5
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -0.436332
+scale = Vector2(1.55, 1.55)
+text = "GaME,,,,,
+paUsed......'.'.'."
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -138.0
+offset_top = 54.0
+offset_right = 115.0
+offset_bottom = 83.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 0.0872665
+text = "rezoom it plz kthx"
+
+[connection signal="pressed" from="Panel/Button" to="Panel" method="pauseUnpause"]
 
 [editable path="player"]
