@@ -1,4 +1,4 @@
-[gd_scene load_steps=70 format=3 uid="uid://8iobt4o8k61u"]
+[gd_scene load_steps=75 format=3 uid="uid://8iobt4o8k61u"]
 
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_rk3cd"]
 [ext_resource type="AudioStream" uid="uid://bqva2yr82ot7d" path="res://Assets/Sound Effects/IN.wav" id="2_gmnt1"]
@@ -15,6 +15,7 @@
 [ext_resource type="AudioStream" uid="uid://bca8f54x3nsea" path="res://Assets/Sound Effects/Dive.wav" id="10_qnw5d"]
 [ext_resource type="Texture2D" uid="uid://t7kqja3s6jbk" path="res://Assets/Textures/shadow.png" id="11_75o0b"]
 [ext_resource type="Texture2D" uid="uid://c8pfku2ngxid8" path="res://Assets/Textures/reticle.png" id="12_q2uw1"]
+[ext_resource type="Texture2D" uid="uid://ckwu4s2rt1fhb" path="res://Assets/Textures/bean.png" id="16_rqxdb"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_kp3bk"]
 radius = 0.331573
@@ -356,6 +357,42 @@ tracks/15/keys = {
 "values": [false]
 }
 
+[sub_resource type="Animation" id="Animation_q0fne"]
+resource_name = "Shootin"
+tracks/0/type = "rotation_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("player/Armature/Skeleton3D:Arm_R")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat64Array(0, 1, -0.0105366, -3.6573e-08, 0.212012, 0.97721, 0.2, 1, -0.602371, -0.144236, 0.138147, 0.772827)
+tracks/1/type = "rotation_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("player/Armature/Skeleton3D:Arm_L")
+tracks/1/interp = 0
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat64Array(0, 1, -0.0105366, 3.6573e-08, -0.212012, 0.97721, 0.2, 1, 0.0161694, 3.79857e-08, 0.325354, 0.945454)
+tracks/2/type = "rotation_3d"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("player/Armature/Skeleton3D:Forearm_R")
+tracks/2/interp = 0
+tracks/2/loop_wrap = true
+tracks/2/keys = PackedFloat64Array(0, 1, 0.000121731, 7.07898e-08, -0.00244944, 0.999997, 0.2, 1, -0.192997, 0.00276902, 0.108972, 0.975125)
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("player/Armature/Skeleton3D/BoneAttachment3D/Slangshot:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat64Array(0, 0.2),
+"transitions": PackedFloat64Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
 [sub_resource type="Animation" id="Animation_cdqk1"]
 resource_name = "dive"
 tracks/0/type = "value"
@@ -690,42 +727,6 @@ tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = PackedFloat64Array(0, 1, -0.083525, 0.000474975, 0.000474975, 0.996475)
 
-[sub_resource type="Animation" id="Animation_q0fne"]
-resource_name = "Shootin"
-tracks/0/type = "rotation_3d"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("player/Armature/Skeleton3D:Arm_R")
-tracks/0/interp = 0
-tracks/0/loop_wrap = true
-tracks/0/keys = PackedFloat64Array(0, 1, -0.0105366, -3.6573e-08, 0.212012, 0.97721, 0.2, 1, -0.602371, -0.144236, 0.138147, 0.772827)
-tracks/1/type = "rotation_3d"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("player/Armature/Skeleton3D:Arm_L")
-tracks/1/interp = 0
-tracks/1/loop_wrap = true
-tracks/1/keys = PackedFloat64Array(0, 1, -0.0105366, 3.6573e-08, -0.212012, 0.97721, 0.2, 1, 0.0161694, 3.79857e-08, 0.325354, 0.945454)
-tracks/2/type = "rotation_3d"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("player/Armature/Skeleton3D:Forearm_R")
-tracks/2/interp = 0
-tracks/2/loop_wrap = true
-tracks/2/keys = PackedFloat64Array(0, 1, 0.000121731, 7.07898e-08, -0.00244944, 0.999997, 0.2, 1, -0.192997, 0.00276902, 0.108972, 0.975125)
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("player/Armature/Skeleton3D/BoneAttachment3D/Slangshot:visible")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat64Array(0, 0.2),
-"transitions": PackedFloat64Array(1, 1),
-"update": 1,
-"values": [false, true]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_pl0xx"]
 _data = {
 "JUMP": SubResource("Animation_ejc4o"),
@@ -845,6 +846,48 @@ albedo_texture = ExtResource("11_75o0b")
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_cu1vt"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_p68ed"]
+atlas = ExtResource("16_rqxdb")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="Animation" id="Animation_snirj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture:region")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat64Array(0),
+"transitions": PackedFloat64Array(1),
+"update": 0,
+"values": [Rect2(0, 0, 16, 16)]
+}
+
+[sub_resource type="Animation" id="Animation_bll68"]
+resource_name = "UIBeanSpin"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture:region")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat64Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7),
+"transitions": PackedFloat64Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Rect2(0, 0, 16, 16), Rect2(16, 0, 16, 16), Rect2(32, 0, 16, 16), Rect2(48, 0, 16, 16), Rect2(0, 16, 16, 16), Rect2(16, 16, 16, 16), Rect2(32, 16, 16, 16), Rect2(48, 16, 16, 16)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_86rtg"]
+_data = {
+"RESET": SubResource("Animation_snirj"),
+"UIBeanSpin": SubResource("Animation_bll68")
+}
+
 [node name="Player" type="CharacterBody3D"]
 script = ExtResource("1_rk3cd")
 
@@ -944,7 +987,7 @@ surface_material_override/0 = ExtResource("4_0kk71")
 surface_material_override/0 = SubResource("StandardMaterial3D_ghj7y")
 
 [node name="BoneAttachment3D" type="BoneAttachment3D" parent="player/Armature/Skeleton3D" index="2"]
-transform = Transform3D(0.0245031, 0.999699, 0.00121781, -0.998467, 0.0245333, -0.0496219, -0.0496369, -5.41819e-08, 0.998767, 0.843557, 1.63555, 0.0128213)
+transform = Transform3D(-0.966419, 0.256972, -0.000314508, -0.256603, -0.965098, -0.0523569, -0.0137578, -0.050518, 0.998628, 0.293998, 0.976225, -0.0209056)
 bone_name = "Hand_R"
 bone_idx = 14
 
@@ -1000,5 +1043,41 @@ grow_vertical = 2
 [node name="TextureRect" type="TextureRect" parent="Aiming/CenterContainer"]
 layout_mode = 2
 texture = ExtResource("12_q2uw1")
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="BeanCounter" type="HBoxContainer" parent="UI"]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 32.0
+offset_right = 467.0
+offset_bottom = 132.0
+
+[node name="TextureRect" type="TextureRect" parent="UI/BeanCounter"]
+layout_mode = 2
+texture = SubResource("AtlasTexture_p68ed")
+expand_mode = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="UI/BeanCounter/TextureRect"]
+libraries = {
+"": SubResource("AnimationLibrary_86rtg")
+}
+autoplay = "UIBeanSpin"
+
+[node name="VSeparator" type="VSeparator" parent="UI/BeanCounter"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="UI/BeanCounter"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 100
+text = "0"
 
 [editable path="player"]

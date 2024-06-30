@@ -32,8 +32,11 @@ var lerp_speed = 0.1
 var isLerping := false
 var lerp_time: float = 1.0
 var current_lerp_time: float = 0.0
-static var beanos:int = 0
-var instance
+static var beanos:int = 0:
+	set(value):
+		instance._lbl.text = str(value)
+		beanos = value
+static var instance:Player
 var target_position = Vector3(1,1, .5)
 var start_position = Vector3.ZERO
 
@@ -41,9 +44,11 @@ var start_position = Vector3.ZERO
 @onready var sprintEffect:GPUParticles3D = $Sprint
 @onready var diveEffect:GPUParticles3D = $Dive
 @onready var cam = $SpringArm3D/Camera3D 
+@onready var _lbl:Label = $UI/BeanCounter/Label
 
 
 func _ready():
+	instance = self
 	djumpEffect.one_shot = true
 	djumpEffect.emitting = false
 	sprintEffect.emitting = false
@@ -144,12 +149,11 @@ func _process(delta):
 		
 		$Aiming/CenterContainer/TextureRect.visible = true
 		if Input.is_action_just_pressed("Shoot") and beanos > 0:
-			instance = beanjectile.instantiate()
-			instance.position = $SpringArm3D/Camera3D.global_position
-			instance.transform.basis = $SpringArm3D/Camera3D.global_transform.basis
+			var i = beanjectile.instantiate()
+			i.position = $SpringArm3D/Camera3D.global_position
+			i.transform.basis = $SpringArm3D/Camera3D.global_transform.basis
 			beanos -= 1
-			get_node("/root/Game/UI/BeanCounter/Label").text = str(Player.beanos)
-			get_parent().add_child(instance)
+			get_parent().add_child(i)
 			pass			
 	else:
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE	

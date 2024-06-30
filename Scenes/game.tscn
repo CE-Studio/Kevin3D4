@@ -1,14 +1,13 @@
-[gd_scene load_steps=19 format=3 uid="uid://bjtuexpc3ovab"]
+[gd_scene load_steps=14 format=3 uid="uid://bjtuexpc3ovab"]
 
 [ext_resource type="AudioStream" uid="uid://diefur77d32jo" path="res://Assets/Music/Title.wav" id="1_7lcl3"]
 [ext_resource type="PackedScene" uid="uid://8iobt4o8k61u" path="res://Scenes/Player.tscn" id="1_hr3a5"]
 [ext_resource type="Texture2D" uid="uid://dnjj0sh3xilgo" path="res://Assets/Textures/Skybox.png" id="1_yl01g"]
-[ext_resource type="PackedScene" path="res://Scenes/enemy.tscn" id="2_5y8gm"]
-[ext_resource type="PackedScene" uid="uid://d25ke11gv527s" path="res://Scenes/box.tscn" id="3_i4ysk"]
-[ext_resource type="PackedScene" path="res://Scenes/switch.tscn" id="5_nojmr"]
+[ext_resource type="PackedScene" uid="uid://hqroyuuds4po" path="res://Scenes/enemy.tscn" id="2_5y8gm"]
+[ext_resource type="PackedScene" path="res://Scenes/box.tscn" id="3_i4ysk"]
+[ext_resource type="PackedScene" uid="uid://334cmavflup3" path="res://Scenes/switch.tscn" id="5_nojmr"]
 [ext_resource type="PackedScene" uid="uid://bqlwlkimr6gje" path="res://Scenes/collectible.tscn" id="6_k0kv0"]
 [ext_resource type="PackedScene" uid="uid://be74smfh0hkry" path="res://Scenes/crumbling_platform.tscn" id="6_v8lna"]
-[ext_resource type="Texture2D" uid="uid://ckwu4s2rt1fhb" path="res://Assets/Textures/bean.png" id="9_p50u6"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_uri2l"]
 panorama = ExtResource("1_yl01g")
@@ -27,48 +26,6 @@ size = Vector2(25, 25)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_0kk0c"]
 size = Vector3(25, 1, 25)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_4pirr"]
-atlas = ExtResource("9_p50u6")
-region = Rect2(0, 0, 16, 16)
-
-[sub_resource type="Animation" id="Animation_snirj"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:texture:region")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat64Array(0),
-"transitions": PackedFloat64Array(1),
-"update": 0,
-"values": [Rect2(0, 0, 16, 16)]
-}
-
-[sub_resource type="Animation" id="Animation_bll68"]
-resource_name = "UIBeanSpin"
-length = 0.8
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:texture:region")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat64Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7),
-"transitions": PackedFloat64Array(1, 1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [Rect2(0, 0, 16, 16), Rect2(16, 0, 16, 16), Rect2(32, 0, 16, 16), Rect2(48, 0, 16, 16), Rect2(0, 16, 16, 16), Rect2(16, 16, 16, 16), Rect2(32, 16, 16, 16), Rect2(48, 16, 16, 16)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_86rtg"]
-_data = {
-"RESET": SubResource("Animation_snirj"),
-"UIBeanSpin": SubResource("Animation_bll68")
-}
 
 [node name="Game" type="Node3D"]
 
@@ -123,42 +80,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.4606, 0.5, 7.92155)
 
 [node name="Crumbling Platform" parent="." instance=ExtResource("6_v8lna")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.5185, 5.4901, -2.34082)
-
-[node name="UI" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-
-[node name="BeanCounter" type="HBoxContainer" parent="UI"]
-layout_mode = 0
-offset_left = 32.0
-offset_top = 32.0
-offset_right = 467.0
-offset_bottom = 132.0
-
-[node name="TextureRect" type="TextureRect" parent="UI/BeanCounter"]
-layout_mode = 2
-texture = SubResource("AtlasTexture_4pirr")
-expand_mode = 2
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="UI/BeanCounter/TextureRect"]
-libraries = {
-"": SubResource("AnimationLibrary_86rtg")
-}
-autoplay = "UIBeanSpin"
-
-[node name="VSeparator" type="VSeparator" parent="UI/BeanCounter"]
-modulate = Color(1, 1, 1, 0)
-layout_mode = 2
-
-[node name="Label" type="Label" parent="UI/BeanCounter"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 100
-text = "0"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("1_7lcl3")

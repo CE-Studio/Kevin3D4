@@ -14,5 +14,4 @@ func _process(delta):
 func on_player_touch(body):
 	if body is Player:
 		Player.beanos += 1
-		get_node("/root/Game/UI/BeanCounter/Label").text = str(Player.beanos)
 		$AnimationPlayer2.play("Pickup")
