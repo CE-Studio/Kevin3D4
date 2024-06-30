@@ -1,4 +1,4 @@
-[gd_scene load_steps=56 format=3 uid="uid://8iobt4o8k61u"]
+[gd_scene load_steps=59 format=3 uid="uid://8iobt4o8k61u"]
 
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_rk3cd"]
 [ext_resource type="Texture2D" uid="uid://cdch1vlk7mbnf" path="res://Assets/Textures/dust.png" id="2_r3j7g"]
@@ -16,6 +16,66 @@
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_kp3bk"]
 radius = 0.331573
 height = 2.1282
+
+[sub_resource type="Animation" id="Animation_eicyb"]
+resource_name = "Shoot"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat64Array(0, 1),
+"transitions": PackedFloat64Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:spring_length")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat64Array(0, 1),
+"transitions": PackedFloat64Array(1, 1),
+"update": 0,
+"values": [8.0, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_ib2nq"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat64Array(0),
+"transitions": PackedFloat64Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:spring_length")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat64Array(0),
+"transitions": PackedFloat64Array(1),
+"update": 0,
+"values": [8.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_aakw0"]
+_data = {
+"RESET": SubResource("Animation_ib2nq"),
+"Shoot": SubResource("Animation_eicyb")
+}
 
 [sub_resource type="Curve" id="Curve_lhy33"]
 _data = [Vector2(0, 0.428571), 0.0, -2.17363, 0, 0, Vector2(0.347826, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
@@ -653,6 +713,11 @@ spring_length = 8.0
 
 [node name="Shooter" type="RayCast3D" parent="SpringArm3D/Camera3D"]
 target_position = Vector3(0, 0, -20)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="SpringArm3D"]
+libraries = {
+"": SubResource("AnimationLibrary_aakw0")
+}
 
 [node name="Double Jump Effect" type="GPUParticles3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.08992, 0)

@@ -28,11 +28,13 @@ var sprint:float = 1
 var gravity:float = ProjectSettings.get_setting("physics/3d/default_gravity")
 var beanjectile = load("res://Scenes/bean_jectile.tscn")
 var lerp_speed = 0.1
-
+var isLerping := false
+var lerp_time: float = 1.0
+var current_lerp_time: float = 0.0
 static var beanos:int = 0
 var instance
 var target_position = Vector3(1,1, .5)
-var start_position = Vector3(0,0,0)
+var start_position = Vector3.ZERO
 
 @onready var djumpEffect:GPUParticles3D = $"Double Jump Effect"
 @onready var sprintEffect:GPUParticles3D = $Sprint
@@ -46,7 +48,8 @@ func _ready():
 	sprintEffect.emitting = false
 	diveEffect.one_shot = true
 	diveEffect.emitting = false
-	cam.position =Vector3(0,0,0)
+	start_position = cam.position
+	
 	$player/Armature/Skeleton3D/Vert.set_surface_override_material(0, preload("res://Assets/Materials/kevin34.tres"))
 
 
@@ -134,7 +137,7 @@ func _physics_process(delta):
 func _process(delta):
 	if Input.is_action_pressed("Camera"):
 		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
-		cam.position = target_position
+		$SpringArm3D/AnimationPlayer.play("Shoot")
 		
 		$Aiming/CenterContainer/TextureRect.visible = true
 		if Input.is_action_just_pressed("Shoot") and beanos > 0:
@@ -144,11 +147,11 @@ func _process(delta):
 			beanos -= 1
 			get_node("/root/Game/UI/BeanCounter/Label").text = str(Player.beanos)
 			get_parent().add_child(instance)
-			
 			pass			
 	else:
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE	
 		$Aiming/CenterContainer/TextureRect.visible = false
+		$SpringArm3D/AnimationPlayer.play_backwards("Shoot")
 		
 	
 	
