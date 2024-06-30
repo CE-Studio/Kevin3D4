@@ -83,6 +83,7 @@ void vertex() {
 
 }
 "
+graph_offset = Vector2(-25.1572, 97.7731)
 nodes/vertex/0/position = Vector2(1320, 160)
 nodes/vertex/2/node = SubResource("VisualShaderNodeInput_h2eds")
 nodes/vertex/2/position = Vector2(280, 500)
