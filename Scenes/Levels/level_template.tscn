@@ -15,6 +15,7 @@ background_mode = 2
 sky = SubResource("Sky_2srni")
 ambient_light_source = 2
 ambient_light_color = Color(0.615686, 0.615686, 0.615686, 1)
+ambient_light_energy = 0.15
 
 [node name="Level1" type="Node3D"]
 
