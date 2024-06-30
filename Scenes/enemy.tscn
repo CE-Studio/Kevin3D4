@@ -1,19 +1,15 @@
-[gd_scene load_steps=8 format=3 uid="uid://bv4ebjfyp0y6f"]
+[gd_scene load_steps=7 format=3 uid="uid://bv4ebjfyp0y6f"]
 
 [ext_resource type="Script" path="res://Scripts/Enemy.gd" id="1_ypvxk"]
 [ext_resource type="Shader" uid="uid://dqcbpkck1cny8" path="res://Assets/Shaders/crumbling_platform.tres" id="2_6wadm"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_3u2e1"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_34lgs"]
 render_priority = 0
 shader = ExtResource("2_6wadm")
 shader_parameter/FloatParameter = null
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5pqi7"]
-albedo_color = Color(1, 0, 0, 1)
-
-[sub_resource type="CylinderMesh" id="CylinderMesh_t1lvw"]
-material = SubResource("StandardMaterial3D_5pqi7")
-height = 1.0
+[sub_resource type="BoxMesh" id="BoxMesh_7m3vv"]
+material = SubResource("ShaderMaterial_34lgs")
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_utlsw"]
 height = 1.0
@@ -26,11 +22,11 @@ radius = 0.4
 script = ExtResource("1_ypvxk")
 
 [node name="Timer" type="Timer" parent="."]
+wait_time = 0.7
 one_shot = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-material_override = SubResource("ShaderMaterial_3u2e1")
-mesh = SubResource("CylinderMesh_t1lvw")
+mesh = SubResource("BoxMesh_7m3vv")
 
 [node name="MainHitbox" type="CollisionShape3D" parent="."]
 shape = SubResource("CylinderShape3D_utlsw")

@@ -19,7 +19,7 @@ func init(newHP:int):
 
 func _process(delta):
 	if not $Timer.is_stopped():
-			pass
+			$MeshInstance3D.mesh.material.set_shader_parameter("FloatParameter", 0.05/timer.time_left )
 
 
 func on_player_collision(body:Node3D): # This function is connected to StompArea's body_entered signal
