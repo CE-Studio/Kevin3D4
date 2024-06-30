@@ -13,6 +13,7 @@ enum anims {
 	JUMP = 3,
 	DJUMP = 4,
 	DIVE = 5,
+	SHOOTIN = 6,
 }
 var animstate:anims = anims.IDLE
 
@@ -59,11 +60,11 @@ func _physics_process(delta):
 	var direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	
 	#sprinting
-	if Input.is_action_pressed("Sprint"):
+	if Input.is_action_pressed("Sprint") and not Input.is_action_pressed("Camera"):
 		sprint = 1.7
 		sprintEffect.emitting = true
 		animstate = anims.RUN
-	elif not Input.is_action_pressed("Sprint"): 
+	elif not Input.is_action_pressed("Sprint") and not Input.is_action_pressed("Camera") : 
 		sprint = 1
 		sprintEffect.emitting = false 
 		animstate = anims.WALK
@@ -79,7 +80,7 @@ func _physics_process(delta):
 		isDiving = false
 		isJumping = false
 		isDoubleJump = false
-		if input_dir == Vector2.ZERO:
+		if input_dir == Vector2.ZERO and not Input.is_action_pressed("Camera"):
 			animstate = anims.IDLE
 
 	# Handle jump and double jump
@@ -137,6 +138,7 @@ func _physics_process(delta):
 func _process(delta):
 	if Input.is_action_pressed("Camera"):
 		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+		animstate = anims.SHOOTIN
 	
 		
 		
@@ -173,5 +175,6 @@ func _input(event):
 		$SpringArm3D.rotate_x(event.relative.y/-180)
 	if event.is_action_pressed("Camera"):
 		$SpringArm3D/AnimationPlayer.play("Shoot")
+		
 	if event.is_action_released("Camera"):
-		$SpringArm3D/AnimationPlayer.play_backwards("Shoot")
+		$SpringArm3D/AnimationPlayer.play("ComeBack")
