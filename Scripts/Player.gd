@@ -137,7 +137,8 @@ func _physics_process(delta):
 func _process(delta):
 	if Input.is_action_pressed("Camera"):
 		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
-		$SpringArm3D/AnimationPlayer.play("Shoot")
+	
+		
 		
 		$Aiming/CenterContainer/TextureRect.visible = true
 		if Input.is_action_just_pressed("Shoot") and beanos > 0:
@@ -151,7 +152,7 @@ func _process(delta):
 	else:
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE	
 		$Aiming/CenterContainer/TextureRect.visible = false
-		$SpringArm3D/AnimationPlayer.play_backwards("Shoot")
+		
 		
 	
 	
@@ -170,3 +171,7 @@ func _input(event):
 	if (event is InputEventMouseMotion):
 		rotate_y(event.relative.x/-180)
 		$SpringArm3D.rotate_x(event.relative.y/-180)
+	if event.is_action_pressed("Camera"):
+		$SpringArm3D/AnimationPlayer.play("Shoot")
+	if event.is_action_released("Camera"):
+		$SpringArm3D/AnimationPlayer.play_backwards("Shoot")
