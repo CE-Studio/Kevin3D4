@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dw87rqo7usced"
+path="res://.godot/imported/Platform Middle.obj-4305c74a5b34cc172f6e3a1e7713b549.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Platform Middle.obj-4305c74a5b34cc172f6e3a1e7713b549.mesh"]
+
+source_file="res://Assets/Models/Gridmap/Platform Middle.obj"
+dest_files=["res://.godot/imported/Platform Middle.obj-4305c74a5b34cc172f6e3a1e7713b549.mesh", "res://.godot/imported/Platform Middle.obj-4305c74a5b34cc172f6e3a1e7713b549.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false
