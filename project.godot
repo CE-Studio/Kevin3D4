@@ -15,6 +15,11 @@ run/main_scene="res://Scenes/game.tscn"
 config/features=PackedStringArray("4.2", "Double Precision", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[gui]
+
+theme/custom="res://Assets/Ui/heeCCCcccCCccccc.tres"
+theme/custom_font="res://Assets/Ui/ClarenceOSTerminalNotMono.ttf"
+
 [input]
 
 ui_left={
