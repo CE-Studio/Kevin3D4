@@ -1,0 +1,38 @@
+[gd_scene load_steps=8 format=3 uid="uid://mh1oimwfbwof"]
+
+[ext_resource type="Texture2D" uid="uid://clsleqekifnc0" path="res://Assets/Textures/LevelTextures/L1Tiles0.png" id="1_dga82"]
+[ext_resource type="Texture2D" uid="uid://3gmec1n4ny7i" path="res://Assets/Textures/LevelTextures/L1Tiles1.png" id="2_y3mbo"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vrnhy"]
+albedo_texture = ExtResource("1_dga82")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_0hlc3"]
+material = SubResource("StandardMaterial3D_vrnhy")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_d1pqg"]
+size = Vector3(2, 0.001, 2)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w0nbe"]
+albedo_texture = ExtResource("2_y3mbo")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_dsby2"]
+material = SubResource("StandardMaterial3D_w0nbe")
+
+[node name="RealL1MeshLib" type="Node3D"]
+
+[node name="GrassSolid" type="MeshInstance3D" parent="."]
+mesh = SubResource("PlaneMesh_0hlc3")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="GrassSolid"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="GrassSolid/StaticBody3D"]
+shape = SubResource("BoxShape3D_d1pqg")
+
+[node name="GrassTextured" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0)
+mesh = SubResource("PlaneMesh_dsby2")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="GrassTextured"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="GrassTextured/StaticBody3D"]
+shape = SubResource("BoxShape3D_d1pqg")
