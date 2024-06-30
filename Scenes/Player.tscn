@@ -22,26 +22,26 @@ resource_name = "Shoot"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Camera3D:position")
+tracks/0/path = NodePath(".:spring_length")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat64Array(0, 1),
 "transitions": PackedFloat64Array(1, 1),
 "update": 0,
-"values": [Vector3(0, 0, 0), Vector3(1, 1, 0)]
+"values": [8.0, 1.0]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath(".:spring_length")
+tracks/1/path = NodePath(".:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat64Array(0, 1),
 "transitions": PackedFloat64Array(1, 1),
 "update": 0,
-"values": [8.0, 0.0]
+"values": [Vector3(0, 0, 0), Vector3(1, 1, 0.5)]
 }
 
 [sub_resource type="Animation" id="Animation_ib2nq"]
@@ -49,26 +49,26 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Camera3D:position")
+tracks/0/path = NodePath(".:spring_length")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat64Array(0),
 "transitions": PackedFloat64Array(1),
 "update": 0,
-"values": [Vector3(0, 0, 0)]
+"values": [8.0]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath(".:spring_length")
+tracks/1/path = NodePath(".:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat64Array(0),
 "transitions": PackedFloat64Array(1),
 "update": 0,
-"values": [8.0]
+"values": [Vector3(0, 0, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_aakw0"]
@@ -710,6 +710,7 @@ shape = SubResource("CapsuleShape3D_kp3bk")
 spring_length = 8.0
 
 [node name="Camera3D" type="Camera3D" parent="SpringArm3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 0)
 
 [node name="Shooter" type="RayCast3D" parent="SpringArm3D/Camera3D"]
 target_position = Vector3(0, 0, -20)
@@ -718,6 +719,7 @@ target_position = Vector3(0, 0, -20)
 libraries = {
 "": SubResource("AnimationLibrary_aakw0")
 }
+speed_scale = 3.0
 
 [node name="Double Jump Effect" type="GPUParticles3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.08992, 0)
