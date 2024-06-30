@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://x3k6ciwx26ac"
+path="res://.godot/imported/Slope 4 -Z.obj-8d81fe89ba638978fdffc9d33c5db68d.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Slope 4 -Z.obj-8d81fe89ba638978fdffc9d33c5db68d.mesh"]
+
+source_file="res://Assets/Models/Gridmap/Slope 4 -Z.obj"
+dest_files=["res://.godot/imported/Slope 4 -Z.obj-8d81fe89ba638978fdffc9d33c5db68d.mesh", "res://.godot/imported/Slope 4 -Z.obj-8d81fe89ba638978fdffc9d33c5db68d.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://c2f2equ6ni8is"
+path="res://.godot/imported/SlopeCorner 2 -X-Z.obj-e7ddedee15905a506219c63e41bcc5eb.mesh"
+
+[deps]
+
+files=["res://.godot/imported/SlopeCorner 2 -X-Z.obj-e7ddedee15905a506219c63e41bcc5eb.mesh"]
+
+source_file="res://Assets/Models/Gridmap/SlopeCorner 2 -X-Z.obj"
+dest_files=["res://.godot/imported/SlopeCorner 2 -X-Z.obj-e7ddedee15905a506219c63e41bcc5eb.mesh", "res://.godot/imported/SlopeCorner 2 -X-Z.obj-e7ddedee15905a506219c63e41bcc5eb.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false
