@@ -1,6 +1,8 @@
-[gd_scene load_steps=59 format=3 uid="uid://8iobt4o8k61u"]
+[gd_scene load_steps=70 format=3 uid="uid://8iobt4o8k61u"]
 
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_rk3cd"]
+[ext_resource type="AudioStream" uid="uid://bqva2yr82ot7d" path="res://Assets/Sound Effects/IN.wav" id="2_gmnt1"]
+[ext_resource type="AudioStream" uid="uid://dxym3wc87lujh" path="res://Assets/Sound Effects/Out.wav" id="2_kgmtd"]
 [ext_resource type="Texture2D" uid="uid://cdch1vlk7mbnf" path="res://Assets/Textures/dust.png" id="2_r3j7g"]
 [ext_resource type="PackedScene" uid="uid://dy11dfruadhrf" path="res://Assets/Models/player.glb" id="3_gm1qw"]
 [ext_resource type="Material" uid="uid://ciop5hchxevnn" path="res://Assets/Materials/kevin34.tres" id="4_0kk71"]
@@ -9,6 +11,7 @@
 [ext_resource type="AudioStream" uid="uid://bnpp0j6rpcp6i" path="res://Assets/Sound Effects/172667__underlineddesigns__military-rotor-loop.wav" id="7_ratlq"]
 [ext_resource type="AudioStream" uid="uid://ctajrq1q1o1xw" path="res://Assets/Sound Effects/goofy-run-sound.wav" id="7_wjehu"]
 [ext_resource type="AudioStream" uid="uid://dy02ywt81fm44" path="res://Assets/Sound Effects/Jump.wav" id="9_ayhut"]
+[ext_resource type="Texture2D" uid="uid://ru84i2wfoogw" path="res://Assets/Textures/slingshot.png" id="9_mawub"]
 [ext_resource type="AudioStream" uid="uid://bca8f54x3nsea" path="res://Assets/Sound Effects/Dive.wav" id="10_qnw5d"]
 [ext_resource type="Texture2D" uid="uid://t7kqja3s6jbk" path="res://Assets/Textures/shadow.png" id="11_75o0b"]
 [ext_resource type="Texture2D" uid="uid://c8pfku2ngxid8" path="res://Assets/Textures/reticle.png" id="12_q2uw1"]
@@ -17,8 +20,8 @@
 radius = 0.331573
 height = 2.1282
 
-[sub_resource type="Animation" id="Animation_eicyb"]
-resource_name = "Shoot"
+[sub_resource type="Animation" id="Animation_hpta4"]
+resource_name = "ComeBack"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -26,10 +29,10 @@ tracks/0/path = NodePath(".:spring_length")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat64Array(0, 1),
+"times": PackedFloat64Array(0, 0.6),
 "transitions": PackedFloat64Array(1, 1),
 "update": 0,
-"values": [8.0, 1.0]
+"values": [0.5, 8.0]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -38,11 +41,26 @@ tracks/1/path = NodePath(".:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat64Array(0, 1),
-"transitions": PackedFloat64Array(1, 1),
+"times": PackedFloat64Array(0, 0.6),
+"transitions": PackedFloat64Array(1, 2.54911),
 "update": 0,
-"values": [Vector3(0, 0, 0), Vector3(1, 1, 0.5)]
+"values": [Vector3(1, 1, 0.5), Vector3(0, 0, 0)]
 }
+tracks/2/type = "audio"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../AudioStreamPlayer3D")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("2_kgmtd")
+}],
+"times": PackedFloat64Array(0)
+}
+tracks/2/use_blend = true
 
 [sub_resource type="Animation" id="Animation_ib2nq"]
 length = 0.001
@@ -71,8 +89,52 @@ tracks/1/keys = {
 "values": [Vector3(0, 0, 0)]
 }
 
+[sub_resource type="Animation" id="Animation_eicyb"]
+resource_name = "Shoot"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:spring_length")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat64Array(0, 0.6),
+"transitions": PackedFloat64Array(1, 1),
+"update": 0,
+"values": [8.0, 0.5]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat64Array(0, 0.6),
+"transitions": PackedFloat64Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(1, 1, 0.5)]
+}
+tracks/2/type = "audio"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../AudioStreamPlayer3D")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("2_gmnt1")
+}],
+"times": PackedFloat64Array(0)
+}
+tracks/2/use_blend = true
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_aakw0"]
 _data = {
+"ComeBack": SubResource("Animation_hpta4"),
 "RESET": SubResource("Animation_ib2nq"),
 "Shoot": SubResource("Animation_eicyb")
 }
@@ -128,6 +190,28 @@ viewport_path = NodePath("SubViewport")
 resource_local_to_scene = true
 shading_mode = 0
 albedo_texture = SubResource("ViewportTexture_i3dtn")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hswdw"]
+atlas = ExtResource("9_mawub")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kpqaf"]
+atlas = ExtResource("9_mawub")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7woet"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hswdw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kpqaf")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="Animation" id="Animation_ejc4o"]
 resource_name = "JUMP"
@@ -259,16 +343,40 @@ tracks/14/keys = {
 "update": 0,
 "values": [0.0]
 }
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("player/Armature/Skeleton3D/BoneAttachment3D/Slangshot:visible")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat64Array(0),
+"transitions": PackedFloat64Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_cdqk1"]
 resource_name = "dive"
-tracks/0/type = "audio"
+tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("AudioStreamPlayer3D")
+tracks/0/path = NodePath("AudioStreamPlayer3D:volume_db")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
+"times": PackedFloat64Array(0, 0.8),
+"transitions": PackedFloat64Array(1, 1),
+"update": 0,
+"values": [20.984, 0.0]
+}
+tracks/1/type = "audio"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AudioStreamPlayer3D")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
 "clips": [{
 "end_offset": 0.0,
 "start_offset": 0.0,
@@ -276,19 +384,7 @@ tracks/0/keys = {
 }],
 "times": PackedFloat64Array(0)
 }
-tracks/0/use_blend = true
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("AudioStreamPlayer3D:volume_db")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat64Array(0, 0.8),
-"transitions": PackedFloat64Array(1, 1),
-"update": 0,
-"values": [20.984, 0.0]
-}
+tracks/1/use_blend = true
 
 [sub_resource type="Animation" id="Animation_7uxve"]
 resource_name = "doublejump"
@@ -594,10 +690,47 @@ tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = PackedFloat64Array(0, 1, -0.083525, 0.000474975, 0.000474975, 0.996475)
 
+[sub_resource type="Animation" id="Animation_q0fne"]
+resource_name = "Shootin"
+tracks/0/type = "rotation_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("player/Armature/Skeleton3D:Arm_R")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat64Array(0, 1, -0.0105366, -3.6573e-08, 0.212012, 0.97721, 0.2, 1, -0.602371, -0.144236, 0.138147, 0.772827)
+tracks/1/type = "rotation_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("player/Armature/Skeleton3D:Arm_L")
+tracks/1/interp = 0
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat64Array(0, 1, -0.0105366, 3.6573e-08, -0.212012, 0.97721, 0.2, 1, 0.0161694, 3.79857e-08, 0.325354, 0.945454)
+tracks/2/type = "rotation_3d"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("player/Armature/Skeleton3D:Forearm_R")
+tracks/2/interp = 0
+tracks/2/loop_wrap = true
+tracks/2/keys = PackedFloat64Array(0, 1, 0.000121731, 7.07898e-08, -0.00244944, 0.999997, 0.2, 1, -0.192997, 0.00276902, 0.108972, 0.975125)
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("player/Armature/Skeleton3D/BoneAttachment3D/Slangshot:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat64Array(0, 0.2),
+"transitions": PackedFloat64Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_pl0xx"]
 _data = {
 "JUMP": SubResource("Animation_ejc4o"),
 "RESET": SubResource("Animation_mlyph"),
+"Shootin": SubResource("Animation_q0fne"),
 "dive": SubResource("Animation_cdqk1"),
 "doublejump": SubResource("Animation_7uxve"),
 "idle": SubResource("Animation_cs60m"),
@@ -610,6 +743,9 @@ animation = &"JUMP"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_dj41o"]
 animation = &"RESET"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_op1sv"]
+animation = &"Shootin"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_hu2yu"]
 animation = &"dive"
@@ -673,14 +809,24 @@ advance_expression = "animstate == 5 "
 advance_mode = 2
 advance_expression = "animstate != 5 "
 
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_3u3fp"]
+advance_mode = 2
+advance_expression = "animstate == 6"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_rkaew"]
+advance_mode = 2
+advance_expression = "animstate != 6"
+
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_4uom6"]
 states/JUMP/node = SubResource("AnimationNodeAnimation_dc18r")
 states/JUMP/position = Vector2(315, -65)
 states/RESET/node = SubResource("AnimationNodeAnimation_dj41o")
-states/RESET/position = Vector2(350, 122)
+states/RESET/position = Vector2(310, 275)
+states/Shootin/node = SubResource("AnimationNodeAnimation_op1sv")
+states/Shootin/position = Vector2(186, -51)
 states/Start/position = Vector2(188, 105)
 states/dive/node = SubResource("AnimationNodeAnimation_hu2yu")
-states/dive/position = Vector2(240, 22)
+states/dive/position = Vector2(186, 234)
 states/doublejump/node = SubResource("AnimationNodeAnimation_tb7kt")
 states/doublejump/position = Vector2(556, 169)
 states/idle/node = SubResource("AnimationNodeAnimation_jf1b1")
@@ -689,7 +835,7 @@ states/run/node = SubResource("AnimationNodeAnimation_tmiyv")
 states/run/position = Vector2(566, 28)
 states/walk/node = SubResource("AnimationNodeAnimation_jpsug")
 states/walk/position = Vector2(526, -71)
-transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_i3ng5"), "idle", "doublejump", SubResource("AnimationNodeStateMachineTransition_5kerv"), "idle", "run", SubResource("AnimationNodeStateMachineTransition_0ajav"), "idle", "walk", SubResource("AnimationNodeStateMachineTransition_jinea"), "RESET", "idle", SubResource("AnimationNodeStateMachineTransition_gx7cy"), "doublejump", "RESET", SubResource("AnimationNodeStateMachineTransition_5in11"), "walk", "RESET", SubResource("AnimationNodeStateMachineTransition_ccnmi"), "run", "RESET", SubResource("AnimationNodeStateMachineTransition_xnnvx"), "idle", "JUMP", SubResource("AnimationNodeStateMachineTransition_rgeum"), "JUMP", "RESET", SubResource("AnimationNodeStateMachineTransition_b5onr"), "idle", "dive", SubResource("AnimationNodeStateMachineTransition_6v1d4"), "dive", "RESET", SubResource("AnimationNodeStateMachineTransition_5vsgr")]
+transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_i3ng5"), "idle", "doublejump", SubResource("AnimationNodeStateMachineTransition_5kerv"), "idle", "run", SubResource("AnimationNodeStateMachineTransition_0ajav"), "idle", "walk", SubResource("AnimationNodeStateMachineTransition_jinea"), "RESET", "idle", SubResource("AnimationNodeStateMachineTransition_gx7cy"), "doublejump", "RESET", SubResource("AnimationNodeStateMachineTransition_5in11"), "walk", "RESET", SubResource("AnimationNodeStateMachineTransition_ccnmi"), "run", "RESET", SubResource("AnimationNodeStateMachineTransition_xnnvx"), "idle", "JUMP", SubResource("AnimationNodeStateMachineTransition_rgeum"), "JUMP", "RESET", SubResource("AnimationNodeStateMachineTransition_b5onr"), "idle", "dive", SubResource("AnimationNodeStateMachineTransition_6v1d4"), "dive", "RESET", SubResource("AnimationNodeStateMachineTransition_5vsgr"), "idle", "Shootin", SubResource("AnimationNodeStateMachineTransition_3u3fp"), "Shootin", "RESET", SubResource("AnimationNodeStateMachineTransition_rkaew")]
 graph_offset = Vector2(49, -135)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ym3iy"]
@@ -719,7 +865,6 @@ target_position = Vector3(0, 0, -20)
 libraries = {
 "": SubResource("AnimationLibrary_aakw0")
 }
-speed_scale = 3.0
 
 [node name="Double Jump Effect" type="GPUParticles3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.08992, 0)
@@ -776,9 +921,15 @@ bones/3/rotation = Quaternion(0.0469459, 1.27529e-17, 2.16744e-17, 0.998897)
 bones/4/rotation = Quaternion(-0.42148, -2.18918e-23, -9.35874e-17, 0.906838)
 bones/5/rotation = Quaternion(-0.418558, -1.09296e-23, -9.29385e-17, 0.90819)
 bones/8/rotation = Quaternion(-0.0105366, 3.6573e-08, -0.212012, 0.97721)
+bones/8/scale = Vector3(1, 1, 1)
 bones/9/rotation = Quaternion(0.000121731, -7.07898e-08, 0.00244944, 0.999997)
+bones/11/rotation = Quaternion(0.0127875, 7.41878e-09, -0.847367, 0.530854)
+bones/11/scale = Vector3(1, 1, 1)
 bones/12/rotation = Quaternion(-0.0105366, -3.6573e-08, 0.212012, 0.97721)
+bones/12/scale = Vector3(1, 1, 1)
 bones/13/rotation = Quaternion(0.000121731, 7.07898e-08, -0.00244944, 0.999997)
+bones/13/scale = Vector3(1, 1, 1)
+bones/14/scale = Vector3(1, 1, 1)
 bones/15/rotation = Quaternion(-0.0350315, -0.0884289, 0.988896, 0.114181)
 bones/18/rotation = Quaternion(0.812464, -6.95005e-08, -9.68533e-08, 0.583012)
 bones/19/rotation = Quaternion(0.00225576, -2.38418e-07, -1.07563e-09, 0.999997)
@@ -791,6 +942,17 @@ surface_material_override/0 = ExtResource("4_0kk71")
 
 [node name="Vert_001" parent="player/Armature/Skeleton3D" index="1"]
 surface_material_override/0 = SubResource("StandardMaterial3D_ghj7y")
+
+[node name="BoneAttachment3D" type="BoneAttachment3D" parent="player/Armature/Skeleton3D" index="2"]
+transform = Transform3D(0.0245031, 0.999699, 0.00121781, -0.998467, 0.0245333, -0.0496219, -0.0496369, -5.41819e-08, 0.998767, 0.843557, 1.63555, 0.0128213)
+bone_name = "Hand_R"
+bone_idx = 14
+
+[node name="Slangshot" type="AnimatedSprite3D" parent="player/Armature/Skeleton3D/BoneAttachment3D"]
+transform = Transform3D(1.80979, 0.114796, 0.843492, -0.833927, -0.15887, 1.81089, 0.170944, -1.99037, -0.0958952, 0.0244896, 0.190201, -0.121208)
+visible = false
+sprite_frames = SubResource("SpriteFrames_7woet")
+frame_progress = 0.629152
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
