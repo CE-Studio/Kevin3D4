@@ -1,7 +1,7 @@
 extends StaticBody3D
 class_name Enemy
 
-
+@onready var timer = $Timer
 var health:int
 var mainHit:CollisionShape3D  # The main hitbox that hurts the player
 var stompHit:Area3D # The secondary hitbox that the player can hit to deal damage
@@ -18,7 +18,8 @@ func init(newHP:int):
 
 
 func _process(delta):
-	pass
+	if not $Timer.is_stopped():
+			pass
 
 
 func on_player_collision(body:Node3D): # This function is connected to StompArea's body_entered signal
@@ -36,4 +37,10 @@ func on_player_collision(body:Node3D): # This function is connected to StompArea
 		h.finished.connect(h.queue_free)
 		get_parent().add_child(h)
 		h.play()
-		queue_free()
+		timer.start()
+	
+
+
+func _on_timer_timeout():
+	queue_free()
+	pass # Replace with function body.
