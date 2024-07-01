@@ -2,7 +2,7 @@
 
 [ext_resource type="MeshLibrary" uid="uid://i125w3qc6j8c" path="res://Scenes/3DTilemaps/RealL1MeshLib.tres" id="2_v4hei"]
 [ext_resource type="PackedScene" uid="uid://8iobt4o8k61u" path="res://Scenes/Player.tscn" id="3_qaakx"]
-[ext_resource type="PackedScene" uid="uid://cywi2788uytw5" path="res://Scenes/checkpoint.tscn" id="4_f44a5"]
+[ext_resource type="PackedScene" path="res://Scenes/checkpoint.tscn" id="4_f44a5"]
 [ext_resource type="PackedScene" uid="uid://byx5litoy380f" path="res://Scenes/enviro.tscn" id="4_lw5h3"]
 [ext_resource type="PackedScene" uid="uid://dgknntmd5h60" path="res://Scenes/general_killzone.tscn" id="5_5kfth"]
 

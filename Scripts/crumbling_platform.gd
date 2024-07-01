@@ -11,7 +11,7 @@ func _ready():
 
 func _process(delta):
 	if not $Timer.is_stopped():
-		$MeshInstance3D.mesh.material.set_shader_parameter("FloatParameter", 0.1/$Timer.time_left )
+		$MeshInstance3D.mesh.material.set_shader_parameter("FloatParameter", 0.3/$Timer.time_left )
 	if AreaNotExist:
 		$Area3D.monitoring = false
 		$Area3D/CollisionShape3D2.disabled = true
