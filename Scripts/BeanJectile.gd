@@ -1,4 +1,5 @@
-extends Node3D
+extends Area3D
+class_name Bean
 
 const SPEED = 40.0
 

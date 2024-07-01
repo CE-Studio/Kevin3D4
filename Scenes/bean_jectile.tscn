@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://cryybw8bvqef8"]
+[gd_scene load_steps=13 format=3 uid="uid://cryybw8bvqef8"]
 
 [ext_resource type="Script" path="res://Scripts/BeanJectile.gd" id="1_7ftp6"]
 [ext_resource type="Texture2D" uid="uid://ckwu4s2rt1fhb" path="res://Assets/Textures/bean.png" id="2_h6lc3"]
@@ -67,7 +67,10 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="BeanJectile" type="Node3D"]
+[sub_resource type="SphereShape3D" id="SphereShape3D_h5ux6"]
+radius = 0.1
+
+[node name="BeanJectile" type="Area3D"]
 script = ExtResource("1_7ftp6")
 
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
@@ -80,5 +83,8 @@ speed_scale = 5.0
 target_position = Vector3(0, 0, -5)
 
 [node name="Timer" type="Timer" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_h5ux6")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

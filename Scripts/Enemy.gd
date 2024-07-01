@@ -1,4 +1,4 @@
-extends StaticBody3D
+extends Area3D
 class_name Enemy
 
 @onready var timer = $Timer
@@ -32,6 +32,10 @@ func on_player_collision(body:Node3D): # This function is connected to StompArea
 		else:
 			print("I kill you now")
 			Player.instance.isDead = true
+	death()
+	
+	
+func death():
 	if health <= 0:
 		var h := AudioStreamPlayer3D.new()
 		h.stream = preload("res://Assets/Sound Effects/aaaaaaaaaaaaaaaaaaaaa.mp3")
@@ -39,9 +43,26 @@ func on_player_collision(body:Node3D): # This function is connected to StompArea
 		get_parent().add_child(h)
 		h.play()
 		timer.start()
-	
-
 
 func _on_timer_timeout():
 	queue_free()
+	pass # Replace with function body
+	
+	
+
+func _on_area_entered(area):
+
+	if area is Bean:
+		health -=1
+		
+		death()
+
+
+func _on_body_entered(body):
+	print("ouchie")
+	if body is Bean:
+		health -=1
+		
+		death()
+		
 	pass # Replace with function body.

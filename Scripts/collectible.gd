@@ -1,5 +1,4 @@
 extends Area3D
-class_name Bean
 @onready var main = $"."
 @onready var sprite = $Sprite3D
 @onready var shape = $CollisionShape3D
