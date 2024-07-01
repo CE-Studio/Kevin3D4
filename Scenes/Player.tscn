@@ -1,4 +1,4 @@
-[gd_scene load_steps=76 format=3 uid="uid://8iobt4o8k61u"]
+[gd_scene load_steps=78 format=3 uid="uid://8iobt4o8k61u"]
 
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_rk3cd"]
 [ext_resource type="AudioStream" uid="uid://bqva2yr82ot7d" path="res://Assets/Sound Effects/IN.wav" id="2_gmnt1"]
@@ -17,6 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://c8pfku2ngxid8" path="res://Assets/Textures/reticle.png" id="12_q2uw1"]
 [ext_resource type="Texture2D" uid="uid://ckwu4s2rt1fhb" path="res://Assets/Textures/bean.png" id="16_rqxdb"]
 [ext_resource type="Script" path="res://Scripts/Pause.gd" id="17_t16mw"]
+[ext_resource type="Script" path="res://Scripts/Death Screen.gd" id="18_61t5k"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_kp3bk"]
 radius = 0.331573
@@ -889,6 +890,9 @@ _data = {
 "UIBeanSpin": SubResource("Animation_bll68")
 }
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x4nsm"]
+bg_color = Color(0.552941, 0, 0, 0.439216)
+
 [node name="Player" type="CharacterBody3D"]
 script = ExtResource("1_rk3cd")
 
@@ -1026,6 +1030,7 @@ mesh = SubResource("PlaneMesh_cu1vt")
 skeleton = NodePath("../RayCast3D")
 
 [node name="Aiming" type="Control" parent="."]
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -1083,6 +1088,7 @@ text = "0"
 
 [node name="Panel" type="Panel" parent="."]
 process_mode = 3
+visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -1125,6 +1131,32 @@ grow_vertical = 2
 rotation = 0.0872665
 text = "rezoom it plz kthx"
 
+[node name="Death Screen" type="Panel" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_x4nsm")
+script = ExtResource("18_61t5k")
+
+[node name="Label" type="Label" parent="Death Screen"]
+layout_mode = 0
+offset_left = 314.0
+offset_top = 244.0
+offset_right = 471.0
+offset_bottom = 265.0
+rotation = -0.322088
+scale = Vector2(3.19444, 5.63418)
+text = "Skill Issue?"
+
+[node name="Button" type="Button" parent="Death Screen"]
+layout_mode = 0
+offset_left = 587.0
+offset_top = 325.0
+offset_right = 901.0
+offset_bottom = 354.0
+rotation = 0.336632
+text = "Death is not permanent"
+
 [connection signal="pressed" from="Panel/Button" to="Panel" method="pauseUnpause"]
+[connection signal="pressed" from="Death Screen/Button" to="Death Screen" method="_on_button_pressed"]
 
 [editable path="player"]

@@ -39,6 +39,7 @@ static var beanos:int = 0:
 static var instance:Player
 var target_position = Vector3(1,1, .5)
 var start_position = Vector3.ZERO
+var isDead := false
 
 @onready var djumpEffect:GPUParticles3D = $"Double Jump Effect"
 @onready var sprintEffect:GPUParticles3D = $Sprint
@@ -136,14 +137,19 @@ func _physics_process(delta):
 			
 	
 	if position.y < -100:
-		position = spawnpoint
-		velocity = Vector3.ZERO
-		animstate = anims.IDLE
+		isDead = true
 	
 	move_and_slide()
 
 
 func _process(delta):
+	print(spawnpoint)
+	
+	if isDead:
+		Engine.time_scale = 0.4 
+	
+	
+	
 	if Input.is_action_pressed("Camera"):
 		animstate = anims.SHOOTIN
 	
@@ -183,3 +189,6 @@ func _input(event):
 		
 	if event.is_action_released("Camera"):
 		$SpringArm3D/AnimationPlayer.play("ComeBack")
+
+
+

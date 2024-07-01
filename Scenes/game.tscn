@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://dnjj0sh3xilgo" path="res://Assets/Textures/Skybox.png" id="1_yl01g"]
 [ext_resource type="PackedScene" uid="uid://bv4ebjfyp0y6f" path="res://Scenes/enemy.tscn" id="2_5y8gm"]
 [ext_resource type="PackedScene" uid="uid://d25ke11gv527s" path="res://Scenes/box.tscn" id="3_i4ysk"]
-[ext_resource type="PackedScene" uid="uid://334cmavflup3" path="res://Scenes/switch.tscn" id="5_nojmr"]
+[ext_resource type="PackedScene" path="res://Scenes/switch.tscn" id="5_nojmr"]
 [ext_resource type="PackedScene" uid="uid://bqlwlkimr6gje" path="res://Scenes/collectible.tscn" id="6_k0kv0"]
 [ext_resource type="PackedScene" uid="uid://be74smfh0hkry" path="res://Scenes/crumbling_platform.tscn" id="6_v8lna"]
 
