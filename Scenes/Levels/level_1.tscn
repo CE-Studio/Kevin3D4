@@ -1,10 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://drk0udsokfi0f"]
+[gd_scene load_steps=7 format=3 uid="uid://drk0udsokfi0f"]
 
 [ext_resource type="MeshLibrary" uid="uid://i125w3qc6j8c" path="res://Scenes/3DTilemaps/RealL1MeshLib.tres" id="2_v4hei"]
 [ext_resource type="PackedScene" uid="uid://8iobt4o8k61u" path="res://Scenes/Player.tscn" id="3_qaakx"]
-[ext_resource type="PackedScene" path="res://Scenes/checkpoint.tscn" id="4_f44a5"]
+[ext_resource type="PackedScene" uid="uid://cywi2788uytw5" path="res://Scenes/checkpoint.tscn" id="4_f44a5"]
 [ext_resource type="PackedScene" uid="uid://byx5litoy380f" path="res://Scenes/enviro.tscn" id="4_lw5h3"]
 [ext_resource type="PackedScene" uid="uid://dgknntmd5h60" path="res://Scenes/general_killzone.tscn" id="5_5kfth"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2m68u"]
 
 [node name="Level1" type="Node3D"]
 
@@ -17,7 +19,7 @@ data = {
 metadata/_editor_floor_ = Vector3(0, 1, 0)
 
 [node name="Player" parent="." instance=ExtResource("3_qaakx")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.853895, 17.3094, -7.1423)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.853895, 4.3094, -7.1423)
 
 [node name="Checkpoint" parent="." instance=ExtResource("4_f44a5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 163.733, 9, 8.8783)
@@ -26,3 +28,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 163.733, 9, 8.8783)
 
 [node name="General Killzone" parent="." instance=ExtResource("5_5kfth")]
 transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, -27, -48.8736, 82)
+Killzone = SubResource("BoxShape3D_2m68u")

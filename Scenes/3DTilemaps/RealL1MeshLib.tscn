@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://mh1oimwfbwof"]
+[gd_scene load_steps=43 format=3 uid="uid://mh1oimwfbwof"]
 
 [ext_resource type="Texture2D" uid="uid://clsleqekifnc0" path="res://Assets/Textures/LevelTextures/L1Tiles0.png" id="1_dga82"]
 [ext_resource type="Texture2D" uid="uid://3gmec1n4ny7i" path="res://Assets/Textures/LevelTextures/L1Tiles1.png" id="2_y3mbo"]
@@ -85,6 +85,8 @@ albedo_texture = ExtResource("18_qo408")
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_0i1di"]
 material = SubResource("StandardMaterial3D_knfth")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_yy7vp"]
 
 [node name="RealL1MeshLib" type="Node3D"]
 
@@ -263,3 +265,4 @@ mesh = SubResource("PlaneMesh_0i1di")
 
 [node name="General Killzone" parent="Water" instance=ExtResource("19_riff6")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, -1.1, 0)
+Killzone = SubResource("BoxShape3D_yy7vp")
