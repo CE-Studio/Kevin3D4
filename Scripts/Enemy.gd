@@ -31,6 +31,7 @@ func on_player_collision(body:Node3D): # This function is connected to StompArea
 			print("Ouch!")
 		else:
 			print("I kill you now")
+			Player.instance.isDead = true
 	if health <= 0:
 		var h := AudioStreamPlayer3D.new()
 		h.stream = preload("res://Assets/Sound Effects/aaaaaaaaaaaaaaaaaaaaa.mp3")

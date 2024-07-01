@@ -14,6 +14,7 @@ enum anims {
 	DJUMP = 4,
 	DIVE = 5,
 	SHOOTIN = 6,
+	DYIN = 7,
 }
 var animstate:anims = anims.IDLE
 
@@ -39,6 +40,7 @@ static var beanos:int = 0:
 static var instance:Player
 var target_position = Vector3(1,1, .5)
 var start_position = Vector3.ZERO
+var isDead := false
 
 @onready var djumpEffect:GPUParticles3D = $"Double Jump Effect"
 @onready var sprintEffect:GPUParticles3D = $Sprint
@@ -136,14 +138,21 @@ func _physics_process(delta):
 			
 	
 	if position.y < -100:
-		position = spawnpoint
-		velocity = Vector3.ZERO
-		animstate = anims.IDLE
+		isDead = true
 	
 	move_and_slide()
 
 
 func _process(delta):
+
+	
+	if isDead:
+		Engine.time_scale = 0.4 
+		animstate = anims.DYIN
+		
+	
+	
+	
 	if Input.is_action_pressed("Camera"):
 		animstate = anims.SHOOTIN
 	
@@ -183,3 +192,14 @@ func _input(event):
 		
 	if event.is_action_released("Camera"):
 		$SpringArm3D/AnimationPlayer.play("ComeBack")
+	
+
+func respawn():
+	_notifyReset(get_tree().get_root())
+
+func _notifyReset(obj:Node):
+	if obj.has_method(&"_respawn"):
+		obj._respawn()
+	for i in obj.get_children():
+		_notifyReset(i)
+

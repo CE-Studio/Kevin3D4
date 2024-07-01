@@ -1,4 +1,4 @@
-[gd_scene load_steps=76 format=3 uid="uid://8iobt4o8k61u"]
+[gd_scene load_steps=82 format=3 uid="uid://8iobt4o8k61u"]
 
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_rk3cd"]
 [ext_resource type="AudioStream" uid="uid://bqva2yr82ot7d" path="res://Assets/Sound Effects/IN.wav" id="2_gmnt1"]
@@ -17,6 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://c8pfku2ngxid8" path="res://Assets/Textures/reticle.png" id="12_q2uw1"]
 [ext_resource type="Texture2D" uid="uid://ckwu4s2rt1fhb" path="res://Assets/Textures/bean.png" id="16_rqxdb"]
 [ext_resource type="Script" path="res://Scripts/Pause.gd" id="17_t16mw"]
+[ext_resource type="Script" path="res://Scripts/Death Screen.gd" id="18_lqant"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_kp3bk"]
 radius = 0.331573
@@ -357,6 +358,20 @@ tracks/15/keys = {
 "update": 1,
 "values": [false]
 }
+tracks/16/type = "rotation_3d"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("player/Armature/Skeleton3D:Shoulder_R")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = PackedFloat64Array(0, 1, 0.0127875, 7.41878e-09, -0.847367, 0.530854)
+tracks/17/type = "rotation_3d"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("player/Armature/Skeleton3D:Shoulder_L")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = PackedFloat64Array(0, 1, 0.0127875, -7.41878e-09, 0.847367, 0.530854)
 
 [sub_resource type="Animation" id="Animation_q0fne"]
 resource_name = "Shootin"
@@ -728,8 +743,49 @@ tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = PackedFloat64Array(0, 1, -0.083525, 0.000474975, 0.000474975, 0.996475)
 
+[sub_resource type="Animation" id="Animation_wsop6"]
+resource_name = "Death"
+length = 0.5
+loop_mode = 2
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("player/Armature/Skeleton3D:Thigh_L")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat64Array(0, 1, -0.0839494, 0.0519439, 0, 0.5, 1, -10, -10, 0)
+tracks/1/type = "position_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("player/Armature/Skeleton3D:Thigh_R")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat64Array(0, 1, 0.0839494, 0.0519439, 0, 0.5, 1, 10, -10, 0)
+tracks/2/type = "rotation_3d"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("player/Armature/Skeleton3D:Shoulder_R")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = PackedFloat64Array(0, 1, 0.0127875, 7.41878e-09, -0.847367, 0.530854, 0.2, 1, 0.67043, -0.424489, 0.531166, -0.296976, 0.5, 1, 0.176539, -0.102661, -0.82566, 0.52591)
+tracks/3/type = "rotation_3d"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("player/Armature/Skeleton3D:Shoulder_L")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = PackedFloat64Array(0, 1, 0.0127875, -7.41878e-09, 0.847367, 0.530854, 0.2, 1, 0.601513, 0.370829, 0.585142, 0.39784, 0.5, 1, 0.733821, 0.46327, -0.437709, -0.235158)
+tracks/4/type = "rotation_3d"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("player/Armature/Skeleton3D:Root")
+tracks/4/interp = 2
+tracks/4/loop_wrap = true
+tracks/4/keys = PackedFloat64Array(0.02598, 1, 0, 0, 0, 1, 0.2, 1, 0.933805, 0, 0, 0.357782, 0.5, 1, -0.306966, 0, 0, 0.95172)
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_pl0xx"]
 _data = {
+"Death": SubResource("Animation_wsop6"),
 "JUMP": SubResource("Animation_ejc4o"),
 "RESET": SubResource("Animation_mlyph"),
 "Shootin": SubResource("Animation_q0fne"),
@@ -739,6 +795,9 @@ _data = {
 "run": SubResource("Animation_lx1po"),
 "walk": SubResource("Animation_qgcht")
 }
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_2cx44"]
+animation = &"Death"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_dc18r"]
 animation = &"JUMP"
@@ -819,7 +878,17 @@ advance_expression = "animstate == 6"
 advance_mode = 2
 advance_expression = "animstate != 6"
 
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_gk4xq"]
+advance_mode = 2
+advance_expression = "animstate == 7"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_llmxd"]
+advance_mode = 2
+advance_expression = "animstate != 7"
+
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_4uom6"]
+states/Death/node = SubResource("AnimationNodeAnimation_2cx44")
+states/Death/position = Vector2(660, -9)
 states/JUMP/node = SubResource("AnimationNodeAnimation_dc18r")
 states/JUMP/position = Vector2(315, -65)
 states/RESET/node = SubResource("AnimationNodeAnimation_dj41o")
@@ -837,7 +906,7 @@ states/run/node = SubResource("AnimationNodeAnimation_tmiyv")
 states/run/position = Vector2(566, 28)
 states/walk/node = SubResource("AnimationNodeAnimation_jpsug")
 states/walk/position = Vector2(526, -71)
-transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_i3ng5"), "idle", "doublejump", SubResource("AnimationNodeStateMachineTransition_5kerv"), "idle", "run", SubResource("AnimationNodeStateMachineTransition_0ajav"), "idle", "walk", SubResource("AnimationNodeStateMachineTransition_jinea"), "RESET", "idle", SubResource("AnimationNodeStateMachineTransition_gx7cy"), "doublejump", "RESET", SubResource("AnimationNodeStateMachineTransition_5in11"), "walk", "RESET", SubResource("AnimationNodeStateMachineTransition_ccnmi"), "run", "RESET", SubResource("AnimationNodeStateMachineTransition_xnnvx"), "idle", "JUMP", SubResource("AnimationNodeStateMachineTransition_rgeum"), "JUMP", "RESET", SubResource("AnimationNodeStateMachineTransition_b5onr"), "idle", "dive", SubResource("AnimationNodeStateMachineTransition_6v1d4"), "dive", "RESET", SubResource("AnimationNodeStateMachineTransition_5vsgr"), "idle", "Shootin", SubResource("AnimationNodeStateMachineTransition_3u3fp"), "Shootin", "RESET", SubResource("AnimationNodeStateMachineTransition_rkaew")]
+transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_i3ng5"), "idle", "doublejump", SubResource("AnimationNodeStateMachineTransition_5kerv"), "idle", "run", SubResource("AnimationNodeStateMachineTransition_0ajav"), "idle", "walk", SubResource("AnimationNodeStateMachineTransition_jinea"), "RESET", "idle", SubResource("AnimationNodeStateMachineTransition_gx7cy"), "doublejump", "RESET", SubResource("AnimationNodeStateMachineTransition_5in11"), "walk", "RESET", SubResource("AnimationNodeStateMachineTransition_ccnmi"), "run", "RESET", SubResource("AnimationNodeStateMachineTransition_xnnvx"), "idle", "JUMP", SubResource("AnimationNodeStateMachineTransition_rgeum"), "JUMP", "RESET", SubResource("AnimationNodeStateMachineTransition_b5onr"), "idle", "dive", SubResource("AnimationNodeStateMachineTransition_6v1d4"), "dive", "RESET", SubResource("AnimationNodeStateMachineTransition_5vsgr"), "idle", "Shootin", SubResource("AnimationNodeStateMachineTransition_3u3fp"), "Shootin", "RESET", SubResource("AnimationNodeStateMachineTransition_rkaew"), "idle", "Death", SubResource("AnimationNodeStateMachineTransition_gk4xq"), "Death", "RESET", SubResource("AnimationNodeStateMachineTransition_llmxd")]
 graph_offset = Vector2(49, -135)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ym3iy"]
@@ -888,6 +957,9 @@ _data = {
 "RESET": SubResource("Animation_snirj"),
 "UIBeanSpin": SubResource("Animation_bll68")
 }
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nkv7c"]
+bg_color = Color(0.501961, 0.0745098, 0, 0.486275)
 
 [node name="Player" type="CharacterBody3D"]
 script = ExtResource("1_rk3cd")
@@ -964,6 +1036,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.78214, 0)
 bones/3/rotation = Quaternion(0.0469459, 1.27529e-17, 2.16744e-17, 0.998897)
 bones/4/rotation = Quaternion(-0.42148, -2.18918e-23, -9.35874e-17, 0.906838)
 bones/5/rotation = Quaternion(-0.418558, -1.09296e-23, -9.29385e-17, 0.90819)
+bones/7/rotation = Quaternion(0.0127875, -7.41878e-09, 0.847367, 0.530854)
+bones/7/scale = Vector3(1, 1, 1)
 bones/8/rotation = Quaternion(-0.0105366, 3.6573e-08, -0.212012, 0.97721)
 bones/8/scale = Vector3(1, 1, 1)
 bones/9/rotation = Quaternion(0.000121731, -7.07898e-08, 0.00244944, 0.999997)
@@ -975,6 +1049,7 @@ bones/13/rotation = Quaternion(0.000121731, 7.07898e-08, -0.00244944, 0.999997)
 bones/13/scale = Vector3(1, 1, 1)
 bones/14/scale = Vector3(1, 1, 1)
 bones/15/rotation = Quaternion(-0.0350315, -0.0884289, 0.988896, 0.114181)
+bones/15/scale = Vector3(0.999998, 1, 0.999999)
 bones/18/rotation = Quaternion(0.812464, -6.95005e-08, -9.68533e-08, 0.583012)
 bones/19/rotation = Quaternion(0.00225576, -2.38418e-07, -1.07563e-09, 0.999997)
 bones/20/rotation = Quaternion(-0.00358084, 5.06265e-13, 2.56123e-09, 0.999994)
@@ -1032,6 +1107,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 1
 
 [node name="CenterContainer" type="CenterContainer" parent="Aiming"]
 layout_mode = 1
@@ -1083,6 +1159,7 @@ text = "0"
 
 [node name="Panel" type="Panel" parent="."]
 process_mode = 3
+visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -1125,6 +1202,35 @@ grow_vertical = 2
 rotation = 0.0872665
 text = "rezoom it plz kthx"
 
+[node name="Death Screen" type="Panel" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_nkv7c")
+script = ExtResource("18_lqant")
+
+[node name="Label" type="Label" parent="Death Screen"]
+layout_mode = 0
+offset_left = 314.0
+offset_top = 244.0
+offset_right = 471.0
+offset_bottom = 265.0
+rotation = -0.322088
+scale = Vector2(3.19444, 5.63418)
+text = "Skill Issue?"
+
+[node name="Button" type="Button" parent="Death Screen"]
+layout_mode = 0
+offset_left = 587.0
+offset_top = 325.0
+offset_right = 901.0
+offset_bottom = 354.0
+rotation = 0.336632
+text = "Death is not permanent"
+
 [connection signal="pressed" from="Panel/Button" to="Panel" method="pauseUnpause"]
+[connection signal="pressed" from="Death Screen/Button" to="Death Screen" method="_on_button_pressed"]
 
 [editable path="player"]
