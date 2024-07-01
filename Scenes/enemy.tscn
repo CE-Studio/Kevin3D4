@@ -18,7 +18,7 @@ height = 1.0
 height = 0.5
 radius = 0.4
 
-[node name="Enemy" type="StaticBody3D"]
+[node name="Enemy" type="Area3D"]
 script = ExtResource("1_ypvxk")
 
 [node name="Timer" type="Timer" parent="."]
@@ -38,5 +38,7 @@ disabled = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.318364, 0)
 shape = SubResource("CylinderShape3D_ixoq8")
 
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="body_entered" from="StompArea" to="." method="on_player_collision"]
