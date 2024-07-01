@@ -1,8 +1,48 @@
-[gd_scene load_steps=7 format=3 uid="uid://hqroyuuds4po"]
+[gd_scene load_steps=13 format=3 uid="uid://hqroyuuds4po"]
 
 [ext_resource type="Script" path="res://Scripts/Enemy.gd" id="1_ypvxk"]
 [ext_resource type="Shader" uid="uid://dqcbpkck1cny8" path="res://Assets/Shaders/crumbling_platform.tres" id="2_6wadm"]
+[ext_resource type="Texture2D" uid="uid://crtyq1t0s2xi4" path="res://Assets/Textures/enem2.png" id="2_7t3pq"]
 [ext_resource type="PackedScene" uid="uid://dd2sj3qyx7rs7" path="res://Assets/Models/enemy.glb" id="2_txoyg"]
+[ext_resource type="Texture2D" uid="uid://dbrmpq78lq34n" path="res://Assets/Textures/enem1.png" id="3_cr2gu"]
+
+[sub_resource type="Animation" id="Animation_o6hw6"]
+resource_name = "new_animation"
+length = 5.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D2:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat64Array(0, 5),
+"transitions": PackedFloat64Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -58)]
+}
+
+[sub_resource type="Animation" id="Animation_cq160"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D2:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat64Array(0),
+"transitions": PackedFloat64Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4sakl"]
+_data = {
+"RESET": SubResource("Animation_cq160"),
+"new_animation": SubResource("Animation_o6hw6")
+}
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_utlsw"]
 height = 1.0
@@ -11,13 +51,35 @@ height = 1.0
 height = 0.5
 radius = 0.4
 
+[sub_resource type="ViewportTexture" id="ViewportTexture_x7qc5"]
+viewport_path = NodePath("Node2D")
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_6lxww"]
+resource_local_to_scene = true
 render_priority = 0
 shader = ExtResource("2_6wadm")
 shader_parameter/FloatParameter = 0.0
+shader_parameter/Albedo = SubResource("ViewportTexture_x7qc5")
 
 [node name="Enemy" type="Area3D"]
 script = ExtResource("1_ypvxk")
+
+[node name="Node2D" type="SubViewport" parent="."]
+size = Vector2i(58, 58)
+
+[node name="Sprite2D2" type="Sprite2D" parent="Node2D"]
+texture = ExtResource("2_7t3pq")
+centered = false
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D"]
+texture = ExtResource("3_cr2gu")
+centered = false
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Node2D"]
+libraries = {
+"": SubResource("AnimationLibrary_4sakl")
+}
+autoplay = "new_animation"
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.7
