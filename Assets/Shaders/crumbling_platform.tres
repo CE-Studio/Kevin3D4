@@ -1,6 +1,7 @@
 [gd_resource type="VisualShader" load_steps=13 format=3 uid="uid://dqcbpkck1cny8"]
 
 [sub_resource type="VisualShaderNodeTexture" id="VisualShaderNodeTexture_bpbqe"]
+source = 5
 
 [sub_resource type="VisualShaderNodeTexture2DParameter" id="VisualShaderNodeTexture2DParameter_nx2vr"]
 parameter_name = "Albedo"
@@ -36,7 +37,6 @@ render_mode blend_mix, depth_draw_opaque, cull_back, diffuse_lambert, specular_s
 
 uniform float FloatParameter;
 uniform sampler2D Albedo : source_color;
-uniform sampler2D tex_frg_2;
 
 
 
@@ -99,8 +99,9 @@ void fragment() {
 	vec2 n_out4p0 = UV;
 
 
+	vec4 n_out2p0;
 // Texture2D:2
-	vec4 n_out2p0 = texture(tex_frg_2, n_out4p0);
+	n_out2p0 = texture(Albedo, n_out4p0);
 
 
 // Output:0
@@ -109,6 +110,7 @@ void fragment() {
 
 }
 "
+graph_offset = Vector2(-397.975, -94.9757)
 nodes/vertex/0/position = Vector2(1320, 160)
 nodes/vertex/2/node = SubResource("VisualShaderNodeInput_h2eds")
 nodes/vertex/2/position = Vector2(280, 500)
@@ -131,7 +133,7 @@ nodes/vertex/10/position = Vector2(20, 60)
 nodes/vertex/connections = PackedInt32Array(3, 0, 6, 0, 4, 0, 6, 1, 5, 0, 6, 2, 6, 0, 7, 0, 2, 0, 7, 1, 7, 0, 0, 0, 9, 0, 3, 0, 9, 0, 4, 0, 9, 0, 5, 0, 2, 0, 9, 1, 8, 0, 9, 0, 10, 0, 5, 2, 10, 0, 4, 2, 10, 0, 3, 2)
 nodes/fragment/0/position = Vector2(640, 140)
 nodes/fragment/2/node = SubResource("VisualShaderNodeTexture_bpbqe")
-nodes/fragment/2/position = Vector2(240, 40)
+nodes/fragment/2/position = Vector2(240, 120)
 nodes/fragment/3/node = SubResource("VisualShaderNodeTexture2DParameter_nx2vr")
 nodes/fragment/3/position = Vector2(-440, 0)
 nodes/fragment/4/node = SubResource("VisualShaderNodeInput_yyaap")

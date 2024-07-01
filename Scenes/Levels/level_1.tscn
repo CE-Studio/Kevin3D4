@@ -1,31 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://drk0udsokfi0f"]
+[gd_scene load_steps=5 format=3 uid="uid://drk0udsokfi0f"]
 
-[ext_resource type="Texture2D" uid="uid://dnjj0sh3xilgo" path="res://Assets/Textures/Skybox.png" id="1_crp4x"]
 [ext_resource type="MeshLibrary" uid="uid://i125w3qc6j8c" path="res://Scenes/3DTilemaps/RealL1MeshLib.tres" id="2_v4hei"]
 [ext_resource type="PackedScene" uid="uid://8iobt4o8k61u" path="res://Scenes/Player.tscn" id="3_qaakx"]
-[ext_resource type="PackedScene" uid="uid://cywi2788uytw5" path="res://Scenes/checkpoint.tscn" id="4_f44a5"]
-
-[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_gy6oo"]
-panorama = ExtResource("1_crp4x")
-
-[sub_resource type="Sky" id="Sky_2srni"]
-sky_material = SubResource("PanoramaSkyMaterial_gy6oo")
-
-[sub_resource type="Environment" id="Environment_fk0rt"]
-background_mode = 2
-sky = SubResource("Sky_2srni")
-ambient_light_source = 2
-ambient_light_color = Color(0.615686, 0.615686, 0.615686, 1)
-ambient_light_energy = 0.15
+[ext_resource type="PackedScene" path="res://Scenes/checkpoint.tscn" id="4_f44a5"]
+[ext_resource type="PackedScene" uid="uid://byx5litoy380f" path="res://Scenes/enviro.tscn" id="4_lw5h3"]
 
 [node name="Level1" type="Node3D"]
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_fk0rt")
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.866024, -0.433016, 0.250001, 0, 0.499998, 0.866026, -0.500003, 0.749999, -0.43301, 0, 0, 0)
-shadow_enabled = true
 
 [node name="GridMap" type="GridMap" parent="."]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
@@ -40,3 +20,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.853895, 17.3094, -7.1423)
 
 [node name="Checkpoint" parent="." instance=ExtResource("4_f44a5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 163.733, 9, 8.8783)
+
+[node name="enviro" parent="." instance=ExtResource("4_lw5h3")]
