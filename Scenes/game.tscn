@@ -1,19 +1,23 @@
-[gd_scene load_steps=11 format=3 uid="uid://bjtuexpc3ovab"]
+[gd_scene load_steps=13 format=3 uid="uid://bjtuexpc3ovab"]
 
 [ext_resource type="AudioStream" uid="uid://diefur77d32jo" path="res://Assets/Music/Title.wav" id="1_7lcl3"]
 [ext_resource type="PackedScene" uid="uid://8iobt4o8k61u" path="res://Scenes/Player.tscn" id="1_hr3a5"]
 [ext_resource type="PackedScene" uid="uid://hqroyuuds4po" path="res://Scenes/enemy.tscn" id="2_5y8gm"]
-[ext_resource type="PackedScene" path="res://Scenes/box.tscn" id="3_i4ysk"]
-[ext_resource type="PackedScene" uid="uid://334cmavflup3" path="res://Scenes/switch.tscn" id="5_nojmr"]
+[ext_resource type="PackedScene" uid="uid://d25ke11gv527s" path="res://Scenes/box.tscn" id="3_i4ysk"]
+[ext_resource type="PackedScene" path="res://Scenes/switch.tscn" id="5_nojmr"]
 [ext_resource type="PackedScene" uid="uid://bqlwlkimr6gje" path="res://Scenes/collectible.tscn" id="6_k0kv0"]
 [ext_resource type="PackedScene" uid="uid://be74smfh0hkry" path="res://Scenes/crumbling_platform.tscn" id="6_v8lna"]
 [ext_resource type="PackedScene" uid="uid://byx5litoy380f" path="res://Scenes/enviro.tscn" id="8_yp6d2"]
+[ext_resource type="PackedScene" uid="uid://clhjnqeuavh4s" path="res://Scenes/winnerbox.tscn" id="9_v7ae4"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_2msyu"]
 size = Vector2(25, 25)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_0kk0c"]
 size = Vector3(25, 1, 25)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_a5dwd"]
+size = Vector3(10, 10, 10)
 
 [node name="Game" type="Node3D"]
 
@@ -68,3 +72,7 @@ autoplay = true
 bus = &"Music"
 
 [node name="enviro" parent="." instance=ExtResource("8_yp6d2")]
+
+[node name="Winnerbox" parent="." instance=ExtResource("9_v7ae4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.11998, 3.92158, 10.0966)
+WinZone = SubResource("BoxShape3D_a5dwd")
