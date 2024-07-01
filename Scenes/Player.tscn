@@ -1225,7 +1225,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.78214, 0)
 
 [node name="Skeleton3D" parent="player/Armature" index="0"]
 bones/3/rotation = Quaternion(0.0469459, 1.27529e-17, 2.16744e-17, 0.998897)
-bones/3/scale = Vector3(1, 1, 1)
 bones/4/position = Vector3(2.18988e-19, 0.162917, -3.72529e-09)
 bones/4/rotation = Quaternion(-0.42148, -2.18918e-23, -9.35874e-17, 0.906838)
 bones/4/scale = Vector3(1, 1, 1)
@@ -1252,7 +1251,6 @@ bones/16/scale = Vector3(1, 1, 1)
 bones/17/rotation = Quaternion(-0.596658, -0.0390387, -0.318369, 0.735606)
 bones/17/scale = Vector3(1, 1, 1)
 bones/18/rotation = Quaternion(0.812464, -6.95005e-08, -9.68533e-08, 0.583012)
-bones/18/scale = Vector3(1, 1, 1)
 bones/19/rotation = Quaternion(0.00225576, -2.38418e-07, -1.07563e-09, 0.999997)
 bones/20/rotation = Quaternion(-0.00358084, 5.06265e-13, 2.56123e-09, 0.999994)
 bones/21/rotation = Quaternion(-0.0186974, -1.19188e-07, 1.56023e-08, 0.999825)
@@ -1339,6 +1337,7 @@ mouse_filter = 2
 
 [node name="Label" type="Label" parent="UI"]
 self_modulate = Color(1, 1, 1, 0.290196)
+layout_mode = 0
 offset_right = 817.0
 offset_bottom = 45.0
 text = "because browsers are annoying use ~ or 1 to pause without
