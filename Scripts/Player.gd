@@ -14,6 +14,7 @@ enum anims {
 	DJUMP = 4,
 	DIVE = 5,
 	SHOOTIN = 6,
+	DYIN = 7,
 }
 var animstate:anims = anims.IDLE
 
@@ -143,10 +144,11 @@ func _physics_process(delta):
 
 
 func _process(delta):
-	print(spawnpoint)
+
 	
 	if isDead:
 		Engine.time_scale = 0.4 
+		animstate = anims.DYIN
 		
 	
 	

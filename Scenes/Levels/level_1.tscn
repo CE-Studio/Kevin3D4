@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://drk0udsokfi0f"]
+[gd_scene load_steps=8 format=3 uid="uid://drk0udsokfi0f"]
 
 [ext_resource type="Texture2D" uid="uid://dnjj0sh3xilgo" path="res://Assets/Textures/Skybox.png" id="1_crp4x"]
 [ext_resource type="MeshLibrary" uid="uid://i125w3qc6j8c" path="res://Scenes/3DTilemaps/RealL1MeshLib.tres" id="2_v4hei"]
 [ext_resource type="PackedScene" uid="uid://8iobt4o8k61u" path="res://Scenes/Player.tscn" id="3_qaakx"]
+[ext_resource type="PackedScene" uid="uid://cywi2788uytw5" path="res://Scenes/checkpoint.tscn" id="4_f44a5"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_gy6oo"]
 panorama = ExtResource("1_crp4x")
@@ -36,3 +37,6 @@ metadata/_editor_floor_ = Vector3(0, 0, 0)
 
 [node name="Player" parent="." instance=ExtResource("3_qaakx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.853895, 17.3094, -7.1423)
+
+[node name="Checkpoint" parent="." instance=ExtResource("4_f44a5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 163.733, 9, 8.8783)
