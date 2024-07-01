@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://be74smfh0hkry"]
+[gd_scene load_steps=9 format=3 uid="uid://be74smfh0hkry"]
 
 [ext_resource type="Script" path="res://Scripts/crumbling_platform.gd" id="1_b6mdo"]
 [ext_resource type="Shader" uid="uid://dqcbpkck1cny8" path="res://Assets/Shaders/crumbling_platform.tres" id="2_cgxvl"]
 [ext_resource type="AudioStream" uid="uid://w3gug2qt1uo1" path="res://Assets/Sound Effects/Garry's Mod Ragdoll Sound.mp3" id="3_1siob"]
+[ext_resource type="Texture2D" uid="uid://durc3utviccja" path="res://Assets/Textures/platform.png" id="3_r6p77"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_44vn3"]
 size = Vector3(3, 1.5, 3)
@@ -11,6 +12,7 @@ size = Vector3(3, 1.5, 3)
 render_priority = 0
 shader = ExtResource("2_cgxvl")
 shader_parameter/FloatParameter = 0.0
+shader_parameter/Albedo = ExtResource("3_r6p77")
 
 [sub_resource type="BoxMesh" id="BoxMesh_4dtk8"]
 material = SubResource("ShaderMaterial_tehkk")

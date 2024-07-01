@@ -1,25 +1,13 @@
-[gd_scene load_steps=14 format=3 uid="uid://bjtuexpc3ovab"]
+[gd_scene load_steps=11 format=3 uid="uid://bjtuexpc3ovab"]
 
 [ext_resource type="AudioStream" uid="uid://diefur77d32jo" path="res://Assets/Music/Title.wav" id="1_7lcl3"]
 [ext_resource type="PackedScene" uid="uid://8iobt4o8k61u" path="res://Scenes/Player.tscn" id="1_hr3a5"]
-[ext_resource type="Texture2D" uid="uid://dnjj0sh3xilgo" path="res://Assets/Textures/Skybox.png" id="1_yl01g"]
-[ext_resource type="PackedScene" uid="uid://bv4ebjfyp0y6f" path="res://Scenes/enemy.tscn" id="2_5y8gm"]
-[ext_resource type="PackedScene" uid="uid://d25ke11gv527s" path="res://Scenes/box.tscn" id="3_i4ysk"]
-[ext_resource type="PackedScene" path="res://Scenes/switch.tscn" id="5_nojmr"]
+[ext_resource type="PackedScene" uid="uid://hqroyuuds4po" path="res://Scenes/enemy.tscn" id="2_5y8gm"]
+[ext_resource type="PackedScene" path="res://Scenes/box.tscn" id="3_i4ysk"]
+[ext_resource type="PackedScene" uid="uid://334cmavflup3" path="res://Scenes/switch.tscn" id="5_nojmr"]
 [ext_resource type="PackedScene" uid="uid://bqlwlkimr6gje" path="res://Scenes/collectible.tscn" id="6_k0kv0"]
 [ext_resource type="PackedScene" uid="uid://be74smfh0hkry" path="res://Scenes/crumbling_platform.tscn" id="6_v8lna"]
-
-[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_uri2l"]
-panorama = ExtResource("1_yl01g")
-
-[sub_resource type="Sky" id="Sky_2srni"]
-sky_material = SubResource("PanoramaSkyMaterial_uri2l")
-
-[sub_resource type="Environment" id="Environment_mtaqr"]
-background_mode = 2
-sky = SubResource("Sky_2srni")
-ambient_light_source = 2
-ambient_light_color = Color(0.615686, 0.615686, 0.615686, 1)
+[ext_resource type="PackedScene" uid="uid://byx5litoy380f" path="res://Scenes/enviro.tscn" id="8_yp6d2"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_2msyu"]
 size = Vector2(25, 25)
@@ -28,13 +16,6 @@ size = Vector2(25, 25)
 size = Vector3(25, 1, 25)
 
 [node name="Game" type="Node3D"]
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_mtaqr")
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
-shadow_enabled = true
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 
@@ -85,3 +66,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.5185, 5.4901, -2.34082)
 stream = ExtResource("1_7lcl3")
 autoplay = true
 bus = &"Music"
+
+[node name="enviro" parent="." instance=ExtResource("8_yp6d2")]
