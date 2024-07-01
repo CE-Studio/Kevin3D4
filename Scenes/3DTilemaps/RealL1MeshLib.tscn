@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://mh1oimwfbwof"]
+[gd_scene load_steps=42 format=3 uid="uid://mh1oimwfbwof"]
 
 [ext_resource type="Texture2D" uid="uid://clsleqekifnc0" path="res://Assets/Textures/LevelTextures/L1Tiles0.png" id="1_dga82"]
 [ext_resource type="Texture2D" uid="uid://3gmec1n4ny7i" path="res://Assets/Textures/LevelTextures/L1Tiles1.png" id="2_y3mbo"]
@@ -17,6 +17,8 @@
 [ext_resource type="Texture2D" uid="uid://5xu2yonbepcd" path="res://Assets/Textures/LevelTextures/L1Tiles7.png" id="15_t08w8"]
 [ext_resource type="ArrayMesh" uid="uid://dw87rqo7usced" path="res://Assets/Models/Gridmap/Platform Middle.obj" id="16_fprcp"]
 [ext_resource type="ArrayMesh" uid="uid://k12soum6s3ds" path="res://Assets/Models/Gridmap/Platform Edge.obj" id="17_pyw1m"]
+[ext_resource type="Texture2D" uid="uid://3sjvymr2lsmc" path="res://Assets/Textures/LevelTextures/L1Tiles8.png" id="18_qo408"]
+[ext_resource type="PackedScene" uid="uid://dgknntmd5h60" path="res://Scenes/general_killzone.tscn" id="19_riff6"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vrnhy"]
 albedo_texture = ExtResource("1_dga82")
@@ -77,6 +79,12 @@ albedo_color = Color(0.513726, 0.596078, 0.678431, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_tyi4p"]
 size = Vector3(2, 0.5, 2)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_knfth"]
+albedo_texture = ExtResource("18_qo408")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_0i1di"]
+material = SubResource("StandardMaterial3D_knfth")
 
 [node name="RealL1MeshLib" type="Node3D"]
 
@@ -248,3 +256,10 @@ surface_material_override/0 = SubResource("StandardMaterial3D_h4wvi")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PlatformEdge/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("BoxShape3D_tyi4p")
+
+[node name="Water" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4)
+mesh = SubResource("PlaneMesh_0i1di")
+
+[node name="General Killzone" parent="Water" instance=ExtResource("19_riff6")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, -1.1, 0)
