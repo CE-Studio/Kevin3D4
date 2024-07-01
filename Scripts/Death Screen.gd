@@ -8,11 +8,10 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	if player.isDead:
 		show()
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
-		
 		cam.rotation += Vector3(0.01, 0.01, 0.01)
 		
 	
@@ -22,7 +21,7 @@ func _process(delta):
 
 func _on_button_pressed():
 	Player.beanos = 0
-	
+	player.respawn()
 	cam.rotation = Vector3.ZERO
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	player.position = player.spawnpoint

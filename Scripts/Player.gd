@@ -147,6 +147,7 @@ func _process(delta):
 	
 	if isDead:
 		Engine.time_scale = 0.4 
+		
 	
 	
 	
@@ -189,6 +190,14 @@ func _input(event):
 		
 	if event.is_action_released("Camera"):
 		$SpringArm3D/AnimationPlayer.play("ComeBack")
+	
 
+func respawn():
+	_notifyReset(get_tree().get_root())
 
+func _notifyReset(obj:Node):
+	if obj.has_method(&"_respawn"):
+		obj._respawn()
+	for i in obj.get_children():
+		_notifyReset(i)
 

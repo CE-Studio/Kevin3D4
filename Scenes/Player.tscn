@@ -17,7 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://c8pfku2ngxid8" path="res://Assets/Textures/reticle.png" id="12_q2uw1"]
 [ext_resource type="Texture2D" uid="uid://ckwu4s2rt1fhb" path="res://Assets/Textures/bean.png" id="16_rqxdb"]
 [ext_resource type="Script" path="res://Scripts/Pause.gd" id="17_t16mw"]
-[ext_resource type="Script" path="res://Scripts/Death Screen.gd" id="18_61t5k"]
+[ext_resource type="Script" path="res://Scripts/Death Screen.gd" id="18_lqant"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_kp3bk"]
 radius = 0.331573
@@ -848,6 +848,9 @@ albedo_texture = ExtResource("11_75o0b")
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_cu1vt"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nkv7c"]
+bg_color = Color(0.501961, 0.0745098, 0, 0.486275)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_p68ed"]
 atlas = ExtResource("16_rqxdb")
 region = Rect2(0, 0, 16, 16)
@@ -889,9 +892,6 @@ _data = {
 "RESET": SubResource("Animation_snirj"),
 "UIBeanSpin": SubResource("Animation_bll68")
 }
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x4nsm"]
-bg_color = Color(0.552941, 0, 0, 0.439216)
 
 [node name="Player" type="CharacterBody3D"]
 script = ExtResource("1_rk3cd")
@@ -992,7 +992,7 @@ surface_material_override/0 = ExtResource("4_0kk71")
 surface_material_override/0 = SubResource("StandardMaterial3D_ghj7y")
 
 [node name="BoneAttachment3D" type="BoneAttachment3D" parent="player/Armature/Skeleton3D" index="2"]
-transform = Transform3D(-0.907031, 0.421063, 0.000376322, -0.420485, -0.905738, -0.0532136, -0.0220654, -0.0484246, 0.998583, 0.409771, 1.01155, -0.0197494)
+transform = Transform3D(-0.966419, 0.256972, -0.000314508, -0.256603, -0.965098, -0.0523569, -0.0137578, -0.050518, 0.998628, 0.293998, 0.976225, -0.0209056)
 bone_name = "Hand_R"
 bone_idx = 14
 
@@ -1029,14 +1029,42 @@ material_override = SubResource("StandardMaterial3D_ym3iy")
 mesh = SubResource("PlaneMesh_cu1vt")
 skeleton = NodePath("../RayCast3D")
 
+[node name="Death Screen" type="Panel" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_nkv7c")
+script = ExtResource("18_lqant")
+
+[node name="Label" type="Label" parent="Death Screen"]
+layout_mode = 0
+offset_left = 314.0
+offset_top = 244.0
+offset_right = 471.0
+offset_bottom = 265.0
+rotation = -0.322088
+scale = Vector2(3.19444, 5.63418)
+text = "Skill Issue?"
+
+[node name="Button" type="Button" parent="Death Screen"]
+layout_mode = 0
+offset_left = 587.0
+offset_top = 325.0
+offset_right = 901.0
+offset_bottom = 354.0
+rotation = 0.336632
+text = "Death is not permanent"
+
 [node name="Aiming" type="Control" parent="."]
-visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 1
 
 [node name="CenterContainer" type="CenterContainer" parent="Aiming"]
 layout_mode = 1
@@ -1094,6 +1122,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 1
 script = ExtResource("17_t16mw")
 
 [node name="Label" type="Label" parent="Panel"]
@@ -1131,32 +1160,7 @@ grow_vertical = 2
 rotation = 0.0872665
 text = "rezoom it plz kthx"
 
-[node name="Death Screen" type="Panel" parent="."]
-offset_right = 40.0
-offset_bottom = 40.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_x4nsm")
-script = ExtResource("18_61t5k")
-
-[node name="Label" type="Label" parent="Death Screen"]
-layout_mode = 0
-offset_left = 314.0
-offset_top = 244.0
-offset_right = 471.0
-offset_bottom = 265.0
-rotation = -0.322088
-scale = Vector2(3.19444, 5.63418)
-text = "Skill Issue?"
-
-[node name="Button" type="Button" parent="Death Screen"]
-layout_mode = 0
-offset_left = 587.0
-offset_top = 325.0
-offset_right = 901.0
-offset_bottom = 354.0
-rotation = 0.336632
-text = "Death is not permanent"
-
-[connection signal="pressed" from="Panel/Button" to="Panel" method="pauseUnpause"]
 [connection signal="pressed" from="Death Screen/Button" to="Death Screen" method="_on_button_pressed"]
+[connection signal="pressed" from="Panel/Button" to="Panel" method="pauseUnpause"]
 
 [editable path="player"]
