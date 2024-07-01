@@ -1,8 +1,14 @@
 extends Area3D
 class_name Enemy
 
+
 @onready var timer = $Timer
-var health:int
+
+
+var health:int:
+	set(value):
+		health = value
+		_death()
 var mainHit:CollisionShape3D  # The main hitbox that hurts the player
 var stompHit:Area3D # The secondary hitbox that the player can hit to deal damage
 
@@ -32,10 +38,9 @@ func on_player_collision(body:Node3D): # This function is connected to StompArea
 		else:
 			print("I kill you now")
 			Player.instance.isDead = true
-	death()
-	
-	
-func death():
+
+
+func _death():
 	if health <= 0:
 		var h := AudioStreamPlayer3D.new()
 		h.stream = preload("res://Assets/Sound Effects/aaaaaaaaaaaaaaaaaaaaa.mp3")
@@ -44,25 +49,17 @@ func death():
 		h.play()
 		timer.start()
 
+
 func _on_timer_timeout():
 	queue_free()
-	pass # Replace with function body
-	
-	
+
 
 func _on_area_entered(area):
-
 	if area is Bean:
 		health -=1
-		
-		death()
 
 
 func _on_body_entered(body):
 	print("ouchie")
 	if body is Bean:
 		health -=1
-		
-		death()
-		
-	pass # Replace with function body.

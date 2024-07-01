@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://dgknntmd5h60"]
 
-[ext_resource type="Script" path="res://Scripts/Area3D.gd" id="1_uuw7u"]
+[ext_resource type="Script" path="res://Scripts/killzone.gd" id="1_uuw7u"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_j5pym"]
 

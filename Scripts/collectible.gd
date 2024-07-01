@@ -1,15 +1,17 @@
 extends Area3D
+
+
 @onready var main = $"."
 @onready var sprite = $Sprite3D
 @onready var shape = $CollisionShape3D
 @onready var noise = $AudioStreamPlayer3D
 
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	sprite.visible = true
 	shape.disabled = false
-	
+
+
 func _respawn():
 	sprite.visible = true
 	shape.disabled = false

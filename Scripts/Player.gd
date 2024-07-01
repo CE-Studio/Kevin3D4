@@ -47,8 +47,6 @@ var isDead := false
 @onready var diveEffect:GPUParticles3D = $Dive
 @onready var cam = $SpringArm3D/Camera3D 
 @onready var _lbl:Label = $UI/BeanCounter/Label
-
-
 @onready var spawnpoint:Vector3 = position
 
 
@@ -60,7 +58,6 @@ func _ready():
 	diveEffect.one_shot = true
 	diveEffect.emitting = false
 	start_position = cam.position
-	
 	$player/Armature/Skeleton3D/Vert.set_surface_override_material(0, preload("res://Assets/Materials/kevin34.tres"))
 
 
@@ -78,7 +75,6 @@ func _physics_process(delta):
 		sprint = 1
 		sprintEffect.emitting = false 
 		animstate = anims.WALK
-		
 	
 	# Add the gravity.
 	if not is_on_floor():
@@ -92,7 +88,7 @@ func _physics_process(delta):
 		isDoubleJump = false
 		if input_dir == Vector2.ZERO and not Input.is_action_pressed("Camera"):
 			animstate = anims.IDLE
-
+	
 	# Handle jump and double jump
 	if Input.is_action_just_pressed("ui_accept") and jumps < 2:
 		velocity.y = JUMP_VELOCITY
@@ -103,8 +99,7 @@ func _physics_process(delta):
 			isJumping = false
 		else:
 			isJumping = true
-			
-			
+	
 	if isDoubleJump:
 		animstate = anims.DJUMP	
 	if isJumping:
@@ -126,7 +121,6 @@ func _physics_process(delta):
 		isDiving = true
 		diveEffect.emitting = true
 	
-	
 	if isDiving:
 		velocity.x = direction2.x * DIVE_VELOCITY * sprint
 		velocity.z = direction2.z * DIVE_VELOCITY * sprint
@@ -135,7 +129,6 @@ func _physics_process(delta):
 			velocity.x = 0
 			velocity.z = 0
 			isDiving = false
-			
 	
 	if position.y < -100:
 		isDead = true
@@ -144,20 +137,12 @@ func _physics_process(delta):
 
 
 func _process(delta):
-
-	
 	if isDead:
 		Engine.time_scale = 0.4 
 		animstate = anims.DYIN
-		
-	
-	
 	
 	if Input.is_action_pressed("Camera"):
 		animstate = anims.SHOOTIN
-	
-		
-		
 		$Aiming/CenterContainer/TextureRect.visible = true
 		if Input.is_action_just_pressed("Shoot") and beanos > 0:
 			var i = beanjectile.instantiate()
@@ -165,22 +150,14 @@ func _process(delta):
 			i.transform.basis = $SpringArm3D/Camera3D.global_transform.basis
 			beanos -= 1
 			get_parent().add_child(i)
-			pass			
 	else:
 		$Aiming/CenterContainer/TextureRect.visible = false
-		
-		
-	
 	
 	if $RayCast3D.is_colliding():
 		$MeshInstance3D.visible = true
 		$MeshInstance3D.global_position = $RayCast3D.get_collision_point() + Vector3(0,.01,0)
-		
 	else:
 		$MeshInstance3D.visible = false
-	
-	
-	
 
 
 func _input(event):	
@@ -192,14 +169,14 @@ func _input(event):
 		
 	if event.is_action_released("Camera"):
 		$SpringArm3D/AnimationPlayer.play("ComeBack")
-	
+
 
 func respawn():
 	_notifyReset(get_tree().get_root())
+
 
 func _notifyReset(obj:Node):
 	if obj.has_method(&"_respawn"):
 		obj._respawn()
 	for i in obj.get_children():
 		_notifyReset(i)
-

@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://cryybw8bvqef8"]
+[gd_scene load_steps=13 format=3 uid="uid://dffdvmqlnswlb"]
 
 [ext_resource type="Script" path="res://Scripts/BeanJectile.gd" id="1_7ftp6"]
 [ext_resource type="Texture2D" uid="uid://ckwu4s2rt1fhb" path="res://Assets/Textures/bean.png" id="2_h6lc3"]

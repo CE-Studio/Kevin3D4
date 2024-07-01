@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://bv4ebjfyp0y6f"]
+[gd_scene load_steps=7 format=3 uid="uid://hqroyuuds4po"]
 
 [ext_resource type="Script" path="res://Scripts/Enemy.gd" id="1_ypvxk"]
 [ext_resource type="Shader" uid="uid://dqcbpkck1cny8" path="res://Assets/Shaders/crumbling_platform.tres" id="2_6wadm"]
@@ -30,7 +30,6 @@ mesh = SubResource("BoxMesh_7m3vv")
 
 [node name="MainHitbox" type="CollisionShape3D" parent="."]
 shape = SubResource("CylinderShape3D_utlsw")
-disabled = true
 
 [node name="StompArea" type="Area3D" parent="."]
 

@@ -1,6 +1,8 @@
 extends AnimatableBody3D
 
+
 var AreaNotExist:bool = false
+
 
 func _ready():
 	$Timer.one_shot = true
@@ -16,12 +18,14 @@ func _process(delta):
 	else:
 		$Area3D.monitoring = true
 		$Area3D/CollisionShape3D2.disabled = false
-		
+
+
 func _on_area_3d_body_entered(body):
 	if body is Player:
 		AreaNotExist = true
 		$Ragdoll.playing = true
 		$Timer.start()
+
 
 func _on_timer_timeout():
 	visible = false

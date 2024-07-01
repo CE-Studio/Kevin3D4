@@ -2,15 +2,15 @@ extends StaticBody3D
 class_name Switch
 
 
+signal on_switch_activate
+
+
+const SPIN_SPEED:float = 5.0
+
+
 var stepArea:Area3D
 var mesh:MeshInstance3D
 var isActive:bool = false
-
-
-const spinSpeed:float = 5.0
-
-
-signal on_switch_activate
 
 
 func _ready():
@@ -20,7 +20,7 @@ func _ready():
 
 func _process(delta):
 	if isActive:
-		mesh.rotate_y(spinSpeed * delta)
+		mesh.rotate_y(SPIN_SPEED * delta)
 
 
 func _on_player_step(body):
