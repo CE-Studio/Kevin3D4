@@ -1,27 +1,28 @@
-[gd_scene load_steps=44 format=3 uid="uid://eh2hv7rkpcn2"]
+[gd_scene load_steps=46 format=3 uid="uid://eh2hv7rkpcn2"]
 
-[ext_resource type="Texture2D" uid="uid://clsleqekifnc0" path="res://Assets/Textures/LevelTextures/L1Tiles0.png" id="1_mmgnj"]
-[ext_resource type="Texture2D" uid="uid://3gmec1n4ny7i" path="res://Assets/Textures/LevelTextures/L1Tiles1.png" id="2_8t5df"]
+[ext_resource type="Texture2D" uid="uid://bmjqqkktf4k17" path="res://Assets/Textures/LevelTextures/factoryTile0.png" id="1_lg2d8"]
+[ext_resource type="Texture2D" uid="uid://c0pr0cndw4via" path="res://Assets/Textures/LevelTextures/factoryTile1.png" id="2_lknck"]
 [ext_resource type="ArrayMesh" uid="uid://cmrjcoy6rkvvh" path="res://Assets/Models/Gridmap/Slope 2 +Z.obj" id="3_pb1le"]
 [ext_resource type="ArrayMesh" uid="uid://bp5tkl5hiqjfr" path="res://Assets/Models/Gridmap/Slope 2 +X+Z.obj" id="4_q0yee"]
 [ext_resource type="ArrayMesh" uid="uid://citfqclvebi3g" path="res://Assets/Models/Gridmap/SlopeCorner 2 +X+Z.obj" id="5_jfvsa"]
 [ext_resource type="ArrayMesh" uid="uid://c1g5q0bpeph4k" path="res://Assets/Models/Gridmap/Slope 4 +Z.obj" id="6_eu58y"]
 [ext_resource type="ArrayMesh" uid="uid://dtkvrvnpulgo" path="res://Assets/Models/Gridmap/Slope 4 +X+Z.obj" id="7_emngn"]
 [ext_resource type="ArrayMesh" uid="uid://bt0aijc4i6md" path="res://Assets/Models/Gridmap/SlopeCorner 4 +X+Z.obj" id="8_t8skv"]
-[ext_resource type="Texture2D" uid="uid://bsu8tqpmhdb2b" path="res://Assets/Textures/LevelTextures/L1Tiles2.png" id="9_tm7ka"]
+[ext_resource type="Texture2D" uid="uid://dthb3ne205os4" path="res://Assets/Textures/LevelTextures/factoryTile2.png" id="9_s6euv"]
 [ext_resource type="Texture2D" uid="uid://dmbu16l0c14kb" path="res://Assets/Textures/LevelTextures/L1Tiles3.png" id="10_ci2aj"]
+[ext_resource type="Texture2D" uid="uid://d110d0srk3fx1" path="res://Assets/Textures/LevelTextures/factoryTile3.png" id="11_66r0l"]
 [ext_resource type="ArrayMesh" uid="uid://cwvyq0qnf34ju" path="res://Assets/Models/Gridmap/Cube.obj" id="11_dfxrm"]
-[ext_resource type="Texture2D" uid="uid://dswfqkb4gtidr" path="res://Assets/Textures/LevelTextures/L1Tiles4.png" id="12_fyq4b"]
-[ext_resource type="Texture2D" uid="uid://dgjxj5hr5npsm" path="res://Assets/Textures/LevelTextures/L1Tiles5.png" id="13_lh8n0"]
-[ext_resource type="Texture2D" uid="uid://cnelan2w468nn" path="res://Assets/Textures/LevelTextures/L1Tiles6.png" id="14_n5y2l"]
-[ext_resource type="Texture2D" uid="uid://5xu2yonbepcd" path="res://Assets/Textures/LevelTextures/L1Tiles7.png" id="15_6jrin"]
+[ext_resource type="Texture2D" uid="uid://dgo3tnafqxvqn" path="res://Assets/Textures/LevelTextures/facwall.png" id="13_pliyi"]
+[ext_resource type="Texture2D" uid="uid://dmgcmwhqxhnno" path="res://Assets/Textures/LevelTextures/facbrickwall.png" id="15_nyf3x"]
+[ext_resource type="Texture2D" uid="uid://cj6p0y66tmrg6" path="res://Assets/Textures/LevelTextures/facwalllit.png" id="16_ges50"]
 [ext_resource type="ArrayMesh" uid="uid://dw87rqo7usced" path="res://Assets/Models/Gridmap/Platform Middle.obj" id="16_y0ejc"]
+[ext_resource type="Texture2D" uid="uid://dp6u2mm5tetwv" path="res://Assets/Textures/LevelTextures/facwallunlit.png" id="17_3k2kj"]
 [ext_resource type="ArrayMesh" uid="uid://k12soum6s3ds" path="res://Assets/Models/Gridmap/Platform Edge.obj" id="17_tkc83"]
 [ext_resource type="Texture2D" uid="uid://3sjvymr2lsmc" path="res://Assets/Textures/LevelTextures/L1Tiles8.png" id="18_th57j"]
 [ext_resource type="PackedScene" uid="uid://dgknntmd5h60" path="res://Scenes/general_killzone.tscn" id="19_3frnp"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vrnhy"]
-albedo_texture = ExtResource("1_mmgnj")
+albedo_texture = ExtResource("1_lg2d8")
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_0hlc3"]
 material = SubResource("StandardMaterial3D_vrnhy")
@@ -30,7 +31,7 @@ material = SubResource("StandardMaterial3D_vrnhy")
 size = Vector3(2, 0.001, 2)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w0nbe"]
-albedo_texture = ExtResource("2_8t5df")
+albedo_texture = ExtResource("2_lknck")
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_dsby2"]
 material = SubResource("StandardMaterial3D_w0nbe")
@@ -47,11 +48,13 @@ points = PackedVector3Array(-1, 0, -1, -1, 0, 1, 1, 0, -1, 1, 0, 1, -1, 4, -1, 1
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_w8oqk"]
 points = PackedVector3Array(-1, 0, -1, -1, 0, 1, 1, 0, -1, 1, 0, 1, -1, 4, -1)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gbi8b"]
-albedo_texture = ExtResource("9_tm7ka")
-
 [sub_resource type="PlaneMesh" id="PlaneMesh_7wrny"]
-material = SubResource("StandardMaterial3D_gbi8b")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rnuks"]
+albedo_texture = ExtResource("9_s6euv")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_maens"]
+albedo_texture = ExtResource("11_66r0l")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_onhh1"]
 albedo_texture = ExtResource("10_ci2aj")
@@ -59,20 +62,20 @@ albedo_texture = ExtResource("10_ci2aj")
 [sub_resource type="PlaneMesh" id="PlaneMesh_jc3tt"]
 material = SubResource("StandardMaterial3D_onhh1")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jdnb7"]
-albedo_texture = ExtResource("12_fyq4b")
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xqysl"]
+albedo_texture = ExtResource("13_pliyi")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_shfxx"]
 size = Vector3(2, 2, 2)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6f0fh"]
-albedo_texture = ExtResource("13_lh8n0")
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cw2cj"]
+albedo_texture = ExtResource("15_nyf3x")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2ovej"]
-albedo_texture = ExtResource("14_n5y2l")
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1ocv1"]
+albedo_texture = ExtResource("16_ges50")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ysciy"]
-albedo_texture = ExtResource("15_6jrin")
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pws6k"]
+albedo_texture = ExtResource("17_3k2kj")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h4wvi"]
 albedo_color = Color(0.513726, 0.596078, 0.678431, 1)
@@ -95,6 +98,7 @@ material = SubResource("StandardMaterial3D_knfth")
 
 [node name="GrassSolid" type="MeshInstance3D" parent="."]
 mesh = SubResource("PlaneMesh_0hlc3")
+surface_material_override/0 = SubResource("StandardMaterial3D_vrnhy")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="GrassSolid"]
 
@@ -181,6 +185,7 @@ shape = SubResource("ConvexPolygonShape3D_w8oqk")
 [node name="RoadStraight" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
 mesh = SubResource("PlaneMesh_7wrny")
+surface_material_override/0 = SubResource("StandardMaterial3D_rnuks")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="RoadStraight"]
 
@@ -189,7 +194,9 @@ shape = SubResource("BoxShape3D_d1pqg")
 
 [node name="RoadTurn" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 2)
+material_override = SubResource("StandardMaterial3D_maens")
 mesh = SubResource("PlaneMesh_jc3tt")
+surface_material_override/0 = SubResource("StandardMaterial3D_maens")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="RoadTurn"]
 
@@ -199,7 +206,7 @@ shape = SubResource("BoxShape3D_d1pqg")
 [node name="WallSolid" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 0)
 mesh = ExtResource("11_dfxrm")
-surface_material_override/0 = SubResource("StandardMaterial3D_jdnb7")
+surface_material_override/0 = SubResource("StandardMaterial3D_xqysl")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="WallSolid"]
 
@@ -210,7 +217,7 @@ shape = SubResource("BoxShape3D_shfxx")
 [node name="WallBrick" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 0)
 mesh = ExtResource("11_dfxrm")
-surface_material_override/0 = SubResource("StandardMaterial3D_6f0fh")
+surface_material_override/0 = SubResource("StandardMaterial3D_cw2cj")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="WallBrick"]
 
@@ -221,7 +228,7 @@ shape = SubResource("BoxShape3D_shfxx")
 [node name="WallWindowLit" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 2)
 mesh = ExtResource("11_dfxrm")
-surface_material_override/0 = SubResource("StandardMaterial3D_2ovej")
+surface_material_override/0 = SubResource("StandardMaterial3D_1ocv1")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="WallWindowLit"]
 
@@ -232,7 +239,7 @@ shape = SubResource("BoxShape3D_shfxx")
 [node name="WallWindowDark" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 2)
 mesh = ExtResource("11_dfxrm")
-surface_material_override/0 = SubResource("StandardMaterial3D_ysciy")
+surface_material_override/0 = SubResource("StandardMaterial3D_pws6k")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="WallWindowDark"]
 
