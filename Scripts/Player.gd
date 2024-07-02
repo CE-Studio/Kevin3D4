@@ -155,6 +155,8 @@ func _process(delta):
 		isDead = false
 		if InvNum == 0:
 			timer.start()
+			$"../Music".stop()
+			$AudioStreamPlayer.play()
 			InvNum += 1
 		invtime.show()
 		invtime.text = str(floor(timer.time_left))
@@ -214,3 +216,4 @@ func _on_timer_timeout():
 	InvNum = 0
 	Invincibile = false
 	invtime.hide()
+	$"../Music".start()

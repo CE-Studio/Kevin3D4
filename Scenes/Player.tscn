@@ -1,4 +1,4 @@
-[gd_scene load_steps=83 format=3 uid="uid://8iobt4o8k61u"]
+[gd_scene load_steps=84 format=3 uid="uid://8iobt4o8k61u"]
 
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_rk3cd"]
 [ext_resource type="AudioStream" uid="uid://bqva2yr82ot7d" path="res://Assets/Sound Effects/IN.wav" id="2_gmnt1"]
@@ -19,6 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://ckwu4s2rt1fhb" path="res://Assets/Textures/bean.png" id="16_rqxdb"]
 [ext_resource type="Script" path="res://Scripts/Pause.gd" id="17_t16mw"]
 [ext_resource type="Script" path="res://Scripts/Death Screen.gd" id="18_lqant"]
+[ext_resource type="AudioStream" uid="uid://ccd0jhjo55f51" path="res://Assets/Music/Invinvible.wav" id="20_2n6en"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_kp3bk"]
 radius = 0.331573
@@ -1454,6 +1455,10 @@ text = "Death is not permanent"
 [node name="Timer" type="Timer" parent="."]
 wait_time = 30.0
 one_shot = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("20_2n6en")
+volume_db = -1.77
 
 [connection signal="pressed" from="Panel/Button" to="Panel" method="pauseUnpause"]
 [connection signal="pressed" from="Death Screen/Button" to="Death Screen" method="_on_button_pressed"]
