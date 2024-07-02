@@ -9,13 +9,9 @@ var health:int:
 	set(value):
 		health = value
 		_death()
-var mainHit:Area3D # The main hitbox that hurts the player
-var stompHit:CollisionShape3D # The secondary hitbox that the player can hit to deal damage
 
 
 func _ready():
-	mainHit = $"HurtArea"
-	stompHit = $"StompHitbox"
 	init(1)
 
 
@@ -26,7 +22,7 @@ func init(newHP:int):
 func _process(delta):
 	if not $Timer.is_stopped():
 			#$MeshInstance3D.mesh.material.set_shader_parameter("FloatParameter", 0.05/timer.time_left )
-			$enemy/Armature/Skeleton3D/Vert.get_surface_override_material(0).set_shader_parameter("FloatParameter", 0.05/timer.time_left)
+			$enemy/Armature/Skeleton3D/Vert.get_surface_override_material(0).set_shader_parameter("FloatParameter", 1/timer.time_left)
 
 
 func on_stomp(body:Node3D): # This function is connected to StompArea's body_entered signal
