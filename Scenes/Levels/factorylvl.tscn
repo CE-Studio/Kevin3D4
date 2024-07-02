@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://dr1cnj1yn017v"]
+[gd_scene load_steps=9 format=3 uid="uid://dr1cnj1yn017v"]
 
 [ext_resource type="MeshLibrary" uid="uid://cknd8psi154ho" path="res://Scenes/3DTilemaps/FactoryMeshLib.tres" id="1_4y3v1"]
 [ext_resource type="PackedScene" uid="uid://8iobt4o8k61u" path="res://Scenes/Player.tscn" id="2_6pvt8"]
 [ext_resource type="AudioStream" uid="uid://diefur77d32jo" path="res://Assets/Music/Title.wav" id="3_i6tyd"]
 [ext_resource type="PackedScene" uid="uid://byx5litoy380f" path="res://Scenes/enviro.tscn" id="4_fvhdq"]
 [ext_resource type="PackedScene" uid="uid://334cmavflup3" path="res://Scenes/switch.tscn" id="5_88wly"]
+[ext_resource type="PackedScene" uid="uid://cb28v0ej87u3n" path="res://Scenes/door.tscn" id="6_0ynkj"]
 [ext_resource type="PackedScene" uid="uid://bqlwlkimr6gje" path="res://Scenes/collectible.tscn" id="6_veq7k"]
 [ext_resource type="PackedScene" uid="uid://hqroyuuds4po" path="res://Scenes/enemy.tscn" id="7_1aqvv"]
 
@@ -33,6 +34,9 @@ bus = &"Music"
 
 [node name="Switch" parent="roomStart" instance=ExtResource("5_88wly")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.38089, -1.59829, 3.75277)
+
+[node name="door" parent="roomStart" instance=ExtResource("6_0ynkj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, -3, -13.7968)
 
 [node name="roomMaze" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 59, -2, -79)
@@ -75,3 +79,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.41989, -0.495305, 10.7017)
 
 [node name="Enemy5" parent="roomMaze" instance=ExtResource("7_1aqvv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.71189, -0.495305, 28.3097)
+
+[connection signal="on_switch_activate" from="roomStart/Switch" to="roomStart/door" method="open"]

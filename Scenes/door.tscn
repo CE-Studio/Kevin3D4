@@ -1,0 +1,88 @@
+[gd_scene load_steps=10 format=3 uid="uid://cb28v0ej87u3n"]
+
+[ext_resource type="Script" path="res://Scripts/door.gd" id="1_byn2v"]
+[ext_resource type="AudioStream" uid="uid://bn6aqh767lraf" path="res://Assets/Sound Effects/door.wav" id="1_xpmky"]
+[ext_resource type="Texture2D" uid="uid://dstsecqc52qwf" path="res://Assets/Textures/LevelTextures/door.png" id="2_dy5nw"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dh045"]
+size = Vector3(6, 6, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0j7r0"]
+albedo_texture = ExtResource("2_dy5nw")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_igvah"]
+size = Vector2(6, 6)
+
+[sub_resource type="Animation" id="Animation_5asdx"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatableBody3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat64Array(0),
+"transitions": PackedFloat64Array(1),
+"update": 0,
+"values": [Vector3(0, 3, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_jdp77"]
+resource_name = "open"
+length = 3.331
+tracks/0/type = "audio"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AudioStreamPlayer3D")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("1_xpmky")
+}],
+"times": PackedFloat64Array(0)
+}
+tracks/0/use_blend = true
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatableBody3D:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat64Array(0, 3.331),
+"transitions": PackedFloat64Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 3, 0), Vector3(0, 9, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_48d57"]
+_data = {
+"RESET": SubResource("Animation_5asdx"),
+"open": SubResource("Animation_jdp77")
+}
+
+[node name="door" type="Node3D"]
+script = ExtResource("1_byn2v")
+
+[node name="AnimatableBody3D" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="AnimatableBody3D"]
+shape = SubResource("BoxShape3D_dh045")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="AnimatableBody3D"]
+transform = Transform3D(1, 0, 0, 0, 6.12323e-17, -1, 0, 1, 6.12323e-17, 0, 0, 0.5)
+material_override = SubResource("StandardMaterial3D_0j7r0")
+mesh = SubResource("PlaneMesh_igvah")
+skeleton = NodePath("../..")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_48d57")
+}
