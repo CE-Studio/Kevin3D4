@@ -1,4 +1,4 @@
-[gd_resource type="VisualShader" load_steps=9 format=3 uid="uid://sobtb24j6lub"]
+[gd_resource type="VisualShader" load_steps=9 format=3 uid="uid://dyadjxd7g1j6h"]
 
 [sub_resource type="VisualShaderNodeFloatParameter" id="VisualShaderNodeFloatParameter_jotfo"]
 parameter_name = "transparency"
