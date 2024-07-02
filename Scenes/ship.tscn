@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://cyg5y6go0cvbo"]
+
+[ext_resource type="ArrayMesh" uid="uid://ulhmtlk72a5k" path="res://Assets/Models/ship.obj" id="1_qst1d"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kwq3g"]
+
+[node name="ship" type="MeshInstance3D"]
+mesh = ExtResource("1_qst1d")
+surface_material_override/0 = SubResource("StandardMaterial3D_kwq3g")
