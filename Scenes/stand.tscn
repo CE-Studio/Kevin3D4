@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://cb8l8tl7gja63"]
+
+[ext_resource type="PackedScene" uid="uid://d3cnwsf60doxl" path="res://Assets/Models/stand.glb" id="1_d1dsc"]
+
+[node name="stand" type="Node3D"]
+
+[node name="stand" parent="." instance=ExtResource("1_d1dsc")]
