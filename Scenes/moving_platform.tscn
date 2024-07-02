@@ -1,0 +1,26 @@
+[gd_scene load_steps=6 format=3 uid="uid://b47dlnkffqek4"]
+
+[ext_resource type="ArrayMesh" uid="uid://d3c3q86jeicyp" path="res://Assets/Models/MovingPlat.obj" id="1_a62lw"]
+[ext_resource type="Script" path="res://Scripts/moving_platform.gd" id="1_xw7d1"]
+[ext_resource type="Texture2D" uid="uid://d1d284bymb76d" path="res://Assets/Textures/SwitchTexture.png" id="2_it75e"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0jyv5"]
+albedo_texture = ExtResource("2_it75e")
+texture_filter = 0
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_vdfnl"]
+height = 0.461717
+radius = 1.0
+
+[node name="MovingPlatform" type="AnimatableBody3D"]
+script = ExtResource("1_xw7d1")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_a62lw")
+surface_material_override/0 = SubResource("StandardMaterial3D_0jyv5")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CylinderShape3D_vdfnl")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+speed_scale = 0.0
