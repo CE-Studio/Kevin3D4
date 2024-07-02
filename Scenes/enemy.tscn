@@ -44,12 +44,12 @@ _data = {
 "new_animation": SubResource("Animation_o6hw6")
 }
 
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_utlsw"]
-height = 1.0
-
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_ixoq8"]
 height = 0.5
 radius = 0.4
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_utlsw"]
+height = 1.0
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_x7qc5"]
 viewport_path = NodePath("Node2D")
@@ -85,14 +85,20 @@ autoplay = "new_animation"
 wait_time = 0.7
 one_shot = true
 
-[node name="MainHitbox" type="CollisionShape3D" parent="."]
-shape = SubResource("CylinderShape3D_utlsw")
-
 [node name="StompArea" type="Area3D" parent="."]
 
 [node name="StompHitbox" type="CollisionShape3D" parent="StompArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.345116, 0)
+shape = SubResource("CylinderShape3D_ixoq8")
+
+[node name="Collision" type="StaticBody3D" parent="."]
+
+[node name="CollisionBody" type="CollisionShape3D" parent="Collision"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.318364, 0)
 shape = SubResource("CylinderShape3D_ixoq8")
+
+[node name="Hurtbox" type="CollisionShape3D" parent="."]
+shape = SubResource("CylinderShape3D_utlsw")
 
 [node name="enemy" parent="." instance=ExtResource("2_txoyg")]
 transform = Transform3D(0.46, 0, 0, 0, 0.46, 0, 0, 0, 0.46, 0, -0.485923, 0)
@@ -103,6 +109,6 @@ surface_material_override/0 = SubResource("ShaderMaterial_6lxww")
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
-[connection signal="body_entered" from="StompArea" to="." method="on_player_collision"]
+[connection signal="body_entered" from="StompArea" to="." method="on_stomp"]
 
 [editable path="enemy"]

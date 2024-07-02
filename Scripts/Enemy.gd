@@ -9,13 +9,13 @@ var health:int:
 	set(value):
 		health = value
 		_death()
-var mainHit:CollisionShape3D  # The main hitbox that hurts the player
-var stompHit:Area3D # The secondary hitbox that the player can hit to deal damage
+var mainHit:Area3D # The main hitbox that hurts the player
+var stompHit:CollisionShape3D # The secondary hitbox that the player can hit to deal damage
 
 
 func _ready():
-	mainHit = $"MainHitbox"
-	stompHit = $"StompArea"
+	mainHit = $"HurtArea"
+	stompHit = $"StompHitbox"
 	init(1)
 
 
@@ -29,16 +29,10 @@ func _process(delta):
 			$enemy/Armature/Skeleton3D/Vert.get_surface_override_material(0).set_shader_parameter("FloatParameter", 0.05/timer.time_left)
 
 
-func on_player_collision(body:Node3D): # This function is connected to StompArea's body_entered signal
+func on_stomp(body:Node3D): # This function is connected to StompArea's body_entered signal
 	if body is Player:
-		print(str(body.position.y - position.y) + ", " + str(body.velocity.y))
-		if body.position.y > position.y + 0.75 and body.velocity.y <= 0: # Player is above and descending
-			health -= 1
-			body.velocity.y = body.JUMP_VELOCITY * 0.75
-			print("Ouch!")
-		else:
-			print("I kill you now")
-			Player.instance.isDead = true
+		health -= 1
+		body.velocity.y = body.JUMP_VELOCITY * 0.75
 
 
 func _death():
@@ -62,5 +56,7 @@ func _on_area_entered(area):
 
 func _on_body_entered(body):
 	print("ouchie")
-	if body is Bean:
+	if body is Player:
+		Player.instance.isDead = true
+	elif body is Bean:
 		health -=1
