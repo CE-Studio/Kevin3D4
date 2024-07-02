@@ -1,4 +1,4 @@
-[gd_scene load_steps=84 format=3 uid="uid://8iobt4o8k61u"]
+[gd_scene load_steps=86 format=3 uid="uid://8iobt4o8k61u"]
 
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_rk3cd"]
 [ext_resource type="AudioStream" uid="uid://bqva2yr82ot7d" path="res://Assets/Sound Effects/IN.wav" id="2_gmnt1"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://c2cb10jgf2e8q" path="res://Assets/Textures/kevin34eyes.png" id="6_wmqvy"]
 [ext_resource type="AudioStream" uid="uid://bnpp0j6rpcp6i" path="res://Assets/Sound Effects/172667__underlineddesigns__military-rotor-loop.wav" id="7_ratlq"]
 [ext_resource type="AudioStream" uid="uid://ctajrq1q1o1xw" path="res://Assets/Sound Effects/goofy-run-sound.wav" id="7_wjehu"]
+[ext_resource type="Shader" uid="uid://sobtb24j6lub" path="res://Scenes/Invincie.tres" id="8_g2vvp"]
 [ext_resource type="AudioStream" uid="uid://dy02ywt81fm44" path="res://Assets/Sound Effects/Jump.wav" id="9_ayhut"]
 [ext_resource type="Texture2D" uid="uid://ru84i2wfoogw" path="res://Assets/Textures/slingshot.png" id="9_mawub"]
 [ext_resource type="AudioStream" uid="uid://bca8f54x3nsea" path="res://Assets/Sound Effects/Dive.wav" id="10_qnw5d"]
@@ -49,7 +50,7 @@ tracks/1/keys = {
 "times": PackedFloat64Array(0, 0.6),
 "transitions": PackedFloat64Array(1, 2.54911),
 "update": 0,
-"values": [Vector3(1, 1, 0.5), Vector3(0, 0, 0)]
+"values": [Vector3(1, 1, 0.5), Vector3(0, 1.5, 0)]
 }
 tracks/2/type = "audio"
 tracks/2/imported = false
@@ -91,7 +92,7 @@ tracks/1/keys = {
 "times": PackedFloat64Array(0),
 "transitions": PackedFloat64Array(1),
 "update": 0,
-"values": [Vector3(0, 0, 0)]
+"values": [Vector3(0, 1.5, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_eicyb"]
@@ -119,7 +120,7 @@ tracks/1/keys = {
 "times": PackedFloat64Array(0, 0.6),
 "transitions": PackedFloat64Array(1, 1),
 "update": 0,
-"values": [Vector3(0, 0, 0), Vector3(1, 1, 0.5)]
+"values": [Vector3(0, 1, 0), Vector3(1, 1.5, 0.5)]
 }
 tracks/2/type = "audio"
 tracks/2/imported = false
@@ -187,6 +188,11 @@ orientation = 2
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4qcyj"]
 bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lnutk"]
+render_priority = 0
+shader = ExtResource("8_g2vvp")
+shader_parameter/transparency = null
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_hinrm"]
 viewport_path = NodePath("SubViewport")
@@ -1161,10 +1167,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.269613, 0)
 shape = SubResource("CapsuleShape3D_kp3bk")
 
 [node name="SpringArm3D" type="SpringArm3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
 spring_length = 8.0
 
 [node name="Camera3D" type="Camera3D" parent="SpringArm3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 0)
 
 [node name="Shooter" type="RayCast3D" parent="SpringArm3D/Camera3D"]
 target_position = Vector3(0, 0, -20)
@@ -1263,6 +1269,7 @@ bones/24/rotation = Quaternion(-0.596658, 0.0390387, 0.318369, 0.735606)
 bones/24/scale = Vector3(1, 1, 1)
 
 [node name="Vert" parent="player/Armature/Skeleton3D" index="0"]
+material_overlay = SubResource("ShaderMaterial_lnutk")
 surface_material_override/0 = ExtResource("4_0kk71")
 
 [node name="Vert_001" parent="player/Armature/Skeleton3D" index="1"]

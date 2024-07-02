@@ -38,8 +38,6 @@ static var beanos:int = 0:
 		Player.instance._lbl.text = str(value)
 		beanos = value
 static var instance:Player
-var target_position = Vector3(1,1, .5)
-var start_position = Vector3.ZERO
 var isDead := false
 var bHop = 0
 var isTripleJump = 0
@@ -47,16 +45,17 @@ var Invincibile := false
 var InvNum = 0
 var pausecount = 0
 var beandouble := false
+var multi := 1.0
 
 
 @onready var djumpEffect:GPUParticles3D = $"Double Jump Effect"
 @onready var sprintEffect:GPUParticles3D = $Sprint
 @onready var diveEffect:GPUParticles3D = $Dive
-@onready var cam = $SpringArm3D/Camera3D 
 @onready var _lbl:Label = $UI/BeanCounter/Label
 @onready var spawnpoint:Vector3 = position
 @onready var timer = $Timer
 @onready var invtime = $"UI/Invinble Timer"
+@onready var shader = $player/Armature/Skeleton3D/Vert.material_overlay
 
 func _ready():
 	Player.instance = self
@@ -65,8 +64,9 @@ func _ready():
 	sprintEffect.emitting = false
 	diveEffect.one_shot = true
 	diveEffect.emitting = false
-	start_position = cam.position
+	
 	timer.one_shot = true
+	shader.set_shader_parameter("transparency", 0)
 	$player/Armature/Skeleton3D/Vert.set_surface_override_material(0, preload("res://Assets/Materials/kevin34.tres"))
 
 
@@ -116,8 +116,8 @@ func _physics_process(delta):
 		animstate = anims.JUMP	
 	
 	if direction:
-		velocity.x = direction.x * SPEED * sprint
-		velocity.z = direction.z * SPEED * sprint
+		velocity.x = direction.x * SPEED * sprint * multi
+		velocity.z = direction.z * SPEED * sprint * multi
 		direction2 = direction
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
@@ -135,8 +135,8 @@ func _physics_process(delta):
 		diveEffect.emitting = true
 	
 	if isDiving:
-		velocity.x = direction2.x * DIVE_VELOCITY * sprint * (bHop/4 + 1)
-		velocity.z = direction2.z * DIVE_VELOCITY * sprint * (bHop/4 + 1)
+		velocity.x = direction2.x * DIVE_VELOCITY * sprint * (bHop/4 + 1) * multi
+		velocity.z = direction2.z * DIVE_VELOCITY * sprint * (bHop/4 + 1) * multi
 		animstate = anims.DIVE
 		if Input.is_action_just_pressed("ui_accept"):
 			velocity.x = 0
@@ -154,9 +154,11 @@ func _process(delta):
 	if Invincibile:
 		isDead = false
 		if InvNum == 0:
+			multi += 1
 			timer.start()
 			$"../Music".stop()
 			$AudioStreamPlayer.play()
+			shader.set_shader_parameter("transparency", .7)
 			InvNum += 1
 		invtime.show()
 		invtime.text = str(floor(timer.time_left))
@@ -213,7 +215,10 @@ func _notifyReset(obj:Node):
 
 
 func _on_timer_timeout():
+	multi = 1
+	$AudioStreamPlayer.stop()
 	InvNum = 0
+	shader.set_shader_parameter("transparency", 0)
 	Invincibile = false
 	invtime.hide()
-	$"../Music".start()
+	$"../Music".play()
