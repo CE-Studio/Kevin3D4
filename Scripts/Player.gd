@@ -41,6 +41,7 @@ static var instance:Player
 var target_position = Vector3(1,1, .5)
 var start_position = Vector3.ZERO
 var isDead := false
+var bHop = 0
 
 @onready var djumpEffect:GPUParticles3D = $"Double Jump Effect"
 @onready var sprintEffect:GPUParticles3D = $Sprint
@@ -93,6 +94,7 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("ui_accept") and jumps < 2:
 		velocity.y = JUMP_VELOCITY
 		jumps += 1
+		bHop = 0
 		if jumps > 1:
 			isDoubleJump = true
 			djumpEffect.emitting = true
@@ -113,17 +115,20 @@ func _physics_process(delta):
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)
 	
+	
+		
 	#dive
 	if Input.is_action_just_pressed("Dive") and dives < 1 and not Input.is_action_pressed("Camera"):
-		velocity.y = DIVE_VELOCITY 
+		velocity.y = DIVE_VELOCITY
 		dives += 1
+		bHop +=1
 		$player.rotate_x(-1)
 		isDiving = true
 		diveEffect.emitting = true
 	
 	if isDiving:
-		velocity.x = direction2.x * DIVE_VELOCITY * sprint
-		velocity.z = direction2.z * DIVE_VELOCITY * sprint
+		velocity.x = direction2.x * DIVE_VELOCITY * sprint * (bHop/4 + 1)
+		velocity.z = direction2.z * DIVE_VELOCITY * sprint * (bHop/4 + 1)
 		animstate = anims.DIVE
 		if Input.is_action_just_pressed("ui_accept"):
 			velocity.x = 0
@@ -137,6 +142,7 @@ func _physics_process(delta):
 
 
 func _process(delta):
+	
 	if isDead:
 		Engine.time_scale = 0.4 
 		animstate = anims.DYIN
