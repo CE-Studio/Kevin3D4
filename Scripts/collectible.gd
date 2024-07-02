@@ -23,5 +23,7 @@ func on_player_touch(body):
 		noise.play()
 		sprite.set_deferred("visible", false)
 		shape.set_deferred("disabled", true)
-		Player.beanos += 1
-		
+		if Player.instance.beandouble:
+			Player.beanos += 2
+		else:
+			Player.beanos += 1

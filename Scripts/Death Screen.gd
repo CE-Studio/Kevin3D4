@@ -28,3 +28,4 @@ func _on_button_pressed():
 	Engine.time_scale = 1.0
 	player.isDead = false
 	player.isTripleJump = 0
+	player.beandouble = false

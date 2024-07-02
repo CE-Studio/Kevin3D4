@@ -45,6 +45,9 @@ var bHop = 0
 var isTripleJump = 0
 var Invincibile := false
 var InvNum = 0
+var pausecount = 0
+var beandouble := false
+
 
 @onready var djumpEffect:GPUParticles3D = $"Double Jump Effect"
 @onready var sprintEffect:GPUParticles3D = $Sprint
@@ -171,6 +174,11 @@ func _process(delta):
 			get_parent().add_child(i)
 	else:
 		$Aiming/CenterContainer/TextureRect.visible = false
+	if Input.is_action_just_pressed("ui_cancel"):
+		pausecount +=1
+		if pausecount >= 1:
+			$UI/Label.hide()
+	
 	
 	if $RayCast3D.is_colliding():
 		$MeshInstance3D.visible = true
@@ -200,7 +208,6 @@ func _notifyReset(obj:Node):
 	for i in obj.get_children():
 		_notifyReset(i)
 		
-
 
 
 func _on_timer_timeout():
