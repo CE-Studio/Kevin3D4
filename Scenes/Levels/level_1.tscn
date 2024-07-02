@@ -1,10 +1,12 @@
-[gd_scene load_steps=7 format=3 uid="uid://drk0udsokfi0f"]
+[gd_scene load_steps=9 format=3 uid="uid://drk0udsokfi0f"]
 
 [ext_resource type="MeshLibrary" uid="uid://i125w3qc6j8c" path="res://Scenes/3DTilemaps/RealL1MeshLib.tres" id="2_v4hei"]
 [ext_resource type="PackedScene" uid="uid://8iobt4o8k61u" path="res://Scenes/Player.tscn" id="3_qaakx"]
 [ext_resource type="PackedScene" uid="uid://cywi2788uytw5" path="res://Scenes/checkpoint.tscn" id="4_f44a5"]
 [ext_resource type="PackedScene" uid="uid://byx5litoy380f" path="res://Scenes/enviro.tscn" id="4_lw5h3"]
 [ext_resource type="PackedScene" uid="uid://dgknntmd5h60" path="res://Scenes/general_killzone.tscn" id="5_5kfth"]
+[ext_resource type="AudioStream" uid="uid://diefur77d32jo" path="res://Assets/Music/Title.wav" id="6_3f5qw"]
+[ext_resource type="PackedScene" uid="uid://da0vvvc0d2q01" path="res://Scenes/Powerups/Invincible.tscn" id="7_xatnx"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_2m68u"]
 
@@ -29,3 +31,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 145, 43, -4)
 [node name="General Killzone" parent="." instance=ExtResource("5_5kfth")]
 transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, -27, -48.8736, 82)
 Killzone = SubResource("BoxShape3D_2m68u")
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_3f5qw")
+autoplay = true
+
+[node name="Invincible" parent="." instance=ExtResource("7_xatnx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 62.7782, 3.0015, 41.3281)
