@@ -187,13 +187,13 @@ orientation = 2
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4qcyj"]
 bg_color = Color(0, 0, 0, 1)
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_i3dtn"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_hinrm"]
 viewport_path = NodePath("SubViewport")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ghj7y"]
 resource_local_to_scene = true
 shading_mode = 0
-albedo_texture = SubResource("ViewportTexture_i3dtn")
+albedo_texture = SubResource("ViewportTexture_hinrm")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hswdw"]
 atlas = ExtResource("9_mawub")

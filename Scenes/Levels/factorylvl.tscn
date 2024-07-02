@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://dr1cnj1yn017v"]
+
+[ext_resource type="MeshLibrary" uid="uid://i125w3qc6j8c" path="res://Scenes/3DTilemaps/RealL1MeshLib.tres" id="1_j4roi"]
+[ext_resource type="PackedScene" uid="uid://8iobt4o8k61u" path="res://Scenes/Player.tscn" id="2_6pvt8"]
+[ext_resource type="AudioStream" uid="uid://diefur77d32jo" path="res://Assets/Music/Title.wav" id="3_i6tyd"]
+[ext_resource type="PackedScene" uid="uid://byx5litoy380f" path="res://Scenes/enviro.tscn" id="4_fvhdq"]
+
+[node name="Level1" type="Node3D"]
+
+[node name="GridMap" type="GridMap" parent="."]
+mesh_library = ExtResource("1_j4roi")
+cell_size = Vector3(6, 6, 6)
+cell_scale = 3.0
+data = {
+"cells": PackedInt32Array(-65536, 65535, 0, -1, 65535, 0, -1, 0, 0, -65536, 0, 0, -65535, 0, 0, -65535, 65535, 0, -65535, 65534, 0, -65536, 65534, 0, -1, 65534, 0, -65535, 65533, 11, -65534, 65533, 11, -65534, 65534, 11, -65534, 65535, 11, -65534, 0, 11, -65534, 1, 11, -65535, 1, 11, -65536, 1, 11, -1, 1, 11, -2, 1, 11, -2, 0, 11, -2, 65535, 11, -2, 65534, 11, -2, 65533, 11, -1, 65533, 11, -65536, 65533, 0, 2, 65533, 11, 1, 65533, 11, 0, 65533, 11, 65535, 65533, 11, 65534, 65533, 11, 65534, 65534, 11, 65534, 65535, 11, 65534, 0, 11, 65534, 1, 11, 65535, 1, 11, 0, 1, 11, 1, 1, 11, 2, 1, 11, 2, 0, 11, 2, 65535, 11, 2, 65534, 11, 65537, 65534, 11, 65536, 65534, 11, 131071, 65534, 11, 131071, 65535, 11, 65536, 65535, 11, 65537, 65535, 11, 65537, 0, 11, 65536, 0, 11, 131071, 0, 11, -65534, 65532, 0, -65535, 65532, 0, -65536, 65532, 0, -1, 65532, 0, -2, 65532, 0, -65534, 65531, 0, -65535, 65531, 0, -65536, 65531, 0, -1, 65531, 0, -2, 65531, 0)
+}
+metadata/_editor_floor_ = Vector3(0, -1, 0)
+
+[node name="Player" parent="." instance=ExtResource("2_6pvt8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.97716, -1.31977, -3.03442)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_i6tyd")
+autoplay = true
+bus = &"Music"
+
+[node name="enviro" parent="." instance=ExtResource("4_fvhdq")]
