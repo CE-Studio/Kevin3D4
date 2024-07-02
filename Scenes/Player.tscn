@@ -1370,6 +1370,14 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 100
 text = "0"
 
+[node name="Invinble Timer" type="Label" parent="UI"]
+layout_mode = 0
+offset_left = 457.0
+offset_top = 26.0
+offset_right = 497.0
+offset_bottom = 47.0
+scale = Vector2(6.28, 6.28)
+
 [node name="Panel" type="Panel" parent="."]
 process_mode = 3
 visible = false
@@ -1443,7 +1451,12 @@ offset_bottom = 354.0
 rotation = 0.336632
 text = "Death is not permanent"
 
+[node name="Timer" type="Timer" parent="."]
+wait_time = 30.0
+one_shot = true
+
 [connection signal="pressed" from="Panel/Button" to="Panel" method="pauseUnpause"]
 [connection signal="pressed" from="Death Screen/Button" to="Death Screen" method="_on_button_pressed"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 
 [editable path="player"]

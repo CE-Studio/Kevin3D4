@@ -42,6 +42,12 @@ var target_position = Vector3(1,1, .5)
 var start_position = Vector3.ZERO
 var isDead := false
 var bHop = 0
+var isTripleJump = 0
+var Invincibile := false
+var InvNum = 0
+var pausecount = 0
+var beandouble := false
+
 
 @onready var djumpEffect:GPUParticles3D = $"Double Jump Effect"
 @onready var sprintEffect:GPUParticles3D = $Sprint
@@ -49,7 +55,8 @@ var bHop = 0
 @onready var cam = $SpringArm3D/Camera3D 
 @onready var _lbl:Label = $UI/BeanCounter/Label
 @onready var spawnpoint:Vector3 = position
-
+@onready var timer = $Timer
+@onready var invtime = $"UI/Invinble Timer"
 
 func _ready():
 	Player.instance = self
@@ -59,6 +66,7 @@ func _ready():
 	diveEffect.one_shot = true
 	diveEffect.emitting = false
 	start_position = cam.position
+	timer.one_shot = true
 	$player/Armature/Skeleton3D/Vert.set_surface_override_material(0, preload("res://Assets/Materials/kevin34.tres"))
 
 
@@ -91,7 +99,7 @@ func _physics_process(delta):
 			animstate = anims.IDLE
 	
 	# Handle jump and double jump
-	if Input.is_action_just_pressed("ui_accept") and jumps < 2:
+	if Input.is_action_just_pressed("ui_accept") and jumps < (2 + isTripleJump):
 		velocity.y = JUMP_VELOCITY
 		jumps += 1
 		bHop = 0
@@ -143,6 +151,14 @@ func _physics_process(delta):
 
 func _process(delta):
 	
+	if Invincibile:
+		isDead = false
+		if InvNum == 0:
+			timer.start()
+			InvNum += 1
+		invtime.show()
+		invtime.text = str(floor(timer.time_left))
+	
 	if isDead:
 		Engine.time_scale = 0.4 
 		animstate = anims.DYIN
@@ -158,6 +174,11 @@ func _process(delta):
 			get_parent().add_child(i)
 	else:
 		$Aiming/CenterContainer/TextureRect.visible = false
+	if Input.is_action_just_pressed("ui_cancel"):
+		pausecount +=1
+		if pausecount >= 1:
+			$UI/Label.hide()
+	
 	
 	if $RayCast3D.is_colliding():
 		$MeshInstance3D.visible = true
@@ -186,3 +207,10 @@ func _notifyReset(obj:Node):
 		obj._respawn()
 	for i in obj.get_children():
 		_notifyReset(i)
+		
+
+
+func _on_timer_timeout():
+	InvNum = 0
+	Invincibile = false
+	invtime.hide()
