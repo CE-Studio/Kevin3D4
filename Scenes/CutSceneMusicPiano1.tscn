@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://cscbiltmn0rf0"]
+[gd_scene load_steps=32 format=3 uid="uid://cscbiltmn0rf0"]
 
 [ext_resource type="AudioStream" uid="uid://c8mpori4fkqln" path="res://Assets/Music/kevin song.wav" id="1_cqpbs"]
 [ext_resource type="PackedScene" uid="uid://dy11dfruadhrf" path="res://Assets/Models/player.glb" id="1_yvo1q"]
@@ -778,6 +778,14 @@ _data = {
 "new_animation": SubResource("Animation_mtfg8")
 }
 
+[sub_resource type="GDScript" id="GDScript_5720t"]
+script/source = "extends AnimationPlayer
+
+
+func _on_animation_finished(_anim_name):
+	get_tree().change_scene_to_packed(preload(\"res://Scenes/Levels/level_1.tscn\"))
+"
+
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_vf1co"]
 panorama = ExtResource("2_8m401")
 
@@ -840,6 +848,7 @@ libraries = {
 "": SubResource("AnimationLibrary_jogaj")
 }
 autoplay = "Piano Cutscene"
+script = SubResource("GDScript_5720t")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_el5hw")
@@ -885,19 +894,19 @@ bones/4/scale = Vector3(1, 1, 1)
 bones/5/position = Vector3(1.16178e-18, 0.170652, 7.45058e-09)
 bones/5/rotation = Quaternion(-0.0570626, -0.000581058, 0.000141403, 0.99837)
 bones/5/scale = Vector3(1, 1, 1)
-bones/6/rotation = Quaternion(0.0190198, 2.27959e-09, 1.30621e-09, 0.999819)
+bones/6/rotation = Quaternion(0.0190206, -1.06971e-24, 4.22347e-18, 0.999819)
 bones/6/scale = Vector3(1, 1, 1)
 bones/7/rotation = Quaternion(0.0127875, -7.41878e-09, 0.847367, 0.530854)
 bones/7/scale = Vector3(1, 1, 1)
 bones/8/rotation = Quaternion(-0.215422, -0.159419, 0.417478, 0.868269)
 bones/8/scale = Vector3(1, 1, 1)
-bones/9/rotation = Quaternion(-0.242559, -0.0560352, 0.00260577, 0.968514)
+bones/9/rotation = Quaternion(-0.242558, -0.0560351, 0.00260577, 0.968514)
 bones/9/scale = Vector3(1, 1, 1)
 bones/11/rotation = Quaternion(0.0127875, 7.41878e-09, -0.847367, 0.530854)
 bones/11/scale = Vector3(1, 1, 1)
 bones/12/rotation = Quaternion(-0.198338, 0.142847, -0.427764, 0.870215)
 bones/12/scale = Vector3(1, 1, 1)
-bones/13/rotation = Quaternion(-0.644778, 0.13674, -0.00243674, 0.752036)
+bones/13/rotation = Quaternion(-0.644778, 0.13674, -0.00243674, 0.752035)
 bones/13/scale = Vector3(1, 1, 1)
 bones/14/scale = Vector3(1, 1, 1)
 bones/15/rotation = Quaternion(-0.0350315, -0.0884289, 0.988896, 0.114181)
@@ -924,7 +933,7 @@ surface_material_override/0 = ExtResource("2_xauja")
 surface_material_override/0 = SubResource("StandardMaterial3D_ae8la")
 
 [node name="BoneAttachment3D" type="BoneAttachment3D" parent="player/Armature/Skeleton3D" index="2"]
-transform = Transform3D(-0.966419, 0.256971, -0.000314788, 0.102524, 0.38445, -0.917435, -0.235634, -0.886659, -0.397886, 0.293998, 1.50871, -0.476543)
+transform = Transform3D(-0.966419, 0.256971, -0.000314788, 0.102525, 0.384452, -0.917434, -0.235633, -0.886658, -0.397888, 0.293998, 1.50871, -0.476543)
 bone_name = "Hand_R"
 bone_idx = 14
 
@@ -1070,5 +1079,7 @@ visible = false
 [node name="stand" parent="." instance=ExtResource("11_nmxgr")]
 transform = Transform3D(-0.106629, 0, 0.994299, 0, 1, 0, -0.994299, 0, -0.106629, -0.546862, -0.689124, 8.39975)
 visible = false
+
+[connection signal="animation_finished" from="." to="." method="_on_animation_finished"]
 
 [editable path="player"]
