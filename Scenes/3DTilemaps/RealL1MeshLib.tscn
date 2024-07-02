@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://mh1oimwfbwof"]
+[gd_scene load_steps=44 format=3 uid="uid://mh1oimwfbwof"]
 
 [ext_resource type="Texture2D" uid="uid://clsleqekifnc0" path="res://Assets/Textures/LevelTextures/L1Tiles0.png" id="1_dga82"]
 [ext_resource type="Texture2D" uid="uid://3gmec1n4ny7i" path="res://Assets/Textures/LevelTextures/L1Tiles1.png" id="2_y3mbo"]
@@ -78,6 +78,9 @@ albedo_texture = ExtResource("15_t08w8")
 albedo_color = Color(0.513726, 0.596078, 0.678431, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_tyi4p"]
+size = Vector3(2, 0.5, 2)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_r3rqq"]
 size = Vector3(2, 0.5, 2)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_knfth"]
@@ -256,8 +259,8 @@ surface_material_override/0 = SubResource("StandardMaterial3D_h4wvi")
 [node name="StaticBody3D" type="StaticBody3D" parent="PlatformEdge"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PlatformEdge/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
-shape = SubResource("BoxShape3D_tyi4p")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2, 0)
+shape = SubResource("BoxShape3D_r3rqq")
 
 [node name="Water" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4)
