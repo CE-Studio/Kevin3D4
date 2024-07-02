@@ -16,6 +16,12 @@ config/features=PackedStringArray("4.2", "Double Precision", "GL Compatibility")
 run/max_fps=19
 config/icon="res://icon.svg"
 
+[editor]
+
+movie_writer/mjpeg_quality=1.0
+movie_writer/movie_file="/home/clarence112/Documents/gdrenders/sbigrender.avi"
+movie_writer/fps=19
+
 [gui]
 
 theme/custom="res://Assets/Ui/heeCCCcccCCccccc.tres"
