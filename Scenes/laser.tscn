@@ -1,0 +1,153 @@
+[gd_scene load_steps=12 format=3 uid="uid://c5svu1bl8bnmm"]
+
+[ext_resource type="PackedScene" uid="uid://cbydsjrs8uohj" path="res://Assets/Models/laser.glb" id="1_uwyec"]
+[ext_resource type="Texture2D" uid="uid://fub3av523ir7" path="res://Assets/Textures/LevelTextures/stripes.png" id="2_nqrk1"]
+[ext_resource type="AudioStream" uid="uid://d1w30h1cts82c" path="res://Assets/Sound Effects/laser.wav" id="3_jx1rm"]
+[ext_resource type="PackedScene" uid="uid://dgknntmd5h60" path="res://Scenes/general_killzone.tscn" id="4_lwakr"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jlj7w"]
+albedo_color = Color(0.337255, 0.337255, 0.337255, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w2dew"]
+albedo_texture = ExtResource("2_nqrk1")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_db3x4"]
+transparency = 1
+albedo_color = Color(1, 0, 0, 0.431373)
+
+[sub_resource type="Animation" id="Animation_fw3ie"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("laser/Cube_003:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat64Array(0),
+"transitions": PackedFloat64Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("laser/Cube_002:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat64Array(0),
+"transitions": PackedFloat64Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("General Killzone:monitoring")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat64Array(0),
+"transitions": PackedFloat64Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_2qxy1"]
+resource_name = "new_animation"
+length = 3.0
+loop_mode = 1
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("laser/Cube_003:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat64Array(0, 0.75),
+"transitions": PackedFloat64Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("laser/Cube_002:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat64Array(0, 0.1, 0.75, 0.85),
+"transitions": PackedFloat64Array(0.277392, 0.297302, 4.28709, 4),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0.213436, 0, 0), Vector3(0.213436, 0, 0), Vector3(0, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("General Killzone:monitoring")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat64Array(0, 0.75),
+"transitions": PackedFloat64Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/3/type = "audio"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AudioStreamPlayer3D")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("3_jx1rm")
+}],
+"times": PackedFloat64Array(0)
+}
+tracks/3/use_blend = true
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1eunq"]
+_data = {
+"RESET": SubResource("Animation_fw3ie"),
+"new_animation": SubResource("Animation_2qxy1")
+}
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6apls"]
+size = Vector3(6, 6, 1)
+
+[node name="laser" type="Node3D"]
+
+[node name="laser" parent="." instance=ExtResource("1_uwyec")]
+
+[node name="Cube" parent="laser" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_jlj7w")
+
+[node name="Cube_001" parent="laser" index="1"]
+material_override = SubResource("StandardMaterial3D_w2dew")
+
+[node name="Cube_002" parent="laser" index="2"]
+surface_material_override/0 = SubResource("StandardMaterial3D_jlj7w")
+
+[node name="Cube_003" parent="laser" index="3"]
+surface_material_override/0 = SubResource("StandardMaterial3D_db3x4")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_1eunq")
+}
+autoplay = "new_animation"
+
+[node name="General Killzone" parent="." instance=ExtResource("4_lwakr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+Killzone = SubResource("BoxShape3D_6apls")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+bus = &"SFX"
+
+[editable path="laser"]

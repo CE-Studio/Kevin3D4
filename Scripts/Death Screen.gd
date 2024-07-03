@@ -21,7 +21,7 @@ func _on_button_pressed():
 	player.respawn()
 	cam.rotation = Vector3.ZERO
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
-	player.position = player.spawnpoint
+	player.global_position = player.spawnpoint
 	player.velocity = Vector3.ZERO
 	player.animstate = player.anims.IDLE
 	hide()
