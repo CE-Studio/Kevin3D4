@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bsddfexjp6jtg"
+path="res://.godot/imported/Jeff Thomas - Gods Pirates.mp3-2f6a0c4758c4a0bf4f6bdec193a800b6.mp3str"
+
+[deps]
+
+source_file="res://Assets/Music/Jeff Thomas - Gods Pirates.mp3"
+dest_files=["res://.godot/imported/Jeff Thomas - Gods Pirates.mp3-2f6a0c4758c4a0bf4f6bdec193a800b6.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=132.0
+beat_count=0
+bar_beats=4

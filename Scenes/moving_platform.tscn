@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://b47dlnkffqek4"]
+[gd_scene load_steps=7 format=3 uid="uid://cev248w6qbej8"]
 
 [ext_resource type="ArrayMesh" uid="uid://d3c3q86jeicyp" path="res://Assets/Models/MovingPlat.obj" id="1_a62lw"]
 [ext_resource type="Script" path="res://Scripts/moving_platform.gd" id="1_xw7d1"]
 [ext_resource type="Texture2D" uid="uid://d1d284bymb76d" path="res://Assets/Textures/SwitchTexture.png" id="2_it75e"]
+[ext_resource type="AudioStream" uid="uid://bk7dalqy0alhq" path="res://Assets/Sound Effects/shimmering-object-79354.mp3" id="4_6lqnc"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0jyv5"]
 albedo_texture = ExtResource("2_it75e")
@@ -25,3 +26,10 @@ shape = SubResource("CylinderShape3D_vdfnl")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 speed_scale = 0.0
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("4_6lqnc")
+max_distance = 150.0
+bus = &"SFX"
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

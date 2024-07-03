@@ -1,0 +1,73 @@
+[gd_scene load_steps=6 format=3 uid="uid://fqu2wcv6slia"]
+
+[ext_resource type="Theme" uid="uid://dukh38yje0td3" path="res://Assets/Ui/speedrun_hud.tres" id="1_04mm1"]
+
+[sub_resource type="GDScript" id="GDScript_8lk11"]
+script/source = "extends PanelContainer
+
+
+func sset(a, b):
+	$VBoxContainer/HBoxContainer/Label.text = str(a)
+	$VBoxContainer/HBoxContainer/Label2.text = str(b)
+"
+
+[sub_resource type="Gradient" id="Gradient_d3j8a"]
+colors = PackedColorArray(0.0823529, 0.223529, 0.486275, 1, 0.207843, 0.443137, 0.886275, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_86t8n"]
+gradient = SubResource("Gradient_d3j8a")
+width = 1
+fill_from = Vector2(1, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rvlsi"]
+texture = SubResource("GradientTexture2D_86t8n")
+
+[node name="Split" type="PanelContainer"]
+theme = ExtResource("1_04mm1")
+script = SubResource("GDScript_8lk11")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_rvlsi")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Control" type="Control" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 5)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Control" type="Control" parent="VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(5, 0)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 18
+text = "Aaa"
+vertical_alignment = 2
+
+[node name="Control2" type="Control" parent="VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(5, 0)
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "0:00.00"
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="Control3" type="Control" parent="VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(5, 0)
+layout_mode = 2
+
+[node name="Control2" type="Control" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 5)
+layout_mode = 2

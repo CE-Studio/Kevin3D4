@@ -1,0 +1,162 @@
+[gd_scene load_steps=8 format=3 uid="uid://bv3l2kes42xfa"]
+
+[ext_resource type="Script" path="res://Scripts/speedrun_hud.gd" id="1_8tw3r"]
+[ext_resource type="AudioStream" uid="uid://bsddfexjp6jtg" path="res://Assets/Music/Jeff Thomas - Gods Pirates.mp3" id="1_tcj0g"]
+[ext_resource type="FontFile" uid="uid://dbiots3wd0sos" path="res://Assets/Ui/OpenSans-ExtraBold.ttf" id="3_eishi"]
+[ext_resource type="Theme" uid="uid://dukh38yje0td3" path="res://Assets/Ui/speedrun_hud.tres" id="4_wh5t7"]
+
+[sub_resource type="Animation" id="Animation_4si3p"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat64Array(0),
+"transitions": PackedFloat64Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.388235)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("VBoxContainer:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat64Array(0),
+"transitions": PackedFloat64Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_g06va"]
+resource_name = "new_animation"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat64Array(0, 0.3),
+"transitions": PackedFloat64Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0.388235)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("VBoxContainer:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat64Array(0, 0.3),
+"transitions": PackedFloat64Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0.388235)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8dojc"]
+_data = {
+"RESET": SubResource("Animation_4si3p"),
+"new_animation": SubResource("Animation_g06va")
+}
+
+[node name="speedrun hud" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_8tw3r")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_tcj0g")
+volume_db = 10.992
+autoplay = true
+bus = &"Music"
+
+[node name="Label" type="Label" parent="."]
+modulate = Color(1, 1, 1, 0.388235)
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 9.0
+offset_top = -31.0
+offset_right = 241.0
+offset_bottom = -8.0
+grow_vertical = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_eishi")
+text = "Gods & Pirates - Jeff Thomas"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_8dojc")
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_bottom = 40.0
+grow_horizontal = 0
+theme = ExtResource("4_wh5t7")
+
+[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/PanelContainer"]
+layout_mode = 2
+alignment = 2
+
+[node name="mins" type="Label" parent="VBoxContainer/PanelContainer/HBoxContainer"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 30
+text = "0"
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="Label2" type="Label" parent="VBoxContainer/PanelContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 30
+text = ":"
+vertical_alignment = 2
+
+[node name="secs" type="Label" parent="VBoxContainer/PanelContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 30
+text = "00"
+vertical_alignment = 2
+
+[node name="Label4" type="Label" parent="VBoxContainer/PanelContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 23
+text = ".
+"
+vertical_alignment = 2
+
+[node name="ms" type="Label" parent="VBoxContainer/PanelContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 23
+text = "00"
+vertical_alignment = 2
+
+[node name="Control" type="Control" parent="VBoxContainer/PanelContainer/HBoxContainer"]
+custom_minimum_size = Vector2(6, 0)
+layout_mode = 2

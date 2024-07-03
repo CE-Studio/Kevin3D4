@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://df118epckjq7r"
+path="res://.godot/imported/check.obj-b6fcebc92c768841ec5c7540ce31a385.mesh"
+
+[deps]
+
+files=["res://.godot/imported/check.obj-b6fcebc92c768841ec5c7540ce31a385.mesh"]
+
+source_file="res://Assets/Models/check.obj"
+dest_files=["res://.godot/imported/check.obj-b6fcebc92c768841ec5c7540ce31a385.mesh", "res://.godot/imported/check.obj-b6fcebc92c768841ec5c7540ce31a385.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false
