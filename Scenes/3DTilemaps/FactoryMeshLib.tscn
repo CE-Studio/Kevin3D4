@@ -18,7 +18,7 @@
 [ext_resource type="ArrayMesh" uid="uid://dw87rqo7usced" path="res://Assets/Models/Gridmap/Platform Middle.obj" id="16_y0ejc"]
 [ext_resource type="Texture2D" uid="uid://dp6u2mm5tetwv" path="res://Assets/Textures/LevelTextures/facwallunlit.png" id="17_3k2kj"]
 [ext_resource type="ArrayMesh" uid="uid://k12soum6s3ds" path="res://Assets/Models/Gridmap/Platform Edge.obj" id="17_tkc83"]
-[ext_resource type="Texture2D" uid="uid://3sjvymr2lsmc" path="res://Assets/Textures/LevelTextures/L1Tiles8.png" id="18_th57j"]
+[ext_resource type="Texture2D" uid="uid://djkpyognsci67" path="res://Assets/Textures/LevelTextures/faclava.png" id="19_0jare"]
 [ext_resource type="PackedScene" uid="uid://dgknntmd5h60" path="res://Scenes/general_killzone.tscn" id="19_3frnp"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vrnhy"]
@@ -87,7 +87,7 @@ size = Vector3(2, 0.5, 2)
 size = Vector3(2, 0.5, 2)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_knfth"]
-albedo_texture = ExtResource("18_th57j")
+albedo_texture = ExtResource("19_0jare")
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_0i1di"]
 material = SubResource("StandardMaterial3D_knfth")

@@ -1,4 +1,5 @@
 extends AnimatableBody3D
+class_name MovingPlatform
 
 
 @onready var anim:AnimationPlayer = $"AnimationPlayer"
