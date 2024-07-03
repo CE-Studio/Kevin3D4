@@ -2,7 +2,7 @@
 
 [ext_resource type="MeshLibrary" uid="uid://cknd8psi154ho" path="res://Scenes/3DTilemaps/FactoryMeshLib.tres" id="1_4y3v1"]
 [ext_resource type="PackedScene" uid="uid://8iobt4o8k61u" path="res://Scenes/Player.tscn" id="2_6pvt8"]
-[ext_resource type="AudioStream" uid="uid://diefur77d32jo" path="res://Assets/Music/Title.wav" id="3_i6tyd"]
+[ext_resource type="AudioStream" uid="uid://l2i4ts6kid44" path="res://Assets/Music/Factory.wav" id="3_aoesn"]
 [ext_resource type="PackedScene" uid="uid://byx5litoy380f" path="res://Scenes/enviro.tscn" id="4_fvhdq"]
 [ext_resource type="PackedScene" uid="uid://334cmavflup3" path="res://Scenes/switch.tscn" id="5_88wly"]
 [ext_resource type="Texture2D" uid="uid://dnjj0sh3xilgo" path="res://Assets/Textures/Skybox.png" id="5_ihsil"]
@@ -35,6 +35,21 @@ ambient_light_source = 2
 ambient_light_color = Color(0.615686, 0.615686, 0.615686, 1)
 ambient_light_energy = 0.6
 
+[sub_resource type="Animation" id="Animation_ognkk"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat64Array(0),
+"transitions": PackedFloat64Array(1),
+"update": 0,
+"values": [Vector3(-112.967, -3.55271e-15, 66.4767)]
+}
+
 [sub_resource type="Animation" id="Animation_aghem"]
 resource_name = "new_animation"
 length = 10.0
@@ -51,7 +66,16 @@ tracks/0/keys = {
 "values": [Vector3(-112.967, -3.55271e-15, 66.4767), Vector3(-98.7215, -3.55271e-15, 52.9229)]
 }
 
-[sub_resource type="Animation" id="Animation_ognkk"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_f5jwf"]
+_data = {
+"RESET": SubResource("Animation_ognkk"),
+"new_animation": SubResource("Animation_aghem")
+}
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_aak7n"]
+albedo_texture = ExtResource("13_82i2e")
+
+[sub_resource type="Animation" id="Animation_cwgnw"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -63,17 +87,8 @@ tracks/0/keys = {
 "times": PackedFloat64Array(0),
 "transitions": PackedFloat64Array(1),
 "update": 0,
-"values": [Vector3(-112.967, -3.55271e-15, 66.4767)]
+"values": [Vector3(-46.6881, -4.15641, -0.433372)]
 }
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_f5jwf"]
-_data = {
-"RESET": SubResource("Animation_ognkk"),
-"new_animation": SubResource("Animation_aghem")
-}
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_aak7n"]
-albedo_texture = ExtResource("13_82i2e")
 
 [sub_resource type="Animation" id="Animation_b4dcl"]
 resource_name = "mov"
@@ -92,25 +107,97 @@ tracks/0/keys = {
 "values": [Vector3(-46.6881, -4.15641, -0.433372), Vector3(-46.6881, -4.15641, -0.433372), Vector3(-50.0645, -6.01443, -10.2827), Vector3(-35.9925, -3.92681, -16.3673), Vector3(-16.2101, -8.31456, -11.1311), Vector3(-13.8972, 12.1528, -7.15751), Vector3(-13.8972, 14.2545, -3.94475)]
 }
 
-[sub_resource type="Animation" id="Animation_cwgnw"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_75jrg"]
+_data = {
+"RESET": SubResource("Animation_cwgnw"),
+"mov": SubResource("Animation_b4dcl")
+}
+
+[sub_resource type="Animation" id="Animation_0dw6e"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
+tracks/0/path = NodePath("AudioStreamPlayer:volume_db")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat64Array(0),
 "transitions": PackedFloat64Array(1),
 "update": 0,
-"values": [Vector3(-46.6881, -4.15641, -0.433372)]
+"values": [-80.0]
 }
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_75jrg"]
-_data = {
-"RESET": SubResource("Animation_cwgnw"),
-"mov": SubResource("Animation_b4dcl")
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../AudioStreamPlayer:volume_db")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat64Array(0),
+"transitions": PackedFloat64Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../enviro/DirectionalLight3D:light_energy")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat64Array(0),
+"transitions": PackedFloat64Array(1),
+"update": 0,
+"values": [1.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("SpotLight3D:light_energy")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat64Array(0),
+"transitions": PackedFloat64Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../enviro/WorldEnvironment:environment:ambient_light_energy")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat64Array(0),
+"transitions": PackedFloat64Array(1),
+"update": 0,
+"values": [0.6]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("SpotLight3D:spot_angle")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat64Array(0),
+"transitions": PackedFloat64Array(1),
+"update": 0,
+"values": [2.03035]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../room2nd/MeshInstance3D:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat64Array(0),
+"transitions": PackedFloat64Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="Animation" id="Animation_0ahsd"]
@@ -201,93 +288,6 @@ tracks/6/keys = {
 "values": [true, false]
 }
 
-[sub_resource type="Animation" id="Animation_0dw6e"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AudioStreamPlayer:volume_db")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat64Array(0),
-"transitions": PackedFloat64Array(1),
-"update": 0,
-"values": [-80.0]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("../AudioStreamPlayer:volume_db")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat64Array(0),
-"transitions": PackedFloat64Array(1),
-"update": 0,
-"values": [0.0]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("../enviro/DirectionalLight3D:light_energy")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat64Array(0),
-"transitions": PackedFloat64Array(1),
-"update": 0,
-"values": [1.0]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("SpotLight3D:light_energy")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat64Array(0),
-"transitions": PackedFloat64Array(1),
-"update": 0,
-"values": [0.0]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("../enviro/WorldEnvironment:environment:ambient_light_energy")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat64Array(0),
-"transitions": PackedFloat64Array(1),
-"update": 0,
-"values": [0.6]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("SpotLight3D:spot_angle")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat64Array(0),
-"transitions": PackedFloat64Array(1),
-"update": 0,
-"values": [2.03035]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("../room2nd/MeshInstance3D:visible")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat64Array(0),
-"transitions": PackedFloat64Array(1),
-"update": 1,
-"values": [true]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_nbkbq"]
 _data = {
 "RESET": SubResource("Animation_0dw6e"),
@@ -299,6 +299,33 @@ size = Vector3(45, 67, 66)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_4bc2b"]
 size = Vector3(3, 3, 3)
+
+[sub_resource type="Animation" id="Animation_oxign"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Node3D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat64Array(0),
+"transitions": PackedFloat64Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Node3D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat64Array(0),
+"transitions": PackedFloat64Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_a0f77"]
 resource_name = "new_animation"
@@ -329,37 +356,25 @@ tracks/1/keys = {
 "values": [Vector3(0, 0, 0), Vector3(0, 0.485778, 0), Vector3(0, 0, 0)]
 }
 
-[sub_resource type="Animation" id="Animation_oxign"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4va2t"]
+_data = {
+"RESET": SubResource("Animation_oxign"),
+"new_animation": SubResource("Animation_a0f77")
+}
+
+[sub_resource type="Animation" id="Animation_k2k3b"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Node3D:rotation")
+tracks/0/path = NodePath("TextureRect:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat64Array(0),
 "transitions": PackedFloat64Array(1),
 "update": 0,
-"values": [Vector3(0, 0, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Node3D:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat64Array(0),
-"transitions": PackedFloat64Array(1),
-"update": 0,
-"values": [Vector3(0, 0, 0)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_4va2t"]
-_data = {
-"RESET": SubResource("Animation_oxign"),
-"new_animation": SubResource("Animation_a0f77")
+"values": [Color(1, 1, 1, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_ax6ji"]
@@ -402,21 +417,6 @@ tracks/2/keys = {
 "values": [0.0, -80.0]
 }
 
-[sub_resource type="Animation" id="Animation_k2k3b"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("TextureRect:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat64Array(0),
-"transitions": PackedFloat64Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 0)]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ia2vy"]
 _data = {
 "RESET": SubResource("Animation_k2k3b"),
@@ -447,7 +447,7 @@ metadata/_editor_floor_ = Vector3(0, -3, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.97716, -1.31977, -3.03442)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("3_i6tyd")
+stream = ExtResource("3_aoesn")
 autoplay = true
 bus = &"Music"
 

@@ -1,8 +1,36 @@
-[gd_scene load_steps=10 format=3 uid="uid://bv3l2kes42xfa"]
+[gd_scene load_steps=8 format=3 uid="uid://bv3l2kes42xfa"]
 
 [ext_resource type="Script" path="res://Scripts/speedrun_hud.gd" id="1_8tw3r"]
 [ext_resource type="AudioStream" uid="uid://bsddfexjp6jtg" path="res://Assets/Music/Jeff Thomas - Gods Pirates.mp3" id="1_tcj0g"]
 [ext_resource type="FontFile" uid="uid://dbiots3wd0sos" path="res://Assets/Ui/OpenSans-ExtraBold.ttf" id="3_eishi"]
+[ext_resource type="Theme" uid="uid://dukh38yje0td3" path="res://Assets/Ui/speedrun_hud.tres" id="4_wh5t7"]
+
+[sub_resource type="Animation" id="Animation_4si3p"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat64Array(0),
+"transitions": PackedFloat64Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.388235)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("VBoxContainer:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat64Array(0),
+"transitions": PackedFloat64Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
 
 [sub_resource type="Animation" id="Animation_g06va"]
 resource_name = "new_animation"
@@ -32,55 +60,11 @@ tracks/1/keys = {
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0.388235)]
 }
 
-[sub_resource type="Animation" id="Animation_4si3p"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Label:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat64Array(0),
-"transitions": PackedFloat64Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 0.388235)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("VBoxContainer:modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat64Array(0),
-"transitions": PackedFloat64Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_8dojc"]
 _data = {
 "RESET": SubResource("Animation_4si3p"),
 "new_animation": SubResource("Animation_g06va")
 }
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4ygvx"]
-border_color = Color(0.309804, 0.341176, 0.423529, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pxrmf"]
-border_color = Color(0.309804, 0.341176, 0.423529, 1)
-
-[sub_resource type="Theme" id="Theme_8f7pr"]
-BoxContainer/constants/separation = 0
-Label/colors/font_color = Color(1, 1, 1, 1)
-Label/colors/font_shadow_color = Color(0.207843, 0.207843, 0.207843, 0.827451)
-Label/constants/outline_size = 0
-Label/constants/shadow_offset_x = 2
-Label/constants/shadow_offset_y = 2
-Label/fonts/font = ExtResource("3_eishi")
-Panel/styles/panel = SubResource("StyleBoxFlat_4ygvx")
-PanelContainer/styles/panel = SubResource("StyleBoxFlat_pxrmf")
 
 [node name="speedrun hud" type="Control"]
 layout_mode = 3
@@ -126,7 +110,7 @@ anchor_right = 1.0
 offset_left = -40.0
 offset_bottom = 40.0
 grow_horizontal = 0
-theme = SubResource("Theme_8f7pr")
+theme = ExtResource("4_wh5t7")
 
 [node name="PanelContainer" type="PanelContainer" parent="VBoxContainer"]
 layout_mode = 2

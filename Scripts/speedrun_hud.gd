@@ -3,6 +3,7 @@ class_name SpeedrunTimer
 
 
 var _t:float = 0
+var _splitted := false
 static var instance:SpeedrunTimer
 
 
@@ -12,11 +13,18 @@ static var instance:SpeedrunTimer
 
 
 static func split():
-	pass
+	if is_instance_valid(instance):
+		instance._split()
 
 
 func _split():
-	pass
+	if _splitted:
+		$VBoxContainer.get_child($VBoxContainer.get_child_count() - 2).get_child(0).hide()
+	_splitted = true
+	var h = preload("res://Scenes/subparts/split.tscn").instantiate()
+	$VBoxContainer.add_child(h)
+	h.sset("Level " + str(winnerbox.loadBearingNumber), mins.text + ":" + secs.text + "." + ms.text)
+	$VBoxContainer.move_child(h, $VBoxContainer.get_child_count() - 2)
 
 
 

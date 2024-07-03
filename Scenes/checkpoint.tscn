@@ -1,22 +1,100 @@
-[gd_scene load_steps=4 format=3 uid="uid://diybr73ukni78"]
+[gd_scene load_steps=9 format=3 uid="uid://diybr73ukni78"]
 
 [ext_resource type="Script" path="res://Checkpoint.gd" id="1_qlyhl"]
+[ext_resource type="ArrayMesh" uid="uid://df118epckjq7r" path="res://Assets/Models/check.obj" id="2_yd7nx"]
+[ext_resource type="AudioStream" uid="uid://scvrhvcjcfdj" path="res://Assets/Sound Effects/metal-hit-15-193280.mp3" id="3_y3wqe"]
 
-[sub_resource type="CylinderMesh" id="CylinderMesh_bf0fd"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v5c23"]
+albedo_color = Color(0, 1, 0, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ohi4y"]
 size = Vector3(3, 3, 3)
+
+[sub_resource type="Animation" id="Animation_bb4pc"]
+resource_name = "new_animation"
+length = 2.0
+loop_mode = 1
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MeshInstance3D:position")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat64Array(0, 0.25, 0.5, 0.75, 1, 1.25, 1.5, 1.75, 2),
+"transitions": PackedFloat64Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0.273254, 0), Vector3(0, 0.546508, 0), Vector3(0, 0.819762, 0), Vector3(0, 1.09302, 0), Vector3(0, 0.819762, 0), Vector3(0, 0.546508, 0), Vector3(0, 0.273254, 0), Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MeshInstance3D:rotation")
+tracks/1/interp = 0
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat64Array(0, 0.25, 0.5, 0.75, 1, 1.25, 1.5, 1.75, 2),
+"transitions": PackedFloat64Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, -0.785398, 0), Vector3(0, -1.5708, 0), Vector3(0, -2.35619, 0), Vector3(0, -3.14159, 0), Vector3(0, -3.92699, 0), Vector3(0, -4.71239, 0), Vector3(0, -5.49779, 0), Vector3(0, -6.28319, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_2ihmc"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MeshInstance3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat64Array(0),
+"transitions": PackedFloat64Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MeshInstance3D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat64Array(0),
+"transitions": PackedFloat64Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ou68l"]
+_data = {
+"RESET": SubResource("Animation_2ihmc"),
+"new_animation": SubResource("Animation_bb4pc")
+}
 
 [node name="Checkpoint" type="Node3D"]
 script = ExtResource("1_qlyhl")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-mesh = SubResource("CylinderMesh_bf0fd")
+transform = Transform3D(2.67, 0, 0, 0, 2.67, 0, 0, 0, 2.67, 0, 0, 0)
+mesh = ExtResource("2_yd7nx")
+surface_material_override/0 = SubResource("StandardMaterial3D_v5c23")
 
 [node name="Area3D" type="Area3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.689524, 0)
 shape = SubResource("BoxShape3D_ohi4y")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_ou68l")
+}
+autoplay = "new_animation"
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("3_y3wqe")
+bus = &"SFX"
 
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
