@@ -1,0 +1,42 @@
+[gd_scene load_steps=9 format=3 uid="uid://bph7y82fcjh3o"]
+
+[ext_resource type="Script" path="res://Scenes/Levels/TechnoWizardry.gd" id="1_dw2wk"]
+[ext_resource type="Texture2D" uid="uid://cusdxv1djog76" path="res://Assets/360_F_238563715_TT246ABsfPc7OMkIASI5wTOYiwwlf8Yz.jpg" id="1_txghr"]
+[ext_resource type="MeshLibrary" uid="uid://i125w3qc6j8c" path="res://Scenes/3DTilemaps/RealL1MeshLib.tres" id="1_whkdw"]
+[ext_resource type="PackedScene" uid="uid://8iobt4o8k61u" path="res://Scenes/Player.tscn" id="2_o17ei"]
+[ext_resource type="AudioStream" uid="uid://diefur77d32jo" path="res://Assets/Music/Title.wav" id="3_qobd8"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_d3euq"]
+panorama = ExtResource("1_txghr")
+
+[sub_resource type="Sky" id="Sky_osplm"]
+sky_material = SubResource("PanoramaSkyMaterial_d3euq")
+
+[sub_resource type="Environment" id="Environment_f5hwm"]
+background_mode = 2
+sky = SubResource("Sky_osplm")
+sky_rotation = Vector3(0, 6.28319, 6.28319)
+tonemap_mode = 2
+
+[node name="Level1" type="Node3D"]
+script = ExtResource("1_dw2wk")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_f5hwm")
+
+[node name="GridMap" type="GridMap" parent="."]
+mesh_library = ExtResource("1_whkdw")
+cell_size = Vector3(6, 6, 6)
+cell_scale = 3.0
+data = {
+"cells": PackedInt32Array(-65536, 65535, 0, -1, 65535, 0, -1, 0, 0, -65536, 0, 0, -65535, 0, 0, -65535, 65535, 0, -65535, 65534, 0, -65536, 65534, 0, -1, 65534, 0)
+}
+metadata/_editor_floor_ = Vector3(0, -1, 0)
+
+[node name="Player" parent="." instance=ExtResource("2_o17ei")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.97716, 1.03612, -3.03442)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_qobd8")
+autoplay = true
+bus = &"Music"
