@@ -13,6 +13,7 @@ height = 0.461717
 radius = 1.0
 
 [node name="MovingPlatform" type="AnimatableBody3D"]
+sync_to_physics = false
 script = ExtResource("1_xw7d1")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
