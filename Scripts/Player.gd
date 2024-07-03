@@ -176,6 +176,7 @@ func _process(delta):
 	
 	if isDead:
 		Engine.time_scale = 0.4 
+		AudioServer.playback_speed_scale = 0.4
 		animstate = anims.DYIN
 	
 	if Input.is_action_pressed("Camera"):
