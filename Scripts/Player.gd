@@ -38,6 +38,10 @@ static var beanos:int = 0:
 		Player.instance._lbl.text = str(value)
 		beanos = value
 static var instance:Player
+static var rizz := false
+static var speedrunning := false
+static var _timerSpawned := false
+static var speedrunTime:float = 0
 var isDead := false
 var bHop = 0
 var isTripleJump = 0
@@ -58,6 +62,12 @@ var multi := 1.0
 @onready var shader = $player/Armature/Skeleton3D/Vert.material_overlay
 
 func _ready():
+	if Player.speedrunning:
+		if not Player._timerSpawned:
+			Player._timerSpawned = true
+			$"/root/".add_child.call_deferred(preload("res://Scenes/speedrun_hud.tscn").instantiate())
+			$"../AudioStreamPlayer".autoplay = false
+			$"../AudioStreamPlayer".playing = false
 	Player.instance = self
 	djumpEffect.one_shot = true
 	djumpEffect.emitting = false
@@ -150,6 +160,7 @@ func _physics_process(delta):
 
 
 func _process(delta):
+	Player.speedrunTime += delta
 	
 	if Invincibile:
 		isDead = false

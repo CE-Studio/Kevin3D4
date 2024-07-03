@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bk7dalqy0alhq"
+path="res://.godot/imported/shimmering-object-79354.mp3-bcb4bd986a1763408dea6251894a5638.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sound Effects/shimmering-object-79354.mp3"
+dest_files=["res://.godot/imported/shimmering-object-79354.mp3-bcb4bd986a1763408dea6251894a5638.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4
