@@ -1,0 +1,145 @@
+[gd_scene load_steps=16 format=3 uid="uid://dbiu7q3trywau"]
+
+[ext_resource type="Script" path="res://Scripts/minecart.gd" id="1_sxwj7"]
+[ext_resource type="PackedScene" uid="uid://dgknntmd5h60" path="res://Scenes/general_killzone.tscn" id="1_x3tau"]
+[ext_resource type="PackedScene" uid="uid://ddiy3jtxy0kv1" path="res://Assets/Models/faccart.glb" id="2_c8dsn"]
+[ext_resource type="Texture2D" uid="uid://djkpyognsci67" path="res://Assets/Textures/LevelTextures/faclava.png" id="3_b1vvp"]
+[ext_resource type="Texture2D" uid="uid://fub3av523ir7" path="res://Assets/Textures/LevelTextures/stripes.png" id="4_1dj4s"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5xj0r"]
+size = Vector3(6, 6, 6)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jnqf6"]
+albedo_color = Color(0.72549, 0.72549, 0.72549, 1)
+metallic = 0.64
+roughness = 0.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ii3a8"]
+albedo_texture = ExtResource("3_b1vvp")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lnkjm"]
+albedo_texture = ExtResource("4_1dj4s")
+
+[sub_resource type="BoxMesh" id="BoxMesh_egrw3"]
+size = Vector3(5, 1, 5)
+
+[sub_resource type="Animation" id="Animation_vl83m"]
+resource_name = "0"
+length = 3.0
+loop_mode = 1
+step = 0.75
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat64Array(0),
+"transitions": PackedFloat64Array(1),
+"values": [{
+"args": [],
+"method": &"tick"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_xswqp"]
+resource_name = "1"
+length = 3.0
+loop_mode = 1
+step = 0.75
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat64Array(1.5),
+"transitions": PackedFloat64Array(1),
+"values": [{
+"args": [],
+"method": &"tick"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_q5k16"]
+resource_name = "2"
+length = 3.0
+loop_mode = 1
+step = 0.75
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat64Array(0, 1.5),
+"transitions": PackedFloat64Array(1, 1),
+"values": [{
+"args": [],
+"method": &"tick"
+}, {
+"args": [],
+"method": &"tick"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_b3ymu"]
+resource_name = "3"
+length = 3.0
+loop_mode = 1
+step = 0.75
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat64Array(1.5, 3),
+"transitions": PackedFloat64Array(1, 1),
+"values": [{
+"args": [],
+"method": &"tick"
+}, {
+"args": [],
+"method": &"tick"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_thgt8"]
+_data = {
+"0": SubResource("Animation_vl83m"),
+"1": SubResource("Animation_xswqp"),
+"2": SubResource("Animation_q5k16"),
+"3": SubResource("Animation_b3ymu")
+}
+
+[node name="minecart" type="Node3D"]
+script = ExtResource("1_sxwj7")
+
+[node name="General Killzone" parent="." instance=ExtResource("1_x3tau")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+Killzone = SubResource("BoxShape3D_5xj0r")
+
+[node name="faccart" parent="." instance=ExtResource("2_c8dsn")]
+
+[node name="Cube_001" parent="faccart" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_jnqf6")
+
+[node name="Plane" parent="faccart" index="1"]
+material_override = SubResource("StandardMaterial3D_ii3a8")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.59573, 0)
+material_override = SubResource("StandardMaterial3D_lnkjm")
+mesh = SubResource("BoxMesh_egrw3")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_thgt8")
+}
+
+[editable path="faccart"]
