@@ -1,0 +1,568 @@
+[gd_scene load_steps=23 format=3 uid="uid://4l0tim7422bf"]
+
+[ext_resource type="FontFile" uid="uid://buus7j6gvfqr3" path="res://Assets/Ui/another.regular.ttf" id="1_eiwcv"]
+[ext_resource type="Texture2D" uid="uid://dbmyyttg2itvd" path="res://Assets/Textures/logo.png" id="2_5bx5v"]
+
+[sub_resource type="GDScript" id="GDScript_ajdrb"]
+script/source = "extends Node3D
+
+
+func end(_a):
+	get_tree().change_scene_to_file(\"res://Scenes/title.tscn\")
+"
+
+[sub_resource type="Gradient" id="Gradient_gkbgv"]
+colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_4dgm3"]
+gradient = SubResource("Gradient_gkbgv")
+width = 1
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_caoub"]
+panorama = SubResource("GradientTexture1D_4dgm3")
+
+[sub_resource type="Sky" id="Sky_piymt"]
+sky_material = SubResource("PanoramaSkyMaterial_caoub")
+
+[sub_resource type="Environment" id="Environment_fqodb"]
+background_mode = 2
+sky = SubResource("Sky_piymt")
+tonemap_mode = 2
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_38pb2"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dutm8"]
+cull_mode = 2
+shading_mode = 0
+albedo_color = Color(1, 1, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ji1n0"]
+cull_mode = 2
+shading_mode = 0
+albedo_color = Color(1, 0.321569, 1, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_db0pe"]
+cull_mode = 2
+shading_mode = 0
+albedo_color = Color(0.113725, 1, 0.054902, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7a2wk"]
+cull_mode = 2
+shading_mode = 0
+albedo_color = Color(1, 0, 0, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_7u5ry"]
+size = Vector2(1, 2)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t1jin"]
+cull_mode = 2
+shading_mode = 0
+albedo_color = Color(0, 0, 1, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xl0in"]
+cull_mode = 2
+shading_mode = 0
+albedo_color = Color(0, 1, 1, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6o5dx"]
+cull_mode = 2
+shading_mode = 0
+albedo_color = Color(0.780392, 0.607843, 1, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4y3if"]
+cull_mode = 2
+shading_mode = 0
+albedo_color = Color(1, 0.607843, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_txu15"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Animation" id="Animation_1ae32"]
+resource_name = "new_animation"
+length = 12.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("box:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat64Array(0, 8.3),
+"transitions": PackedFloat64Array(1, 1),
+"update": 0,
+"values": [Vector3(0, -1.0472, 0), Vector3(0, -13.9626, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("box/Node3D4:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat64Array(2, 3),
+"transitions": PackedFloat64Array(1, 1),
+"update": 0,
+"values": [Vector3(-1.309, 1.5708, -2.36584e-16), Vector3(2.68781, 1.5708, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("box/Node3D3:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat64Array(2.3, 3.4),
+"transitions": PackedFloat64Array(1, 1),
+"update": 0,
+"values": [Vector3(-1.309, -1.5708, -2.36584e-16), Vector3(2.67035, -1.5708, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("box/Node3D2:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat64Array(2.9, 3.7),
+"transitions": PackedFloat64Array(1, 1),
+"update": 0,
+"values": [Vector3(-1.5708, -3.14159, 0), Vector3(2.19911, -3.14159, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("box/Node3D:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat64Array(3.1, 3.9),
+"transitions": PackedFloat64Array(1, 1),
+"update": 0,
+"values": [Vector3(-1.5708, 0, 0), Vector3(2.54818, 0, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Panel:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat64Array(0, 1.5, 7, 8.2),
+"transitions": PackedFloat64Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("letters/Label3D:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat64Array(3.3, 4, 5.4),
+"transitions": PackedFloat64Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 3.29603, 1.52801), Vector3(-1.71973, 0.0596594, 4.91504)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("letters/Label3D2:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat64Array(3.6, 4.3, 5.7),
+"transitions": PackedFloat64Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 3.29603, 1.52801), Vector3(-0.787663, -0.220153, 4.91504)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("letters/Label3D3:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat64Array(3.7, 4.4, 5.8),
+"transitions": PackedFloat64Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 3.29603, 1.52801), Vector3(0.28107, 0.56424, 4.91504)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("letters/Label3D4:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat64Array(4.1, 4.8, 6.2),
+"transitions": PackedFloat64Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 3.29603, 1.52801), Vector3(1.36854, 0.0834657, 4.91504)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("letters/Label3D5:position")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat64Array(4.3, 5, 6.4),
+"transitions": PackedFloat64Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 3.29603, 1.52801), Vector3(0.806361, -0.794591, 4.91504)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Panel/VBoxContainer:visible")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat64Array(0, 8.2),
+"transitions": PackedFloat64Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("Panel/VBoxContainer:modulate")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat64Array(8.2, 8.8, 11, 11.8),
+"transitions": PackedFloat64Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_raqho"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("box:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat64Array(0),
+"transitions": PackedFloat64Array(1),
+"update": 0,
+"values": [Vector3(0, -1.0472, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("box/Node3D4:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat64Array(0),
+"transitions": PackedFloat64Array(1),
+"update": 0,
+"values": [Vector3(-1.309, 1.5708, -2.36584e-16)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("box/Node3D3:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat64Array(0),
+"transitions": PackedFloat64Array(1),
+"update": 0,
+"values": [Vector3(-1.309, -1.5708, -2.36584e-16)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("box/Node3D2:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat64Array(0),
+"transitions": PackedFloat64Array(1),
+"update": 0,
+"values": [Vector3(-1.5708, -3.14159, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("box/Node3D:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat64Array(0),
+"transitions": PackedFloat64Array(1),
+"update": 0,
+"values": [Vector3(-1.5708, 0, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Panel:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat64Array(0),
+"transitions": PackedFloat64Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("letters/Label3D:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat64Array(0),
+"transitions": PackedFloat64Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("letters/Label3D2:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat64Array(0),
+"transitions": PackedFloat64Array(1),
+"update": 0,
+"values": [Vector3(-0.787663, -0.220153, 4.91504)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("letters/Label3D3:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat64Array(0),
+"transitions": PackedFloat64Array(1),
+"update": 0,
+"values": [Vector3(0.28107, 0.56424, 4.91504)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("letters/Label3D4:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat64Array(0),
+"transitions": PackedFloat64Array(1),
+"update": 0,
+"values": [Vector3(1.36854, 0.0834657, 4.91504)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("letters/Label3D5:position")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat64Array(0),
+"transitions": PackedFloat64Array(1),
+"update": 0,
+"values": [Vector3(0.806361, -0.794591, 4.91504)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Panel/VBoxContainer:visible")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat64Array(0),
+"transitions": PackedFloat64Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("Panel/VBoxContainer:modulate")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat64Array(0),
+"transitions": PackedFloat64Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_46oao"]
+_data = {
+"RESET": SubResource("Animation_raqho"),
+"new_animation": SubResource("Animation_1ae32")
+}
+
+[node name="Node3D" type="Node3D"]
+script = SubResource("GDScript_ajdrb")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_fqodb")
+
+[node name="box" type="Node3D" parent="."]
+transform = Transform3D(0.5, 0, -0.866025, 0, 1, 0, 0.866025, 0, 0.5, 0, 0, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="box"]
+transform = Transform3D(6.12323e-17, 1, 1.22465e-16, 1, -6.12323e-17, -7.4988e-33, 0, 1.22465e-16, -1, 1, -6.12323e-17, 2.44929e-16)
+mesh = SubResource("PlaneMesh_38pb2")
+surface_material_override/0 = SubResource("StandardMaterial3D_dutm8")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="box"]
+transform = Transform3D(6.12323e-17, 1.83697e-16, -1, 1, -2.67165e-33, 6.12323e-17, 0, -1, -1.83697e-16, 2.56372e-16, 6.98266e-33, -1)
+mesh = SubResource("PlaneMesh_38pb2")
+surface_material_override/0 = SubResource("StandardMaterial3D_ji1n0")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="box"]
+transform = Transform3D(6.12323e-17, -1, 0, 1, 6.12323e-17, 0, 0, 0, 1, -1, 6.12323e-17, 0)
+mesh = SubResource("PlaneMesh_38pb2")
+surface_material_override/0 = SubResource("StandardMaterial3D_db0pe")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="box"]
+transform = Transform3D(6.12323e-17, -6.12323e-17, 1, 1, 1.2326e-32, -6.12323e-17, 0, 1, 6.12323e-17, -1.11022e-16, 1.2326e-32, 1)
+mesh = SubResource("PlaneMesh_38pb2")
+surface_material_override/0 = SubResource("StandardMaterial3D_7a2wk")
+
+[node name="Node3D" type="Node3D" parent="box"]
+transform = Transform3D(1, 0, 0, 0, 6.12323e-17, 1, 0, -1, 6.12323e-17, 0, 1, 1)
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="box/Node3D"]
+transform = Transform3D(6.12323e-17, -6.12323e-17, 1, 1, 1.2326e-32, -6.12323e-17, 0, 1, 6.12323e-17, -1.91738e-17, 0.5, 0)
+mesh = SubResource("PlaneMesh_7u5ry")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_t1jin")
+
+[node name="Node3D2" type="Node3D" parent="box"]
+transform = Transform3D(-1, 1.22465e-16, -7.4988e-33, 0, 6.12323e-17, 1, 1.22465e-16, 1, -6.12323e-17, -2.44929e-16, 1, -1)
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="box/Node3D2"]
+transform = Transform3D(6.12323e-17, -6.12323e-17, 1, 1, 1.2326e-32, -6.12323e-17, 0, 1, 6.12323e-17, -1.91738e-17, 0.5, 0)
+mesh = SubResource("PlaneMesh_7u5ry")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_xl0in")
+
+[node name="Node3D3" type="Node3D" parent="box"]
+transform = Transform3D(5.47547e-17, 0.965926, -0.258819, -6.12323e-17, 0.258819, 0.965926, 1, -3.70409e-17, 7.33175e-17, -1, 1, 0)
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="box/Node3D3"]
+transform = Transform3D(6.12323e-17, -6.12323e-17, 1, 1, 1.2326e-32, -6.12323e-17, 0, 1, 6.12323e-17, -1.91738e-17, 0.5, 0)
+mesh = SubResource("PlaneMesh_7u5ry")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_6o5dx")
+
+[node name="Node3D4" type="Node3D" parent="box"]
+transform = Transform3D(6.77099e-17, -0.965926, 0.258819, -6.12323e-17, 0.258819, 0.965926, -1, -8.12509e-17, -4.16213e-17, 1, 1, 0)
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="box/Node3D4"]
+transform = Transform3D(6.12323e-17, -6.12323e-17, 1, 1, 1.2326e-32, -6.12323e-17, 0, 1, 6.12323e-17, -1.91738e-17, 0.5, 0)
+mesh = SubResource("PlaneMesh_7u5ry")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_4y3if")
+
+[node name="letters" type="Node3D" parent="."]
+
+[node name="Label3D" type="Label3D" parent="letters"]
+transform = Transform3D(0.948871, -0.0498707, -0.311701, 0, 0.987441, -0.157986, 0.315666, 0.149908, 0.936954, 0, 0, 0)
+modulate = Color(0.219608, 0.333333, 0.541176, 1)
+outline_modulate = Color(0.462745, 1, 0.427451, 1)
+text = "S"
+font = ExtResource("1_eiwcv")
+font_size = 509
+outline_size = 22
+
+[node name="Label3D2" type="Label3D" parent="letters"]
+transform = Transform3D(0.985739, 0.168283, 0, -0.168283, 0.985739, 0, 0, 0, 1, -0.787663, -0.220153, 4.91504)
+modulate = Color(1, 0.368627, 0.603922, 1)
+outline_modulate = Color(0.462745, 1, 0.427451, 1)
+text = "b
+"
+font = ExtResource("1_eiwcv")
+font_size = 509
+outline_size = 22
+
+[node name="Label3D3" type="Label3D" parent="letters"]
+transform = Transform3D(0.963572, -0.140693, 0.227451, 0.127504, 0.989239, 0.07175, -0.235098, -0.0401354, 0.971143, 0.28107, 0.56424, 4.91504)
+modulate = Color(0.34902, 0.545098, 0, 1)
+outline_modulate = Color(0.462745, 1, 0.427451, 1)
+text = "I
+"
+font = ExtResource("1_eiwcv")
+font_size = 509
+outline_size = 22
+
+[node name="Label3D4" type="Label3D" parent="letters"]
+transform = Transform3D(0.918798, 0.374262, -0.125452, -0.388418, 0.913834, -0.118489, 0.0702962, 0.157595, 0.984999, 1.36854, 0.0834657, 4.91504)
+modulate = Color(1, 0.596078, 0.0392157, 1)
+outline_modulate = Color(0.462745, 1, 0.427451, 1)
+text = "G"
+font = ExtResource("1_eiwcv")
+font_size = 509
+outline_size = 22
+
+[node name="Label3D5" type="Label3D" parent="letters"]
+transform = Transform3D(0.99443, -0.0166511, -0.104073, 0.0779569, 0.780739, 0.619975, 0.0709303, -0.624635, 0.777689, 0.806361, -0.794591, 4.91504)
+modulate = Color(0.172549, 0.180392, 0.407843, 1)
+outline_modulate = Color(0.462745, 1, 0.427451, 1)
+text = "box"
+font = ExtResource("1_eiwcv")
+font_size = 249
+outline_size = 22
+
+[node name="campoint" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.945502, 0.325618, 0, -0.325618, 0.945502, 0, 0, 0)
+
+[node name="Camera3D" type="Camera3D" parent="campoint"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 9.70165)
+
+[node name="Panel" type="Panel" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_txu15")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="Panel/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("2_5bx5v")
+expand_mode = 5
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.309804, 0.309804, 0.309804, 1)
+theme_override_fonts/font = ExtResource("1_eiwcv")
+theme_override_font_sizes/font_size = 35
+text = "GPLv3 CE Studio and LasagnaBones 2024"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_46oao")
+}
+autoplay = "new_animation"
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="end"]
