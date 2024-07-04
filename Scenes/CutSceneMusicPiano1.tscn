@@ -783,7 +783,7 @@ script/source = "extends AnimationPlayer
 
 
 func _on_animation_finished(_anim_name):
-	get_tree().change_scene_to_packed(preload(\"res://Scenes/Levels/level_1.tscn\"))
+	get_tree().change_scene_to_file(\"res://Scenes/Levels/level_1.tscn\")
 "
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_vf1co"]
@@ -875,24 +875,23 @@ centered = false
 
 [node name="Sprite2D" type="Sprite2D" parent="SubViewport"]
 position = Vector2(80, 251.345)
-texture = ExtResource("2_qgh2p")
+texture = ExtResource("5_73xh4")
 
 [node name="Sprite2D3" type="Sprite2D" parent="SubViewport"]
 position = Vector2(432, 251.345)
-texture = ExtResource("2_qgh2p")
+texture = ExtResource("5_73xh4")
 flip_h = true
 
 [node name="player" parent="." instance=ExtResource("1_yvo1q")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.78214, 0)
 
 [node name="Skeleton3D" parent="player/Armature" index="0"]
-bones/3/rotation = Quaternion(0.333399, 0.000411037, 0.000531197, 0.942786)
-bones/3/scale = Vector3(1, 1, 1)
+bones/3/rotation = Quaternion(0.211456, 0.000474932, 0.000474932, 0.977387)
 bones/4/position = Vector3(2.18988e-19, 0.162917, -3.72529e-09)
-bones/4/rotation = Quaternion(-0.454812, 0.000169213, 0.000629302, 0.890587)
+bones/4/rotation = Quaternion(-0.601227, 0.000474739, 0.000474739, 0.799078)
 bones/4/scale = Vector3(1, 1, 1)
 bones/5/position = Vector3(1.16178e-18, 0.170652, 7.45058e-09)
-bones/5/rotation = Quaternion(-0.0570626, -0.000581058, 0.000141403, 0.99837)
+bones/5/rotation = Quaternion(-0.422478, 0.000474922, 0.000474922, 0.906373)
 bones/5/scale = Vector3(1, 1, 1)
 bones/6/rotation = Quaternion(0.0190206, -1.06971e-24, 4.22347e-18, 0.999819)
 bones/6/scale = Vector3(1, 1, 1)
@@ -948,11 +947,11 @@ transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -1.56008, -0.993062, -0.39383
 [node name="AudioStreamPlayer" type="AudioStreamPlayer3D" parent="."]
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(-0.0129998, 0.541297, -0.840731, 0.00722607, 0.840831, 0.541249, 0.999889, 0.00096093, -0.0148421, -1.37237, 2.00945, -0.52733)
+transform = Transform3D(-0.520975, -0.349958, 0.778533, 0, 0.912089, 0.409993, -0.853571, 0.213596, -0.475176, 19.4512, 10.3032, -12.0713)
 current = true
 
 [node name="Camera3D2" type="Camera3D" parent="."]
-transform = Transform3D(0.0654031, -0.0739498, 0.995115, 0, 0.99725, 0.0741084, -0.997859, -0.00484693, 0.0652233, 1.42344, 1.15018, -0.0300201)
+transform = Transform3D(-0.999799, 0.00129419, -0.0199895, 0, 0.997911, 0.0646084, 0.0200313, 0.0645955, -0.99771, 0.0344273, 1.67998, -9.07373)
 current = true
 
 [node name="SpotLight3D" type="SpotLight3D" parent="."]
@@ -963,7 +962,7 @@ spot_range = 4096.0
 spot_angle = 10.86
 
 [node name="Camera3D3" type="Camera3D" parent="."]
-transform = Transform3D(-0.999981, -0.00555362, 0.0026247, 0, 0.427293, 0.904113, -0.00614261, 0.904096, -0.427285, 0.167019, 3.82959, -0.718768)
+transform = Transform3D(-0.845197, -0.495595, 0.200069, 0, 0.374341, 0.927291, -0.534455, 0.783743, -0.316392, -0.337533, 28.7955, 0.433676)
 current = true
 
 [node name="SubViewport2" type="SubViewport" parent="."]
@@ -971,7 +970,7 @@ transparent_bg = true
 size = Vector2i(648, 648)
 
 [node name="Camera3D" type="Camera3D" parent="SubViewport2"]
-transform = Transform3D(-0.0418389, -0.244212, 0.968819, 0, 0.969668, 0.244426, -0.999124, 0.0102265, -0.0405698, 0.882301, 1.34558, -0.326298)
+transform = Transform3D(-0.585692, -0.378674, -0.716639, 0, 0.884156, -0.467191, 0.810533, -0.27363, -0.517844, -0.694878, 0.686851, -0.612234)
 environment = SubResource("Environment_11kij")
 
 [node name="Control" type="Control" parent="."]
@@ -995,11 +994,10 @@ position = Vector2(-324, 0)
 texture = SubResource("ViewportTexture_smgid")
 
 [node name="Label" type="Label" parent="Control/Control"]
-modulate = Color(1, 1, 1, 0)
 layout_mode = 0
-offset_left = 77.0
+offset_left = -22.0
 offset_top = -158.0
-offset_right = 234.0
+offset_right = 135.0
 offset_bottom = -137.0
 rotation = 1.5708
 scale = Vector2(2.025, 2.025)
@@ -1021,11 +1019,10 @@ position = Vector2(324, 0)
 texture = SubResource("ViewportTexture_smgid")
 
 [node name="Label" type="Label" parent="Control/Control2"]
-modulate = Color(1, 1, 1, 0)
 layout_mode = 0
-offset_left = -76.0
+offset_left = 27.0
 offset_top = 185.0
-offset_right = 106.0
+offset_right = 209.0
 offset_bottom = 206.0
 rotation = -1.5708
 scale = Vector2(2.025, 2.025)
@@ -1048,6 +1045,7 @@ expand_mode = 2
 stretch_mode = 5
 
 [node name="Panel" type="Panel" parent="Control"]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -1057,7 +1055,6 @@ grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_lwejt")
 
 [node name="Label" type="Label" parent="Control/Panel"]
-modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
@@ -1073,7 +1070,7 @@ theme_override_font_sizes/font_size = 25
 text = "My name is Kevin - Kevin34"
 
 [node name="ship" parent="." instance=ExtResource("10_5wtbq")]
-transform = Transform3D(-5.74, 0, 7.02947e-16, 0, 5.74, 0, -7.02947e-16, 0, -5.74, 18.247, 23.527, -59.986)
+transform = Transform3D(-5.74, 0, 7.02947e-16, 0, 5.74, 0, -7.02947e-16, 0, -5.74, 18.247, 23.527, 51.569)
 visible = false
 
 [node name="stand" parent="." instance=ExtResource("11_nmxgr")]

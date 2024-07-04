@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://cer2ayo04fedl"]
+[gd_scene load_steps=3 format=3 uid="uid://cahk2q1qedena"]
 
 [ext_resource type="PackedScene" uid="uid://wokfsulvuihe" path="res://Assets/Models/low_poly_concert_grand_piano.glb" id="1_vst73"]
 [ext_resource type="PackedScene" uid="uid://8iobt4o8k61u" path="res://Scenes/Player.tscn" id="2_i7yxu"]

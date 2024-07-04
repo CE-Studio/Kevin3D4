@@ -5,13 +5,14 @@ extends Area3D
 @onready var sound = $AudioStreamPlayer3D
 func _on_body_entered(body):
 	if body is Player:
-		Player.instance.Invincibile = true
-		shape.disabled = true
-		sprite.visible = false
-		sound.play()
-		
+		_h.call_deferred()
 func _respawn():
 	sprite.visible = true
 	shape.disabled = false
 		
 		
+func _h():
+	Player.instance.Invincibile = true
+	shape.disabled = true
+	sprite.visible = false
+	sound.play()
