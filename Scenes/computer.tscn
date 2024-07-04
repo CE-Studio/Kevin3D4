@@ -1,0 +1,44 @@
+[gd_scene load_steps=7 format=3 uid="uid://jamquukhosn4"]
+
+[ext_resource type="Script" path="res://Scripts/Computer.gd" id="1_thhxu"]
+[ext_resource type="ArrayMesh" uid="uid://dfy5wji41alpa" path="res://Assets/Models/models/old_computer.obj" id="2_dvpvf"]
+[ext_resource type="Texture2D" uid="uid://wtu6is0wwaru" path="res://Assets/Textures/exclaim.png" id="3_4qo5o"]
+[ext_resource type="Texture2D" uid="uid://cj4e7vkke5c10" path="res://icon.svg" id="4_yurvp"]
+
+[sub_resource type="AudioStream" id="AudioStream_ipdhu"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_it3at"]
+size = Vector3(6.58678, 3.54655, 7.87544)
+
+[node name="Computer" type="Area3D"]
+script = ExtResource("1_thhxu")
+
+[node name="OldComputer" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.345946, -2.22045e-16, 0.119195)
+mesh = ExtResource("2_dvpvf")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStream_ipdhu")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.830239, 1.43101, -0.935071)
+visible = false
+shape = SubResource("BoxShape3D_it3at")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 4.41053, -0.0761577)
+visible = false
+billboard = 1
+texture = ExtResource("3_4qo5o")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.0105086, -0.00694405, 0.999921, 0, 0.999976, 0.00694443, -0.999945, -7.29763e-05, 0.0105084, 2.8952, 0.912885, -0.137709)
+
+[node name="Sprite3D2" type="Sprite3D" parent="."]
+transform = Transform3D(-0.0336959, 0, -0.999432, 0, 1, 0, 0.999432, 0, -0.0336959, 0.532201, 0.961028, 0)
+texture = ExtResource("4_yurvp")
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

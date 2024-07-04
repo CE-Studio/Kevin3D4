@@ -9,5 +9,4 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	sky.sky_rotation.y += delta * .2
 	pass

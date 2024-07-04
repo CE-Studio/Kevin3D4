@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://c8d8d0qwt61t5"
+path="res://.godot/imported/hell ya brother.wav-13228d0381401f8891efbccb17197d44.sample"
+
+[deps]
+
+source_file="res://Assets/Sound Effects/dear digital diary/hell ya brother.wav"
+dest_files=["res://.godot/imported/hell ya brother.wav-13228d0381401f8891efbccb17197d44.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
