@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://oa3i7xbi8pt4"
+path="res://.godot/imported/starkour.wav-bf816dd622c2304faf33b22d940f57ba.sample"
+
+[deps]
+
+source_file="res://Assets/Sound Effects/dear digital diary/starkour.wav"
+dest_files=["res://.godot/imported/starkour.wav-bf816dd622c2304faf33b22d940f57ba.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

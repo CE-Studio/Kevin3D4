@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://d0q0qwjc1aumf"
+path="res://.godot/imported/carkour.wav-e2ea786dbc92ba3135314635b384d967.sample"
+
+[deps]
+
+source_file="res://Assets/Sound Effects/dear digital diary/carkour.wav"
+dest_files=["res://.godot/imported/carkour.wav-e2ea786dbc92ba3135314635b384d967.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

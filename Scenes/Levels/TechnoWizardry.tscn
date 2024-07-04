@@ -1,16 +1,31 @@
-[gd_scene load_steps=9 format=3 uid="uid://bph7y82fcjh3o"]
+[gd_scene load_steps=24 format=3 uid="uid://bph7y82fcjh3o"]
 
-[ext_resource type="Script" path="res://Scenes/Levels/TechnoWizardry.gd" id="1_dw2wk"]
-[ext_resource type="Texture2D" uid="uid://cusdxv1djog76" path="res://Assets/360_F_238563715_TT246ABsfPc7OMkIASI5wTOYiwwlf8Yz.jpg" id="1_txghr"]
+[ext_resource type="Script" path="res://Scripts/TechnoWizardry.gd" id="1_dw2wk"]
 [ext_resource type="MeshLibrary" uid="uid://i125w3qc6j8c" path="res://Scenes/3DTilemaps/RealL1MeshLib.tres" id="1_whkdw"]
 [ext_resource type="PackedScene" uid="uid://8iobt4o8k61u" path="res://Scenes/Player.tscn" id="2_o17ei"]
 [ext_resource type="AudioStream" uid="uid://diefur77d32jo" path="res://Assets/Music/Title.wav" id="3_qobd8"]
+[ext_resource type="PackedScene" uid="uid://be74smfh0hkry" path="res://Scenes/crumbling_platform.tscn" id="6_c10pk"]
+[ext_resource type="Shader" uid="uid://dqcbpkck1cny8" path="res://Assets/Shaders/crumbling_platform.tres" id="7_sywic"]
+[ext_resource type="Texture2D" uid="uid://durc3utviccja" path="res://Assets/Textures/platform.png" id="8_10yc8"]
+[ext_resource type="ArrayMesh" uid="uid://q652n152a0tm" path="res://Assets/Models/models/shark.obj" id="9_2cv86"]
+[ext_resource type="PackedScene" uid="uid://jamquukhosn4" path="res://Scenes/computer.tscn" id="10_mq5lg"]
+[ext_resource type="AudioStream" uid="uid://dmvt70tmisjow" path="res://Assets/Sound Effects/dear digital diary/Sharkour.wav" id="10_tadbw"]
+[ext_resource type="Texture2D" uid="uid://dm0spsk10xa45" path="res://Assets/Models/models/shark.png" id="11_1w24l"]
+[ext_resource type="AudioStream" uid="uid://44el322f5lnj" path="res://Assets/Sound Effects/dear digital diary/Cigarkour.wav" id="12_sba85"]
+[ext_resource type="ArrayMesh" uid="uid://dkt0t0i0ipt6m" path="res://Assets/Models/models/cigarette.obj" id="13_88vyu"]
+[ext_resource type="Texture2D" uid="uid://rvq6vky6sc31" path="res://Assets/Models/models/cigarette.tga" id="14_8cjtg"]
+[ext_resource type="PackedScene" uid="uid://butqoc3w34c7a" path="res://Scenes/Powerups/triple_jump.tscn" id="15_wiqw6"]
 
-[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_d3euq"]
-panorama = ExtResource("1_txghr")
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_4w1sb"]
+sky_top_color = Color(0, 0.541176, 0.203922, 1)
+sky_horizon_color = Color(0, 0, 0, 1)
+sky_curve = 0.621159
+sky_energy_multiplier = 1.4
+ground_bottom_color = Color(0, 0.219608, 0.054902, 1)
+ground_horizon_color = Color(0.0745098, 0.0784314, 0.0823529, 1)
 
 [sub_resource type="Sky" id="Sky_osplm"]
-sky_material = SubResource("PanoramaSkyMaterial_d3euq")
+sky_material = SubResource("ProceduralSkyMaterial_4w1sb")
 
 [sub_resource type="Environment" id="Environment_f5hwm"]
 background_mode = 2
@@ -18,8 +33,32 @@ sky = SubResource("Sky_osplm")
 sky_rotation = Vector3(0, 6.28319, 6.28319)
 tonemap_mode = 2
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mpdgi"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("7_sywic")
+shader_parameter/FloatParameter = 0.0
+shader_parameter/Albedo = ExtResource("8_10yc8")
+
+[sub_resource type="BoxMesh" id="BoxMesh_towv3"]
+material = SubResource("ShaderMaterial_mpdgi")
+size = Vector3(3, 1, 3)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_shpmh"]
+size = Vector3(2.80076, 1, 4.96414)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_34j3n"]
+albedo_texture = ExtResource("14_8cjtg")
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_f7nej"]
+points = PackedVector3Array(0.048254, 0.00678557, 0.00550159, -0.048254, 0.000754559, -0.00505397, -0.048254, 0.00678557, -0.00505397, 0.048254, 0.000754559, -0.00505397, -0.048254, 0.00226205, 0.00550159, 0.048254, -0.000753968, 0.00248453, 0.048254, 0.00980159, -0.00203795, -0.0467425, 0.00980159, 0.00248453, -0.048254, -0.000753968, -0.00354544, 0.048254, 0.00678557, -0.00505397, -0.048254, -0.000753968, 0.00248453, -0.048254, 0.00678557, 0.00550159, -0.048254, 0.00980159, -0.00203795, 0.048254, 0.00226205, 0.00550159, 0.048254, 0.00980159, 0.00248453, 0.048254, -0.000753968, -0.00354544, -0.048254, 0.00980159, 0.000976007, -0.048254, 0.00829306, 0.00399203)
+
 [node name="Level1" type="Node3D"]
 script = ExtResource("1_dw2wk")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.96363, 0.231435, -0.133619, 0, 0.5, 0.866025, 0.267238, -0.834528, 0.481815, 0, 0, 0)
+shadow_enabled = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_f5hwm")
@@ -29,7 +68,7 @@ mesh_library = ExtResource("1_whkdw")
 cell_size = Vector3(6, 6, 6)
 cell_scale = 3.0
 data = {
-"cells": PackedInt32Array(-65536, 65535, 0, -1, 65535, 0, -1, 0, 0, -65536, 0, 0, -65535, 0, 0, -65535, 65535, 0, -65535, 65534, 0, -65536, 65534, 0, -1, 65534, 0)
+"cells": PackedInt32Array(-65536, 65535, 0, -1, 65535, 0, -1, 0, 0, -65536, 0, 0, -65535, 0, 0, -65535, 65535, 0, -65535, 65534, 0, -65536, 65534, 0, -1, 65534, 0, -65530, 65524, 1310735, -65531, 65524, 1310735, -65532, 65524, 1310735, -65533, 65524, 1310735, -65533, 65523, 1310735, -65532, 65522, 1310735, -65531, 65522, 1310735, -65531, 65521, 1310735, -65530, 65521, 1310735, -65529, 65521, 1310735, -65529, 65522, 1310735, -65529, 65523, 1310735, -65530, 65523, 1310735, -65531, 65523, 1310735, -65532, 65523, 1310735, -65530, 65522, 1310735, -65529, 65524, 1310735, -65516, 65508, 15, -65516, 65509, 15, -65517, 65509, 15, -65518, 65509, 15, -65518, 65508, 15, -65517, 65508, 15, -65515, 65509, 15, -65515, 65510, 15, -65516, 65510, 15, -65518, 65510, 15, -65517, 65510, 15, -65514, 65510, 15, -65514, 65511, 15, -65515, 65511, 15, -65516, 65511, 15, -65517, 65511, 15, -65518, 65511, 15, -65518, 65512, 15, -65517, 65512, 15)
 }
 metadata/_editor_floor_ = Vector3(0, -1, 0)
 
@@ -40,3 +79,171 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.97716, 1.03612, -3.03442)
 stream = ExtResource("3_qobd8")
 autoplay = true
 bus = &"Music"
+
+[node name="Crumbling Platform" parent="." instance=ExtResource("6_c10pk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.04286, 3.36307, -29.7376)
+
+[node name="Crumbling Platform2" parent="." instance=ExtResource("6_c10pk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.66555, 2.73725, -44.67)
+
+[node name="MeshInstance3D" parent="Crumbling Platform2" index="3"]
+mesh = SubResource("BoxMesh_towv3")
+
+[node name="Sharkour" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 66.0295, -0.831285, -78.1114)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Sharkour"]
+
+[node name="Shark" type="MeshInstance3D" parent="Sharkour/StaticBody3D"]
+mesh = ExtResource("9_2cv86")
+skeleton = NodePath("../../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sharkour/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0662141, -0.0491647, -0.342822)
+shape = SubResource("BoxShape3D_shpmh")
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="Sharkour"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -30.1195)
+
+[node name="Shark" type="MeshInstance3D" parent="Sharkour/StaticBody3D2"]
+mesh = ExtResource("9_2cv86")
+skeleton = NodePath("../../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sharkour/StaticBody3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0662141, -0.0491647, -0.342822)
+shape = SubResource("BoxShape3D_shpmh")
+
+[node name="StaticBody3D3" type="StaticBody3D" parent="Sharkour"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.4082, 0, -33.751)
+
+[node name="Shark" type="MeshInstance3D" parent="Sharkour/StaticBody3D3"]
+mesh = ExtResource("9_2cv86")
+skeleton = NodePath("../../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sharkour/StaticBody3D3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0662141, -0.0491647, -0.342822)
+shape = SubResource("BoxShape3D_shpmh")
+
+[node name="Node3D3" type="Node3D" parent="."]
+transform = Transform3D(-0.483741, 0, 0.875211, 0, 1, 0, -0.875211, 0, -0.483741, 120.386, -1.26918, -149.98)
+
+[node name="Node3D" parent="Node3D3" instance=ExtResource("10_mq5lg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32.2519, -1.54632, -107.179)
+
+[node name="AudioStreamPlayer" parent="Node3D3/Node3D" index="1"]
+stream = ExtResource("10_tadbw")
+
+[node name="CollisionShape3D" parent="Node3D3/Node3D" index="2"]
+visible = true
+
+[node name="Sprite3D" parent="Node3D3/Node3D" index="3"]
+visible = true
+
+[node name="Sprite3D2" parent="Node3D3/Node3D" index="5"]
+transform = Transform3D(-0.00505439, 0, -0.149915, 0, 0.15, 0, 0.149915, 0, -0.00505439, 0.532201, 0.961028, 0)
+texture = ExtResource("11_1w24l")
+
+[node name="Node3D2" parent="Node3D3" instance=ExtResource("10_mq5lg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.345946, 2.22045e-16, -0.119195)
+
+[node name="AudioStreamPlayer" parent="Node3D3/Node3D2" index="1"]
+stream = ExtResource("12_sba85")
+
+[node name="CollisionShape3D" parent="Node3D3/Node3D2" index="2"]
+visible = true
+
+[node name="Sprite3D" parent="Node3D3/Node3D2" index="3"]
+visible = true
+
+[node name="Sprite3D2" parent="Node3D3/Node3D2" index="5"]
+transform = Transform3D(-0.00505439, 0, -0.149915, 0, 0.15, 0, 0.149915, 0, -0.00505439, 0.532201, 0.961028, 0)
+texture = ExtResource("11_1w24l")
+
+[node name="Node3D3" parent="Node3D3" instance=ExtResource("10_mq5lg")]
+transform = Transform3D(-0.483741, 0, 0.875211, 0, 1, 0, -0.875211, 0, -0.483741, 42.1832, -2.8155, -69.9058)
+
+[node name="AudioStreamPlayer" parent="Node3D3/Node3D3" index="1"]
+stream = ExtResource("10_tadbw")
+
+[node name="Sprite3D2" parent="Node3D3/Node3D3" index="5"]
+transform = Transform3D(-0.00505439, 0, -0.149915, 0, 0.15, 0, 0.149915, 0, -0.00505439, 0.532201, 0.961028, 0)
+texture = ExtResource("11_1w24l")
+
+[node name="Node3D" type="Node3D" parent="."]
+transform = Transform3D(250, 0, 0, 0, 250, 0, 0, 0, 250, 201.258, 0, -161.742)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0861297, 0, 0)
+
+[node name="Cigarette" type="MeshInstance3D" parent="Node3D/StaticBody3D"]
+mesh = ExtResource("13_88vyu")
+skeleton = NodePath("../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_34j3n")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_f7nej")
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="Node3D"]
+transform = Transform3D(-0.535473, 0, -0.844552, 0, 1, 0, 0.844552, 0, -0.535473, -0.0861297, 0, -0.388794)
+
+[node name="Cigarette" type="MeshInstance3D" parent="Node3D/StaticBody3D2"]
+mesh = ExtResource("13_88vyu")
+skeleton = NodePath("../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_34j3n")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/StaticBody3D2"]
+shape = SubResource("ConvexPolygonShape3D_f7nej")
+
+[node name="StaticBody3D3" type="StaticBody3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.232242, 0.175727, -0.364871)
+
+[node name="Cigarette" type="MeshInstance3D" parent="Node3D/StaticBody3D3"]
+mesh = ExtResource("13_88vyu")
+skeleton = NodePath("../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_34j3n")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/StaticBody3D3"]
+shape = SubResource("ConvexPolygonShape3D_f7nej")
+
+[node name="StaticBody3D4" type="StaticBody3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.11568, 0.312155, -0.516067)
+
+[node name="Cigarette" type="MeshInstance3D" parent="Node3D/StaticBody3D4"]
+mesh = ExtResource("13_88vyu")
+skeleton = NodePath("../../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_34j3n")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/StaticBody3D4"]
+shape = SubResource("ConvexPolygonShape3D_f7nej")
+
+[node name="TripleJump" parent="." instance=ExtResource("15_wiqw6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.66703, -2.9985, -1.21591)
+
+[node name="TripleJump2" parent="." instance=ExtResource("15_wiqw6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.61726, -2.9985, -3.14158)
+
+[node name="TripleJump3" parent="." instance=ExtResource("15_wiqw6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.85965, -2.9985, -3.63376)
+
+[node name="TripleJump4" parent="." instance=ExtResource("15_wiqw6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.96445, -2.9985, 0.598155)
+
+[node name="TripleJump5" parent="." instance=ExtResource("15_wiqw6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.20168, -2.9985, -2.28742)
+
+[node name="TripleJump6" parent="." instance=ExtResource("15_wiqw6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.74074, -2.9985, -5.1438)
+
+[node name="TripleJump7" parent="." instance=ExtResource("15_wiqw6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.67283, -2.9985, -3.21268)
+
+[node name="TripleJump8" parent="." instance=ExtResource("15_wiqw6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.1859, -2.9985, -8.39203)
+
+[node name="TripleJump9" parent="." instance=ExtResource("15_wiqw6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.707146, -2.9985, 2.89406)
+
+[editable path="Crumbling Platform2"]
+[editable path="Node3D3/Node3D"]
+[editable path="Node3D3/Node3D2"]
+[editable path="Node3D3/Node3D3"]
