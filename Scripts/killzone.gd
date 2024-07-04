@@ -1,6 +1,9 @@
 extends Area3D
 
 
+signal died
+
+
 @export var Killzone:Shape3D
 @onready var shape = $CollisionShape3D
 
@@ -12,3 +15,4 @@ func _ready():
 func _on_body_entered(body):
 	if body is Player:
 		Player.instance.isDead = true
+		died.emit()
