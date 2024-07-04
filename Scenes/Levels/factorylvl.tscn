@@ -1,8 +1,9 @@
-[gd_scene load_steps=72 format=3 uid="uid://dr1cnj1yn017v"]
+[gd_scene load_steps=73 format=3 uid="uid://dr1cnj1yn017v"]
 
 [ext_resource type="MeshLibrary" uid="uid://cknd8psi154ho" path="res://Scenes/3DTilemaps/FactoryMeshLib.tres" id="1_4y3v1"]
 [ext_resource type="PackedScene" uid="uid://8iobt4o8k61u" path="res://Scenes/Player.tscn" id="2_6pvt8"]
 [ext_resource type="AudioStream" uid="uid://l2i4ts6kid44" path="res://Assets/Music/Factory.wav" id="3_aoesn"]
+[ext_resource type="Script" path="res://Scripts/AudioStreamPlayerSyncFix.gd" id="3_ddjtl"]
 [ext_resource type="PackedScene" uid="uid://byx5litoy380f" path="res://Scenes/enviro.tscn" id="4_fvhdq"]
 [ext_resource type="PackedScene" uid="uid://334cmavflup3" path="res://Scenes/switch.tscn" id="5_88wly"]
 [ext_resource type="Texture2D" uid="uid://dnjj0sh3xilgo" path="res://Assets/Textures/Skybox.png" id="5_ihsil"]
@@ -597,14 +598,6 @@ data = {
 }
 metadata/_editor_floor_ = Vector3(-13, 14, -24)
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("3_aoesn")
-autoplay = true
-bus = &"Music"
-
-[node name="Player" parent="." instance=ExtResource("2_6pvt8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.97716, -1.31977, -3.03442)
-
 [node name="enviro" parent="." instance=ExtResource("4_fvhdq")]
 
 [node name="WorldEnvironment" parent="enviro" index="0"]
@@ -1073,6 +1066,14 @@ WinZone = SubResource("BoxShape3D_cgimn")
 
 [node name="biglaser" parent="thefinalbits" instance=ExtResource("28_ab126")]
 transform = Transform3D(6.12323e-17, 0, 1, 0, 1, 0, -1, 0, 6.12323e-17, 18, -18, 18)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_aoesn")
+bus = &"Music"
+script = ExtResource("3_ddjtl")
+
+[node name="Player" parent="." instance=ExtResource("2_6pvt8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.97716, -1.31977, -3.03442)
 
 [connection signal="on_switch_activate" from="roomStart/Switch" to="roomStart/door" method="open"]
 [connection signal="on_switch_activate" from="roomMaze/Switch" to="roomMaze/MovingPlatform" method="on_trigger"]
