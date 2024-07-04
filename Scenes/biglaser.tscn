@@ -1,0 +1,342 @@
+[gd_scene load_steps=23 format=3 uid="uid://dyn78mbja1yk0"]
+
+[ext_resource type="PackedScene" uid="uid://doxhqtf3dugb0" path="res://Assets/Models/beeglaser.glb" id="1_sj3wn"]
+[ext_resource type="Texture2D" uid="uid://dfrl4w4lqs8jw" path="res://Assets/Textures/panelshot.png" id="2_futuf"]
+[ext_resource type="Texture2D" uid="uid://fub3av523ir7" path="res://Assets/Textures/LevelTextures/stripes.png" id="3_l6ili"]
+[ext_resource type="Texture2D" uid="uid://dpkrh4tdwjaab" path="res://Assets/Textures/panelfull.png" id="4_kmt6i"]
+[ext_resource type="AudioStream" uid="uid://d1w30h1cts82c" path="res://Assets/Sound Effects/laser.wav" id="5_2qdo7"]
+[ext_resource type="PackedScene" uid="uid://dgknntmd5h60" path="res://Scenes/general_killzone.tscn" id="6_fdsbh"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_olnex"]
+albedo_color = Color(0.337255, 0.337255, 0.337255, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_521rg"]
+albedo_color = Color(0.337255, 0.337255, 0.337255, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w6rvj"]
+transparency = 2
+alpha_scissor_threshold = 0.935
+alpha_antialiasing_mode = 0
+cull_mode = 2
+albedo_texture = ExtResource("2_futuf")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c7yw8"]
+albedo_color = Color(0.160784, 0.160784, 0.160784, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tr45t"]
+albedo_texture = ExtResource("3_l6ili")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_avr6s"]
+albedo_color = Color(0.337255, 0.337255, 0.337255, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6xy5r"]
+albedo_color = Color(0.337255, 0.337255, 0.337255, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n5h4x"]
+transparency = 1
+albedo_color = Color(1, 0, 0, 0.431373)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gjkgm"]
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_qdu1v"]
+_surfaces = [{
+"aabb": AABB(-85, -4, -3, 86, 6, 6.00001),
+"format": 34896613377,
+"index_count": 36,
+"index_data": PackedByteArray(0, 0, 3, 0, 1, 0, 0, 0, 2, 0, 3, 0, 2, 0, 7, 0, 3, 0, 2, 0, 6, 0, 7, 0, 6, 0, 5, 0, 7, 0, 6, 0, 4, 0, 5, 0, 4, 0, 1, 0, 5, 0, 4, 0, 0, 0, 1, 0, 2, 0, 4, 0, 6, 0, 2, 0, 0, 0, 4, 0, 7, 0, 1, 0, 3, 0, 7, 0, 5, 0, 1, 0),
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray(0, 0, 0, 0, 254, 255, 0, 0, 0, 0, 255, 255, 254, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 0, 0, 0, 0, 255, 255, 0, 0, 254, 255, 0, 0, 255, 255, 255, 255, 254, 255, 0, 0, 255, 255, 0, 0, 0, 0, 0, 0, 255, 255, 255, 255, 0, 0, 0, 0)
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_88r6a"]
+resource_name = "beeglaser_Cube_012"
+_surfaces = [{
+"aabb": AABB(-85, -4, -3, 86, 6, 6.00001),
+"attribute_data": PackedByteArray(255, 95, 0, 0, 255, 31, 255, 63, 255, 95, 255, 255, 255, 159, 0, 0, 255, 223, 255, 63, 255, 159, 255, 255, 255, 95, 255, 191, 255, 31, 255, 127, 255, 95, 255, 191, 255, 159, 255, 191, 255, 223, 255, 127, 255, 159, 255, 191, 255, 95, 255, 63, 255, 95, 255, 63, 255, 95, 255, 63, 255, 159, 255, 63, 255, 159, 255, 63, 255, 159, 255, 63, 255, 95, 255, 127, 255, 95, 255, 127, 255, 95, 255, 127, 255, 159, 255, 127, 255, 159, 255, 127, 255, 159, 255, 127),
+"format": 34896613399,
+"index_count": 36,
+"index_data": PackedByteArray(2, 0, 11, 0, 5, 0, 2, 0, 8, 0, 11, 0, 6, 0, 21, 0, 9, 0, 6, 0, 18, 0, 21, 0, 20, 0, 17, 0, 23, 0, 20, 0, 14, 0, 17, 0, 12, 0, 3, 0, 15, 0, 12, 0, 0, 0, 3, 0, 7, 0, 13, 0, 19, 0, 7, 0, 1, 0, 13, 0, 22, 0, 4, 0, 10, 0, 22, 0, 16, 0, 4, 0),
+"material": SubResource("StandardMaterial3D_gjkgm"),
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray(0, 0, 0, 0, 254, 255, 255, 191, 0, 0, 0, 0, 254, 255, 255, 191, 0, 0, 0, 0, 254, 255, 84, 213, 0, 0, 255, 255, 254, 255, 255, 191, 0, 0, 255, 255, 254, 255, 255, 255, 0, 0, 255, 255, 254, 255, 84, 213, 0, 0, 0, 0, 0, 0, 255, 255, 0, 0, 0, 0, 0, 0, 255, 191, 0, 0, 0, 0, 0, 0, 84, 213, 0, 0, 255, 255, 0, 0, 255, 255, 0, 0, 255, 255, 0, 0, 255, 255, 0, 0, 255, 255, 0, 0, 84, 213, 255, 255, 0, 0, 254, 255, 255, 191, 255, 255, 0, 0, 254, 255, 255, 191, 255, 255, 0, 0, 254, 255, 84, 213, 255, 255, 255, 255, 254, 255, 255, 191, 255, 255, 255, 255, 254, 255, 255, 255, 255, 255, 255, 255, 254, 255, 84, 213, 255, 255, 0, 0, 0, 0, 255, 255, 255, 255, 0, 0, 0, 0, 255, 191, 255, 255, 0, 0, 0, 0, 84, 213, 255, 255, 255, 255, 0, 0, 255, 255, 255, 255, 255, 255, 0, 0, 255, 255, 255, 255, 255, 255, 0, 0, 84, 213, 255, 255, 255, 255, 0, 0, 255, 127, 84, 213, 84, 213, 255, 255, 255, 255, 255, 127, 255, 191, 84, 213, 84, 213, 255, 191, 255, 191, 0, 0, 255, 127, 84, 213, 84, 213, 255, 191, 255, 191, 255, 127, 255, 191, 84, 213, 84, 213, 255, 255, 255, 255, 0, 0, 255, 127, 170, 42, 170, 42, 255, 255, 255, 255, 255, 127, 255, 191, 170, 42, 170, 42, 255, 191, 255, 191, 0, 0, 255, 127, 170, 42, 170, 42, 255, 191, 255, 191, 255, 127, 255, 191, 170, 42, 170, 42)
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_qdu1v")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_feff3"]
+transparency = 1
+albedo_color = Color(1, 0, 0, 0.172549)
+
+[sub_resource type="Animation" id="Animation_41tmi"]
+resource_name = "new_animation"
+length = 3.0
+loop_mode = 1
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("beeglaser/Cube_011:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat64Array(0, 0.75),
+"transitions": PackedFloat64Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("beeglaser/Cube_010:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat64Array(0, 0.1, 0.75, 0.85),
+"transitions": PackedFloat64Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-2, 9, 0), Vector3(-1.54126, 9, 0), Vector3(-1.54126, 9, 0), Vector3(-2, 9, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("beeglaser/Cube_006:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat64Array(0, 0.85, 1, 1.3, 1.65, 1.7, 1.75, 2.15, 2.9),
+"transitions": PackedFloat64Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, -1.56758, 0), Vector3(0, -1.56758, 0), Vector3(0, -1.56758, 0), Vector3(0, -3.13838, 0), Vector3(0, -3.13838, 0), Vector3(0, -3.13838, 0), Vector3(0, 0.00321561, 0), Vector3(0, 0.00321561, 0), Vector3(0, -1.56758, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("beeglaser/Cube_006:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat64Array(0, 0.85, 1, 1.3, 1.65, 1.7, 1.75, 2.15, 2.9),
+"transitions": PackedFloat64Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 16, 0), Vector3(0, 16, 0), Vector3(0, 16, 0), Vector3(0, 16, 0), Vector3(13.9999, 16, -0.0450185), Vector3(13.9999, 16, -0.0450185), Vector3(13.9999, 16, -0.0450185), Vector3(0, 16, 0), Vector3(0, 16, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("beeglaser/Cube_006:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat64Array(1.65, 1.7, 1.8),
+"transitions": PackedFloat64Array(1, 1, 1),
+"update": 1,
+"values": [true, false, true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("beeglaser/Cube_006/Plane_002:surface_material_override/0:albedo_texture")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat64Array(0, 1.75),
+"transitions": PackedFloat64Array(1, 1),
+"update": 1,
+"values": [ExtResource("2_futuf"), ExtResource("4_kmt6i")]
+}
+tracks/6/type = "audio"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("AudioStreamPlayer3D")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("5_2qdo7")
+}],
+"times": PackedFloat64Array(0)
+}
+tracks/6/use_blend = true
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("General Killzone:monitoring")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat64Array(0, 0.75),
+"transitions": PackedFloat64Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_1rhco"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("beeglaser/Cube_011:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat64Array(0),
+"transitions": PackedFloat64Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("beeglaser/Cube_010:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat64Array(0),
+"transitions": PackedFloat64Array(1),
+"update": 0,
+"values": [Vector3(-2, 9, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("beeglaser/Cube_006:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat64Array(0),
+"transitions": PackedFloat64Array(1),
+"update": 0,
+"values": [Vector3(0, -1.56758, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("beeglaser/Cube_006:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat64Array(0),
+"transitions": PackedFloat64Array(1),
+"update": 0,
+"values": [Vector3(0, 16, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("beeglaser/Cube_006:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat64Array(0),
+"transitions": PackedFloat64Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("beeglaser/Cube_006/Plane_002:surface_material_override/0:albedo_texture")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat64Array(0),
+"transitions": PackedFloat64Array(1),
+"update": 1,
+"values": [ExtResource("2_futuf")]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("General Killzone:monitoring")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat64Array(0),
+"transitions": PackedFloat64Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_366b3"]
+_data = {
+"RESET": SubResource("Animation_1rhco"),
+"new_animation": SubResource("Animation_41tmi")
+}
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0ofwr"]
+size = Vector3(103.385, 15.5829, 14.2259)
+
+[node name="biglaser" type="Node3D"]
+
+[node name="beeglaser" parent="." instance=ExtResource("1_sj3wn")]
+
+[node name="Cube" parent="beeglaser" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_olnex")
+
+[node name="Cube_001" parent="beeglaser" index="1"]
+surface_material_override/0 = SubResource("StandardMaterial3D_521rg")
+
+[node name="Cube_002" parent="beeglaser" index="2"]
+surface_material_override/0 = SubResource("StandardMaterial3D_521rg")
+
+[node name="Cube_003" parent="beeglaser" index="3"]
+surface_material_override/0 = SubResource("StandardMaterial3D_521rg")
+
+[node name="Cube_004" parent="beeglaser" index="4"]
+surface_material_override/0 = SubResource("StandardMaterial3D_521rg")
+
+[node name="Cube_005" parent="beeglaser" index="5"]
+surface_material_override/0 = SubResource("StandardMaterial3D_521rg")
+
+[node name="Cube_006" parent="beeglaser" index="6"]
+transform = Transform3D(0.00321561, 0, -0.999995, 0, 1, 0, 0.999995, 0, 0.00321561, 0, 16, 0)
+surface_material_override/0 = SubResource("StandardMaterial3D_521rg")
+
+[node name="Plane_002" parent="beeglaser/Cube_006" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_w6rvj")
+
+[node name="Cube_007" parent="beeglaser" index="7"]
+surface_material_override/0 = SubResource("StandardMaterial3D_c7yw8")
+
+[node name="Cube_008" parent="beeglaser" index="8"]
+surface_material_override/0 = SubResource("StandardMaterial3D_tr45t")
+
+[node name="Cube_009" parent="beeglaser" index="9"]
+surface_material_override/0 = SubResource("StandardMaterial3D_avr6s")
+
+[node name="Cube_010" parent="beeglaser" index="10"]
+surface_material_override/0 = SubResource("StandardMaterial3D_6xy5r")
+
+[node name="Cube_011" parent="beeglaser" index="11"]
+surface_material_override/0 = SubResource("StandardMaterial3D_n5h4x")
+
+[node name="Cube_012" type="MeshInstance3D" parent="beeglaser/Cube_011" index="0"]
+transform = Transform3D(0.875, 0, 0, 0, 2.115, 0, 0, 0, 2.115, -9.32208, 1.19426, 0)
+mesh = SubResource("ArrayMesh_88r6a")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_feff3")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_366b3")
+}
+autoplay = "new_animation"
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+volume_db = 25.347
+max_distance = 150.0
+bus = &"SFX"
+
+[node name="General Killzone" parent="." instance=ExtResource("6_fdsbh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36.5693, 7.29143, -0.0185325)
+monitorable = false
+Killzone = SubResource("BoxShape3D_0ofwr")
+
+[editable path="beeglaser"]

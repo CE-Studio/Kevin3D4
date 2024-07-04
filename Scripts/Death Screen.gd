@@ -26,6 +26,7 @@ func _on_button_pressed():
 	player.animstate = player.anims.IDLE
 	hide()
 	Engine.time_scale = 1.0
+	AudioServer.playback_speed_scale = 1.0
 	player.isDead = false
 	player.isTripleJump = 0
 	player.beandouble = false

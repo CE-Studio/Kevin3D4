@@ -1,10 +1,12 @@
-[gd_scene load_steps=16 format=3 uid="uid://dbiu7q3trywau"]
+[gd_scene load_steps=18 format=3 uid="uid://dbiu7q3trywau"]
 
 [ext_resource type="Script" path="res://Scripts/minecart.gd" id="1_sxwj7"]
 [ext_resource type="PackedScene" uid="uid://dgknntmd5h60" path="res://Scenes/general_killzone.tscn" id="1_x3tau"]
 [ext_resource type="PackedScene" uid="uid://ddiy3jtxy0kv1" path="res://Assets/Models/faccart.glb" id="2_c8dsn"]
 [ext_resource type="Texture2D" uid="uid://djkpyognsci67" path="res://Assets/Textures/LevelTextures/faclava.png" id="3_b1vvp"]
 [ext_resource type="Texture2D" uid="uid://fub3av523ir7" path="res://Assets/Textures/LevelTextures/stripes.png" id="4_1dj4s"]
+[ext_resource type="AudioStream" uid="uid://baexi024a6kul" path="res://Assets/Sound Effects/train-horn-fades-25194.mp3" id="6_yqqno"]
+[ext_resource type="AudioStream" uid="uid://dl2hnwswsomy4" path="res://Assets/Sound Effects/train-track-joints-slow-loop-67285.mp3" id="7_fmxnu"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_5xj0r"]
 size = Vector3(6, 6, 6)
@@ -141,5 +143,19 @@ mesh = SubResource("BoxMesh_egrw3")
 libraries = {
 "": SubResource("AnimationLibrary_thgt8")
 }
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("6_yqqno")
+pitch_scale = 2.5
+
+[node name="AudioStreamPlayer3D2" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("7_fmxnu")
+volume_db = 8.205
+pitch_scale = 1.31
+autoplay = true
+max_distance = 150.0
+bus = &"SFX"
+
+[connection signal="died" from="General Killzone" to="AudioStreamPlayer3D" method="play"]
 
 [editable path="faccart"]

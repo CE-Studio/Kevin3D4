@@ -145,8 +145,8 @@ func _physics_process(delta):
 		diveEffect.emitting = true
 	
 	if isDiving:
-		velocity.x = direction2.x * DIVE_VELOCITY * sprint * (bHop/4 + 1) * multi
-		velocity.z = direction2.z * DIVE_VELOCITY * sprint * (bHop/4 + 1) * multi
+		velocity.x = direction2.x * DIVE_VELOCITY * sprint * (bHop/4.0 + 1) * multi
+		velocity.z = direction2.z * DIVE_VELOCITY * sprint * (bHop/4.0 + 1) * multi
 		animstate = anims.DIVE
 		if Input.is_action_just_pressed("ui_accept"):
 			velocity.x = 0
@@ -167,8 +167,9 @@ func _process(delta):
 		if InvNum == 0:
 			multi += 1
 			timer.start()
-			$"../Music".stop()
-			$AudioStreamPlayer.play()
+			if $"../AudioStreamPlayer".playing:
+				$"../AudioStreamPlayer".stop()
+				$AudioStreamPlayer.play()
 			shader.set_shader_parameter("transparency", .7)
 			InvNum += 1
 		invtime.show()
@@ -176,6 +177,7 @@ func _process(delta):
 	
 	if isDead:
 		Engine.time_scale = 0.4 
+		AudioServer.playback_speed_scale = 0.4
 		animstate = anims.DYIN
 	
 	if Input.is_action_pressed("Camera"):
@@ -227,9 +229,10 @@ func _notifyReset(obj:Node):
 
 func _on_timer_timeout():
 	multi = 1
-	$AudioStreamPlayer.stop()
+	if $AudioStreamPlayer.playing:
+		$AudioStreamPlayer.stop()
+		$"../AudioStreamPlayer".play()
 	InvNum = 0
 	shader.set_shader_parameter("transparency", 0)
 	Invincibile = false
 	invtime.hide()
-	$"../Music".play()

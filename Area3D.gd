@@ -2,8 +2,11 @@ extends Area3D
 class_name winnerbox
 
 static var loadBearingNumber = 0
-static var Levels = [
-	preload("res://Scenes/Levels/level_1.tscn")
+const Levels = [
+	"res://Scenes/Levels/level_1.tscn",
+	"res://Scenes/Levels/level_template.tscn",
+	"res://Scenes/Levels/factorylvl.tscn",
+	"res://Scenes/Levels/level_template.tscn",
 ]
 
 @export var WinZone:Shape3D
@@ -18,5 +21,6 @@ func _ready():
 
 func _on_body_entered(body):
 	if body is Player:
-		loadBearingNumber +=0
-		get_tree().change_scene_to_packed(Levels[loadBearingNumber])
+		loadBearingNumber += 1
+		SpeedrunTimer.split()
+		get_tree().change_scene_to_file.call_deferred(Levels[loadBearingNumber])
