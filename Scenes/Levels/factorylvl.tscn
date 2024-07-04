@@ -1,4 +1,4 @@
-[gd_scene load_steps=71 format=3 uid="uid://dr1cnj1yn017v"]
+[gd_scene load_steps=72 format=3 uid="uid://dr1cnj1yn017v"]
 
 [ext_resource type="MeshLibrary" uid="uid://cknd8psi154ho" path="res://Scenes/3DTilemaps/FactoryMeshLib.tres" id="1_4y3v1"]
 [ext_resource type="PackedScene" uid="uid://8iobt4o8k61u" path="res://Scenes/Player.tscn" id="2_6pvt8"]
@@ -27,6 +27,7 @@
 [ext_resource type="PackedScene" uid="uid://5m825y1nkouc" path="res://Assets/Models/crane.glb" id="25_ga6sd"]
 [ext_resource type="Texture2D" uid="uid://fub3av523ir7" path="res://Assets/Textures/LevelTextures/stripes.png" id="26_6ltpe"]
 [ext_resource type="PackedScene" uid="uid://cpn8bnl8w53cs" path="res://Scenes/winnerbox.tscn" id="27_fb48c"]
+[ext_resource type="PackedScene" uid="uid://dyn78mbja1yk0" path="res://Scenes/biglaser.tscn" id="28_ab126"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_gy6oo"]
 panorama = ExtResource("5_ihsil")
@@ -1065,11 +1066,13 @@ autoplay = "new_animation"
 
 [node name="Checkpoint" parent="thefinalbits" instance=ExtResource("11_u5rws")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 13, 28)
-DEBUG_STARTHERE = true
 
 [node name="Winnerbox" parent="thefinalbits" instance=ExtResource("27_fb48c")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 66, 63, 90)
 WinZone = SubResource("BoxShape3D_cgimn")
+
+[node name="biglaser" parent="thefinalbits" instance=ExtResource("28_ab126")]
+transform = Transform3D(6.12323e-17, 0, 1, 0, 1, 0, -1, 0, 6.12323e-17, 18, -18, 18)
 
 [connection signal="on_switch_activate" from="roomStart/Switch" to="roomStart/door" method="open"]
 [connection signal="on_switch_activate" from="roomMaze/Switch" to="roomMaze/MovingPlatform" method="on_trigger"]
