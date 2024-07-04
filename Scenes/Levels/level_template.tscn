@@ -16,12 +16,12 @@ data = {
 }
 metadata/_editor_floor_ = Vector3(0, -1, 0)
 
-[node name="Player" parent="." instance=ExtResource("3_8rifa")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.97716, 1.03612, -3.03442)
-
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_5id5f")
 autoplay = true
 bus = &"Music"
+
+[node name="Player" parent="." instance=ExtResource("3_8rifa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.97716, 1.03612, -3.03442)
 
 [node name="enviro" parent="." instance=ExtResource("4_hgc1o")]
