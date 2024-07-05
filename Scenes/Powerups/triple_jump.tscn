@@ -5,21 +5,31 @@
 [sub_resource type="GDScript" id="GDScript_ypmt7"]
 script/source = "extends Area3D
 
+
 @onready var shape = $CollisionShape3D
 @onready var sprite = $Sprite3D
 @onready var sound = $AudioStreamPlayer3D
+
+
 func _on_body_entered(body):
 	if body is Player:
 		Player.instance.isTripleJump += 1
-		shape.disabled = true
-		sprite.visible = false
 		sound.play()
-		
+		_h.call_deferred()
+
+
 func _respawn():
+	_unh.call_deferred()
+
+
+func _h():
+	shape.disabled = true
+	sprite.visible = false
+
+
+func _unh():
 	sprite.visible = true
 	shape.disabled = false
-		
-		
 "
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_0odsm"]
