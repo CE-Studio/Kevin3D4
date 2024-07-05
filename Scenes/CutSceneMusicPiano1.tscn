@@ -9,10 +9,10 @@
 [ext_resource type="Texture2D" uid="uid://c4h5sp7v5b4r4" path="res://Assets/Textures/visoruv.png" id="4_6djtj"]
 [ext_resource type="Texture2D" uid="uid://c2cb10jgf2e8q" path="res://Assets/Textures/kevin34eyes.png" id="5_73xh4"]
 [ext_resource type="PackedScene" uid="uid://wokfsulvuihe" path="res://Assets/Models/low_poly_concert_grand_piano.glb" id="6_lj0ox"]
-[ext_resource type="PackedScene" uid="uid://cyg5y6go0cvbo" path="res://Scenes/ship.tscn" id="10_5wtbq"]
+[ext_resource type="PackedScene" path="res://Scenes/ship.tscn" id="10_5wtbq"]
 [ext_resource type="Texture2D" uid="uid://dpvag7ol6wehj" path="res://Assets/Textures/furrency.png" id="10_m6uup"]
 [ext_resource type="FontFile" uid="uid://dbiots3wd0sos" path="res://Assets/Ui/OpenSans-ExtraBold.ttf" id="11_muc4d"]
-[ext_resource type="PackedScene" uid="uid://cb8l8tl7gja63" path="res://Scenes/stand.tscn" id="11_nmxgr"]
+[ext_resource type="PackedScene" path="res://Scenes/stand.tscn" id="11_nmxgr"]
 
 [sub_resource type="Animation" id="Animation_na4mo"]
 resource_name = "Piano Cutscene"
@@ -789,12 +789,12 @@ func _on_animation_finished(_anim_name):
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_vf1co"]
 panorama = ExtResource("2_8m401")
 
-[sub_resource type="Sky" id="Sky_gqbo6"]
+[sub_resource type="Sky" id="Sky_2gx2x"]
 sky_material = SubResource("PanoramaSkyMaterial_vf1co")
 
 [sub_resource type="Environment" id="Environment_el5hw"]
 background_mode = 2
-sky = SubResource("Sky_gqbo6")
+sky = SubResource("Sky_2gx2x")
 tonemap_mode = 2
 
 [sub_resource type="SphereMesh" id="SphereMesh_71hla"]
@@ -805,13 +805,13 @@ is_hemisphere = true
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v43jr"]
 bg_color = Color(0, 0, 0, 1)
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_i3dtn"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_dtdw1"]
 viewport_path = NodePath("SubViewport")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ae8la"]
 resource_local_to_scene = true
 shading_mode = 0
-albedo_texture = SubResource("ViewportTexture_i3dtn")
+albedo_texture = SubResource("ViewportTexture_dtdw1")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hswdw"]
 atlas = ExtResource("3_qstfg")

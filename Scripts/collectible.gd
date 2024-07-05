@@ -20,6 +20,8 @@ func _respawn():
 
 func on_player_touch(body):
 	if body is Player:
+		if !Player.instance.beanpickup.playing:
+			Player.instance.beanpickup.play()
 		noise.play()
 		sprite.set_deferred("visible", false)
 		shape.set_deferred("disabled", true)

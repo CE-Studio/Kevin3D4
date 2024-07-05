@@ -3,6 +3,10 @@ extends Panel
 
 func _ready():
 	hide()
+	_h.call_deferred()
+	
+
+func _h():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 
 
@@ -11,12 +15,52 @@ func _input(event):
 		pauseUnpause()
 
 
+var _tooktolong := false
+
+
 func pauseUnpause():
 	if get_tree().paused:
 		get_tree().paused = false
 		hide()
+		$"../stnaleypause".hide()
 		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+		if _tooktolong:
+			Player.instance.resume.play()
 	else:
 		get_tree().paused = true
-		show()
+		if Player.stanley:
+			$"../stnaleypause".show()
+		else:
+			show()
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+		$"../Pausetimer".start(30)
+		_tooktolong = false
+
+
+func _on_again_pressed():
+	if !Player.dlc:
+		pauseUnpause()
+		winnerbox.loadBearingNumber = 0
+		Player.speedrunTime = 0
+		Player.stanley = false
+		get_tree().change_scene_to_file.call_deferred("res://Scenes/CutSceneMusicPiano1.tscn")
+
+
+func _on_set_pressed():
+	$"../stnaleypause/TextureRect".show()
+
+
+func _on_menu_pressed():
+	pauseUnpause()
+	winnerbox.loadBearingNumber = 0
+	Player.speedrunTime = 0
+	Player.stanley = false
+	get_tree().change_scene_to_file.call_deferred("res://Scenes/title.tscn")
+
+
+func _on_button_mouse_entered():
+	$"../stanleysounds".play()
+
+
+func _on_pausetimer_timeout():
+	_tooktolong = true

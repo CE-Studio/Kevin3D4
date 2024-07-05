@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://c1osqgo4m6w3w"
+path="res://.godot/imported/crumble 1.wav-4645f2825254ea45a0deb56e018075a0.sample"
+
+[deps]
+
+source_file="res://Assets/Sound Effects/Voice Lines/crumble 1.wav"
+dest_files=["res://.godot/imported/crumble 1.wav-4645f2825254ea45a0deb56e018075a0.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

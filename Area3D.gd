@@ -5,8 +5,8 @@ static var loadBearingNumber = 0
 const Levels = [
 	"res://Scenes/Levels/level_1.tscn",
 	"res://Scenes/Cutscenes/L1_end_cutscene.tscn",
-	"res://Scenes/Levels/level_template.tscn",
 	"res://Scenes/Levels/factorylvl.tscn",
+	"res://Scenes/Levels/TechnoWizardry.tscn",
 	"res://Scenes/Levels/level_template.tscn",
 ]
 

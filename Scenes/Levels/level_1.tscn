@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://drk0udsokfi0f"]
+[gd_scene load_steps=39 format=3 uid="uid://drk0udsokfi0f"]
 
 [ext_resource type="MeshLibrary" uid="uid://i125w3qc6j8c" path="res://Scenes/3DTilemaps/RealL1MeshLib.tres" id="2_v4hei"]
 [ext_resource type="PackedScene" uid="uid://8iobt4o8k61u" path="res://Scenes/Player.tscn" id="3_qaakx"]
@@ -17,6 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://durc3utviccja" path="res://Assets/Textures/platform.png" id="12_mxuft"]
 [ext_resource type="ArrayMesh" uid="uid://b31dd3bhhyov" path="res://Assets/Models/rocket.obj" id="14_1sfh8"]
 [ext_resource type="Texture2D" uid="uid://dxld8a8acnjo" path="res://Assets/Textures/rocket.png" id="15_2pqbc"]
+[ext_resource type="PackedScene" uid="uid://d205nxa0ov4ny" path="res://Scenes/voice_trigger.tscn" id="18_750mm"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_2m68u"]
 
@@ -674,7 +675,24 @@ surface_material_override/3 = SubResource("StandardMaterial3D_5ssnd")
 surface_material_override/4 = SubResource("StandardMaterial3D_akf2q")
 script = SubResource("GDScript_f3qb5")
 
+[node name="VoiceTrigger" parent="." instance=ExtResource("18_750mm")]
+transform = Transform3D(13.555, 0, 0, 0, 13.555, 0, 0, 0, 13.555, 29.8011, 6.57945, 0.00957914)
+type = 1
+
+[node name="VoiceTrigger2" parent="." instance=ExtResource("18_750mm")]
+transform = Transform3D(18, 0, 0, 0, 18, 0, 0, 0, 18, 9, 40, 57)
+
+[node name="VoiceTrigger3" parent="." instance=ExtResource("18_750mm")]
+transform = Transform3D(18, 0, 0, 0, 18, 0, 0, 0, 18, 15, 40, 99)
+
+[node name="VoiceTrigger4" parent="." instance=ExtResource("18_750mm")]
+transform = Transform3D(18, 0, 0, 0, 18, 0, 0, 0, 18, 153, 51, 99)
+
+[node name="VoiceTrigger5" parent="." instance=ExtResource("18_750mm")]
+transform = Transform3D(18, 0, 0, 0, 18, 0, 0, 0, 18, 138, 51, -37)
+
 [connection signal="on_switch_activate" from="Switch1" to="MovingPlat1" method="on_trigger"]
+[connection signal="on_switch_activate" from="Switch1" to="VoiceTrigger" method="queue_free"]
 [connection signal="on_switch_activate" from="Switch2" to="MovingPlat2" method="on_trigger"]
 
 [editable path="Crumbles/Crumble1"]

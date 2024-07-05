@@ -26,9 +26,8 @@ var isDiving := false
 var isDoubleJump := false
 var isJumping := false
 var sprint:float = 1
-# Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity:float = ProjectSettings.get_setting("physics/3d/default_gravity")
-var beanjectile = load("res://Scenes/bean_jectile.tscn")
+var beanjectile = preload("res://Scenes/bean_jectile.tscn")
 var lerp_speed = 0.1
 var isLerping := false
 var lerp_time: float = 1.0
@@ -42,6 +41,8 @@ static var rizz := false
 static var speedrunning := false
 static var _timerSpawned := false
 static var speedrunTime:float = 0
+static var stanley := false
+static var dlc := false
 var isDead := false
 var bHop = 0
 var isTripleJump = 0
@@ -61,6 +62,16 @@ var multi := 1.0
 @onready var invtime:Label = $"UI/Invinble Timer"
 @onready var shader:ShaderMaterial = $player/Armature/Skeleton3D/Vert.material_overlay
 @onready var cam:Camera3D = $SpringArm3D/Camera3D
+@onready var beanpickup:AudioStreamPlayer = $beanpickup
+@onready var crumblejump:AudioStreamPlayer = $crumblejump
+@onready var die:AudioStreamPlayer = $die
+@onready var kill:AudioStreamPlayer = $kill
+@onready var moving:AudioStreamPlayer = $moving
+@onready var resume:AudioStreamPlayer = $resume
+@onready var sling:AudioStreamPlayer = $sling
+@onready var switch:AudioStreamPlayer = $switch
+@onready var platform:AudioStreamPlayer = $platform
+@onready var findswitch:AudioStreamPlayer = $findswitch
 
 func _ready():
 	if Player.speedrunning:
@@ -185,6 +196,8 @@ func _process(delta):
 		animstate = anims.SHOOTIN
 		$Aiming/CenterContainer/TextureRect.visible = true
 		if Input.is_action_just_pressed("Shoot") and beanos > 0:
+			if !sling.playing:
+				sling.play()
 			var i = beanjectile.instantiate()
 			i.position = $SpringArm3D/Camera3D.global_position
 			i.transform.basis = $SpringArm3D/Camera3D.global_transform.basis
@@ -205,7 +218,12 @@ func _process(delta):
 		$MeshInstance3D.visible = false
 
 
-func _input(event):	
+func _input(event):
+	$Timerafk.start(15)
+	if Player.stanley:
+		if (event is InputEventKey) or (event is InputEventMouseButton):
+			if event.is_pressed() and !event.is_echo():
+				$stanleysounds.play()
 	if (event is InputEventMouseMotion):
 		rotate_y(event.relative.x/-180)
 		$SpringArm3D.rotate_x(event.relative.y/-180)

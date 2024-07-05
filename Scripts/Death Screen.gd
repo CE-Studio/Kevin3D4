@@ -10,7 +10,8 @@ func _ready():
 
 
 func _process(_delta):
-	if player.isDead:
+	if player.isDead and !visible:
+		Player.instance.die.play()
 		show()
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 		cam.rotation += Vector3(0.01, 0.01, 0.01)

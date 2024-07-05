@@ -5,7 +5,7 @@
 [ext_resource type="AudioStream" uid="uid://djmebh7hyrp2o" path="res://Assets/Sound Effects/Splat.wav" id="3_qu2ld"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_7erq7"]
-radius = 1.0
+radius = 3.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_g03ak"]
 atlas = ExtResource("1_uq0bh")

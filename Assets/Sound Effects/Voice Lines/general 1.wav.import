@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cmvpne8vwm8w"
+path="res://.godot/imported/general 1.wav-87483ddce92d331a2224f7c8f520a115.sample"
+
+[deps]
+
+source_file="res://Assets/Sound Effects/Voice Lines/general 1.wav"
+dest_files=["res://.godot/imported/general 1.wav-87483ddce92d331a2224f7c8f520a115.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

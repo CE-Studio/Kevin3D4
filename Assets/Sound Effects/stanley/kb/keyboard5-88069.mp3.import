@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://pmb4pnnh26js"
+path="res://.godot/imported/keyboard5-88069.mp3-702f826d62eb0e24c84872c569c75b19.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sound Effects/stanley/kb/keyboard5-88069.mp3"
+dest_files=["res://.godot/imported/keyboard5-88069.mp3-702f826d62eb0e24c84872c569c75b19.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
