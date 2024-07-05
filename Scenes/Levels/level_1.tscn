@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://drk0udsokfi0f"]
+[gd_scene load_steps=38 format=3 uid="uid://drk0udsokfi0f"]
 
 [ext_resource type="MeshLibrary" uid="uid://i125w3qc6j8c" path="res://Scenes/3DTilemaps/RealL1MeshLib.tres" id="2_v4hei"]
 [ext_resource type="PackedScene" uid="uid://8iobt4o8k61u" path="res://Scenes/Player.tscn" id="3_qaakx"]
@@ -12,9 +12,46 @@
 [ext_resource type="PackedScene" uid="uid://hqroyuuds4po" path="res://Scenes/enemy.tscn" id="9_hyxwm"]
 [ext_resource type="PackedScene" uid="uid://cev248w6qbej8" path="res://Scenes/moving_platform.tscn" id="9_klcnp"]
 [ext_resource type="PackedScene" uid="uid://334cmavflup3" path="res://Scenes/switch.tscn" id="10_if4mq"]
+[ext_resource type="Shader" uid="uid://dqcbpkck1cny8" path="res://Assets/Shaders/crumbling_platform.tres" id="11_l5h2n"]
 [ext_resource type="PackedScene" uid="uid://cpn8bnl8w53cs" path="res://Scenes/winnerbox.tscn" id="12_fun5k"]
+[ext_resource type="Texture2D" uid="uid://durc3utviccja" path="res://Assets/Textures/platform.png" id="12_mxuft"]
+[ext_resource type="ArrayMesh" uid="uid://b31dd3bhhyov" path="res://Assets/Models/rocket.obj" id="14_1sfh8"]
+[ext_resource type="Texture2D" uid="uid://dxld8a8acnjo" path="res://Assets/Textures/rocket.png" id="15_2pqbc"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_2m68u"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5j3yk"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("11_l5h2n")
+shader_parameter/FloatParameter = 0.0
+shader_parameter/Albedo = ExtResource("12_mxuft")
+
+[sub_resource type="BoxMesh" id="BoxMesh_y8nlx"]
+material = SubResource("ShaderMaterial_5j3yk")
+size = Vector3(3, 1, 3)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5pcaw"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("11_l5h2n")
+shader_parameter/FloatParameter = 0.0
+shader_parameter/Albedo = ExtResource("12_mxuft")
+
+[sub_resource type="BoxMesh" id="BoxMesh_886en"]
+material = SubResource("ShaderMaterial_5pcaw")
+size = Vector3(3, 1, 3)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_aeyx4"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("11_l5h2n")
+shader_parameter/FloatParameter = 0.0
+shader_parameter/Albedo = ExtResource("12_mxuft")
+
+[sub_resource type="BoxMesh" id="BoxMesh_bls4h"]
+material = SubResource("ShaderMaterial_aeyx4")
+size = Vector3(3, 1, 3)
 
 [sub_resource type="Animation" id="Animation_2pl64"]
 resource_name = "L1UpDown"
@@ -167,6 +204,43 @@ _data = {
 [sub_resource type="BoxShape3D" id="BoxShape3D_5n76q"]
 size = Vector3(6, 6, 6)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lawis"]
+albedo_texture = ExtResource("15_2pqbc")
+texture_filter = 0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sbdlq"]
+albedo_texture = ExtResource("15_2pqbc")
+texture_filter = 0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p40n3"]
+albedo_texture = ExtResource("15_2pqbc")
+texture_filter = 0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5ssnd"]
+albedo_texture = ExtResource("15_2pqbc")
+texture_filter = 0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_akf2q"]
+albedo_texture = ExtResource("15_2pqbc")
+texture_filter = 0
+
+[sub_resource type="GDScript" id="GDScript_f3qb5"]
+resource_name = "RocketSpin"
+script/source = "extends MeshInstance3D
+
+
+@onready var origin_y:float = position.y
+var updown_delta:float = 0.0
+var updown_speed:float = 0.45
+var rotate_speed:float = 1.5
+
+
+func _process(delta):
+	rotate_y(delta * rotate_speed)
+	updown_delta += delta * updown_speed
+	position.y = origin_y + sin(updown_delta)
+"
+
 [node name="Level1" type="Node3D"]
 
 [node name="GridMap" type="GridMap" parent="."]
@@ -179,6 +253,7 @@ metadata/_editor_floor_ = Vector3(0, 7, 0)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_3f5qw")
+volume_db = -10.0
 autoplay = true
 
 [node name="Player" parent="." instance=ExtResource("3_qaakx")]
@@ -546,11 +621,20 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 65, 96)
 [node name="Crumble1" parent="Crumbles" instance=ExtResource("9_eakvt")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 97, 55, -56)
 
+[node name="MeshInstance3D" parent="Crumbles/Crumble1" index="3"]
+mesh = SubResource("BoxMesh_y8nlx")
+
 [node name="Crumble2" parent="Crumbles" instance=ExtResource("9_eakvt")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 87, 60, -49)
 
+[node name="MeshInstance3D" parent="Crumbles/Crumble2" index="3"]
+mesh = SubResource("BoxMesh_886en")
+
 [node name="Crumble3" parent="Crumbles" instance=ExtResource("9_eakvt")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 88, 64, -1)
+
+[node name="MeshInstance3D" parent="Crumbles/Crumble3" index="3"]
+mesh = SubResource("BoxMesh_bls4h")
 
 [node name="MovingPlat1" parent="." instance=ExtResource("9_klcnp")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 33, 5, 0)
@@ -577,11 +661,24 @@ autoplay = "L1End"
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 48, 67, 84)
 
 [node name="Winnerbox" parent="." instance=ExtResource("12_fun5k")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 159, 116, 33)
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 159, 118, 30)
 WinZone = SubResource("BoxShape3D_5n76q")
+
+[node name="Rocket" type="MeshInstance3D" parent="."]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 159, 120, 30)
+mesh = ExtResource("14_1sfh8")
+surface_material_override/0 = SubResource("StandardMaterial3D_lawis")
+surface_material_override/1 = SubResource("StandardMaterial3D_sbdlq")
+surface_material_override/2 = SubResource("StandardMaterial3D_p40n3")
+surface_material_override/3 = SubResource("StandardMaterial3D_5ssnd")
+surface_material_override/4 = SubResource("StandardMaterial3D_akf2q")
+script = SubResource("GDScript_f3qb5")
 
 [connection signal="on_switch_activate" from="Switch1" to="MovingPlat1" method="on_trigger"]
 [connection signal="on_switch_activate" from="Switch2" to="MovingPlat2" method="on_trigger"]
 
+[editable path="Crumbles/Crumble1"]
+[editable path="Crumbles/Crumble2"]
+[editable path="Crumbles/Crumble3"]
 [editable path="MovingPlat1"]
 [editable path="MovingPlat2"]
