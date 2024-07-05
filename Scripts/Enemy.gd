@@ -52,6 +52,7 @@ func _death():
 		h.stream = preload("res://Assets/Sound Effects/aaaaaaaaaaaaaaaaaaaaa.mp3")
 		h.finished.connect(h.queue_free)
 		get_parent().add_child(h)
+		h.global_position = global_position
 		h.play()
 		timer.start()
 
@@ -76,3 +77,4 @@ func _on_body_entered(body):
 func _shoot():
 	shoot = true
 	$Timer2.start(randf_range(4, 6))
+	$AudioStreamPlayer3D.play()

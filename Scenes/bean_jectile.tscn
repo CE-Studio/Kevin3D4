@@ -68,7 +68,7 @@ animations = [{
 }]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_h5ux6"]
-radius = 0.1
+radius = 1.5
 
 [node name="BeanJectile" type="Area3D"]
 script = ExtResource("1_7ftp6")
