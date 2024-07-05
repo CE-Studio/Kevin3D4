@@ -2,7 +2,8 @@ extends Area3D
 class_name Enemy
 
 
-@onready var timer = $Timer
+@onready var timer:Timer = $Timer
+@onready var model:Node3D = $enemy
 
 
 var health:int:
@@ -23,6 +24,8 @@ func _process(delta):
 	if not $Timer.is_stopped():
 			#$MeshInstance3D.mesh.material.set_shader_parameter("FloatParameter", 0.05/timer.time_left )
 			$enemy/Armature/Skeleton3D/Vert.get_surface_override_material(0).set_shader_parameter("FloatParameter", 1/timer.time_left)
+	model.look_at(Player.instance.global_position, Vector3.UP, true)
+	model.rotation.x = 0
 
 
 func on_stomp(body:Node3D): # This function is connected to StompArea's body_entered signal

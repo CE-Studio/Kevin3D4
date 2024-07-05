@@ -1,4 +1,4 @@
-[gd_scene load_steps=86 format=3 uid="uid://8iobt4o8k61u"]
+[gd_scene load_steps=95 format=3 uid="uid://8iobt4o8k61u"]
 
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_rk3cd"]
 [ext_resource type="AudioStream" uid="uid://bqva2yr82ot7d" path="res://Assets/Sound Effects/IN.wav" id="2_gmnt1"]
@@ -21,6 +21,10 @@
 [ext_resource type="Script" path="res://Scripts/Pause.gd" id="17_t16mw"]
 [ext_resource type="Script" path="res://Scripts/Death Screen.gd" id="18_lqant"]
 [ext_resource type="AudioStream" uid="uid://ccd0jhjo55f51" path="res://Assets/Music/Invinvible.wav" id="20_2n6en"]
+[ext_resource type="Shader" path="res://Scenes/Player.gdshader" id="22_qc8u2"]
+[ext_resource type="FontFile" uid="uid://bmewjb70ttfix" path="res://Assets/Ui/stanley.otf" id="23_jwwsw"]
+[ext_resource type="Texture2D" uid="uid://c8mb841xb5o6n" path="res://Assets/Textures/Screenshot from 2022-08-12 01-59-32.png" id="24_djy54"]
+[ext_resource type="Texture2D" uid="uid://do6ijlkcdftrt" path="res://Assets/Textures/the_button_is_now_sylized.png" id="24_i63k6"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_kp3bk"]
 radius = 0.331573
@@ -1159,6 +1163,24 @@ _data = {
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nkv7c"]
 bg_color = Color(0.501961, 0.0745098, 0, 0.486275)
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_cy6km"]
+shader = ExtResource("22_qc8u2")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ao0vb"]
+texture_margin_left = 54.0
+texture_margin_right = 49.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_etxng"]
+texture = ExtResource("24_i63k6")
+texture_margin_left = 54.0
+texture_margin_right = 49.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0jdn1"]
+expand_margin_right = 49.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tk1j5"]
+expand_margin_right = 49.0
+
 [node name="Player" type="CharacterBody3D"]
 script = ExtResource("1_rk3cd")
 
@@ -1394,6 +1416,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 1
 script = ExtResource("17_t16mw")
 
 [node name="Label" type="Label" parent="Panel"]
@@ -1437,6 +1460,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 1
 theme_override_styles/panel = SubResource("StyleBoxFlat_nkv7c")
 script = ExtResource("18_lqant")
 
@@ -1467,8 +1491,126 @@ one_shot = true
 stream = ExtResource("20_2n6en")
 volume_db = -12.0
 
+[node name="stnaleypause" type="Panel" parent="."]
+process_mode = 3
+visible = false
+material = SubResource("ShaderMaterial_cy6km")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+
+[node name="Label" type="Label" parent="stnaleypause"]
+layout_mode = 1
+offset_left = 54.0
+offset_top = 48.0
+offset_right = 584.0
+offset_bottom = 145.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.615686)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/outline_size = 0
+theme_override_constants/shadow_outline_size = 0
+theme_override_fonts/font = ExtResource("23_jwwsw")
+theme_override_font_sizes/font_size = 80
+text = "The game is now paused"
+
+[node name="TextureRect" type="TextureRect" parent="stnaleypause"]
+visible = false
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = -24.0
+offset_top = -364.0
+offset_right = 458.0
+offset_bottom = 7.0
+grow_vertical = 0
+texture = ExtResource("24_djy54")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="stnaleypause"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -319.0
+offset_right = 435.0
+offset_bottom = -63.0
+grow_vertical = 0
+
+[node name="Button" type="Button" parent="stnaleypause/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 0
+theme_override_fonts/font = ExtResource("23_jwwsw")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxTexture_ao0vb")
+theme_override_styles/hover = SubResource("StyleBoxTexture_etxng")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_etxng")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_0jdn1")
+theme_override_styles/focus = SubResource("StyleBoxTexture_tk1j5")
+text = "Resume the game"
+alignment = 0
+
+[node name="again" type="Button" parent="stnaleypause/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 0
+theme_override_fonts/font = ExtResource("23_jwwsw")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxTexture_ao0vb")
+theme_override_styles/hover = SubResource("StyleBoxTexture_etxng")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_etxng")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_0jdn1")
+theme_override_styles/focus = SubResource("StyleBoxTexture_tk1j5")
+text = "Begin the game again"
+alignment = 0
+
+[node name="set" type="Button" parent="stnaleypause/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 0
+theme_override_fonts/font = ExtResource("23_jwwsw")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxTexture_ao0vb")
+theme_override_styles/hover = SubResource("StyleBoxTexture_etxng")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_etxng")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_0jdn1")
+theme_override_styles/focus = SubResource("StyleBoxTexture_tk1j5")
+text = "Settings"
+alignment = 0
+
+[node name="menu" type="Button" parent="stnaleypause/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 0
+theme_override_fonts/font = ExtResource("23_jwwsw")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxTexture_ao0vb")
+theme_override_styles/hover = SubResource("StyleBoxTexture_etxng")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_etxng")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_0jdn1")
+theme_override_styles/focus = SubResource("StyleBoxTexture_tk1j5")
+text = "Quit to menu"
+alignment = 0
+
 [connection signal="pressed" from="Panel/Button" to="Panel" method="pauseUnpause"]
 [connection signal="pressed" from="Death Screen/Button" to="Death Screen" method="_on_button_pressed"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="pressed" from="stnaleypause/VBoxContainer/Button" to="Panel" method="pauseUnpause"]
+[connection signal="pressed" from="stnaleypause/VBoxContainer/again" to="Panel" method="_on_again_pressed"]
+[connection signal="pressed" from="stnaleypause/VBoxContainer/set" to="Panel" method="_on_set_pressed"]
+[connection signal="pressed" from="stnaleypause/VBoxContainer/menu" to="Panel" method="_on_menu_pressed"]
 
 [editable path="player"]
