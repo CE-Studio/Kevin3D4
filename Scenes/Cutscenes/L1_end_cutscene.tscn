@@ -1,4 +1,4 @@
-[gd_scene load_steps=57 format=3 uid="uid://dxcuq4ba2exc6"]
+[gd_scene load_steps=58 format=3 uid="uid://dxcuq4ba2exc6"]
 
 [ext_resource type="MeshLibrary" uid="uid://i125w3qc6j8c" path="res://Scenes/3DTilemaps/RealL1MeshLib.tres" id="1_o2v4y"]
 [ext_resource type="PackedScene" uid="uid://byx5litoy380f" path="res://Scenes/enviro.tscn" id="2_t8fsd"]
@@ -12,6 +12,7 @@
 [ext_resource type="Material" uid="uid://ciop5hchxevnn" path="res://Assets/Materials/kevin34.tres" id="10_ufbjr"]
 [ext_resource type="Texture2D" uid="uid://ru84i2wfoogw" path="res://Assets/Textures/slingshot.png" id="11_pmeo1"]
 [ext_resource type="Texture2D" uid="uid://c3u6qflftaqa8" path="res://Assets/Textures/glaxy skybox.jpg" id="12_tvotp"]
+[ext_resource type="AudioStream" uid="uid://betmwjqsieyk3" path="res://Assets/Sound Effects/Voice Lines/level 1 end.wav" id="13_7ixsm"]
 [ext_resource type="Texture2D" uid="uid://17dju16ljyrv" path="res://Assets/Textures/eyesclosed.png" id="13_82bq7"]
 [ext_resource type="AudioStream" uid="uid://b5yhpcf716p2r" path="res://Assets/Sound Effects/Choir.mp3" id="13_ej76g"]
 [ext_resource type="Texture2D" uid="uid://4dc6d0cg0wmq" path="res://Assets/Textures/Explosion.png" id="14_qawho"]
@@ -388,6 +389,10 @@ tracks/30/interp = 1
 tracks/30/loop_wrap = true
 tracks/30/keys = {
 "clips": [{
+"end_offset": 0.54,
+"start_offset": 0.44,
+"stream": ExtResource("13_7ixsm")
+}, {
 "end_offset": 16.99,
 "start_offset": 0.53,
 "stream": ExtResource("13_ej76g")
@@ -404,7 +409,7 @@ tracks/30/keys = {
 "start_offset": 0.04,
 "stream": ExtResource("15_vspwo")
 }],
-"times": PackedFloat64Array(6.11, 6.6, 8.05, 10.3)
+"times": PackedFloat64Array(2.3, 6.11, 6.6, 8.05, 10.3)
 }
 tracks/30/use_blend = true
 
@@ -854,7 +859,7 @@ transform = Transform3D(-0.801723, 0, 0.597695, 0, 1, 0, -0.597695, 0, -0.801723
 [node name="ActorParent" type="Node3D" parent="."]
 
 [node name="Rocket" type="MeshInstance3D" parent="ActorParent"]
-transform = Transform3D(1, 0, 2.44929e-16, 0, 1, 0, -2.44929e-16, 0, 1, 0, 3.89906, -3)
+transform = Transform3D(1, 0, -4.69282e-06, 0, 1, 0, 4.69282e-06, 0, 1, 0, 3.89906, -3)
 mesh = ExtResource("3_yc0l6")
 surface_material_override/0 = SubResource("StandardMaterial3D_rkwgn")
 surface_material_override/1 = SubResource("StandardMaterial3D_ibgr4")
@@ -911,11 +916,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.78214, 0)
 
 [node name="Skeleton3D" parent="ActorParent/Player/player/Armature" index="0"]
 bones/0/rotation = Quaternion(-0.0206791, 0, 0, 0.999786)
-bones/3/rotation = Quaternion(0.490466, 0.000474966, 0.000474966, 0.87146)
+bones/2/rotation = Quaternion(0.0155499, 1.0071e-16, 1.0071e-16, 0.999879)
+bones/3/rotation = Quaternion(0.490466, 0.000474967, 0.000474967, 0.87146)
 bones/4/position = Vector3(2.18988e-19, 0.162917, -3.72529e-09)
-bones/4/rotation = Quaternion(-0.506416, 0.000474872, 0.000474872, 0.862289)
+bones/4/rotation = Quaternion(-0.506416, 0.000474873, 0.000474873, 0.862289)
 bones/4/scale = Vector3(1, 1, 1)
-bones/5/rotation = Quaternion(-0.502563, 0.00047501, 0.00047501, 0.86454)
+bones/5/rotation = Quaternion(-0.502563, 0.000475011, 0.000475011, 0.86454)
 bones/5/scale = Vector3(1, 1, 1)
 bones/6/rotation = Quaternion(0.0190206, -1.06971e-24, 4.22347e-18, 0.999819)
 bones/6/scale = Vector3(1, 1, 1)
@@ -924,12 +930,12 @@ bones/7/scale = Vector3(1, 1, 1)
 bones/8/rotation = Quaternion(-0.63949, -0.165516, 0.0224738, 0.750434)
 bones/8/scale = Vector3(1, 1, 1)
 bones/9/rotation = Quaternion(-0.800538, -0.107527, -0.152527, 0.569484)
-bones/10/rotation = Quaternion(-0.00152553, 0.00047513, 0.255559, 0.966792)
+bones/10/rotation = Quaternion(-0.00152553, 0.000475131, 0.255559, 0.966792)
 bones/11/rotation = Quaternion(0.0127875, 7.41878e-09, -0.847367, 0.530854)
 bones/11/scale = Vector3(1, 1, 1)
-bones/12/rotation = Quaternion(-0.0105265, -0.00252537, -0.0815362, 0.996612)
+bones/12/rotation = Quaternion(-0.0105264, -0.00252538, -0.0815362, 0.996612)
 bones/12/scale = Vector3(1, 1, 1)
-bones/13/rotation = Quaternion(0.000475077, 0.000475077, -0.757689, 0.652616)
+bones/13/rotation = Quaternion(0.000475078, 0.000475078, -0.757689, 0.652616)
 bones/13/scale = Vector3(1, 1, 1)
 bones/14/rotation = Quaternion(-0.00152542, 0.00147535, 0.639639, 0.768672)
 bones/14/scale = Vector3(1, 1, 1)
@@ -960,7 +966,7 @@ surface_material_override/0 = ExtResource("10_ufbjr")
 surface_material_override/0 = SubResource("StandardMaterial3D_4vcc6")
 
 [node name="BoneAttachment3D" type="BoneAttachment3D" parent="ActorParent/Player/player/Armature/Skeleton3D" index="2"]
-transform = Transform3D(-0.556483, 0.711322, -0.429358, 0.377979, -0.243458, -0.89323, -0.739904, -0.659356, -0.133385, 0.64193, 1.48289, -0.524578)
+transform = Transform3D(0.391286, 0.574267, 0.719105, 0.866488, -0.493117, -0.0776855, 0.309991, 0.653493, -0.690545, 0.449919, 1.67455, 0.324385)
 bone_name = "Hand_R"
 bone_idx = 14
 
