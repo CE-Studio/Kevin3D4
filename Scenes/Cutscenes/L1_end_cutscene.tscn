@@ -1,0 +1,999 @@
+[gd_scene load_steps=57 format=3 uid="uid://dxcuq4ba2exc6"]
+
+[ext_resource type="MeshLibrary" uid="uid://i125w3qc6j8c" path="res://Scenes/3DTilemaps/RealL1MeshLib.tres" id="1_o2v4y"]
+[ext_resource type="PackedScene" uid="uid://byx5litoy380f" path="res://Scenes/enviro.tscn" id="2_t8fsd"]
+[ext_resource type="ArrayMesh" uid="uid://b31dd3bhhyov" path="res://Assets/Models/rocket.obj" id="3_yc0l6"]
+[ext_resource type="Texture2D" uid="uid://dxld8a8acnjo" path="res://Assets/Textures/rocket.png" id="4_lrwfu"]
+[ext_resource type="Texture2D" uid="uid://cdch1vlk7mbnf" path="res://Assets/Textures/dust.png" id="5_dryyk"]
+[ext_resource type="Texture2D" uid="uid://c4h5sp7v5b4r4" path="res://Assets/Textures/visoruv.png" id="6_fgnjb"]
+[ext_resource type="Texture2D" uid="uid://c2cb10jgf2e8q" path="res://Assets/Textures/kevin34eyes.png" id="7_jw4ti"]
+[ext_resource type="PackedScene" uid="uid://dy11dfruadhrf" path="res://Assets/Models/player.glb" id="8_ea3ut"]
+[ext_resource type="Shader" uid="uid://dyadjxd7g1j6h" path="res://Scenes/Invincie.tres" id="9_3pvjr"]
+[ext_resource type="Material" uid="uid://ciop5hchxevnn" path="res://Assets/Materials/kevin34.tres" id="10_ufbjr"]
+[ext_resource type="Texture2D" uid="uid://ru84i2wfoogw" path="res://Assets/Textures/slingshot.png" id="11_pmeo1"]
+[ext_resource type="Texture2D" uid="uid://c3u6qflftaqa8" path="res://Assets/Textures/glaxy skybox.jpg" id="12_tvotp"]
+[ext_resource type="Texture2D" uid="uid://17dju16ljyrv" path="res://Assets/Textures/eyesclosed.png" id="13_82bq7"]
+[ext_resource type="AudioStream" uid="uid://b5yhpcf716p2r" path="res://Assets/Sound Effects/Choir.mp3" id="13_ej76g"]
+[ext_resource type="Texture2D" uid="uid://4dc6d0cg0wmq" path="res://Assets/Textures/Explosion.png" id="14_qawho"]
+[ext_resource type="AudioStream" uid="uid://dbglweamns23p" path="res://Assets/Sound Effects/sounds.mp3" id="14_uv5aj"]
+[ext_resource type="AudioStream" uid="uid://bn6aqh767lraf" path="res://Assets/Sound Effects/door.wav" id="15_l4iu5"]
+[ext_resource type="AudioStream" uid="uid://ddfbxp2ri1fmw" path="res://Assets/Sound Effects/Explosion.mp3" id="15_vspwo"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rkwgn"]
+albedo_texture = ExtResource("4_lrwfu")
+texture_filter = 0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ibgr4"]
+albedo_texture = ExtResource("4_lrwfu")
+texture_filter = 0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j1dgv"]
+albedo_texture = ExtResource("4_lrwfu")
+texture_filter = 0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v1e3w"]
+albedo_texture = ExtResource("4_lrwfu")
+texture_filter = 0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dx7xs"]
+albedo_texture = ExtResource("4_lrwfu")
+texture_filter = 0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bm8nm"]
+transparency = 1
+shading_mode = 0
+albedo_texture = ExtResource("5_dryyk")
+billboard_mode = 1
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_a3pfn"]
+material = SubResource("StandardMaterial3D_bm8nm")
+orientation = 2
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_kp3bk"]
+radius = 0.331573
+height = 2.1282
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4qcyj"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lnutk"]
+render_priority = 0
+shader = ExtResource("9_3pvjr")
+shader_parameter/transparency = null
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_a4tq4"]
+viewport_path = NodePath("ActorParent/Player/SubViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4vcc6"]
+resource_local_to_scene = true
+shading_mode = 0
+albedo_texture = SubResource("ViewportTexture_a4tq4")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hswdw"]
+atlas = ExtResource("11_pmeo1")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kpqaf"]
+atlas = ExtResource("11_pmeo1")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7woet"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hswdw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kpqaf")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_mk5ot"]
+resource_name = "Cutscene"
+length = 20.0
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat64Array(0, 1.9, 2, 4.55, 8, 8.05, 8.1, 8.15, 8.2, 8.25, 8.3, 8.35, 8.4, 8.45, 8.5, 8.55, 8.6, 8.65, 8.7, 8.75, 8.8, 8.85, 8.9, 8.95, 9, 9.05, 9.1, 9.15, 9.2, 9.25, 9.3, 9.35, 9.4, 9.45, 9.5, 9.55, 9.6, 9.65, 9.7, 9.75, 9.8, 9.85, 9.9, 9.95, 10, 10.05, 10.1, 10.15, 10.2, 10.25, 10.3, 10.85, 10.9),
+"transitions": PackedFloat64Array(1, 1e+06, 1e+06, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1e+06, 1),
+"update": 0,
+"values": [Vector3(0, 5.175, 6.665), Vector3(0, 4.93, 5.615), Vector3(-1.365, 3.555, -0.395), Vector3(0, 4.88, 3.065), Vector3(0, 4.88, 3.065), Vector3(0.0532572, 4.91014, 3.065), Vector3(0.0304913, 4.87991, 3.065), Vector3(-0.0382052, 4.89124, 3.065), Vector3(-0.0505935, 4.98214, 3.065), Vector3(0.0073383, 4.92891, 3.065), Vector3(0.0609274, 4.96321, 3.065), Vector3(0.0262637, 5.00907, 3.065), Vector3(-0.0240696, 5.06304, 3.065), Vector3(-0.0687562, 4.9292, 3.065), Vector3(0.0652693, 4.99396, 3.065), Vector3(-0.000580328, 5.06326, 3.065), Vector3(-0.0411601, 4.90334, 3.065), Vector3(0.0846606, 4.87695, 3.065), Vector3(0.161764, 4.97916, 3.065), Vector3(0.0310549, 4.8725, 3.065), Vector3(0.00420771, 4.91778, 3.065), Vector3(-0.0649928, 4.97088, 3.065), Vector3(0.122652, 4.8987, 3.065), Vector3(0.0424757, 4.92517, 3.065), Vector3(-0.00357828, 4.96701, 3.065), Vector3(-0.0588532, 4.83841, 3.065), Vector3(0.120325, 4.81765, 3.065), Vector3(-0.121442, 4.90733, 3.065), Vector3(-0.0970998, 4.82063, 3.065), Vector3(-0.0931943, 4.95161, 3.065), Vector3(0.171072, 4.83498, 3.065), Vector3(0.122329, 4.93519, 3.065), Vector3(0.10387, 4.80395, 3.065), Vector3(-0.133077, 4.84318, 3.065), Vector3(0.11245, 4.90856, 3.065), Vector3(-0.136349, 4.80319, 3.065), Vector3(-0.126642, 4.93617, 3.065), Vector3(0.00740337, 4.78598, 3.065), Vector3(-0.00230734, 4.85914, 3.065), Vector3(0.0915764, 4.81102, 3.065), Vector3(-0.0540774, 4.85949, 3.065), Vector3(-0.15089, 4.77489, 3.065), Vector3(-0.0956717, 4.93707, 3.065), Vector3(-0.00450591, 4.95615, 3.065), Vector3(0.041242, 4.87232, 3.065), Vector3(0.178515, 4.93562, 3.065), Vector3(-0.109883, 4.86152, 3.065), Vector3(-0.100262, 4.97814, 3.065), Vector3(0.0242818, 4.78252, 3.065), Vector3(0.208469, 4.8994, 3.065), Vector3(0, 4.88, 3.065), Vector3(0, 4.88, 3.065), Vector3(0, 0, 40)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera3D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat64Array(0, 2, 4.55, 13.25),
+"transitions": PackedFloat64Array(1, 1, 1, 1),
+"update": 1,
+"values": [Vector3(-0.216421, 0, 0), Vector3(-0.216421, 1.0821, 0), Vector3(0, 0, 0), Vector3(0, 3.14159, 0)]
+}
+tracks/2/type = "rotation_3d"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ActorParent/Player/player/Armature/Skeleton3D:Neck0")
+tracks/2/interp = 0
+tracks/2/loop_wrap = true
+tracks/2/keys = PackedFloat64Array(0, 1, 0.490475, 0.000474975, 0.000474975, 0.871475, 2.9, 1, 0.487475, -0.082525, 0.046475, 0.867475, 3.4, 1, 0.220475, -0.184525, 0.042475, 0.956475, 3.55, 1, 0.397475, -0.172525, 0.076475, 0.897475, 3.8, 1, 0.220551, -0.184589, 0.0424897, 0.956806, 4.55, 1, 0.000474975, 0.000474975, 0.000474975, 1.00048, 10.9, 1, 0.282475, 0.000474975, 0.000474975, 0.959475)
+tracks/3/type = "rotation_3d"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("ActorParent/Player/player/Armature/Skeleton3D:Neck1")
+tracks/3/interp = 0
+tracks/3/loop_wrap = true
+tracks/3/keys = PackedFloat64Array(0, 1, -0.506525, 0.000474975, 0.000474975, 0.862475, 3.55, 1, -0.728525, 0.000474975, 0.000474975, 0.684475, 3.8, 1, -0.506416, 0.000474872, 0.000474872, 0.862289, 4.55, 1, -0.280525, 0.00147497, 0.00147497, 0.959475)
+tracks/4/type = "rotation_3d"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("ActorParent/Player/player/Armature/Skeleton3D:Head")
+tracks/4/interp = 0
+tracks/4/loop_wrap = true
+tracks/4/keys = PackedFloat64Array(0, 1, -0.502525, 0.000474975, 0.000474975, 0.864475, 3.4, 1, -0.582525, 0.000474975, 0.000474975, 0.813475, 3.5, 1, -0.725525, 0.000474975, 0.000474975, 0.687475, 4.55, 1, 0.418475, 0.000474975, 0.000474975, -0.908525, 5.75, 1, -0.051525, 0.000474975, 0.000474975, 0.998475, 6.1, 1, -0.502525, 0.00147497, 0.00147497, 0.864475, 6.6, 1, 0.045475, 0.000474975, 0.000474975, 0.998475)
+tracks/5/type = "rotation_3d"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("ActorParent/Player/player/Armature/Skeleton3D:Arm_L")
+tracks/5/interp = 0
+tracks/5/loop_wrap = true
+tracks/5/keys = PackedFloat64Array(0, 1, -0.639525, -0.165525, 0.022475, 0.750475, 3.4, 1, -0.416525, 0.454475, 0.018475, 0.787475, 3.5, 1, -0.123525, -0.301525, 0.389475, 0.861475, 3.55, 1, -0.159525, -0.381525, 0.375475, 0.829475, 3.8, 1, -0.123525, -0.301524, 0.389474, 0.861473, 4.55, 1, 0.00147497, 0.000474975, 0.372475, 0.928475, 5.75, 1, 0.231475, 0.574475, 0.291475, 0.729475, 6.1, 1, -0.351525, -0.876525, 0.123475, 0.303475, 6.6, 1, -0.280525, -0.701525, 0.245475, 0.607475)
+tracks/6/type = "rotation_3d"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("ActorParent/Player/player/Armature/Skeleton3D:Forearm_L")
+tracks/6/interp = 0
+tracks/6/loop_wrap = true
+tracks/6/keys = PackedFloat64Array(0, 1, -0.800525, -0.107525, -0.152525, 0.569475, 3.5, 1, -0.807525, -0.030525, -0.097525, 0.581475, 4.55, 1, 0.000474975, 0.000474975, 0.000474975, 1.00048)
+tracks/7/type = "rotation_3d"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("ActorParent/Player/player/Armature/Skeleton3D:Hand_L")
+tracks/7/interp = 0
+tracks/7/loop_wrap = true
+tracks/7/keys = PackedFloat64Array(0, 1, -0.00152503, 0.000474975, 0.255475, 0.966475, 3.5, 1, 0.363475, -0.662525, -0.317525, 0.572475, 4.55, 1, 0.000474975, 0.000474975, 0.000474975, 1.00048)
+tracks/8/type = "rotation_3d"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("ActorParent/Player/player/Armature/Skeleton3D:Arm_R")
+tracks/8/interp = 0
+tracks/8/loop_wrap = true
+tracks/8/keys = PackedFloat64Array(0, 1, -0.010525, -0.00252503, -0.081525, 0.996475, 3.5, 1, 0.207475, 0.956475, 0.185475, -0.084525, 3.55, 1, -0.041525, -0.969525, -0.195525, 0.140475, 3.8, 1, -0.207534, -0.956745, -0.185527, 0.0845489, 4.55, 1, 0.000474975, 0.00147497, -0.370525, 0.928475, 5.75, 1, 0.229475, -0.573525, -0.290525, 0.730475, 6.1, 1, -0.349525, 0.878475, -0.121525, 0.302475, 6.6, 1, -0.279525, 0.703475, -0.242525, 0.606475)
+tracks/9/type = "rotation_3d"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("ActorParent/Player/player/Armature/Skeleton3D:Forearm_R")
+tracks/9/interp = 0
+tracks/9/loop_wrap = true
+tracks/9/keys = PackedFloat64Array(0, 1, 0.000474975, 0.000474975, -0.757525, 0.652475, 4.55, 1, 0.000474975, 0.000474975, 0.000474975, 1.00048)
+tracks/10/type = "rotation_3d"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("ActorParent/Player/player/Armature/Skeleton3D:Hand_R")
+tracks/10/interp = 0
+tracks/10/loop_wrap = true
+tracks/10/keys = PackedFloat64Array(0, 1, -0.00152503, 0.00147497, 0.639475, 0.768475, 4.55, 1, -0.00152503, 0.000474975, 0.000474975, 1.00048)
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("ActorParent/Player/SubViewport/Sprite2D:texture")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat64Array(0, 2.5, 2.6, 3.2, 4.05, 6.6, 6.8),
+"transitions": PackedFloat64Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("7_jw4ti"), ExtResource("13_82bq7"), ExtResource("7_jw4ti"), ExtResource("13_82bq7"), ExtResource("7_jw4ti"), ExtResource("13_82bq7"), ExtResource("7_jw4ti")]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("ActorParent/Player/SubViewport/Sprite2D3:texture")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat64Array(0),
+"transitions": PackedFloat64Array(1),
+"update": 1,
+"values": [ExtResource("7_jw4ti")]
+}
+tracks/13/type = "rotation_3d"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("ActorParent/Player/player/Armature/Skeleton3D:Torso")
+tracks/13/interp = 0
+tracks/13/loop_wrap = true
+tracks/13/keys = PackedFloat64Array(0, 1, 0.0155499, 1.0071e-16, 1.0071e-16, 0.999879, 3.4, 1, 0.015475, -0.189525, 0.00247497, 0.981475, 4.55, 1, 0.015475, 0.000474975, -0.000525026, 0.999475, 5.75, 1, -0.356525, 0.000474975, -0.000525026, 0.934475, 6.1, 1, 0.189475, 0.00147497, -0.000525026, 0.981475, 6.6, 1, 0.000474975, 0.00147497, 0.000474975, 1.00048)
+tracks/14/type = "rotation_3d"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("ActorParent/Player/player/Armature/Skeleton3D:Thigh_L")
+tracks/14/interp = 0
+tracks/14/loop_wrap = true
+tracks/14/keys = PackedFloat64Array(0, 1, -0.0350315, -0.0884289, 0.988896, 0.114181, 6.6, 1, -0.348525, -0.231525, 0.848475, 0.325475)
+tracks/15/type = "rotation_3d"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("ActorParent/Player/player/Armature/Skeleton3D:Leg_L")
+tracks/15/interp = 0
+tracks/15/loop_wrap = true
+tracks/15/keys = PackedFloat64Array(0, 1, 0.568288, 0.114681, 0.281031, 0.7648, 6.1, 1, 0.716475, 0.196475, 0.235475, 0.626475)
+tracks/16/type = "rotation_3d"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("ActorParent/Player/player/Armature/Skeleton3D:Thigh_R")
+tracks/16/interp = 0
+tracks/16/loop_wrap = true
+tracks/16/keys = PackedFloat64Array(0, 1, 0.0350315, -0.0884289, 0.988896, -0.114181, 6.6, 1, -0.277525, 0.240475, -0.830525, 0.418475)
+tracks/17/type = "rotation_3d"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("ActorParent/Player/player/Armature/Skeleton3D:Leg_R")
+tracks/17/interp = 0
+tracks/17/loop_wrap = true
+tracks/17/keys = PackedFloat64Array(0, 1, 0.568288, -0.114681, -0.281031, 0.7648, 6.1, 1, 0.805475, -0.087525, -0.255525, 0.527475)
+tracks/18/type = "value"
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/path = NodePath("ActorParent/Player:position")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/keys = {
+"times": PackedFloat64Array(0, 6.1, 6.55, 6.6, 10.85, 10.9),
+"transitions": PackedFloat64Array(1, 1, 1, 1, 1e+06, 1),
+"update": 0,
+"values": [Vector3(-2.61476, 2.3, -0.791393), Vector3(-2.61476, 2.3, -0.791393), Vector3(-2.18, 4.375, -0.731), Vector3(-0.7, 4.3, -2.3), Vector3(-0.7, 4.3, -2.3), Vector3(-0.7, 4.3, 0.7)]
+}
+tracks/19/type = "value"
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/path = NodePath("ActorParent/Rocket:rotation")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/keys = {
+"times": PackedFloat64Array(0, 6.6),
+"transitions": PackedFloat64Array(1, 1),
+"update": 0,
+"values": [Vector3(0, -6.28319, 0), Vector3(0, 6.28319, 0)]
+}
+tracks/20/type = "value"
+tracks/20/imported = false
+tracks/20/enabled = true
+tracks/20/path = NodePath("ActorParent:position")
+tracks/20/interp = 1
+tracks/20/loop_wrap = true
+tracks/20/keys = {
+"times": PackedFloat64Array(0, 6.55, 6.6, 6.7, 8, 10.3, 10.85, 10.9, 13.2, 13.25, 15.5),
+"transitions": PackedFloat64Array(1, 1e+06, 1, 1, 1, 1, 1e+06, 10, 1, 0.1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0.365, 0, -0.435), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0.95, 0), Vector3(0, 0.95, 0), Vector3(0, -0.5, 28), Vector3(0, -1, 34), Vector3(0, -1, 36), Vector3(0, -0.5, 48)]
+}
+tracks/21/type = "value"
+tracks/21/imported = false
+tracks/21/enabled = true
+tracks/21/path = NodePath("ActorParent:rotation")
+tracks/21/interp = 1
+tracks/21/loop_wrap = true
+tracks/21/keys = {
+"times": PackedFloat64Array(0, 10.85, 10.9),
+"transitions": PackedFloat64Array(1, 1e+06, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(-0.785398, -1.5708, -1.5708)]
+}
+tracks/22/type = "value"
+tracks/22/imported = false
+tracks/22/enabled = true
+tracks/22/path = NodePath("ActorParent/Rocket/CPUParticles3D:emitting")
+tracks/22/interp = 1
+tracks/22/loop_wrap = true
+tracks/22/keys = {
+"times": PackedFloat64Array(0, 8, 10.3),
+"transitions": PackedFloat64Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/23/type = "value"
+tracks/23/imported = false
+tracks/23/enabled = true
+tracks/23/path = NodePath("AnimatedSprite3D:speed_scale")
+tracks/23/interp = 1
+tracks/23/loop_wrap = true
+tracks/23/keys = {
+"times": PackedFloat64Array(0, 10.3),
+"transitions": PackedFloat64Array(1, 1),
+"update": 1,
+"values": [0.0, 1.0]
+}
+tracks/24/type = "value"
+tracks/24/imported = false
+tracks/24/enabled = true
+tracks/24/path = NodePath("AnimatedSprite3D:frame")
+tracks/24/interp = 1
+tracks/24/loop_wrap = true
+tracks/24/keys = {
+"times": PackedFloat64Array(0),
+"transitions": PackedFloat64Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/25/type = "value"
+tracks/25/imported = false
+tracks/25/enabled = true
+tracks/25/path = NodePath("AnimatedSprite3D:visible")
+tracks/25/interp = 1
+tracks/25/loop_wrap = true
+tracks/25/keys = {
+"times": PackedFloat64Array(0.05, 10.3),
+"transitions": PackedFloat64Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/26/type = "rotation_3d"
+tracks/26/imported = false
+tracks/26/enabled = true
+tracks/26/path = NodePath("ActorParent/Player/player/Armature/Skeleton3D:Jaw")
+tracks/26/interp = 1
+tracks/26/loop_wrap = true
+tracks/26/keys = PackedFloat64Array(0, 1, 0.0190206, -1.06971e-24, 4.22347e-18, 0.999819, 10.85, 1, 0.000474975, 0.000474975, 0.000474975, 1.00048, 10.9, 1, -0.676525, 0.000474975, 0.000474975, 0.736475)
+tracks/27/type = "value"
+tracks/27/imported = false
+tracks/27/enabled = true
+tracks/27/path = NodePath("ActorParent:scale")
+tracks/27/interp = 1
+tracks/27/loop_wrap = true
+tracks/27/keys = {
+"times": PackedFloat64Array(0, 10.85, 10.9, 13.2, 13.25, 15.5),
+"transitions": PackedFloat64Array(1, 1e+06, 10, 1, 0.1, 1),
+"update": 0,
+"values": [Vector3(1, 1, 1), Vector3(1, 1, 1), Vector3(0.005, 0.005, 0.005), Vector3(1, 1, 1), Vector3(1, 1, 1), Vector3(0.005, 0.005, 0.005)]
+}
+tracks/28/type = "value"
+tracks/28/imported = false
+tracks/28/enabled = true
+tracks/28/path = NodePath("ActorParent/Rocket:position")
+tracks/28/interp = 1
+tracks/28/loop_wrap = true
+tracks/28/keys = {
+"times": PackedFloat64Array(0, 10.9),
+"transitions": PackedFloat64Array(1, 1),
+"update": 1,
+"values": [Vector3(0, 3.89906, -3), Vector3(0, 3.899, 0)]
+}
+tracks/29/type = "value"
+tracks/29/imported = false
+tracks/29/enabled = true
+tracks/29/path = NodePath("MeshInstance3D:mesh:material:albedo_color")
+tracks/29/interp = 1
+tracks/29/loop_wrap = true
+tracks/29/keys = {
+"times": PackedFloat64Array(0, 16.65, 18.8),
+"transitions": PackedFloat64Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(0, 0, 0, 1)]
+}
+tracks/30/type = "audio"
+tracks/30/imported = false
+tracks/30/enabled = true
+tracks/30/path = NodePath("AudioStreamPlayer")
+tracks/30/interp = 1
+tracks/30/loop_wrap = true
+tracks/30/keys = {
+"clips": [{
+"end_offset": 16.99,
+"start_offset": 0.53,
+"stream": ExtResource("13_ej76g")
+}, {
+"end_offset": 0.29,
+"start_offset": 0.16,
+"stream": ExtResource("14_uv5aj")
+}, {
+"end_offset": 1.08,
+"start_offset": 0.0,
+"stream": ExtResource("15_l4iu5")
+}, {
+"end_offset": 1.4,
+"start_offset": 0.04,
+"stream": ExtResource("15_vspwo")
+}],
+"times": PackedFloat64Array(6.11, 6.6, 8.05, 10.3)
+}
+tracks/30/use_blend = true
+
+[sub_resource type="Animation" id="Animation_a7oht"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat64Array(0),
+"transitions": PackedFloat64Array(1),
+"update": 0,
+"values": [Vector3(0, 5.175, 6.665)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera3D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat64Array(0),
+"transitions": PackedFloat64Array(1),
+"update": 0,
+"values": [Vector3(-0.216421, 0, 0)]
+}
+tracks/2/type = "rotation_3d"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ActorParent/Player/player/Armature/Skeleton3D:Neck0")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = PackedFloat64Array(0, 1, 0.490475, 0.000474975, 0.000474975, 0.871475)
+tracks/3/type = "rotation_3d"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("ActorParent/Player/player/Armature/Skeleton3D:Neck1")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = PackedFloat64Array(0, 1, -0.506525, 0.000474975, 0.000474975, 0.862475)
+tracks/4/type = "rotation_3d"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("ActorParent/Player/player/Armature/Skeleton3D:Head")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = PackedFloat64Array(0, 1, -0.502525, 0.000474975, 0.000474975, 0.864475)
+tracks/5/type = "rotation_3d"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("ActorParent/Player/player/Armature/Skeleton3D:Arm_L")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = PackedFloat64Array(0, 1, -0.639525, -0.165525, 0.022475, 0.750475)
+tracks/6/type = "rotation_3d"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("ActorParent/Player/player/Armature/Skeleton3D:Forearm_L")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = PackedFloat64Array(0, 1, -0.800525, -0.107525, -0.152525, 0.569475)
+tracks/7/type = "rotation_3d"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("ActorParent/Player/player/Armature/Skeleton3D:Hand_L")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = PackedFloat64Array(0, 1, -0.00152503, 0.000474975, 0.255475, 0.966475)
+tracks/8/type = "rotation_3d"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("ActorParent/Player/player/Armature/Skeleton3D:Arm_R")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = PackedFloat64Array(0, 1, -0.010525, -0.00252503, -0.081525, 0.996475)
+tracks/9/type = "rotation_3d"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("ActorParent/Player/player/Armature/Skeleton3D:Forearm_R")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = PackedFloat64Array(0, 1, 0.000474975, 0.000474975, -0.757525, 0.652475)
+tracks/10/type = "rotation_3d"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("ActorParent/Player/player/Armature/Skeleton3D:Hand_R")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = PackedFloat64Array(0, 1, -0.00152503, 0.00147497, 0.639475, 0.768475)
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("ActorParent/Player/SubViewport/Sprite2D:texture")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat64Array(0),
+"transitions": PackedFloat64Array(1),
+"update": 1,
+"values": [ExtResource("7_jw4ti")]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("ActorParent/Player/SubViewport/Sprite2D3:texture")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat64Array(0),
+"transitions": PackedFloat64Array(1),
+"update": 1,
+"values": [ExtResource("7_jw4ti")]
+}
+tracks/13/type = "rotation_3d"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("ActorParent/Player/player/Armature/Skeleton3D:Torso")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = PackedFloat64Array(0, 1, 0.0155499, 1.0071e-16, 1.0071e-16, 0.999879)
+tracks/14/type = "rotation_3d"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("ActorParent/Player/player/Armature/Skeleton3D:Thigh_L")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = PackedFloat64Array(0, 1, -0.0350315, -0.0884289, 0.988896, 0.114181)
+tracks/15/type = "rotation_3d"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("ActorParent/Player/player/Armature/Skeleton3D:Leg_L")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = PackedFloat64Array(0, 1, 0.568288, 0.114681, 0.281031, 0.7648)
+tracks/16/type = "rotation_3d"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("ActorParent/Player/player/Armature/Skeleton3D:Thigh_R")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = PackedFloat64Array(0, 1, 0.0350315, -0.0884289, 0.988896, -0.114181)
+tracks/17/type = "rotation_3d"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("ActorParent/Player/player/Armature/Skeleton3D:Leg_R")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = PackedFloat64Array(0, 1, 0.568288, -0.114681, -0.281031, 0.7648)
+tracks/18/type = "value"
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/path = NodePath("ActorParent/Player:position")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/keys = {
+"times": PackedFloat64Array(0),
+"transitions": PackedFloat64Array(1),
+"update": 0,
+"values": [Vector3(-2.61476, 2.3, -0.791393)]
+}
+tracks/19/type = "value"
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/path = NodePath("ActorParent/Rocket:rotation")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/keys = {
+"times": PackedFloat64Array(0),
+"transitions": PackedFloat64Array(1),
+"update": 0,
+"values": [Vector3(0, -6.28319, 0)]
+}
+tracks/20/type = "value"
+tracks/20/imported = false
+tracks/20/enabled = true
+tracks/20/path = NodePath("ActorParent:position")
+tracks/20/interp = 1
+tracks/20/loop_wrap = true
+tracks/20/keys = {
+"times": PackedFloat64Array(0),
+"transitions": PackedFloat64Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/21/type = "value"
+tracks/21/imported = false
+tracks/21/enabled = true
+tracks/21/path = NodePath("ActorParent:rotation")
+tracks/21/interp = 1
+tracks/21/loop_wrap = true
+tracks/21/keys = {
+"times": PackedFloat64Array(0),
+"transitions": PackedFloat64Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/22/type = "value"
+tracks/22/imported = false
+tracks/22/enabled = true
+tracks/22/path = NodePath("ActorParent/Rocket/CPUParticles3D:emitting")
+tracks/22/interp = 1
+tracks/22/loop_wrap = true
+tracks/22/keys = {
+"times": PackedFloat64Array(0),
+"transitions": PackedFloat64Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/23/type = "value"
+tracks/23/imported = false
+tracks/23/enabled = true
+tracks/23/path = NodePath("AnimatedSprite3D:speed_scale")
+tracks/23/interp = 1
+tracks/23/loop_wrap = true
+tracks/23/keys = {
+"times": PackedFloat64Array(0),
+"transitions": PackedFloat64Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/24/type = "value"
+tracks/24/imported = false
+tracks/24/enabled = true
+tracks/24/path = NodePath("AnimatedSprite3D:frame")
+tracks/24/interp = 1
+tracks/24/loop_wrap = true
+tracks/24/keys = {
+"times": PackedFloat64Array(0),
+"transitions": PackedFloat64Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/25/type = "value"
+tracks/25/imported = false
+tracks/25/enabled = true
+tracks/25/path = NodePath("AnimatedSprite3D:visible")
+tracks/25/interp = 1
+tracks/25/loop_wrap = true
+tracks/25/keys = {
+"times": PackedFloat64Array(0),
+"transitions": PackedFloat64Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/26/type = "rotation_3d"
+tracks/26/imported = false
+tracks/26/enabled = true
+tracks/26/path = NodePath("ActorParent/Player/player/Armature/Skeleton3D:Jaw")
+tracks/26/interp = 1
+tracks/26/loop_wrap = true
+tracks/26/keys = PackedFloat64Array(0, 1, 0.0190206, -1.06971e-24, 4.22347e-18, 0.999819)
+tracks/27/type = "value"
+tracks/27/imported = false
+tracks/27/enabled = true
+tracks/27/path = NodePath("ActorParent:scale")
+tracks/27/interp = 1
+tracks/27/loop_wrap = true
+tracks/27/keys = {
+"times": PackedFloat64Array(0),
+"transitions": PackedFloat64Array(1),
+"update": 0,
+"values": [Vector3(1, 1, 1)]
+}
+tracks/28/type = "value"
+tracks/28/imported = false
+tracks/28/enabled = true
+tracks/28/path = NodePath("ActorParent/Rocket:position")
+tracks/28/interp = 1
+tracks/28/loop_wrap = true
+tracks/28/keys = {
+"times": PackedFloat64Array(0),
+"transitions": PackedFloat64Array(1),
+"update": 0,
+"values": [Vector3(0, 3.89906, -3)]
+}
+tracks/29/type = "value"
+tracks/29/imported = false
+tracks/29/enabled = true
+tracks/29/path = NodePath("MeshInstance3D:mesh:material:albedo_color")
+tracks/29/interp = 1
+tracks/29/loop_wrap = true
+tracks/29/keys = {
+"times": PackedFloat64Array(0),
+"transitions": PackedFloat64Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_d1clt"]
+_data = {
+"Cutscene": SubResource("Animation_mk5ot"),
+"RESET": SubResource("Animation_a7oht")
+}
+
+[sub_resource type="GDScript" id="GDScript_r06wp"]
+resource_name = "LoadLevel2"
+script/source = "extends AnimationPlayer
+
+
+func _on_animation_finished(anim_name):
+	get_tree().change_scene_to_file.call_deferred(\"res://Scenes/Levels/level_template.tscn\")
+"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f2bhl"]
+shading_mode = 0
+albedo_texture = ExtResource("12_tvotp")
+
+[sub_resource type="SphereMesh" id="SphereMesh_qn3dn"]
+material = SubResource("StandardMaterial3D_f2bhl")
+flip_faces = true
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vv4mc"]
+atlas = ExtResource("14_qawho")
+region = Rect2(0, 0, 200, 282)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_50lrs"]
+atlas = ExtResource("14_qawho")
+region = Rect2(200, 0, 200, 282)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n8x2x"]
+atlas = ExtResource("14_qawho")
+region = Rect2(400, 0, 200, 282)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_60t4o"]
+atlas = ExtResource("14_qawho")
+region = Rect2(600, 0, 200, 282)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0gejx"]
+atlas = ExtResource("14_qawho")
+region = Rect2(0, 282, 200, 282)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eep5g"]
+atlas = ExtResource("14_qawho")
+region = Rect2(200, 282, 200, 282)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mypnr"]
+atlas = ExtResource("14_qawho")
+region = Rect2(400, 282, 200, 282)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mmyga"]
+atlas = ExtResource("14_qawho")
+region = Rect2(600, 282, 200, 282)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dl7e7"]
+atlas = ExtResource("14_qawho")
+region = Rect2(0, 564, 200, 282)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y4nah"]
+atlas = ExtResource("14_qawho")
+region = Rect2(200, 564, 200, 282)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s8g6p"]
+atlas = ExtResource("14_qawho")
+region = Rect2(400, 564, 200, 282)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_enk7t"]
+atlas = ExtResource("14_qawho")
+region = Rect2(600, 564, 200, 282)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_try1q"]
+atlas = ExtResource("14_qawho")
+region = Rect2(0, 846, 200, 282)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tu7m4"]
+atlas = ExtResource("14_qawho")
+region = Rect2(200, 846, 200, 282)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nhqev"]
+atlas = ExtResource("14_qawho")
+region = Rect2(400, 846, 200, 282)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_75mv4"]
+atlas = ExtResource("14_qawho")
+region = Rect2(600, 846, 200, 282)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g5ej3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vv4mc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_50lrs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n8x2x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_60t4o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0gejx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eep5g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mypnr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mmyga")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dl7e7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y4nah")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s8g6p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_enk7t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_try1q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tu7m4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nhqev")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_75mv4")
+}],
+"loop": false,
+"name": &"Boom",
+"speed": 20.0
+}]
+
+[node name="L1EndCutscene" type="Node3D"]
+
+[node name="GridMap" type="GridMap" parent="."]
+mesh_library = ExtResource("1_o2v4y")
+data = {
+"cells": PackedInt32Array(65535, 0, 655375, 65535, 65535, 655375, 0, 65535, 655375, 0, 0, 655375, 0, 65534, 655375, 65535, 65534, 655375, 65534, 65534, 655375, 65534, 65535, 655375, 65534, 0, 655375, 65533, 0, 655375, 65533, 65535, 655375, 65533, 65534, 655375, 65532, 65534, 655375, 65532, 65535, 655375, 65532, 0, 655375, 1, 0, 655375, 2, 0, 655375, 3, 0, 655375, 3, 65535, 655375, 3, 65534, 655375, 2, 65534, 655375, 1, 65534, 655375, 1, 65535, 655375, 2, 65535, 655375, -4, 0, 655370, -2, 0, 655370, -65535, 0, 655370, -3, 0, 655371, -65536, 0, 655371, -1, 0, 655371, -65533, 0, 655371, -65534, 0, 655371)
+}
+metadata/_editor_floor_ = Vector3(0, 0, 0)
+
+[node name="enviro" parent="." instance=ExtResource("2_t8fsd")]
+transform = Transform3D(-0.801723, 0, 0.597695, 0, 1, 0, -0.597695, 0, -0.801723, 0, 0, 0)
+
+[node name="ActorParent" type="Node3D" parent="."]
+
+[node name="Rocket" type="MeshInstance3D" parent="ActorParent"]
+transform = Transform3D(1, 0, 2.44929e-16, 0, 1, 0, -2.44929e-16, 0, 1, 0, 3.89906, -3)
+mesh = ExtResource("3_yc0l6")
+surface_material_override/0 = SubResource("StandardMaterial3D_rkwgn")
+surface_material_override/1 = SubResource("StandardMaterial3D_ibgr4")
+surface_material_override/2 = SubResource("StandardMaterial3D_j1dgv")
+surface_material_override/3 = SubResource("StandardMaterial3D_v1e3w")
+surface_material_override/4 = SubResource("StandardMaterial3D_dx7xs")
+
+[node name="CPUParticles3D" type="CPUParticles3D" parent="ActorParent/Rocket"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, 0)
+emitting = false
+amount = 16
+lifetime = 0.4
+mesh = SubResource("PlaneMesh_a3pfn")
+direction = Vector3(0, -1, 0)
+spread = 35.0
+gravity = Vector3(0, 0, 0)
+initial_velocity_max = 5.0
+scale_amount_min = 0.25
+
+[node name="Player" type="CharacterBody3D" parent="ActorParent"]
+transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, -2.61476, 2.3, -0.791393)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ActorParent/Player"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.269613, 0)
+shape = SubResource("CapsuleShape3D_kp3bk")
+
+[node name="SubViewport" type="SubViewport" parent="ActorParent/Player"]
+disable_3d = true
+
+[node name="Panel" type="Panel" parent="ActorParent/Player/SubViewport"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_4qcyj")
+
+[node name="Sprite2D2" type="Sprite2D" parent="ActorParent/Player/SubViewport"]
+visible = false
+texture = ExtResource("6_fgnjb")
+centered = false
+
+[node name="Sprite2D" type="Sprite2D" parent="ActorParent/Player/SubViewport"]
+position = Vector2(80, 251.345)
+texture = ExtResource("7_jw4ti")
+
+[node name="Sprite2D3" type="Sprite2D" parent="ActorParent/Player/SubViewport"]
+position = Vector2(432, 251.345)
+texture = ExtResource("7_jw4ti")
+flip_h = true
+
+[node name="player" parent="ActorParent/Player" instance=ExtResource("8_ea3ut")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.78214, 0)
+
+[node name="Skeleton3D" parent="ActorParent/Player/player/Armature" index="0"]
+bones/0/rotation = Quaternion(-0.0206791, 0, 0, 0.999786)
+bones/3/rotation = Quaternion(0.490466, 0.000474966, 0.000474966, 0.87146)
+bones/4/position = Vector3(2.18988e-19, 0.162917, -3.72529e-09)
+bones/4/rotation = Quaternion(-0.506416, 0.000474872, 0.000474872, 0.862289)
+bones/4/scale = Vector3(1, 1, 1)
+bones/5/rotation = Quaternion(-0.502563, 0.00047501, 0.00047501, 0.86454)
+bones/5/scale = Vector3(1, 1, 1)
+bones/6/rotation = Quaternion(0.0190206, -1.06971e-24, 4.22347e-18, 0.999819)
+bones/6/scale = Vector3(1, 1, 1)
+bones/7/rotation = Quaternion(0.0127875, -7.41878e-09, 0.847367, 0.530854)
+bones/7/scale = Vector3(1, 1, 1)
+bones/8/rotation = Quaternion(-0.63949, -0.165516, 0.0224738, 0.750434)
+bones/8/scale = Vector3(1, 1, 1)
+bones/9/rotation = Quaternion(-0.800538, -0.107527, -0.152527, 0.569484)
+bones/10/rotation = Quaternion(-0.00152553, 0.00047513, 0.255559, 0.966792)
+bones/11/rotation = Quaternion(0.0127875, 7.41878e-09, -0.847367, 0.530854)
+bones/11/scale = Vector3(1, 1, 1)
+bones/12/rotation = Quaternion(-0.0105265, -0.00252537, -0.0815362, 0.996612)
+bones/12/scale = Vector3(1, 1, 1)
+bones/13/rotation = Quaternion(0.000475077, 0.000475077, -0.757689, 0.652616)
+bones/13/scale = Vector3(1, 1, 1)
+bones/14/rotation = Quaternion(-0.00152542, 0.00147535, 0.639639, 0.768672)
+bones/14/scale = Vector3(1, 1, 1)
+bones/15/position = Vector3(-0.0839494, 0.0519439, 0)
+bones/15/rotation = Quaternion(-0.0350315, -0.0884289, 0.988896, 0.114181)
+bones/15/scale = Vector3(0.999998, 1, 0.999999)
+bones/16/rotation = Quaternion(0.568288, 0.114681, 0.281031, 0.7648)
+bones/16/scale = Vector3(1, 1, 1)
+bones/17/rotation = Quaternion(-0.596658, -0.0390387, -0.318369, 0.735606)
+bones/17/scale = Vector3(1, 1, 1)
+bones/18/rotation = Quaternion(0.912884, 0.0485441, -0.111519, 0.389678)
+bones/19/rotation = Quaternion(-0.136547, 0.000475051, 0.000475051, 0.990633)
+bones/20/rotation = Quaternion(-0.133468, 0.000474773, 0.000474773, 0.991053)
+bones/21/rotation = Quaternion(-0.165481, 0.000474849, 0.000474849, 0.986213)
+bones/22/position = Vector3(0.0839494, 0.0519439, 0)
+bones/22/rotation = Quaternion(0.0350315, -0.0884289, 0.988896, -0.114181)
+bones/22/scale = Vector3(0.999998, 1, 0.999999)
+bones/23/rotation = Quaternion(0.568288, -0.114681, -0.281031, 0.7648)
+bones/23/scale = Vector3(1, 0.999999, 1)
+bones/24/rotation = Quaternion(-0.596658, 0.0390387, 0.318369, 0.735606)
+bones/24/scale = Vector3(1, 1, 1)
+
+[node name="Vert" parent="ActorParent/Player/player/Armature/Skeleton3D" index="0"]
+material_overlay = SubResource("ShaderMaterial_lnutk")
+surface_material_override/0 = ExtResource("10_ufbjr")
+
+[node name="Vert_001" parent="ActorParent/Player/player/Armature/Skeleton3D" index="1"]
+surface_material_override/0 = SubResource("StandardMaterial3D_4vcc6")
+
+[node name="BoneAttachment3D" type="BoneAttachment3D" parent="ActorParent/Player/player/Armature/Skeleton3D" index="2"]
+transform = Transform3D(-0.556483, 0.711322, -0.429358, 0.377979, -0.243458, -0.89323, -0.739904, -0.659356, -0.133385, 0.64193, 1.48289, -0.524578)
+bone_name = "Hand_R"
+bone_idx = 14
+
+[node name="Slangshot" type="AnimatedSprite3D" parent="ActorParent/Player/player/Armature/Skeleton3D/BoneAttachment3D"]
+transform = Transform3D(1.80979, 0.114796, 0.843492, -0.833927, -0.15887, 1.81089, 0.170944, -1.99037, -0.0958952, 0.0244896, 0.190201, -0.121208)
+visible = false
+sprite_frames = SubResource("SpriteFrames_7woet")
+frame_progress = 0.629152
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.976672, 0.214735, 0, -0.214735, 0.976672, 0, 5.175, 6.665)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_d1clt")
+}
+autoplay = "Cutscene"
+script = SubResource("GDScript_r06wp")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(25, 0, 0, 0, 25, 0, 0, 0, 25, 0, 0, 40)
+mesh = SubResource("SphereMesh_qn3dn")
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 1.5)
+visible = false
+sprite_frames = SubResource("SpriteFrames_g5ej3")
+animation = &"Boom"
+autoplay = "Boom"
+speed_scale = 0.0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+
+[connection signal="animation_finished" from="AnimationPlayer" to="AnimationPlayer" method="_on_animation_finished"]
+
+[editable path="ActorParent/Player/player"]
