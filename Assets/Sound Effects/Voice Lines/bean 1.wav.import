@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cy56qwr7ssmti"
+path="res://.godot/imported/bean 1.wav-805e45c8c0189555813d23ca68c013b4.sample"
+
+[deps]
+
+source_file="res://Assets/Sound Effects/Voice Lines/bean 1.wav"
+dest_files=["res://.godot/imported/bean 1.wav-805e45c8c0189555813d23ca68c013b4.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
