@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dkt0t0i0ipt6m"
+path="res://.godot/imported/cigarette.obj-c8fbb4ed6595d7ece000a623b666a8a3.mesh"
+
+[deps]
+
+files=["res://.godot/imported/cigarette.obj-c8fbb4ed6595d7ece000a623b666a8a3.mesh"]
+
+source_file="res://Assets/Models/models/cigarette.obj"
+dest_files=["res://.godot/imported/cigarette.obj-c8fbb4ed6595d7ece000a623b666a8a3.mesh", "res://.godot/imported/cigarette.obj-c8fbb4ed6595d7ece000a623b666a8a3.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false
