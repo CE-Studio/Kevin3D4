@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://c1osqgo4m6w3w"
-path="res://.godot/imported/crumble `1.wav-50d305f3da299d5d2671c1d57cf25a3d.sample"
+path="res://.godot/imported/crumble 1.wav-4645f2825254ea45a0deb56e018075a0.sample"
 
 [deps]
 
-source_file="res://Assets/Sound Effects/Voice Lines/crumble `1.wav"
-dest_files=["res://.godot/imported/crumble `1.wav-50d305f3da299d5d2671c1d57cf25a3d.sample"]
+source_file="res://Assets/Sound Effects/Voice Lines/crumble 1.wav"
+dest_files=["res://.godot/imported/crumble 1.wav-4645f2825254ea45a0deb56e018075a0.sample"]
 
 [params]
 

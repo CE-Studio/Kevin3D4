@@ -62,6 +62,16 @@ var multi := 1.0
 @onready var invtime:Label = $"UI/Invinble Timer"
 @onready var shader:ShaderMaterial = $player/Armature/Skeleton3D/Vert.material_overlay
 @onready var cam:Camera3D = $SpringArm3D/Camera3D
+@onready var beanpickup:AudioStreamPlayer = $beanpickup
+@onready var crumblejump:AudioStreamPlayer = $crumblejump
+@onready var die:AudioStreamPlayer = $die
+@onready var kill:AudioStreamPlayer = $kill
+@onready var moving:AudioStreamPlayer = $moving
+@onready var resume:AudioStreamPlayer = $resume
+@onready var sling:AudioStreamPlayer = $sling
+@onready var switch:AudioStreamPlayer = $switch
+@onready var platform:AudioStreamPlayer = $platform
+@onready var findswitch:AudioStreamPlayer = $findswitch
 
 func _ready():
 	if Player.speedrunning:
@@ -186,6 +196,8 @@ func _process(delta):
 		animstate = anims.SHOOTIN
 		$Aiming/CenterContainer/TextureRect.visible = true
 		if Input.is_action_just_pressed("Shoot") and beanos > 0:
+			if !sling.playing:
+				sling.play()
 			var i = beanjectile.instantiate()
 			i.position = $SpringArm3D/Camera3D.global_position
 			i.transform.basis = $SpringArm3D/Camera3D.global_transform.basis
@@ -207,6 +219,7 @@ func _process(delta):
 
 
 func _input(event):
+	$Timerafk.start(15)
 	if Player.stanley:
 		if (event is InputEventKey) or (event is InputEventMouseButton):
 			if event.is_pressed() and !event.is_echo():

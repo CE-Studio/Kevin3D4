@@ -28,6 +28,7 @@ func _process(delta):
 
 func _on_player_step(body):
 	if body is Player && !isActive:
+		Player.instance.switch.play()
 		isActive = true
 		on_switch_activate.emit()
 		$AudioStreamPlayer3D.play()

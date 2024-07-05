@@ -35,7 +35,7 @@ func _process(delta):
 		$"../".add_child(h)
 		h.global_position = global_position
 		h.look_at(Player.instance.global_position, Vector3.UP, true)
-		h.linear_velocity = ((h.global_transform.basis * Vector3.BACK) * 6)
+		h.linear_velocity = ((h.global_transform.basis * Vector3.BACK) * 12)
 		h.freeze = false
 	model.rotation.x = 0
 
@@ -48,6 +48,7 @@ func on_stomp(body:Node3D): # This function is connected to StompArea's body_ent
 
 func _death():
 	if health <= 0:
+		Player.instance.kill.play()
 		var h := AudioStreamPlayer3D.new()
 		h.stream = preload("res://Assets/Sound Effects/aaaaaaaaaaaaaaaaaaaaa.mp3")
 		h.finished.connect(h.queue_free)

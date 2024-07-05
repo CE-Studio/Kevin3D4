@@ -29,16 +29,16 @@ linear_velocity = Vector3(0, 0, 1)
 script = ExtResource("1_npq1w")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -1.83697e-16, -1, 0, 1, -1.83697e-16, 0, 0, 0)
+transform = Transform3D(2.99, -9.9152e-05, -6.07131e-21, 0, 1.83085e-16, -2.99, 9.9152e-05, 2.99, 1.83085e-16, 0, 0, 0)
 mesh = SubResource("PrismMesh_mfycm")
 surface_material_override/0 = SubResource("StandardMaterial3D_fjlsu")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -1.83697e-16, -1, 0, 1, -1.83697e-16, 0, 0, 0)
+transform = Transform3D(2.99, -9.9152e-05, -6.07131e-21, 0, 1.83085e-16, -2.99, 9.9152e-05, 2.99, 1.83085e-16, 0, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_jbxqx")
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 15.0
+wait_time = 7.5
 autostart = true
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

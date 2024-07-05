@@ -25,6 +25,7 @@ func _on_area_3d_body_entered(body):
 		AreaNotExist = true
 		$Ragdoll.playing = true
 		$Timer.start()
+		Player.instance.crumblejump.play()
 
 
 func _on_timer_timeout():

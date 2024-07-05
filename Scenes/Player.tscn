@@ -1,4 +1,4 @@
-[gd_scene load_steps=101 format=3 uid="uid://8iobt4o8k61u"]
+[gd_scene load_steps=142 format=3 uid="uid://8iobt4o8k61u"]
 
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_rk3cd"]
 [ext_resource type="AudioStream" uid="uid://bqva2yr82ot7d" path="res://Assets/Sound Effects/IN.wav" id="2_gmnt1"]
@@ -30,6 +30,37 @@
 [ext_resource type="AudioStream" uid="uid://b8du7lvs3do2h" path="res://Assets/Sound Effects/stanley/kb/keyboard-chspsil-146640.mp3" id="28_6sgxu"]
 [ext_resource type="AudioStream" uid="uid://f80mrg5t2wnr" path="res://Assets/Sound Effects/stanley/kb/mech-keyboard-02-102918.mp3" id="29_jd0sr"]
 [ext_resource type="AudioStream" uid="uid://bretsowqfvd3p" path="res://Assets/Sound Effects/stanley/kb/spacebar-click-keyboard-199448.mp3" id="30_2x3kd"]
+[ext_resource type="AudioStream" uid="uid://m5xx73e0kyuk" path="res://Assets/Sound Effects/Voice Lines/afk 1.wav" id="31_y5qc4"]
+[ext_resource type="AudioStream" uid="uid://dfpdl878ay4ii" path="res://Assets/Sound Effects/Voice Lines/afk 2.wav" id="32_175gb"]
+[ext_resource type="AudioStream" uid="uid://bpa5vdn1riwgj" path="res://Assets/Sound Effects/Voice Lines/afk 3.wav" id="33_jpfg3"]
+[ext_resource type="AudioStream" uid="uid://cy56qwr7ssmti" path="res://Assets/Sound Effects/Voice Lines/bean 1.wav" id="34_da51m"]
+[ext_resource type="AudioStream" uid="uid://ph1orflgtr5o" path="res://Assets/Sound Effects/Voice Lines/bean 2.wav" id="35_mwyps"]
+[ext_resource type="AudioStream" uid="uid://beip6vflae3oc" path="res://Assets/Sound Effects/Voice Lines/bean 3.wav" id="36_1vpaj"]
+[ext_resource type="AudioStream" uid="uid://c1osqgo4m6w3w" path="res://Assets/Sound Effects/Voice Lines/crumble 1.wav" id="37_smpqg"]
+[ext_resource type="AudioStream" uid="uid://bi14qcmpn8xte" path="res://Assets/Sound Effects/Voice Lines/crumble 2.wav" id="38_x8tmu"]
+[ext_resource type="AudioStream" uid="uid://vsgsjfnqdrjn" path="res://Assets/Sound Effects/Voice Lines/crumble 3.wav" id="39_3ts7n"]
+[ext_resource type="AudioStream" uid="uid://b3b2vqh8acbfe" path="res://Assets/Sound Effects/Voice Lines/death 1.wav" id="40_salx2"]
+[ext_resource type="AudioStream" uid="uid://dqkrvo6k0mr42" path="res://Assets/Sound Effects/Voice Lines/death 2.wav" id="41_6s3yi"]
+[ext_resource type="AudioStream" uid="uid://2v3y1al4650y" path="res://Assets/Sound Effects/Voice Lines/death 3.wav" id="42_chf61"]
+[ext_resource type="AudioStream" uid="uid://clfm1dnnm6fg3" path="res://Assets/Sound Effects/Voice Lines/kill 1.wav" id="43_cxbri"]
+[ext_resource type="AudioStream" uid="uid://korf7d25ohun" path="res://Assets/Sound Effects/Voice Lines/kill 2.wav" id="44_1ie5t"]
+[ext_resource type="AudioStream" uid="uid://ctyqmyq5yac14" path="res://Assets/Sound Effects/Voice Lines/kill 3.wav" id="45_lawex"]
+[ext_resource type="AudioStream" uid="uid://doo2xug5shyjx" path="res://Assets/Sound Effects/Voice Lines/movin 1.wav" id="46_o2qe7"]
+[ext_resource type="AudioStream" uid="uid://4hlms84smu3b" path="res://Assets/Sound Effects/Voice Lines/movin 2.wav" id="47_kxife"]
+[ext_resource type="AudioStream" uid="uid://crt3cgav4xvpo" path="res://Assets/Sound Effects/Voice Lines/movin 3.wav" id="48_wpw5l"]
+[ext_resource type="AudioStream" uid="uid://4dyff026e4v2" path="res://Assets/Sound Effects/Voice Lines/resume 1.wav" id="49_81oy0"]
+[ext_resource type="AudioStream" uid="uid://bvyqlnekklglx" path="res://Assets/Sound Effects/Voice Lines/resume 2.wav" id="50_hqo83"]
+[ext_resource type="AudioStream" uid="uid://dc5m5tyvm6d3w" path="res://Assets/Sound Effects/Voice Lines/resume 3.wav" id="51_pted6"]
+[ext_resource type="AudioStream" uid="uid://b11nw6c415u18" path="res://Assets/Sound Effects/Voice Lines/sling 1.wav" id="52_gh07h"]
+[ext_resource type="AudioStream" uid="uid://df6c7qhx0lpvs" path="res://Assets/Sound Effects/Voice Lines/sling 2.wav" id="53_6d2ko"]
+[ext_resource type="AudioStream" uid="uid://bbhxjh2w1u8ci" path="res://Assets/Sound Effects/Voice Lines/sling 3.wav" id="54_fqfws"]
+[ext_resource type="AudioStream" uid="uid://ci2thuhw6msw1" path="res://Assets/Sound Effects/Voice Lines/switch 1.wav" id="55_52n0h"]
+[ext_resource type="AudioStream" uid="uid://chauyxevvyhb4" path="res://Assets/Sound Effects/Voice Lines/switch 2.wav" id="56_goj21"]
+[ext_resource type="AudioStream" uid="uid://ba3rf0bamjpkk" path="res://Assets/Sound Effects/Voice Lines/switch 3.wav" id="57_jisml"]
+[ext_resource type="AudioStream" uid="uid://deh1akt8c4f2" path="res://Assets/Sound Effects/Voice Lines/platform1.wav" id="58_w56bo"]
+[ext_resource type="AudioStream" uid="uid://ya6ceh1dqj74" path="res://Assets/Sound Effects/Voice Lines/platform 2.wav" id="59_4x32e"]
+[ext_resource type="AudioStream" uid="uid://diow6a8mljvrx" path="res://Assets/Sound Effects/Voice Lines/platform 3.wav" id="60_577ne"]
+[ext_resource type="AudioStream" uid="uid://cmvpne8vwm8w" path="res://Assets/Sound Effects/Voice Lines/general 1.wav" id="61_fb847"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_kp3bk"]
 radius = 0.331573
@@ -1201,6 +1232,96 @@ stream_3/weight = 1.0
 stream_4/stream = ExtResource("30_2x3kd")
 stream_4/weight = 1.0
 
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_q58de"]
+streams_count = 3
+stream_0/stream = ExtResource("31_y5qc4")
+stream_0/weight = 1.0
+stream_1/stream = ExtResource("32_175gb")
+stream_1/weight = 1.0
+stream_2/stream = ExtResource("33_jpfg3")
+stream_2/weight = 1.0
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_8sct6"]
+streams_count = 3
+stream_0/stream = ExtResource("34_da51m")
+stream_0/weight = 1.0
+stream_1/stream = ExtResource("35_mwyps")
+stream_1/weight = 1.0
+stream_2/stream = ExtResource("36_1vpaj")
+stream_2/weight = 1.0
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_bw4xi"]
+streams_count = 3
+stream_0/stream = ExtResource("37_smpqg")
+stream_0/weight = 1.0
+stream_1/stream = ExtResource("38_x8tmu")
+stream_1/weight = 1.0
+stream_2/stream = ExtResource("39_3ts7n")
+stream_2/weight = 1.0
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_4ra70"]
+streams_count = 3
+stream_0/stream = ExtResource("40_salx2")
+stream_0/weight = 1.0
+stream_1/stream = ExtResource("41_6s3yi")
+stream_1/weight = 1.0
+stream_2/stream = ExtResource("42_chf61")
+stream_2/weight = 1.0
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_58kgp"]
+streams_count = 3
+stream_0/stream = ExtResource("43_cxbri")
+stream_0/weight = 1.0
+stream_1/stream = ExtResource("44_1ie5t")
+stream_1/weight = 1.0
+stream_2/stream = ExtResource("45_lawex")
+stream_2/weight = 1.0
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_hciio"]
+streams_count = 3
+stream_0/stream = ExtResource("46_o2qe7")
+stream_0/weight = 1.0
+stream_1/stream = ExtResource("47_kxife")
+stream_1/weight = 1.0
+stream_2/stream = ExtResource("48_wpw5l")
+stream_2/weight = 1.0
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_2sl5m"]
+streams_count = 3
+stream_0/stream = ExtResource("49_81oy0")
+stream_0/weight = 1.0
+stream_1/stream = ExtResource("50_hqo83")
+stream_1/weight = 1.0
+stream_2/stream = ExtResource("51_pted6")
+stream_2/weight = 1.0
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_i0ls6"]
+streams_count = 3
+stream_0/stream = ExtResource("52_gh07h")
+stream_0/weight = 1.0
+stream_1/stream = ExtResource("53_6d2ko")
+stream_1/weight = 1.0
+stream_2/stream = ExtResource("54_fqfws")
+stream_2/weight = 1.0
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_3n03h"]
+streams_count = 3
+stream_0/stream = ExtResource("55_52n0h")
+stream_0/weight = 1.0
+stream_1/stream = ExtResource("56_goj21")
+stream_1/weight = 1.0
+stream_2/stream = ExtResource("57_jisml")
+stream_2/weight = 1.0
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_vmnlf"]
+streams_count = 3
+stream_0/stream = ExtResource("58_w56bo")
+stream_0/weight = 1.0
+stream_1/stream = ExtResource("59_4x32e")
+stream_1/weight = 1.0
+stream_2/stream = ExtResource("60_577ne")
+stream_2/weight = 1.0
+
 [node name="Player" type="CharacterBody3D"]
 collision_mask = 3
 script = ExtResource("1_rk3cd")
@@ -1319,7 +1440,7 @@ surface_material_override/0 = ExtResource("4_0kk71")
 surface_material_override/0 = SubResource("StandardMaterial3D_ghj7y")
 
 [node name="BoneAttachment3D" type="BoneAttachment3D" parent="player/Armature/Skeleton3D" index="2"]
-transform = Transform3D(-0.966419, 0.256972, -0.000314508, -0.256603, -0.965098, -0.0523569, -0.0137578, -0.050518, 0.998628, 0.293998, 0.976225, -0.0209056)
+transform = Transform3D(-0.907031, 0.421063, 0.000376322, -0.420485, -0.905738, -0.0532136, -0.0220654, -0.0484246, 0.998583, 0.409771, 1.01155, -0.0197494)
 bone_name = "Hand_R"
 bone_idx = 14
 
@@ -1632,6 +1753,70 @@ stream = SubResource("AudioStreamRandomizer_w8adk")
 max_polyphony = 10
 bus = &"SFX"
 
+[node name="afk" type="AudioStreamPlayer" parent="."]
+process_mode = 3
+stream = SubResource("AudioStreamRandomizer_q58de")
+max_polyphony = 10
+
+[node name="Timerafk" type="Timer" parent="."]
+wait_time = 15.0
+autostart = true
+
+[node name="beanpickup" type="AudioStreamPlayer" parent="."]
+process_mode = 3
+stream = SubResource("AudioStreamRandomizer_8sct6")
+max_polyphony = 10
+
+[node name="crumblejump" type="AudioStreamPlayer" parent="."]
+process_mode = 3
+stream = SubResource("AudioStreamRandomizer_bw4xi")
+max_polyphony = 10
+
+[node name="die" type="AudioStreamPlayer" parent="."]
+process_mode = 3
+stream = SubResource("AudioStreamRandomizer_4ra70")
+pitch_scale = 2.5
+max_polyphony = 10
+
+[node name="kill" type="AudioStreamPlayer" parent="."]
+process_mode = 3
+stream = SubResource("AudioStreamRandomizer_58kgp")
+max_polyphony = 10
+
+[node name="moving" type="AudioStreamPlayer" parent="."]
+process_mode = 3
+stream = SubResource("AudioStreamRandomizer_hciio")
+max_polyphony = 10
+
+[node name="resume" type="AudioStreamPlayer" parent="."]
+process_mode = 3
+stream = SubResource("AudioStreamRandomizer_2sl5m")
+max_polyphony = 10
+
+[node name="sling" type="AudioStreamPlayer" parent="."]
+process_mode = 3
+stream = SubResource("AudioStreamRandomizer_i0ls6")
+max_polyphony = 10
+
+[node name="switch" type="AudioStreamPlayer" parent="."]
+process_mode = 3
+stream = SubResource("AudioStreamRandomizer_3n03h")
+max_polyphony = 10
+
+[node name="platform" type="AudioStreamPlayer" parent="."]
+process_mode = 3
+stream = SubResource("AudioStreamRandomizer_vmnlf")
+max_polyphony = 10
+
+[node name="findswitch" type="AudioStreamPlayer" parent="."]
+process_mode = 3
+stream = ExtResource("61_fb847")
+max_polyphony = 10
+
+[node name="Pausetimer" type="Timer" parent="."]
+process_mode = 2
+one_shot = true
+
 [connection signal="pressed" from="Panel/Button" to="Panel" method="pauseUnpause"]
 [connection signal="pressed" from="Death Screen/Button" to="Death Screen" method="_on_button_pressed"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
@@ -1643,5 +1828,7 @@ bus = &"SFX"
 [connection signal="pressed" from="stnaleypause/VBoxContainer/set" to="Panel" method="_on_set_pressed"]
 [connection signal="mouse_entered" from="stnaleypause/VBoxContainer/menu" to="Panel" method="_on_button_mouse_entered"]
 [connection signal="pressed" from="stnaleypause/VBoxContainer/menu" to="Panel" method="_on_menu_pressed"]
+[connection signal="timeout" from="Timerafk" to="afk" method="play"]
+[connection signal="timeout" from="Pausetimer" to="Panel" method="_on_pausetimer_timeout"]
 
 [editable path="player"]

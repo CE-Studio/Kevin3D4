@@ -15,12 +15,17 @@ func _input(event):
 		pauseUnpause()
 
 
+var _tooktolong := false
+
+
 func pauseUnpause():
 	if get_tree().paused:
 		get_tree().paused = false
 		hide()
 		$"../stnaleypause".hide()
 		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+		if _tooktolong:
+			Player.instance.resume.play()
 	else:
 		get_tree().paused = true
 		if Player.stanley:
@@ -28,6 +33,8 @@ func pauseUnpause():
 		else:
 			show()
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+		$"../Pausetimer".start(30)
+		_tooktolong = false
 
 
 func _on_again_pressed():
@@ -53,3 +60,7 @@ func _on_menu_pressed():
 
 func _on_button_mouse_entered():
 	$"../stanleysounds".play()
+
+
+func _on_pausetimer_timeout():
+	_tooktolong = true

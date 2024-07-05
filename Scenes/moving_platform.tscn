@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://cev248w6qbej8"]
+[gd_scene load_steps=8 format=3 uid="uid://cev248w6qbej8"]
 
 [ext_resource type="ArrayMesh" uid="uid://d3c3q86jeicyp" path="res://Assets/Models/MovingPlat.obj" id="1_a62lw"]
 [ext_resource type="Script" path="res://Scripts/moving_platform.gd" id="1_xw7d1"]
@@ -12,6 +12,9 @@ texture_filter = 0
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_vdfnl"]
 height = 0.461717
 radius = 1.0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_pxkfk"]
+size = Vector3(1.495, 0.217438, 1.495)
 
 [node name="MovingPlatform" type="AnimatableBody3D"]
 sync_to_physics = false
@@ -32,4 +35,12 @@ stream = ExtResource("4_6lqnc")
 max_distance = 150.0
 bus = &"SFX"
 
+[node name="Area3D" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.291482, 0)
+monitorable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("BoxShape3D_pxkfk")
+
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
