@@ -1,9 +1,9 @@
 extends CharacterBody3D
 class_name Player
 
-const SPEED := 10.0
-const JUMP_VELOCITY := 15.0
-const DIVE_VELOCITY := 10.0
+var SPEED := 10.0
+var JUMP_VELOCITY := 15.0
+var DIVE_VELOCITY := 10.0
 
 
 enum anims {
@@ -57,9 +57,10 @@ var multi := 1.0
 @onready var diveEffect:GPUParticles3D = $Dive
 @onready var _lbl:Label = $UI/BeanCounter/Label
 @onready var spawnpoint:Vector3 = global_position
-@onready var timer = $Timer
-@onready var invtime = $"UI/Invinble Timer"
-@onready var shader = $player/Armature/Skeleton3D/Vert.material_overlay
+@onready var timer:Timer = $Timer
+@onready var invtime:Label = $"UI/Invinble Timer"
+@onready var shader:ShaderMaterial = $player/Armature/Skeleton3D/Vert.material_overlay
+@onready var cam:Camera3D = $SpringArm3D/Camera3D
 
 func _ready():
 	if Player.speedrunning:
