@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dfpdl878ay4ii"
+path="res://.godot/imported/afk 2.wav-88bca981b56576bff792f78faf59d2b1.sample"
+
+[deps]
+
+source_file="res://Assets/Sound Effects/Voice Lines/afk 2.wav"
+dest_files=["res://.godot/imported/afk 2.wav-88bca981b56576bff792f78faf59d2b1.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
