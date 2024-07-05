@@ -8,7 +8,7 @@
 [ext_resource type="Shader" uid="uid://dqcbpkck1cny8" path="res://Assets/Shaders/crumbling_platform.tres" id="7_sywic"]
 [ext_resource type="Texture2D" uid="uid://durc3utviccja" path="res://Assets/Textures/platform.png" id="8_10yc8"]
 [ext_resource type="ArrayMesh" uid="uid://q652n152a0tm" path="res://Assets/Models/models/shark.obj" id="9_2cv86"]
-[ext_resource type="PackedScene" path="res://Scenes/computer.tscn" id="10_mq5lg"]
+[ext_resource type="PackedScene" uid="uid://jamquukhosn4" path="res://Scenes/computer.tscn" id="10_mq5lg"]
 [ext_resource type="AudioStream" uid="uid://dmvt70tmisjow" path="res://Assets/Sound Effects/dear digital diary/Sharkour.wav" id="10_tadbw"]
 [ext_resource type="Texture2D" uid="uid://dm0spsk10xa45" path="res://Assets/Models/models/shark.png" id="11_1w24l"]
 [ext_resource type="AudioStream" uid="uid://44el322f5lnj" path="res://Assets/Sound Effects/dear digital diary/Cigarkour.wav" id="12_sba85"]
