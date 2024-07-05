@@ -1,4 +1,4 @@
-[gd_scene load_steps=95 format=3 uid="uid://8iobt4o8k61u"]
+[gd_scene load_steps=101 format=3 uid="uid://8iobt4o8k61u"]
 
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_rk3cd"]
 [ext_resource type="AudioStream" uid="uid://bqva2yr82ot7d" path="res://Assets/Sound Effects/IN.wav" id="2_gmnt1"]
@@ -25,6 +25,11 @@
 [ext_resource type="FontFile" uid="uid://bmewjb70ttfix" path="res://Assets/Ui/stanley.otf" id="23_jwwsw"]
 [ext_resource type="Texture2D" uid="uid://c8mb841xb5o6n" path="res://Assets/Textures/Screenshot from 2022-08-12 01-59-32.png" id="24_djy54"]
 [ext_resource type="Texture2D" uid="uid://do6ijlkcdftrt" path="res://Assets/Textures/the_button_is_now_sylized.png" id="24_i63k6"]
+[ext_resource type="AudioStream" uid="uid://pmb4pnnh26js" path="res://Assets/Sound Effects/stanley/kb/keyboard5-88069.mp3" id="26_bkdbt"]
+[ext_resource type="AudioStream" uid="uid://d1pufyk30l0pa" path="res://Assets/Sound Effects/stanley/kb/keyboard-chcl-146641.mp3" id="27_q1e28"]
+[ext_resource type="AudioStream" uid="uid://b8du7lvs3do2h" path="res://Assets/Sound Effects/stanley/kb/keyboard-chspsil-146640.mp3" id="28_6sgxu"]
+[ext_resource type="AudioStream" uid="uid://f80mrg5t2wnr" path="res://Assets/Sound Effects/stanley/kb/mech-keyboard-02-102918.mp3" id="29_jd0sr"]
+[ext_resource type="AudioStream" uid="uid://bretsowqfvd3p" path="res://Assets/Sound Effects/stanley/kb/spacebar-click-keyboard-199448.mp3" id="30_2x3kd"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_kp3bk"]
 radius = 0.331573
@@ -1181,7 +1186,23 @@ expand_margin_right = 49.0
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tk1j5"]
 expand_margin_right = 49.0
 
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_w8adk"]
+random_pitch = 1.1
+random_volume_offset_db = 2.12
+streams_count = 5
+stream_0/stream = ExtResource("26_bkdbt")
+stream_0/weight = 1.0
+stream_1/stream = ExtResource("27_q1e28")
+stream_1/weight = 1.0
+stream_2/stream = ExtResource("28_6sgxu")
+stream_2/weight = 1.0
+stream_3/stream = ExtResource("29_jd0sr")
+stream_3/weight = 1.0
+stream_4/stream = ExtResource("30_2x3kd")
+stream_4/weight = 1.0
+
 [node name="Player" type="CharacterBody3D"]
+collision_mask = 3
 script = ExtResource("1_rk3cd")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
@@ -1298,7 +1319,7 @@ surface_material_override/0 = ExtResource("4_0kk71")
 surface_material_override/0 = SubResource("StandardMaterial3D_ghj7y")
 
 [node name="BoneAttachment3D" type="BoneAttachment3D" parent="player/Armature/Skeleton3D" index="2"]
-transform = Transform3D(-0.907031, 0.421063, 0.000376322, -0.420485, -0.905738, -0.0532136, -0.0220654, -0.0484246, 0.998583, 0.409771, 1.01155, -0.0197494)
+transform = Transform3D(-0.966419, 0.256972, -0.000314508, -0.256603, -0.965098, -0.0523569, -0.0137578, -0.050518, 0.998628, 0.293998, 0.976225, -0.0209056)
 bone_name = "Hand_R"
 bone_idx = 14
 
@@ -1605,12 +1626,22 @@ theme_override_styles/focus = SubResource("StyleBoxTexture_tk1j5")
 text = "Quit to menu"
 alignment = 0
 
+[node name="stanleysounds" type="AudioStreamPlayer" parent="."]
+process_mode = 3
+stream = SubResource("AudioStreamRandomizer_w8adk")
+max_polyphony = 10
+bus = &"SFX"
+
 [connection signal="pressed" from="Panel/Button" to="Panel" method="pauseUnpause"]
 [connection signal="pressed" from="Death Screen/Button" to="Death Screen" method="_on_button_pressed"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="mouse_entered" from="stnaleypause/VBoxContainer/Button" to="Panel" method="_on_button_mouse_entered"]
 [connection signal="pressed" from="stnaleypause/VBoxContainer/Button" to="Panel" method="pauseUnpause"]
+[connection signal="mouse_entered" from="stnaleypause/VBoxContainer/again" to="Panel" method="_on_button_mouse_entered"]
 [connection signal="pressed" from="stnaleypause/VBoxContainer/again" to="Panel" method="_on_again_pressed"]
+[connection signal="mouse_entered" from="stnaleypause/VBoxContainer/set" to="Panel" method="_on_button_mouse_entered"]
 [connection signal="pressed" from="stnaleypause/VBoxContainer/set" to="Panel" method="_on_set_pressed"]
+[connection signal="mouse_entered" from="stnaleypause/VBoxContainer/menu" to="Panel" method="_on_button_mouse_entered"]
 [connection signal="pressed" from="stnaleypause/VBoxContainer/menu" to="Panel" method="_on_menu_pressed"]
 
 [editable path="player"]

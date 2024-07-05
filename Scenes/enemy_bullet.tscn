@@ -1,0 +1,45 @@
+[gd_scene load_steps=6 format=3 uid="uid://bflb4f3h7tbse"]
+
+[ext_resource type="Script" path="res://Scripts/enemy_bullet.gd" id="1_npq1w"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ewj3x"]
+bounce = 100.0
+
+[sub_resource type="PrismMesh" id="PrismMesh_mfycm"]
+size = Vector3(0.2, 0.2, 0.2)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fjlsu"]
+shading_mode = 0
+albedo_color = Color(1, 0, 1, 1)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_jbxqx"]
+points = PackedVector3Array(-1.38778e-17, 0.1, 0.1, -1.38778e-17, 0.1, -0.1, -1.95771e-05, 0.1, 0.1, 0.1, -0.1, 0.1, 0.1, -0.1, -0.1, -1.95771e-05, 0.1, -0.1, -0.1, -0.1, 0.1, -0.1, -0.1, -0.1)
+
+[node name="MeshInstance3D" type="RigidBody3D"]
+physics_material_override = SubResource("PhysicsMaterial_ewj3x")
+gravity_scale = 0.0
+inertia = Vector3(100, 100, 100)
+can_sleep = false
+freeze = true
+freeze_mode = 1
+continuous_cd = true
+max_contacts_reported = 5
+contact_monitor = true
+linear_velocity = Vector3(0, 0, 1)
+script = ExtResource("1_npq1w")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -1.83697e-16, -1, 0, 1, -1.83697e-16, 0, 0, 0)
+mesh = SubResource("PrismMesh_mfycm")
+surface_material_override/0 = SubResource("StandardMaterial3D_fjlsu")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -1.83697e-16, -1, 0, 1, -1.83697e-16, 0, 0, 0)
+shape = SubResource("ConvexPolygonShape3D_jbxqx")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 15.0
+autostart = true
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="queue_free"]

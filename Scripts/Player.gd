@@ -26,9 +26,8 @@ var isDiving := false
 var isDoubleJump := false
 var isJumping := false
 var sprint:float = 1
-# Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity:float = ProjectSettings.get_setting("physics/3d/default_gravity")
-var beanjectile = load("res://Scenes/bean_jectile.tscn")
+var beanjectile = preload("res://Scenes/bean_jectile.tscn")
 var lerp_speed = 0.1
 var isLerping := false
 var lerp_time: float = 1.0
@@ -207,7 +206,11 @@ func _process(delta):
 		$MeshInstance3D.visible = false
 
 
-func _input(event):	
+func _input(event):
+	if Player.stanley:
+		if (event is InputEventKey) or (event is InputEventMouseButton):
+			if event.is_pressed() and !event.is_echo():
+				$stanleysounds.play()
 	if (event is InputEventMouseMotion):
 		rotate_y(event.relative.x/-180)
 		$SpringArm3D.rotate_x(event.relative.y/-180)

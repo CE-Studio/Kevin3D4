@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://f80mrg5t2wnr"
+path="res://.godot/imported/mech-keyboard-02-102918.mp3-ef42c66d8b7081259d56960f383db325.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sound Effects/stanley/kb/mech-keyboard-02-102918.mp3"
+dest_files=["res://.godot/imported/mech-keyboard-02-102918.mp3-ef42c66d8b7081259d56960f383db325.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

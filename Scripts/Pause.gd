@@ -49,3 +49,7 @@ func _on_menu_pressed():
 	Player.speedrunTime = 0
 	Player.stanley = false
 	get_tree().change_scene_to_file.call_deferred("res://Scenes/title.tscn")
+
+
+func _on_button_mouse_entered():
+	$"../stanleysounds".play()
