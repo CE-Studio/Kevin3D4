@@ -1,4 +1,4 @@
-[gd_scene load_steps=58 format=3 uid="uid://dxcuq4ba2exc6"]
+[gd_scene load_steps=59 format=3 uid="uid://dxcuq4ba2exc6"]
 
 [ext_resource type="MeshLibrary" uid="uid://i125w3qc6j8c" path="res://Scenes/3DTilemaps/RealL1MeshLib.tres" id="1_o2v4y"]
 [ext_resource type="PackedScene" uid="uid://byx5litoy380f" path="res://Scenes/enviro.tscn" id="2_t8fsd"]
@@ -19,6 +19,7 @@
 [ext_resource type="AudioStream" uid="uid://dbglweamns23p" path="res://Assets/Sound Effects/sounds.mp3" id="14_uv5aj"]
 [ext_resource type="AudioStream" uid="uid://bn6aqh767lraf" path="res://Assets/Sound Effects/door.wav" id="15_l4iu5"]
 [ext_resource type="AudioStream" uid="uid://ddfbxp2ri1fmw" path="res://Assets/Sound Effects/Explosion.mp3" id="15_vspwo"]
+[ext_resource type="AudioStream" uid="uid://dagr77fvljd2n" path="res://Assets/Music/rocket.wav" id="18_2c7rt"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rkwgn"]
 albedo_texture = ExtResource("4_lrwfu")
@@ -412,6 +413,21 @@ tracks/30/keys = {
 "times": PackedFloat64Array(2.3, 6.11, 6.6, 8.05, 10.3)
 }
 tracks/30/use_blend = true
+tracks/31/type = "audio"
+tracks/31/imported = false
+tracks/31/enabled = true
+tracks/31/path = NodePath("Music")
+tracks/31/interp = 1
+tracks/31/loop_wrap = true
+tracks/31/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("18_2c7rt")
+}],
+"times": PackedFloat64Array(0)
+}
+tracks/31/use_blend = true
 
 [sub_resource type="Animation" id="Animation_a7oht"]
 length = 0.001
@@ -713,7 +729,7 @@ script/source = "extends AnimationPlayer
 
 
 func _on_animation_finished(anim_name):
-	get_tree().change_scene_to_file.call_deferred(\"res://Scenes/Levels/level_template.tscn\")
+	get_tree().change_scene_to_file.call_deferred(\"res://Scenes/Levels/planetlvl.tscn\")
 "
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f2bhl"]
@@ -966,7 +982,7 @@ surface_material_override/0 = ExtResource("10_ufbjr")
 surface_material_override/0 = SubResource("StandardMaterial3D_4vcc6")
 
 [node name="BoneAttachment3D" type="BoneAttachment3D" parent="ActorParent/Player/player/Armature/Skeleton3D" index="2"]
-transform = Transform3D(0.391286, 0.574267, 0.719105, 0.866488, -0.493117, -0.0776855, 0.309991, 0.653493, -0.690545, 0.449919, 1.67455, 0.324385)
+transform = Transform3D(-0.556483, 0.711322, -0.429358, 0.377979, -0.243458, -0.89323, -0.739905, -0.659356, -0.133385, 0.64193, 1.48289, -0.524578)
 bone_name = "Hand_R"
 bone_idx = 14
 
@@ -999,6 +1015,9 @@ autoplay = "Boom"
 speed_scale = 0.0
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+volume_db = -12.0
 
 [connection signal="animation_finished" from="AnimationPlayer" to="AnimationPlayer" method="_on_animation_finished"]
 

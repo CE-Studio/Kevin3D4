@@ -258,7 +258,7 @@ volume_db = -10.0
 autoplay = true
 
 [node name="Player" parent="." instance=ExtResource("3_qaakx")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.853895, 4.3094, -7.1423)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.853895, 4.3094, -5.1423)
 
 [node name="Checkpoint" parent="." instance=ExtResource("4_f44a5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 145, 43, -4)
