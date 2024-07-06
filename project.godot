@@ -14,7 +14,7 @@ config/name="Sbig-2024"
 run/main_scene="res://Scenes/splash.tscn"
 config/features=PackedStringArray("4.2", "Double Precision", "GL Compatibility")
 run/max_fps=19
-config/icon="res://icon.svg"
+config/icon="res://Assets/Textures/burrito.png"
 
 [editor]
 
