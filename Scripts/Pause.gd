@@ -52,6 +52,7 @@ func _on_set_pressed():
 
 func _on_menu_pressed():
 	pauseUnpause()
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	winnerbox.loadBearingNumber = 0
 	Player.speedrunTime = 0
 	Player.stanley = false
