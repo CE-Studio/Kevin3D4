@@ -1,0 +1,50 @@
+[gd_scene load_steps=10 format=3 uid="uid://ck3333lkee4od"]
+
+[ext_resource type="MeshLibrary" uid="uid://i125w3qc6j8c" path="res://Scenes/3DTilemaps/RealL1MeshLib.tres" id="1_1uqkr"]
+[ext_resource type="AudioStream" uid="uid://diefur77d32jo" path="res://Assets/Music/Title.wav" id="2_k7n8y"]
+[ext_resource type="PackedScene" uid="uid://8iobt4o8k61u" path="res://Scenes/Player.tscn" id="3_4u4xt"]
+[ext_resource type="PackedScene" uid="uid://byx5litoy380f" path="res://Scenes/enviro.tscn" id="4_3ovle"]
+[ext_resource type="PackedScene" uid="uid://dfghjqbgpviwj" path="res://Scenes/two_doors.tscn" id="5_1p15u"]
+[ext_resource type="Texture2D" uid="uid://dnjj0sh3xilgo" path="res://Assets/Textures/Skybox.png" id="5_t6rlk"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_gy6oo"]
+panorama = ExtResource("5_t6rlk")
+
+[sub_resource type="Sky" id="Sky_2srni"]
+sky_material = SubResource("PanoramaSkyMaterial_gy6oo")
+
+[sub_resource type="Environment" id="Environment_81p5h"]
+background_mode = 2
+sky = SubResource("Sky_2srni")
+ambient_light_source = 2
+ambient_light_color = Color(0.615686, 0.615686, 0.615686, 1)
+ambient_light_energy = 0.5
+
+[node name="Level1" type="Node3D"]
+
+[node name="GridMap" type="GridMap" parent="."]
+mesh_library = ExtResource("1_1uqkr")
+cell_size = Vector3(6, 6, 6)
+cell_scale = 3.0
+data = {
+"cells": PackedInt32Array(-65536, 65535, 0, -1, 65535, 0, -1, 0, 0, -65536, 0, 0, -65535, 0, 0, -65535, 65535, 0, -65535, 65534, 0, -65536, 65534, 0, -1, 65534, 0, -1, 65533, 11, -65535, 65533, 11, 1, 65533, 11, 0, 65533, 11, 65535, 65533, 11, 1, 65529, 11, 0, 65529, 11, 65535, 65529, 11, -65534, 65529, 11, 2, 65529, 11, 65534, 65529, 11, -2, 65529, 11, -65534, 65528, 0, -65534, 65527, 0, -65534, 65526, 0, -65535, 65526, 0, -65536, 65526, 0, -1, 65526, 0, -2, 65526, 0, -2, 65527, 0, -2, 65528, 0, -1, 65528, 0, -65536, 65528, 0, -65535, 65528, 0, -65535, 65527, 0, -65536, 65527, 0, -1, 65527, 0)
+}
+metadata/_editor_floor_ = Vector3(0, -1, 0)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_k7n8y")
+autoplay = true
+bus = &"Music"
+
+[node name="Player" parent="." instance=ExtResource("3_4u4xt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.97716, 1.03612, -3.03442)
+
+[node name="enviro" parent="." instance=ExtResource("4_3ovle")]
+
+[node name="WorldEnvironment" parent="enviro" index="0"]
+environment = SubResource("Environment_81p5h")
+
+[node name="two doors" parent="." instance=ExtResource("5_1p15u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, -3, -27)
+
+[editable path="enviro"]
