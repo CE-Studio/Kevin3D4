@@ -1084,8 +1084,8 @@ script = ExtResource("3_ddjtl")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.97716, -1.31977, -3.03442)
 
 [connection signal="on_switch_activate" from="roomStart/Switch" to="roomStart/door" method="open"]
-[connection signal="on_switch_activate" from="roomMaze/Switch" to="roomMaze/MovingPlatform" method="on_trigger"]
 [connection signal="on_switch_activate" from="roomMaze/Switch" to="roomStart/VoiceTrigger" method="queue_free"]
+[connection signal="on_switch_activate" from="roomMaze/Switch" to="roomMaze/MovingPlatform" method="on_trigger"]
 [connection signal="on_switch_activate" from="room2nd/Switch3" to="room2nd/MovingPlatform2" method="on_trigger"]
 [connection signal="on_switch_activate" from="room2nd/Switch" to="room2nd/door" method="open"]
 [connection signal="on_switch_activate" from="room2nd/Switch2" to="room2nd/MovingPlatform" method="on_trigger"]

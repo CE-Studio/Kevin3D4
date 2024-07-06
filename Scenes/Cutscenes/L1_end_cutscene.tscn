@@ -982,7 +982,7 @@ surface_material_override/0 = ExtResource("10_ufbjr")
 surface_material_override/0 = SubResource("StandardMaterial3D_4vcc6")
 
 [node name="BoneAttachment3D" type="BoneAttachment3D" parent="ActorParent/Player/player/Armature/Skeleton3D" index="2"]
-transform = Transform3D(-0.556483, 0.711322, -0.429358, 0.377979, -0.243458, -0.89323, -0.739905, -0.659356, -0.133385, 0.64193, 1.48289, -0.524578)
+transform = Transform3D(-0.81106, 0.58494, -0.0051652, -0.584859, -0.811051, -0.0116511, -0.0110044, -0.0064288, 0.999919, 0.17931, 1.20111, -0.0599553)
 bone_name = "Hand_R"
 bone_idx = 14
 

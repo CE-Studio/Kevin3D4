@@ -162,12 +162,12 @@ _data = {
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_8llyc"]
 panorama = ExtResource("1_xtp7l")
 
-[sub_resource type="Sky" id="Sky_gqbo6"]
+[sub_resource type="Sky" id="Sky_i0wsv"]
 sky_material = SubResource("PanoramaSkyMaterial_8llyc")
 
 [sub_resource type="Environment" id="Environment_oyw8b"]
 background_mode = 2
-sky = SubResource("Sky_gqbo6")
+sky = SubResource("Sky_i0wsv")
 tonemap_mode = 2
 
 [sub_resource type="SphereMesh" id="SphereMesh_mnwd4"]
@@ -275,9 +275,6 @@ flip_h = true
 
 [node name="player" parent="Trumpet Kevin" instance=ExtResource("2_x26e7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.17986, -0.78214, 0)
-
-[node name="Armature" parent="Trumpet Kevin/player" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 
 [node name="Skeleton3D" parent="Trumpet Kevin/player/Armature" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0270931, 0.102824, 7.91995e-05)

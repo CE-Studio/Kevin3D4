@@ -12,7 +12,7 @@
 [ext_resource type="PackedScene" path="res://Scenes/ship.tscn" id="10_5wtbq"]
 [ext_resource type="Texture2D" uid="uid://dpvag7ol6wehj" path="res://Assets/Textures/furrency.png" id="10_m6uup"]
 [ext_resource type="FontFile" uid="uid://dbiots3wd0sos" path="res://Assets/Ui/OpenSans-ExtraBold.ttf" id="11_muc4d"]
-[ext_resource type="PackedScene" path="res://Scenes/stand.tscn" id="11_nmxgr"]
+[ext_resource type="PackedScene" uid="uid://cb8l8tl7gja63" path="res://Scenes/stand.tscn" id="11_nmxgr"]
 
 [sub_resource type="Animation" id="Animation_na4mo"]
 resource_name = "Piano Cutscene"
@@ -805,13 +805,13 @@ is_hemisphere = true
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v43jr"]
 bg_color = Color(0, 0, 0, 1)
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_dtdw1"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_2hq31"]
 viewport_path = NodePath("SubViewport")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ae8la"]
 resource_local_to_scene = true
 shading_mode = 0
-albedo_texture = SubResource("ViewportTexture_dtdw1")
+albedo_texture = SubResource("ViewportTexture_2hq31")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hswdw"]
 atlas = ExtResource("3_qstfg")
