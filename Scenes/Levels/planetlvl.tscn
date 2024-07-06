@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://d37w4md4gmfkx"]
+[gd_scene load_steps=32 format=3 uid="uid://d37w4md4gmfkx"]
 
 [ext_resource type="MeshLibrary" uid="uid://dvfusg8e2wejn" path="res://Scenes/3DTilemaps/PlanetMeshLib.tres" id="1_wodos"]
 [ext_resource type="AudioStream" uid="uid://diefur77d32jo" path="res://Assets/Music/Title.wav" id="2_84h4f"]
@@ -11,6 +11,8 @@
 [ext_resource type="PackedScene" uid="uid://be74smfh0hkry" path="res://Scenes/crumbling_platform.tscn" id="9_eug0d"]
 [ext_resource type="Shader" uid="uid://dqcbpkck1cny8" path="res://Assets/Shaders/crumbling_platform.tres" id="10_vfmyp"]
 [ext_resource type="Texture2D" uid="uid://durc3utviccja" path="res://Assets/Textures/platform.png" id="11_y3s6p"]
+[ext_resource type="PackedScene" uid="uid://buamjln4eyytl" path="res://Scenes/planet_door.tscn" id="12_a5o72"]
+[ext_resource type="PackedScene" uid="uid://334cmavflup3" path="res://Scenes/switch.tscn" id="13_g00mk"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_412dt"]
 panorama = ExtResource("4_kqy0t")
@@ -180,6 +182,14 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 14, 50, -424)
 
 [node name="MeshInstance3D" parent="Crumbles/Crumble5" index="3"]
 mesh = SubResource("BoxMesh_g3t8r")
+
+[node name="Door1" parent="." instance=ExtResource("12_a5o72")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 165, 12, -219)
+
+[node name="Switch1" parent="." instance=ExtResource("13_g00mk")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 219, 5, -147)
+
+[connection signal="on_switch_activate" from="Switch1" to="Door1" method="on_activate"]
 
 [editable path="Crumbles/Crumble1"]
 [editable path="Crumbles/Crumble2"]
