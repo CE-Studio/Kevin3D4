@@ -187,33 +187,39 @@ shape = SubResource("ConvexPolygonShape3D_f7nej")
 transform = Transform3D(-0.535473, 0, -0.844552, 0, 1, 0, 0.844552, 0, -0.535473, -0.0861297, 0, -0.388794)
 
 [node name="Cigarette" type="MeshInstance3D" parent="Node3D/StaticBody3D2"]
+transform = Transform3D(1, 0, 5.55112e-17, 0, 1, 0, -5.55112e-17, 0, 1, 0.220895, 0, -0.140055)
 mesh = ExtResource("13_88vyu")
 skeleton = NodePath("../../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_34j3n")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/StaticBody3D2"]
+transform = Transform3D(1, 0, 5.55112e-17, 0, 1, 0, -5.55112e-17, 0, 1, 0.220895, 0, -0.140055)
 shape = SubResource("ConvexPolygonShape3D_f7nej")
 
 [node name="StaticBody3D3" type="StaticBody3D" parent="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.232242, 0.175727, -0.364871)
 
 [node name="Cigarette" type="MeshInstance3D" parent="Node3D/StaticBody3D3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0592621, -0.223072, 0.138813)
 mesh = ExtResource("13_88vyu")
 skeleton = NodePath("../../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_34j3n")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/StaticBody3D3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0592621, -0.223072, 0.138813)
 shape = SubResource("ConvexPolygonShape3D_f7nej")
 
 [node name="StaticBody3D4" type="StaticBody3D" parent="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.11568, 0.312155, -0.516067)
 
 [node name="Cigarette" type="MeshInstance3D" parent="Node3D/StaticBody3D4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.153725, -0.223625, 0.406077)
 mesh = ExtResource("13_88vyu")
 skeleton = NodePath("../../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_34j3n")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/StaticBody3D4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.153725, -0.223625, 0.406077)
 shape = SubResource("ConvexPolygonShape3D_f7nej")
 
 [node name="TripleJump" parent="." instance=ExtResource("15_wiqw6")]

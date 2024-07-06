@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://qopvby4fpwnl"
+path="res://.godot/imported/biggest shitpost ive ever made.wav-5f2eaa2a69b193d7138296ef6215597d.sample"
+
+[deps]
+
+source_file="res://Assets/Music/biggest shitpost ive ever made.wav"
+dest_files=["res://.godot/imported/biggest shitpost ive ever made.wav-5f2eaa2a69b193d7138296ef6215597d.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
