@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://jr6q0p1sytkn"]
+[gd_scene load_steps=34 format=3 uid="uid://jr6q0p1sytkn"]
 
 [ext_resource type="Texture2D" uid="uid://cwqj1gdbltk7o" path="res://Assets/Textures/LevelTextures/PlanetGrass.png" id="1_g7equ"]
 [ext_resource type="ArrayMesh" uid="uid://cmrjcoy6rkvvh" path="res://Assets/Models/Gridmap/Slope 2 +Z.obj" id="1_mf00b"]
@@ -70,6 +70,13 @@ albedo_texture = ExtResource("10_7dd08")
 material = SubResource("StandardMaterial3D_ete1r")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_b3dhr"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_j8mtc"]
+material = SubResource("StandardMaterial3D_6n4gs")
+size = Vector3(2, 2, 2)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_mm6yl"]
+size = Vector3(2, 2, 2)
 
 [node name="PlanetMeshlib" type="Node3D"]
 
@@ -298,3 +305,12 @@ mesh = SubResource("PlaneMesh_dim0t")
 [node name="General Killzone" parent="Water" instance=ExtResource("11_xsgtk")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, -1.1, 0)
 Killzone = SubResource("BoxShape3D_b3dhr")
+
+[node name="BlueWall" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 1, 0)
+mesh = SubResource("BoxMesh_j8mtc")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="BlueWall"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BlueWall/StaticBody3D"]
+shape = SubResource("BoxShape3D_mm6yl")
