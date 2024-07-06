@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://pfsqyellag7o"
+path="res://.godot/imported/every turn move.wav-abfe154af72c7520d5d3c4b35bd7289b.sample"
+
+[deps]
+
+source_file="res://Assets/Sound Effects/Voice Lines/finalboss/every turn move.wav"
+dest_files=["res://.godot/imported/every turn move.wav-abfe154af72c7520d5d3c4b35bd7289b.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

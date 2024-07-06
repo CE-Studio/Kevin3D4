@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bi5ngewq0eg67"
+path="res://.godot/imported/muahahaha.wav-52596eafb3d1f5eb9293877d01c272bf.sample"
+
+[deps]
+
+source_file="res://Assets/Sound Effects/Voice Lines/finalboss/muahahaha.wav"
+dest_files=["res://.godot/imported/muahahaha.wav-52596eafb3d1f5eb9293877d01c272bf.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

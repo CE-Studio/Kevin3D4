@@ -1,6 +1,7 @@
 extends Node3D
 
 
+signal scenestart
 var _a := false
 
 
@@ -18,4 +19,5 @@ func _on_area_3d_2_body_entered(body):
 	if body is Player:
 		if !_a:
 			_a = true
+			scenestart.emit()
 			$AnimationPlayer.play("new_animation")

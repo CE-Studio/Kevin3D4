@@ -1,12 +1,227 @@
-[gd_scene load_steps=11 format=3 uid="uid://ck3333lkee4od"]
+[gd_scene load_steps=36 format=3 uid="uid://ck3333lkee4od"]
 
 [ext_resource type="MeshLibrary" uid="uid://i125w3qc6j8c" path="res://Scenes/3DTilemaps/RealL1MeshLib.tres" id="1_1uqkr"]
-[ext_resource type="PackedScene" uid="uid://hqroyuuds4po" path="res://Scenes/enemy.tscn" id="1_i33du"]
+[ext_resource type="PackedScene" uid="uid://dd2sj3qyx7rs7" path="res://Assets/Models/enemy.glb" id="1_qjf2c"]
 [ext_resource type="AudioStream" uid="uid://diefur77d32jo" path="res://Assets/Music/Title.wav" id="2_k7n8y"]
+[ext_resource type="Texture2D" uid="uid://c2u3ocfcpme4b" path="res://Assets/Textures/enem3.png" id="2_pp76s"]
 [ext_resource type="PackedScene" uid="uid://8iobt4o8k61u" path="res://Scenes/Player.tscn" id="3_4u4xt"]
+[ext_resource type="AudioStream" uid="uid://bvsnfkxts5dxn" path="res://Assets/Sound Effects/realistic-gun-fire-100696.mp3" id="3_uolf8"]
+[ext_resource type="Texture2D" uid="uid://fw56j0rl6cx5" path="res://Assets/Textures/kevin34.png" id="4_0p0v5"]
 [ext_resource type="PackedScene" uid="uid://byx5litoy380f" path="res://Scenes/enviro.tscn" id="4_3ovle"]
 [ext_resource type="PackedScene" uid="uid://dfghjqbgpviwj" path="res://Scenes/two_doors.tscn" id="5_1p15u"]
 [ext_resource type="Texture2D" uid="uid://dnjj0sh3xilgo" path="res://Assets/Textures/Skybox.png" id="5_t6rlk"]
+[ext_resource type="Texture2D" uid="uid://bc8g76cknh236" path="res://Assets/Textures/burrito.png" id="10_mekts"]
+
+[sub_resource type="VisualShaderNodeTexture" id="VisualShaderNodeTexture_bpbqe"]
+source = 5
+
+[sub_resource type="VisualShaderNodeTexture2DParameter" id="VisualShaderNodeTexture2DParameter_nx2vr"]
+parameter_name = "Albedo"
+texture_type = 1
+
+[sub_resource type="VisualShaderNodeInput" id="VisualShaderNodeInput_yyaap"]
+input_name = "uv"
+
+[sub_resource type="VisualShaderNodeFloatParameter" id="VisualShaderNodeFloatParameter_x0775"]
+parameter_name = "FloatParameter"
+
+[sub_resource type="VisualShaderNodeVectorOp" id="VisualShaderNodeVectorOp_fr0tf"]
+default_input_values = [0, Vector3(0, 0, 0), 1, Vector3(5.389, 5.33, 5.896)]
+operator = 3
+
+[sub_resource type="VisualShaderNodeVectorOp" id="VisualShaderNodeVectorOp_ltlkg"]
+
+[sub_resource type="VisualShaderNodeInput" id="VisualShaderNodeInput_h2eds"]
+input_name = "vertex"
+
+[sub_resource type="VisualShaderNodeRandomRange" id="VisualShaderNodeRandomRange_k4n8b"]
+
+[sub_resource type="VisualShaderNodeRandomRange" id="VisualShaderNodeRandomRange_nyln1"]
+
+[sub_resource type="VisualShaderNodeRandomRange" id="VisualShaderNodeRandomRange_g2t0k"]
+
+[sub_resource type="VisualShaderNodeVectorCompose" id="VisualShaderNodeVectorCompose_chyjt"]
+
+[sub_resource type="VisualShaderNodeVectorOp" id="VisualShaderNodeVectorOp_3khmn"]
+operator = 2
+
+[sub_resource type="VisualShaderNodeInput" id="VisualShaderNodeInput_7iqae"]
+input_name = "time"
+
+[sub_resource type="VisualShaderNodeVectorOp" id="VisualShaderNodeVectorOp_mmw6s"]
+
+[sub_resource type="VisualShader" id="VisualShader_0qwm3"]
+resource_local_to_scene = true
+code = "shader_type spatial;
+render_mode blend_mix, depth_draw_opaque, cull_back, diffuse_lambert, specular_schlick_ggx;
+
+uniform float FloatParameter;
+uniform sampler2D Albedo : source_color;
+
+
+
+
+// 3D Noise with friendly permission by Inigo Quilez
+vec3 hash_noise_range( vec3 p ) {
+	p *= mat3(vec3(127.1, 311.7, -53.7), vec3(269.5, 183.3, 77.1), vec3(-301.7, 27.3, 215.3));
+	return 2.0 * fract(fract(p)*4375.55) -1.;
+}
+
+
+void vertex() {
+// Input:8
+	float n_out8p0 = TIME;
+
+
+// Input:2
+	vec3 n_out2p0 = VERTEX;
+
+
+// VectorOp:12
+	vec3 n_in12p1 = vec3(5.38900, 5.33000, 5.89600);
+	vec3 n_out12p0 = n_out2p0 / n_in12p1;
+
+
+// VectorOp:9
+	vec3 n_out9p0 = vec3(n_out8p0) + n_out12p0;
+
+
+// FloatParameter:10
+	float n_out10p0 = FloatParameter;
+
+
+// RandomRange:3
+	float n_in3p1 = 0.00000;
+	float n_out3p0 = mix(n_in3p1, n_out10p0, hash_noise_range(n_out9p0).x);
+
+
+// RandomRange:4
+	float n_in4p1 = 0.00000;
+	float n_out4p0 = mix(n_in4p1, n_out10p0, hash_noise_range(n_out9p0).x);
+
+
+// RandomRange:5
+	float n_in5p1 = 0.00000;
+	float n_out5p0 = mix(n_in5p1, n_out10p0, hash_noise_range(n_out9p0).x);
+
+
+// VectorCompose:6
+	vec3 n_out6p0 = vec3(n_out3p0, n_out4p0, n_out5p0);
+
+
+// VectorOp:7
+	vec3 n_out7p0 = n_out6p0 * n_out2p0;
+
+
+// VectorOp:13
+	vec3 n_out13p0 = n_out7p0 + n_out2p0;
+
+
+// Output:0
+	VERTEX = n_out13p0;
+
+
+}
+
+void fragment() {
+// Input:4
+	vec2 n_out4p0 = UV;
+
+
+	vec4 n_out2p0;
+// Texture2D:2
+	n_out2p0 = texture(Albedo, n_out4p0);
+
+
+// Output:0
+	ALBEDO = vec3(n_out2p0.xyz);
+
+
+}
+"
+nodes/vertex/0/position = Vector2(1480, 140)
+nodes/vertex/2/node = SubResource("VisualShaderNodeInput_h2eds")
+nodes/vertex/2/position = Vector2(-380, 480)
+nodes/vertex/3/node = SubResource("VisualShaderNodeRandomRange_k4n8b")
+nodes/vertex/3/position = Vector2(620, 60)
+nodes/vertex/4/node = SubResource("VisualShaderNodeRandomRange_nyln1")
+nodes/vertex/4/position = Vector2(620, 200)
+nodes/vertex/5/node = SubResource("VisualShaderNodeRandomRange_g2t0k")
+nodes/vertex/5/position = Vector2(620, 340)
+nodes/vertex/6/node = SubResource("VisualShaderNodeVectorCompose_chyjt")
+nodes/vertex/6/position = Vector2(860, 160)
+nodes/vertex/7/node = SubResource("VisualShaderNodeVectorOp_3khmn")
+nodes/vertex/7/position = Vector2(1020, 120)
+nodes/vertex/8/node = SubResource("VisualShaderNodeInput_7iqae")
+nodes/vertex/8/position = Vector2(-60, 240)
+nodes/vertex/9/node = SubResource("VisualShaderNodeVectorOp_mmw6s")
+nodes/vertex/9/position = Vector2(280, 180)
+nodes/vertex/10/node = SubResource("VisualShaderNodeFloatParameter_x0775")
+nodes/vertex/10/position = Vector2(20, 60)
+nodes/vertex/12/node = SubResource("VisualShaderNodeVectorOp_fr0tf")
+nodes/vertex/12/position = Vector2(-20, 360)
+nodes/vertex/13/node = SubResource("VisualShaderNodeVectorOp_ltlkg")
+nodes/vertex/13/position = Vector2(1260, 180)
+nodes/vertex/connections = PackedInt32Array(3, 0, 6, 0, 4, 0, 6, 1, 5, 0, 6, 2, 6, 0, 7, 0, 2, 0, 7, 1, 9, 0, 3, 0, 9, 0, 4, 0, 9, 0, 5, 0, 8, 0, 9, 0, 10, 0, 5, 2, 10, 0, 4, 2, 10, 0, 3, 2, 2, 0, 12, 0, 12, 0, 9, 1, 7, 0, 13, 0, 13, 0, 0, 0, 2, 0, 13, 1)
+nodes/fragment/0/position = Vector2(640, 140)
+nodes/fragment/2/node = SubResource("VisualShaderNodeTexture_bpbqe")
+nodes/fragment/2/position = Vector2(240, 120)
+nodes/fragment/3/node = SubResource("VisualShaderNodeTexture2DParameter_nx2vr")
+nodes/fragment/3/position = Vector2(-440, 0)
+nodes/fragment/4/node = SubResource("VisualShaderNodeInput_yyaap")
+nodes/fragment/4/position = Vector2(-100, 140)
+nodes/fragment/connections = PackedInt32Array(2, 0, 0, 0, 3, 0, 2, 2, 4, 0, 2, 0)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0lhb5"]
+resource_local_to_scene = true
+render_priority = 0
+shader = SubResource("VisualShader_0qwm3")
+shader_parameter/FloatParameter = 0.0
+shader_parameter/Albedo = ExtResource("2_pp76s")
+
+[sub_resource type="Animation" id="Animation_veaep"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("enemy/Armature/Skeleton3D/Vert:blend_shapes/Key 1")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat64Array(0),
+"transitions": PackedFloat64Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_o7ag6"]
+resource_name = "new_animation"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("enemy/Armature/Skeleton3D/Vert:blend_shapes/Key 1")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat64Array(0, 0.5),
+"transitions": PackedFloat64Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_yntx2"]
+_data = {
+"RESET": SubResource("Animation_veaep"),
+"new_animation": SubResource("Animation_o7ag6")
+}
+
+[sub_resource type="SphereMesh" id="SphereMesh_1jejm"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8r67y"]
+cull_mode = 1
+shading_mode = 0
+albedo_texture = ExtResource("4_0p0v5")
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_gy6oo"]
 panorama = ExtResource("5_t6rlk")
@@ -23,17 +238,40 @@ ambient_light_energy = 0.5
 
 [node name="Level1" type="Node3D"]
 
-[node name="Enemy" parent="." instance=ExtResource("1_i33du")]
-transform = Transform3D(31.925, 0, 0, 0, 31.925, 0, 0, 0, 31.925, 0, 13, -111)
+[node name="Boss" type="Node3D" parent="."]
+transform = Transform3D(31.925, 0, 0, 0, 31.925, 0, 0, 0, 31.925, 3, 13, -112)
+
+[node name="enemy" parent="Boss" instance=ExtResource("1_qjf2c")]
+transform = Transform3D(0.46, 0, 0, 0, 0.46, 0, 0, 0, 0.46, 0, -0.485923, 0)
+
+[node name="Vert" parent="Boss/enemy/Armature/Skeleton3D" index="0"]
+surface_material_override/0 = SubResource("ShaderMaterial_0lhb5")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Boss"]
+libraries = {
+"": SubResource("AnimationLibrary_yntx2")
+}
+autoplay = "new_animation"
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Boss"]
+stream = ExtResource("3_uolf8")
+volume_db = 2.29
+bus = &"SFX"
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Boss"]
+transform = Transform3D(-6.14773e-16, -4.34745, -2.51, -5.32409e-16, 2.51, -4.34745, 5.02, -2.66204e-16, -7.68466e-16, 0, -0.253494, 0.525873)
+visible = false
+mesh = SubResource("SphereMesh_1jejm")
+surface_material_override/0 = SubResource("StandardMaterial3D_8r67y")
 
 [node name="GridMap" type="GridMap" parent="."]
 mesh_library = ExtResource("1_1uqkr")
 cell_size = Vector3(6, 6, 6)
 cell_scale = 3.0
 data = {
-"cells": PackedInt32Array(-65536, 65535, 0, -1, 65535, 0, -1, 0, 0, -65536, 0, 0, -65535, 0, 0, -65535, 65535, 0, -65535, 65534, 0, -65536, 65534, 0, -1, 65534, 0, -1, 65533, 11, -65535, 65533, 11, 1, 65533, 11, 0, 65533, 11, 65535, 65533, 11, 1, 65529, 11, 0, 65529, 11, 65535, 65529, 11, -65534, 65529, 11, 2, 65529, 11, 65534, 65529, 11, -2, 65529, 11, -65534, 65528, 0, -65534, 65527, 0, -65534, 65526, 0, -65535, 65526, 0, -65536, 65526, 0, -1, 65526, 0, -2, 65526, 0, -2, 65527, 0, -2, 65528, 0, -1, 65528, 0, -65536, 65528, 0, -65535, 65528, 0, -65535, 65527, 0, -65536, 65527, 0, -1, 65527, 0, 2, 65533, 11, 65534, 65533, 11, 65538, 65532, 0, 65538, 65531, 0, 65538, 65530, 0, 65537, 65530, 0, 65537, 65531, 0, 65537, 65532, 0, 65536, 65532, 0, 131071, 65532, 0, 131070, 65532, 0, 65536, 65531, 0, 131071, 65531, 0, 131070, 65531, 0, 65536, 65530, 0, 131071, 65530, 0, 131070, 65530, 0, 131070, 65533, 11, 131071, 65533, 11, 65536, 65533, 12, 65537, 65533, 11, 65538, 65533, 11, 196606, 65533, 11, 196607, 65533, 12, 131072, 65533, 11, 131073, 65533, 12, 131074, 65533, 11, 196606, 65529, 11, 196607, 65529, 12, 131072, 65529, 11, 131073, 65529, 12, 131074, 65529, 11, 131070, 65529, 11, 131071, 65529, 11, 65536, 65529, 12, 65537, 65529, 11, 65538, 65529, 11, -65534, 65533, 11, -2, 65533, 11, -65533, 65528, 11, -65532, 65528, 11, -65531, 65527, 11, -65530, 65526, 11, -65530, 65525, 11, -3, 65528, 11, -4, 65528, 11, -5, 65527, 11, -6, 65526, 11, -6, 65525, 11, -65530, 65524, 11, -6, 65524, 11, -7, 65523, 11, -65529, 65523, 11, -65533, 65527, 0, -65532, 65527, 0, -65532, 65526, 0, -65533, 65526, 0, -65531, 65526, 0, -65531, 65525, 0, -65531, 65524, 0, -65533, 65525, 0, -65533, 65524, 0, -65532, 65525, 0, -65532, 65524, 0, -65534, 65525, 0, -65534, 65524, 0, -3, 65527, 0, -4, 65527, 0, -4, 65526, 0, -3, 65526, 0, -5, 65525, 0, -5, 65524, 0, -5, 65526, 0, -6, 65523, 0, -5, 65523, 0, -4, 65523, 0, -3, 65523, 0, -4, 65525, 0, -3, 65525, 0, -3, 65524, 0, -2, 65524, 0, -4, 65524, 0, -2, 65525, 0, -1, 65525, 0, -65536, 65525, 0, -65535, 65525, 0, -65535, 65524, 0, -65536, 65524, 0, -1, 65524, 0, -2, 65523, 0, -1, 65523, 0, -65536, 65523, 0, -65535, 65523, 0, -65534, 65523, 0, -65533, 65523, 0, -65532, 65523, 0, -65531, 65523, 0, -65530, 65523, 0, -7, 65522, 11, -7, 65521, 11, -65529, 65522, 11, -65529, 65521, 11, -65530, 65522, 0, -65530, 65521, 0, -65531, 65521, 0, -65532, 65521, 0, -65533, 65521, 0, -65534, 65521, 0, -65535, 65521, 0, -65536, 65521, 0, -1, 65521, 0, -2, 65521, 0, -3, 65521, 0, -4, 65521, 0, -5, 65521, 0, -6, 65521, 0, -6, 65522, 0, -5, 65522, 0, -4, 65522, 0, -3, 65522, 0, -2, 65522, 0, -1, 65522, 0, -65536, 65522, 0, -65535, 65522, 0, -65534, 65522, 0, -65533, 65522, 0, -65532, 65522, 0, -65531, 65522, 0)
+"cells": PackedInt32Array(-65536, 65535, 0, -1, 65535, 0, -1, 0, 0, -65536, 0, 0, -65535, 0, 0, -65535, 65535, 0, -65535, 65534, 0, -65536, 65534, 0, -1, 65534, 0, -1, 65533, 11, -65535, 65533, 11, 1, 65533, 11, 0, 65533, 11, 65535, 65533, 11, 1, 65529, 11, 0, 65529, 11, 65535, 65529, 11, -65534, 65529, 11, 2, 65529, 11, 65534, 65529, 11, -2, 65529, 11, -65534, 65528, 0, -65534, 65527, 0, -65534, 65526, 0, -65535, 65526, 0, -65536, 65526, 0, -1, 65526, 0, -2, 65526, 0, -2, 65527, 0, -2, 65528, 0, -1, 65528, 0, -65536, 65528, 0, -65535, 65528, 0, -65535, 65527, 0, -65536, 65527, 0, -1, 65527, 0, 2, 65533, 11, 65534, 65533, 11, 65538, 65532, 0, 65538, 65531, 0, 65538, 65530, 0, 65537, 65530, 0, 65537, 65531, 0, 65537, 65532, 0, 65536, 65532, 0, 131071, 65532, 0, 131070, 65532, 0, 65536, 65531, 0, 131071, 65531, 0, 131070, 65531, 0, 65536, 65530, 0, 131071, 65530, 0, 131070, 65530, 0, 131070, 65533, 11, 131071, 65533, 11, 65536, 65533, 12, 65537, 65533, 11, 65538, 65533, 11, 196606, 65533, 11, 196607, 65533, 12, 131072, 65533, 11, 131073, 65533, 12, 131074, 65533, 11, 196606, 65529, 11, 196607, 65529, 12, 131072, 65529, 11, 131073, 65529, 12, 131074, 65529, 11, 131070, 65529, 11, 131071, 65529, 11, 65536, 65529, 12, 65537, 65529, 11, 65538, 65529, 11, -65534, 65533, 11, -2, 65533, 11, -65533, 65528, 11, -65532, 65528, 11, -65531, 65527, 11, -65530, 65526, 11, -65530, 65525, 11, -3, 65528, 11, -4, 65528, 11, -5, 65527, 11, -6, 65526, 11, -6, 65525, 11, -65530, 65524, 11, -6, 65524, 11, -7, 65523, 11, -65529, 65523, 11, -65533, 65527, 0, -65532, 65527, 0, -65532, 65526, 0, -65533, 65526, 0, -65531, 65526, 0, -65531, 65525, 0, -65531, 65524, 0, -65533, 65525, 0, -65533, 65524, 0, -65532, 65525, 0, -65532, 65524, 0, -65534, 65525, 0, -65534, 65524, 0, -3, 65527, 0, -4, 65527, 0, -4, 65526, 0, -3, 65526, 0, -5, 65525, 0, -5, 65524, 0, -5, 65526, 0, -6, 65523, 0, -5, 65523, 0, -4, 65523, 0, -3, 65523, 0, -4, 65525, 0, -3, 65525, 0, -3, 65524, 0, -2, 65524, 0, -4, 65524, 0, -2, 65525, 0, -1, 65525, 0, -65536, 65525, 0, -65535, 65525, 0, -65535, 65524, 0, -65536, 65524, 0, -1, 65524, 0, -2, 65523, 0, -1, 65523, 0, -65536, 65523, 0, -65535, 65523, 0, -65534, 65523, 0, -65533, 65523, 0, -65532, 65523, 0, -65531, 65523, 0, -65530, 65523, 0, -7, 65522, 11, -7, 65521, 11, -65529, 65522, 11, -65529, 65521, 11, -65530, 65522, 0, -65530, 65521, 0, -65531, 65521, 0, -65532, 65521, 0, -65533, 65521, 0, -65534, 65521, 0, -65535, 65521, 0, -65536, 65521, 0, -1, 65521, 0, -2, 65521, 0, -3, 65521, 0, -4, 65521, 0, -5, 65521, 0, -6, 65521, 0, -6, 65522, 0, -5, 65522, 0, -4, 65522, 0, -3, 65522, 0, -2, 65522, 0, -1, 65522, 0, -65536, 65522, 0, -65535, 65522, 0, -65534, 65522, 0, -65533, 65522, 0, -65532, 65522, 0, -65531, 65522, 0, -6, 65520, 1, -5, 65520, 1, -4, 65520, 1, -65532, 65520, 1, -65531, 65520, 1, -65530, 65520, 1, -6, 65519, 1, -5, 65519, 1, -4, 65519, 1, -3, 65519, 1, -2, 65519, 1, -1, 65519, 1, -65536, 65519, 1, -65535, 65519, 1, -65534, 65519, 1, -65533, 65519, 1, -65532, 65519, 1, -65531, 65519, 1, -65530, 65519, 1, -6, 65517, 1, -6, 65518, 1, -5, 65517, 1, -5, 65518, 1, -4, 65517, 1, -4, 65518, 1, -3, 65517, 1, -3, 65518, 1, -2, 65517, 1, -2, 65518, 1, -1, 65517, 1, -1, 65518, 1, -65536, 65517, 1, -65536, 65518, 1, -65535, 65517, 1, -65535, 65518, 1, -65534, 65517, 1, -65534, 65518, 1, -65533, 65517, 1, -65533, 65518, 1, -65532, 65517, 1, -65532, 65518, 1, -65531, 65517, 1, -65531, 65518, 1, -65530, 65517, 1, -65530, 65518, 1, -6, 65516, 1, -5, 65514, 1, -5, 65515, 1, -5, 65516, 1, -4, 65513, 1, -4, 65514, 1, -4, 65515, 1, -4, 65516, 1, -3, 65513, 1, -3, 65514, 1, -3, 65515, 1, -3, 65516, 1, -2, 65513, 1, -2, 65514, 1, -2, 65515, 1, -2, 65516, 1, -1, 65514, 1, -1, 65515, 1, -1, 65516, 1, -65536, 65513, 1, -65536, 65514, 1, -65536, 65515, 1, -65536, 65516, 1, -65535, 65513, 1, -65535, 65514, 1, -65535, 65515, 1, -65535, 65516, 1, -65534, 65513, 1, -65534, 65514, 1, -65534, 65515, 1, -65534, 65516, 1, -65533, 65513, 1, -65533, 65514, 1, -65533, 65515, 1, -65533, 65516, 1, -65532, 65513, 1, -65532, 65514, 1, -65532, 65515, 1, -65532, 65516, 1, -65531, 65514, 1, -65531, 65515, 1, -65531, 65516, 1, -65530, 65516, 1, -2, 65512, 1, -1, 65513, 1, -65536, 65512, 1, -65535, 65512, 1, -65534, 65512, 1, -1, 65512, 1, 196605, 65529, 11, 196604, 65529, 11, 196603, 65529, 11, 196602, 65529, 11, 196601, 65529, 11, 196600, 65529, 11, 196599, 65529, 11, 196598, 65529, 11, 196597, 65529, 11, 196596, 65529, 11, 196595, 65529, 11, 131069, 65529, 11, 131068, 65529, 11, 131067, 65529, 11, 131066, 65529, 11, 131065, 65529, 11, 131064, 65529, 11, 131063, 65529, 11, 131062, 65529, 11, 131061, 65529, 11, 131060, 65529, 11, 131059, 65529, 11, 65533, 65529, 11, 65532, 65529, 11, 65531, 65529, 11, 65530, 65529, 11, 65529, 65529, 11, 65528, 65529, 11, 65527, 65529, 11, 65526, 65529, 11, 65525, 65529, 11, 65524, 65529, 11, 65523, 65529, 11, -13, 65529, 11, -12, 65529, 11, -11, 65529, 11, -10, 65529, 11, -9, 65529, 11, -8, 65529, 11, -7, 65529, 11, -6, 65529, 11, -5, 65529, 11, -4, 65529, 11, -3, 65529, 11, 196594, 65529, 11, 196593, 65529, 11, 196592, 65529, 11, 196591, 65529, 11, 131055, 65529, 11, 65519, 65529, 11, -17, 65529, 11, -16, 65529, 11, -15, 65529, 11, -14, 65529, 11, 65522, 65529, 11, 65521, 65529, 11, 65520, 65529, 11, 131056, 65529, 11, 131057, 65529, 11, 131058, 65529, 11, 131075, 65529, 11, 131076, 65529, 11, 131077, 65529, 11, 131078, 65529, 11, 131079, 65529, 11, 131080, 65529, 11, 131081, 65529, 11, 131082, 65529, 11, 131083, 65529, 11, 131084, 65529, 11, 131085, 65529, 11, 131086, 65529, 11, 131087, 65529, 11, 131088, 65529, 11, 65552, 65529, 11, 16, 65529, 11, -65520, 65529, 11, -65521, 65529, 11, -65522, 65529, 11, -65523, 65529, 11, -65524, 65529, 11, -65525, 65529, 11, -65526, 65529, 11, -65527, 65529, 11, -65528, 65529, 11, -65529, 65529, 11, 7, 65529, 11, 6, 65529, 11, 5, 65529, 11, -65531, 65529, 11, -65530, 65529, 11, -65532, 65529, 11, 3, 65529, 11, 4, 65529, 11, 65541, 65529, 11, 65540, 65529, 11, 65539, 65529, 11, 65542, 65529, 11, 65543, 65529, 11, 65544, 65529, 11, 65545, 65529, 11, 65546, 65529, 11, 65547, 65529, 11, 65548, 65529, 11, 65549, 65529, 11, 65550, 65529, 11, 65551, 65529, 11, 15, 65529, 11, 14, 65529, 11, 13, 65529, 11, 8, 65529, 11, 9, 65529, 11, 10, 65529, 11, 11, 65529, 11, 12, 65529, 11, 196591, 65533, 11, 131055, 65533, 11, 65519, 65533, 11, -17, 65533, 11, -3, 65533, 11, -4, 65533, 11, -5, 65533, 11, -6, 65533, 11, -7, 65533, 11, -8, 65533, 11, -9, 65533, 11, -10, 65533, 11, -11, 65533, 11, -12, 65533, 11, -13, 65533, 11, -14, 65533, 11, -15, 65533, 11, -16, 65533, 11, 65520, 65533, 11, 131056, 65533, 11, 196592, 65533, 11, 196593, 65533, 11, 131057, 65533, 11, 65521, 65533, 11, 131058, 65533, 11, 196594, 65533, 11, 196595, 65533, 11, 131059, 65533, 11, 65523, 65533, 11, 65522, 65533, 11, 196596, 65533, 11, 131060, 65533, 11, 65524, 65533, 11, 65525, 65533, 11, 65526, 65533, 11, 131062, 65533, 11, 196598, 65533, 11, 196597, 65533, 11, 131061, 65533, 11, 196599, 65533, 11, 131063, 65533, 11, 65527, 65533, 11, 65528, 65533, 11, 131064, 65533, 11, 131065, 65533, 11, 65529, 65533, 11, 65530, 65533, 11, 65531, 65533, 11, 65532, 65533, 11, 65533, 65533, 11, 131069, 65533, 11, 196605, 65533, 11, 196604, 65533, 11, 131068, 65533, 11, 131067, 65533, 11, 196603, 65533, 11, 196602, 65533, 11, 196601, 65533, 11, 131066, 65533, 11, 196600, 65533, 11, 65552, 65533, 11, 131088, 65533, 11, 131087, 65533, 11, 131086, 65533, 11, 131085, 65533, 11, 131084, 65533, 11, 131083, 65533, 11, 131082, 65533, 11, 131081, 65533, 11, 131080, 65533, 11, 131079, 65533, 11, 131078, 65533, 11, 131077, 65533, 11, 131076, 65533, 11, 131075, 65533, 11, 65539, 65533, 11, 3, 65533, 11, -65533, 65533, 11, -65532, 65533, 11, -65531, 65533, 11, 6, 65533, 11, 7, 65533, 11, 8, 65533, 11, -65528, 65533, 11, -65527, 65533, 11, -65526, 65533, 11, -65529, 65533, 11, -65530, 65533, 11, 5, 65533, 11, 65540, 65533, 11, 65541, 65533, 11, 4, 65533, 11, 65546, 65533, 11, 65547, 65533, 11, 65545, 65533, 11, 65542, 65533, 11, 65543, 65533, 11, 65544, 65533, 11, 65548, 65533, 11, 65549, 65533, 11, 65550, 65533, 11, 65551, 65533, 11, 16, 65533, 11, 15, 65533, 11, 14, 65533, 11, 13, 65533, 11, 12, 65533, 11, 11, 65533, 11, 10, 65533, 11, 9, 65533, 11, -65525, 65533, 11, -65524, 65533, 11, -65523, 65533, 11, -65522, 65533, 11, -65521, 65533, 11, -65520, 65533, 11, -3, 65530, 11, -3, 65531, 11, -3, 65532, 11, 65533, 65530, 11, 65533, 65531, 11, 65533, 65532, 11, -65533, 65529, 11, 3, 65530, 11, 3, 65531, 11, 3, 65532, 11, -65533, 65532, 11, -65533, 65531, 11, -65533, 65530, 11, 196624, 65529, 11, 196623, 65529, 11, 196622, 65529, 11, 196621, 65529, 11, 196620, 65529, 11, 196619, 65529, 11, 196618, 65529, 11, 196617, 65529, 11, 196616, 65529, 11, 196615, 65529, 11, 196614, 65529, 11, 196613, 65529, 11, 196612, 65529, 11, 196611, 65529, 11, 196610, 65529, 11, 196609, 65529, 11, 196608, 65529, 11, 262143, 65529, 11, 262142, 65529, 11, 262141, 65529, 11, 262140, 65529, 11, 262139, 65529, 11, 262138, 65529, 11, 262137, 65529, 11, 262136, 65529, 11, 262135, 65529, 11, 262134, 65529, 11, 262133, 65529, 11, 262132, 65529, 11, 262131, 65529, 11, 262130, 65529, 11, 262129, 65529, 11, 262128, 65529, 11, 262127, 65529, 11, 262127, 65533, 11, 262128, 65533, 11, 262129, 65533, 11, 262130, 65533, 11, 262131, 65533, 11, 262132, 65533, 11, 262133, 65533, 11, 262134, 65533, 11, 262135, 65533, 11, 262136, 65533, 11, 262137, 65533, 11, 262138, 65533, 11, 262139, 65533, 11, 262140, 65533, 11, 262141, 65533, 11, 262142, 65533, 11, 262143, 65533, 11, 196608, 65533, 11, 196609, 65533, 11, 196610, 65533, 11, 196611, 65533, 11, 196612, 65533, 11, 196613, 65533, 11, 196614, 65533, 11, 196615, 65533, 11, 196616, 65533, 11, 196617, 65533, 11, 196618, 65533, 11, 196619, 65533, 11, 196620, 65533, 11, 196621, 65533, 11, 196622, 65533, 11, 196623, 65533, 11, 196624, 65533, 11)
 }
-metadata/_editor_floor_ = Vector3(0, -1, 0)
+metadata/_editor_floor_ = Vector3(0, 3, -3)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_k7n8y")
@@ -51,4 +289,12 @@ environment = SubResource("Environment_81p5h")
 [node name="two doors" parent="." instance=ExtResource("5_1p15u")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, -3, -27)
 
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, -118.833)
+texture = ExtResource("10_mekts")
+
+[connection signal="scenestart" from="two doors" to="AudioStreamPlayer" method="stop"]
+[connection signal="scenestart" from="two doors" to="Boss/MeshInstance3D" method="show"]
+
+[editable path="Boss/enemy"]
 [editable path="enviro"]

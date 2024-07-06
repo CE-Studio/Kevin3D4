@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cdoitxld1lstx"
+path="res://.godot/imported/every jump platform.wav-7948101b77277d1fb29ef8bd526ad9ea.sample"
+
+[deps]
+
+source_file="res://Assets/Sound Effects/Voice Lines/finalboss/every jump platform.wav"
+dest_files=["res://.godot/imported/every jump platform.wav-7948101b77277d1fb29ef8bd526ad9ea.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
