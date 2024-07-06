@@ -1,0 +1,122 @@
+[gd_scene load_steps=10 format=3 uid="uid://buamjln4eyytl"]
+
+[ext_resource type="Texture2D" uid="uid://dxx7ao5qohqcp" path="res://Assets/Textures/PlanetDoor.png" id="1_kmuf7"]
+[ext_resource type="Script" path="res://Scripts/PlanetDoor.gd" id="2_4r0pf"]
+[ext_resource type="AudioStream" uid="uid://bn6aqh767lraf" path="res://Assets/Sound Effects/door.wav" id="3_2qm8p"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_okdlo"]
+shading_mode = 0
+albedo_texture = ExtResource("1_kmuf7")
+texture_filter = 0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_o51xx"]
+material = SubResource("StandardMaterial3D_okdlo")
+size = Vector2(42, 18)
+orientation = 2
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6piuu"]
+size = Vector3(42, 18, 0.001)
+
+[sub_resource type="Animation" id="Animation_74pdu"]
+resource_name = "Open"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MeshInstance3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat64Array(0, 3),
+"transitions": PackedFloat64Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 9, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MeshInstance3D:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat64Array(0, 3),
+"transitions": PackedFloat64Array(1, 1),
+"update": 0,
+"values": [Vector3(1, 1, 1), Vector3(1, 0, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CollisionShape3D:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat64Array(0, 0.5),
+"transitions": PackedFloat64Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="Animation" id="Animation_ux3ml"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MeshInstance3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat64Array(0),
+"transitions": PackedFloat64Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MeshInstance3D:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat64Array(0),
+"transitions": PackedFloat64Array(1),
+"update": 0,
+"values": [Vector3(1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CollisionShape3D:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat64Array(0),
+"transitions": PackedFloat64Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_sngjx"]
+_data = {
+"Open": SubResource("Animation_74pdu"),
+"RESET": SubResource("Animation_ux3ml")
+}
+
+[node name="PlanetDoor" type="AnimatableBody3D"]
+script = ExtResource("2_4r0pf")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("PlaneMesh_o51xx")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_6piuu")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_sngjx")
+}
+autoplay = "Open"
+speed_scale = 0.0
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("3_2qm8p")
