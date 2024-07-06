@@ -1,0 +1,300 @@
+[gd_scene load_steps=32 format=3 uid="uid://jr6q0p1sytkn"]
+
+[ext_resource type="Texture2D" uid="uid://cwqj1gdbltk7o" path="res://Assets/Textures/LevelTextures/PlanetGrass.png" id="1_g7equ"]
+[ext_resource type="ArrayMesh" uid="uid://cmrjcoy6rkvvh" path="res://Assets/Models/Gridmap/Slope 2 +Z.obj" id="1_mf00b"]
+[ext_resource type="ArrayMesh" uid="uid://bp5tkl5hiqjfr" path="res://Assets/Models/Gridmap/Slope 2 +X+Z.obj" id="2_ymna3"]
+[ext_resource type="ArrayMesh" uid="uid://citfqclvebi3g" path="res://Assets/Models/Gridmap/SlopeCorner 2 +X+Z.obj" id="3_atw37"]
+[ext_resource type="ArrayMesh" uid="uid://c1g5q0bpeph4k" path="res://Assets/Models/Gridmap/Slope 4 +Z.obj" id="4_62ypx"]
+[ext_resource type="ArrayMesh" uid="uid://dtkvrvnpulgo" path="res://Assets/Models/Gridmap/Slope 4 +X+Z.obj" id="5_pnt0p"]
+[ext_resource type="ArrayMesh" uid="uid://bt0aijc4i6md" path="res://Assets/Models/Gridmap/SlopeCorner 4 +X+Z.obj" id="6_dq277"]
+[ext_resource type="ArrayMesh" uid="uid://dw87rqo7usced" path="res://Assets/Models/Gridmap/Platform Middle.obj" id="7_ytptv"]
+[ext_resource type="ArrayMesh" uid="uid://k12soum6s3ds" path="res://Assets/Models/Gridmap/Platform Edge.obj" id="8_d0tu4"]
+[ext_resource type="Texture2D" uid="uid://bewg8aij0nw80" path="res://Assets/Textures/LevelTextures/PlanetWater.png" id="10_7dd08"]
+[ext_resource type="PackedScene" uid="uid://dgknntmd5h60" path="res://Scenes/general_killzone.tscn" id="11_xsgtk"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o28xf"]
+albedo_color = Color(0.294118, 0.572549, 0.533333, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_0tpex"]
+material = SubResource("StandardMaterial3D_o28xf")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_j6yth"]
+size = Vector3(2, 0.001, 2)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rkk1l"]
+albedo_texture = ExtResource("1_g7equ")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_3ild6"]
+material = SubResource("StandardMaterial3D_rkk1l")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ppeyp"]
+albedo_color = Color(0.976471, 0.494118, 0.188235, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_jce64"]
+material = SubResource("StandardMaterial3D_ppeyp")
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_4r81m"]
+points = PackedVector3Array(-1, 0, -1, -1, 0, 1, 1, 0, -1, 1, 0, 1, -1, 2, -1, 1, 2, -1)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_hhmef"]
+points = PackedVector3Array(-1, 0, -1, -1, 0, 1, 1, 0, -1, 1, 0, 1, -1, 2, -1)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_c7wyf"]
+points = PackedVector3Array(-1, 0, -1, -1, 0, 1, 1, 0, -1, 1, 0, 1, -1, 4, -1, 1, 4, -1)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_28tt7"]
+points = PackedVector3Array(-1, 0, -1, -1, 0, 1, 1, 0, -1, 1, 0, 1, -1, 4, -1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6n4gs"]
+albedo_color = Color(0, 0.176471, 0.937255, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_an3rj"]
+albedo_color = Color(0, 0.176471, 0.937255, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0gedg"]
+albedo_color = Color(0, 0.176471, 0.937255, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5dhqu"]
+albedo_color = Color(0.513726, 0.596078, 0.678431, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_m68l5"]
+size = Vector3(2, 0.5, 2)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1s7bk"]
+size = Vector3(2, 0.5, 2)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ete1r"]
+albedo_texture = ExtResource("10_7dd08")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_dim0t"]
+material = SubResource("StandardMaterial3D_ete1r")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_b3dhr"]
+
+[node name="PlanetMeshlib" type="Node3D"]
+
+[node name="FloorTeal" type="MeshInstance3D" parent="."]
+mesh = SubResource("PlaneMesh_0tpex")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="FloorTeal"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="FloorTeal/StaticBody3D"]
+shape = SubResource("BoxShape3D_j6yth")
+
+[node name="FloorTealTextured" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+mesh = SubResource("PlaneMesh_3ild6")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="FloorTealTextured"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="FloorTealTextured/StaticBody3D"]
+shape = SubResource("BoxShape3D_j6yth")
+
+[node name="FloorOrange" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0)
+mesh = SubResource("PlaneMesh_jce64")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="FloorOrange"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="FloorOrange/StaticBody3D"]
+shape = SubResource("BoxShape3D_j6yth")
+
+[node name="TealSlopeEdge2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 2)
+mesh = ExtResource("1_mf00b")
+surface_material_override/0 = SubResource("StandardMaterial3D_o28xf")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="TealSlopeEdge2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TealSlopeEdge2/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_4r81m")
+
+[node name="TealSlopeInner2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 2)
+mesh = ExtResource("2_ymna3")
+surface_material_override/0 = SubResource("StandardMaterial3D_o28xf")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="TealSlopeInner2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TealSlopeInner2/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_4r81m")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="TealSlopeInner2/StaticBody3D"]
+transform = Transform3D(6.12303e-17, 0, 1, 0, 1, 0, -1, 0, 6.12303e-17, 0, 0, 0)
+shape = SubResource("ConvexPolygonShape3D_4r81m")
+
+[node name="TealSlopeOuter2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 2)
+mesh = ExtResource("3_atw37")
+surface_material_override/0 = SubResource("StandardMaterial3D_o28xf")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="TealSlopeOuter2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TealSlopeOuter2/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_hhmef")
+
+[node name="OrangeSlopeEdge2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 2)
+mesh = ExtResource("1_mf00b")
+surface_material_override/0 = SubResource("StandardMaterial3D_ppeyp")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="OrangeSlopeEdge2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="OrangeSlopeEdge2/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_4r81m")
+
+[node name="OrangeSlopeInner2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 2)
+mesh = ExtResource("2_ymna3")
+surface_material_override/0 = SubResource("StandardMaterial3D_ppeyp")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="OrangeSlopeInner2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="OrangeSlopeInner2/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_4r81m")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="OrangeSlopeInner2/StaticBody3D"]
+transform = Transform3D(6.12303e-17, 0, 1, 0, 1, 0, -1, 0, 6.12303e-17, 0, 0, 0)
+shape = SubResource("ConvexPolygonShape3D_4r81m")
+
+[node name="OrangeSlopeOuter2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0, 2)
+mesh = ExtResource("3_atw37")
+surface_material_override/0 = SubResource("StandardMaterial3D_ppeyp")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="OrangeSlopeOuter2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="OrangeSlopeOuter2/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_hhmef")
+
+[node name="TealSlopeEdge4" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0)
+mesh = ExtResource("4_62ypx")
+surface_material_override/0 = SubResource("StandardMaterial3D_o28xf")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="TealSlopeEdge4"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TealSlopeEdge4/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_c7wyf")
+
+[node name="TealSlopeInner4" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 0)
+mesh = ExtResource("5_pnt0p")
+surface_material_override/0 = SubResource("StandardMaterial3D_o28xf")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="TealSlopeInner4"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TealSlopeInner4/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_c7wyf")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="TealSlopeInner4/StaticBody3D"]
+transform = Transform3D(6.12303e-17, 0, 1, 0, 1, 0, -1, 0, 6.12303e-17, 0, 0, 0)
+shape = SubResource("ConvexPolygonShape3D_c7wyf")
+
+[node name="TealSlopeOuter4" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 0)
+mesh = ExtResource("6_dq277")
+surface_material_override/0 = SubResource("StandardMaterial3D_o28xf")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="TealSlopeOuter4"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TealSlopeOuter4/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_28tt7")
+
+[node name="OrangeSlopeEdge4" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 0)
+mesh = ExtResource("4_62ypx")
+surface_material_override/0 = SubResource("StandardMaterial3D_ppeyp")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="OrangeSlopeEdge4"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="OrangeSlopeEdge4/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_c7wyf")
+
+[node name="OrangeSlopeInner4" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, 0)
+mesh = ExtResource("5_pnt0p")
+surface_material_override/0 = SubResource("StandardMaterial3D_ppeyp")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="OrangeSlopeInner4"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="OrangeSlopeInner4/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_c7wyf")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="OrangeSlopeInner4/StaticBody3D"]
+transform = Transform3D(6.12303e-17, 0, 1, 0, 1, 0, -1, 0, 6.12303e-17, 0, 0, 0)
+shape = SubResource("ConvexPolygonShape3D_c7wyf")
+
+[node name="OrangeSlopeOuter4" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0, 0)
+mesh = ExtResource("6_dq277")
+surface_material_override/0 = SubResource("StandardMaterial3D_ppeyp")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="OrangeSlopeOuter4"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="OrangeSlopeOuter4/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_28tt7")
+
+[node name="BlueSlopeEdge4" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, 0)
+mesh = ExtResource("4_62ypx")
+surface_material_override/0 = SubResource("StandardMaterial3D_6n4gs")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="BlueSlopeEdge4"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BlueSlopeEdge4/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_c7wyf")
+
+[node name="BlueSlopeInner4" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, 0)
+mesh = ExtResource("5_pnt0p")
+surface_material_override/0 = SubResource("StandardMaterial3D_an3rj")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="BlueSlopeInner4"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BlueSlopeInner4/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_c7wyf")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="BlueSlopeInner4/StaticBody3D"]
+transform = Transform3D(6.12303e-17, 0, 1, 0, 1, 0, -1, 0, 6.12303e-17, 0, 0, 0)
+shape = SubResource("ConvexPolygonShape3D_c7wyf")
+
+[node name="BlueSlopeOuter4" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 0)
+mesh = ExtResource("6_dq277")
+surface_material_override/0 = SubResource("StandardMaterial3D_0gedg")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="BlueSlopeOuter4"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BlueSlopeOuter4/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_28tt7")
+
+[node name="PlatformMiddle" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2)
+mesh = ExtResource("7_ytptv")
+surface_material_override/0 = SubResource("StandardMaterial3D_5dhqu")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="PlatformMiddle"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PlatformMiddle/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("BoxShape3D_m68l5")
+
+[node name="PlatformEdge" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -2)
+mesh = ExtResource("8_d0tu4")
+surface_material_override/0 = SubResource("StandardMaterial3D_5dhqu")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="PlatformEdge"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PlatformEdge/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2, 0)
+shape = SubResource("BoxShape3D_1s7bk")
+
+[node name="Water" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 2)
+mesh = SubResource("PlaneMesh_dim0t")
+
+[node name="General Killzone" parent="Water" instance=ExtResource("11_xsgtk")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, -1.1, 0)
+Killzone = SubResource("BoxShape3D_b3dhr")

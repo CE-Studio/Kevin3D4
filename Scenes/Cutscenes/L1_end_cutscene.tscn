@@ -713,7 +713,7 @@ script/source = "extends AnimationPlayer
 
 
 func _on_animation_finished(anim_name):
-	get_tree().change_scene_to_file.call_deferred(\"res://Scenes/Levels/level_template.tscn\")
+	get_tree().change_scene_to_file.call_deferred(\"res://Scenes/Levels/planetlvl.tscn\")
 "
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f2bhl"]
