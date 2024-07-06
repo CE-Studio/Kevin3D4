@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://b413ap1k1puh0"
+path="res://.godot/imported/find doors.wav-681499c8dee3064dd897ed5b693fb9f2.sample"
+
+[deps]
+
+source_file="res://Assets/Sound Effects/Voice Lines/finalboss/find doors.wav"
+dest_files=["res://.godot/imported/find doors.wav-681499c8dee3064dd897ed5b693fb9f2.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
