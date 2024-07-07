@@ -16,4 +16,4 @@ func _on_check_box_toggled(toggled_on):
 
 
 func _on_button_2_pressed():
-	OS.shell_open("https://www.google.com")
+	OS.shell_open("https://ce-studio.github.io/Kevin3D4%20Manual.pdf")
