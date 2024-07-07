@@ -516,413 +516,6 @@ tracks/44/keys = {
 "values": [10.785]
 }
 
-[sub_resource type="Animation" id="Animation_uko26"]
-resource_name = "speedrun"
-length = 20.0
-step = 0.05
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Player2/player:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat64Array(0),
-"transitions": PackedFloat64Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Boss:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat64Array(0, 14, 14.2, 14.35, 15.1, 15.3, 15.45, 15.75, 16.25, 16.4, 16.55, 17.45, 19.4),
-"transitions": PackedFloat64Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector3(-20.4802, 4.38867, -48), Vector3(-20.4802, 4.38867, -48), Vector3(-20.48, 5.689, -48), Vector3(-20.48, 3.824, -48), Vector3(-20.48, 3.824, -48), Vector3(-20.48, 5.689, -48), Vector3(-20.4802, 4.38867, -48), Vector3(-20.4802, 4.38867, -48), Vector3(-20.0449, 14.5434, -46.8774), Vector3(-19.9742, 16.1924, -46.6951), Vector3(-20.0449, 14.5434, -46.8774), Vector3(-20.0449, 14.5434, -46.8774), Vector3(-61.2817, 16.3059, -46.8299)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Boss:rotation")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat64Array(0, 14.2, 14.45, 14.7, 15.15, 15.75, 16.2, 17.45, 19.4),
-"transitions": PackedFloat64Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector3(-1.35615, -0.191987, 1.76718), Vector3(-1.35615, -0.191987, 1.76718), Vector3(-1.35615, -0.191987, 1.76718), Vector3(-1.19031, 0.375246, 0.825541), Vector3(-0.708944, 1.47241, 0.145066), Vector3(-0.708944, 1.47241, 0.145066), Vector3(0.0427152, 1.57195, 0.110048), Vector3(0.0427152, 1.57195, 0.110048), Vector3(0.0418879, 1.57254, 15.708)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Sprite3D:position")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat64Array(0),
-"transitions": PackedFloat64Array(1),
-"update": 0,
-"values": [Vector3(20.065, 0, -54.833)]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("Sprite3D:rotation")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat64Array(0),
-"transitions": PackedFloat64Array(1),
-"update": 0,
-"values": [Vector3(0, -0.385997, 0)]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("Camera3D:position")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat64Array(0, 2, 2.7, 4.9, 5.7, 7.3, 9.5),
-"transitions": PackedFloat64Array(1, 1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector3(0.635, -0.869, 21.569), Vector3(0.635, -0.869, 21.569), Vector3(0.635, -0.869, 21.569), Vector3(0.635, -0.869, 21.569), Vector3(0.635, -0.869, 21.569), Vector3(0.635, -0.869, 21.569), Vector3(-3.14647, 37.8376, -9.14345)]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("Camera3D:rotation")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat64Array(0, 2, 2.7, 5.7, 6.5, 7.3, 9.5),
-"transitions": PackedFloat64Array(1, 1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector3(-0.156283, -0.0872665, 0), Vector3(-0.156283, -0.0872665, 0), Vector3(0.0261799, 0.20944, 0), Vector3(0.0261799, 0.20944, 0), Vector3(0.0261799, -0.244346, 0), Vector3(0.0261799, -0.244346, 0), Vector3(-0.732242, 0.00869178, 0)]
-}
-tracks/7/type = "value"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("Camera3D:fov")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
-"times": PackedFloat64Array(0, 5.7, 6.5, 7.3, 9.5),
-"transitions": PackedFloat64Array(1, 1, 1, 1, 1),
-"update": 0,
-"values": [75.0, 75.0, 10.0, 10.0, 75.0]
-}
-tracks/8/type = "rotation_3d"
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/path = NodePath("Player2/player/Armature/Skeleton3D:Head")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/keys = PackedFloat64Array(0, 1, -0.418558, -1.09296e-23, -9.29385e-17, 0.90819, 1.2, 1, -0.418558, -1.09296e-23, -9.29385e-17, 0.90819, 1.8, 1, -0.413099, 0.0617682, 0.148653, 0.896346, 4.6, 1, -0.413099, 0.0617682, 0.148653, 0.896346, 5.4, 1, -0.41706, -0.0324353, -0.0780595, 0.90494, 7, 1, -0.41706, -0.0324353, -0.0780595, 0.90494, 7.1, 1, -0.418558, -1.09296e-23, -9.29385e-17, 0.90819, 10.6, 1, -0.418558, -1.09296e-23, -9.29385e-17, 0.90819, 11.3, 1, -0.253987, -1.61865e-17, -9.15181e-17, 0.967208, 11.6, 1, -0.124079, -2.81266e-17, -8.85803e-17, 0.992272)
-tracks/9/type = "rotation_3d"
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/path = NodePath("Player2/player/Armature/Skeleton3D:Neck0")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/keys = PackedFloat64Array(0, 1, 0.0469459, 1.27529e-17, 2.16744e-17, 0.998897, 1.2, 1, 0.0469459, 1.27529e-17, 2.16744e-17, 0.998897, 1.8, 1, 0.0467186, 0.0979957, -0.00766554, 0.99406, 4.6, 1, 0.0467186, 0.0979957, -0.00766554, 0.99406, 5.4, 1, 0.0468081, -0.0763466, 0.00597208, 0.995964, 7, 1, 0.0468081, -0.0763466, 0.00597208, 0.995964, 7.1, 1, 0.0469459, 1.27529e-17, 2.16744e-17, 0.998897, 10.6, 1, 0.0469459, 1.27529e-17, 2.16744e-17, 0.998897, 11.3, 1, 0.240792, 1.67339e-17, 1.87722e-17, 0.970577, 11.6, 1, -0.33386, 3.62067e-18, 2.48859e-17, 0.942623)
-tracks/10/type = "rotation_3d"
-tracks/10/imported = false
-tracks/10/enabled = true
-tracks/10/path = NodePath("Player2/player/Armature/Skeleton3D:Jaw")
-tracks/10/interp = 1
-tracks/10/loop_wrap = true
-tracks/10/keys = PackedFloat64Array(0, 1, 0.0190206, -1.06971e-24, 4.22347e-18, 0.999819, 5, 1, 0.0190206, -1.06971e-24, 4.22347e-18, 0.999819, 5.4, 1, -0.269525, 0.000474975, 0.000474975, 0.962475, 7, 1, -0.269525, 0.000474975, 0.000474975, 0.962475, 7.1, 1, 0.0190206, -1.06971e-24, 4.22347e-18, 0.999819, 10.6, 1, 0.0190206, -1.06971e-24, 4.22347e-18, 0.999819, 11.6, 1, -0.346758, -1.53961e-18, 3.93285e-18, 0.937955, 11.8, 1, 0.0190206, -1.06971e-24, 4.22347e-18, 0.999819)
-tracks/11/type = "audio"
-tracks/11/imported = false
-tracks/11/enabled = true
-tracks/11/path = NodePath("AudioStreamPlayer")
-tracks/11/interp = 1
-tracks/11/loop_wrap = true
-tracks/11/keys = {
-"clips": [{
-"end_offset": 0.0,
-"start_offset": 0.0,
-"stream": ExtResource("4_3dj3k")
-}, {
-"end_offset": 0.0,
-"start_offset": 0.0,
-"stream": ExtResource("4_3dj3k")
-}, {
-"end_offset": 0.0,
-"start_offset": 0.0,
-"stream": ExtResource("5_b01r7")
-}],
-"times": PackedFloat64Array(0, 7.1, 14.3)
-}
-tracks/11/use_blend = true
-tracks/12/type = "value"
-tracks/12/imported = false
-tracks/12/enabled = true
-tracks/12/path = NodePath("AudioStreamPlayer:volume_db")
-tracks/12/interp = 1
-tracks/12/loop_wrap = true
-tracks/12/keys = {
-"times": PackedFloat64Array(0, 5.7, 6.5, 13.9, 14.2),
-"transitions": PackedFloat64Array(1, 1, 1, 1, 1),
-"update": 0,
-"values": [0.0, 0.0, -16.684, -16.684, 0.0]
-}
-tracks/13/type = "value"
-tracks/13/imported = false
-tracks/13/enabled = true
-tracks/13/path = NodePath("Player2:position")
-tracks/13/interp = 1
-tracks/13/loop_wrap = true
-tracks/13/keys = {
-"times": PackedFloat64Array(0),
-"transitions": PackedFloat64Array(1),
-"update": 0,
-"values": [Vector3(0, -2.13871, 21)]
-}
-tracks/14/type = "value"
-tracks/14/imported = false
-tracks/14/enabled = true
-tracks/14/path = NodePath("Player2:rotation")
-tracks/14/interp = 1
-tracks/14/loop_wrap = true
-tracks/14/keys = {
-"times": PackedFloat64Array(0),
-"transitions": PackedFloat64Array(1),
-"update": 0,
-"values": [Vector3(0, 0, 0)]
-}
-tracks/15/type = "rotation_3d"
-tracks/15/imported = false
-tracks/15/enabled = true
-tracks/15/path = NodePath("Player2/player/Armature/Skeleton3D:Arm_L")
-tracks/15/interp = 1
-tracks/15/loop_wrap = true
-tracks/15/keys = PackedFloat64Array(0, 1, 0.0192061, 3.62423e-08, 0.386457, 0.922107, 7, 1, 0.0192061, 3.62423e-08, 0.386457, 0.922107, 7.1, 1, -0.530728, -0.471698, 0.11933, 0.693967)
-tracks/16/type = "rotation_3d"
-tracks/16/imported = false
-tracks/16/enabled = true
-tracks/16/path = NodePath("Player2/player/Armature/Skeleton3D:Arm_R")
-tracks/16/interp = 1
-tracks/16/loop_wrap = true
-tracks/16/keys = PackedFloat64Array(0, 1, 0.0197022, -3.60996e-08, -0.39644, 0.917849, 5, 1, 0.0197022, -3.60996e-08, -0.39644, 0.917849, 5.4, 1, 0.0575325, 0.588658, -0.423004, 0.686469, 7, 1, 0.0575325, 0.588658, -0.423004, 0.686469, 7.1, 1, -0.472719, 0.627521, -0.262191, 0.560366)
-tracks/17/type = "rotation_3d"
-tracks/17/imported = false
-tracks/17/enabled = true
-tracks/17/path = NodePath("Player2/player/Armature/Skeleton3D:Forearm_R")
-tracks/17/interp = 1
-tracks/17/loop_wrap = true
-tracks/17/keys = PackedFloat64Array(0, 1, 0.000121731, 7.07898e-08, -0.00244944, 0.999997, 5, 1, 0.000121731, 7.07898e-08, -0.00244944, 0.999997, 5.4, 1, -0.314609, 0.117418, -0.763675, 0.551393, 7, 1, -0.314609, 0.117418, -0.763675, 0.551393, 7.1, 1, -0.196778, 0.205831, -0.046203, 0.957485)
-tracks/18/type = "rotation_3d"
-tracks/18/imported = false
-tracks/18/enabled = true
-tracks/18/path = NodePath("Player2/player/Armature/Skeleton3D:Forearm_L")
-tracks/18/interp = 1
-tracks/18/loop_wrap = true
-tracks/18/keys = PackedFloat64Array(0, 1, 0.000121731, -7.07898e-08, 0.00244944, 0.999997, 7, 1, 0.000121731, -7.07898e-08, 0.00244944, 0.999997, 7.1, 1, -0.178013, -0.0586965, -0.0363282, 0.981604)
-tracks/19/type = "value"
-tracks/19/imported = false
-tracks/19/enabled = true
-tracks/19/path = NodePath("Player2/SubViewport/Sprite2D:texture")
-tracks/19/interp = 1
-tracks/19/loop_wrap = true
-tracks/19/keys = {
-"times": PackedFloat64Array(0),
-"transitions": PackedFloat64Array(1),
-"update": 1,
-"values": [ExtResource("6_7ve0u")]
-}
-tracks/20/type = "value"
-tracks/20/imported = false
-tracks/20/enabled = true
-tracks/20/path = NodePath("Player2/SubViewport/Sprite2D3:texture")
-tracks/20/interp = 1
-tracks/20/loop_wrap = true
-tracks/20/keys = {
-"times": PackedFloat64Array(0),
-"transitions": PackedFloat64Array(1),
-"update": 1,
-"values": [ExtResource("6_7ve0u")]
-}
-tracks/21/type = "value"
-tracks/21/imported = false
-tracks/21/enabled = true
-tracks/21/path = NodePath("Camera3D2:position")
-tracks/21/interp = 1
-tracks/21/loop_wrap = true
-tracks/21/keys = {
-"times": PackedFloat64Array(0, 7, 9.3),
-"transitions": PackedFloat64Array(1, 1, 1),
-"update": 0,
-"values": [Vector3(3.51397, -1.75331, 16.4739), Vector3(29.2199, 1.98409, -73.0119), Vector3(22.765, -0.091, -52.422)]
-}
-tracks/22/type = "value"
-tracks/22/imported = false
-tracks/22/enabled = true
-tracks/22/path = NodePath("Camera3D2:rotation")
-tracks/22/interp = 1
-tracks/22/loop_wrap = true
-tracks/22/keys = {
-"times": PackedFloat64Array(0, 7, 9.3),
-"transitions": PackedFloat64Array(1, 1, 1),
-"update": 0,
-"values": [Vector3(-0.01309, 2.75762, 0), Vector3(-0.575163, 1.37008, 0), Vector3(-0.253073, 0.872665, 0)]
-}
-tracks/23/type = "value"
-tracks/23/imported = false
-tracks/23/enabled = true
-tracks/23/path = NodePath("Camera3D2:fov")
-tracks/23/interp = 1
-tracks/23/loop_wrap = true
-tracks/23/keys = {
-"times": PackedFloat64Array(0),
-"transitions": PackedFloat64Array(1),
-"update": 0,
-"values": [75.0]
-}
-tracks/24/type = "method"
-tracks/24/imported = false
-tracks/24/enabled = true
-tracks/24/path = NodePath("Camera3D2")
-tracks/24/interp = 1
-tracks/24/loop_wrap = true
-tracks/24/keys = {
-"times": PackedFloat64Array(7),
-"transitions": PackedFloat64Array(1),
-"values": [{
-"args": [],
-"method": &"make_current"
-}]
-}
-tracks/25/type = "method"
-tracks/25/imported = false
-tracks/25/enabled = true
-tracks/25/path = NodePath("Camera3D")
-tracks/25/interp = 1
-tracks/25/loop_wrap = true
-tracks/25/keys = {
-"times": PackedFloat64Array(12.6),
-"transitions": PackedFloat64Array(1),
-"values": [{
-"args": [],
-"method": &"make_current"
-}]
-}
-tracks/26/type = "value"
-tracks/26/imported = false
-tracks/26/enabled = true
-tracks/26/path = NodePath("Player2/player:position")
-tracks/26/interp = 1
-tracks/26/loop_wrap = true
-tracks/26/keys = {
-"times": PackedFloat64Array(0, 7, 7.1, 12.6, 16.05),
-"transitions": PackedFloat64Array(1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector3(0, -0.78214, 0), Vector3(0, -0.78214, 0), Vector3(20.1347, -0.78214, -74.9069), Vector3(20.1347, -0.78214, -74.9069), Vector3(15.365, -1.502, -74.137)]
-}
-tracks/27/type = "value"
-tracks/27/imported = false
-tracks/27/enabled = true
-tracks/27/path = NodePath("Player2/player:rotation")
-tracks/27/interp = 1
-tracks/27/loop_wrap = true
-tracks/27/keys = {
-"times": PackedFloat64Array(0, 7, 7.1, 12.6, 16.05),
-"transitions": PackedFloat64Array(1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, -0.250786, 0), Vector3(0, -0.250786, 0), Vector3(0, 1.3282, 0)]
-}
-tracks/28/type = "rotation_3d"
-tracks/28/imported = false
-tracks/28/enabled = true
-tracks/28/path = NodePath("Player2/player/Armature/Skeleton3D:Neck1")
-tracks/28/interp = 1
-tracks/28/loop_wrap = true
-tracks/28/keys = PackedFloat64Array(10.6, 1, -0.42148, -2.18918e-23, -9.35874e-17, 0.906838, 11.3, 1, -0.42148, -2.18918e-23, -9.35874e-17, 0.906838, 11.6, 1, -0.208305, -2.09014e-17, -9.12235e-17, 0.978064)
-tracks/29/type = "value"
-tracks/29/imported = false
-tracks/29/enabled = true
-tracks/29/path = NodePath("GPUParticles3D:emitting")
-tracks/29/interp = 1
-tracks/29/loop_wrap = true
-tracks/29/keys = {
-"times": PackedFloat64Array(0, 17.15, 19.2),
-"transitions": PackedFloat64Array(1, 1, 1),
-"update": 1,
-"values": [false, true, false]
-}
-tracks/30/type = "value"
-tracks/30/imported = false
-tracks/30/enabled = true
-tracks/30/path = NodePath("Boss:scale")
-tracks/30/interp = 1
-tracks/30/loop_wrap = true
-tracks/30/keys = {
-"times": PackedFloat64Array(17.45, 19.4),
-"transitions": PackedFloat64Array(1, 1),
-"update": 0,
-"values": [Vector3(31.925, 31.925, 31.925), Vector3(3.88, 3.88, 3.88)]
-}
-tracks/31/type = "value"
-tracks/31/imported = false
-tracks/31/enabled = true
-tracks/31/path = NodePath("Sprite3D:visible")
-tracks/31/interp = 1
-tracks/31/loop_wrap = true
-tracks/31/keys = {
-"times": PackedFloat64Array(0, 12.6),
-"transitions": PackedFloat64Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-tracks/32/type = "value"
-tracks/32/imported = false
-tracks/32/enabled = true
-tracks/32/path = NodePath("Boss:visible")
-tracks/32/interp = 1
-tracks/32/loop_wrap = true
-tracks/32/keys = {
-"times": PackedFloat64Array(0, 19.4),
-"transitions": PackedFloat64Array(1, 1),
-"update": 1,
-"values": [true, false]
-}
-tracks/33/type = "value"
-tracks/33/imported = false
-tracks/33/enabled = true
-tracks/33/path = NodePath("AudioStreamPlayer2:volume_db")
-tracks/33/interp = 1
-tracks/33/loop_wrap = true
-tracks/33/keys = {
-"times": PackedFloat64Array(0, 0.35),
-"transitions": PackedFloat64Array(1, 1),
-"update": 0,
-"values": [10.785, 0.0]
-}
-tracks/34/type = "audio"
-tracks/34/imported = false
-tracks/34/enabled = true
-tracks/34/path = NodePath("AudioStreamPlayer2")
-tracks/34/interp = 1
-tracks/34/loop_wrap = true
-tracks/34/keys = {
-"clips": [{
-"end_offset": 0.0,
-"start_offset": 0.0,
-"stream": ExtResource("7_r5jvy")
-}, {
-"end_offset": 0.0,
-"start_offset": 0.0,
-"stream": ExtResource("8_1hfet")
-}],
-"times": PackedFloat64Array(5.1, 11.65)
-}
-tracks/34/use_blend = true
-
 [sub_resource type="Animation" id="Animation_utboa"]
 resource_name = "normal"
 length = 34.5
@@ -1707,6 +1300,413 @@ tracks/35/keys = {
 "values": [false, true]
 }
 
+[sub_resource type="Animation" id="Animation_uko26"]
+resource_name = "speedrun"
+length = 20.0
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Player2/player:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat64Array(0),
+"transitions": PackedFloat64Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Boss:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat64Array(0, 14, 14.2, 14.35, 15.1, 15.3, 15.45, 15.75, 16.25, 16.4, 16.55, 17.45, 19.4),
+"transitions": PackedFloat64Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-20.4802, 4.38867, -48), Vector3(-20.4802, 4.38867, -48), Vector3(-20.48, 5.689, -48), Vector3(-20.48, 3.824, -48), Vector3(-20.48, 3.824, -48), Vector3(-20.48, 5.689, -48), Vector3(-20.4802, 4.38867, -48), Vector3(-20.4802, 4.38867, -48), Vector3(-20.0449, 14.5434, -46.8774), Vector3(-19.9742, 16.1924, -46.6951), Vector3(-20.0449, 14.5434, -46.8774), Vector3(-20.0449, 14.5434, -46.8774), Vector3(-61.2817, 16.3059, -46.8299)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Boss:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat64Array(0, 14.2, 14.45, 14.7, 15.15, 15.75, 16.2, 17.45, 19.4),
+"transitions": PackedFloat64Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-1.35615, -0.191987, 1.76718), Vector3(-1.35615, -0.191987, 1.76718), Vector3(-1.35615, -0.191987, 1.76718), Vector3(-1.19031, 0.375246, 0.825541), Vector3(-0.708944, 1.47241, 0.145066), Vector3(-0.708944, 1.47241, 0.145066), Vector3(0.0427152, 1.57195, 0.110048), Vector3(0.0427152, 1.57195, 0.110048), Vector3(0.0418879, 1.57254, 15.708)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite3D:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat64Array(0),
+"transitions": PackedFloat64Array(1),
+"update": 0,
+"values": [Vector3(20.065, 0, -54.833)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Sprite3D:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat64Array(0),
+"transitions": PackedFloat64Array(1),
+"update": 0,
+"values": [Vector3(0, -0.385997, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Camera3D:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat64Array(0, 2, 2.7, 4.9, 5.7, 7.3, 9.5),
+"transitions": PackedFloat64Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0.635, -0.869, 21.569), Vector3(0.635, -0.869, 21.569), Vector3(0.635, -0.869, 21.569), Vector3(0.635, -0.869, 21.569), Vector3(0.635, -0.869, 21.569), Vector3(0.635, -0.869, 21.569), Vector3(-3.14647, 37.8376, -9.14345)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Camera3D:rotation")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat64Array(0, 2, 2.7, 5.7, 6.5, 7.3, 9.5),
+"transitions": PackedFloat64Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.156283, -0.0872665, 0), Vector3(-0.156283, -0.0872665, 0), Vector3(0.0261799, 0.20944, 0), Vector3(0.0261799, 0.20944, 0), Vector3(0.0261799, -0.244346, 0), Vector3(0.0261799, -0.244346, 0), Vector3(-0.732242, 0.00869178, 0)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Camera3D:fov")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat64Array(0, 5.7, 6.5, 7.3, 9.5),
+"transitions": PackedFloat64Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [75.0, 75.0, 10.0, 10.0, 75.0]
+}
+tracks/8/type = "rotation_3d"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Player2/player/Armature/Skeleton3D:Head")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = PackedFloat64Array(0, 1, -0.418558, -1.09296e-23, -9.29385e-17, 0.90819, 1.2, 1, -0.418558, -1.09296e-23, -9.29385e-17, 0.90819, 1.8, 1, -0.413099, 0.0617682, 0.148653, 0.896346, 4.6, 1, -0.413099, 0.0617682, 0.148653, 0.896346, 5.4, 1, -0.41706, -0.0324353, -0.0780595, 0.90494, 7, 1, -0.41706, -0.0324353, -0.0780595, 0.90494, 7.1, 1, -0.418558, -1.09296e-23, -9.29385e-17, 0.90819, 10.6, 1, -0.418558, -1.09296e-23, -9.29385e-17, 0.90819, 11.3, 1, -0.253987, -1.61865e-17, -9.15181e-17, 0.967208, 11.6, 1, -0.124079, -2.81266e-17, -8.85803e-17, 0.992272)
+tracks/9/type = "rotation_3d"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Player2/player/Armature/Skeleton3D:Neck0")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = PackedFloat64Array(0, 1, 0.0469459, 1.27529e-17, 2.16744e-17, 0.998897, 1.2, 1, 0.0469459, 1.27529e-17, 2.16744e-17, 0.998897, 1.8, 1, 0.0467186, 0.0979957, -0.00766554, 0.99406, 4.6, 1, 0.0467186, 0.0979957, -0.00766554, 0.99406, 5.4, 1, 0.0468081, -0.0763466, 0.00597208, 0.995964, 7, 1, 0.0468081, -0.0763466, 0.00597208, 0.995964, 7.1, 1, 0.0469459, 1.27529e-17, 2.16744e-17, 0.998897, 10.6, 1, 0.0469459, 1.27529e-17, 2.16744e-17, 0.998897, 11.3, 1, 0.240792, 1.67339e-17, 1.87722e-17, 0.970577, 11.6, 1, -0.33386, 3.62067e-18, 2.48859e-17, 0.942623)
+tracks/10/type = "rotation_3d"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Player2/player/Armature/Skeleton3D:Jaw")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = PackedFloat64Array(0, 1, 0.0190206, -1.06971e-24, 4.22347e-18, 0.999819, 5, 1, 0.0190206, -1.06971e-24, 4.22347e-18, 0.999819, 5.4, 1, -0.269525, 0.000474975, 0.000474975, 0.962475, 7, 1, -0.269525, 0.000474975, 0.000474975, 0.962475, 7.1, 1, 0.0190206, -1.06971e-24, 4.22347e-18, 0.999819, 10.6, 1, 0.0190206, -1.06971e-24, 4.22347e-18, 0.999819, 11.6, 1, -0.346758, -1.53961e-18, 3.93285e-18, 0.937955, 11.8, 1, 0.0190206, -1.06971e-24, 4.22347e-18, 0.999819)
+tracks/11/type = "audio"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("AudioStreamPlayer")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("4_3dj3k")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("4_3dj3k")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("5_b01r7")
+}],
+"times": PackedFloat64Array(0, 7.1, 14.3)
+}
+tracks/11/use_blend = true
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("AudioStreamPlayer:volume_db")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat64Array(0, 5.7, 6.5, 13.9, 14.2),
+"transitions": PackedFloat64Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0, -16.684, -16.684, 0.0]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("Player2:position")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat64Array(0),
+"transitions": PackedFloat64Array(1),
+"update": 0,
+"values": [Vector3(0, -2.13871, 21)]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("Player2:rotation")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat64Array(0),
+"transitions": PackedFloat64Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/15/type = "rotation_3d"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("Player2/player/Armature/Skeleton3D:Arm_L")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = PackedFloat64Array(0, 1, 0.0192061, 3.62423e-08, 0.386457, 0.922107, 7, 1, 0.0192061, 3.62423e-08, 0.386457, 0.922107, 7.1, 1, -0.530728, -0.471698, 0.11933, 0.693967)
+tracks/16/type = "rotation_3d"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("Player2/player/Armature/Skeleton3D:Arm_R")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = PackedFloat64Array(0, 1, 0.0197022, -3.60996e-08, -0.39644, 0.917849, 5, 1, 0.0197022, -3.60996e-08, -0.39644, 0.917849, 5.4, 1, 0.0575325, 0.588658, -0.423004, 0.686469, 7, 1, 0.0575325, 0.588658, -0.423004, 0.686469, 7.1, 1, -0.472719, 0.627521, -0.262191, 0.560366)
+tracks/17/type = "rotation_3d"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("Player2/player/Armature/Skeleton3D:Forearm_R")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = PackedFloat64Array(0, 1, 0.000121731, 7.07898e-08, -0.00244944, 0.999997, 5, 1, 0.000121731, 7.07898e-08, -0.00244944, 0.999997, 5.4, 1, -0.314609, 0.117418, -0.763675, 0.551393, 7, 1, -0.314609, 0.117418, -0.763675, 0.551393, 7.1, 1, -0.196778, 0.205831, -0.046203, 0.957485)
+tracks/18/type = "rotation_3d"
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/path = NodePath("Player2/player/Armature/Skeleton3D:Forearm_L")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/keys = PackedFloat64Array(0, 1, 0.000121731, -7.07898e-08, 0.00244944, 0.999997, 7, 1, 0.000121731, -7.07898e-08, 0.00244944, 0.999997, 7.1, 1, -0.178013, -0.0586965, -0.0363282, 0.981604)
+tracks/19/type = "value"
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/path = NodePath("Player2/SubViewport/Sprite2D:texture")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/keys = {
+"times": PackedFloat64Array(0),
+"transitions": PackedFloat64Array(1),
+"update": 1,
+"values": [ExtResource("6_7ve0u")]
+}
+tracks/20/type = "value"
+tracks/20/imported = false
+tracks/20/enabled = true
+tracks/20/path = NodePath("Player2/SubViewport/Sprite2D3:texture")
+tracks/20/interp = 1
+tracks/20/loop_wrap = true
+tracks/20/keys = {
+"times": PackedFloat64Array(0),
+"transitions": PackedFloat64Array(1),
+"update": 1,
+"values": [ExtResource("6_7ve0u")]
+}
+tracks/21/type = "value"
+tracks/21/imported = false
+tracks/21/enabled = true
+tracks/21/path = NodePath("Camera3D2:position")
+tracks/21/interp = 1
+tracks/21/loop_wrap = true
+tracks/21/keys = {
+"times": PackedFloat64Array(0, 7, 9.3),
+"transitions": PackedFloat64Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(3.51397, -1.75331, 16.4739), Vector3(29.2199, 1.98409, -73.0119), Vector3(22.765, -0.091, -52.422)]
+}
+tracks/22/type = "value"
+tracks/22/imported = false
+tracks/22/enabled = true
+tracks/22/path = NodePath("Camera3D2:rotation")
+tracks/22/interp = 1
+tracks/22/loop_wrap = true
+tracks/22/keys = {
+"times": PackedFloat64Array(0, 7, 9.3),
+"transitions": PackedFloat64Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.01309, 2.75762, 0), Vector3(-0.575163, 1.37008, 0), Vector3(-0.253073, 0.872665, 0)]
+}
+tracks/23/type = "value"
+tracks/23/imported = false
+tracks/23/enabled = true
+tracks/23/path = NodePath("Camera3D2:fov")
+tracks/23/interp = 1
+tracks/23/loop_wrap = true
+tracks/23/keys = {
+"times": PackedFloat64Array(0),
+"transitions": PackedFloat64Array(1),
+"update": 0,
+"values": [75.0]
+}
+tracks/24/type = "method"
+tracks/24/imported = false
+tracks/24/enabled = true
+tracks/24/path = NodePath("Camera3D2")
+tracks/24/interp = 1
+tracks/24/loop_wrap = true
+tracks/24/keys = {
+"times": PackedFloat64Array(7),
+"transitions": PackedFloat64Array(1),
+"values": [{
+"args": [],
+"method": &"make_current"
+}]
+}
+tracks/25/type = "method"
+tracks/25/imported = false
+tracks/25/enabled = true
+tracks/25/path = NodePath("Camera3D")
+tracks/25/interp = 1
+tracks/25/loop_wrap = true
+tracks/25/keys = {
+"times": PackedFloat64Array(12.6),
+"transitions": PackedFloat64Array(1),
+"values": [{
+"args": [],
+"method": &"make_current"
+}]
+}
+tracks/26/type = "value"
+tracks/26/imported = false
+tracks/26/enabled = true
+tracks/26/path = NodePath("Player2/player:position")
+tracks/26/interp = 1
+tracks/26/loop_wrap = true
+tracks/26/keys = {
+"times": PackedFloat64Array(0, 7, 7.1, 12.6, 16.05),
+"transitions": PackedFloat64Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, -0.78214, 0), Vector3(0, -0.78214, 0), Vector3(20.1347, -0.78214, -74.9069), Vector3(20.1347, -0.78214, -74.9069), Vector3(15.365, -1.502, -74.137)]
+}
+tracks/27/type = "value"
+tracks/27/imported = false
+tracks/27/enabled = true
+tracks/27/path = NodePath("Player2/player:rotation")
+tracks/27/interp = 1
+tracks/27/loop_wrap = true
+tracks/27/keys = {
+"times": PackedFloat64Array(0, 7, 7.1, 12.6, 16.05),
+"transitions": PackedFloat64Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, -0.250786, 0), Vector3(0, -0.250786, 0), Vector3(0, 1.3282, 0)]
+}
+tracks/28/type = "rotation_3d"
+tracks/28/imported = false
+tracks/28/enabled = true
+tracks/28/path = NodePath("Player2/player/Armature/Skeleton3D:Neck1")
+tracks/28/interp = 1
+tracks/28/loop_wrap = true
+tracks/28/keys = PackedFloat64Array(10.6, 1, -0.42148, -2.18918e-23, -9.35874e-17, 0.906838, 11.3, 1, -0.42148, -2.18918e-23, -9.35874e-17, 0.906838, 11.6, 1, -0.208305, -2.09014e-17, -9.12235e-17, 0.978064)
+tracks/29/type = "value"
+tracks/29/imported = false
+tracks/29/enabled = true
+tracks/29/path = NodePath("GPUParticles3D:emitting")
+tracks/29/interp = 1
+tracks/29/loop_wrap = true
+tracks/29/keys = {
+"times": PackedFloat64Array(0, 17.15, 19.2),
+"transitions": PackedFloat64Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/30/type = "value"
+tracks/30/imported = false
+tracks/30/enabled = true
+tracks/30/path = NodePath("Boss:scale")
+tracks/30/interp = 1
+tracks/30/loop_wrap = true
+tracks/30/keys = {
+"times": PackedFloat64Array(17.45, 19.4),
+"transitions": PackedFloat64Array(1, 1),
+"update": 0,
+"values": [Vector3(31.925, 31.925, 31.925), Vector3(3.88, 3.88, 3.88)]
+}
+tracks/31/type = "value"
+tracks/31/imported = false
+tracks/31/enabled = true
+tracks/31/path = NodePath("Sprite3D:visible")
+tracks/31/interp = 1
+tracks/31/loop_wrap = true
+tracks/31/keys = {
+"times": PackedFloat64Array(0, 12.6),
+"transitions": PackedFloat64Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/32/type = "value"
+tracks/32/imported = false
+tracks/32/enabled = true
+tracks/32/path = NodePath("Boss:visible")
+tracks/32/interp = 1
+tracks/32/loop_wrap = true
+tracks/32/keys = {
+"times": PackedFloat64Array(0, 19.4),
+"transitions": PackedFloat64Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/33/type = "value"
+tracks/33/imported = false
+tracks/33/enabled = true
+tracks/33/path = NodePath("AudioStreamPlayer2:volume_db")
+tracks/33/interp = 1
+tracks/33/loop_wrap = true
+tracks/33/keys = {
+"times": PackedFloat64Array(0, 0.35),
+"transitions": PackedFloat64Array(1, 1),
+"update": 0,
+"values": [10.785, 0.0]
+}
+tracks/34/type = "audio"
+tracks/34/imported = false
+tracks/34/enabled = true
+tracks/34/path = NodePath("AudioStreamPlayer2")
+tracks/34/interp = 1
+tracks/34/loop_wrap = true
+tracks/34/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("7_r5jvy")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("8_1hfet")
+}],
+"times": PackedFloat64Array(5.1, 11.65)
+}
+tracks/34/use_blend = true
+
 [sub_resource type="Animation" id="Animation_iwj5h"]
 resource_name = "speedsetup"
 length = 0.001
@@ -2229,10 +2229,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.78214, 0)
 visible = false
 
 [node name="Skeleton3D" parent="finalCutscenes/Player2/player/Armature" index="0"]
+bones/2/rotation = Quaternion(0.0155499, 1.0071e-16, 1.0071e-16, 0.999879)
 bones/2/scale = Vector3(1, 1, 1)
 bones/3/position = Vector3(8.17471e-17, 0.412314, 9.31321e-10)
 bones/3/rotation = Quaternion(0.0469459, 1.27529e-17, 2.16744e-17, 0.998897)
-bones/3/scale = Vector3(1, 1, 1)
 bones/4/position = Vector3(-1.29638e-15, 0.162917, -3.72529e-09)
 bones/4/rotation = Quaternion(-0.42148, -2.18918e-23, -9.35874e-17, 0.906838)
 bones/4/scale = Vector3(1, 1, 1)
@@ -2267,7 +2267,6 @@ bones/17/rotation = Quaternion(-0.596658, -0.0390387, -0.318369, 0.735606)
 bones/17/scale = Vector3(1, 1, 1)
 bones/18/position = Vector3(0, 0.120503, 0.11483)
 bones/18/rotation = Quaternion(0.812464, -6.95005e-08, -9.68533e-08, 0.583012)
-bones/18/scale = Vector3(1, 1, 1)
 bones/19/rotation = Quaternion(0.00225576, -2.38418e-07, -1.07563e-09, 0.999997)
 bones/20/rotation = Quaternion(-0.00358084, 5.06265e-13, 2.56123e-09, 0.999994)
 bones/21/rotation = Quaternion(-0.0186974, -1.19188e-07, 1.56023e-08, 0.999825)
@@ -2288,7 +2287,7 @@ surface_material_override/0 = ExtResource("10_tjgnq")
 surface_material_override/0 = SubResource("StandardMaterial3D_20twd")
 
 [node name="BoneAttachment3D" type="BoneAttachment3D" parent="finalCutscenes/Player2/player/Armature/Skeleton3D" index="2"]
-transform = Transform3D(0.024502, 0.999699, 0.00121775, -0.998466, 0.0245322, -0.049622, -0.0496369, -4.35843e-08, 0.998767, 0.843557, 1.63555, 0.0128213)
+transform = Transform3D(0.024502, 0.999699, 0.00121775, -0.998467, 0.0245322, -0.049622, -0.0496369, -4.25283e-08, 0.998767, 0.843557, 1.63555, 0.0128213)
 bone_name = "Hand_R"
 bone_idx = 14
 
@@ -2305,7 +2304,7 @@ mesh = SubResource("PlaneMesh_cu1vt")
 skeleton = NodePath("")
 
 [node name="Camera3D" type="Camera3D" parent="finalCutscenes"]
-transform = Transform3D(0.892979, 0.0450944, 0.447833, 0, 0.994969, -0.100188, -0.450098, 0.0894658, 0.888486, 3.30278, -1.83692, 24.5646)
+transform = Transform3D(0.892979, 0.0450943, 0.447833, 0, 0.994969, -0.100188, -0.450098, 0.0894655, 0.888486, 3.30278, -1.83692, 24.5646)
 current = true
 
 [node name="Camera3D2" type="Camera3D" parent="finalCutscenes"]
