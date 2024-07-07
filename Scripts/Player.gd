@@ -74,6 +74,7 @@ var multi := 1.0
 @onready var findswitch:AudioStreamPlayer = $findswitch
 
 func _ready():
+	cam.make_current()
 	if Player.speedrunning:
 		if not Player._timerSpawned:
 			Player._timerSpawned = true
