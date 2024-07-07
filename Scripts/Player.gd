@@ -43,6 +43,7 @@ static var _timerSpawned := false
 static var speedrunTime:float = 0
 static var stanley := false
 static var dlc := false
+static var speedran := false
 var isDead := false
 var bHop = 0
 var isTripleJump = 0
@@ -74,6 +75,7 @@ var multi := 1.0
 @onready var findswitch:AudioStreamPlayer = $findswitch
 
 func _ready():
+	cam.make_current()
 	if Player.speedrunning:
 		if not Player._timerSpawned:
 			Player._timerSpawned = true

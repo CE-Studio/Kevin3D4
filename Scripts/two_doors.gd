@@ -20,4 +20,8 @@ func _on_area_3d_2_body_entered(body):
 		if !_a:
 			_a = true
 			scenestart.emit()
+			if Player.speedrunTime < (12*60):
+				Player.speedran = true
+				$AudioStreamPlayer3D.volume_db = -80
+				$"../finalCutscenes/AnimationPlayer".play("speedsetup")
 			$AnimationPlayer.play("new_animation")
