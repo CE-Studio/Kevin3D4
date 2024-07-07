@@ -351,7 +351,7 @@ transform = Transform3D(-0.708932, -0.193192, 0.6783, 0, 0.961752, 0.273923, -0.
 current = true
 
 [node name="Camera3D2" type="Camera3D" parent="."]
-transform = Transform3D(-0.994788, -0.0689465, 0.0751217, 0, 0.73674, 0.676177, -0.101965, 0.672653, -0.7329, 0.0456703, 1.74328, -3.31727)
+transform = Transform3D(-0.994788, -0.0689465, 0.0751218, 0, 0.73674, 0.676177, -0.101965, 0.672653, -0.7329, 0.0456703, 1.74328, -3.31727)
 current = true
 
 [node name="Camera3D3" type="Camera3D" parent="."]
