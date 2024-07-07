@@ -25,19 +25,20 @@ func init(newHP:int):
 
 
 func _process(delta):
-	if not $Timer.is_stopped():
-			#$MeshInstance3D.mesh.material.set_shader_parameter("FloatParameter", 0.05/timer.time_left )
-			$enemy/Armature/Skeleton3D/Vert.get_surface_override_material(0).set_shader_parameter("FloatParameter", 1/timer.time_left)
-	model.look_at(Player.instance.global_position, Vector3.UP, true)
-	if shoot:
-		shoot = false
-		var h:RigidBody3D = bullet.instantiate()
-		$"../".add_child(h)
-		h.global_position = global_position
-		h.look_at(Player.instance.global_position, Vector3.UP, true)
-		h.linear_velocity = ((h.global_transform.basis * Vector3.BACK) * 12)
-		h.freeze = false
-	model.rotation.x = 0
+	if is_instance_valid(Player.instance):
+		if not $Timer.is_stopped():
+				#$MeshInstance3D.mesh.material.set_shader_parameter("FloatParameter", 0.05/timer.time_left )
+				$enemy/Armature/Skeleton3D/Vert.get_surface_override_material(0).set_shader_parameter("FloatParameter", 1/timer.time_left)
+		model.look_at(Player.instance.global_position, Vector3.UP, true)
+		if shoot:
+			shoot = false
+			var h:RigidBody3D = bullet.instantiate()
+			$"../".add_child(h)
+			h.global_position = global_position
+			h.look_at(Player.instance.global_position, Vector3.UP, true)
+			h.linear_velocity = ((h.global_transform.basis * Vector3.BACK) * 12)
+			h.freeze = false
+		model.rotation.x = 0
 
 
 func on_stomp(body:Node3D): # This function is connected to StompArea's body_entered signal
@@ -68,7 +69,6 @@ func _on_area_entered(area):
 
 
 func _on_body_entered(body):
-	print("ouchie")
 	if body is Player:
 		Player.instance.isDead = true
 	elif body is Bean:

@@ -8,7 +8,7 @@
 [ext_resource type="Shader" uid="uid://dqcbpkck1cny8" path="res://Assets/Shaders/crumbling_platform.tres" id="7_sywic"]
 [ext_resource type="Texture2D" uid="uid://durc3utviccja" path="res://Assets/Textures/platform.png" id="8_10yc8"]
 [ext_resource type="ArrayMesh" uid="uid://q652n152a0tm" path="res://Assets/Models/models/shark.obj" id="9_2cv86"]
-[ext_resource type="PackedScene" uid="uid://jamquukhosn4" path="res://Scenes/computer.tscn" id="10_mq5lg"]
+[ext_resource type="PackedScene" path="res://Scenes/computer.tscn" id="10_mq5lg"]
 [ext_resource type="AudioStream" uid="uid://dmvt70tmisjow" path="res://Assets/Sound Effects/dear digital diary/Sharkour.wav" id="10_tadbw"]
 [ext_resource type="Texture2D" uid="uid://dm0spsk10xa45" path="res://Assets/Models/models/shark.png" id="11_1w24l"]
 [ext_resource type="AudioStream" uid="uid://44el322f5lnj" path="res://Assets/Sound Effects/dear digital diary/Cigarkour.wav" id="12_sba85"]
@@ -165,6 +165,11 @@ size = Vector3(5, 5, 5)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.37879, -0.964761, -0.57075)
 script = ExtResource("1_dw2wk")
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_qobd8")
+autoplay = true
+bus = &"Music"
+
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.96363, 0.231435, -0.133619, 0, 0.5, 0.866025, 0.267238, -0.834528, 0.481815, 0, 0, 0)
 shadow_enabled = true
@@ -183,11 +188,6 @@ metadata/_editor_floor_ = Vector3(0, 30, 0)
 
 [node name="Player" parent="." instance=ExtResource("2_o17ei")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.97716, 1.03612, -3.03442)
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("3_qobd8")
-autoplay = true
-bus = &"Music"
 
 [node name="Crumbling Platform" parent="." instance=ExtResource("6_c10pk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.04286, 3.36307, -29.7376)

@@ -80,8 +80,8 @@ func _ready():
 		if not Player._timerSpawned:
 			Player._timerSpawned = true
 			$"/root/".add_child.call_deferred(preload("res://Scenes/speedrun_hud.tscn").instantiate())
-			$"../AudioStreamPlayer".autoplay = false
-			$"../AudioStreamPlayer".playing = false
+		$"../AudioStreamPlayer".autoplay = false
+		$"../AudioStreamPlayer".playing = false
 	Player.instance = self
 	djumpEffect.one_shot = true
 	djumpEffect.emitting = false
