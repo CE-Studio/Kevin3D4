@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://d37w4md4gmfkx"]
+[gd_scene load_steps=46 format=3 uid="uid://d37w4md4gmfkx"]
 
 [ext_resource type="MeshLibrary" uid="uid://bbbc72uw7x7rq" path="res://Scenes/3DTilemaps/PlanetMeshLib.tres" id="1_wodos"]
 [ext_resource type="MeshLibrary" uid="uid://cknd8psi154ho" path="res://Scenes/3DTilemaps/FactoryMeshLib.tres" id="2_onrda"]
@@ -17,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://cev248w6qbej8" path="res://Scenes/moving_platform.tscn" id="14_21s2h"]
 [ext_resource type="Texture2D" uid="uid://doj2uf6rwb6vv" path="res://Assets/Textures/woerm.png" id="15_tw54q"]
 [ext_resource type="PackedScene" uid="uid://cb28v0ej87u3n" path="res://Scenes/door.tscn" id="17_4otua"]
+[ext_resource type="PackedScene" uid="uid://cpn8bnl8w53cs" path="res://Scenes/winnerbox.tscn" id="18_idcjg"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_412dt"]
 panorama = ExtResource("4_kqy0t")
@@ -109,7 +110,7 @@ size = Vector3(3, 1, 3)
 resource_name = "PlanetPlatCycle"
 length = 16.0
 loop_mode = 1
-step = 0.1
+step = 0.25
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -117,7 +118,7 @@ tracks/0/path = NodePath(".:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat64Array(0, 2, 4, 6, 8, 10, 12, 14, 16),
+"times": PackedFloat64Array(0, 1.75, 3.5, 5.75, 8, 9.75, 11.5, 13.75, 16),
 "transitions": PackedFloat64Array(3, 0.333333, 3, 0.333333, 3, 0.333333, 3, 0.333333, 1),
 "update": 0,
 "values": [Vector3(27, 4, -474), Vector3(27, 4, -504), Vector3(27, 4, -534), Vector3(79, 4, -540), Vector3(131, 4, -546), Vector3(126.5, 4, -521.5), Vector3(122, 4, -497), Vector3(74.5, 4, -485.5), Vector3(27, 4, -474)]
@@ -129,7 +130,7 @@ tracks/1/path = NodePath("../MovingPlat2:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat64Array(0, 2, 4, 6, 8, 10, 12, 14, 16),
+"times": PackedFloat64Array(0, 1.75, 3.5, 5.75, 8, 9.75, 11.5, 13.75, 16),
 "transitions": PackedFloat64Array(3, 0.333333, 3, 0.333333, 3, 0.333333, 3, 0.333333, 1),
 "update": 0,
 "values": [Vector3(219, 4, -599), Vector3(219, 4, -569), Vector3(219, 4, -539), Vector3(167, 4, -533), Vector3(115, 4, -527), Vector3(119.5, 4, -551.5), Vector3(124, 4, -576), Vector3(171.5, 4, -587.5), Vector3(219, 4, -599)]
@@ -177,6 +178,16 @@ material = SubResource("StandardMaterial3D_bh8kb")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_gpbbj"]
 size = Vector3(0.001, 12, 12)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fk2ph"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_yt51b"]
+material = SubResource("StandardMaterial3D_fk2ph")
+size = Vector2(18, 18)
+orientation = 2
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_cv656"]
 
 [node name="Level1" type="Node3D"]
 
@@ -284,16 +295,16 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 45, 0, -416)
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 36, 61, -438)
 
 [node name="MovingPlat1" parent="." instance=ExtResource("14_21s2h")]
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 27, 4, -474)
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 27, 4, -474)
 
 [node name="AnimationPlayer" parent="MovingPlat1" index="2"]
 libraries = {
 "": SubResource("AnimationLibrary_ry3je")
 }
-speed_scale = 1.0
+autoplay = "PlanetPlatCycle"
 
 [node name="MovingPlat2" parent="." instance=ExtResource("14_21s2h")]
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 219, 4, -599)
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 219, 4, -599)
 
 [node name="woerm" type="MeshInstance3D" parent="."]
 transform = Transform3D(-111.911, 0, -29.7648, 0, 115.802, 0, 29.7648, 0, -111.911, 516.407, 79, -629.59)
@@ -305,15 +316,24 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 240, -3, -594)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="RiverSkipWall"]
 shape = SubResource("BoxShape3D_gpbbj")
 
+[node name="Switch4" parent="." instance=ExtResource("13_g00mk")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 84, 5, -732)
+
 [node name="door" parent="." instance=ExtResource("17_4otua")]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 219, 3, -729)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 176, 0, -740)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 219, 12, -744)
+mesh = SubResource("PlaneMesh_yt51b")
+
+[node name="Winnerbox" parent="." instance=ExtResource("18_idcjg")]
+transform = Transform3D(18, 0, 0, 0, 18, 0, 0, 0, 18, 219, 12, -744)
+WinZone = SubResource("BoxShape3D_cv656")
 
 [connection signal="on_switch_activate" from="Switch1" to="Door1" method="on_activate"]
 [connection signal="on_switch_activate" from="Switch2" to="Door2" method="on_activate"]
 [connection signal="on_switch_activate" from="Switch3" to="MovingPlat1" method="on_trigger"]
+[connection signal="on_switch_activate" from="Switch4" to="door" method="open"]
 
 [editable path="Crumbles/Crumble1"]
 [editable path="Crumbles/Crumble2"]
