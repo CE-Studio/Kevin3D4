@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://cfi7rhk5wfb8g"]
+[gd_scene load_steps=28 format=3 uid="uid://cyoweog3o8rg3"]
 
 [ext_resource type="AudioStream" uid="uid://evxxebo6lho0" path="res://Assets/Music/finale.wav" id="1_1bq8l"]
 [ext_resource type="Texture2D" uid="uid://c3u6qflftaqa8" path="res://Assets/Textures/glaxy skybox.jpg" id="1_xtp7l"]
@@ -227,21 +227,18 @@ is_hemisphere = true
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_la3qy"]
 bg_color = Color(0, 0, 0, 1)
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_i3dtn"]
-viewport_path = NodePath("SubViewport")
+[sub_resource type="ViewportTexture" id="ViewportTexture_dc8un"]
+viewport_path = NodePath("Trumpet Kevin/SubViewport")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f7r1p"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p2g5x"]
 resource_local_to_scene = true
 shading_mode = 0
-albedo_texture = SubResource("ViewportTexture_i3dtn")
+albedo_texture = SubResource("ViewportTexture_dc8un")
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_gc8cd"]
-viewport_path = NodePath("SubViewport")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_12oux"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_46n3w"]
 resource_local_to_scene = true
 shading_mode = 0
-albedo_texture = SubResource("ViewportTexture_gc8cd")
+albedo_texture = SubResource("ViewportTexture_dc8un")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hswdw"]
 atlas = ExtResource("5_klo1f")
@@ -265,9 +262,6 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f5c0b"]
-bg_color = Color(0, 0, 0, 1)
-
 [node name="AnimationPlayer" type="AnimationPlayer"]
 libraries = {
 "": SubResource("AnimationLibrary_06741")
@@ -276,7 +270,7 @@ autoplay = "h"
 script = ExtResource("2_fo06a")
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(-0.721129, -0.366661, 0.587821, 0, 0.84847, 0.529244, -0.692801, 0.381653, -0.611856, 3.41912, 3.36791, -7.22519)
+transform = Transform3D(-0.721131, -0.366659, 0.587819, 0, 0.84847, 0.529244, -0.692799, 0.381654, -0.611858, 3.41912, 3.36791, -7.22519)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 
@@ -327,7 +321,7 @@ flip_h = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.17986, -0.78214, 0)
 
 [node name="Armature" parent="Trumpet Kevin/player" index="0"]
-transform = Transform3D(0.939693, 0, -0.34202, 0, 1, 0, 0.34202, 0, 0.939693, 0, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 
 [node name="Skeleton3D" parent="Trumpet Kevin/player/Armature" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0270931, 0.102824, 7.91995e-05)
@@ -374,7 +368,7 @@ bones/24/scale = Vector3(1, 1, 1)
 surface_material_override/0 = ExtResource("3_vj014")
 
 [node name="Vert_001" parent="Trumpet Kevin/player/Armature/Skeleton3D" index="1"]
-surface_material_override/0 = SubResource("StandardMaterial3D_f7r1p")
+surface_material_override/0 = SubResource("StandardMaterial3D_p2g5x")
 
 [node name="BoneAttachment3D" type="BoneAttachment3D" parent="Trumpet Kevin/player/Armature/Skeleton3D" index="2"]
 transform = Transform3D(-0.991412, 0.00221811, -0.130755, 0.117037, 0.461134, -0.879578, 0.0583444, -0.887328, -0.457434, 0.146461, 1.66204, -0.60018)
@@ -436,7 +430,7 @@ bones/24/scale = Vector3(1, 1, 1)
 surface_material_override/0 = ExtResource("3_vj014")
 
 [node name="Vert_001" parent="Piano Kevin/player2/Armature/Skeleton3D" index="1"]
-surface_material_override/0 = SubResource("StandardMaterial3D_12oux")
+surface_material_override/0 = SubResource("StandardMaterial3D_46n3w")
 
 [node name="BoneAttachment3D" type="BoneAttachment3D" parent="Piano Kevin/player2/Armature/Skeleton3D" index="2"]
 transform = Transform3D(-0.966419, 0.256971, -0.000314788, 0.102525, 0.384452, -0.917434, -0.235633, -0.886658, -0.397888, 0.293998, 1.50871, -0.476543)
@@ -448,60 +442,11 @@ transform = Transform3D(1.80979, 0.114796, 0.843492, -0.833927, -0.15887, 1.8108
 visible = false
 sprite_frames = SubResource("SpriteFrames_ulp60")
 
-[node name="SubViewport" type="SubViewport" parent="Piano Kevin/player2"]
-disable_3d = true
-
-[node name="Panel" type="Panel" parent="Piano Kevin/player2/SubViewport"]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_f5c0b")
-
-[node name="Sprite2D2" type="Sprite2D" parent="Piano Kevin/player2/SubViewport"]
-texture = ExtResource("2_qypqp")
-centered = false
-
-[node name="Sprite2D" type="Sprite2D" parent="Piano Kevin/player2/SubViewport"]
-position = Vector2(80, 251.345)
-texture = ExtResource("3_fp7du")
-
-[node name="Sprite2D3" type="Sprite2D" parent="Piano Kevin/player2/SubViewport"]
-position = Vector2(432, 251.345)
-texture = ExtResource("3_fp7du")
-flip_h = true
-
 [node name="Sketchfab_Scene" parent="Piano Kevin" instance=ExtResource("6_y76al")]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 1.28162, -2.12748, -0.810772, -0.393839)
 
 [node name="Trumpet Kevin2" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.31151, 8.88178e-16, -2.44838)
-
-[node name="SubViewport" type="SubViewport" parent="Trumpet Kevin2"]
-disable_3d = true
-
-[node name="Panel" type="Panel" parent="Trumpet Kevin2/SubViewport"]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_la3qy")
-
-[node name="Sprite2D2" type="Sprite2D" parent="Trumpet Kevin2/SubViewport"]
-visible = false
-texture = ExtResource("2_qypqp")
-centered = false
-
-[node name="Sprite2D" type="Sprite2D" parent="Trumpet Kevin2/SubViewport"]
-position = Vector2(80, 251.345)
-texture = ExtResource("3_fp7du")
-
-[node name="Sprite2D3" type="Sprite2D" parent="Trumpet Kevin2/SubViewport"]
-position = Vector2(432, 251.345)
-texture = ExtResource("3_fp7du")
-flip_h = true
 
 [node name="player" parent="Trumpet Kevin2" instance=ExtResource("2_x26e7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.17986, -0.78214, 0)
@@ -554,7 +499,7 @@ bones/24/scale = Vector3(1, 1, 1)
 surface_material_override/0 = ExtResource("3_vj014")
 
 [node name="Vert_001" parent="Trumpet Kevin2/player/Armature/Skeleton3D" index="1"]
-surface_material_override/0 = SubResource("StandardMaterial3D_f7r1p")
+surface_material_override/0 = SubResource("StandardMaterial3D_46n3w")
 
 [node name="BoneAttachment3D" type="BoneAttachment3D" parent="Trumpet Kevin2/player/Armature/Skeleton3D" index="2"]
 transform = Transform3D(-0.991412, 0.00221811, -0.130755, 0.117037, 0.461134, -0.879578, 0.0583444, -0.887328, -0.457434, 0.146461, 1.66204, -0.60018)
@@ -566,30 +511,6 @@ transform = Transform3D(-0.0918041, 0.0310777, -0.0246206, 0.0305939, 0.0160272,
 
 [node name="Drum Kevin" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0790244, -0.128269, -0.290707)
-
-[node name="SubViewport" type="SubViewport" parent="Drum Kevin"]
-disable_3d = true
-
-[node name="Panel" type="Panel" parent="Drum Kevin/SubViewport"]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_f5c0b")
-
-[node name="Sprite2D2" type="Sprite2D" parent="Drum Kevin/SubViewport"]
-texture = ExtResource("2_qypqp")
-centered = false
-
-[node name="Sprite2D" type="Sprite2D" parent="Drum Kevin/SubViewport"]
-position = Vector2(80, 251.345)
-texture = ExtResource("3_fp7du")
-
-[node name="Sprite2D3" type="Sprite2D" parent="Drum Kevin/SubViewport"]
-position = Vector2(432, 251.345)
-texture = ExtResource("3_fp7du")
-flip_h = true
 
 [node name="player2" parent="Drum Kevin" instance=ExtResource("2_x26e7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0341991, -0.771644, -0.199163)
@@ -640,7 +561,7 @@ bones/24/scale = Vector3(1, 1, 1)
 surface_material_override/0 = ExtResource("3_vj014")
 
 [node name="Vert_001" parent="Drum Kevin/player2/Armature/Skeleton3D" index="1"]
-surface_material_override/0 = SubResource("StandardMaterial3D_12oux")
+surface_material_override/0 = SubResource("StandardMaterial3D_46n3w")
 
 [node name="BoneAttachment3D" type="BoneAttachment3D" parent="Drum Kevin/player2/Armature/Skeleton3D" index="2"]
 transform = Transform3D(-0.966419, 0.256971, -0.000314788, 0.102525, 0.384452, -0.917434, -0.235633, -0.886658, -0.397888, 0.293998, 1.50871, -0.476543)
@@ -657,31 +578,6 @@ transform = Transform3D(-0.999048, 0, -0.0436194, 0, 1, 0, 0.0436194, 0, -0.9990
 
 [node name="Bass Kevin" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.65331, 8.88178e-16, -2.44838)
-
-[node name="SubViewport" type="SubViewport" parent="Bass Kevin"]
-disable_3d = true
-
-[node name="Panel" type="Panel" parent="Bass Kevin/SubViewport"]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_la3qy")
-
-[node name="Sprite2D2" type="Sprite2D" parent="Bass Kevin/SubViewport"]
-visible = false
-texture = ExtResource("2_qypqp")
-centered = false
-
-[node name="Sprite2D" type="Sprite2D" parent="Bass Kevin/SubViewport"]
-position = Vector2(80, 251.345)
-texture = ExtResource("3_fp7du")
-
-[node name="Sprite2D3" type="Sprite2D" parent="Bass Kevin/SubViewport"]
-position = Vector2(432, 251.345)
-texture = ExtResource("3_fp7du")
-flip_h = true
 
 [node name="player" parent="Bass Kevin" instance=ExtResource("2_x26e7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.17986, -0.78214, 0)
@@ -738,7 +634,7 @@ bones/24/scale = Vector3(1, 1, 1)
 surface_material_override/0 = ExtResource("3_vj014")
 
 [node name="Vert_001" parent="Bass Kevin/player/Armature/Skeleton3D" index="1"]
-surface_material_override/0 = SubResource("StandardMaterial3D_f7r1p")
+surface_material_override/0 = SubResource("StandardMaterial3D_46n3w")
 
 [node name="BoneAttachment3D" type="BoneAttachment3D" parent="Bass Kevin/player/Armature/Skeleton3D" index="2"]
 transform = Transform3D(0.610733, -0.304737, 0.73085, -0.77656, -0.410929, 0.477589, 0.154788, -0.859228, -0.487614, -0.0139447, 1.40152, -0.60778)
@@ -750,31 +646,6 @@ transform = Transform3D(0.0139083, 0.0575793, 0.0372985, 0.00639351, 0.0368038, 
 
 [node name="Sing Kevin" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.56994, 8.88178e-16, -5.41214)
-
-[node name="SubViewport" type="SubViewport" parent="Sing Kevin"]
-disable_3d = true
-
-[node name="Panel" type="Panel" parent="Sing Kevin/SubViewport"]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_la3qy")
-
-[node name="Sprite2D2" type="Sprite2D" parent="Sing Kevin/SubViewport"]
-visible = false
-texture = ExtResource("2_qypqp")
-centered = false
-
-[node name="Sprite2D" type="Sprite2D" parent="Sing Kevin/SubViewport"]
-position = Vector2(80, 251.345)
-texture = ExtResource("3_fp7du")
-
-[node name="Sprite2D3" type="Sprite2D" parent="Sing Kevin/SubViewport"]
-position = Vector2(432, 251.345)
-texture = ExtResource("3_fp7du")
-flip_h = true
 
 [node name="player" parent="Sing Kevin" instance=ExtResource("2_x26e7")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.17986, -0.916957, 0)
@@ -829,7 +700,7 @@ bones/24/scale = Vector3(1, 1, 1)
 surface_material_override/0 = ExtResource("3_vj014")
 
 [node name="Vert_001" parent="Sing Kevin/player/Armature/Skeleton3D" index="1"]
-surface_material_override/0 = SubResource("StandardMaterial3D_f7r1p")
+surface_material_override/0 = SubResource("StandardMaterial3D_46n3w")
 
 [node name="BoneAttachment3D" type="BoneAttachment3D" parent="Sing Kevin/player/Armature/Skeleton3D" index="2"]
 transform = Transform3D(-0.991412, 0.00221811, -0.130755, 0.117037, 0.461134, -0.879578, 0.0583444, -0.887328, -0.457434, 0.146461, 1.66204, -0.60018)

@@ -1,7 +1,5 @@
 extends AnimationPlayer
 
 
-
-
 func _on_animation_finished(anim_name):
-	preload("res://Scenes/Levels/thefinal.tscn")
+	get_tree().change_scene_to_file.call_deferred("res://Scenes/Levels/thefinal.tscn")

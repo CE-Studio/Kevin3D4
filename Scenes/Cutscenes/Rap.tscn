@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://caqhh4ygwnfql"]
+[gd_scene load_steps=22 format=3 uid="uid://caqhh4ygwnfql"]
 
 [ext_resource type="AudioStream" uid="uid://qopvby4fpwnl" path="res://Assets/Music/biggest shitpost ive ever made.wav" id="1_e7h7l"]
 [ext_resource type="Texture2D" uid="uid://c4h5sp7v5b4r4" path="res://Assets/Textures/visoruv.png" id="1_oycad"]
@@ -266,6 +266,14 @@ _data = {
 "new_animation": SubResource("Animation_hyihh")
 }
 
+[sub_resource type="GDScript" id="GDScript_yn6a7"]
+script/source = "extends AnimationPlayer
+
+
+func _on_animation_finished(anim_name):
+	get_tree().change_scene_to_file.call_deferred(\"res://Scenes/Levels/factorylvl.tscn\")
+"
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xtexy"]
 bg_color = Color(0, 0, 0, 1)
 
@@ -320,6 +328,7 @@ libraries = {
 "": SubResource("AnimationLibrary_dwsnp")
 }
 autoplay = "new_animation"
+script = SubResource("GDScript_yn6a7")
 
 [node name="SubViewport" type="SubViewport" parent="."]
 disable_3d = true
@@ -434,5 +443,7 @@ bone_idx = 14
 transform = Transform3D(1.80979, 0.114796, 0.843492, -0.833927, -0.15887, 1.81089, 0.170944, -1.99037, -0.0958952, 0.0244896, 0.190201, -0.121208)
 visible = false
 sprite_frames = SubResource("SpriteFrames_4wd2f")
+
+[connection signal="animation_finished" from="." to="." method="_on_animation_finished"]
 
 [editable path="player"]
