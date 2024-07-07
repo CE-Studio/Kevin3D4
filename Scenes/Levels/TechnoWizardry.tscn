@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=3 uid="uid://bph7y82fcjh3o"]
+[gd_scene load_steps=51 format=3 uid="uid://bph7y82fcjh3o"]
 
 [ext_resource type="Script" path="res://Scripts/TechnoWizardry.gd" id="1_dw2wk"]
 [ext_resource type="MeshLibrary" uid="uid://i125w3qc6j8c" path="res://Scenes/3DTilemaps/RealL1MeshLib.tres" id="1_whkdw"]
@@ -19,7 +19,6 @@
 [ext_resource type="Texture2D" uid="uid://rvq6vky6sc31" path="res://Assets/Models/models/cigarette.tga" id="14_8cjtg"]
 [ext_resource type="AudioStream" uid="uid://d0q0qwjc1aumf" path="res://Assets/Sound Effects/dear digital diary/carkour.wav" id="15_5b367"]
 [ext_resource type="Texture2D" uid="uid://bo54b1ucuwacn" path="res://Assets/Sound Effects/dear digital diary/star.png" id="15_nin6f"]
-[ext_resource type="PackedScene" uid="uid://butqoc3w34c7a" path="res://Scenes/Powerups/triple_jump.tscn" id="15_wiqw6"]
 [ext_resource type="AudioStream" uid="uid://c8d8d0qwt61t5" path="res://Assets/Sound Effects/dear digital diary/hell ya brother.wav" id="16_y07ud"]
 [ext_resource type="Texture2D" uid="uid://ci7flb683vx0g" path="res://Assets/Sound Effects/dear digital diary/furry.jpg" id="17_dah57"]
 [ext_resource type="ArrayMesh" uid="uid://5fr3n3vd6gwc" path="res://Assets/Models/models/star.obj" id="17_pe1vk"]
@@ -73,6 +72,21 @@ points = PackedVector3Array(0.048254, 0.00678557, 0.00550159, -0.048254, 0.00075
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_ar0oj"]
 data = PackedVector3Array(0.2074, 0.5209, -0.1167, 0.5471, 0.7695, -0.4071, 1.2054, 0.6936, -0.2586, 0.5471, 0.7695, -0.4071, 0.2074, 0.5209, -0.1167, 0.3086, 1.1526, -0.9146, 0.3086, 1.1526, -0.9146, 0.2074, 0.5209, -0.1167, -0.0504, 0.7834, -0.4718, -0.0504, 0.7834, -0.4718, 0.2074, 0.5209, -0.1167, -0.728, 0.7387, -0.468, -0.728, 0.7387, -0.468, 0.2074, 0.5209, -0.1167, -0.2915, 0.4346, -0.0458, -0.2915, 0.4346, -0.0458, 0.2074, 0.5209, -0.1167, -0.4718, 0.0238, 0.464, -0.4718, 0.0238, 0.464, 0.2074, 0.5209, -0.1167, 0.1569, 0.2051, 0.2822, 0.1569, 0.2051, 0.2822, 0.2074, 0.5209, -0.1167, 0.723, -0.0041, 0.5934, 0.723, -0.0041, 0.5934, 0.2074, 0.5209, -0.1167, 0.6752, 0.4121, 0.0589, 0.6752, 0.4121, 0.0589, 0.2074, 0.5209, -0.1167, 1.2054, 0.6936, -0.2586, 0.5471, 0.7695, -0.4071, 0.5718, 0.3676, -0.7222, 1.2054, 0.6936, -0.2586, 1.2054, 0.6936, -0.2586, 0.5718, 0.3676, -0.7222, 1.2302, 0.2917, -0.5737, 0.5718, 0.3676, -0.7222, 0.5471, 0.7695, -0.4071, 0.3334, 0.7507, -1.2297, 0.3334, 0.7507, -1.2297, 0.5471, 0.7695, -0.4071, 0.3086, 1.1526, -0.9146, 0.3334, 0.7507, -1.2297, 0.3086, 1.1526, -0.9146, -0.0256, 0.3815, -0.787, -0.0256, 0.3815, -0.787, 0.3086, 1.1526, -0.9146, -0.0504, 0.7834, -0.4718, -0.0256, 0.3815, -0.787, -0.0504, 0.7834, -0.4718, -0.7032, 0.3368, -0.7831, -0.7032, 0.3368, -0.7831, -0.0504, 0.7834, -0.4718, -0.728, 0.7387, -0.468, -0.7032, 0.3368, -0.7831, -0.728, 0.7387, -0.468, -0.2668, 0.0327, -0.3609, -0.2668, 0.0327, -0.3609, -0.728, 0.7387, -0.468, -0.2915, 0.4346, -0.0458, -0.2668, 0.0327, -0.3609, -0.2915, 0.4346, -0.0458, -0.4471, -0.3781, 0.1489, -0.4471, -0.3781, 0.1489, -0.2915, 0.4346, -0.0458, -0.4718, 0.0238, 0.464, -0.4471, -0.3781, 0.1489, -0.4718, 0.0238, 0.464, 0.1816, -0.1969, -0.033, 0.1816, -0.1969, -0.033, -0.4718, 0.0238, 0.464, 0.1569, 0.2051, 0.2822, 0.1816, -0.1969, -0.033, 0.1569, 0.2051, 0.2822, 0.7478, -0.406, 0.2783, 0.7478, -0.406, 0.2783, 0.1569, 0.2051, 0.2822, 0.723, -0.0041, 0.5934, 0.7478, -0.406, 0.2783, 0.723, -0.0041, 0.5934, 0.6999, 0.0101, -0.2562, 0.6999, 0.0101, -0.2562, 0.723, -0.0041, 0.5934, 0.6752, 0.4121, 0.0589, 0.6999, 0.0101, -0.2562, 0.6752, 0.4121, 0.0589, 1.2302, 0.2917, -0.5737, 1.2302, 0.2917, -0.5737, 0.6752, 0.4121, 0.0589, 1.2054, 0.6936, -0.2586, 0.5718, 0.3676, -0.7222, 0.2322, 0.119, -0.4318, 1.2302, 0.2917, -0.5737, 0.2322, 0.119, -0.4318, 0.5718, 0.3676, -0.7222, 0.3334, 0.7507, -1.2297, 0.2322, 0.119, -0.4318, 0.3334, 0.7507, -1.2297, -0.0256, 0.3815, -0.787, 0.2322, 0.119, -0.4318, -0.0256, 0.3815, -0.787, -0.7032, 0.3368, -0.7831, 0.2322, 0.119, -0.4318, -0.7032, 0.3368, -0.7831, -0.2668, 0.0327, -0.3609, 0.2322, 0.119, -0.4318, -0.2668, 0.0327, -0.3609, -0.4471, -0.3781, 0.1489, 0.2322, 0.119, -0.4318, -0.4471, -0.3781, 0.1489, 0.1816, -0.1969, -0.033, 0.2322, 0.119, -0.4318, 0.1816, -0.1969, -0.033, 0.7478, -0.406, 0.2783, 0.2322, 0.119, -0.4318, 0.7478, -0.406, 0.2783, 0.6999, 0.0101, -0.2562, 0.2322, 0.119, -0.4318, 0.6999, 0.0101, -0.2562, 1.2302, 0.2917, -0.5737)
 
+[sub_resource type="Animation" id="Animation_y6ahu"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat64Array(0),
+"transitions": PackedFloat64Array(1),
+"update": 0,
+"values": [Vector3(0.101347, 0.134709, 0.103261)]
+}
+
 [sub_resource type="Animation" id="Animation_110de"]
 resource_name = "new_animation"
 length = 5.0
@@ -90,21 +104,6 @@ tracks/0/keys = {
 "values": [Vector3(13.1208, 36.0864, 40.5935), Vector3(13.1208, 36.0864, 40.5935), Vector3(13.1208, 36.0864, 278.169), Vector3(13.1208, 36.0864, 278.169)]
 }
 
-[sub_resource type="Animation" id="Animation_y6ahu"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat64Array(0),
-"transitions": PackedFloat64Array(1),
-"update": 0,
-"values": [Vector3(0.101347, 0.134709, 0.103261)]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_qjcib"]
 _data = {
 "RESET": SubResource("Animation_y6ahu"),
@@ -113,6 +112,22 @@ _data = {
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_o38gk"]
 size = Vector3(1.25626, 1, 4.53582)
+
+[sub_resource type="Animation" id="Animation_4n260"]
+length = 0.001
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatableBody3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat64Array(0),
+"transitions": PackedFloat64Array(1),
+"update": 0,
+"values": [Vector3(97.4808, 30.7554, 175.216)]
+}
 
 [sub_resource type="Animation" id="Animation_c02go"]
 resource_name = "new_animation"
@@ -131,21 +146,6 @@ tracks/0/keys = {
 "values": [Vector3(97.4808, 30.7554, 175.216), Vector3(97.4808, 30.7554, 175.216), Vector3(97.481, 200, 175.216), Vector3(97.481, 200, 175.216)]
 }
 
-[sub_resource type="Animation" id="Animation_4n260"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AnimatableBody3D:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat64Array(0),
-"transitions": PackedFloat64Array(1),
-"update": 0,
-"values": [Vector3(97.4808, 30.7554, 175.216)]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_l8246"]
 _data = {
 "RESET": SubResource("Animation_4n260"),
@@ -162,6 +162,7 @@ size = Vector3(3, 3, 3)
 size = Vector3(5, 5, 5)
 
 [node name="Level1" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.37879, -0.964761, -0.57075)
 script = ExtResource("1_dw2wk")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
@@ -263,6 +264,9 @@ visible = true
 transform = Transform3D(-0.00505439, 0, -0.149915, 0, 0.15, 0, 0.149915, 0, -0.00505439, 0.532201, 0.961028, 0)
 texture = ExtResource("11_1w24l")
 
+[node name="Timer" parent="Node3D3/Node3D" index="6"]
+one_shot = true
+
 [node name="Node3D2" parent="Node3D3" instance=ExtResource("10_mq5lg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.345946, 2.22045e-16, -0.119195)
 
@@ -276,8 +280,10 @@ visible = true
 visible = true
 
 [node name="Sprite3D2" parent="Node3D3/Node3D2" index="5"]
-transform = Transform3D(-0.0336959, 0, -0.999432, 0, 1, 0, 0.999432, 0, -0.0336959, 0.532201, 0.961028, 0)
 texture = ExtResource("13_k2gs5")
+
+[node name="Timer" parent="Node3D3/Node3D2" index="6"]
+one_shot = true
 
 [node name="Node3D3" parent="Node3D3" instance=ExtResource("10_mq5lg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -69.4245, 32.1334, 126.113)
@@ -295,6 +301,9 @@ visible = true
 transform = Transform3D(-0.0235871, 0, -0.699602, 0, 0.7, 0, 0.699602, 0, -0.0235871, 0.532201, 0.961028, 0)
 texture = ExtResource("15_nin6f")
 
+[node name="Timer" parent="Node3D3/Node3D3" index="6"]
+one_shot = true
+
 [node name="Node3D4" parent="Node3D3" instance=ExtResource("10_mq5lg")]
 transform = Transform3D(-0.890014, 0, 0.455933, 0, 1, 0, -0.455933, 0, -0.890014, -281.077, 32.6898, -156.137)
 
@@ -308,8 +317,10 @@ visible = true
 visible = true
 
 [node name="Sprite3D2" parent="Node3D3/Node3D4" index="5"]
-transform = Transform3D(-0.0336959, 0, -0.999432, 0, 1, 0, 0.999432, 0, -0.0336959, 0.532201, 0.961028, 0)
 texture = ExtResource("17_dah57")
+
+[node name="Timer" parent="Node3D3/Node3D4" index="6"]
+one_shot = true
 
 [node name="Node3D5" parent="Node3D3" instance=ExtResource("10_mq5lg")]
 transform = Transform3D(0.884923, 0, 0.465738, 0, 1, 0, -0.465738, 0, 0.884923, -303.054, 32.6898, -64.3245)
@@ -324,8 +335,10 @@ visible = true
 visible = true
 
 [node name="Sprite3D2" parent="Node3D3/Node3D5" index="5"]
-transform = Transform3D(-0.0336959, 0, -0.999432, 0, 1, 0, 0.999432, 0, -0.0336959, 0.532201, 0.961028, 0)
 texture = ExtResource("19_j6qya")
+
+[node name="Timer" parent="Node3D3/Node3D5" index="6"]
+one_shot = true
 
 [node name="Node3D6" parent="Node3D3" instance=ExtResource("10_mq5lg")]
 transform = Transform3D(-0.989807, -0.000665292, -0.142413, -0.00045976, 0.999999, -0.00147611, 0.142414, -0.00139559, -0.989806, -245.155, 188.898, -195.009)
@@ -342,6 +355,9 @@ visible = true
 [node name="Sprite3D2" parent="Node3D3/Node3D6" index="5"]
 transform = Transform3D(-0.0235871, 0, -0.699602, 0, 0.7, 0, 0.699602, 0, -0.0235871, 0.532201, 0.961028, 0)
 texture = ExtResource("21_518d2")
+
+[node name="Timer" parent="Node3D3/Node3D6" index="6"]
+one_shot = true
 
 [node name="CigarKour" type="Node3D" parent="."]
 transform = Transform3D(250, 0, 0, 0, 250, 0, 0, 0, 250, 201.258, 0, -161.742)
@@ -408,33 +424,6 @@ surface_material_override/0 = SubResource("StandardMaterial3D_34j3n")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CigarKour/StaticBody3D4"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.153725, -0.223625, 0.406077)
 shape = SubResource("ConvexPolygonShape3D_f7nej")
-
-[node name="TripleJump" parent="." instance=ExtResource("15_wiqw6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.66703, -2.9985, -1.21591)
-
-[node name="TripleJump2" parent="." instance=ExtResource("15_wiqw6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.61726, -2.9985, -3.14158)
-
-[node name="TripleJump3" parent="." instance=ExtResource("15_wiqw6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.85965, -2.9985, -3.63376)
-
-[node name="TripleJump4" parent="." instance=ExtResource("15_wiqw6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.96445, -2.9985, 0.598155)
-
-[node name="TripleJump5" parent="." instance=ExtResource("15_wiqw6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.20168, -2.9985, -2.28742)
-
-[node name="TripleJump6" parent="." instance=ExtResource("15_wiqw6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.74074, -2.9985, -5.1438)
-
-[node name="TripleJump7" parent="." instance=ExtResource("15_wiqw6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.67283, -2.9985, -3.21268)
-
-[node name="TripleJump8" parent="." instance=ExtResource("15_wiqw6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.1859, -2.9985, -8.39203)
-
-[node name="TripleJump9" parent="." instance=ExtResource("15_wiqw6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.707146, -2.9985, 2.89406)
 
 [node name="StarKour" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 201.258, 0, -161.742)
@@ -529,6 +518,7 @@ transform = Transform3D(3.67253, 4.39681, -3.82788, -5.288, 4.41691, 0, 2.4539, 
 libraries = {
 "": SubResource("AnimationLibrary_l8246")
 }
+autoplay = "new_animation"
 
 [node name="AnimatableBody3D" type="AnimatableBody3D" parent="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 97.4808, 30.7554, 175.216)

@@ -12,7 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://hqroyuuds4po" path="res://Scenes/enemy.tscn" id="7_1aqvv"]
 [ext_resource type="PackedScene" uid="uid://c5svu1bl8bnmm" path="res://Scenes/laser.tscn" id="7_ypb11"]
 [ext_resource type="PackedScene" uid="uid://cev248w6qbej8" path="res://Scenes/moving_platform.tscn" id="9_5mcux"]
-[ext_resource type="PackedScene" uid="uid://d205nxa0ov4ny" path="res://Scenes/voice_trigger.tscn" id="9_wnsao"]
+[ext_resource type="PackedScene" path="res://Scenes/voice_trigger.tscn" id="9_wnsao"]
 [ext_resource type="PackedScene" uid="uid://diybr73ukni78" path="res://Scenes/checkpoint.tscn" id="11_u5rws"]
 [ext_resource type="PackedScene" uid="uid://be74smfh0hkry" path="res://Scenes/crumbling_platform.tscn" id="12_obcpi"]
 [ext_resource type="Texture2D" uid="uid://dmgcmwhqxhnno" path="res://Assets/Textures/LevelTextures/facbrickwall.png" id="13_82i2e"]
