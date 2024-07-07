@@ -157,8 +157,8 @@ func _physics_process(delta):
 		diveEffect.emitting = true
 	
 	if isDiving:
-		velocity.x = direction2.x * DIVE_VELOCITY * sprint * (bHop/4.0 + 1) * multi
-		velocity.z = direction2.z * DIVE_VELOCITY * sprint * (bHop/4.0 + 1) * multi
+		velocity.x = direction2.x * DIVE_VELOCITY * sprint * (pow((1.5),1 +(bHop/4))) * multi
+		velocity.z = direction2.z * DIVE_VELOCITY * sprint * (pow((1.5),1 +(bHop/4))) * multi
 		animstate = anims.DIVE
 		if Input.is_action_just_pressed("ui_accept"):
 			velocity.x = 0
