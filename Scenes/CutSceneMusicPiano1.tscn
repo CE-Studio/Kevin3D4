@@ -893,7 +893,7 @@ bones/4/scale = Vector3(1, 1, 1)
 bones/5/position = Vector3(1.16178e-18, 0.170652, 7.45058e-09)
 bones/5/rotation = Quaternion(-0.422478, 0.000474922, 0.000474922, 0.906373)
 bones/5/scale = Vector3(1, 1, 1)
-bones/6/rotation = Quaternion(0.0190206, -1.06971e-24, 4.22347e-18, 0.999819)
+bones/6/rotation = Quaternion(0.0190205, 1.93186e-10, 1.10696e-10, 0.999819)
 bones/6/scale = Vector3(1, 1, 1)
 bones/7/rotation = Quaternion(0.0127875, -7.41878e-09, 0.847367, 0.530854)
 bones/7/scale = Vector3(1, 1, 1)
@@ -932,7 +932,7 @@ surface_material_override/0 = ExtResource("2_xauja")
 surface_material_override/0 = SubResource("StandardMaterial3D_ae8la")
 
 [node name="BoneAttachment3D" type="BoneAttachment3D" parent="player/Armature/Skeleton3D" index="2"]
-transform = Transform3D(-0.966419, 0.256971, -0.000314788, 0.102525, 0.384452, -0.917434, -0.235633, -0.886658, -0.397888, 0.293998, 1.50871, -0.476543)
+transform = Transform3D(-0.966419, 0.256971, -0.000314788, 0.102525, 0.384452, -0.917434, -0.235633, -0.886658, -0.397887, 0.293998, 1.50871, -0.476543)
 bone_name = "Hand_R"
 bone_idx = 14
 
@@ -947,7 +947,7 @@ transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -1.56008, -0.993062, -0.39383
 [node name="AudioStreamPlayer" type="AudioStreamPlayer3D" parent="."]
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(-0.520975, -0.349958, 0.778533, 0, 0.912089, 0.409993, -0.853571, 0.213596, -0.475176, 19.4512, 10.3032, -12.0713)
+transform = Transform3D(-0.372956, -0.140417, 0.917162, 0, 0.988482, 0.151336, -0.927848, 0.0564419, -0.368661, 3.82269, 1.68268, -1.59013)
 current = true
 
 [node name="Camera3D2" type="Camera3D" parent="."]
@@ -995,9 +995,9 @@ texture = SubResource("ViewportTexture_smgid")
 
 [node name="Label" type="Label" parent="Control/Control"]
 layout_mode = 0
-offset_left = -22.0
+offset_left = 77.0
 offset_top = -158.0
-offset_right = 135.0
+offset_right = 234.0
 offset_bottom = -137.0
 rotation = 1.5708
 scale = Vector2(2.025, 2.025)
