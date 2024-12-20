@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://dfghjqbgpviwj"]
+[gd_scene load_steps=33 format=3 uid="uid://dfghjqbgpviwj"]
 
 [ext_resource type="Script" path="res://Scripts/two_doors.gd" id="1_37lhr"]
 [ext_resource type="PackedScene" uid="uid://dsl8tcpogcfkc" path="res://Assets/Models/twodoors.glb" id="1_xi5if"]
@@ -177,10 +177,70 @@ tracks/3/keys = {
 }
 tracks/3/use_blend = true
 
+[sub_resource type="Animation" id="Animation_1kpqv"]
+resource_name = "new_animation_2"
+length = 10.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("twodoors/Cube_007/Cube_008:rotation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat64Array(0, 0.7),
+"transitions": PackedFloat64Array(1, 1),
+"update": 0,
+"values": [Vector3(0, -1.5708, 0), Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("twodoors/Cube_001/Cube_002:rotation")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat64Array(8.9, 9.6),
+"transitions": PackedFloat64Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, -2.0944, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("twodoors/Cube_004/Cube_005:rotation")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat64Array(8.9, 9.6),
+"transitions": PackedFloat64Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 2.0944, 0)]
+}
+tracks/3/type = "audio"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AudioStreamPlayer3D")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"clips": [{
+"end_offset": 0.95,
+"start_offset": 0.0,
+"stream": ExtResource("6_pbmbl")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("7_4fqvw")
+}],
+"times": PackedFloat64Array(0.8, 8.9)
+}
+tracks/3/use_blend = true
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_uj5qu"]
 _data = {
 "RESET": SubResource("Animation_c0vv6"),
-"new_animation": SubResource("Animation_oiome")
+"new_animation": SubResource("Animation_oiome"),
+"new_animation_2": SubResource("Animation_1kpqv")
 }
 
 [node name="two doors" type="Node3D"]
