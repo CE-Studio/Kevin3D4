@@ -1,0 +1,68 @@
+[gd_scene load_steps=7 format=3 uid="uid://ctcqnqsknjrip"]
+
+[ext_resource type="Texture2D" uid="uid://jbyp70qr73ye" path="res://Assets/Textures/dlc.png" id="1_1xhlx"]
+[ext_resource type="PackedScene" uid="uid://bknyx5pikwvki" path="res://Assets/Ui/layingKevin.tscn" id="1_jltbh"]
+[ext_resource type="Script" path="res://Scripts/DLC.gd" id="1_o6cqb"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_o0kyt"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_e4ytl"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_g1nks"]
+viewport_path = NodePath("SubViewport")
+
+[node name="DLC" type="Button"]
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -254.0
+offset_top = -71.0
+offset_bottom = 122.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_o0kyt")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_e4ytl")
+toggle_mode = true
+script = ExtResource("1_o6cqb")
+
+[node name="SubViewport" type="SubViewport" parent="."]
+own_world_3d = true
+transparent_bg = true
+size = Vector2i(297, 187)
+
+[node name="Node3D" parent="SubViewport" instance=ExtResource("1_jltbh")]
+
+[node name="Control" type="Control" parent="."]
+anchors_preset = 0
+offset_left = -25.0
+offset_top = -48.0
+offset_right = 15.0
+offset_bottom = -8.0
+mouse_filter = 2
+
+[node name="TextureRect2" type="TextureRect" parent="Control"]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 47.0
+offset_right = 291.0
+offset_bottom = 267.0
+texture = ExtResource("1_1xhlx")
+
+[node name="TextureRect" type="TextureRect" parent="Control"]
+layout_mode = 0
+offset_right = 297.0
+offset_bottom = 187.0
+texture = SubResource("ViewportTexture_g1nks")
+
+[node name="CheckBox" type="CheckBox" parent="."]
+layout_mode = 0
+offset_left = 203.0
+offset_top = 134.0
+offset_right = 227.0
+offset_bottom = 158.0
+scale = Vector2(2.232, 2.232)
+mouse_filter = 2
+
+[connection signal="toggled" from="." to="." method="_on_toggled"]

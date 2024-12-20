@@ -1,0 +1,263 @@
+[gd_scene load_steps=20 format=3 uid="uid://bknyx5pikwvki"]
+
+[ext_resource type="Texture2D" uid="uid://c4h5sp7v5b4r4" path="res://Assets/Textures/visoruv.png" id="1_v6bok"]
+[ext_resource type="Texture2D" uid="uid://c2cb10jgf2e8q" path="res://Assets/Textures/kevin34eyes.png" id="2_ltuod"]
+[ext_resource type="PackedScene" uid="uid://dy11dfruadhrf" path="res://Assets/Models/player.glb" id="3_pm3yo"]
+[ext_resource type="Shader" uid="uid://dyadjxd7g1j6h" path="res://Scenes/Invincie.tres" id="4_nn6nk"]
+[ext_resource type="Material" uid="uid://ciop5hchxevnn" path="res://Assets/Materials/kevin34.tres" id="5_u31ap"]
+[ext_resource type="Texture2D" uid="uid://17dju16ljyrv" path="res://Assets/Textures/eyesclosed.png" id="6_af5xx"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ijo3d"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_ksail"]
+sky_material = SubResource("ProceduralSkyMaterial_ijo3d")
+
+[sub_resource type="Environment" id="Environment_3tk0u"]
+background_mode = 2
+sky = SubResource("Sky_ksail")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4qcyj"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lnutk"]
+render_priority = 0
+shader = ExtResource("4_nn6nk")
+shader_parameter/transparency = null
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_r25hl"]
+viewport_path = NodePath("Player/SubViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t22p6"]
+resource_local_to_scene = true
+shading_mode = 0
+albedo_texture = SubResource("ViewportTexture_r25hl")
+
+[sub_resource type="Animation" id="Animation_k0ebb"]
+resource_name = "idle"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "rotation_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("player/Armature/Skeleton3D:Tail0")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat64Array(0, 1, 0.974404, -0.102844, -0.0279605, 0.197936, 0.999, 1, 0.978035, -0.0590493, -0.0368076, 0.196483)
+tracks/1/type = "rotation_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("player/Armature/Skeleton3D:Tail1")
+tracks/1/interp = 0
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat64Array(0, 1, -0.134051, 0.0259935, 0.185661, 0.97308, 0.999, 1, -0.135394, 0.0177096, 0.125534, 0.982647)
+tracks/2/type = "rotation_3d"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("player/Armature/Skeleton3D:Tail2")
+tracks/2/interp = 0
+tracks/2/loop_wrap = true
+tracks/2/keys = PackedFloat64Array(0, 1, -0.126573, 0.0423455, 0.311535, 0.940814, 0.999, 1, 0.0634069, 0.103565, 0.296853, 0.947171)
+tracks/3/type = "rotation_3d"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("player/Armature/Skeleton3D:Tail3")
+tracks/3/interp = 0
+tracks/3/loop_wrap = true
+tracks/3/keys = PackedFloat64Array(0, 1, -0.159457, 0.0442437, 0.261407, 0.950938, 0.999, 1, -0.0483194, 0.0742029, 0.254529, 0.963003)
+
+[sub_resource type="Animation" id="Animation_gn7if"]
+length = 0.001
+tracks/0/type = "rotation_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("player/Armature/Skeleton3D:Tail0")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat64Array(0, 1, 0.974404, -0.102844, -0.0279605, 0.197936)
+tracks/1/type = "rotation_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("player/Armature/Skeleton3D:Tail1")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat64Array(0, 1, -0.134051, 0.0259935, 0.185661, 0.97308)
+tracks/2/type = "rotation_3d"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("player/Armature/Skeleton3D:Tail2")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = PackedFloat64Array(0, 1, -0.126573, 0.0423455, 0.311535, 0.940814)
+tracks/3/type = "rotation_3d"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("player/Armature/Skeleton3D:Tail3")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = PackedFloat64Array(0, 1, -0.159457, 0.0442437, 0.261407, 0.950938)
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vqyr8"]
+_data = {
+"RESET": SubResource("Animation_gn7if"),
+"idle": SubResource("Animation_k0ebb")
+}
+
+[sub_resource type="Animation" id="Animation_klj1c"]
+resource_name = "new_animation"
+length = 3.6235
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SubViewport/Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat64Array(0, 0.2331),
+"transitions": PackedFloat64Array(1, 1),
+"update": 1,
+"values": [ExtResource("6_af5xx"), ExtResource("2_ltuod")]
+}
+
+[sub_resource type="Animation" id="Animation_4kync"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SubViewport/Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat64Array(0),
+"transitions": PackedFloat64Array(1),
+"update": 1,
+"values": [ExtResource("2_ltuod")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ghjug"]
+_data = {
+"RESET": SubResource("Animation_4kync"),
+"new_animation": SubResource("Animation_klj1c")
+}
+
+[node name="Node3D" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_3tk0u")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
+
+[node name="Player" type="Node3D" parent="."]
+transform = Transform3D(0.979925, 0, 0.199368, 0, 1, 0, -0.199368, 0, 0.979925, 0, 0, 0)
+
+[node name="SubViewport" type="SubViewport" parent="Player"]
+disable_3d = true
+
+[node name="Panel" type="Panel" parent="Player/SubViewport"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_4qcyj")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Player/SubViewport"]
+visible = false
+texture = ExtResource("1_v6bok")
+centered = false
+
+[node name="Sprite2D" type="Sprite2D" parent="Player/SubViewport"]
+position = Vector2(80, 251.345)
+texture = ExtResource("2_ltuod")
+flip_v = true
+
+[node name="Sprite2D3" type="Sprite2D" parent="Player/SubViewport"]
+position = Vector2(432, 251.345)
+texture = ExtResource("2_ltuod")
+flip_h = true
+
+[node name="player" parent="Player" instance=ExtResource("3_pm3yo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.78214, 0)
+
+[node name="Skeleton3D" parent="Player/player/Armature" index="0"]
+transform = Transform3D(6.12323e-17, 1, 0, -1, 6.12323e-17, 0, 0, 0, 1, -1.10645, 1.00497, -4.44089e-16)
+bones/0/rotation = Quaternion(-0.0206791, 0, 0, 0.999786)
+bones/1/rotation = Quaternion(-1.92777e-34, 0, 0.0436351, 0.999048)
+bones/1/scale = Vector3(1, 1, 1)
+bones/2/rotation = Quaternion(0.0153736, -0.00233526, 0.15016, 0.988539)
+bones/2/scale = Vector3(1, 1, 1)
+bones/3/rotation = Quaternion(0.0424596, 0.000410658, 0.00198401, 0.999096)
+bones/3/scale = Vector3(1, 1, 1)
+bones/4/position = Vector3(2.18988e-19, 0.162917, -3.72529e-09)
+bones/4/rotation = Quaternion(-0.414209, 0.0530877, 0.114957, 0.901331)
+bones/4/scale = Vector3(1, 1, 1)
+bones/5/rotation = Quaternion(-0.545153, -0.0643859, 0.253543, 0.796479)
+bones/5/scale = Vector3(1, 1, 1)
+bones/6/rotation = Quaternion(0.0190206, -1.06594e-24, 4.22347e-18, 0.999819)
+bones/6/scale = Vector3(1, 1, 1)
+bones/7/rotation = Quaternion(0.0127875, -7.41878e-09, 0.847367, 0.530854)
+bones/7/scale = Vector3(1, 1, 1)
+bones/8/rotation = Quaternion(-0.535331, 0.364261, 0.307214, 0.697391)
+bones/8/scale = Vector3(1, 1, 1)
+bones/9/rotation = Quaternion(-0.427725, -0.00104802, 0.00221391, 0.903905)
+bones/9/scale = Vector3(1, 1, 1)
+bones/10/rotation = Quaternion(-0.00118893, -0.000588169, -0.467141, 0.884182)
+bones/10/scale = Vector3(1, 1, 1)
+bones/11/rotation = Quaternion(0.0127097, -0.00140826, -0.783751, 0.620944)
+bones/11/scale = Vector3(1, 1, 1)
+bones/12/rotation = Quaternion(-0.359651, 0.931763, 0.0145124, 0.0475232)
+bones/12/scale = Vector3(1, 1, 1)
+bones/13/rotation = Quaternion(0.298662, 0.0135225, -0.739882, 0.602655)
+bones/13/scale = Vector3(1, 1, 1)
+bones/14/rotation = Quaternion(-0.00114862, -0.000663441, -0.476922, 0.878945)
+bones/14/scale = Vector3(1, 1, 1)
+bones/15/position = Vector3(-0.0839494, 0.0519439, 0)
+bones/15/rotation = Quaternion(0.159186, -0.29716, 0.941404, 0.010649)
+bones/15/scale = Vector3(0.999998, 1, 0.999999)
+bones/16/rotation = Quaternion(0.393149, 0.0524667, 0.29896, 0.867931)
+bones/16/scale = Vector3(1, 1, 1)
+bones/17/rotation = Quaternion(-0.15578, 0.236514, -0.383137, 0.879204)
+bones/17/scale = Vector3(1, 1, 1)
+bones/18/rotation = Quaternion(0.974404, -0.102844, -0.0279605, 0.197936)
+bones/18/scale = Vector3(1, 1, 1)
+bones/19/rotation = Quaternion(-0.134051, 0.0259935, 0.185661, 0.97308)
+bones/19/scale = Vector3(1, 1, 1)
+bones/20/rotation = Quaternion(-0.126573, 0.0423455, 0.311535, 0.940814)
+bones/20/scale = Vector3(1, 1, 1)
+bones/21/rotation = Quaternion(-0.159457, 0.0442437, 0.261407, 0.950938)
+bones/21/scale = Vector3(1, 1, 1)
+bones/22/position = Vector3(0.0839494, 0.0519439, 0)
+bones/22/rotation = Quaternion(0.0450279, -0.0837816, 0.995466, 0.00100634)
+bones/22/scale = Vector3(0.999998, 1, 0.999999)
+bones/23/rotation = Quaternion(0.568288, -0.114681, -0.281031, 0.7648)
+bones/23/scale = Vector3(1, 0.999999, 1)
+bones/24/rotation = Quaternion(-0.596658, 0.0390387, 0.318369, 0.735606)
+bones/24/scale = Vector3(1, 1, 1)
+
+[node name="Vert" parent="Player/player/Armature/Skeleton3D" index="0"]
+material_overlay = SubResource("ShaderMaterial_lnutk")
+surface_material_override/0 = ExtResource("5_u31ap")
+
+[node name="Vert_001" parent="Player/player/Armature/Skeleton3D" index="1"]
+surface_material_override/0 = SubResource("StandardMaterial3D_t22p6")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Player"]
+libraries = {
+"": SubResource("AnimationLibrary_vqyr8")
+}
+autoplay = "idle"
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="Player"]
+libraries = {
+"": SubResource("AnimationLibrary_ghjug")
+}
+autoplay = "new_animation"
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-1, -8.11621e-18, -1.22195e-16, 0, 0.997801, -0.0662739, 1.22465e-16, -0.0662739, -0.997801, -0.015, 0.616, -1.862)
+
+[editable path="Player/player"]
