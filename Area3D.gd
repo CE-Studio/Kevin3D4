@@ -22,6 +22,8 @@ func _ready():
 
 func _on_body_entered(body):
 	if body is Player:
+		Engine.time_scale = 1
+		AudioServer.playback_speed_scale = 1
 		loadBearingNumber += 1
 		SpeedrunTimer.split()
 		get_tree().change_scene_to_file.call_deferred(Levels[loadBearingNumber])

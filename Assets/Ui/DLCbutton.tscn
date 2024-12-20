@@ -22,6 +22,7 @@ offset_top = -71.0
 offset_bottom = 122.0
 grow_horizontal = 0
 grow_vertical = 2
+tooltip_text = "Enables new features not present in the jam version"
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_o0kyt")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_e4ytl")
 toggle_mode = true

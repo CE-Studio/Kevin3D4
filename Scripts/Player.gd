@@ -44,7 +44,11 @@ static var speedrunTime:float = 0
 static var stanley := false
 static var dlc := false
 static var speedran := false
-var isDead := false
+var isDead := false:
+	set(value):
+		if value and not isDead:
+			deadspin = Vector2(randf_range(-4, 4), randf_range(-4, 4)).normalized() * 1.5
+		isDead = value
 var bHop = 0
 var isTripleJump = 0
 var Invincibile := false
@@ -52,6 +56,7 @@ var InvNum = 0
 var pausecount = 0
 var beandouble := false
 var multi := 1.0
+var deadspin:Vector2
 
 
 @onready var djumpEffect:GPUParticles3D = $"Double Jump Effect"
@@ -95,6 +100,7 @@ func _ready():
 
 
 func _physics_process(delta):
+	var notfrozen = SPEED != 0
 	# Get the input direction and handle the movement/deceleration.
 	var input_dir = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
 	var direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
@@ -123,7 +129,7 @@ func _physics_process(delta):
 			animstate = anims.IDLE
 	
 	# Handle jump and double jump
-	if Input.is_action_just_pressed("ui_accept") and jumps < (2 + isTripleJump):
+	if notfrozen and Input.is_action_just_pressed("ui_accept") and jumps < (2 + isTripleJump):
 		velocity.y = JUMP_VELOCITY
 		jumps += 1
 		bHop = 0
@@ -150,7 +156,7 @@ func _physics_process(delta):
 	
 		
 	#dive
-	if Input.is_action_just_pressed("Dive") and dives < 1 and not Input.is_action_pressed("Camera"):
+	if notfrozen and Input.is_action_just_pressed("Dive") and dives < 1 and not Input.is_action_pressed("Camera"):
 		velocity.y = DIVE_VELOCITY
 		dives += 1
 		bHop +=1
@@ -193,6 +199,9 @@ func _process(delta):
 		Engine.time_scale = 0.4 
 		AudioServer.playback_speed_scale = 0.4
 		animstate = anims.DYIN
+		if DLC.active:
+			rotate_y(deadspin.x * delta)
+			$SpringArm3D.rotate_x(deadspin.y * delta)
 	
 	if Input.is_action_pressed("Camera"):
 		animstate = anims.SHOOTIN
