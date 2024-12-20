@@ -77,6 +77,165 @@ albedo_color = Color(1, 0.607843, 0, 1)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_txu15"]
 bg_color = Color(0, 0, 0, 1)
 
+[sub_resource type="Animation" id="Animation_raqho"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("box:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat64Array(0),
+"transitions": PackedFloat64Array(1),
+"update": 0,
+"values": [Vector3(0, -1.0472, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("box/Node3D4:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat64Array(0),
+"transitions": PackedFloat64Array(1),
+"update": 0,
+"values": [Vector3(-1.309, 1.5708, -2.36584e-16)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("box/Node3D3:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat64Array(0),
+"transitions": PackedFloat64Array(1),
+"update": 0,
+"values": [Vector3(-1.309, -1.5708, -2.36584e-16)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("box/Node3D2:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat64Array(0),
+"transitions": PackedFloat64Array(1),
+"update": 0,
+"values": [Vector3(-1.5708, -3.14159, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("box/Node3D:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat64Array(0),
+"transitions": PackedFloat64Array(1),
+"update": 0,
+"values": [Vector3(-1.5708, 0, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Panel:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat64Array(0),
+"transitions": PackedFloat64Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("letters/Label3D:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat64Array(0),
+"transitions": PackedFloat64Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("letters/Label3D2:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat64Array(0),
+"transitions": PackedFloat64Array(1),
+"update": 0,
+"values": [Vector3(-0.787663, -0.220153, 4.91504)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("letters/Label3D3:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat64Array(0),
+"transitions": PackedFloat64Array(1),
+"update": 0,
+"values": [Vector3(0.28107, 0.56424, 4.91504)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("letters/Label3D4:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat64Array(0),
+"transitions": PackedFloat64Array(1),
+"update": 0,
+"values": [Vector3(1.36854, 0.0834657, 4.91504)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("letters/Label3D5:position")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat64Array(0),
+"transitions": PackedFloat64Array(1),
+"update": 0,
+"values": [Vector3(0.806361, -0.794591, 4.91504)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Panel/VBoxContainer:visible")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat64Array(0),
+"transitions": PackedFloat64Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("Panel/VBoxContainer:modulate")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat64Array(0),
+"transitions": PackedFloat64Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
 [sub_resource type="Animation" id="Animation_1ae32"]
 resource_name = "new_animation"
 length = 12.0
@@ -237,165 +396,6 @@ tracks/12/keys = {
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
 
-[sub_resource type="Animation" id="Animation_raqho"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("box:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat64Array(0),
-"transitions": PackedFloat64Array(1),
-"update": 0,
-"values": [Vector3(0, -1.0472, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("box/Node3D4:rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat64Array(0),
-"transitions": PackedFloat64Array(1),
-"update": 0,
-"values": [Vector3(-1.309, 1.5708, -2.36584e-16)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("box/Node3D3:rotation")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat64Array(0),
-"transitions": PackedFloat64Array(1),
-"update": 0,
-"values": [Vector3(-1.309, -1.5708, -2.36584e-16)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("box/Node3D2:rotation")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat64Array(0),
-"transitions": PackedFloat64Array(1),
-"update": 0,
-"values": [Vector3(-1.5708, -3.14159, 0)]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("box/Node3D:rotation")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat64Array(0),
-"transitions": PackedFloat64Array(1),
-"update": 0,
-"values": [Vector3(-1.5708, 0, 0)]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("Panel:modulate")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat64Array(0),
-"transitions": PackedFloat64Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("letters/Label3D:position")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"times": PackedFloat64Array(0),
-"transitions": PackedFloat64Array(1),
-"update": 0,
-"values": [Vector3(0, 0, 0)]
-}
-tracks/7/type = "value"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("letters/Label3D2:position")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
-"times": PackedFloat64Array(0),
-"transitions": PackedFloat64Array(1),
-"update": 0,
-"values": [Vector3(-0.787663, -0.220153, 4.91504)]
-}
-tracks/8/type = "value"
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/path = NodePath("letters/Label3D3:position")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/keys = {
-"times": PackedFloat64Array(0),
-"transitions": PackedFloat64Array(1),
-"update": 0,
-"values": [Vector3(0.28107, 0.56424, 4.91504)]
-}
-tracks/9/type = "value"
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/path = NodePath("letters/Label3D4:position")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/keys = {
-"times": PackedFloat64Array(0),
-"transitions": PackedFloat64Array(1),
-"update": 0,
-"values": [Vector3(1.36854, 0.0834657, 4.91504)]
-}
-tracks/10/type = "value"
-tracks/10/imported = false
-tracks/10/enabled = true
-tracks/10/path = NodePath("letters/Label3D5:position")
-tracks/10/interp = 1
-tracks/10/loop_wrap = true
-tracks/10/keys = {
-"times": PackedFloat64Array(0),
-"transitions": PackedFloat64Array(1),
-"update": 0,
-"values": [Vector3(0.806361, -0.794591, 4.91504)]
-}
-tracks/11/type = "value"
-tracks/11/imported = false
-tracks/11/enabled = true
-tracks/11/path = NodePath("Panel/VBoxContainer:visible")
-tracks/11/interp = 1
-tracks/11/loop_wrap = true
-tracks/11/keys = {
-"times": PackedFloat64Array(0),
-"transitions": PackedFloat64Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/12/type = "value"
-tracks/12/imported = false
-tracks/12/enabled = true
-tracks/12/path = NodePath("Panel/VBoxContainer:modulate")
-tracks/12/interp = 1
-tracks/12/loop_wrap = true
-tracks/12/keys = {
-"times": PackedFloat64Array(0),
-"transitions": PackedFloat64Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_46oao"]
 _data = {
 "RESET": SubResource("Animation_raqho"),
@@ -409,7 +409,7 @@ script = SubResource("GDScript_ajdrb")
 environment = SubResource("Environment_fqodb")
 
 [node name="box" type="Node3D" parent="."]
-transform = Transform3D(0.5, 0, -0.866025, 0, 1, 0, 0.866025, 0, 0.5, 0, 0, 0)
+transform = Transform3D(0.499998, 0, -0.866026, 0, 1, 0, 0.866026, 0, 0.499998, 0, 0, 0)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="box"]
 transform = Transform3D(6.12323e-17, 1, 1.22465e-16, 1, -6.12323e-17, -7.4988e-33, 0, 1.22465e-16, -1, 1, -6.12323e-17, 2.44929e-16)
@@ -432,7 +432,7 @@ mesh = SubResource("PlaneMesh_38pb2")
 surface_material_override/0 = SubResource("StandardMaterial3D_7a2wk")
 
 [node name="Node3D" type="Node3D" parent="box"]
-transform = Transform3D(1, 0, 0, 0, 6.12323e-17, 1, 0, -1, 6.12323e-17, 0, 1, 1)
+transform = Transform3D(1, 0, 0, 0, -3.67321e-06, 1, 0, -1, -3.67321e-06, 0, 1, 1)
 
 [node name="MeshInstance3D5" type="MeshInstance3D" parent="box/Node3D"]
 transform = Transform3D(6.12323e-17, -6.12323e-17, 1, 1, 1.2326e-32, -6.12323e-17, 0, 1, 6.12323e-17, -1.91738e-17, 0.5, 0)
@@ -441,7 +441,7 @@ skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_t1jin")
 
 [node name="Node3D2" type="Node3D" parent="box"]
-transform = Transform3D(-1, 1.22465e-16, -7.4988e-33, 0, 6.12323e-17, 1, 1.22465e-16, 1, -6.12323e-17, -2.44929e-16, 1, -1)
+transform = Transform3D(-1, 2.65359e-06, 9.74718e-12, 0, -3.67321e-06, 1, 2.65359e-06, 1, 3.67321e-06, -2.44929e-16, 1, -1)
 
 [node name="MeshInstance3D5" type="MeshInstance3D" parent="box/Node3D2"]
 transform = Transform3D(6.12323e-17, -6.12323e-17, 1, 1, 1.2326e-32, -6.12323e-17, 0, 1, 6.12323e-17, -1.91738e-17, 0.5, 0)
@@ -450,7 +450,7 @@ skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_xl0in")
 
 [node name="Node3D3" type="Node3D" parent="box"]
-transform = Transform3D(5.47547e-17, 0.965926, -0.258819, -6.12323e-17, 0.258819, 0.965926, 1, -3.70409e-17, 7.33175e-17, -1, 1, 0)
+transform = Transform3D(-3.67321e-06, 0.965927, -0.258816, -6.12317e-17, 0.258816, 0.965927, 1, 3.54805e-06, -9.50685e-07, -1, 1, 0)
 
 [node name="MeshInstance3D5" type="MeshInstance3D" parent="box/Node3D3"]
 transform = Transform3D(6.12323e-17, -6.12323e-17, 1, 1, 1.2326e-32, -6.12323e-17, 0, 1, 6.12323e-17, -1.91738e-17, 0.5, 0)
@@ -459,7 +459,7 @@ skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_6o5dx")
 
 [node name="Node3D4" type="Node3D" parent="box"]
-transform = Transform3D(6.77099e-17, -0.965926, 0.258819, -6.12323e-17, 0.258819, 0.965926, -1, -8.12509e-17, -4.16213e-17, 1, 1, 0)
+transform = Transform3D(-3.67321e-06, -0.965927, 0.258816, -6.12317e-17, 0.258816, 0.965927, -1, 3.54805e-06, -9.50685e-07, 1, 1, 0)
 
 [node name="MeshInstance3D5" type="MeshInstance3D" parent="box/Node3D4"]
 transform = Transform3D(6.12323e-17, -6.12323e-17, 1, 1, 1.2326e-32, -6.12323e-17, 0, 1, 6.12323e-17, -1.91738e-17, 0.5, 0)
@@ -528,6 +528,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_txu15")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Panel"]

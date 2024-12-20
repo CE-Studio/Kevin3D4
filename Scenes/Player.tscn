@@ -1407,7 +1407,7 @@ surface_material_override/0 = ExtResource("4_0kk71")
 surface_material_override/0 = SubResource("StandardMaterial3D_ghj7y")
 
 [node name="BoneAttachment3D" type="BoneAttachment3D" parent="player/Armature/Skeleton3D" index="2"]
-transform = Transform3D(-0.136757, -0.0173703, 0.990452, -0.521729, 0.851197, -0.0571097, -0.842078, -0.524558, -0.12547, 0.00400049, -0.462008, 0.905371)
+transform = Transform3D(-0.966419, 0.256972, -0.000314508, -0.256603, -0.965098, -0.0523569, -0.0137578, -0.050518, 0.998628, 0.293998, 0.976225, -0.0209056)
 bone_name = "Hand_R"
 bone_idx = 14
 
@@ -1448,7 +1448,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-mouse_filter = 1
+mouse_filter = 2
 
 [node name="CenterContainer" type="CenterContainer" parent="Aiming"]
 layout_mode = 1
@@ -1457,9 +1457,11 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 
 [node name="TextureRect" type="TextureRect" parent="Aiming/CenterContainer"]
 layout_mode = 2
+mouse_filter = 2
 texture = ExtResource("12_q2uw1")
 
 [node name="UI" type="Control" parent="."]
@@ -1485,9 +1487,11 @@ offset_left = 32.0
 offset_top = 32.0
 offset_right = 467.0
 offset_bottom = 132.0
+mouse_filter = 2
 
 [node name="TextureRect" type="TextureRect" parent="UI/BeanCounter"]
 layout_mode = 2
+mouse_filter = 2
 texture = SubResource("AtlasTexture_p68ed")
 expand_mode = 2
 
@@ -1500,6 +1504,7 @@ autoplay = "UIBeanSpin"
 [node name="VSeparator" type="VSeparator" parent="UI/BeanCounter"]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 2
+mouse_filter = 2
 
 [node name="Label" type="Label" parent="UI/BeanCounter"]
 layout_mode = 2
@@ -1522,7 +1527,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-mouse_filter = 1
+mouse_filter = 2
 script = ExtResource("17_t16mw")
 
 [node name="Label" type="Label" parent="Panel"]
@@ -1566,7 +1571,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-mouse_filter = 1
+mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_nkv7c")
 script = ExtResource("18_lqant")
 

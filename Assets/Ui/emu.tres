@@ -1,0 +1,141 @@
+[gd_resource type="Theme" load_steps=27 format=3 uid="uid://ceb3ll16fgq5a"]
+
+[ext_resource type="FontFile" uid="uid://tbj4ssgaitfp" path="res://Assets/Ui/NotoSans-VariableFont_wdth,wght.ttf" id="1_bmw5f"]
+[ext_resource type="Texture2D" uid="uid://bdeqtsf7etf40" path="res://Assets/Ui/emubuttons/Page 5.png" id="2_5vcq6"]
+[ext_resource type="Texture2D" uid="uid://ctkv37qq7our2" path="res://Assets/Ui/emubuttons/border.png" id="3_r4cik"]
+[ext_resource type="Texture2D" uid="uid://cyvx1fcmibh3h" path="res://Assets/Ui/emubuttons/Page 2.png" id="4_f47lp"]
+[ext_resource type="Texture2D" uid="uid://d1spgwahxnec4" path="res://Assets/Ui/emubuttons/Page 3.png" id="5_xy26b"]
+[ext_resource type="Texture2D" uid="uid://mq7tjvwx30p2" path="res://Assets/Ui/emubuttons/Page 1.png" id="6_8r57k"]
+[ext_resource type="Texture2D" uid="uid://b6bg7tfs0yi68" path="res://Assets/Ui/emubuttons/Page 4.png" id="7_vrlhs"]
+[ext_resource type="Texture2D" uid="uid://7how221uwh04" path="res://Assets/Ui/emubuttons/Page 6.png" id="8_v6doy"]
+[ext_resource type="Texture2D" uid="uid://ciu7is8swqxpc" path="res://Assets/Ui/emubuttons/Page 8.png" id="9_cjppd"]
+[ext_resource type="Texture2D" uid="uid://l8i3mbhiawxp" path="res://Assets/Ui/emubuttons/Page 7.png" id="10_hbigh"]
+[ext_resource type="Texture2D" uid="uid://dme50hs0mcelu" path="res://Assets/Ui/emubuttons/Page 9.png" id="11_w4oxe"]
+[ext_resource type="Texture2D" uid="uid://d2ldl3k2bl7aw" path="res://Assets/Ui/emubuttons/Page 10.png" id="12_i5vbu"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ebovl"]
+texture = ExtResource("2_5vcq6")
+texture_margin_left = 6.0
+texture_margin_top = 6.0
+texture_margin_right = 6.0
+texture_margin_bottom = 6.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pjc24"]
+texture = ExtResource("3_r4cik")
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_21now"]
+texture = ExtResource("4_f47lp")
+texture_margin_left = 6.0
+texture_margin_top = 6.0
+texture_margin_right = 6.0
+texture_margin_bottom = 6.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5fbnh"]
+texture = ExtResource("5_xy26b")
+texture_margin_left = 6.0
+texture_margin_top = 6.0
+texture_margin_right = 6.0
+texture_margin_bottom = 6.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nqf3g"]
+texture = ExtResource("6_8r57k")
+texture_margin_left = 6.0
+texture_margin_top = 6.0
+texture_margin_right = 6.0
+texture_margin_bottom = 6.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0y0ih"]
+texture = ExtResource("7_vrlhs")
+texture_margin_left = 6.0
+texture_margin_top = 6.0
+texture_margin_right = 6.0
+texture_margin_bottom = 6.0
+
+[sub_resource type="Gradient" id="Gradient_8yuxs"]
+offsets = PackedFloat32Array(0, 0.5, 0.5, 1)
+colors = PackedColorArray(0.992157, 0.996078, 1, 1, 0.901961, 0.941176, 0.980392, 1, 0.862745, 0.901961, 0.956863, 1, 0.862745, 0.905882, 0.960784, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_n1yn1"]
+gradient = SubResource("Gradient_8yuxs")
+fill_to = Vector2(0, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_njpbo"]
+texture = SubResource("GradientTexture2D_n1yn1")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_o1boi"]
+texture = SubResource("GradientTexture2D_n1yn1")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vmbab"]
+texture = ExtResource("11_w4oxe")
+texture_margin_left = 3.0
+texture_margin_top = 3.0
+texture_margin_right = 3.0
+texture_margin_bottom = 3.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_76q0k"]
+texture = ExtResource("12_i5vbu")
+texture_margin_left = 2.0
+texture_margin_top = 2.0
+texture_margin_right = 2.0
+texture_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_skkbd"]
+color = Color(0.779291, 0.779291, 0.779291, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nkvo4"]
+texture = ExtResource("12_i5vbu")
+texture_margin_left = 2.0
+texture_margin_top = 2.0
+texture_margin_right = 2.0
+texture_margin_bottom = 2.0
+
+[resource]
+Button/colors/font_color = Color(0, 0, 0, 1)
+Button/colors/font_disabled_color = Color(0.400698, 0.400698, 0.400698, 1)
+Button/colors/font_focus_color = Color(0, 0, 0, 1)
+Button/colors/font_hover_color = Color(0, 0, 0, 1)
+Button/colors/font_hover_pressed_color = Color(0, 0.203922, 0.203922, 1)
+Button/colors/font_pressed_color = Color(0, 0.202968, 0.202968, 1)
+Button/font_sizes/font_size = 14
+Button/fonts/font = ExtResource("1_bmw5f")
+Button/styles/disabled = SubResource("StyleBoxTexture_ebovl")
+Button/styles/focus = SubResource("StyleBoxTexture_pjc24")
+Button/styles/hover = SubResource("StyleBoxTexture_21now")
+Button/styles/hover_pressed = SubResource("StyleBoxTexture_5fbnh")
+Button/styles/normal = SubResource("StyleBoxTexture_nqf3g")
+Button/styles/pressed = SubResource("StyleBoxTexture_0y0ih")
+Label/colors/font_color = Color(0, 0, 0, 1)
+Label/constants/outline_size = 0
+Label/font_sizes/font_size = 14
+Label/fonts/font = ExtResource("1_bmw5f")
+LineEdit/fonts/font = ExtResource("1_bmw5f")
+OptionButton/icons/arrow = ExtResource("8_v6doy")
+Panel/styles/panel = SubResource("StyleBoxTexture_njpbo")
+PanelContainer/styles/panel = SubResource("StyleBoxTexture_o1boi")
+PopupMenu/colors/font_color = Color(0, 0, 0, 1)
+PopupMenu/colors/font_disabled_color = Color(0.4, 0.4, 0.4, 1)
+PopupMenu/colors/font_hover_color = Color(0, 0, 0, 1)
+PopupMenu/constants/h_separation = 0
+PopupMenu/constants/item_end_padding = 0
+PopupMenu/constants/item_start_padding = 0
+PopupMenu/constants/v_separation = 0
+PopupMenu/fonts/font = ExtResource("1_bmw5f")
+PopupMenu/icons/radio_checked = ExtResource("9_cjppd")
+PopupMenu/icons/radio_unchecked = ExtResource("10_hbigh")
+PopupMenu/icons/submenu = ExtResource("8_v6doy")
+PopupMenu/styles/hover = SubResource("StyleBoxTexture_vmbab")
+PopupMenu/styles/panel = SubResource("StyleBoxTexture_76q0k")
+PopupMenu/styles/separator = SubResource("StyleBoxLine_skkbd")
+ProgressBar/fonts/font = ExtResource("1_bmw5f")
+TabBar/fonts/font = ExtResource("1_bmw5f")
+TabContainer/fonts/font = ExtResource("1_bmw5f")
+TextEdit/fonts/font = ExtResource("1_bmw5f")
+TooltipPanel/styles/panel = SubResource("StyleBoxTexture_nkvo4")
+Tree/fonts/font = ExtResource("1_bmw5f")
+Tree/fonts/title_button_font = ExtResource("1_bmw5f")

@@ -334,6 +334,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 script = ExtResource("1_2usba")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
@@ -479,7 +480,7 @@ surface_material_override/0 = ExtResource("6_8su0a")
 surface_material_override/0 = SubResource("StandardMaterial3D_63ujt")
 
 [node name="BoneAttachment3D" type="BoneAttachment3D" parent="Node3D/Player/player/Armature/Skeleton3D" index="2"]
-transform = Transform3D(0.467306, 0.769496, 0.435317, -0.347491, 0.612624, -0.709888, -0.812942, 0.180466, 0.553676, 0.700509, 2.06391, 0.0416603)
+transform = Transform3D(-0.445034, 0.849189, 0.284293, 0.152161, 0.384553, -0.910476, -0.882492, -0.361935, -0.300353, 0.723186, 1.92324, -0.33804)
 bone_name = "Hand_R"
 bone_idx = 14
 

@@ -129,7 +129,7 @@ func _physics_process(delta):
 			animstate = anims.IDLE
 	
 	# Handle jump and double jump
-	if notfrozen and Input.is_action_just_pressed("ui_accept") and jumps < (2 + isTripleJump):
+	if notfrozen and Input.is_action_just_pressed("game_jump") and jumps < (2 + isTripleJump):
 		velocity.y = JUMP_VELOCITY
 		jumps += 1
 		bHop = 0
@@ -168,7 +168,7 @@ func _physics_process(delta):
 		velocity.x = direction2.x * DIVE_VELOCITY * sprint * (pow((1.5),1 +(bHop/4))) * multi
 		velocity.z = direction2.z * DIVE_VELOCITY * sprint * (pow((1.5),1 +(bHop/4))) * multi
 		animstate = anims.DIVE
-		if Input.is_action_just_pressed("ui_accept"):
+		if Input.is_action_just_pressed("game_jump"):
 			velocity.x = 0
 			velocity.z = 0
 			isDiving = false
