@@ -1,8 +1,18 @@
-[gd_scene load_steps=4 format=3 uid="uid://cb8l8tl7gja63"]
+[gd_scene load_steps=5 format=3 uid="uid://cb8l8tl7gja63"]
 
 [ext_resource type="PackedScene" uid="uid://d3cnwsf60doxl" path="res://Assets/Models/stand.glb" id="1_d1dsc"]
 [ext_resource type="FontFile" uid="uid://bmewjb70ttfix" path="res://Assets/Ui/stanley.otf" id="2_qs7sg"]
-[ext_resource type="Texture2D" uid="uid://bcb64ves8dbv" path="res://Assets/Textures/EpsReferenceFem.png" id="3_cana6"]
+[ext_resource type="Texture2D" uid="uid://esrwcj5hht75" path="res://Assets/Textures/EpsReferenceFemClothed.png" id="3_7a1n5"]
+
+[sub_resource type="GDScript" id="GDScript_q2uf8"]
+script/source = "extends Sprite3D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	if DLC.useOldTextures:
+		texture = preload(\"res://Assets/Textures/EpsReferenceFem.png\")
+"
 
 [node name="stand" type="Node3D"]
 
@@ -19,7 +29,8 @@ font_size = 71
 [node name="Sprite3D" type="Sprite3D" parent="."]
 transform = Transform3D(-0.376582, 0, 1.40542, 0, 1.455, 0, -1.40542, 0, -0.376582, -1.02415, 1.32418, 0.427542)
 pixel_size = 0.001
-texture = ExtResource("3_cana6")
+texture = ExtResource("3_7a1n5")
+script = SubResource("GDScript_q2uf8")
 
 [node name="Label3D2" type="Label3D" parent="."]
 transform = Transform3D(-0.138455, 0, 0.438669, 0, 0.46, 0, -0.438669, 0, -0.138455, -0.856647, 1.90436, 1.69642)
