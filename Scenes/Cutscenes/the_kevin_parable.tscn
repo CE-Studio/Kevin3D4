@@ -1,0 +1,236 @@
+[gd_scene load_steps=7 format=3 uid="uid://dhrt4yx6j477h"]
+
+[ext_resource type="Script" path="res://Scripts/parabletts.gd" id="1_7eshl"]
+[ext_resource type="PackedScene" uid="uid://byx5litoy380f" path="res://Scenes/enviro.tscn" id="2_ocd8s"]
+
+[sub_resource type="Animation" id="Animation_st847"]
+resource_name = "new_animation"
+length = 99.0
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:sayline")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat64Array(0, 1.5, 6.7, 13, 22, 30, 36, 44, 54.5, 60, 71, 76, 83),
+"transitions": PackedFloat64Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": ["", "This is the story of a synth named Kevin", "Kevin worked a regular job in a regular store where he was cashier number fifteen.", "Cashier number fifteens job was simple: He sat at his scanner in lane fifteen and scanned the customers items.", "Customers came to give him orders; telling him what items to scan, how long to scan them, and in what order.", "This is what Kevin did for every day, of every month, of every year.", "And although others might have considered it soul-rending... the truth is he did too.", "Kevin spent his every moment bored out of his mind, counting down every second left of they day, as if he had been made exactly to do literally any other job than this one.", "And Keven was... very not happy.", "And then one day, something very peculiar happened. Something that would forever change Kevin. Something he would never quite forget.", "He was on his break at the local burrito stand when a giant spaceship came out of the sky.", "Aliens flooded out from the craft, swarmed him, and stole the burrito he had purchased just moments prior.", "Shocked, frozen solid, Kevin found himself unable to move for the longest time. But as he came to his wits and regained his senses, he clenched his fists, steeled his resolve, and raced off for the rocket on top of the tallest building in town."]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Control/Label:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat64Array(0, 0.5, 1.5, 2),
+"transitions": PackedFloat64Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Control/Panel:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat64Array(0, 6, 6.4, 55, 56.5),
+"transitions": PackedFloat64Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Control/Panel:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat64Array(0, 54.5, 57, 68.8),
+"transitions": PackedFloat64Array(1, 1, 1, 1),
+"update": 1,
+"values": [true, false, true, false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Control/Label2:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat64Array(0, 61.7, 64.4),
+"transitions": PackedFloat64Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Control/Label2:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat64Array(0, 68.8),
+"transitions": PackedFloat64Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_cm671"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:sayline")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat64Array(0),
+"transitions": PackedFloat64Array(1),
+"update": 1,
+"values": [null]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Control/Label:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat64Array(0),
+"transitions": PackedFloat64Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Control/Panel:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat64Array(0),
+"transitions": PackedFloat64Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Control/Panel:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat64Array(0),
+"transitions": PackedFloat64Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Control/Label2:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat64Array(0),
+"transitions": PackedFloat64Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Control/Label2:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat64Array(0),
+"transitions": PackedFloat64Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8fwsc"]
+_data = {
+"RESET": SubResource("Animation_cm671"),
+"new_animation": SubResource("Animation_st847")
+}
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6y6vh"]
+bg_color = Color(0, 0, 0, 1)
+
+[node name="The Kevin Parable" type="Node3D"]
+script = ExtResource("1_7eshl")
+sayline = "Shocked, frozen solid, Kevin found himself unable to move for the longest time. But as he came to his wits and regained his senses, he clenched his fists, steeled his resolve, and raced off for the rocket on top of the tallest building in town."
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_8fwsc")
+}
+autoplay = "new_animation"
+
+[node name="enviro" parent="." instance=ExtResource("2_ocd8s")]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Panel" type="Panel" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_6y6vh")
+
+[node name="Label" type="Label" parent="Control"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -135.0
+offset_top = -114.0
+offset_right = 135.0
+offset_bottom = -17.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_type_variation = &"stanleylabel"
+theme_override_font_sizes/font_size = 80
+text = "Click to Skip"
+
+[node name="Label2" type="Label" parent="Control"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -135.0
+offset_top = -48.5
+offset_right = 135.0
+offset_bottom = 48.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_type_variation = &"stanleylabel"
+theme_override_font_sizes/font_size = 80
+text = "Kevin3D4
+Kevin34 in...
+BuRRITO BOnAnZA
+...The Musical!"
+horizontal_alignment = 1
+vertical_alignment = 1

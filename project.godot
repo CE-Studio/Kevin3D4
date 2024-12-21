@@ -10,11 +10,16 @@ config_version=5
 
 [application]
 
-config/name="Sbig-2024"
+config/name="Kevin3D4"
 run/main_scene="res://Scenes/splash.tscn"
+config/quit_on_go_back=false
 config/features=PackedStringArray("4.3", "Double Precision", "GL Compatibility")
 run/max_fps=19
 config/icon="res://Assets/Textures/burrito.png"
+
+[audio]
+
+general/text_to_speech=true
 
 [autoload]
 

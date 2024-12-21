@@ -1,6 +1,7 @@
-[gd_resource type="Theme" load_steps=2 format=3 uid="uid://cq0aiywy00eam"]
+[gd_resource type="Theme" load_steps=3 format=3 uid="uid://cq0aiywy00eam"]
 
 [ext_resource type="FontFile" uid="uid://bqyf1k3gpmwx" path="res://Assets/Ui/ClarenceOSTerminalNotMono.ttf" id="1_fk36g"]
+[ext_resource type="FontFile" uid="uid://bmewjb70ttfix" path="res://Assets/Ui/stanley.otf" id="2_fv864"]
 
 [resource]
 Fonts/fonts/large = ExtResource("1_fk36g")
@@ -9,3 +10,11 @@ Label/colors/font_color = Color(1, 0, 1, 1)
 Label/colors/font_outline_color = Color(0, 0, 0, 1)
 Label/constants/outline_size = 4
 Label/fonts/font = ExtResource("1_fk36g")
+stanleylabel/base_type = &"Label"
+stanleylabel/colors/font_color = Color(1, 1, 1, 1)
+stanleylabel/colors/font_shadow_color = Color(0, 0, 0, 1)
+stanleylabel/constants/outline_size = 0
+stanleylabel/constants/shadow_offset_x = 3
+stanleylabel/constants/shadow_offset_y = 3
+stanleylabel/font_sizes/font_size = 40
+stanleylabel/fonts/font = ExtResource("2_fv864")
