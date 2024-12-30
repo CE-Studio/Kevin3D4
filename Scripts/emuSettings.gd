@@ -1,9 +1,27 @@
+class_name EMU
 extends PanelContainer
 
 
 var height:float = 0
 var targ:float = 0
 var fstoggle := false
+
+
+static var mouse_mode:Input.MouseMode:
+	set(value):
+		mouse_mode = value
+		updateMouse()
+
+
+static func updateMouse():
+	if DLC.mcompat:
+		if mouse_mode == Input.MOUSE_MODE_CAPTURED:
+			Input.set_mouse_mode(Input.MOUSE_MODE_CONFINED)
+		else:
+			Input.set_mouse_mode(mouse_mode)
+	else:
+		Input.set_mouse_mode(mouse_mode)
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -20,6 +38,9 @@ func _ready() -> void:
 
 
 func _input(event: InputEvent) -> void:
+	if (event is InputEventMouseMotion) and DLC.mcompat and mouse_mode == Input.MOUSE_MODE_CAPTURED:
+		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+		Input.set_mouse_mode(Input.MOUSE_MODE_CONFINED)
 	if not DLC.active:
 		return
 	if event is InputEventMouseMotion:
@@ -63,3 +84,10 @@ func _on_patch_pressed() -> void:
 
 func _on_file_dialog_file_selected(path: String) -> void:
 	ProjectSettings.load_resource_pack(path)
+
+
+func _on_mcompat_item_selected(index: int) -> void:
+	if index == 0:
+		DLC.mcompat = false
+	else:
+		DLC.mcompat = true

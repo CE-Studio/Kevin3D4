@@ -13,7 +13,7 @@ func _process(_delta):
 	if player.isDead and !visible:
 		Player.instance.die.play()
 		show()
-		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+		EMU.mouse_mode = Input.MOUSE_MODE_VISIBLE
 		cam.rotation += Vector3(0.01, 0.01, 0.01)
 
 
@@ -21,7 +21,7 @@ func _on_button_pressed():
 	Player.beanos = 0
 	player.respawn()
 	cam.rotation = Vector3.ZERO
-	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	EMU.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	player.global_position = player.spawnpoint
 	player.velocity = Vector3.ZERO
 	player.animstate = player.anims.IDLE
