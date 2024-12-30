@@ -3,7 +3,7 @@ extends Area3D
 
 func _on_body_entered(body):
 	if body is Player:
-		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+		EMU.mouse_mode = Input.MOUSE_MODE_VISIBLE
 		body.queue_free()
 		$Camera3D.make_current()
 		if Player.rizz:
@@ -31,7 +31,7 @@ func _on_normal_pressed():
 	Player._timerSpawned = false
 	if is_instance_valid(SpeedrunTimer.instance):
 		SpeedrunTimer.instance.queue_free()
-	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	EMU.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	get_tree().change_scene_to_file.call_deferred("res://Scenes/CutSceneMusicPiano1.tscn")
 
 
@@ -43,12 +43,12 @@ func _on_speed_pressed():
 	Player._timerSpawned = false
 	if is_instance_valid(SpeedrunTimer.instance):
 		SpeedrunTimer.instance.queue_free()
-	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	EMU.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	get_tree().change_scene_to_file.call_deferred("res://Scenes/CutSceneMusicPiano1.tscn")
 
 
 func _on_rizz_pressed():
-	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+	EMU.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	winnerbox.loadBearingNumber = 0
 	Player.speedrunTime = 0
 	Player.stanley = false

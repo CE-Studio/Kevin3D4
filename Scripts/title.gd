@@ -2,7 +2,7 @@ extends Control
 
 
 func _on_button_pressed():
-	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	EMU.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	$Node3D/AnimationPlayer.speed_scale = 0
 	$AnimationPlayer.play("new_animation")
 	

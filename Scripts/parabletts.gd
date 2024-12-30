@@ -25,6 +25,11 @@ func _ready() -> void:
 			voice = i
 			isValid = true
 			break
+		if ("us" in i) and ("local" in i):
+			voice = i
+			isValid = true
+			break
+	print(voices)
 
 
 static func speak(line, speed := 9.0):
