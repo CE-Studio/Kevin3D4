@@ -7,7 +7,7 @@ func _ready():
 	
 
 func _h():
-	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	EMU.mouse_mode = Input.MOUSE_MODE_CAPTURED
 
 
 func _input(event):
@@ -23,7 +23,7 @@ func pauseUnpause():
 		get_tree().paused = false
 		hide()
 		$"../stnaleypause".hide()
-		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+		EMU.mouse_mode = Input.MOUSE_MODE_CAPTURED
 		if _tooktolong:
 			Player.instance.resume.play()
 	else:
@@ -32,7 +32,7 @@ func pauseUnpause():
 			$"../stnaleypause".show()
 		else:
 			show()
-		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+		EMU.mouse_mode = Input.MOUSE_MODE_VISIBLE
 		$"../Pausetimer".start(30)
 		_tooktolong = false
 
@@ -52,7 +52,7 @@ func _on_set_pressed():
 
 func _on_menu_pressed():
 	pauseUnpause()
-	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+	EMU.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	winnerbox.loadBearingNumber = 0
 	Player.speedrunTime = 0
 	Player.stanley = false
