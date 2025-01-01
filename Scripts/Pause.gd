@@ -38,10 +38,13 @@ func pauseUnpause():
 
 
 func _on_again_pressed():
-	if !Player.dlc:
-		pauseUnpause()
-		winnerbox.loadBearingNumber = 0
-		Player.speedrunTime = 0
+	pauseUnpause()
+	winnerbox.loadBearingNumber = 0
+	Player.speedrunTime = 0
+	if DLC.active:
+		Player.speedrunning = false
+		get_tree().change_scene_to_file.call_deferred("res://Scenes/Cutscenes/the_kevin_parable.tscn")
+	else:
 		Player.stanley = false
 		get_tree().change_scene_to_file.call_deferred("res://Scenes/CutSceneMusicPiano1.tscn")
 

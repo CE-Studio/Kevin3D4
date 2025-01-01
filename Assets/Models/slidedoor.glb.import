@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://dd2sj3qyx7rs7"
-path="res://.godot/imported/enemy.glb-e2e0751a136ea955bf1991eb930637ad.scn"
+uid="uid://b8wxocqg6gs3i"
+path="res://.godot/imported/slidedoor.glb-59fb35d516367605abe4f4da3b84e986.scn"
 
 [deps]
 
-source_file="res://Assets/Models/enemy.glb"
-dest_files=["res://.godot/imported/enemy.glb-e2e0751a136ea955bf1991eb930637ad.scn"]
+source_file="res://Assets/Models/slidedoor.glb"
+dest_files=["res://.godot/imported/slidedoor.glb-59fb35d516367605abe4f4da3b84e986.scn"]
 
 [params]
 
@@ -31,18 +31,6 @@ animation/trimming=false
 animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
-_subresources={
-"meshes": {
-"enemy_Vert": {
-"generate/lightmap_uv": 0,
-"generate/lods": 0,
-"generate/shadow_meshes": 0,
-"lods/normal_merge_angle": 60.0,
-"lods/normal_split_angle": 25.0,
-"save_to_file/enabled": true,
-"save_to_file/path": "res://Assets/Models/enemy.res"
-}
-}
-}
+_subresources={}
 gltf/naming_version=1
 gltf/embedded_image_handling=1

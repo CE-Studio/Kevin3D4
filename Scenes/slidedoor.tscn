@@ -1,0 +1,180 @@
+[gd_scene load_steps=20 format=3 uid="uid://pjffsrv6dn0g"]
+
+[ext_resource type="Script" path="res://Scripts/slidedoor.gd" id="1_ojv0p"]
+[ext_resource type="PackedScene" uid="uid://b8wxocqg6gs3i" path="res://Assets/Models/slidedoor.glb" id="2_ifwfd"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_safkm"]
+albedo_color = Color(0.509286, 0.509286, 0.509286, 1)
+metallic = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m1d0k"]
+transparency = 1
+cull_mode = 2
+albedo_color = Color(0, 1, 1, 0.356863)
+metallic = 1.0
+disable_receive_shadows = true
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_yf13b"]
+size = Vector3(0.1, 3, 2)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d0q2s"]
+albedo_color = Color(0.509286, 0.509286, 0.509286, 1)
+metallic = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_end3s"]
+transparency = 1
+cull_mode = 2
+albedo_color = Color(0, 1, 1, 0.356863)
+metallic = 1.0
+disable_receive_shadows = true
+
+[sub_resource type="Animation" id="Animation_d4cgs"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("slidedoor/Cube:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat64Array(0),
+"transitions": PackedFloat64Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("slidedoor/Cube_001:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat64Array(0),
+"transitions": PackedFloat64Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_4hu8x"]
+resource_name = "open"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("slidedoor/Cube:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat64Array(0, 1.5),
+"transitions": PackedFloat64Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 1.8)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("slidedoor/Cube_001:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat64Array(0, 1.5),
+"transitions": PackedFloat64Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, -1.8)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_k0nae"]
+_data = {
+"RESET": SubResource("Animation_d4cgs"),
+"open": SubResource("Animation_4hu8x")
+}
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ml8ia"]
+animation = &"RESET"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_6kjxy"]
+animation = &"open"
+play_mode = 1
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_7k3ns"]
+animation = &"open"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_yudw0"]
+switch_mode = 2
+advance_mode = 2
+advance_expression = "not(get_parent().open)"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_nqtk3"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_lhh7g"]
+switch_mode = 2
+advance_mode = 2
+advance_expression = "get_parent().open"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_c0obj"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_e40fq"]
+states/RESET/node = SubResource("AnimationNodeAnimation_ml8ia")
+states/RESET/position = Vector2(364, 124)
+states/Start/position = Vector2(117, 148)
+states/open/node = SubResource("AnimationNodeAnimation_7k3ns")
+states/open/position = Vector2(357, 53)
+"states/open 2/node" = SubResource("AnimationNodeAnimation_6kjxy")
+"states/open 2/position" = Vector2(545, 70)
+transitions = ["open", "open 2", SubResource("AnimationNodeStateMachineTransition_yudw0"), "Start", "RESET", SubResource("AnimationNodeStateMachineTransition_nqtk3"), "RESET", "open", SubResource("AnimationNodeStateMachineTransition_lhh7g"), "open 2", "RESET", SubResource("AnimationNodeStateMachineTransition_c0obj")]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_kc1x8"]
+size = Vector3(4, 3, 4)
+
+[node name="slidedoor" type="Area3D"]
+monitorable = false
+script = ExtResource("1_ojv0p")
+
+[node name="slidedoor" parent="." instance=ExtResource("2_ifwfd")]
+
+[node name="Cylinder" parent="slidedoor/Cube" index="0"]
+material_override = SubResource("StandardMaterial3D_safkm")
+
+[node name="Plane" parent="slidedoor/Cube" index="1"]
+material_override = SubResource("StandardMaterial3D_m1d0k")
+
+[node name="AnimatableBody3D" type="AnimatableBody3D" parent="slidedoor/Cube" index="2"]
+sync_to_physics = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="slidedoor/Cube/AnimatableBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000499994, 1.5, 1)
+shape = SubResource("BoxShape3D_yf13b")
+
+[node name="Cylinder_001" parent="slidedoor/Cube_001" index="0"]
+material_override = SubResource("StandardMaterial3D_d0q2s")
+
+[node name="Plane_001" parent="slidedoor/Cube_001" index="1"]
+material_override = SubResource("StandardMaterial3D_end3s")
+
+[node name="AnimatableBody3D2" type="AnimatableBody3D" parent="slidedoor/Cube_001" index="2"]
+sync_to_physics = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="slidedoor/Cube_001/AnimatableBody3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000499994, 1.5, 1)
+shape = SubResource("BoxShape3D_yf13b")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_k0nae")
+}
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource("AnimationNodeStateMachine_e40fq")
+anim_player = NodePath("../AnimationPlayer")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+shape = SubResource("BoxShape3D_kc1x8")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
+
+[editable path="slidedoor"]
