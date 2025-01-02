@@ -1,0 +1,186 @@
+[gd_scene load_steps=25 format=3 uid="uid://bdef1g51whbvt"]
+
+[ext_resource type="Texture2D" uid="uid://cmpwbyjkqgjww" path="res://Assets/Textures/Gamma.png" id="1_ysuj7"]
+[ext_resource type="Script" path="res://Scenes/Characterz/gamma.gd" id="2_bxqn2"]
+[ext_resource type="FontFile" uid="uid://tbj4ssgaitfp" path="res://Assets/Ui/NotoSans-VariableFont_wdth,wght.ttf" id="3_htgv7"]
+[ext_resource type="AudioStream" uid="uid://b143bk4mrxp44" path="res://Assets/Sound Effects/speakGamma.wav" id="3_lra0o"]
+[ext_resource type="ArrayMesh" uid="uid://dkwgxqmwixtwf" path="res://Assets/Models/basket.obj" id="5_nkn57"]
+[ext_resource type="Shader" uid="uid://b31kqg66ubtrd" path="res://Assets/Shaders/sketchy.tres" id="6_bdl1i"]
+
+[sub_resource type="Animation" id="Animation_gu8h1"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat64Array(0),
+"transitions": PackedFloat64Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_h4jy1"]
+resource_name = "idle"
+length = 0.8
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat64Array(0, 0.4),
+"transitions": PackedFloat64Array(1, 1),
+"update": 1,
+"values": [1, 0]
+}
+
+[sub_resource type="Animation" id="Animation_4bqgx"]
+resource_name = "talk"
+length = 0.8
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat64Array(0, 0.4),
+"transitions": PackedFloat64Array(1, 1),
+"update": 1,
+"values": [2, 0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_n7xhq"]
+_data = {
+"RESET": SubResource("Animation_gu8h1"),
+"idle": SubResource("Animation_h4jy1"),
+"talk": SubResource("Animation_4bqgx")
+}
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_kidhe"]
+animation = &"idle"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_c4r0r"]
+animation = &"talk"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_sbhn8"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_i7p1u"]
+break_loop_at_end = true
+switch_mode = 1
+advance_mode = 2
+advance_expression = "get_parent().talking"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_g7px7"]
+break_loop_at_end = true
+switch_mode = 1
+advance_mode = 2
+advance_expression = "!get_parent().talking"
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_invf3"]
+states/Start/position = Vector2(149, 194)
+states/idle/node = SubResource("AnimationNodeAnimation_kidhe")
+states/idle/position = Vector2(371, 81)
+states/talk/node = SubResource("AnimationNodeAnimation_c4r0r")
+states/talk/position = Vector2(652, 60)
+transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_sbhn8"), "idle", "talk", SubResource("AnimationNodeStateMachineTransition_i7p1u"), "talk", "idle", SubResource("AnimationNodeStateMachineTransition_g7px7")]
+
+[sub_resource type="Gradient" id="Gradient_8v5mg"]
+colors = PackedColorArray(0.335532, 0.248738, 0, 1, 0.337255, 0.247059, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_oxtxs"]
+gradient = SubResource("Gradient_8v5mg")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_a2pvr"]
+render_priority = 0
+shader = ExtResource("6_bdl1i")
+shader_parameter/Texture2DParameter = SubResource("GradientTexture1D_oxtxs")
+
+[sub_resource type="Gradient" id="Gradient_8p12e"]
+colors = PackedColorArray(0.637843, 0.637843, 0.637843, 1, 0.639216, 0.639216, 0.639216, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_kcjhf"]
+gradient = SubResource("Gradient_8p12e")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5rx6i"]
+render_priority = 0
+shader = ExtResource("6_bdl1i")
+shader_parameter/Texture2DParameter = SubResource("GradientTexture1D_kcjhf")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wuox8"]
+render_priority = 0
+shader = ExtResource("6_bdl1i")
+shader_parameter/Texture2DParameter = SubResource("GradientTexture1D_kcjhf")
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_f76wg"]
+height = 2.59659
+
+[node name="gamma" type="Sprite3D"]
+pixel_size = 0.002
+texture = ExtResource("1_ysuj7")
+hframes = 3
+script = ExtResource("2_bxqn2")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_n7xhq")
+}
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource("AnimationNodeStateMachine_invf3")
+anim_player = NodePath("../AnimationPlayer")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("3_lra0o")
+
+[node name="MarginContainer2" type="MarginContainer" parent="."]
+visible = false
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -52.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer2"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer2/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="Label" type="Label" parent="MarginContainer2/PanelContainer/MarginContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 0
+theme_override_fonts/font = ExtResource("3_htgv7")
+theme_override_font_sizes/font_size = 26
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(2.60796e-17, 0.226629, 0.481867, -1.3877e-17, 0.481867, -0.226629, -0.5325, -1.45816e-18, 2.95058e-17, -1.01493, -0.644479, 0)
+mesh = ExtResource("5_nkn57")
+surface_material_override/0 = SubResource("ShaderMaterial_a2pvr")
+surface_material_override/1 = SubResource("ShaderMaterial_5rx6i")
+surface_material_override/2 = SubResource("ShaderMaterial_wuox8")
+
+[node name="StaticBody3D" type="AnimatableBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("CylinderShape3D_f76wg")
