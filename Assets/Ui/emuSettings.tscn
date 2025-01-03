@@ -87,15 +87,35 @@ popup/item_1/id = 1
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="load" type="Button" parent="PanelContainer/MarginContainer/HBoxContainer"]
+[node name="load" type="MenuButton" parent="PanelContainer/MarginContainer/HBoxContainer"]
 layout_mode = 2
 tooltip_text = "Load savestate"
 icon = ExtResource("2_s1mk8")
+flat = false
+item_count = 4
+popup/item_0/text = "Slot 1"
+popup/item_0/id = 0
+popup/item_1/text = "Slot 2"
+popup/item_1/id = 1
+popup/item_2/text = "Slot 3"
+popup/item_2/id = 2
+popup/item_3/text = "Slot 4"
+popup/item_3/id = 3
 
-[node name="save" type="Button" parent="PanelContainer/MarginContainer/HBoxContainer"]
+[node name="save" type="MenuButton" parent="PanelContainer/MarginContainer/HBoxContainer"]
 layout_mode = 2
 tooltip_text = "Create savestate"
 icon = ExtResource("3_qbcre")
+flat = false
+item_count = 4
+popup/item_0/text = "Slot 1"
+popup/item_0/id = 0
+popup/item_1/text = "Slot 2"
+popup/item_1/id = 1
+popup/item_2/text = "Slot 3"
+popup/item_2/id = 2
+popup/item_3/text = "Slot 4"
+popup/item_3/id = 3
 
 [node name="patch" type="Button" parent="PanelContainer/MarginContainer/HBoxContainer"]
 layout_mode = 2

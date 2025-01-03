@@ -1,4 +1,4 @@
-[gd_scene load_steps=121 format=4 uid="uid://dhrt4yx6j477h"]
+[gd_scene load_steps=124 format=4 uid="uid://dhrt4yx6j477h"]
 
 [ext_resource type="Script" path="res://Scripts/parabletts.gd" id="1_7eshl"]
 [ext_resource type="PackedScene" uid="uid://byx5litoy380f" path="res://Scenes/enviro.tscn" id="2_ocd8s"]
@@ -61,6 +61,9 @@
 [ext_resource type="ArrayMesh" uid="uid://bktltccecfxko" path="res://Assets/Models/shelves.obj" id="59_ug3dd"]
 [ext_resource type="PackedScene" uid="uid://bdef1g51whbvt" path="res://Scenes/Characterz/gamma.tscn" id="60_2rff6"]
 [ext_resource type="PackedScene" uid="uid://byssqbosbxe5x" path="res://Scenes/Characterz/symmie.tscn" id="61_yy23m"]
+[ext_resource type="AudioStream" uid="uid://diefur77d32jo" path="res://Assets/Music/Title.wav" id="62_ad21t"]
+[ext_resource type="Script" path="res://Scripts/globallbl.gd" id="63_78woi"]
+[ext_resource type="PackedScene" uid="uid://c0vfothehm26h" path="res://Scenes/Characterz/lex.tscn" id="64_wgidy"]
 
 [sub_resource type="Animation" id="Animation_cm671"]
 length = 0.001
@@ -304,6 +307,18 @@ tracks/19/keys = {
 "update": 1,
 "values": [true]
 }
+tracks/20/type = "value"
+tracks/20/imported = false
+tracks/20/enabled = true
+tracks/20/path = NodePath("lex:position")
+tracks/20/interp = 1
+tracks/20/loop_wrap = true
+tracks/20/keys = {
+"times": PackedFloat64Array(0),
+"transitions": PackedFloat64Array(1),
+"update": 0,
+"values": [Vector3(6.41326, 0.763524, 17.7724)]
+}
 
 [sub_resource type="Animation" id="Animation_2hyrp"]
 resource_name = "init"
@@ -431,10 +446,10 @@ tracks/6/path = NodePath("slidedoor:open")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
-"times": PackedFloat64Array(0, 6, 13),
-"transitions": PackedFloat64Array(1, 1, 1),
+"times": PackedFloat64Array(0, 6, 13, 40.3, 42.8),
+"transitions": PackedFloat64Array(1, 1, 1, 1, 1),
 "update": 1,
-"values": [false, true, false]
+"values": [false, true, false, true, false]
 }
 tracks/7/type = "value"
 tracks/7/imported = false
@@ -654,6 +669,18 @@ tracks/22/keys = {
 "transitions": PackedFloat64Array(1),
 "update": 1,
 "values": [false]
+}
+tracks/23/type = "value"
+tracks/23/imported = false
+tracks/23/enabled = true
+tracks/23/path = NodePath("lex:position")
+tracks/23/interp = 1
+tracks/23/loop_wrap = true
+tracks/23/keys = {
+"times": PackedFloat64Array(21.8, 24, 37.5, 39.6, 42.1, 42.8, 44.4),
+"transitions": PackedFloat64Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(6.41326, 0.763524, 17.7724), Vector3(16.1163, 1.12886, 18.1061), Vector3(16.1163, 1.12886, 18.1061), Vector3(20.3096, 0.758351, 18.1061), Vector3(20.3096, 0.758351, 25.2945), Vector3(25.1783, 0.758351, 25.2945), Vector3(26.3715, 0.758351, 33.9428)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_8fwsc"]
@@ -1494,7 +1521,34 @@ modulate = Color(1, 0, 1, 1)
 text = "imagine this is really far away lol"
 
 [node name="symmie" parent="." instance=ExtResource("61_yy23m")]
-transform = Transform3D(0.945289, 0, 0.326233, 0, 1, 0, -0.326233, 0, 0.945289, 17.0257, 1.30488, 7.17298)
+transform = Transform3D(-0.945289, 0, -0.326233, 0, 1, 0, 0.326233, 0, -0.945289, 17.0257, 1.30488, 7.17298)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("62_ad21t")
+bus = &"Music"
+
+[node name="Label" type="Label" parent="."]
+visible = false
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -550.0
+offset_top = -72.0
+offset_right = 550.0
+offset_bottom = -34.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 30
+text = "heheheha"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("63_78woi")
+
+[node name="lex" parent="." instance=ExtResource("64_wgidy")]
+transform = Transform3D(0.809128, 0, -0.587633, 0, 1, 0, 0.587633, 0, 0.809128, 6.41326, 0.763524, 17.7724)
 
 [editable path="Player/player"]
 [editable path="lanes/checkout2"]

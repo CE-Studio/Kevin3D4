@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=27 format=3 uid="uid://ceb3ll16fgq5a"]
+[gd_resource type="Theme" load_steps=39 format=3 uid="uid://ceb3ll16fgq5a"]
 
 [ext_resource type="FontFile" uid="uid://tbj4ssgaitfp" path="res://Assets/Ui/NotoSans-VariableFont_wdth,wght.ttf" id="1_bmw5f"]
 [ext_resource type="Texture2D" uid="uid://bdeqtsf7etf40" path="res://Assets/Ui/emubuttons/Page 5.png" id="2_5vcq6"]
@@ -51,6 +51,94 @@ texture_margin_right = 6.0
 texture_margin_bottom = 6.0
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0y0ih"]
+texture = ExtResource("7_vrlhs")
+texture_margin_left = 6.0
+texture_margin_top = 6.0
+texture_margin_right = 6.0
+texture_margin_bottom = 6.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nebs6"]
+texture = ExtResource("2_5vcq6")
+texture_margin_left = 6.0
+texture_margin_top = 6.0
+texture_margin_right = 6.0
+texture_margin_bottom = 6.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qm42d"]
+texture = ExtResource("3_r4cik")
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2fxns"]
+texture = ExtResource("4_f47lp")
+texture_margin_left = 6.0
+texture_margin_top = 6.0
+texture_margin_right = 6.0
+texture_margin_bottom = 6.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nkl6q"]
+texture = ExtResource("5_xy26b")
+texture_margin_left = 6.0
+texture_margin_top = 6.0
+texture_margin_right = 6.0
+texture_margin_bottom = 6.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vo3ap"]
+texture = ExtResource("6_8r57k")
+texture_margin_left = 6.0
+texture_margin_top = 6.0
+texture_margin_right = 6.0
+texture_margin_bottom = 6.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_sbjtk"]
+texture = ExtResource("7_vrlhs")
+texture_margin_left = 6.0
+texture_margin_top = 6.0
+texture_margin_right = 6.0
+texture_margin_bottom = 6.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_30fot"]
+texture = ExtResource("2_5vcq6")
+texture_margin_left = 6.0
+texture_margin_top = 6.0
+texture_margin_right = 6.0
+texture_margin_bottom = 6.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nijg7"]
+texture = ExtResource("3_r4cik")
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lql1r"]
+texture = ExtResource("4_f47lp")
+texture_margin_left = 6.0
+texture_margin_top = 6.0
+texture_margin_right = 6.0
+texture_margin_bottom = 6.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_e2hj1"]
+texture = ExtResource("5_xy26b")
+texture_margin_left = 6.0
+texture_margin_top = 6.0
+texture_margin_right = 6.0
+texture_margin_bottom = 6.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fr5l5"]
+texture = ExtResource("6_8r57k")
+texture_margin_left = 6.0
+texture_margin_top = 6.0
+texture_margin_right = 6.0
+texture_margin_bottom = 6.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bor6p"]
 texture = ExtResource("7_vrlhs")
 texture_margin_left = 6.0
 texture_margin_top = 6.0
@@ -110,11 +198,24 @@ Button/styles/hover = SubResource("StyleBoxTexture_21now")
 Button/styles/hover_pressed = SubResource("StyleBoxTexture_5fbnh")
 Button/styles/normal = SubResource("StyleBoxTexture_nqf3g")
 Button/styles/pressed = SubResource("StyleBoxTexture_0y0ih")
+FlatButton/base_type = &"Button"
+FlatButton/styles/disabled = SubResource("StyleBoxTexture_nebs6")
+FlatButton/styles/focus = SubResource("StyleBoxTexture_qm42d")
+FlatButton/styles/hover = SubResource("StyleBoxTexture_2fxns")
+FlatButton/styles/hover_pressed = SubResource("StyleBoxTexture_nkl6q")
+FlatButton/styles/normal = SubResource("StyleBoxTexture_vo3ap")
+FlatButton/styles/pressed = SubResource("StyleBoxTexture_sbjtk")
 Label/colors/font_color = Color(0, 0, 0, 1)
 Label/constants/outline_size = 0
 Label/font_sizes/font_size = 14
 Label/fonts/font = ExtResource("1_bmw5f")
 LineEdit/fonts/font = ExtResource("1_bmw5f")
+MenuButton/styles/disabled = SubResource("StyleBoxTexture_30fot")
+MenuButton/styles/focus = SubResource("StyleBoxTexture_nijg7")
+MenuButton/styles/hover = SubResource("StyleBoxTexture_lql1r")
+MenuButton/styles/hover_pressed = SubResource("StyleBoxTexture_e2hj1")
+MenuButton/styles/normal = SubResource("StyleBoxTexture_fr5l5")
+MenuButton/styles/pressed = SubResource("StyleBoxTexture_bor6p")
 OptionButton/icons/arrow = ExtResource("8_v6doy")
 Panel/styles/panel = SubResource("StyleBoxTexture_njpbo")
 PanelContainer/styles/panel = SubResource("StyleBoxTexture_o1boi")

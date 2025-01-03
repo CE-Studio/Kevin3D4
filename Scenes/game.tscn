@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bjtuexpc3ovab"]
+[gd_scene load_steps=16 format=3 uid="uid://bjtuexpc3ovab"]
 
 [ext_resource type="AudioStream" uid="uid://diefur77d32jo" path="res://Assets/Music/Title.wav" id="1_7lcl3"]
 [ext_resource type="PackedScene" uid="uid://8iobt4o8k61u" path="res://Scenes/Player.tscn" id="1_hr3a5"]
@@ -10,6 +10,9 @@
 [ext_resource type="PackedScene" uid="uid://byx5litoy380f" path="res://Scenes/enviro.tscn" id="8_yp6d2"]
 [ext_resource type="PackedScene" uid="uid://wokfsulvuihe" path="res://Assets/Models/low_poly_concert_grand_piano.glb" id="10_3d2x6"]
 [ext_resource type="PackedScene" uid="uid://bdef1g51whbvt" path="res://Scenes/Characterz/gamma.tscn" id="10_6x1mg"]
+[ext_resource type="PackedScene" uid="uid://byssqbosbxe5x" path="res://Scenes/Characterz/symmie.tscn" id="11_03jl4"]
+[ext_resource type="PackedScene" uid="uid://c0vfothehm26h" path="res://Scenes/Characterz/lex.tscn" id="12_dap5h"]
+[ext_resource type="Script" path="res://Scripts/globallbl.gd" id="13_03r3f"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_2msyu"]
 size = Vector2(25, 25)
@@ -76,3 +79,29 @@ transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -5.88581, 1.13844, -9.63108)
 
 [node name="gamma" parent="." instance=ExtResource("10_6x1mg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.27818, 2.01518, 10.722)
+
+[node name="symmie" parent="." instance=ExtResource("11_03jl4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.70037, 1.78877, 10.98)
+
+[node name="lex" parent="." instance=ExtResource("12_dap5h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.6633, 1.28064, 1.39022)
+
+[node name="Label" type="Label" parent="."]
+visible = false
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -550.0
+offset_top = -72.0
+offset_right = 550.0
+offset_bottom = -34.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 30
+text = "heheheha"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("13_03r3f")

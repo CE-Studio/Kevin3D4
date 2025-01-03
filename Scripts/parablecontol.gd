@@ -19,6 +19,7 @@ func swappy() -> void:
 		Player.stanley = true
 		Player.instance.spawnpoint = $"../Marker3D".position
 		$"../Label3D".show()
+		$"../AudioStreamPlayer".play()
 
 
 func _input(event: InputEvent) -> void:

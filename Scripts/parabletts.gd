@@ -8,6 +8,7 @@ static var instance:TTS
 static var voice:String
 
 
+@export var runInEditor := false
 @export var sayline:String:
 	set(value):
 		sayline = value
@@ -39,4 +40,6 @@ static func speak(line, speed := 9.0):
 
 
 func speakLocal(line, speed := 1.0):
+	if Engine.is_editor_hint() and not runInEditor:
+		return
 	TTS.speak(line, speed)

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://c1rle2oewlxyo"
+path="res://.godot/imported/speakSymmie.wav-57d280720a9bdcb1192bb6ab3d791531.sample"
+
+[deps]
+
+source_file="res://Assets/Sound Effects/speakSymmie.wav"
+dest_files=["res://.godot/imported/speakSymmie.wav-57d280720a9bdcb1192bb6ab3d791531.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
