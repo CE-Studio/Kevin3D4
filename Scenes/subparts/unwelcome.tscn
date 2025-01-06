@@ -1,0 +1,98 @@
+[gd_scene load_steps=6 format=3 uid="uid://bwfm0mqlilrui"]
+
+[ext_resource type="Texture2D" uid="uid://bhb1yfmf6jpai" path="res://Assets/Textures/unwelcomedialouge.png" id="1_pkmfm"]
+[ext_resource type="Script" path="res://addons/radial_progress/RadialProgress.gd" id="2_vepu3"]
+[ext_resource type="FontFile" uid="uid://ditjs075hj10r" path="res://Assets/Ui/Code New Roman b.otf" id="3_p42l6"]
+[ext_resource type="Texture2D" uid="uid://de1g8yg5xfqml" path="res://Assets/Textures/unwelcomefroge.png" id="4_yqllr"]
+
+[sub_resource type="GDScript" id="GDScript_mj4xp"]
+script/source = "extends Timer
+
+
+func _process(delta: float) -> void:
+	$\"../TextureRect/RadialProgress\".progress = time_left
+	$\"../TextureRect/RadialProgress2\".progress = time_left
+"
+
+[node name="unwelcome" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -683.0
+offset_right = -144.0
+offset_bottom = 139.0
+grow_horizontal = 0
+texture = ExtResource("1_pkmfm")
+
+[node name="RadialProgress2" type="Control" parent="TextureRect"]
+anchors_preset = 0
+offset_left = 497.0
+offset_top = 46.0
+offset_right = 537.0
+offset_bottom = 86.0
+rotation = 3.14159
+script = ExtResource("2_vepu3")
+max_value = 6.0
+radius = 30.0
+progress = 6.0
+thickness = 7.0
+bg_color = Color(0.501961, 0.501961, 0.501961, 0)
+bar_color = Color(0, 0, 0, 1)
+ring = true
+
+[node name="RadialProgress" type="Control" parent="TextureRect"]
+anchors_preset = 0
+offset_left = 500.0
+offset_top = 43.0
+offset_right = 540.0
+offset_bottom = 83.0
+rotation = 3.14159
+script = ExtResource("2_vepu3")
+max_value = 6.0
+radius = 30.0
+progress = 6.0
+thickness = 7.0
+bg_color = Color(0.501961, 0.501961, 0.501961, 0)
+bar_color = Color(1, 1, 1, 1)
+ring = true
+
+[node name="CenterContainer" type="CenterContainer" parent="TextureRect"]
+layout_mode = 0
+offset_right = 466.0
+offset_bottom = 86.0
+
+[node name="Label" type="Label" parent="TextureRect/CenterContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.87451, 0.101961, 1)
+theme_override_constants/outline_size = 0
+theme_override_fonts/font = ExtResource("3_p42l6")
+theme_override_font_sizes/font_size = 30
+text = "The unwelcome one
+arrives."
+horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="TextureRect"]
+layout_mode = 0
+offset_left = 155.0
+offset_top = 91.0
+offset_right = 301.0
+offset_bottom = 198.0
+texture = ExtResource("4_yqllr")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 6.0
+one_shot = true
+autostart = true
+script = SubResource("GDScript_mj4xp")
+
+[connection signal="timeout" from="Timer" to="." method="queue_free"]

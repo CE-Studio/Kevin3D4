@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://bjtuexpc3ovab"]
+[gd_scene load_steps=17 format=3 uid="uid://bjtuexpc3ovab"]
 
 [ext_resource type="AudioStream" uid="uid://diefur77d32jo" path="res://Assets/Music/Title.wav" id="1_7lcl3"]
 [ext_resource type="PackedScene" uid="uid://8iobt4o8k61u" path="res://Scenes/Player.tscn" id="1_hr3a5"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://byssqbosbxe5x" path="res://Scenes/Characterz/symmie.tscn" id="11_03jl4"]
 [ext_resource type="PackedScene" uid="uid://c0vfothehm26h" path="res://Scenes/Characterz/lex.tscn" id="12_dap5h"]
 [ext_resource type="Script" path="res://Scripts/globallbl.gd" id="13_03r3f"]
+[ext_resource type="PackedScene" uid="uid://bbrmfy3bgqwkl" path="res://Scenes/Characterz/planehydra.tscn" id="14_rmqw5"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_2msyu"]
 size = Vector2(25, 25)
@@ -32,6 +33,19 @@ mesh = SubResource("PlaneMesh_2msyu")
 shape = SubResource("BoxShape3D_0kk0c")
 
 [node name="GPUParticlesCollisionBox3D" type="GPUParticlesCollisionBox3D" parent="StaticBody3D"]
+size = Vector3(25, 2, 25)
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.8472, 0, -26.5197)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0244299, 0.467489, -0.00563931)
+mesh = SubResource("PlaneMesh_2msyu")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D2"]
+shape = SubResource("BoxShape3D_0kk0c")
+
+[node name="GPUParticlesCollisionBox3D" type="GPUParticlesCollisionBox3D" parent="StaticBody3D2"]
 size = Vector3(25, 2, 25)
 
 [node name="Player" parent="." instance=ExtResource("1_hr3a5")]
@@ -105,3 +119,6 @@ text = "heheheha"
 horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("13_03r3f")
+
+[node name="planehydra" parent="." instance=ExtResource("14_rmqw5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.4067, 0.5, -30.7356)
