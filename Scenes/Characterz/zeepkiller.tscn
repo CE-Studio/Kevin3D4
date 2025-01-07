@@ -1,8 +1,25 @@
-[gd_scene load_steps=11 format=3 uid="uid://dapjhqfssvf1m"]
+[gd_scene load_steps=32 format=3 uid="uid://dapjhqfssvf1m"]
 
+[ext_resource type="Script" path="res://Scenes/Characterz/zeepkiller.gd" id="1_du2xb"]
 [ext_resource type="PackedScene" uid="uid://bwfm0mqlilrui" path="res://Scenes/subparts/unwelcome.tscn" id="1_hhi53"]
 [ext_resource type="FontFile" uid="uid://bk0c3qu52m770" path="res://Assets/Ui/ComicHelvetic_Heavy.otf" id="2_xefry"]
 [ext_resource type="FontFile" uid="uid://ditjs075hj10r" path="res://Assets/Ui/Code New Roman b.otf" id="3_5vfuc"]
+[ext_resource type="Shader" uid="uid://b7wxbeb6pm846" path="res://Scenes/Characterz/zeepkiller.tres" id="3_fcm0e"]
+[ext_resource type="ArrayMesh" uid="uid://mnidc0h3x10k" path="res://Assets/Models/zeepeye.obj" id="5_r4a5u"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jmjbj"]
+bg_color = Color(0.67451, 0.333333, 0.337255, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_43a1p"]
+bg_color = Color(1, 0.572549, 0.0313726, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
 
 [sub_resource type="Gradient" id="Gradient_ty3yi"]
 colors = PackedColorArray(0.988235, 0.415686, 0.427451, 1, 1, 0.580392, 0.317647, 1)
@@ -21,6 +38,17 @@ corner_radius_top_right = 8
 corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dx2sa"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_er6ve"]
+bg_color = Color(1, 0.882353, 0, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5srhx"]
+
 [sub_resource type="Gradient" id="Gradient_usypb"]
 colors = PackedColorArray(0.945098, 0.980392, 0.847059, 1, 0.596078, 0.984314, 0.215686, 1)
 
@@ -31,10 +59,108 @@ fill_to = Vector2(0, 1)
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_oxf4i"]
 texture = SubResource("GradientTexture2D_1q3tf")
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ms4fh"]
+transparency = 1
+albedo_color = Color(0, 0, 0, 0.882353)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_7yhcj"]
+material = SubResource("StandardMaterial3D_ms4fh")
+height = 1.9
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c04x4"]
+transparency = 1
+albedo_color = Color(0, 0, 0, 0.882353)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_klm0h"]
+material = SubResource("StandardMaterial3D_c04x4")
+radius = 0.2
+height = 1.2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gkq8i"]
+shading_mode = 0
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_x102d"]
+material = SubResource("StandardMaterial3D_gkq8i")
+size = Vector3(0.1, 0.3, 0.1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_ns7fe"]
+material = SubResource("StandardMaterial3D_gkq8i")
+radius = 0.13
+height = 0.37
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_dttdj"]
+radius = 1.04519
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ismen"]
+shader = ExtResource("3_fcm0e")
+shader_parameter/screensize = Vector2(1920, 1080)
+shader_parameter/size = 1.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eetk6"]
+bg_color = Color(0.109804, 0.0588235, 0.0352941, 1)
+
+[sub_resource type="Animation" id="Animation_mmd44"]
+resource_name = "new_animation"
+length = 1.6
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel:material:shader_parameter/size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat64Array(0, 0.4, 0.6, 1.6),
+"transitions": PackedFloat64Array(1, 1, 1, 1),
+"update": 0,
+"values": [1.0, 0.0, 0.0, 1.0]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat64Array(0.5, 1.6),
+"transitions": PackedFloat64Array(1, 1),
+"values": [{
+"args": [],
+"method": &"respawn"
+}, {
+"args": [],
+"method": &"queue_free"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_mqigu"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel:material:shader_parameter/size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat64Array(0),
+"transitions": PackedFloat64Array(1),
+"update": 0,
+"values": [1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xyi4d"]
+_data = {
+"RESET": SubResource("Animation_mqigu"),
+"new_animation": SubResource("Animation_mmd44")
+}
+
 [node name="zeepkiller" type="Node3D"]
+script = ExtResource("1_du2xb")
+buttonNormal = SubResource("StyleBoxFlat_jmjbj")
+buttonFocus = SubResource("StyleBoxFlat_43a1p")
 
 [node name="Control" parent="." instance=ExtResource("1_hhi53")]
-visible = false
 
 [node name="Control2" type="Control" parent="."]
 layout_mode = 3
@@ -43,8 +169,10 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Control2"]
+[node name="killscreen" type="VBoxContainer" parent="Control2"]
+visible = false
 layout_mode = 1
 anchors_preset = 13
 anchor_left = 0.5
@@ -54,12 +182,14 @@ offset_left = -163.5
 offset_right = 163.5
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 
-[node name="Control" type="Control" parent="Control2/VBoxContainer"]
+[node name="Control" type="Control" parent="Control2/killscreen"]
 custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
+mouse_filter = 2
 
-[node name="Label" type="Label" parent="Control2/VBoxContainer"]
+[node name="Label" type="Label" parent="Control2/killscreen"]
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_shadow_color = Color(0.345098, 0.156863, 0.0901961, 1)
@@ -71,7 +201,7 @@ theme_override_font_sizes/font_size = 126
 text = "YOU"
 horizontal_alignment = 1
 
-[node name="Label2" type="Label" parent="Control2/VBoxContainer"]
+[node name="Label2" type="Label" parent="Control2/killscreen"]
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_shadow_color = Color(0.345098, 0.156863, 0.0901961, 1)
@@ -83,11 +213,12 @@ theme_override_font_sizes/font_size = 50
 text = "0/0 Checkpoints"
 horizontal_alignment = 1
 
-[node name="Control2" type="Control" parent="Control2/VBoxContainer"]
+[node name="Control2" type="Control" parent="Control2/killscreen"]
 layout_mode = 2
 size_flags_vertical = 3
+mouse_filter = 2
 
-[node name="Label3" type="Label" parent="Control2/VBoxContainer"]
+[node name="Label3" type="Label" parent="Control2/killscreen"]
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_shadow_color = Color(0.345098, 0.156863, 0.0901961, 1)
@@ -99,11 +230,13 @@ theme_override_font_sizes/font_size = 41
 text = "Press Enter to continue!"
 horizontal_alignment = 1
 
-[node name="Control3" type="Control" parent="Control2/VBoxContainer"]
+[node name="Control3" type="Control" parent="Control2/killscreen"]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
+mouse_filter = 2
 
-[node name="Panel" type="Panel" parent="Control2"]
+[node name="statscreen" type="Panel" parent="Control2"]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -111,21 +244,23 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -360.0
-offset_top = -212.0
+offset_top = -167.0
 offset_right = 360.0
-offset_bottom = 212.0
+offset_bottom = 167.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_jfick")
 
-[node name="Panel" type="Panel" parent="Control2/Panel"]
+[node name="Panel" type="Panel" parent="Control2/statscreen"]
 layout_mode = 0
 offset_top = -60.0
 offset_right = 720.0
 offset_bottom = 9.0
+mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_6li7a")
 
-[node name="Label4" type="Label" parent="Control2/Panel/Panel"]
+[node name="Label4" type="Label" parent="Control2/statscreen/Panel"]
 layout_mode = 2
 offset_left = 13.0
 offset_top = 12.0
@@ -140,7 +275,7 @@ theme_override_fonts/font = ExtResource("2_xefry")
 theme_override_font_sizes/font_size = 50
 text = "Level_Name"
 
-[node name="Label5" type="Label" parent="Control2/Panel/Panel"]
+[node name="Label5" type="Label" parent="Control2/statscreen/Panel"]
 layout_mode = 2
 offset_left = 547.0
 offset_top = 36.0
@@ -155,7 +290,7 @@ theme_override_fonts/font = ExtResource("2_xefry")
 theme_override_font_sizes/font_size = 25
 text = "By CE-Studio"
 
-[node name="Label6" type="Label" parent="Control2/Panel/Panel"]
+[node name="Label6" type="Label" parent="Control2/statscreen/Panel"]
 layout_mode = 2
 offset_left = 547.0
 offset_top = 8.0
@@ -168,12 +303,94 @@ theme_override_font_sizes/font_size = 25
 text = "Platformer"
 horizontal_alignment = 2
 
-[node name="Label7" type="Label" parent="Control2/Panel"]
+[node name="Panel2" type="Panel" parent="Control2/statscreen"]
+layout_mode = 0
+offset_top = 328.0
+offset_right = 720.0
+offset_bottom = 397.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_6li7a")
+
+[node name="Label4" type="Label" parent="Control2/statscreen/Panel2"]
+layout_mode = 2
+offset_left = 13.0
+offset_top = 12.0
+offset_right = 498.0
+offset_bottom = 59.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.345098, 0.156863, 0.0901961, 1)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/outline_size = 0
+theme_override_fonts/font = ExtResource("2_xefry")
+theme_override_font_sizes/font_size = 30
+text = "Press Enter to select!"
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="Control2/statscreen/Panel2"]
+layout_mode = 0
+offset_left = 528.0
+offset_top = 7.0
+offset_right = 713.0
+offset_bottom = 62.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_dx2sa")
+theme_override_styles/hover = SubResource("StyleBoxFlat_43a1p")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_er6ve")
+theme_override_styles/normal = SubResource("StyleBoxFlat_jmjbj")
+
+[node name="Label5" type="Label" parent="Control2/statscreen/Panel2/Button"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.345098, 0.156863, 0.0901961, 1)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/outline_size = 0
+theme_override_fonts/font = ExtResource("2_xefry")
+theme_override_font_sizes/font_size = 30
+text = "Continue"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button2" type="Button" parent="Control2/statscreen/Panel2"]
+layout_mode = 0
+offset_left = 337.0
+offset_top = 7.0
+offset_right = 522.0
+offset_bottom = 62.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_5srhx")
+theme_override_styles/hover = SubResource("StyleBoxFlat_43a1p")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_er6ve")
+theme_override_styles/normal = SubResource("StyleBoxFlat_jmjbj")
+
+[node name="Label5" type="Label" parent="Control2/statscreen/Panel2/Button2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.345098, 0.156863, 0.0901961, 1)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/outline_size = 0
+theme_override_fonts/font = ExtResource("2_xefry")
+theme_override_font_sizes/font_size = 30
+text = "Retry"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label7" type="Label" parent="Control2/statscreen"]
 layout_mode = 2
 offset_left = 316.0
-offset_top = 223.0
+offset_top = 205.0
 offset_right = 664.0
-offset_bottom = 270.0
+offset_bottom = 252.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_shadow_color = Color(0.345098, 0.156863, 0.0901961, 1)
 theme_override_constants/shadow_offset_x = 3
@@ -183,7 +400,7 @@ theme_override_fonts/font = ExtResource("2_xefry")
 theme_override_font_sizes/font_size = 50
 text = "Did not finish!"
 
-[node name="Label9" type="Label" parent="Control2/Panel"]
+[node name="Label9" type="Label" parent="Control2/statscreen"]
 clip_children = 2
 layout_mode = 1
 anchors_preset = 8
@@ -192,9 +409,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -299.5
-offset_top = -124.0
+offset_top = -91.0
 offset_right = 305.5
-offset_bottom = -73.0
+offset_bottom = -40.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.345098, 0.156863, 0.0901961, 1)
@@ -203,7 +420,7 @@ theme_override_fonts/font = ExtResource("3_5vfuc")
 theme_override_font_sizes/font_size = 50
 text = "Better luck next time!"
 
-[node name="Label8" type="Label" parent="Control2/Panel"]
+[node name="Label8" type="Label" parent="Control2/statscreen"]
 clip_children = 2
 layout_mode = 1
 anchors_preset = 8
@@ -212,9 +429,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -302.5
-offset_top = -127.0
+offset_top = -94.0
 offset_right = 302.5
-offset_bottom = -76.0
+offset_bottom = -43.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -223,9 +440,90 @@ theme_override_fonts/font = ExtResource("3_5vfuc")
 theme_override_font_sizes/font_size = 50
 text = "Better luck next time!"
 
-[node name="Panel" type="Panel" parent="Control2/Panel/Label8"]
+[node name="Panel" type="Panel" parent="Control2/statscreen/Label8"]
 layout_mode = 0
 offset_top = 4.0
 offset_right = 601.0
 offset_bottom = 39.0
+mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_oxf4i")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_7yhcj")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="MeshInstance3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.299406, -1.18276, 0)
+mesh = SubResource("CapsuleMesh_klm0h")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="MeshInstance3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.299, -1.18261, 0)
+mesh = SubResource("CapsuleMesh_klm0h")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="MeshInstance3D"]
+transform = Transform3D(6.12323e-17, 1, 0, -1, 6.12323e-17, 0, 0, 0, 1, -0.976323, 0.418512, 0)
+mesh = SubResource("CapsuleMesh_klm0h")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="MeshInstance3D"]
+transform = Transform3D(6.12323e-17, 1, 0, -1, 6.12323e-17, 0, 0, 0, 1, 0.976, 0.419, 0)
+mesh = SubResource("CapsuleMesh_klm0h")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="MeshInstance3D"]
+transform = Transform3D(0.707107, -0.707107, 0, 0.707107, 0.707107, 0, 0, 0, 1, 0, 0.177404, -0.486337)
+mesh = SubResource("BoxMesh_x102d")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="MeshInstance3D/MeshInstance3D"]
+transform = Transform3D(0, -1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("BoxMesh_x102d")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="MeshInstance3D"]
+transform = Transform3D(-0.904518, -0.426435, 0, 0.426435, -0.904518, 0, 0, 0, 1, -0.181442, 0.0428247, 0)
+mesh = SubResource("SphereMesh_ns7fe")
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="MeshInstance3D/MeshInstance3D6"]
+transform = Transform3D(0.601765, -0.798673, 0, 0.798673, 0.601765, 0, 0, 0, 1, -0.067715, -0.0337493, 0)
+mesh = SubResource("SphereMesh_ns7fe")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="MeshInstance3D"]
+transform = Transform3D(0.0676148, -0.0181173, -1.10937e-18, 0, 4.28626e-18, -0.07, 0.0181173, 0.0676148, 4.14021e-18, 0.204375, 0.579577, -0.486607)
+material_override = SubResource("StandardMaterial3D_gkq8i")
+mesh = ExtResource("5_r4a5u")
+
+[node name="MeshInstance3D8" type="MeshInstance3D" parent="MeshInstance3D"]
+transform = Transform3D(0.0676148, 0.0181173, 1.10937e-18, 0, 4.28626e-18, -0.07, -0.0181173, 0.0676148, 4.14021e-18, -0.204, 0.579797, -0.486371)
+material_override = SubResource("StandardMaterial3D_gkq8i")
+mesh = ExtResource("5_r4a5u")
+
+[node name="Area3D" type="Area3D" parent="."]
+monitorable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("SphereShape3D_dttdj")
+
+[node name="Panel" type="Panel" parent="."]
+material = SubResource("ShaderMaterial_ismen")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_eetk6")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_xyi4d")
+}
+
+[connection signal="focus_entered" from="Control2/statscreen/Panel2/Button" to="." method="_on_button_focus_entered"]
+[connection signal="focus_exited" from="Control2/statscreen/Panel2/Button" to="." method="_on_button_focus_exited"]
+[connection signal="pressed" from="Control2/statscreen/Panel2/Button" to="." method="_on_button_pressed"]
+[connection signal="focus_entered" from="Control2/statscreen/Panel2/Button2" to="." method="_on_button_2_focus_entered"]
+[connection signal="focus_exited" from="Control2/statscreen/Panel2/Button2" to="." method="_on_button_2_focus_exited"]
+[connection signal="pressed" from="Control2/statscreen/Panel2/Button2" to="." method="_on_button_pressed"]
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

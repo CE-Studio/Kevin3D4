@@ -1,3 +1,4 @@
+class_name DeathScreen
 extends Panel
 
 
@@ -5,19 +6,36 @@ extends Panel
 @onready var cam = $"../SpringArm3D"
 
 
+static var instance:DeathScreen
+static var specialdeath := false
+
+
+var open := false
+
+
+static func respawn():
+	if is_instance_valid(instance):
+		instance._on_button_pressed()
+
+
 func _ready():
+	instance = self
 	hide()
 
 
 func _process(_delta):
-	if player.isDead and !visible:
+	if player.isDead and !open:
+		open = true
 		Player.instance.die.play()
-		show()
 		EMU.mouse_mode = Input.MOUSE_MODE_VISIBLE
-		cam.rotation += Vector3(0.01, 0.01, 0.01)
+		if specialdeath:
+			specialdeath = false
+		else:
+			show()
 
 
 func _on_button_pressed():
+	open = false
 	Player.beanos = 0
 	player.respawn()
 	cam.rotation = Vector3.ZERO
