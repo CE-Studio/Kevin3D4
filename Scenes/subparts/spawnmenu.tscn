@@ -1,0 +1,54 @@
+[gd_scene load_steps=2 format=3 uid="uid://wupy01swke4p"]
+
+[ext_resource type="Script" path="res://Scenes/subparts/spawntree.gd" id="1_me8ft"]
+
+[node name="spawnmenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 50
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="HSplitContainer" type="HSplitContainer" parent="MarginContainer/PanelContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 2
+split_offset = 200
+
+[node name="Tree" type="Tree" parent="MarginContainer/PanelContainer/MarginContainer/HSplitContainer"]
+layout_mode = 2
+script = ExtResource("1_me8ft")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/PanelContainer/MarginContainer/HSplitContainer"]
+layout_mode = 2
+
+[node name="HFlowContainer" type="HFlowContainer" parent="MarginContainer/PanelContainer/MarginContainer/HSplitContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+alignment = 1
+last_wrap_alignment = 1
+
+[connection signal="item_selected" from="MarginContainer/PanelContainer/MarginContainer/HSplitContainer/Tree" to="MarginContainer/PanelContainer/MarginContainer/HSplitContainer/Tree" method="_on_item_selected"]

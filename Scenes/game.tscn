@@ -131,6 +131,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.4067, 0.5, -30.7356)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.09986, 0)
 monitorable = false
 script = ExtResource("15_3m4x1")
+oneshot = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="ZKSpawner"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.46027, 0, -6.03029)
