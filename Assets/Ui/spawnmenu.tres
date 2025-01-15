@@ -1,0 +1,53 @@
+[gd_resource type="Theme" load_steps=8 format=3 uid="uid://bvnoyoe88pos7"]
+
+[ext_resource type="FontFile" uid="uid://dshgc0m04hvik" path="res://Assets/Ui/Roboto-Regular.ttf" id="1_eosqu"]
+[ext_resource type="Texture2D" uid="uid://ced5pgi78wiwe" path="res://Assets/Ui/minus.png" id="2_7w6me"]
+[ext_resource type="Texture2D" uid="uid://rvbqjtetmkow" path="res://Assets/Ui/spawnback.png" id="2_fps8c"]
+[ext_resource type="Texture2D" uid="uid://bi66c7v6irwq" path="res://Assets/Ui/plus.png" id="3_16yjd"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dd572"]
+texture = ExtResource("2_fps8c")
+texture_margin_left = 4.0
+texture_margin_bottom = 4.0
+region_rect = Rect2(0, 4, 45, 288)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_uarxm"]
+texture = ExtResource("2_fps8c")
+texture_margin_left = 4.0
+texture_margin_bottom = 4.0
+region_rect = Rect2(0, 4, 45, 288)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5b0dm"]
+content_margin_left = 5.0
+content_margin_top = 5.0
+content_margin_right = 5.0
+content_margin_bottom = 5.0
+bg_color = Color(0.945098, 0.945098, 0.945098, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.737193, 0.737193, 0.737193, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[resource]
+Button/fonts/font = ExtResource("1_eosqu")
+Label/fonts/font = ExtResource("1_eosqu")
+Panel/styles/panel = SubResource("StyleBoxTexture_dd572")
+PanelContainer/styles/panel = SubResource("StyleBoxTexture_uarxm")
+Tree/colors/font_color = Color(0.226707, 0.226707, 0.226707, 1)
+Tree/colors/font_selected_color = Color(0.227451, 0.227451, 0.227451, 1)
+Tree/constants/draw_guides = 0
+Tree/constants/draw_relationship_lines = 1
+Tree/constants/inner_item_margin_left = 4
+Tree/constants/item_margin = 10
+Tree/constants/v_separation = -1
+Tree/font_sizes/font_size = 12
+Tree/fonts/font = ExtResource("1_eosqu")
+Tree/icons/arrow = ExtResource("2_7w6me")
+Tree/icons/arrow_collapsed = ExtResource("3_16yjd")
+Tree/icons/arrow_collapsed_mirrored = ExtResource("3_16yjd")
+Tree/styles/panel = SubResource("StyleBoxFlat_5b0dm")
