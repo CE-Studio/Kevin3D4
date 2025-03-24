@@ -1,6 +1,9 @@
 extends Tree
 
 
+const fico:Texture2D = preload("res://Assets/Ui/gmico_0646.png")
+
+
 var treeparts := {}
 
 
@@ -8,6 +11,7 @@ var treeparts := {}
 func _ready() -> void:
 	treeparts["res://"] = create_item()
 	treeparts["res://"].set_text(0, "res://")
+	treeparts["res://"].set_icon(0, fico)
 	recurFind("res://")
 
 
@@ -15,6 +19,7 @@ func recurFind(path:String) -> void:
 	for i in DirAccess.get_directories_at(path):
 		var t := create_item(treeparts[path])
 		t.set_text(0, i)
+		t.set_icon(0, fico)
 		treeparts[path + "/" + i] = t
 		t.set_collapsed_recursive(true)
 		recurFind(path + "/" + i)

@@ -5,7 +5,6 @@ extends PanelContainer
 var height:float = 0
 var targ:float = 0
 var fstoggle := false
-var gmod := false
 
 
 static var mouse_mode:Input.MouseMode:
@@ -95,4 +94,4 @@ func _on_mcompat_item_selected(index: int) -> void:
 
 
 func _on_gmod_toggled(toggled_on: bool) -> void:
-	gmod = toggled_on
+	DLC.gmod = toggled_on

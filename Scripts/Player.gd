@@ -19,6 +19,7 @@ enum anims {
 var animstate:anims = anims.IDLE
 
 
+var spawnmenu:Control
 var jumps:int = 0
 var dives:int = 0
 var direction2 := Vector3.ZERO
@@ -243,6 +244,15 @@ func _input(event):
 		
 	if event.is_action_released("Camera"):
 		$SpringArm3D/AnimationPlayer.play("ComeBack")
+		
+	if DLC.gmod:
+		if event.is_action_pressed("game_spawnmenu"):
+			if not is_instance_valid(spawnmenu):
+				spawnmenu = preload("res://Scenes/subparts/spawnmenu.tscn").instantiate()
+				get_parent().add_child(spawnmenu)
+		if event.is_action_released("game_spawnmenu"):
+			if is_instance_valid(spawnmenu):
+				spawnmenu.queue_free()
 
 
 func respawn():

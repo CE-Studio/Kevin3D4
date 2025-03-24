@@ -1,9 +1,33 @@
-[gd_resource type="Theme" load_steps=8 format=3 uid="uid://bvnoyoe88pos7"]
+[gd_resource type="Theme" load_steps=15 format=3 uid="uid://bvnoyoe88pos7"]
 
 [ext_resource type="FontFile" uid="uid://dshgc0m04hvik" path="res://Assets/Ui/Roboto-Regular.ttf" id="1_eosqu"]
 [ext_resource type="Texture2D" uid="uid://ced5pgi78wiwe" path="res://Assets/Ui/minus.png" id="2_7w6me"]
 [ext_resource type="Texture2D" uid="uid://rvbqjtetmkow" path="res://Assets/Ui/spawnback.png" id="2_fps8c"]
 [ext_resource type="Texture2D" uid="uid://bi66c7v6irwq" path="res://Assets/Ui/plus.png" id="3_16yjd"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8uked"]
+bg_color = Color(0.101961, 0.101961, 0.101961, 0.313726)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 0.760784)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ptkp3"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.8, 0.8, 0.8, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sjsen"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.8, 0.8, 0.8, 0)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dd572"]
 texture = ExtResource("2_fps8c")
@@ -16,6 +40,20 @@ texture = ExtResource("2_fps8c")
 texture_margin_left = 4.0
 texture_margin_bottom = 4.0
 region_rect = Rect2(0, 4, 45, 288)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_036tw"]
+content_margin_left = 3.0
+content_margin_top = 3.0
+content_margin_right = 3.0
+content_margin_bottom = 3.0
+bg_color = Color(0.996065, 0.953642, 0.852767, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.485703, 0.485704, 0.485703, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jftou"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5b0dm"]
 content_margin_left = 5.0
@@ -33,13 +71,53 @@ corner_radius_top_right = 2
 corner_radius_bottom_right = 2
 corner_radius_bottom_left = 2
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7lduf"]
+content_margin_left = 3.0
+content_margin_top = 3.0
+content_margin_right = 3.0
+content_margin_bottom = 3.0
+bg_color = Color(0.482353, 0.796078, 0.937255, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.254004, 0.624822, 0.777071, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ku16i"]
+content_margin_left = 3.0
+content_margin_top = 3.0
+content_margin_right = 3.0
+content_margin_bottom = 3.0
+bg_color = Color(0.482353, 0.796078, 0.937255, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.254004, 0.624822, 0.777071, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+
 [resource]
 Button/fonts/font = ExtResource("1_eosqu")
+Button/styles/hover = SubResource("StyleBoxFlat_8uked")
+Button/styles/normal = SubResource("StyleBoxFlat_ptkp3")
+Button/styles/pressed = SubResource("StyleBoxFlat_sjsen")
 Label/fonts/font = ExtResource("1_eosqu")
 Panel/styles/panel = SubResource("StyleBoxTexture_dd572")
 PanelContainer/styles/panel = SubResource("StyleBoxTexture_uarxm")
+TooltipLabel/colors/font_color = Color(0, 0, 0, 1)
+TooltipLabel/constants/outline_size = 0
+TooltipLabel/font_sizes/font_size = 12
+TooltipLabel/fonts/font = ExtResource("1_eosqu")
+TooltipPanel/styles/panel = SubResource("StyleBoxFlat_036tw")
 Tree/colors/font_color = Color(0.226707, 0.226707, 0.226707, 1)
-Tree/colors/font_selected_color = Color(0.227451, 0.227451, 0.227451, 1)
+Tree/colors/font_selected_color = Color(0.0994041, 0.319383, 0.407296, 1)
 Tree/constants/draw_guides = 0
 Tree/constants/draw_relationship_lines = 1
 Tree/constants/inner_item_margin_left = 4
@@ -50,4 +128,7 @@ Tree/fonts/font = ExtResource("1_eosqu")
 Tree/icons/arrow = ExtResource("2_7w6me")
 Tree/icons/arrow_collapsed = ExtResource("3_16yjd")
 Tree/icons/arrow_collapsed_mirrored = ExtResource("3_16yjd")
+Tree/styles/focus = SubResource("StyleBoxEmpty_jftou")
 Tree/styles/panel = SubResource("StyleBoxFlat_5b0dm")
+Tree/styles/selected = SubResource("StyleBoxFlat_7lduf")
+Tree/styles/selected_focus = SubResource("StyleBoxFlat_ku16i")

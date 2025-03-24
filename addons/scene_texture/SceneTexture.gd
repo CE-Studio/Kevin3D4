@@ -3,6 +3,9 @@ class_name SceneTexture extends Texture2D
 ## A texture that renders and bakes a view of a 3D [PackedScene]. It can be used to generate icons and
 ## thumbnails directly from a scene and use it anywhere that accepts a [Texture2D].
 
+# TODO: Use RenderingDevice.texture_get_data_async() to get the subviewport in 4.4
+# https://github.com/godotengine/godot/pull/100110
+
 ## Emitted when the texture's bake process finished.
 signal bake_finished
 
@@ -86,7 +89,7 @@ var light_rotation = Vector3(deg_to_rad(-60), deg_to_rad(60), 0):
 
 @export_group("Render", "render_")
 ## Define custom environment settings for the internal render. The render will use the [World3D] in
-## project setting [b]scene_texture/default_world_3d[/b] if this is not provided.
+## project setting [code]scene_texture/default_world_3d[/code] if this is not provided.
 ## [br][br]
 ## [b]Note:[/b] The bake doesn't automatically updates when properties of the [Environment] or [CameraAttributes] change.
 ## You have to call [method bake] or click in the texture preview in the inspector to update.
@@ -133,8 +136,9 @@ var light_rotation = Vector3(deg_to_rad(-60), deg_to_rad(60), 0):
 ## [b]Note:[/b] Changes to [Environment] and [CameraAttributes] can't be automatically catch so they require calling [method bake] manually.
 ## For the editor, you can click on the texture preview in the inspector to manually request a bake.
 ## [br][br]
-## [b]Note:[/b] See project setting [b]scene_texture/auto_bake_delay[/b] to configurate the bake timer.
+## [b]Note:[/b] See project setting [code]scene_texture/auto_bake_delay[/code] to configurate the bake timer.
 @export var render_auto_bake = true
+
 ## Stores the render in the resource file. The texture will use it instead of rendering at runtime when loaded.
 @export var render_store_bake = false:
 	set(value):
@@ -144,6 +148,17 @@ var light_rotation = Vector3(deg_to_rad(-60), deg_to_rad(60), 0):
 		else:
 			_data = null
 		notify_property_list_changed()
+
+## Sets the multisample anti-aliasing mode.
+@export_custom(PROPERTY_HINT_ENUM, "Disabled (Fastest),2× (Average),4× (Slow),8× (Slowest)") var render_msaa_3d = Viewport.MSAA_4X:
+	set(value):
+		render_msaa_3d = value
+		_queue_update()
+## Sets the screen-space antialiasing method.
+@export_custom(PROPERTY_HINT_ENUM, "Disabled (Fastest),FXAA (Fast)") var render_screen_space_aa = Viewport.SCREEN_SPACE_AA_FXAA:
+	set(value):
+		render_screen_space_aa = value
+		_queue_update()
 #endregion
 
 # Used to store image data when render_store_bake is true.
@@ -181,7 +196,7 @@ func _validate_property(property: Dictionary):
 	if property.name.begins_with("scene_") or property.name.begins_with("camera_") or property.name.begins_with("light_"):
 		if scene == null:
 			property.usage = PROPERTY_USAGE_NO_EDITOR
-	if property.name == "_data":
+	elif property.name == "_data":
 		if not render_store_bake:
 			property.usage = PROPERTY_USAGE_NONE
 #endregion
@@ -209,7 +224,7 @@ func bake():
 	_render.queue_free()
 
 
-## Returns [b]true[/b] if a bake is in progress.
+## Returns [code]true[/code] if a bake is in progress.
 func is_baking():
 	return _is_baking or _update_pending
 #endregion
@@ -269,6 +284,9 @@ func _queue_update():
 
 
 func _update_now():
+	if is_instance_valid(_timer):
+		_timer.queue_free()
+	
 	if _update_pending:
 		_update()
 
