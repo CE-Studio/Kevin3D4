@@ -1,6 +1,6 @@
 [gd_scene load_steps=32 format=3 uid="uid://dapjhqfssvf1m"]
 
-[ext_resource type="Script" path="res://Scenes/Characterz/zeepkiller.gd" id="1_du2xb"]
+[ext_resource type="Script" uid="uid://chuy0o0bf6171" path="res://Scenes/Characterz/zeepkiller.gd" id="1_du2xb"]
 [ext_resource type="PackedScene" uid="uid://bwfm0mqlilrui" path="res://Scenes/subparts/unwelcome.tscn" id="1_hhi53"]
 [ext_resource type="FontFile" uid="uid://bk0c3qu52m770" path="res://Assets/Ui/ComicHelvetic_Heavy.otf" id="2_xefry"]
 [ext_resource type="FontFile" uid="uid://ditjs075hj10r" path="res://Assets/Ui/Code New Roman b.otf" id="3_5vfuc"]
@@ -151,8 +151,8 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_xyi4d"]
 _data = {
-"RESET": SubResource("Animation_mqigu"),
-"new_animation": SubResource("Animation_mmd44")
+&"RESET": SubResource("Animation_mqigu"),
+&"new_animation": SubResource("Animation_mmd44")
 }
 
 [node name="zeepkiller" type="Node3D"]

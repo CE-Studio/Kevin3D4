@@ -2,7 +2,7 @@
 
 [ext_resource type="MeshLibrary" uid="uid://i125w3qc6j8c" path="res://Scenes/3DTilemaps/RealL1MeshLib.tres" id="1_1uqkr"]
 [ext_resource type="AudioStream" uid="uid://cyqsh15taqpaf" path="res://Assets/Music/mothership.wav" id="1_4r2kt"]
-[ext_resource type="Script" path="res://Scripts/finalCutscenes.gd" id="1_nwc4x"]
+[ext_resource type="Script" uid="uid://f5gu3242n2q" path="res://Scripts/finalCutscenes.gd" id="1_nwc4x"]
 [ext_resource type="PackedScene" uid="uid://dd2sj3qyx7rs7" path="res://Assets/Models/enemy.glb" id="1_qjf2c"]
 [ext_resource type="AudioStream" uid="uid://ch5nwp4alhjkn" path="res://Assets/Sound Effects/Voice Lines/finalboss/the illusion.wav" id="2_247jr"]
 [ext_resource type="Texture2D" uid="uid://c2u3ocfcpme4b" path="res://Assets/Textures/enem3.png" id="2_pp76s"]
@@ -1761,11 +1761,11 @@ tracks/3/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_upe5a"]
 _data = {
-"RESET": SubResource("Animation_q6c4q"),
-"normal": SubResource("Animation_utboa"),
-"rizz": SubResource("Animation_svlmh"),
-"speedrun": SubResource("Animation_uko26"),
-"speedsetup": SubResource("Animation_iwj5h")
+&"RESET": SubResource("Animation_q6c4q"),
+&"normal": SubResource("Animation_utboa"),
+&"rizz": SubResource("Animation_svlmh"),
+&"speedrun": SubResource("Animation_uko26"),
+&"speedsetup": SubResource("Animation_iwj5h")
 }
 
 [sub_resource type="SphereMesh" id="SphereMesh_1jejm"]
@@ -1975,8 +1975,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_yntx2"]
 _data = {
-"RESET": SubResource("Animation_veaep"),
-"new_animation": SubResource("Animation_o7ag6")
+&"RESET": SubResource("Animation_veaep"),
+&"new_animation": SubResource("Animation_o7ag6")
 }
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4qcyj"]
@@ -1985,7 +1985,7 @@ bg_color = Color(0, 0, 0, 1)
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_lnutk"]
 render_priority = 0
 shader = ExtResource("9_2v17q")
-shader_parameter/transparency = null
+shader_parameter/transparency = 0.0
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_cbqrc"]
 viewport_path = NodePath("finalCutscenes/Player2/SubViewport")

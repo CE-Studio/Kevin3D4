@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://be74smfh0hkry"]
 
-[ext_resource type="Script" path="res://Scripts/crumbling_platform.gd" id="1_b6mdo"]
+[ext_resource type="Script" uid="uid://1rtkn3voan42" path="res://Scripts/crumbling_platform.gd" id="1_b6mdo"]
 [ext_resource type="Shader" uid="uid://dqcbpkck1cny8" path="res://Assets/Shaders/crumbling_platform.tres" id="2_cgxvl"]
 [ext_resource type="AudioStream" uid="uid://w3gug2qt1uo1" path="res://Assets/Sound Effects/Garry's Mod Ragdoll Sound.mp3" id="3_1siob"]
 [ext_resource type="Texture2D" uid="uid://durc3utviccja" path="res://Assets/Textures/platform.png" id="3_r6p77"]

@@ -3,7 +3,7 @@
 [ext_resource type="MeshLibrary" uid="uid://cknd8psi154ho" path="res://Scenes/3DTilemaps/FactoryMeshLib.tres" id="1_4y3v1"]
 [ext_resource type="PackedScene" uid="uid://8iobt4o8k61u" path="res://Scenes/Player.tscn" id="2_6pvt8"]
 [ext_resource type="AudioStream" uid="uid://l2i4ts6kid44" path="res://Assets/Music/Factory.wav" id="3_aoesn"]
-[ext_resource type="Script" path="res://Scripts/AudioStreamPlayerSyncFix.gd" id="3_ddjtl"]
+[ext_resource type="Script" uid="uid://bg62a3po06663" path="res://Scripts/AudioStreamPlayerSyncFix.gd" id="3_ddjtl"]
 [ext_resource type="PackedScene" uid="uid://byx5litoy380f" path="res://Scenes/enviro.tscn" id="4_fvhdq"]
 [ext_resource type="PackedScene" uid="uid://334cmavflup3" path="res://Scenes/switch.tscn" id="5_88wly"]
 [ext_resource type="Texture2D" uid="uid://dnjj0sh3xilgo" path="res://Assets/Textures/Skybox.png" id="5_ihsil"]
@@ -12,7 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://hqroyuuds4po" path="res://Scenes/enemy.tscn" id="7_1aqvv"]
 [ext_resource type="PackedScene" uid="uid://c5svu1bl8bnmm" path="res://Scenes/laser.tscn" id="7_ypb11"]
 [ext_resource type="PackedScene" uid="uid://cev248w6qbej8" path="res://Scenes/moving_platform.tscn" id="9_5mcux"]
-[ext_resource type="PackedScene" path="res://Scenes/voice_trigger.tscn" id="9_wnsao"]
+[ext_resource type="PackedScene" uid="uid://d205nxa0ov4ny" path="res://Scenes/voice_trigger.tscn" id="9_wnsao"]
 [ext_resource type="PackedScene" uid="uid://diybr73ukni78" path="res://Scenes/checkpoint.tscn" id="11_u5rws"]
 [ext_resource type="PackedScene" uid="uid://be74smfh0hkry" path="res://Scenes/crumbling_platform.tscn" id="12_obcpi"]
 [ext_resource type="Texture2D" uid="uid://dmgcmwhqxhnno" path="res://Assets/Textures/LevelTextures/facbrickwall.png" id="13_82i2e"]
@@ -20,9 +20,9 @@
 [ext_resource type="AudioStream" uid="uid://dinc50c470qh6" path="res://Assets/Music/chant-49054.mp3" id="15_i4jbx"]
 [ext_resource type="AudioStream" uid="uid://dbglweamns23p" path="res://Assets/Sound Effects/sounds.mp3" id="15_t3i0q"]
 [ext_resource type="PackedScene" uid="uid://dbiu7q3trywau" path="res://Scenes/minecart.tscn" id="16_2imoj"]
-[ext_resource type="Script" path="res://Scripts/rizzroom.gd" id="16_u3a3d"]
+[ext_resource type="Script" uid="uid://vgdbxmuyst4o" path="res://Scripts/rizzroom.gd" id="16_u3a3d"]
 [ext_resource type="Shader" uid="uid://dqcbpkck1cny8" path="res://Assets/Shaders/crumbling_platform.tres" id="17_6daki"]
-[ext_resource type="Script" path="res://Scripts/collectRizz.gd" id="17_lulna"]
+[ext_resource type="Script" uid="uid://wtn1a2x506na" path="res://Scripts/collectRizz.gd" id="17_lulna"]
 [ext_resource type="Texture2D" uid="uid://dco68dhfrhx13" path="res://Assets/Textures/a67.png" id="17_uma0x"]
 [ext_resource type="Texture2D" uid="uid://durc3utviccja" path="res://Assets/Textures/platform.png" id="18_3uyvc"]
 [ext_resource type="Texture2D" uid="uid://bx5cxdn24vrr4" path="res://Assets/Textures/LevelTextures/factoryTile4.png" id="21_aytdp"]
@@ -77,8 +77,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_f5jwf"]
 _data = {
-"RESET": SubResource("Animation_ognkk"),
-"new_animation": SubResource("Animation_aghem")
+&"RESET": SubResource("Animation_ognkk"),
+&"new_animation": SubResource("Animation_aghem")
 }
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_aak7n"]
@@ -118,8 +118,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_75jrg"]
 _data = {
-"RESET": SubResource("Animation_cwgnw"),
-"mov": SubResource("Animation_b4dcl")
+&"RESET": SubResource("Animation_cwgnw"),
+&"mov": SubResource("Animation_b4dcl")
 }
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_wc567"]
@@ -167,8 +167,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_c6tau"]
 _data = {
-"RESET": SubResource("Animation_n2123"),
-"new_animation": SubResource("Animation_0j2yp")
+&"RESET": SubResource("Animation_n2123"),
+&"new_animation": SubResource("Animation_0j2yp")
 }
 
 [sub_resource type="Animation" id="Animation_0dw6e"]
@@ -348,8 +348,8 @@ tracks/6/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_nbkbq"]
 _data = {
-"RESET": SubResource("Animation_0dw6e"),
-"fade": SubResource("Animation_0ahsd")
+&"RESET": SubResource("Animation_0dw6e"),
+&"fade": SubResource("Animation_0ahsd")
 }
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_uwqyr"]
@@ -416,8 +416,8 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_4va2t"]
 _data = {
-"RESET": SubResource("Animation_oxign"),
-"new_animation": SubResource("Animation_a0f77")
+&"RESET": SubResource("Animation_oxign"),
+&"new_animation": SubResource("Animation_a0f77")
 }
 
 [sub_resource type="Animation" id="Animation_k2k3b"]
@@ -477,8 +477,8 @@ tracks/2/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ia2vy"]
 _data = {
-"RESET": SubResource("Animation_k2k3b"),
-"collect": SubResource("Animation_ax6ji")
+&"RESET": SubResource("Animation_k2k3b"),
+&"collect": SubResource("Animation_ax6ji")
 }
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wxvcq"]
@@ -581,8 +581,8 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_2fqlw"]
 _data = {
-"RESET": SubResource("Animation_sel0g"),
-"new_animation": SubResource("Animation_qri3j")
+&"RESET": SubResource("Animation_sel0g"),
+&"new_animation": SubResource("Animation_qri3j")
 }
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_cgimn"]

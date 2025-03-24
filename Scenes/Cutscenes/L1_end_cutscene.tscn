@@ -61,7 +61,7 @@ bg_color = Color(0, 0, 0, 1)
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_lnutk"]
 render_priority = 0
 shader = ExtResource("9_3pvjr")
-shader_parameter/transparency = null
+shader_parameter/transparency = 0.0
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_a4tq4"]
 viewport_path = NodePath("ActorParent/Player/SubViewport")
@@ -719,8 +719,8 @@ tracks/29/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_d1clt"]
 _data = {
-"Cutscene": SubResource("Animation_mk5ot"),
-"RESET": SubResource("Animation_a7oht")
+&"Cutscene": SubResource("Animation_mk5ot"),
+&"RESET": SubResource("Animation_a7oht")
 }
 
 [sub_resource type="GDScript" id="GDScript_r06wp"]

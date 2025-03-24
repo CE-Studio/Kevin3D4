@@ -24,7 +24,7 @@ bg_color = Color(0, 0, 0, 1)
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_lnutk"]
 render_priority = 0
 shader = ExtResource("4_nn6nk")
-shader_parameter/transparency = null
+shader_parameter/transparency = 0.0
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_r25hl"]
 viewport_path = NodePath("Player/SubViewport")
@@ -33,6 +33,37 @@ viewport_path = NodePath("Player/SubViewport")
 resource_local_to_scene = true
 shading_mode = 0
 albedo_texture = SubResource("ViewportTexture_r25hl")
+
+[sub_resource type="Animation" id="Animation_gn7if"]
+length = 0.001
+tracks/0/type = "rotation_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("player/Armature/Skeleton3D:Tail0")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat64Array(0, 1, 0.974404, -0.102844, -0.0279605, 0.197936)
+tracks/1/type = "rotation_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("player/Armature/Skeleton3D:Tail1")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat64Array(0, 1, -0.134051, 0.0259935, 0.185661, 0.97308)
+tracks/2/type = "rotation_3d"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("player/Armature/Skeleton3D:Tail2")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = PackedFloat64Array(0, 1, -0.126573, 0.0423455, 0.311535, 0.940814)
+tracks/3/type = "rotation_3d"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("player/Armature/Skeleton3D:Tail3")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = PackedFloat64Array(0, 1, -0.159457, 0.0442437, 0.261407, 0.950938)
 
 [sub_resource type="Animation" id="Animation_k0ebb"]
 resource_name = "idle"
@@ -67,41 +98,25 @@ tracks/3/interp = 0
 tracks/3/loop_wrap = true
 tracks/3/keys = PackedFloat64Array(0, 1, -0.159457, 0.0442437, 0.261407, 0.950938, 0.999, 1, -0.0483194, 0.0742029, 0.254529, 0.963003)
 
-[sub_resource type="Animation" id="Animation_gn7if"]
-length = 0.001
-tracks/0/type = "rotation_3d"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("player/Armature/Skeleton3D:Tail0")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = PackedFloat64Array(0, 1, 0.974404, -0.102844, -0.0279605, 0.197936)
-tracks/1/type = "rotation_3d"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("player/Armature/Skeleton3D:Tail1")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = PackedFloat64Array(0, 1, -0.134051, 0.0259935, 0.185661, 0.97308)
-tracks/2/type = "rotation_3d"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("player/Armature/Skeleton3D:Tail2")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = PackedFloat64Array(0, 1, -0.126573, 0.0423455, 0.311535, 0.940814)
-tracks/3/type = "rotation_3d"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("player/Armature/Skeleton3D:Tail3")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = PackedFloat64Array(0, 1, -0.159457, 0.0442437, 0.261407, 0.950938)
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_vqyr8"]
 _data = {
-"RESET": SubResource("Animation_gn7if"),
-"idle": SubResource("Animation_k0ebb")
+&"RESET": SubResource("Animation_gn7if"),
+&"idle": SubResource("Animation_k0ebb")
+}
+
+[sub_resource type="Animation" id="Animation_4kync"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SubViewport/Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat64Array(0),
+"transitions": PackedFloat64Array(1),
+"update": 1,
+"values": [ExtResource("2_ltuod")]
 }
 
 [sub_resource type="Animation" id="Animation_klj1c"]
@@ -121,25 +136,10 @@ tracks/0/keys = {
 "values": [ExtResource("6_af5xx"), ExtResource("2_ltuod")]
 }
 
-[sub_resource type="Animation" id="Animation_4kync"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("SubViewport/Sprite2D:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat64Array(0),
-"transitions": PackedFloat64Array(1),
-"update": 1,
-"values": [ExtResource("2_ltuod")]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ghjug"]
 _data = {
-"RESET": SubResource("Animation_4kync"),
-"new_animation": SubResource("Animation_klj1c")
+&"RESET": SubResource("Animation_4kync"),
+&"new_animation": SubResource("Animation_klj1c")
 }
 
 [node name="Node3D" type="Node3D"]

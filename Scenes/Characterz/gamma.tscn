@@ -1,7 +1,7 @@
 [gd_scene load_steps=25 format=3 uid="uid://bdef1g51whbvt"]
 
 [ext_resource type="Texture2D" uid="uid://cmpwbyjkqgjww" path="res://Assets/Textures/Gamma.png" id="1_ysuj7"]
-[ext_resource type="Script" path="res://Scenes/Characterz/gamma.gd" id="2_bxqn2"]
+[ext_resource type="Script" uid="uid://cg4scefnlf4nn" path="res://Scenes/Characterz/gamma.gd" id="2_bxqn2"]
 [ext_resource type="FontFile" uid="uid://tbj4ssgaitfp" path="res://Assets/Ui/NotoSans-VariableFont_wdth,wght.ttf" id="3_htgv7"]
 [ext_resource type="AudioStream" uid="uid://b143bk4mrxp44" path="res://Assets/Sound Effects/speakGamma.wav" id="3_lra0o"]
 [ext_resource type="ArrayMesh" uid="uid://dkwgxqmwixtwf" path="res://Assets/Models/basket.obj" id="5_nkn57"]
@@ -60,9 +60,9 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_n7xhq"]
 _data = {
-"RESET": SubResource("Animation_gu8h1"),
-"idle": SubResource("Animation_h4jy1"),
-"talk": SubResource("Animation_4bqgx")
+&"RESET": SubResource("Animation_gu8h1"),
+&"idle": SubResource("Animation_h4jy1"),
+&"talk": SubResource("Animation_4bqgx")
 }
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_kidhe"]

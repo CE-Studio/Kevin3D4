@@ -1,6 +1,6 @@
 [gd_scene load_steps=20 format=3 uid="uid://pjffsrv6dn0g"]
 
-[ext_resource type="Script" path="res://Scripts/slidedoor.gd" id="1_ojv0p"]
+[ext_resource type="Script" uid="uid://glgbomlb4q33" path="res://Scripts/slidedoor.gd" id="1_ojv0p"]
 [ext_resource type="PackedScene" uid="uid://b8wxocqg6gs3i" path="res://Assets/Models/slidedoor.glb" id="2_ifwfd"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_safkm"]
@@ -85,8 +85,8 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_k0nae"]
 _data = {
-"RESET": SubResource("Animation_d4cgs"),
-"open": SubResource("Animation_4hu8x")
+&"RESET": SubResource("Animation_d4cgs"),
+&"open": SubResource("Animation_4hu8x")
 }
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ml8ia"]

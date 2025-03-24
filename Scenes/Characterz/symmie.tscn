@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://brdp2mfvfn31e" path="res://Assets/Textures/symmie.png" id="1_smmfn"]
 [ext_resource type="Texture2D" uid="uid://c77sxf41b6whs" path="res://Assets/Textures/idiotsynth.png" id="2_7ypsn"]
-[ext_resource type="Script" path="res://Scenes/Characterz/symmie.gd" id="2_f1lli"]
+[ext_resource type="Script" uid="uid://bcqxfkcv8pdc5" path="res://Scenes/Characterz/symmie.gd" id="2_f1lli"]
 [ext_resource type="FontFile" uid="uid://dbiots3wd0sos" path="res://Assets/Ui/OpenSans-ExtraBold.ttf" id="3_pobyt"]
 [ext_resource type="Texture2D" uid="uid://dcqxjbrfsqt7u" path="res://Assets/Textures/symmiehoof.png" id="3_xeahp"]
 [ext_resource type="AudioStream" uid="uid://c1rle2oewlxyo" path="res://Assets/Sound Effects/speakSymmie.wav" id="6_3a5ie"]

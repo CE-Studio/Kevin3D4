@@ -398,8 +398,8 @@ tracks/12/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_46oao"]
 _data = {
-"RESET": SubResource("Animation_raqho"),
-"new_animation": SubResource("Animation_1ae32")
+&"RESET": SubResource("Animation_raqho"),
+&"new_animation": SubResource("Animation_1ae32")
 }
 
 [node name="Node3D" type="Node3D"]

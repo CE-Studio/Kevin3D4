@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://jbyp70qr73ye" path="res://Assets/Textures/dlc.png" id="1_1xhlx"]
 [ext_resource type="PackedScene" uid="uid://bknyx5pikwvki" path="res://Assets/Ui/layingKevin.tscn" id="1_jltbh"]
-[ext_resource type="Script" path="res://Scripts/DLC.gd" id="1_o6cqb"]
+[ext_resource type="Script" uid="uid://dr6io6qfj1ne3" path="res://Scripts/DLC.gd" id="1_o6cqb"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_o0kyt"]
 

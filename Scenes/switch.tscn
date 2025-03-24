@@ -1,6 +1,6 @@
 [gd_scene load_steps=14 format=3 uid="uid://334cmavflup3"]
 
-[ext_resource type="Script" path="res://Scripts/switch.gd" id="1_ocu6x"]
+[ext_resource type="Script" uid="uid://c2kgylah2kypw" path="res://Scripts/switch.gd" id="1_ocu6x"]
 [ext_resource type="AudioStream" uid="uid://cvl6qgekxmbvo" path="res://Assets/Sound Effects/switch-turn-on.wav" id="2_ddhmh"]
 [ext_resource type="PackedScene" uid="uid://k2kcoj358blr" path="res://Assets/Models/switch.glb" id="3_qxgg0"]
 [ext_resource type="Texture2D" uid="uid://d1d284bymb76d" path="res://Assets/Textures/SwitchTexture.png" id="4_ekape"]
@@ -371,9 +371,9 @@ tracks/9/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_80pmj"]
 _data = {
-"Activated": SubResource("Animation_t5ch3"),
-"Idle": SubResource("Animation_pbnbd"),
-"RESET": SubResource("Animation_8lo3y")
+&"Activated": SubResource("Animation_t5ch3"),
+&"Idle": SubResource("Animation_pbnbd"),
+&"RESET": SubResource("Animation_8lo3y")
 }
 
 [node name="Switch" type="StaticBody3D"]

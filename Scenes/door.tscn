@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://cb28v0ej87u3n"]
 
-[ext_resource type="Script" path="res://Scripts/door.gd" id="1_byn2v"]
+[ext_resource type="Script" uid="uid://cqmbjd5bnq7tq" path="res://Scripts/door.gd" id="1_byn2v"]
 [ext_resource type="AudioStream" uid="uid://bn6aqh767lraf" path="res://Assets/Sound Effects/door.wav" id="1_xpmky"]
 [ext_resource type="Texture2D" uid="uid://dstsecqc52qwf" path="res://Assets/Textures/LevelTextures/door.png" id="2_dy5nw"]
 
@@ -61,8 +61,8 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_48d57"]
 _data = {
-"RESET": SubResource("Animation_5asdx"),
-"open": SubResource("Animation_jdp77")
+&"RESET": SubResource("Animation_5asdx"),
+&"open": SubResource("Animation_jdp77")
 }
 
 [node name="door" type="Node3D"]

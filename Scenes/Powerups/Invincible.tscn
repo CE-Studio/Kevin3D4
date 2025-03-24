@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://da0vvvc0d2q01"]
 
-[ext_resource type="Script" path="res://Scripts/Invinvible.gd" id="1_qx6th"]
+[ext_resource type="Script" uid="uid://djnjhieoqag8l" path="res://Scripts/Invinvible.gd" id="1_qx6th"]
 [ext_resource type="Texture2D" uid="uid://cj4e7vkke5c10" path="res://icon.svg" id="2_os518"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_0odsm"]

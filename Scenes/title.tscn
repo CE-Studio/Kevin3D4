@@ -1,6 +1,6 @@
 [gd_scene load_steps=33 format=3 uid="uid://cpbkautswkyce"]
 
-[ext_resource type="Script" path="res://Scripts/title.gd" id="1_2usba"]
+[ext_resource type="Script" uid="uid://bo72vdy46nc7x" path="res://Scripts/title.gd" id="1_2usba"]
 [ext_resource type="FontFile" uid="uid://buus7j6gvfqr3" path="res://Assets/Ui/another.regular.ttf" id="2_7wu7s"]
 [ext_resource type="Texture2D" uid="uid://c4h5sp7v5b4r4" path="res://Assets/Textures/visoruv.png" id="2_dm250"]
 [ext_resource type="Texture2D" uid="uid://c2cb10jgf2e8q" path="res://Assets/Textures/kevin34eyes.png" id="3_63tt2"]
@@ -39,7 +39,7 @@ bg_color = Color(0, 0, 0, 1)
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_lnutk"]
 render_priority = 0
 shader = ExtResource("5_ifjjk")
-shader_parameter/transparency = null
+shader_parameter/transparency = 0.0
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_ispmg"]
 viewport_path = NodePath("Node3D/Player/SubViewport")
@@ -129,8 +129,8 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_erhkv"]
 _data = {
-"RESET": SubResource("Animation_ksemh"),
-"new_animation": SubResource("Animation_vu3t6")
+&"RESET": SubResource("Animation_ksemh"),
+&"new_animation": SubResource("Animation_vu3t6")
 }
 
 [sub_resource type="Animation" id="Animation_xnd6l"]
@@ -323,8 +323,8 @@ tracks/9/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_j1ho5"]
 _data = {
-"RESET": SubResource("Animation_xnd6l"),
-"new_animation": SubResource("Animation_wfkqt")
+&"RESET": SubResource("Animation_xnd6l"),
+&"new_animation": SubResource("Animation_wfkqt")
 }
 
 [node name="title" type="Control"]

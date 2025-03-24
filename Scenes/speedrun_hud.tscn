@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://bv3l2kes42xfa"]
 
-[ext_resource type="Script" path="res://Scripts/speedrun_hud.gd" id="1_8tw3r"]
+[ext_resource type="Script" uid="uid://drc8o8c58o6f0" path="res://Scripts/speedrun_hud.gd" id="1_8tw3r"]
 [ext_resource type="AudioStream" uid="uid://bsddfexjp6jtg" path="res://Assets/Music/Jeff Thomas - Gods Pirates.mp3" id="1_tcj0g"]
 [ext_resource type="FontFile" uid="uid://dbiots3wd0sos" path="res://Assets/Ui/OpenSans-ExtraBold.ttf" id="3_eishi"]
 [ext_resource type="Theme" uid="uid://dukh38yje0td3" path="res://Assets/Ui/speedrun_hud.tres" id="4_wh5t7"]
@@ -62,8 +62,8 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_8dojc"]
 _data = {
-"RESET": SubResource("Animation_4si3p"),
-"new_animation": SubResource("Animation_g06va")
+&"RESET": SubResource("Animation_4si3p"),
+&"new_animation": SubResource("Animation_g06va")
 }
 
 [node name="speedrun hud" type="Control"]

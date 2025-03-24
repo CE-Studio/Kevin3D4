@@ -45,7 +45,7 @@ code = "shader_type canvas_item;
 render_mode blend_mix;
 
 uniform vec2 screensize;
-uniform float size : hint_range(0, 1);
+uniform float size : hint_range(0.0, 1.0);
 
 
 

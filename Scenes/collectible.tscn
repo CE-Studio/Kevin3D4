@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://bqlwlkimr6gje"]
 
-[ext_resource type="Script" path="res://Scripts/collectible.gd" id="1_435f5"]
+[ext_resource type="Script" uid="uid://ddkl3kgms88ma" path="res://Scripts/collectible.gd" id="1_435f5"]
 [ext_resource type="Texture2D" uid="uid://ckwu4s2rt1fhb" path="res://Assets/Textures/bean.png" id="1_uq0bh"]
 [ext_resource type="AudioStream" uid="uid://djmebh7hyrp2o" path="res://Assets/Sound Effects/Splat.wav" id="3_qu2ld"]
 
@@ -45,8 +45,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_xj5eq"]
 _data = {
-"BeanSpin": SubResource("Animation_jgdct"),
-"RESET": SubResource("Animation_ql8ti")
+&"BeanSpin": SubResource("Animation_jgdct"),
+&"RESET": SubResource("Animation_ql8ti")
 }
 
 [node name="Collectible" type="Area3D"]

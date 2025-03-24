@@ -1,6 +1,6 @@
 [gd_scene load_steps=142 format=3 uid="uid://8iobt4o8k61u"]
 
-[ext_resource type="Script" path="res://Scripts/Player.gd" id="1_rk3cd"]
+[ext_resource type="Script" uid="uid://cak8tvf23c33f" path="res://Scripts/Player.gd" id="1_rk3cd"]
 [ext_resource type="AudioStream" uid="uid://bqva2yr82ot7d" path="res://Assets/Sound Effects/IN.wav" id="2_gmnt1"]
 [ext_resource type="AudioStream" uid="uid://dxym3wc87lujh" path="res://Assets/Sound Effects/Out.wav" id="2_kgmtd"]
 [ext_resource type="Texture2D" uid="uid://cdch1vlk7mbnf" path="res://Assets/Textures/dust.png" id="2_r3j7g"]
@@ -18,10 +18,10 @@
 [ext_resource type="Texture2D" uid="uid://c8pfku2ngxid8" path="res://Assets/Textures/reticle.png" id="12_q2uw1"]
 [ext_resource type="AudioStream" uid="uid://cn6p72um42uon" path="res://Assets/Sound Effects/running-14658.mp3" id="14_y5des"]
 [ext_resource type="Texture2D" uid="uid://ckwu4s2rt1fhb" path="res://Assets/Textures/bean.png" id="16_rqxdb"]
-[ext_resource type="Script" path="res://Scripts/Pause.gd" id="17_t16mw"]
-[ext_resource type="Script" path="res://Scripts/Death Screen.gd" id="18_lqant"]
+[ext_resource type="Script" uid="uid://dsfjmp4qnhjg7" path="res://Scripts/Pause.gd" id="17_t16mw"]
+[ext_resource type="Script" uid="uid://lwe0iqc41nqo" path="res://Scripts/Death Screen.gd" id="18_lqant"]
 [ext_resource type="AudioStream" uid="uid://ccd0jhjo55f51" path="res://Assets/Music/Invinvible.wav" id="20_2n6en"]
-[ext_resource type="Shader" path="res://Scenes/Player.gdshader" id="22_qc8u2"]
+[ext_resource type="Shader" uid="uid://chmmyxd3e8q42" path="res://Scenes/Player.gdshader" id="22_qc8u2"]
 [ext_resource type="FontFile" uid="uid://bmewjb70ttfix" path="res://Assets/Ui/stanley.otf" id="23_jwwsw"]
 [ext_resource type="Texture2D" uid="uid://c8mb841xb5o6n" path="res://Assets/Textures/Screenshot from 2022-08-12 01-59-32.png" id="24_djy54"]
 [ext_resource type="Texture2D" uid="uid://do6ijlkcdftrt" path="res://Assets/Textures/the_button_is_now_sylized.png" id="24_i63k6"]
@@ -180,9 +180,9 @@ tracks/2/use_blend = true
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_aakw0"]
 _data = {
-"ComeBack": SubResource("Animation_hpta4"),
-"RESET": SubResource("Animation_ib2nq"),
-"Shoot": SubResource("Animation_eicyb")
+&"ComeBack": SubResource("Animation_hpta4"),
+&"RESET": SubResource("Animation_ib2nq"),
+&"Shoot": SubResource("Animation_eicyb")
 }
 
 [sub_resource type="Curve" id="Curve_lhy33"]
@@ -232,7 +232,7 @@ bg_color = Color(0, 0, 0, 1)
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_lnutk"]
 render_priority = 0
 shader = ExtResource("8_g2vvp")
-shader_parameter/transparency = null
+shader_parameter/transparency = 0.0
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_hinrm"]
 viewport_path = NodePath("SubViewport")
@@ -1024,15 +1024,15 @@ tracks/11/use_blend = true
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_pl0xx"]
 _data = {
-"Death": SubResource("Animation_wsop6"),
-"JUMP": SubResource("Animation_ejc4o"),
-"RESET": SubResource("Animation_mlyph"),
-"Shootin": SubResource("Animation_q0fne"),
-"dive": SubResource("Animation_cdqk1"),
-"doublejump": SubResource("Animation_7uxve"),
-"idle": SubResource("Animation_cs60m"),
-"run": SubResource("Animation_lx1po"),
-"walk": SubResource("Animation_qgcht")
+&"Death": SubResource("Animation_wsop6"),
+&"JUMP": SubResource("Animation_ejc4o"),
+&"RESET": SubResource("Animation_mlyph"),
+&"Shootin": SubResource("Animation_q0fne"),
+&"dive": SubResource("Animation_cdqk1"),
+&"doublejump": SubResource("Animation_7uxve"),
+&"idle": SubResource("Animation_cs60m"),
+&"run": SubResource("Animation_lx1po"),
+&"walk": SubResource("Animation_qgcht")
 }
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_2cx44"]
@@ -1193,8 +1193,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_86rtg"]
 _data = {
-"RESET": SubResource("Animation_snirj"),
-"UIBeanSpin": SubResource("Animation_bll68")
+&"RESET": SubResource("Animation_snirj"),
+&"UIBeanSpin": SubResource("Animation_bll68")
 }
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nkv7c"]

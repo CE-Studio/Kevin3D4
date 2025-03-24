@@ -1,6 +1,6 @@
 [gd_scene load_steps=18 format=3 uid="uid://dbiu7q3trywau"]
 
-[ext_resource type="Script" path="res://Scripts/minecart.gd" id="1_sxwj7"]
+[ext_resource type="Script" uid="uid://kh5ypghhh7bo" path="res://Scripts/minecart.gd" id="1_sxwj7"]
 [ext_resource type="PackedScene" uid="uid://dgknntmd5h60" path="res://Scenes/general_killzone.tscn" id="1_x3tau"]
 [ext_resource type="PackedScene" uid="uid://ddiy3jtxy0kv1" path="res://Assets/Models/faccart.glb" id="2_c8dsn"]
 [ext_resource type="Texture2D" uid="uid://djkpyognsci67" path="res://Assets/Textures/LevelTextures/faclava.png" id="3_b1vvp"]
@@ -113,10 +113,10 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_thgt8"]
 _data = {
-"0": SubResource("Animation_vl83m"),
-"1": SubResource("Animation_xswqp"),
-"2": SubResource("Animation_q5k16"),
-"3": SubResource("Animation_b3ymu")
+&"0": SubResource("Animation_vl83m"),
+&"1": SubResource("Animation_xswqp"),
+&"2": SubResource("Animation_q5k16"),
+&"3": SubResource("Animation_b3ymu")
 }
 
 [node name="minecart" type="Node3D"]

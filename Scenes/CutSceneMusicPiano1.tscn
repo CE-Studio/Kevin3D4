@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://c4h5sp7v5b4r4" path="res://Assets/Textures/visoruv.png" id="4_6djtj"]
 [ext_resource type="Texture2D" uid="uid://c2cb10jgf2e8q" path="res://Assets/Textures/kevin34eyes.png" id="5_73xh4"]
 [ext_resource type="PackedScene" uid="uid://wokfsulvuihe" path="res://Assets/Models/low_poly_concert_grand_piano.glb" id="6_lj0ox"]
-[ext_resource type="PackedScene" path="res://Scenes/ship.tscn" id="10_5wtbq"]
+[ext_resource type="PackedScene" uid="uid://cyg5y6go0cvbo" path="res://Scenes/ship.tscn" id="10_5wtbq"]
 [ext_resource type="Texture2D" uid="uid://dpvag7ol6wehj" path="res://Assets/Textures/furrency.png" id="10_m6uup"]
 [ext_resource type="FontFile" uid="uid://dbiots3wd0sos" path="res://Assets/Ui/OpenSans-ExtraBold.ttf" id="11_muc4d"]
 [ext_resource type="PackedScene" uid="uid://cb8l8tl7gja63" path="res://Scenes/stand.tscn" id="11_nmxgr"]
@@ -773,9 +773,9 @@ resource_name = "new_animation"
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_jogaj"]
 _data = {
-"Piano Cutscene": SubResource("Animation_na4mo"),
-"RESET": SubResource("Animation_8tcwm"),
-"new_animation": SubResource("Animation_mtfg8")
+&"Piano Cutscene": SubResource("Animation_na4mo"),
+&"RESET": SubResource("Animation_8tcwm"),
+&"new_animation": SubResource("Animation_mtfg8")
 }
 
 [sub_resource type="GDScript" id="GDScript_5720t"]

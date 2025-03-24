@@ -1,6 +1,6 @@
 [gd_scene load_steps=33 format=3 uid="uid://dfghjqbgpviwj"]
 
-[ext_resource type="Script" path="res://Scripts/two_doors.gd" id="1_37lhr"]
+[ext_resource type="Script" uid="uid://d20sk7xp21mea" path="res://Scripts/two_doors.gd" id="1_37lhr"]
 [ext_resource type="PackedScene" uid="uid://dsl8tcpogcfkc" path="res://Assets/Models/twodoors.glb" id="1_xi5if"]
 [ext_resource type="Texture2D" uid="uid://boynuuxwxuqar" path="res://Assets/Textures/ctile.png" id="2_06hsw"]
 [ext_resource type="ArrayMesh" uid="uid://dtpdgqwy7a2ge" path="res://Assets/Models/doorsconv.obj" id="4_pxp8q"]
@@ -238,9 +238,9 @@ tracks/3/use_blend = true
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_uj5qu"]
 _data = {
-"RESET": SubResource("Animation_c0vv6"),
-"new_animation": SubResource("Animation_oiome"),
-"new_animation_2": SubResource("Animation_1kpqv")
+&"RESET": SubResource("Animation_c0vv6"),
+&"new_animation": SubResource("Animation_oiome"),
+&"new_animation_2": SubResource("Animation_1kpqv")
 }
 
 [node name="two doors" type="Node3D"]

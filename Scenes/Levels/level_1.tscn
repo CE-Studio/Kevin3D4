@@ -137,8 +137,8 @@ tracks/2/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_rq6vp"]
 _data = {
-"L1UpDown": SubResource("Animation_2pl64"),
-"RESET": SubResource("Animation_7yjg6")
+&"L1UpDown": SubResource("Animation_2pl64"),
+&"RESET": SubResource("Animation_7yjg6")
 }
 
 [sub_resource type="Animation" id="Animation_qjh3g"]
@@ -199,8 +199,8 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_fg0xx"]
 _data = {
-"L1End": SubResource("Animation_qjh3g"),
-"RESET": SubResource("Animation_u3eyb")
+&"L1End": SubResource("Animation_qjh3g"),
+&"RESET": SubResource("Animation_u3eyb")
 }
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_5n76q"]

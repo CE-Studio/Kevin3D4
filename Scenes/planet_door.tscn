@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://buamjln4eyytl"]
 
 [ext_resource type="Texture2D" uid="uid://dxx7ao5qohqcp" path="res://Assets/Textures/PlanetDoor.png" id="1_kmuf7"]
-[ext_resource type="Script" path="res://Scripts/PlanetDoor.gd" id="2_4r0pf"]
+[ext_resource type="Script" uid="uid://sbrelf2xtak8" path="res://Scripts/PlanetDoor.gd" id="2_4r0pf"]
 [ext_resource type="AudioStream" uid="uid://bn6aqh767lraf" path="res://Assets/Sound Effects/door.wav" id="3_2qm8p"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_okdlo"]
@@ -98,8 +98,8 @@ tracks/2/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_sngjx"]
 _data = {
-"Open": SubResource("Animation_74pdu"),
-"RESET": SubResource("Animation_ux3ml")
+&"Open": SubResource("Animation_74pdu"),
+&"RESET": SubResource("Animation_ux3ml")
 }
 
 [node name="PlanetDoor" type="AnimatableBody3D"]

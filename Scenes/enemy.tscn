@@ -1,6 +1,6 @@
 [gd_scene load_steps=12 format=3 uid="uid://hqroyuuds4po"]
 
-[ext_resource type="Script" path="res://Scripts/Enemy.gd" id="1_ypvxk"]
+[ext_resource type="Script" uid="uid://b8egfmhecftn7" path="res://Scripts/Enemy.gd" id="1_ypvxk"]
 [ext_resource type="Shader" uid="uid://dqcbpkck1cny8" path="res://Assets/Shaders/crumbling_platform.tres" id="2_6wadm"]
 [ext_resource type="PackedScene" uid="uid://dd2sj3qyx7rs7" path="res://Assets/Models/enemy.glb" id="2_txoyg"]
 [ext_resource type="Texture2D" uid="uid://c2u3ocfcpme4b" path="res://Assets/Textures/enem3.png" id="4_6l0s4"]
@@ -53,8 +53,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_yntx2"]
 _data = {
-"RESET": SubResource("Animation_veaep"),
-"new_animation": SubResource("Animation_o7ag6")
+&"RESET": SubResource("Animation_veaep"),
+&"new_animation": SubResource("Animation_o7ag6")
 }
 
 [node name="Enemy" type="Area3D"]

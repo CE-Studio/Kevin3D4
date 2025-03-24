@@ -3,7 +3,7 @@
 [ext_resource type="AudioStream" uid="uid://diefur77d32jo" path="res://Assets/Music/Title.wav" id="1_7lcl3"]
 [ext_resource type="PackedScene" uid="uid://8iobt4o8k61u" path="res://Scenes/Player.tscn" id="1_hr3a5"]
 [ext_resource type="PackedScene" uid="uid://hqroyuuds4po" path="res://Scenes/enemy.tscn" id="2_5y8gm"]
-[ext_resource type="PackedScene" path="res://Scenes/box.tscn" id="3_i4ysk"]
+[ext_resource type="PackedScene" uid="uid://d25ke11gv527s" path="res://Scenes/box.tscn" id="3_i4ysk"]
 [ext_resource type="PackedScene" uid="uid://334cmavflup3" path="res://Scenes/switch.tscn" id="5_nojmr"]
 [ext_resource type="PackedScene" uid="uid://bqlwlkimr6gje" path="res://Scenes/collectible.tscn" id="6_k0kv0"]
 [ext_resource type="PackedScene" uid="uid://be74smfh0hkry" path="res://Scenes/crumbling_platform.tscn" id="6_v8lna"]
@@ -12,9 +12,9 @@
 [ext_resource type="PackedScene" uid="uid://bdef1g51whbvt" path="res://Scenes/Characterz/gamma.tscn" id="10_6x1mg"]
 [ext_resource type="PackedScene" uid="uid://byssqbosbxe5x" path="res://Scenes/Characterz/symmie.tscn" id="11_03jl4"]
 [ext_resource type="PackedScene" uid="uid://c0vfothehm26h" path="res://Scenes/Characterz/lex.tscn" id="12_dap5h"]
-[ext_resource type="Script" path="res://Scripts/globallbl.gd" id="13_03r3f"]
+[ext_resource type="Script" uid="uid://brm5ugrfc5ea7" path="res://Scripts/globallbl.gd" id="13_03r3f"]
 [ext_resource type="PackedScene" uid="uid://bbrmfy3bgqwkl" path="res://Scenes/Characterz/planehydra.tscn" id="14_rmqw5"]
-[ext_resource type="Script" path="res://Scripts/zeepkillspawner.gd" id="15_3m4x1"]
+[ext_resource type="Script" uid="uid://ba0y04od5hxo7" path="res://Scripts/zeepkillspawner.gd" id="15_3m4x1"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_2msyu"]
 size = Vector2(25, 25)

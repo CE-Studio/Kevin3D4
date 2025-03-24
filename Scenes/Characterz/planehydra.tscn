@@ -2197,15 +2197,15 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_6wav6"]
 _data = {
-"Idle": SubResource("Animation_hlfki"),
-"IdleLookLeft": SubResource("Animation_dafgg"),
-"IdleLookRight": SubResource("Animation_m8c1x"),
-"RESET": SubResource("Animation_d34ln"),
-"afttalk": SubResource("Animation_gika8"),
-"ailtalk": SubResource("Animation_e2w0o"),
-"danec": SubResource("Animation_bwc3e"),
-"empty": SubResource("Animation_30xax"),
-"faitalk": SubResource("Animation_2khdx")
+&"Idle": SubResource("Animation_hlfki"),
+&"IdleLookLeft": SubResource("Animation_dafgg"),
+&"IdleLookRight": SubResource("Animation_m8c1x"),
+&"RESET": SubResource("Animation_d34ln"),
+&"afttalk": SubResource("Animation_gika8"),
+&"ailtalk": SubResource("Animation_e2w0o"),
+&"danec": SubResource("Animation_bwc3e"),
+&"empty": SubResource("Animation_30xax"),
+&"faitalk": SubResource("Animation_2khdx")
 }
 
 [node name="planehydra" type="Node3D"]

@@ -1,6 +1,6 @@
 [gd_scene load_steps=125 format=4 uid="uid://dhrt4yx6j477h"]
 
-[ext_resource type="Script" path="res://Scripts/parabletts.gd" id="1_7eshl"]
+[ext_resource type="Script" uid="uid://l63thsr7ey8s" path="res://Scripts/parabletts.gd" id="1_7eshl"]
 [ext_resource type="PackedScene" uid="uid://byx5litoy380f" path="res://Scenes/enviro.tscn" id="2_ocd8s"]
 [ext_resource type="Texture2D" uid="uid://cdch1vlk7mbnf" path="res://Assets/Textures/dust.png" id="3_fm5ex"]
 [ext_resource type="FontFile" uid="uid://bmewjb70ttfix" path="res://Assets/Ui/stanley.otf" id="3_mndgp"]
@@ -56,13 +56,13 @@
 [ext_resource type="PackedScene" uid="uid://pjffsrv6dn0g" path="res://Scenes/slidedoor.tscn" id="53_5cods"]
 [ext_resource type="PackedScene" uid="uid://cyg5y6go0cvbo" path="res://Scenes/ship.tscn" id="54_pljj8"]
 [ext_resource type="Texture2D" uid="uid://c2u3ocfcpme4b" path="res://Assets/Textures/enem3.png" id="55_1amqq"]
-[ext_resource type="Script" path="res://Scripts/parablecontol.gd" id="56_gkro8"]
+[ext_resource type="Script" uid="uid://diavv41d3swa3" path="res://Scripts/parablecontol.gd" id="56_gkro8"]
 [ext_resource type="Theme" uid="uid://ceb3ll16fgq5a" path="res://Assets/Ui/emu.tres" id="57_7e626"]
 [ext_resource type="ArrayMesh" uid="uid://bktltccecfxko" path="res://Assets/Models/shelves.obj" id="59_ug3dd"]
 [ext_resource type="PackedScene" uid="uid://bdef1g51whbvt" path="res://Scenes/Characterz/gamma.tscn" id="60_2rff6"]
 [ext_resource type="PackedScene" uid="uid://byssqbosbxe5x" path="res://Scenes/Characterz/symmie.tscn" id="61_yy23m"]
 [ext_resource type="AudioStream" uid="uid://diefur77d32jo" path="res://Assets/Music/Title.wav" id="62_ad21t"]
-[ext_resource type="Script" path="res://Scripts/globallbl.gd" id="63_78woi"]
+[ext_resource type="Script" uid="uid://brm5ugrfc5ea7" path="res://Scripts/globallbl.gd" id="63_78woi"]
 [ext_resource type="PackedScene" uid="uid://c0vfothehm26h" path="res://Scenes/Characterz/lex.tscn" id="64_wgidy"]
 [ext_resource type="PackedScene" uid="uid://bbrmfy3bgqwkl" path="res://Scenes/Characterz/planehydra.tscn" id="65_2k2v1"]
 
@@ -686,9 +686,9 @@ tracks/23/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_8fwsc"]
 _data = {
-"RESET": SubResource("Animation_cm671"),
-"init": SubResource("Animation_2hyrp"),
-"new_animation": SubResource("Animation_st847")
+&"RESET": SubResource("Animation_cm671"),
+&"init": SubResource("Animation_2hyrp"),
+&"new_animation": SubResource("Animation_st847")
 }
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6y6vh"]
@@ -757,7 +757,7 @@ bg_color = Color(0, 0, 0, 1)
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_lnutk"]
 render_priority = 0
 shader = ExtResource("7_250xw")
-shader_parameter/transparency = null
+shader_parameter/transparency = 0.0
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_r7cqc"]
 viewport_path = NodePath("Player/SubViewport")

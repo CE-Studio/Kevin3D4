@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://bflb4f3h7tbse"]
 
-[ext_resource type="Script" path="res://Scripts/enemy_bullet.gd" id="1_npq1w"]
+[ext_resource type="Script" uid="uid://de412qvu51wtw" path="res://Scripts/enemy_bullet.gd" id="1_npq1w"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ewj3x"]
 bounce = 100.0

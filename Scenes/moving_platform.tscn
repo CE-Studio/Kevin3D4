@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://cev248w6qbej8"]
 
 [ext_resource type="ArrayMesh" uid="uid://d3c3q86jeicyp" path="res://Assets/Models/MovingPlat.obj" id="1_a62lw"]
-[ext_resource type="Script" path="res://Scripts/moving_platform.gd" id="1_xw7d1"]
+[ext_resource type="Script" uid="uid://08l3bsd5uh5j" path="res://Scripts/moving_platform.gd" id="1_xw7d1"]
 [ext_resource type="Texture2D" uid="uid://d1d284bymb76d" path="res://Assets/Textures/SwitchTexture.png" id="2_it75e"]
 [ext_resource type="AudioStream" uid="uid://bk7dalqy0alhq" path="res://Assets/Sound Effects/shimmering-object-79354.mp3" id="4_6lqnc"]
 

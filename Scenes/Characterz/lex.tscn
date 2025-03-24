@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://c0vfothehm26h"]
 
-[ext_resource type="Script" path="res://Scenes/Characterz/genericnpc.gd" id="1_pxofi"]
+[ext_resource type="Script" uid="uid://8buyh54yq8vv" path="res://Scenes/Characterz/genericnpc.gd" id="1_pxofi"]
 [ext_resource type="Texture2D" uid="uid://dvjc8tx87gbb" path="res://Assets/Textures/funnykob.png" id="2_8d0tx"]
 [ext_resource type="AudioStream" uid="uid://bdqi1kk6cy46c" path="res://Assets/Sound Effects/speakLex.wav" id="2_k0hah"]
 

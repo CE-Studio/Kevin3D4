@@ -2,7 +2,7 @@
 
 [ext_resource type="AudioStream" uid="uid://evxxebo6lho0" path="res://Assets/Music/finale.wav" id="1_1bq8l"]
 [ext_resource type="Texture2D" uid="uid://c3u6qflftaqa8" path="res://Assets/Textures/glaxy skybox.jpg" id="1_xtp7l"]
-[ext_resource type="Script" path="res://Scripts/finalecutscenemusic.gd" id="2_fo06a"]
+[ext_resource type="Script" uid="uid://5eyg6n4pgasq" path="res://Scripts/finalecutscenemusic.gd" id="2_fo06a"]
 [ext_resource type="Texture2D" uid="uid://c4h5sp7v5b4r4" path="res://Assets/Textures/visoruv.png" id="2_qypqp"]
 [ext_resource type="PackedScene" uid="uid://dy11dfruadhrf" path="res://Assets/Models/player.glb" id="2_x26e7"]
 [ext_resource type="Texture2D" uid="uid://c2cb10jgf2e8q" path="res://Assets/Textures/kevin34eyes.png" id="3_fp7du"]
@@ -204,8 +204,8 @@ tracks/10/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_06741"]
 _data = {
-"RESET": SubResource("Animation_6xox6"),
-"h": SubResource("Animation_3uugt")
+&"RESET": SubResource("Animation_6xox6"),
+&"h": SubResource("Animation_3uugt")
 }
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_8llyc"]

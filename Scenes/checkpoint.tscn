@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://diybr73ukni78"]
 
-[ext_resource type="Script" path="res://Checkpoint.gd" id="1_qlyhl"]
+[ext_resource type="Script" uid="uid://bhg5vs8vwlaxm" path="res://Checkpoint.gd" id="1_qlyhl"]
 [ext_resource type="ArrayMesh" uid="uid://df118epckjq7r" path="res://Assets/Models/check.obj" id="2_yd7nx"]
 [ext_resource type="AudioStream" uid="uid://scvrhvcjcfdj" path="res://Assets/Sound Effects/metal-hit-15-193280.mp3" id="3_y3wqe"]
 
@@ -69,8 +69,8 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ou68l"]
 _data = {
-"RESET": SubResource("Animation_2ihmc"),
-"new_animation": SubResource("Animation_bb4pc")
+&"RESET": SubResource("Animation_2ihmc"),
+&"new_animation": SubResource("Animation_bb4pc")
 }
 
 [node name="Checkpoint" type="Node3D"]

@@ -168,8 +168,8 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ry3je"]
 _data = {
-"PlanetPlatCycle": SubResource("Animation_8cujd"),
-"RESET": SubResource("Animation_qplvv")
+&"PlanetPlatCycle": SubResource("Animation_8cujd"),
+&"RESET": SubResource("Animation_qplvv")
 }
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bh8kb"]

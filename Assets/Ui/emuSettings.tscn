@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://drfuee8m57cua"]
 
 [ext_resource type="Theme" uid="uid://ceb3ll16fgq5a" path="res://Assets/Ui/emu.tres" id="1_e1ig1"]
-[ext_resource type="Script" path="res://Scripts/emuSettings.gd" id="2_pucsa"]
+[ext_resource type="Script" uid="uid://6ka3pxtanglm" path="res://Scripts/emuSettings.gd" id="2_pucsa"]
 [ext_resource type="Texture2D" uid="uid://beotqcvokvdxj" path="res://Assets/Ui/emubuttons/opt/Page 4.png" id="2_s1mk8"]
 [ext_resource type="Texture2D" uid="uid://dydkvh32fr21t" path="res://Assets/Ui/emubuttons/opt/Page 3.png" id="3_qbcre"]
 [ext_resource type="Texture2D" uid="uid://qi8rrmvlfltq" path="res://Assets/Ui/emubuttons/opt/Page 2.png" id="4_bqev7"]

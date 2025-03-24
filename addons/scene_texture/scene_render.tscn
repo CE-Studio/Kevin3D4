@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://bk87ymy32f7mu"]
 
-[ext_resource type="Script" path="res://addons/scene_texture/SceneRender.gd" id="1_i535u"]
+[ext_resource type="Script" uid="uid://d0po4sybl225k" path="res://addons/scene_texture/SceneRender.gd" id="1_i535u"]
 
 [node name="SceneRender" type="SubViewport"]
 transparent_bg = true

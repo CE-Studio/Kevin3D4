@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://bwfm0mqlilrui"]
 
 [ext_resource type="Texture2D" uid="uid://bhb1yfmf6jpai" path="res://Assets/Textures/unwelcomedialouge.png" id="1_pkmfm"]
-[ext_resource type="Script" path="res://addons/radial_progress/RadialProgress.gd" id="2_vepu3"]
+[ext_resource type="Script" uid="uid://di10rie7wcakj" path="res://addons/radial_progress/RadialProgress.gd" id="2_vepu3"]
 [ext_resource type="FontFile" uid="uid://ditjs075hj10r" path="res://Assets/Ui/Code New Roman b.otf" id="3_p42l6"]
 [ext_resource type="Texture2D" uid="uid://de1g8yg5xfqml" path="res://Assets/Textures/unwelcomefroge.png" id="4_yqllr"]
 
