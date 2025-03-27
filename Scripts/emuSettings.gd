@@ -23,6 +23,9 @@ static func updateMouse():
 		Input.set_mouse_mode(mouse_mode)
 
 
+static var moveFix := false
+
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	height = size.y
@@ -95,3 +98,10 @@ func _on_mcompat_item_selected(index: int) -> void:
 
 func _on_gmod_toggled(toggled_on: bool) -> void:
 	DLC.gmod = toggled_on
+
+
+func _on_movefix_item_selected(index: int) -> void:
+	if index == 0:
+		EMU.moveFix = false
+	else:
+		EMU.moveFix = true
