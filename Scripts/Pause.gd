@@ -68,3 +68,10 @@ func _on_button_mouse_entered():
 
 func _on_pausetimer_timeout():
 	_tooktolong = true
+
+
+func _on_visibility_changed() -> void:
+	if is_visible_in_tree():
+		$Button.grab_focus()
+	else:
+		$Button.release_focus()

@@ -49,3 +49,10 @@ func _on_button_pressed():
 	player.isDead = false
 	player.isTripleJump = 0
 	player.beandouble = false
+
+
+func _on_visibility_changed() -> void:
+	if is_visible_in_tree():
+		$Button.grab_focus()
+	else:
+		$Button.release_focus()

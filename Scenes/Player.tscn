@@ -1307,7 +1307,7 @@ target_position = Vector3(0, 0, -20)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="SpringArm3D"]
 libraries = {
-"": SubResource("AnimationLibrary_aakw0")
+&"": SubResource("AnimationLibrary_aakw0")
 }
 
 [node name="Double Jump Effect" type="GPUParticles3D" parent="."]
@@ -1408,7 +1408,7 @@ surface_material_override/0 = ExtResource("4_0kk71")
 surface_material_override/0 = SubResource("StandardMaterial3D_ghj7y")
 
 [node name="BoneAttachment3D" type="BoneAttachment3D" parent="player/Armature/Skeleton3D" index="2"]
-transform = Transform3D(-0.966419, 0.256972, -0.000314508, -0.256603, -0.965098, -0.0523569, -0.0137578, -0.050518, 0.998628, 0.293998, 0.976225, -0.0209056)
+transform = Transform3D(-0.907031, 0.421063, 0.000376322, -0.420485, -0.905738, -0.0532136, -0.0220654, -0.0484246, 0.998583, 0.409771, 1.01155, -0.0197494)
 bone_name = "Hand_R"
 bone_idx = 14
 
@@ -1420,7 +1420,7 @@ frame_progress = 0.629152
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_pl0xx")
+&"": SubResource("AnimationLibrary_pl0xx")
 }
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
@@ -1498,7 +1498,7 @@ expand_mode = 2
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="UI/BeanCounter/TextureRect"]
 libraries = {
-"": SubResource("AnimationLibrary_86rtg")
+&"": SubResource("AnimationLibrary_86rtg")
 }
 autoplay = "UIBeanSpin"
 
@@ -1656,8 +1656,8 @@ grow_vertical = 0
 [node name="Button" type="Button" parent="stnaleypause/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 0
 theme_override_fonts/font = ExtResource("23_jwwsw")
 theme_override_font_sizes/font_size = 50
@@ -1672,8 +1672,8 @@ alignment = 0
 [node name="again" type="Button" parent="stnaleypause/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 0
 theme_override_fonts/font = ExtResource("23_jwwsw")
 theme_override_font_sizes/font_size = 50
@@ -1688,8 +1688,8 @@ alignment = 0
 [node name="set" type="Button" parent="stnaleypause/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 0
 theme_override_fonts/font = ExtResource("23_jwwsw")
 theme_override_font_sizes/font_size = 50
@@ -1704,8 +1704,8 @@ alignment = 0
 [node name="menu" type="Button" parent="stnaleypause/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 0
 theme_override_fonts/font = ExtResource("23_jwwsw")
 theme_override_font_sizes/font_size = 50
@@ -1787,7 +1787,9 @@ max_polyphony = 10
 process_mode = 2
 one_shot = true
 
+[connection signal="visibility_changed" from="Panel" to="Panel" method="_on_visibility_changed"]
 [connection signal="pressed" from="Panel/Button" to="Panel" method="pauseUnpause"]
+[connection signal="visibility_changed" from="Death Screen" to="Death Screen" method="_on_visibility_changed"]
 [connection signal="pressed" from="Death Screen/Button" to="Death Screen" method="_on_button_pressed"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="mouse_entered" from="stnaleypause/VBoxContainer/Button" to="Panel" method="_on_button_mouse_entered"]

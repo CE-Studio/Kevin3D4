@@ -183,6 +183,7 @@ func _physics_process(delta):
 func _process(delta):
 	Player.speedrunTime += delta
 	
+	
 	if Invincibile:
 		isDead = false
 		if InvNum == 0:
@@ -221,6 +222,15 @@ func _process(delta):
 		pausecount +=1
 		if pausecount >= 1:
 			$UI/Label.hide()
+	
+	
+	var look:Vector2 = Input.get_vector("game_look_l", "game_look_r", "game_look_down", "game_look_up")
+	if animstate == anims.SHOOTIN:
+		rotate_y(look.x * -delta * 0.5)
+		$SpringArm3D.rotate_x(look.y * delta * 0.5)
+	else:
+		rotate_y(look.x * -delta * 3)
+		$SpringArm3D.rotate_x(look.y * delta * 3)
 	
 	
 	if $RayCast3D.is_colliding():

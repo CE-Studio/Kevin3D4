@@ -132,6 +132,7 @@ popup/item_3/id = 3
 [node name="save" type="MenuButton" parent="PanelContainer/MarginContainer/HBoxContainer"]
 layout_mode = 2
 tooltip_text = "Create savestate"
+focus_neighbor_right = NodePath("../patch")
 icon = ExtResource("3_qbcre")
 flat = false
 item_count = 4
@@ -147,6 +148,7 @@ popup/item_3/id = 3
 [node name="patch" type="Button" parent="PanelContainer/MarginContainer/HBoxContainer"]
 layout_mode = 2
 tooltip_text = "Load patch"
+focus_neighbor_left = NodePath("../save")
 icon = ExtResource("4_bqev7")
 
 [node name="fs" type="Button" parent="PanelContainer/MarginContainer/HBoxContainer"]

@@ -5,6 +5,8 @@ extends PanelContainer
 var height:float = 0
 var targ:float = 0
 var fstoggle := false
+var oldfocus:Control
+var hasfocused := false
 
 
 static var mouse_mode:Input.MouseMode:
@@ -51,6 +53,19 @@ func _input(event: InputEvent) -> void:
 			targ = -height
 		else:
 			targ = 0
+	elif event.is_action("toggle_emu"):
+		if not event.is_pressed():
+			targ = -height
+			if is_instance_valid(oldfocus):
+				oldfocus.grab_focus()
+				oldfocus = null
+			hasfocused = false
+		else:
+			targ = 0
+			if not hasfocused:
+				oldfocus = get_viewport().gui_get_focus_owner()
+				hasfocused = true
+				$MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer/fps.grab_focus()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
