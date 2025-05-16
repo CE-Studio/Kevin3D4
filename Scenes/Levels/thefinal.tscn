@@ -2162,7 +2162,7 @@ shape = SubResource("BoxShape3D_0fjey")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="finalCutscenes"]
 libraries = {
-"": SubResource("AnimationLibrary_upe5a")
+&"": SubResource("AnimationLibrary_upe5a")
 }
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="finalCutscenes"]
@@ -2183,7 +2183,7 @@ surface_material_override/0 = SubResource("ShaderMaterial_0lhb5")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="finalCutscenes/Boss"]
 libraries = {
-"": SubResource("AnimationLibrary_yntx2")
+&"": SubResource("AnimationLibrary_yntx2")
 }
 autoplay = "new_animation"
 

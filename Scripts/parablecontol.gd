@@ -2,7 +2,7 @@ extends Node
 
 const kev:PackedScene = preload("res://Scenes/Player.tscn")
 @onready var fakekev:Node3D = $"../Player"
-@onready var spinner:MeshInstance3D = $"../lanes/checkout2/chechout/Cube/Cube_001/Cylinder"
+@onready var spinner:MeshInstance3D = $"../lanes/check2piv/checkout2/chechout/Cube/Cube_001/Cylinder"
 @onready var instruct:Node2D = $"../Node2D"
 @onready var spinbutton:Button = $"../Node2D/HBoxContainer/Button"
 var fade := 0.0

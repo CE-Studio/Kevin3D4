@@ -785,7 +785,7 @@ transform = Transform3D(3.76, 0, 0, 0, 3.76, 0, 0, 0, 3.76, -112.967, -3.55271e-
 
 [node name="AnimationPlayer" parent="roomMaze/MovingPlatform" index="2"]
 libraries = {
-"": SubResource("AnimationLibrary_f5jwf")
+&"": SubResource("AnimationLibrary_f5jwf")
 }
 autoplay = "new_animation"
 
@@ -840,7 +840,7 @@ transform = Transform3D(2.175, 0, 0, 0, 2.175, 0, 0, 0, 2.175, -46.6881, -4.1564
 
 [node name="AnimationPlayer" parent="room2nd/MovingPlatform" index="2"]
 libraries = {
-"": SubResource("AnimationLibrary_75jrg")
+&"": SubResource("AnimationLibrary_75jrg")
 }
 autoplay = "mov"
 
@@ -870,7 +870,7 @@ transform = Transform3D(3.26, 0, 0, 0, 3.26, 0, 0, 0, 3.26, -30, 15.1483, 75)
 
 [node name="AnimationPlayer" parent="room2nd/MovingPlatform2" index="2"]
 libraries = {
-"": SubResource("AnimationLibrary_c6tau")
+&"": SubResource("AnimationLibrary_c6tau")
 }
 autoplay = "new_animation"
 
@@ -890,7 +890,7 @@ bus = &"Music"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="rizzroom"]
 libraries = {
-"": SubResource("AnimationLibrary_nbkbq")
+&"": SubResource("AnimationLibrary_nbkbq")
 }
 
 [node name="Area3D" type="Area3D" parent="rizzroom"]
@@ -932,13 +932,13 @@ texture = ExtResource("17_uma0x")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="rizzroom/Area3D2"]
 libraries = {
-"": SubResource("AnimationLibrary_4va2t")
+&"": SubResource("AnimationLibrary_4va2t")
 }
 autoplay = "new_animation"
 
 [node name="AnimationPlayer2" type="AnimationPlayer" parent="rizzroom"]
 libraries = {
-"": SubResource("AnimationLibrary_ia2vy")
+&"": SubResource("AnimationLibrary_ia2vy")
 }
 
 [node name="TextureRect" type="TextureRect" parent="rizzroom"]
@@ -1058,7 +1058,7 @@ material_override = SubResource("StandardMaterial3D_f6vni")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="thefinalbits/crane"]
 libraries = {
-"": SubResource("AnimationLibrary_2fqlw")
+&"": SubResource("AnimationLibrary_2fqlw")
 }
 autoplay = "new_animation"
 

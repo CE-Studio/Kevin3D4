@@ -1,4 +1,4 @@
-[gd_scene load_steps=125 format=4 uid="uid://dhrt4yx6j477h"]
+[gd_scene load_steps=134 format=4 uid="uid://dhrt4yx6j477h"]
 
 [ext_resource type="Script" uid="uid://l63thsr7ey8s" path="res://Scripts/parabletts.gd" id="1_7eshl"]
 [ext_resource type="PackedScene" uid="uid://byx5litoy380f" path="res://Scenes/enviro.tscn" id="2_ocd8s"]
@@ -866,6 +866,112 @@ stream_0/stream = ExtResource("44_hwqwg")
 stream_1/stream = ExtResource("45_mbig3")
 stream_2/stream = ExtResource("46_pyja4")
 
+[sub_resource type="Animation" id="Animation_qb7xb"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat64Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat64Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat64Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat64Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:rotation:z")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat64Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat64Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_xiek8"]
+resource_name = "open"
+length = 1.5
+step = 0.1
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat64Array(0, -0.25, 0, 0.25, 0, 1.17343e-16, -0.25, 0, 0.25, 0),
+"times": PackedFloat64Array(0, 1)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat64Array(0, -0.25, 0, 0.25, 0, -8.7418e-17, -0.25, 0, 0.25, 0),
+"times": PackedFloat64Array(0, 1)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:rotation:z")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat64Array(0, -0.25, 0, 0.2, -1.21017, -1.28056, -0.25, 0, 0.25, 0),
+"times": PackedFloat64Array(0, 1.5)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_i8u7g"]
+_data = {
+&"RESET": SubResource("Animation_qb7xb"),
+&"open": SubResource("Animation_xiek8")
+}
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_xiek8"]
+animation = &"open"
+play_mode = 1
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_qb7xb"]
+animation = &"open"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_i8u7g"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_y4o6f"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_gw71i"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_kc6j4"]
+states/Start/position = Vector2(157, 130)
+states/open/node = SubResource("AnimationNodeAnimation_qb7xb")
+states/open/position = Vector2(326, 66)
+"states/open 2/node" = SubResource("AnimationNodeAnimation_xiek8")
+"states/open 2/position" = Vector2(493, 56)
+transitions = ["Start", "open", SubResource("AnimationNodeStateMachineTransition_i8u7g"), "open", "open 2", SubResource("AnimationNodeStateMachineTransition_y4o6f"), "open 2", "open", SubResource("AnimationNodeStateMachineTransition_gw71i")]
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lawis"]
 albedo_texture = ExtResource("51_wywuu")
 texture_filter = 0
@@ -1296,8 +1402,21 @@ transform = Transform3D(-1, 0, -1.22465e-16, 0, 1, 0, 1.22465e-16, 0, -1, 17, 0,
 
 [node name="checkout" parent="lanes" instance=ExtResource("4_3yodl")]
 
-[node name="checkout2" parent="lanes" instance=ExtResource("4_3yodl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4)
+[node name="check2piv" type="Node3D" parent="lanes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.07757, 0, 3.35851)
+
+[node name="checkout2" parent="lanes/check2piv" instance=ExtResource("4_3yodl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.07757, 0, 0.64149)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="lanes/check2piv"]
+libraries = {
+&"": SubResource("AnimationLibrary_i8u7g")
+}
+
+[node name="AnimationTree" type="AnimationTree" parent="lanes/check2piv"]
+active = false
+tree_root = SubResource("AnimationNodeStateMachine_kc6j4")
+anim_player = NodePath("../AnimationPlayer")
 
 [node name="checkout4" parent="lanes" instance=ExtResource("4_3yodl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8)
@@ -1558,5 +1677,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 150, 0, 30)
 transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, 168, 0, 30)
 
 [editable path="Player/player"]
-[editable path="lanes/checkout2"]
-[editable path="lanes/checkout2/chechout"]
+[editable path="lanes/check2piv/checkout2"]
+[editable path="lanes/check2piv/checkout2/chechout"]

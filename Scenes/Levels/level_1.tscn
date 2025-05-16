@@ -643,7 +643,7 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 33, 5, 0)
 
 [node name="AnimationPlayer" parent="MovingPlat1" index="2"]
 libraries = {
-"": SubResource("AnimationLibrary_rq6vp")
+&"": SubResource("AnimationLibrary_rq6vp")
 }
 autoplay = "L1UpDown"
 
@@ -655,7 +655,7 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 144, 112, 30)
 
 [node name="AnimationPlayer" parent="MovingPlat2" index="2"]
 libraries = {
-"": SubResource("AnimationLibrary_fg0xx")
+&"": SubResource("AnimationLibrary_fg0xx")
 }
 autoplay = "L1End"
 
