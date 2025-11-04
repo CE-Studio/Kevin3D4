@@ -94,7 +94,7 @@ func _ready():
 	sprintEffect.emitting = false
 	diveEffect.one_shot = true
 	diveEffect.emitting = false
-	
+
 	timer.one_shot = true
 	shader.set_shader_parameter("transparency", 0)
 	$player/Armature/Skeleton3D/Vert.set_surface_override_material(0, preload("res://Assets/Materials/kevin34.tres"))
@@ -105,17 +105,17 @@ func _physics_process(delta):
 	# Get the input direction and handle the movement/deceleration.
 	var input_dir = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
 	var direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
-	
+
 	#sprinting
 	if Input.is_action_pressed("Sprint") and not Input.is_action_pressed("Camera"):
 		sprint = 1.7
 		sprintEffect.emitting = true
 		animstate = anims.RUN
-	elif not Input.is_action_pressed("Sprint") and not Input.is_action_pressed("Camera") : 
+	elif not Input.is_action_pressed("Sprint") and not Input.is_action_pressed("Camera") :
 		sprint = 1
-		sprintEffect.emitting = false 
+		sprintEffect.emitting = false
 		animstate = anims.WALK
-	
+
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y -= gravity * delta
@@ -128,7 +128,7 @@ func _physics_process(delta):
 		isDoubleJump = false
 		if input_dir == Vector2.ZERO and not Input.is_action_pressed("Camera"):
 			animstate = anims.IDLE
-	
+
 	# Handle jump and double jump
 	if notfrozen and Input.is_action_just_pressed("game_jump") and jumps < (2 + isTripleJump):
 		velocity.y = JUMP_VELOCITY
@@ -140,12 +140,12 @@ func _physics_process(delta):
 			isJumping = false
 		else:
 			isJumping = true
-	
+
 	if isDoubleJump:
-		animstate = anims.DJUMP	
+		animstate = anims.DJUMP
 	if isJumping:
-		animstate = anims.JUMP	
-	
+		animstate = anims.JUMP
+
 	if direction:
 		velocity.x = direction.x * SPEED * sprint * multi
 		velocity.z = direction.z * SPEED * sprint * multi
@@ -153,9 +153,9 @@ func _physics_process(delta):
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)
-	
-	
-		
+
+
+
 	#dive
 	if notfrozen and Input.is_action_just_pressed("Dive") and dives < 1 and not Input.is_action_pressed("Camera"):
 		velocity.y = DIVE_VELOCITY
@@ -164,7 +164,7 @@ func _physics_process(delta):
 		$player.rotate_x(-1)
 		isDiving = true
 		diveEffect.emitting = true
-	
+
 	if isDiving:
 		velocity.x = direction2.x * DIVE_VELOCITY * sprint * (pow((1.5),1 +(bHop/4))) * multi
 		velocity.z = direction2.z * DIVE_VELOCITY * sprint * (pow((1.5),1 +(bHop/4))) * multi
@@ -173,17 +173,17 @@ func _physics_process(delta):
 			velocity.x = 0
 			velocity.z = 0
 			isDiving = false
-	
+
 	if position.y < -100:
 		isDead = true
-	
+
 	move_and_slide()
 
 
 func _process(delta):
 	Player.speedrunTime += delta
-	
-	
+
+
 	if Invincibile:
 		isDead = false
 		if InvNum == 0:
@@ -196,15 +196,15 @@ func _process(delta):
 			InvNum += 1
 		invtime.show()
 		invtime.text = str(floor(timer.time_left))
-	
+
 	if isDead:
-		Engine.time_scale = 0.4 
+		Engine.time_scale = 0.4
 		AudioServer.playback_speed_scale = 0.4
 		animstate = anims.DYIN
 		if DLC.active:
 			rotate_y(deadspin.x * delta)
 			$SpringArm3D.rotate_x(deadspin.y * delta)
-	
+
 	if Input.is_action_pressed("Camera"):
 		animstate = anims.SHOOTIN
 		$Aiming/CenterContainer/TextureRect.visible = true
@@ -222,8 +222,8 @@ func _process(delta):
 		pausecount +=1
 		if pausecount >= 1:
 			$UI/Label.hide()
-	
-	
+
+
 	var look:Vector2 = Input.get_vector("game_look_l", "game_look_r", "game_look_down", "game_look_up")
 	if animstate == anims.SHOOTIN:
 		rotate_y(look.x * -delta * 0.5)
@@ -231,8 +231,8 @@ func _process(delta):
 	else:
 		rotate_y(look.x * -delta * 3)
 		$SpringArm3D.rotate_x(look.y * delta * 3)
-	
-	
+
+
 	if $RayCast3D.is_colliding():
 		$MeshInstance3D.visible = true
 		$MeshInstance3D.global_position = $RayCast3D.get_collision_point() + Vector3(0,.01,0)
@@ -251,10 +251,10 @@ func _input(event):
 		$SpringArm3D.rotate_x(event.relative.y/-180)
 	if event.is_action_pressed("Camera"):
 		$SpringArm3D/AnimationPlayer.play("Shoot")
-		
+
 	if event.is_action_released("Camera"):
 		$SpringArm3D/AnimationPlayer.play("ComeBack")
-		
+
 	if DLC.gmod:
 		if event.is_action_pressed("game_spawnmenu"):
 			if not is_instance_valid(spawnmenu):
@@ -274,7 +274,7 @@ func _notifyReset(obj:Node):
 		obj._respawn()
 	for i in obj.get_children():
 		_notifyReset(i)
-		
+
 
 
 func _on_timer_timeout():
