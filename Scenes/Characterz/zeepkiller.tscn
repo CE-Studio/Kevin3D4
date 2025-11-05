@@ -38,14 +38,14 @@ corner_radius_top_right = 8
 corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dx2sa"]
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_er6ve"]
 bg_color = Color(1, 0.882353, 0, 1)
 corner_radius_top_left = 8
 corner_radius_top_right = 8
 corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dx2sa"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5srhx"]
 
@@ -109,8 +109,8 @@ tracks/0/path = NodePath("Panel:material:shader_parameter/size")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat64Array(0),
-"transitions": PackedFloat64Array(1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [1.0]
 }
@@ -126,8 +126,8 @@ tracks/0/path = NodePath("Panel:material:shader_parameter/size")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat64Array(0, 0.4, 0.6, 1.6),
-"transitions": PackedFloat64Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.4, 0.6, 1.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
 "values": [1.0, 0.0, 0.0, 1.0]
 }
@@ -138,8 +138,8 @@ tracks/1/path = NodePath(".")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat64Array(0.5, 1.6),
-"transitions": PackedFloat64Array(1, 1),
+"times": PackedFloat32Array(0.5, 1.6),
+"transitions": PackedFloat32Array(1, 1),
 "values": [{
 "args": [],
 "method": &"respawn"
@@ -261,7 +261,7 @@ mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_6li7a")
 
 [node name="Label4" type="Label" parent="Control2/statscreen/Panel"]
-layout_mode = 2
+layout_mode = 0
 offset_left = 13.0
 offset_top = 12.0
 offset_right = 498.0
@@ -276,7 +276,7 @@ theme_override_font_sizes/font_size = 50
 text = "Level_Name"
 
 [node name="Label5" type="Label" parent="Control2/statscreen/Panel"]
-layout_mode = 2
+layout_mode = 0
 offset_left = 547.0
 offset_top = 36.0
 offset_right = 708.0
@@ -291,7 +291,7 @@ theme_override_font_sizes/font_size = 25
 text = "By CE-Studio"
 
 [node name="Label6" type="Label" parent="Control2/statscreen/Panel"]
-layout_mode = 2
+layout_mode = 0
 offset_left = 547.0
 offset_top = 8.0
 offset_right = 708.0
@@ -303,6 +303,21 @@ theme_override_font_sizes/font_size = 25
 text = "Platformer"
 horizontal_alignment = 2
 
+[node name="Label7" type="Label" parent="Control2/statscreen/Panel"]
+layout_mode = 0
+offset_left = 7.0
+offset_top = -28.0
+offset_right = 704.0
+offset_bottom = 19.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.345098, 0.156863, 0.0901961, 1)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+theme_override_constants/outline_size = 0
+theme_override_fonts/font = ExtResource("3_5vfuc")
+theme_override_font_sizes/font_size = 21
+text = "12:12 PM - Wednesday, September 31, 2045"
+
 [node name="Panel2" type="Panel" parent="Control2/statscreen"]
 layout_mode = 0
 offset_top = 328.0
@@ -312,7 +327,7 @@ mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_6li7a")
 
 [node name="Label4" type="Label" parent="Control2/statscreen/Panel2"]
-layout_mode = 2
+layout_mode = 0
 offset_left = 13.0
 offset_top = 12.0
 offset_right = 498.0
@@ -333,10 +348,10 @@ offset_left = 528.0
 offset_top = 7.0
 offset_right = 713.0
 offset_bottom = 62.0
-theme_override_styles/focus = SubResource("StyleBoxEmpty_dx2sa")
-theme_override_styles/hover = SubResource("StyleBoxFlat_43a1p")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_er6ve")
 theme_override_styles/normal = SubResource("StyleBoxFlat_jmjbj")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_er6ve")
+theme_override_styles/hover = SubResource("StyleBoxFlat_43a1p")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_dx2sa")
 
 [node name="Label5" type="Label" parent="Control2/statscreen/Panel2/Button"]
 layout_mode = 1
@@ -362,10 +377,10 @@ offset_left = 337.0
 offset_top = 7.0
 offset_right = 522.0
 offset_bottom = 62.0
-theme_override_styles/focus = SubResource("StyleBoxEmpty_5srhx")
-theme_override_styles/hover = SubResource("StyleBoxFlat_43a1p")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_er6ve")
 theme_override_styles/normal = SubResource("StyleBoxFlat_jmjbj")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_er6ve")
+theme_override_styles/hover = SubResource("StyleBoxFlat_43a1p")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_5srhx")
 
 [node name="Label5" type="Label" parent="Control2/statscreen/Panel2/Button2"]
 layout_mode = 1
@@ -386,7 +401,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Label7" type="Label" parent="Control2/statscreen"]
-layout_mode = 2
+layout_mode = 0
 offset_left = 316.0
 offset_top = 205.0
 offset_right = 664.0
@@ -517,7 +532,7 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_eetk6")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_xyi4d")
+&"": SubResource("AnimationLibrary_xyi4d")
 }
 
 [connection signal="focus_entered" from="Control2/statscreen/Panel2/Button" to="." method="_on_button_focus_entered"]

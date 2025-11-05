@@ -4,7 +4,7 @@ extends Tree
 const fico:Texture2D = preload("res://Assets/Ui/gmico_0646.png")
 
 
-var treeparts := {}
+var treeparts:Dictionary[String, TreeItem] = {}
 
 
 # Called when the node enters the scene tree for the first time.
@@ -31,12 +31,13 @@ func _on_item_selected() -> void:
 		i.queue_free()
 	for i in DirAccess.get_files_at(dir):
 		if i.get_extension() in ["tscn", "glb"]:
-			var t = SceneTexture.new()
+			var t := SceneTexture.new()
+			t.render_screen_space_aa = Viewport.SCREEN_SPACE_AA_DISABLED
 			t.camera_distance = 10
 			t.size = Vector2i(75, 75)
 			t.camera_rotation.y = abs(t.camera_rotation.y)
 			t.scene = load(dir + i)
-			var b = Button.new()
+			var b := Button.new()
 			b.icon = t
 			b.tooltip_text = i.get_basename()
 			$"../ScrollContainer/HFlowContainer".add_child(b)

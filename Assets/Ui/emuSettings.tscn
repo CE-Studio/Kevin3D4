@@ -158,7 +158,7 @@ icon = ExtResource("5_ccox1")
 
 [node name="FileDialog" type="FileDialog" parent="."]
 title = "Open a File"
-size = Vector2i(322, 174)
+size = Vector2i(515, 174)
 ok_button_text = "Open"
 file_mode = 0
 filters = PackedStringArray("*.pck")

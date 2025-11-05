@@ -8,6 +8,7 @@ class_name ZKSpawner
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	DLC.active = true
 	body_exited.connect(spawn)
 
 

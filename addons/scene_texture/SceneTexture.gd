@@ -25,7 +25,7 @@ const _SCENE_RENDER = preload("res://addons/scene_texture/scene_render.tscn")
 	set(value):
 		if scene == value:
 			return
-			
+
 		scene = value
 		notify_property_list_changed()
 		_queue_update()
@@ -105,9 +105,9 @@ var light_rotation = Vector3(deg_to_rad(-60), deg_to_rad(60), 0):
 				render_world_3d.environment.changed.disconnect(_queue_update)
 			if render_world_3d.camera_attributes:
 				render_world_3d.camera_attributes.changed.disconnect(_queue_update)
-		
+
 		render_world_3d = value
-		
+
 		if render_world_3d:
 			render_world_3d.changed.connect(_queue_update)
 			# NOTE: These have no effect since the Environment and CameraAttributes doesn't emit changed..
@@ -123,7 +123,7 @@ var light_rotation = Vector3(deg_to_rad(-60), deg_to_rad(60), 0):
 	set(value):
 		if render_transparent_bg == value:
 			return
-		
+
 		# FIXME: There is an outline around objects in transparent mode. Maybe feather postprocess the image to remove it.
 		# Premultiplied alpha issue? https://github.com/godotengine/godot/issues/17574#issuecomment-1200328756
 		# https://github.com/godotengine/godot/issues/78004
@@ -180,7 +180,7 @@ func _get_rid() -> RID:
 	if not _texture.is_valid():
 		var image = Image.create_empty(size.x, size.y, false, Image.FORMAT_RGBA8)
 		_set_texture_image(image)
-	
+
 	return _texture
 
 
@@ -207,12 +207,12 @@ func _validate_property(property: Dictionary):
 func bake():
 	if not scene or _is_baking:
 		return
-	
+
 	_is_baking = true
-	
+
 	_create_render()
 	_render.render_target_update_mode = SubViewport.UPDATE_ONCE
-	
+
 	var scene_tree = Engine.get_main_loop() as SceneTree
 	assert(is_instance_valid(scene_tree), "MainLoop is not a SceneTree.")
 	scene_tree.root.add_child(_render, false, Node.INTERNAL_MODE_BACK)
@@ -235,9 +235,9 @@ var _initialized = false
 func _initialize():
 	if _data:
 		_set_texture_image(_data)
-	
+
 	_initialized = true
-	
+
 	if not render_store_bake:
 		_queue_update()
 
@@ -245,17 +245,17 @@ func _initialize():
 func _queue_update():
 	if not _initialized:
 		return
-	
+
 	if not render_store_bake:
 		_data = null
-	
+
 	emit_changed()
-	
+
 	if render_auto_bake == false:
 		return
 
 	_update_pending = true
-	
+
 	var bake_delay:float = ProjectSettings.get_setting("scene_texture/auto_bake_delay", 0.25)
 	if bake_delay > 0.0:
 		if is_instance_valid(_timer):
@@ -271,7 +271,7 @@ func _queue_update():
 			_timer.timeout.connect(_update_now)
 			scene_tree.root.add_child(_timer)
 			_timer.start()
-		
+
 		if is_instance_valid(_render):
 			_render.update_from_texture(self)
 	else:
@@ -279,14 +279,14 @@ func _queue_update():
 			_timer.stop()
 			_timer.queue_free()
 			_timer = null
-		
+
 		_update_now.call_deferred()
 
 
 func _update_now():
 	if is_instance_valid(_timer):
 		_timer.queue_free()
-	
+
 	if _update_pending:
 		_update()
 
@@ -299,14 +299,14 @@ func _update():
 func _set_texture_image(image:Image):
 	assert(image.get_width() == size.x)
 	assert(image.get_height() == size.y)
-	
+
 	if _texture.is_valid():
 		var new_texture = RenderingServer.texture_2d_create(image)
 		RenderingServer.texture_replace(_texture, new_texture)
 	else:
 		_texture = RenderingServer.texture_2d_create(image)
 	RenderingServer.texture_set_path(_texture, resource_path)
-	
+
 	if render_store_bake:
 		_data = image
 	else:

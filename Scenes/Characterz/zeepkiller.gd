@@ -43,12 +43,74 @@ func _process(delta: float) -> void:
 			$Control2/statscreen/Panel2/Button2/Label5.self_modulate.a = 1
 
 
+const hours := [
+	["12", "AM"],
+	["1", "AM"],
+	["2", "AM"],
+	["3", "AM"],
+	["4", "AM"],
+	["5", "AM"],
+	["6", "AM"],
+	["7", "AM"],
+	["8", "AM"],
+	["9", "AM"],
+	["10", "AM"],
+	["11", "AM"],
+	["12", "PM"],
+	["1", "PM"],
+	["2", "PM"],
+	["3", "PM"],
+	["4", "PM"],
+	["5", "PM"],
+	["6", "PM"],
+	["7", "PM"],
+	["8", "PM"],
+	["9", "PM"],
+	["10", "PM"],
+	["11", "PM"],
+]
+const weekday := [
+	"Sunday",
+	"Monday",
+	"Teusday",
+	"Wednesday",
+	"Thursday",
+	"Friday",
+	"Saturday",
+]
+const month := [
+	"January",
+	"Febuary",
+	"March",
+	"April",
+	"May",
+	"June",
+	"July",
+	"August",
+	"September",
+	"October",
+	"November",
+	"December",
+]
+
+
 func _on_area_3d_body_entered(body: Node3D) -> void:
 	if stillChasing and (body is Player):
 		if not body.isDead:
 			body.isDead = true
 			DeathScreen.specialdeath = true
 			stillChasing = false
+			var time := Time.get_datetime_dict_from_system()
+			var timestr := "%s:%s %s - %s, %s %s, %s" % [
+				hours[time.hour][0],
+				time.minute,
+				hours[time.hour][1],
+				weekday[time.weekday],
+				month[time.month],
+				time.day,
+				time.year,
+			]
+			$Control2/statscreen/Panel/Label7.text = timestr
 			$Control2/killscreen.show()
 
 

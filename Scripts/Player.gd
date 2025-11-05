@@ -256,13 +256,14 @@ func _input(event):
 		$SpringArm3D/AnimationPlayer.play("ComeBack")
 
 	if DLC.gmod:
+		if not is_instance_valid(spawnmenu):
+			spawnmenu = preload("res://Scenes/subparts/spawnmenu.tscn").instantiate()
+			get_parent().add_child(spawnmenu)
+			spawnmenu.hide()
 		if event.is_action_pressed("game_spawnmenu"):
-			if not is_instance_valid(spawnmenu):
-				spawnmenu = preload("res://Scenes/subparts/spawnmenu.tscn").instantiate()
-				get_parent().add_child(spawnmenu)
+			spawnmenu.show()
 		if event.is_action_released("game_spawnmenu"):
-			if is_instance_valid(spawnmenu):
-				spawnmenu.queue_free()
+			spawnmenu.hide()
 
 
 func respawn():

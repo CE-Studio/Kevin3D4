@@ -7,6 +7,8 @@ var targ:float = 0
 var fstoggle := false
 var oldfocus:Control
 var hasfocused := false
+@onready var loadbutton:MenuButton = $MarginContainer/HBoxContainer/load
+@onready var savebutton:MenuButton = $MarginContainer/HBoxContainer/save
 
 
 static var mouse_mode:Input.MouseMode:
@@ -33,13 +35,54 @@ func _ready() -> void:
 	height = size.y
 	position.y = -height
 	targ = -height
-	if OS.get_name() == "Web":
-		$MarginContainer/HBoxContainer/load.disabled = true
-		$MarginContainer/HBoxContainer/save.disabled = true
+	loadbutton.get_popup().id_pressed.connect(_load)
+	savebutton.get_popup().id_pressed.connect(_save)
+	if OS.has_feature("web"):
 		$MarginContainer/HBoxContainer/patch.disabled = true
-		$MarginContainer/HBoxContainer/load.tooltip_text = "Unavailable on web"
-		$MarginContainer/HBoxContainer/save.tooltip_text = "Unavailable on web"
 		$MarginContainer/HBoxContainer/patch.tooltip_text = "Unavailable on web"
+
+
+func _load(slot:int) -> void:
+	var bd:Dictionary = {
+		"0": "res://Scenes/Levels/level_1.tscn",
+		"1": "res://Scenes/Levels/level_1.tscn",
+		"2": "res://Scenes/Levels/level_1.tscn",
+		"3": "res://Scenes/Levels/level_1.tscn",
+	}
+	if FileAccess.file_exists("user://saves.json"):
+		var f := FileAccess.open("user://saves.json", FileAccess.READ)
+		var jop:Variant = JSON.parse_string(f.get_as_text())
+		f.close()
+		if not jop == null:
+			if jop is Dictionary:
+				bd.merge(jop, true)
+				print(bd)
+			else:
+				print("Not dict????????")
+		else:
+			print("not valid??")
+			print(jop)
+	get_tree().change_scene_to_file(bd[str(slot)])
+
+
+func _save(slot:int) -> void:
+	var bd:Dictionary = {
+		"0": "res://Scenes/Levels/level_1.tscn",
+		"1": "res://Scenes/Levels/level_1.tscn",
+		"2": "res://Scenes/Levels/level_1.tscn",
+		"3": "res://Scenes/Levels/level_1.tscn",
+	}
+	if FileAccess.file_exists("user://saves.json"):
+		var f := FileAccess.open("user://saves.json", FileAccess.READ)
+		var jop:Variant = JSON.parse_string(f.get_as_text())
+		f.close()
+		if not jop == null:
+			if jop is Dictionary:
+				bd.merge(jop, true)
+	bd[str(slot)] = get_tree().current_scene.scene_file_path
+	var f := FileAccess.open("user://saves.json", FileAccess.WRITE)
+	f.store_string(JSON.stringify(bd))
+	f.close()
 
 
 func _input(event: InputEvent) -> void:
