@@ -79,6 +79,7 @@ var deadspin:Vector2
 @onready var switch:AudioStreamPlayer = $switch
 @onready var platform:AudioStreamPlayer = $platform
 @onready var findswitch:AudioStreamPlayer = $findswitch
+@onready var aim:RayCast3D = $SpringArm3D/Camera3D/Shooter
 
 func _ready():
 	cam.make_current()
@@ -158,6 +159,9 @@ func _physics_process(delta):
 
 	#dive
 	if notfrozen and Input.is_action_just_pressed("Dive") and dives < 1 and not Input.is_action_pressed("Camera"):
+		if is_instance_valid(spawnmenu):
+			if spawnmenu.is_visible_in_tree():
+				return
 		velocity.y = DIVE_VELOCITY
 		dives += 1
 		bHop +=1
@@ -205,6 +209,10 @@ func _process(delta):
 			rotate_y(deadspin.x * delta)
 			$SpringArm3D.rotate_x(deadspin.y * delta)
 
+	if is_instance_valid(spawnmenu):
+		if spawnmenu.is_visible_in_tree():
+			return
+
 	if Input.is_action_pressed("Camera"):
 		animstate = anims.SHOOTIN
 		$Aiming/CenterContainer/TextureRect.visible = true
@@ -247,11 +255,13 @@ func _input(event):
 			if event.is_pressed() and !event.is_echo():
 				$stanleysounds.play()
 	if (event is InputEventMouseMotion):
+		if is_instance_valid(spawnmenu):
+			if spawnmenu.is_visible_in_tree():
+				return
 		rotate_y(event.relative.x/-180)
 		$SpringArm3D.rotate_x(event.relative.y/-180)
 	if event.is_action_pressed("Camera"):
 		$SpringArm3D/AnimationPlayer.play("Shoot")
-
 	if event.is_action_released("Camera"):
 		$SpringArm3D/AnimationPlayer.play("ComeBack")
 
@@ -260,10 +270,13 @@ func _input(event):
 			spawnmenu = preload("res://Scenes/subparts/spawnmenu.tscn").instantiate()
 			get_parent().add_child(spawnmenu)
 			spawnmenu.hide()
+			EMU.special_show = false
 		if event.is_action_pressed("game_spawnmenu"):
 			spawnmenu.show()
+			EMU.special_show = true
 		if event.is_action_released("game_spawnmenu"):
 			spawnmenu.hide()
+			EMU.special_show = false
 
 
 func respawn():

@@ -4,7 +4,7 @@ extends Panel
 func _ready():
 	hide()
 	_h.call_deferred()
-	
+
 
 func _h():
 	EMU.mouse_mode = Input.MOUSE_MODE_CAPTURED

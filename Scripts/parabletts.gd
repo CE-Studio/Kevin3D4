@@ -20,6 +20,7 @@ var _oldsayline:String
 
 func _ready() -> void:
 	instance = self
+	DLC.active = true
 	var voices = DisplayServer.tts_get_voices_for_language("en")
 	for i in voices:
 		if "America" in i:

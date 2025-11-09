@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://wupy01swke4p"]
+[gd_scene load_steps=4 format=3 uid="uid://wupy01swke4p"]
 
 [ext_resource type="Theme" uid="uid://bvnoyoe88pos7" path="res://Assets/Ui/spawnmenu.tres" id="1_7xi5x"]
 [ext_resource type="Script" uid="uid://5d8mth8iuh0j" path="res://Scenes/subparts/spawntree.gd" id="1_me8ft"]
+[ext_resource type="AudioStream" uid="uid://bpp0y4kn0lyfx" path="res://Assets/Sound Effects/gm/buttonclickrelease.wav" id="3_s7rgv"]
 
 [node name="spawnmenu" type="Control"]
 layout_mode = 3
@@ -52,5 +53,8 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 alignment = 1
 last_wrap_alignment = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_s7rgv")
 
 [connection signal="item_selected" from="MarginContainer/PanelContainer/MarginContainer/HSplitContainer/Tree" to="MarginContainer/PanelContainer/MarginContainer/HSplitContainer/Tree" method="_on_item_selected"]

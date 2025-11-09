@@ -42,6 +42,7 @@ func _on_button_pressed():
 	EMU.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	player.global_position = player.spawnpoint
 	player.velocity = Vector3.ZERO
+	player.direction2 = Vector3.ZERO
 	player.animstate = player.anims.IDLE
 	hide()
 	Engine.time_scale = 1.0

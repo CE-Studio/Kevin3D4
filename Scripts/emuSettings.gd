@@ -15,10 +15,16 @@ static var mouse_mode:Input.MouseMode:
 	set(value):
 		mouse_mode = value
 		updateMouse()
+static var special_show := false:
+	set(value):
+		special_show = value
+		updateMouse()
 
 
 static func updateMouse():
-	if DLC.mcompat:
+	if special_show:
+		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	elif DLC.mcompat:
 		if mouse_mode == Input.MOUSE_MODE_CAPTURED:
 			Input.set_mouse_mode(Input.MOUSE_MODE_CONFINED)
 		else:
@@ -63,6 +69,7 @@ func _load(slot:int) -> void:
 			print("not valid??")
 			print(jop)
 	get_tree().change_scene_to_file(bd[str(slot)])
+	get_tree().paused = false
 
 
 func _save(slot:int) -> void:
@@ -113,7 +120,12 @@ func _input(event: InputEvent) -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	position = position.move_toward(Vector2(0, targ), delta * 1000)
+	var tv := Vector2(0, targ)
+	position = position.move_toward(tv, delta * 1000)
+	if (position == tv) and targ != 0:
+		hide()
+	else:
+		show()
 
 
 func _on_fps_item_selected(index: int) -> void:

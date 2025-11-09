@@ -25,6 +25,17 @@ func recurFind(path:String) -> void:
 		recurFind(path + "/" + i)
 
 
+func _press(file:String) -> void:
+	if not is_instance_valid(Player.instance):
+		return
+	if Player.instance.aim.is_colliding():
+		var obj:Node = load(file).instantiate()
+		Player.instance.aim.get_collider().add_sibling(obj)
+		if obj is Node3D:
+			obj.global_position = Player.instance.aim.get_collision_point()
+		$"../../../../../AudioStreamPlayer".play()
+
+
 func _on_item_selected() -> void:
 	var dir = treeparts.find_key(get_selected()) + "/"
 	for i in $"../ScrollContainer/HFlowContainer".get_children():
@@ -38,6 +49,7 @@ func _on_item_selected() -> void:
 			t.camera_rotation.y = abs(t.camera_rotation.y)
 			t.scene = load(dir + i)
 			var b := Button.new()
+			b.pressed.connect(_press.bind(dir + i))
 			b.icon = t
 			b.tooltip_text = i.get_basename()
 			$"../ScrollContainer/HFlowContainer".add_child(b)
