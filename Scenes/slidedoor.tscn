@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://pjffsrv6dn0g"]
+[gd_scene format=3 uid="uid://pjffsrv6dn0g"]
 
 [ext_resource type="Script" uid="uid://glgbomlb4q33" path="res://Scripts/slidedoor.gd" id="1_ojv0p"]
 [ext_resource type="PackedScene" uid="uid://b8wxocqg6gs3i" path="res://Assets/Models/slidedoor.glb" id="2_ifwfd"]
@@ -37,8 +37,8 @@ tracks/0/path = NodePath("slidedoor/Cube:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat64Array(0),
-"transitions": PackedFloat64Array(1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector3(0, 0, 0)]
 }
@@ -49,8 +49,8 @@ tracks/1/path = NodePath("slidedoor/Cube_001:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat64Array(0),
-"transitions": PackedFloat64Array(1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector3(0, 0, 0)]
 }
@@ -65,8 +65,8 @@ tracks/0/path = NodePath("slidedoor/Cube:position")
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat64Array(0, 1.5),
-"transitions": PackedFloat64Array(1, 1),
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector3(0, 0, 0), Vector3(0, 0, 1.8)]
 }
@@ -77,8 +77,8 @@ tracks/1/path = NodePath("slidedoor/Cube_001:position")
 tracks/1/interp = 2
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat64Array(0, 1.5),
-"transitions": PackedFloat64Array(1, 1),
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector3(0, 0, 0), Vector3(0, 0, -1.8)]
 }
@@ -129,48 +129,46 @@ transitions = ["open", "open 2", SubResource("AnimationNodeStateMachineTransitio
 [sub_resource type="BoxShape3D" id="BoxShape3D_kc1x8"]
 size = Vector3(4, 3, 4)
 
-[node name="slidedoor" type="Area3D"]
+[node name="slidedoor" type="Area3D" unique_id=889210831]
 monitorable = false
 script = ExtResource("1_ojv0p")
 
-[node name="slidedoor" parent="." instance=ExtResource("2_ifwfd")]
+[node name="slidedoor" parent="." unique_id=2055959362 instance=ExtResource("2_ifwfd")]
 
-[node name="Cylinder" parent="slidedoor/Cube" index="0"]
+[node name="Cylinder" parent="slidedoor/Cube" parent_id_path=PackedInt32Array(2055959362, 1185297209) index="0" unique_id=927479212]
 material_override = SubResource("StandardMaterial3D_safkm")
 
-[node name="Plane" parent="slidedoor/Cube" index="1"]
+[node name="Plane" parent="slidedoor/Cube" parent_id_path=PackedInt32Array(2055959362, 1185297209) index="1" unique_id=837848475]
 material_override = SubResource("StandardMaterial3D_m1d0k")
 
-[node name="AnimatableBody3D" type="AnimatableBody3D" parent="slidedoor/Cube" index="2"]
+[node name="AnimatableBody3D" type="AnimatableBody3D" parent="slidedoor/Cube" parent_id_path=PackedInt32Array(2055959362, 1185297209) index="2" unique_id=1311987280]
 sync_to_physics = false
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="slidedoor/Cube/AnimatableBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="slidedoor/Cube/AnimatableBody3D" unique_id=569044421]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000499994, 1.5, 1)
 shape = SubResource("BoxShape3D_yf13b")
 
-[node name="Cylinder_001" parent="slidedoor/Cube_001" index="0"]
+[node name="Cylinder_001" parent="slidedoor/Cube_001" parent_id_path=PackedInt32Array(2055959362, 40595651) index="0" unique_id=583021405]
 material_override = SubResource("StandardMaterial3D_d0q2s")
 
-[node name="Plane_001" parent="slidedoor/Cube_001" index="1"]
+[node name="Plane_001" parent="slidedoor/Cube_001" parent_id_path=PackedInt32Array(2055959362, 40595651) index="1" unique_id=1488668890]
 material_override = SubResource("StandardMaterial3D_end3s")
 
-[node name="AnimatableBody3D2" type="AnimatableBody3D" parent="slidedoor/Cube_001" index="2"]
+[node name="AnimatableBody3D2" type="AnimatableBody3D" parent="slidedoor/Cube_001" parent_id_path=PackedInt32Array(2055959362, 40595651) index="2" unique_id=916985418]
 sync_to_physics = false
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="slidedoor/Cube_001/AnimatableBody3D2"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="slidedoor/Cube_001/AnimatableBody3D2" unique_id=2055767321]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000499994, 1.5, 1)
 shape = SubResource("BoxShape3D_yf13b")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_k0nae")
-}
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=815350469]
+libraries/ = SubResource("AnimationLibrary_k0nae")
 
-[node name="AnimationTree" type="AnimationTree" parent="."]
+[node name="AnimationTree" type="AnimationTree" parent="." unique_id=460694215]
 tree_root = SubResource("AnimationNodeStateMachine_e40fq")
 anim_player = NodePath("../AnimationPlayer")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=348799066]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
 shape = SubResource("BoxShape3D_kc1x8")
 

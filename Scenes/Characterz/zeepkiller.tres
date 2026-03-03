@@ -1,4 +1,4 @@
-[gd_resource type="VisualShader" load_steps=12 format=3 uid="uid://b7wxbeb6pm846"]
+[gd_resource type="VisualShader" format=3 uid="uid://b7wxbeb6pm846"]
 
 [sub_resource type="VisualShaderNodeFloatOp" id="VisualShaderNodeFloatOp_u0c2c"]
 default_input_values = [0, 0.0, 1, 0.75]
@@ -41,92 +41,6 @@ op_type = 0
 operator = 6
 
 [resource]
-code = "shader_type canvas_item;
-render_mode blend_mix;
-
-uniform vec2 screensize;
-uniform float size : hint_range(0.0, 1.0);
-
-
-
-void fragment() {
-// Input:3
-	vec2 n_out3p0 = SCREEN_UV;
-
-
-// Vector2Parameter:2
-	vec2 n_out2p0 = screensize;
-
-
-// VectorOp:4
-	vec2 n_out4p0 = n_out3p0 * n_out2p0;
-
-
-// VectorOp:6
-	vec2 n_in6p1 = vec2(2.00000, 2.00000);
-	vec2 n_out6p0 = n_out2p0 / n_in6p1;
-
-
-// Distance:5
-	float n_out5p0 = distance(n_out4p0, n_out6p0);
-
-
-// FloatParameter:12
-	float n_out12p0 = size;
-
-
-// VectorDecompose:8
-	float n_out8p0 = n_out2p0.x;
-	float n_out8p1 = n_out2p0.y;
-
-
-// FloatOp:9
-	float n_out9p0 = max(n_out8p0, n_out8p1);
-
-
-// FloatOp:10
-	float n_in10p1 = 0.75000;
-	float n_out10p0 = n_out9p0 * n_in10p1;
-
-
-	float n_out11p0;
-// Remap:11
-	float n_in11p1 = 0.00000;
-	float n_in11p2 = 1.00000;
-	float n_in11p3 = 0.00000;
-	{
-		float __input_range = n_in11p2 - n_in11p1;
-		float __output_range = n_out10p0 - n_in11p3;
-		n_out11p0 = n_in11p3 + __output_range * ((n_out12p0 - n_in11p1) / __input_range);
-	}
-
-
-	vec3 n_out7p0;
-// If:7
-	float n_in7p2 = 0.00001;
-	vec3 n_in7p3 = vec3(1.00000, 1.00000, 1.00000);
-	vec3 n_in7p4 = vec3(1.00000, 1.00000, 1.00000);
-	vec3 n_in7p5 = vec3(0.00000, 0.00000, 0.00000);
-	if(abs(n_out5p0 - n_out11p0) < n_in7p2)
-	{
-		n_out7p0 = n_in7p3;
-	}
-	else if(n_out5p0 < n_out11p0)
-	{
-		n_out7p0 = n_in7p5;
-	}
-	else
-	{
-		n_out7p0 = n_in7p4;
-	}
-
-
-// Output:0
-	COLOR.a = n_out7p0.x;
-
-
-}
-"
 mode = 1
 flags/light_only = false
 nodes/fragment/0/position = Vector2(900, 160)

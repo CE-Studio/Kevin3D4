@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://scfs4nuflb03"
+path="res://.godot/imported/kevin34 theme.mp3-13454ac89915921ac3157f10dda45721.mp3str"
+
+[deps]
+
+source_file="res://Assets/Music/kevin34 theme.mp3"
+dest_files=["res://.godot/imported/kevin34 theme.mp3-13454ac89915921ac3157f10dda45721.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

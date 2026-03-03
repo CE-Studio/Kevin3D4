@@ -1,13 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://dgknntmd5h60"]
+[gd_scene format=3 uid="uid://dgknntmd5h60"]
 
 [ext_resource type="Script" uid="uid://yiqym51ms8uc" path="res://Scripts/killzone.gd" id="1_uuw7u"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_j5pym"]
 
-[node name="General Killzone" type="Area3D"]
+[node name="General Killzone" type="Area3D" unique_id=1565115807]
 script = ExtResource("1_uuw7u")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=207990091]
 shape = SubResource("BoxShape3D_j5pym")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

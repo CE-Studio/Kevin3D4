@@ -1,4 +1,4 @@
-[gd_scene load_steps=134 format=4 uid="uid://dhrt4yx6j477h"]
+[gd_scene format=4 uid="uid://dhrt4yx6j477h"]
 
 [ext_resource type="Script" uid="uid://l63thsr7ey8s" path="res://Scripts/parabletts.gd" id="1_7eshl"]
 [ext_resource type="PackedScene" uid="uid://byx5litoy380f" path="res://Scenes/enviro.tscn" id="2_ocd8s"]
@@ -759,13 +759,13 @@ render_priority = 0
 shader = ExtResource("7_250xw")
 shader_parameter/transparency = 0.0
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_r7cqc"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_xiek8"]
 viewport_path = NodePath("Player/SubViewport")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_udvkh"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qb7xb"]
 resource_local_to_scene = true
 shading_mode = 0
-albedo_texture = SubResource("ViewportTexture_r7cqc")
+albedo_texture = SubResource("ViewportTexture_xiek8")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hswdw"]
 atlas = ExtResource("9_w2bfb")
@@ -1089,18 +1089,16 @@ albedo_color = Color(0.0885599, 0.0885599, 0.0885599, 1)
 [sub_resource type="BoxShape3D" id="BoxShape3D_3ty8w"]
 size = Vector3(12, 3, 2)
 
-[node name="The Kevin Parable" type="Node3D"]
+[node name="The Kevin Parable" type="Node3D" unique_id=1179956984]
 script = ExtResource("1_7eshl")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_8fwsc")
-}
-autoplay = "init"
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=486579127]
+libraries/ = SubResource("AnimationLibrary_8fwsc")
+autoplay = &"init"
 
-[node name="enviro" parent="." instance=ExtResource("2_ocd8s")]
+[node name="enviro" parent="." unique_id=872314420 instance=ExtResource("2_ocd8s")]
 
-[node name="Control" type="Control" parent="."]
+[node name="Control" type="Control" parent="." unique_id=1514963635]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -1109,7 +1107,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="Panel" type="Panel" parent="Control"]
+[node name="Panel" type="Panel" parent="Control" unique_id=1536477441]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -1119,7 +1117,7 @@ grow_vertical = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_6y6vh")
 
-[node name="Label" type="Label" parent="Control"]
+[node name="Label" type="Label" parent="Control" unique_id=16940924]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = 7
@@ -1137,7 +1135,7 @@ theme_type_variation = &"stanleylabel"
 theme_override_font_sizes/font_size = 80
 text = "Click to Skip"
 
-[node name="Label2" type="Label" parent="Control"]
+[node name="Label2" type="Label" parent="Control" unique_id=1115005903]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = 8
@@ -1160,7 +1158,7 @@ BuRRITO BOnAnZA
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Control"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Control" unique_id=519359697]
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
@@ -1175,7 +1173,7 @@ grow_horizontal = 0
 grow_vertical = 0
 theme_override_constants/separation = 0
 
-[node name="Label" type="Label" parent="Control/HBoxContainer"]
+[node name="Label" type="Label" parent="Control/HBoxContainer" unique_id=1364065692]
 layout_mode = 2
 size_flags_vertical = 1
 theme_override_colors/font_color = Color(0.215686, 0.215686, 0.215686, 1)
@@ -1184,11 +1182,11 @@ theme_override_fonts/font = ExtResource("3_mndgp")
 theme_override_font_sizes/font_size = 60
 text = "THE BURRITO IS NOT THE BURRITO IS NOT THE BURRITO IS NOT THE BURRITO IS NOT THE BURRITO IS NOT THE BURRITO IS NOT THE BURRITO IS NOT THE BURRITO IS NOT THE BURRITO IS NOT THE BURRITO IS NOT THE BURRITO IS NOT THE BURRITO IS NOT THE BURRITO IS NOT THE BURRITO IS NOT THE BURRITO IS NOT THE BURRITO IS NOT THE BURRITO IS NOT THE BURRITO IS NOT THE BURRITO IS NOT THE BURRITO IS NOT THE BURRITO IS NOT THE BURRITO IS "
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Control/HBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/HBoxContainer" unique_id=1795244672]
 layout_mode = 2
 theme_override_constants/separation = -4
 
-[node name="Label" type="Label" parent="Control/HBoxContainer/VBoxContainer"]
+[node name="Label" type="Label" parent="Control/HBoxContainer/VBoxContainer" unique_id=1487957586]
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 0
@@ -1196,14 +1194,14 @@ theme_override_fonts/font = ExtResource("3_mndgp")
 theme_override_font_sizes/font_size = 60
 text = "LOADING"
 
-[node name="ProgressBar" type="ProgressBar" parent="Control/HBoxContainer/VBoxContainer"]
+[node name="ProgressBar" type="ProgressBar" parent="Control/HBoxContainer/VBoxContainer" unique_id=1392606585]
 custom_minimum_size = Vector2(0, 30)
 layout_mode = 2
 theme_override_styles/background = SubResource("StyleBoxFlat_remgb")
 theme_override_styles/fill = SubResource("StyleBoxFlat_xmgfw")
 show_percentage = false
 
-[node name="Label2" type="Label" parent="Control/HBoxContainer"]
+[node name="Label2" type="Label" parent="Control/HBoxContainer" unique_id=319025111]
 layout_mode = 2
 size_flags_vertical = 1
 theme_override_colors/font_color = Color(0.215686, 0.215686, 0.215686, 1)
@@ -1212,10 +1210,10 @@ theme_override_fonts/font = ExtResource("3_mndgp")
 theme_override_font_sizes/font_size = 60
 text = " NOT THE BURRITO"
 
-[node name="Player" type="Node3D" parent="."]
+[node name="Player" type="Node3D" parent="." unique_id=1261534436]
 transform = Transform3D(-1, 0, -2.5351817e-06, 0, 1, 0, 2.5351817e-06, 0, -1, 17, 0.817601, 15.6904)
 
-[node name="Double Jump Effect" type="GPUParticles3D" parent="Player"]
+[node name="Double Jump Effect" type="GPUParticles3D" parent="Player" unique_id=118498921]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.08992, 0)
 emitting = false
 amount = 1
@@ -1223,7 +1221,7 @@ process_material = SubResource("ParticleProcessMaterial_3540e")
 draw_pass_1 = SubResource("TorusMesh_nbihh")
 draw_skin = SubResource("Skin_vdfac")
 
-[node name="Sprint" type="GPUParticles3D" parent="Player"]
+[node name="Sprint" type="GPUParticles3D" parent="Player" unique_id=1313257154]
 transform = Transform3D(0.41, 0, 0, 0, 0.41, 0, 0, 0, 0.41, 0, -0.464384, 0)
 cast_shadow = 0
 emitting = false
@@ -1231,7 +1229,7 @@ amount = 16
 process_material = SubResource("ParticleProcessMaterial_pq3ej")
 draw_pass_1 = SubResource("PlaneMesh_gtf2s")
 
-[node name="Dive" type="GPUParticles3D" parent="Player"]
+[node name="Dive" type="GPUParticles3D" parent="Player" unique_id=1701594550]
 transform = Transform3D(0.41, 0, 0, 0, 0.41, 0, 0, 0, 0.41, 0, -0.464384, 0)
 cast_shadow = 0
 emitting = false
@@ -1239,10 +1237,10 @@ amount = 16
 process_material = SubResource("ParticleProcessMaterial_pq3ej")
 draw_pass_1 = SubResource("PlaneMesh_gtf2s")
 
-[node name="SubViewport" type="SubViewport" parent="Player"]
+[node name="SubViewport" type="SubViewport" parent="Player" unique_id=756961928]
 disable_3d = true
 
-[node name="Panel" type="Panel" parent="Player/SubViewport"]
+[node name="Panel" type="Panel" parent="Player/SubViewport" unique_id=1681951778]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -1250,24 +1248,24 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_4qcyj")
 
-[node name="Sprite2D2" type="Sprite2D" parent="Player/SubViewport"]
+[node name="Sprite2D2" type="Sprite2D" parent="Player/SubViewport" unique_id=1004794393]
 visible = false
 texture = ExtResource("4_50v3u")
 centered = false
 
-[node name="Sprite2D" type="Sprite2D" parent="Player/SubViewport"]
+[node name="Sprite2D" type="Sprite2D" parent="Player/SubViewport" unique_id=2101105481]
 position = Vector2(80, 251.345)
 texture = ExtResource("5_sxexu")
 
-[node name="Sprite2D3" type="Sprite2D" parent="Player/SubViewport"]
+[node name="Sprite2D3" type="Sprite2D" parent="Player/SubViewport" unique_id=609540679]
 position = Vector2(432, 251.345)
 texture = ExtResource("5_sxexu")
 flip_h = true
 
-[node name="player" parent="Player" instance=ExtResource("6_8hamn")]
+[node name="player" parent="Player" unique_id=1402694260 instance=ExtResource("6_8hamn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.78214, 0)
 
-[node name="Skeleton3D" parent="Player/player/Armature" index="0"]
+[node name="Skeleton3D" parent="Player/player/Armature" parent_id_path=PackedInt32Array(1402694260, 1592993931) index="0" unique_id=1093833323]
 bones/0/rotation = Quaternion(-0.0206791, 0, 0, 0.999786)
 bones/3/rotation = Quaternion(0.0469459, 1.27529e-17, 2.16744e-17, 0.998897)
 bones/4/position = Vector3(2.18988e-19, 0.162917, -3.72529e-09)
@@ -1308,124 +1306,121 @@ bones/23/scale = Vector3(1, 0.999999, 1)
 bones/24/rotation = Quaternion(-0.596658, 0.0390387, 0.318369, 0.735606)
 bones/24/scale = Vector3(1, 1, 1)
 
-[node name="Vert" parent="Player/player/Armature/Skeleton3D" index="0"]
+[node name="Vert" parent="Player/player/Armature/Skeleton3D" index="0" unique_id=321690431]
 material_overlay = SubResource("ShaderMaterial_lnutk")
 surface_material_override/0 = ExtResource("8_52m20")
 
-[node name="Vert_001" parent="Player/player/Armature/Skeleton3D" index="1"]
-surface_material_override/0 = SubResource("StandardMaterial3D_udvkh")
+[node name="Vert_001" parent="Player/player/Armature/Skeleton3D" index="1" unique_id=2140115685]
+surface_material_override/0 = SubResource("StandardMaterial3D_qb7xb")
 
-[node name="BoneAttachment3D" type="BoneAttachment3D" parent="Player/player/Armature/Skeleton3D" index="2"]
-transform = Transform3D(0.024501834, 0.99969923, 0.0012177462, -0.9996653, 0.024511151, -0.0082811555, -0.008308508, -0.0010144295, 0.999965, 0.84355694, 1.6346769, -0.054818407)
+[node name="BoneAttachment3D" type="BoneAttachment3D" parent="Player/player/Armature/Skeleton3D" index="2" unique_id=1488582750]
+transform = Transform3D(0.024501838, 0.99969923, 0.001217746, -0.9996653, 0.024511155, -0.0082811555, -0.008308508, -0.0010144291, 0.999965, 0.84355694, 1.6346769, -0.054818407)
 bone_name = "Hand_R"
 bone_idx = 14
 
-[node name="Slangshot" type="AnimatedSprite3D" parent="Player/player/Armature/Skeleton3D/BoneAttachment3D"]
+[node name="Slangshot" type="AnimatedSprite3D" parent="Player/player/Armature/Skeleton3D/BoneAttachment3D" unique_id=2084774570]
 transform = Transform3D(1.80979, 0.114796, 0.843492, -0.833927, -0.15887, 1.81089, 0.170944, -1.99037, -0.0958952, 0.0244896, 0.190201, -0.121208)
 visible = false
 sprite_frames = SubResource("SpriteFrames_7woet")
 frame_progress = 0.629152
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Player"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Player" unique_id=569087379]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, -0.805386, 0)
 material_override = SubResource("StandardMaterial3D_ym3iy")
 mesh = SubResource("PlaneMesh_cu1vt")
-skeleton = NodePath("")
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Player"]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Player" unique_id=1047465195]
 stream = ExtResource("11_tomww")
 volume_db = -12.0
 
-[node name="stanleysounds" type="AudioStreamPlayer" parent="Player"]
+[node name="stanleysounds" type="AudioStreamPlayer" parent="Player" unique_id=1336245069]
 process_mode = 3
 stream = SubResource("AudioStreamRandomizer_w8adk")
 max_polyphony = 10
 bus = &"SFX"
 
-[node name="afk" type="AudioStreamPlayer" parent="Player"]
+[node name="afk" type="AudioStreamPlayer" parent="Player" unique_id=39594839]
 process_mode = 3
 stream = SubResource("AudioStreamRandomizer_q58de")
 max_polyphony = 10
 
-[node name="beanpickup" type="AudioStreamPlayer" parent="Player"]
+[node name="beanpickup" type="AudioStreamPlayer" parent="Player" unique_id=1811457994]
 process_mode = 3
 stream = SubResource("AudioStreamRandomizer_8sct6")
 max_polyphony = 10
 
-[node name="crumblejump" type="AudioStreamPlayer" parent="Player"]
+[node name="crumblejump" type="AudioStreamPlayer" parent="Player" unique_id=1689595888]
 process_mode = 3
 stream = SubResource("AudioStreamRandomizer_bw4xi")
 max_polyphony = 10
 
-[node name="die" type="AudioStreamPlayer" parent="Player"]
+[node name="die" type="AudioStreamPlayer" parent="Player" unique_id=87319702]
 process_mode = 3
 stream = SubResource("AudioStreamRandomizer_4ra70")
 pitch_scale = 2.5
 max_polyphony = 10
 
-[node name="kill" type="AudioStreamPlayer" parent="Player"]
+[node name="kill" type="AudioStreamPlayer" parent="Player" unique_id=1738777582]
 process_mode = 3
 stream = SubResource("AudioStreamRandomizer_58kgp")
 max_polyphony = 10
 
-[node name="moving" type="AudioStreamPlayer" parent="Player"]
+[node name="moving" type="AudioStreamPlayer" parent="Player" unique_id=5591169]
 process_mode = 3
 stream = SubResource("AudioStreamRandomizer_hciio")
 max_polyphony = 10
 
-[node name="resume" type="AudioStreamPlayer" parent="Player"]
+[node name="resume" type="AudioStreamPlayer" parent="Player" unique_id=1171791770]
 process_mode = 3
 stream = SubResource("AudioStreamRandomizer_2sl5m")
 max_polyphony = 10
 
-[node name="sling" type="AudioStreamPlayer" parent="Player"]
+[node name="sling" type="AudioStreamPlayer" parent="Player" unique_id=876221989]
 process_mode = 3
 stream = SubResource("AudioStreamRandomizer_i0ls6")
 max_polyphony = 10
 
-[node name="switch" type="AudioStreamPlayer" parent="Player"]
+[node name="switch" type="AudioStreamPlayer" parent="Player" unique_id=1132889219]
 process_mode = 3
 stream = SubResource("AudioStreamRandomizer_3n03h")
 max_polyphony = 10
 
-[node name="platform" type="AudioStreamPlayer" parent="Player"]
+[node name="platform" type="AudioStreamPlayer" parent="Player" unique_id=1773979823]
 process_mode = 3
 stream = SubResource("AudioStreamRandomizer_vmnlf")
 max_polyphony = 10
 
-[node name="findswitch" type="AudioStreamPlayer" parent="Player"]
+[node name="findswitch" type="AudioStreamPlayer" parent="Player" unique_id=1652682355]
 process_mode = 3
 stream = ExtResource("47_nd46d")
 max_polyphony = 10
 
-[node name="lanes" type="Node3D" parent="."]
+[node name="lanes" type="Node3D" parent="." unique_id=1569343570]
 transform = Transform3D(-1, 0, -1.22465e-16, 0, 1, 0, 1.22465e-16, 0, -1, 17, 0, 16)
 
-[node name="checkout" parent="lanes" instance=ExtResource("4_3yodl")]
+[node name="checkout" parent="lanes" unique_id=1587840431 instance=ExtResource("4_3yodl")]
 
-[node name="check2piv" type="Node3D" parent="lanes"]
+[node name="check2piv" type="Node3D" parent="lanes" unique_id=1356715185]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.07757, 0, 3.35851)
 
-[node name="checkout2" parent="lanes/check2piv" instance=ExtResource("4_3yodl")]
+[node name="checkout2" parent="lanes/check2piv" unique_id=1605272926 instance=ExtResource("4_3yodl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.07757, 0, 0.64149)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="lanes/check2piv"]
-libraries = {
-&"": SubResource("AnimationLibrary_i8u7g")
-}
+[node name="AnimationPlayer" type="AnimationPlayer" parent="lanes/check2piv" unique_id=1802826191]
+libraries/ = SubResource("AnimationLibrary_i8u7g")
 
-[node name="AnimationTree" type="AnimationTree" parent="lanes/check2piv"]
+[node name="AnimationTree" type="AnimationTree" parent="lanes/check2piv" unique_id=2115722097]
 active = false
 tree_root = SubResource("AnimationNodeStateMachine_kc6j4")
 anim_player = NodePath("../AnimationPlayer")
 
-[node name="checkout4" parent="lanes" instance=ExtResource("4_3yodl")]
+[node name="checkout4" parent="lanes" unique_id=1590998175 instance=ExtResource("4_3yodl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8)
 
-[node name="checkout3" parent="lanes" instance=ExtResource("4_3yodl")]
+[node name="checkout3" parent="lanes" unique_id=1722564054 instance=ExtResource("4_3yodl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4)
 
-[node name="GridMap" type="GridMap" parent="."]
+[node name="GridMap" type="GridMap" parent="." unique_id=900500019]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, -3, 0)
 mesh_library = ExtResource("49_f2d1v")
 data = {
@@ -1433,10 +1428,9 @@ data = {
 }
 metadata/_editor_floor_ = Vector3(0, 0, 0)
 
-[node name="Rocket" type="MeshInstance3D" parent="."]
+[node name="Rocket" type="MeshInstance3D" parent="." unique_id=716841655]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 159, 120, 30)
 mesh = ExtResource("50_pfq43")
-skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_lawis")
 surface_material_override/1 = SubResource("StandardMaterial3D_sbdlq")
 surface_material_override/2 = SubResource("StandardMaterial3D_p40n3")
@@ -1444,25 +1438,25 @@ surface_material_override/3 = SubResource("StandardMaterial3D_5ssnd")
 surface_material_override/4 = SubResource("StandardMaterial3D_akf2q")
 script = SubResource("GDScript_f3qb5")
 
-[node name="stand" parent="." instance=ExtResource("52_0rluw")]
+[node name="stand" parent="." unique_id=430245094 instance=ExtResource("52_0rluw")]
 transform = Transform3D(7.62343e-17, 0, -1.245, 0, 1.245, 0, 1.245, 0, 7.62343e-17, 0, 0.0128492, -12.6849)
 
-[node name="slidedoor" parent="." instance=ExtResource("53_5cods")]
+[node name="slidedoor" parent="." unique_id=1612054460 instance=ExtResource("53_5cods")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22, 0, 26)
 
-[node name="slidedoor2" parent="." instance=ExtResource("53_5cods")]
+[node name="slidedoor2" parent="." unique_id=1106720361 instance=ExtResource("53_5cods")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, 26)
 
-[node name="Camera3D" type="Camera3D" parent="."]
+[node name="Camera3D" type="Camera3D" parent="." unique_id=371879159]
 transform = Transform3D(-3.6199901e-06, 0, 1, 0, 1, 0, -1, 0, -3.6199901e-06, 22.555, 1.2, 25.995)
 
-[node name="Camera3D2" type="Camera3D" parent="."]
+[node name="Camera3D2" type="Camera3D" parent="." unique_id=830150455]
 transform = Transform3D(-0.989653, 0.0081346, 0.14325485, 0, 0.9983919, -0.0566928, -0.14348568, -0.056106165, -0.98806095, 17.7932, 0.813225, 11.6212)
 
-[node name="ship" parent="." instance=ExtResource("54_pljj8")]
+[node name="ship" parent="." unique_id=82452781 instance=ExtResource("54_pljj8")]
 transform = Transform3D(11.9805, 0, 0, 0, 11.9805, 0, 0, 0, 11.9805, -3.542, 56.814, -300)
 
-[node name="GPUParticles3D" type="GPUParticles3D" parent="ship"]
+[node name="GPUParticles3D" type="GPUParticles3D" parent="ship" unique_id=1669041270]
 emitting = false
 amount = 1000
 lifetime = 2.0
@@ -1471,20 +1465,20 @@ visibility_aabb = AABB(-50, -50, -50, 100, 100, 100)
 process_material = SubResource("ParticleProcessMaterial_brobl")
 draw_pass_1 = SubResource("ArrayMesh_7ex4t")
 
-[node name="GPUParticlesCollisionBox3D" type="GPUParticlesCollisionBox3D" parent="ship/GPUParticles3D"]
+[node name="GPUParticlesCollisionBox3D" type="GPUParticlesCollisionBox3D" parent="ship/GPUParticles3D" unique_id=304417513]
 transform = Transform3D(0.083469, 0, 0, 0, 0.083469, 0, 0, 0, 0.083469, 0.0571909, -4.80164, 0.37802)
 size = Vector3(37.8828, 0.575791, 32.9423)
 
-[node name="parablecontol" type="Node" parent="."]
+[node name="parablecontol" type="Node" parent="." unique_id=1886962175]
 script = ExtResource("56_gkro8")
 
-[node name="Marker3D" type="Marker3D" parent="."]
+[node name="Marker3D" type="Marker3D" parent="." unique_id=1301978788]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.19918, 1.06233)
 
-[node name="Node2D" type="Node2D" parent="."]
+[node name="Node2D" type="Node2D" parent="." unique_id=584822301]
 modulate = Color(1, 1, 1, 0)
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Node2D"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Node2D" unique_id=437131465]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -1499,156 +1493,156 @@ grow_vertical = 2
 mouse_filter = 2
 alignment = 1
 
-[node name="Label" type="Label" parent="Node2D/HBoxContainer"]
+[node name="Label" type="Label" parent="Node2D/HBoxContainer" unique_id=1918737172]
 layout_mode = 2
 text = "Press"
 
-[node name="Button" type="Button" parent="Node2D/HBoxContainer"]
+[node name="Button" type="Button" parent="Node2D/HBoxContainer" unique_id=1089962281]
 layout_mode = 2
 mouse_filter = 2
 theme = ExtResource("57_7e626")
 toggle_mode = true
 text = " F "
 
-[node name="Label2" type="Label" parent="Node2D/HBoxContainer"]
+[node name="Label2" type="Label" parent="Node2D/HBoxContainer" unique_id=1689323432]
 layout_mode = 2
 text = "to sipn"
 
-[node name="walls" type="StaticBody3D" parent="."]
+[node name="walls" type="StaticBody3D" parent="." unique_id=1221612073]
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="walls"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="walls" unique_id=1374018237]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 3, 0.1)
 material_override = SubResource("StandardMaterial3D_8lk1y")
 mesh = SubResource("BoxMesh_2222i")
 
-[node name="MeshInstance3D4" type="MeshInstance3D" parent="walls"]
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="walls" unique_id=1347953357]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23, 4.5, 26)
 material_override = SubResource("StandardMaterial3D_8lk1y")
 mesh = SubResource("BoxMesh_t75ov")
 
-[node name="MeshInstance3D5" type="MeshInstance3D" parent="walls"]
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="walls" unique_id=2055010300]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23, 1.5, 23)
 material_override = SubResource("StandardMaterial3D_8lk1y")
 mesh = SubResource("BoxMesh_5xoct")
 
-[node name="CollisionShape3D5" type="CollisionShape3D" parent="walls"]
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="walls" unique_id=632257847]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23, 1.5, 23)
 shape = SubResource("ConvexPolygonShape3D_d882x")
 
-[node name="MeshInstance3D6" type="MeshInstance3D" parent="walls"]
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="walls" unique_id=1497915989]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23, 1.5, 29)
 material_override = SubResource("StandardMaterial3D_8lk1y")
 mesh = SubResource("BoxMesh_5xoct")
 
-[node name="CollisionShape3D6" type="CollisionShape3D" parent="walls"]
+[node name="CollisionShape3D6" type="CollisionShape3D" parent="walls" unique_id=1205339554]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23, 1.5, 29)
 shape = SubResource("ConvexPolygonShape3D_d882x")
 
-[node name="CollisionShape3D4" type="CollisionShape3D" parent="walls"]
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="walls" unique_id=938854448]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23, 4.5, 26)
 shape = SubResource("ConvexPolygonShape3D_0rpps")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="walls"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="walls" unique_id=322188341]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 3, 0.1)
 shape = SubResource("ConvexPolygonShape3D_52xe5")
 
-[node name="MeshInstance3D3" type="MeshInstance3D" parent="walls"]
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="walls" unique_id=336312353]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 3, 29.9)
 material_override = SubResource("StandardMaterial3D_8lk1y")
 mesh = SubResource("BoxMesh_2222i")
 
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="walls"]
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="walls" unique_id=418604017]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 3, 29.9)
 shape = SubResource("ConvexPolygonShape3D_4bjwe")
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="walls"]
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="walls" unique_id=108154477]
 transform = Transform3D(6.12323e-17, 0, 1, 0, 1, 0, -1, 0, 6.12323e-17, -5.9, 3, 15)
 material_override = SubResource("StandardMaterial3D_y5k6r")
 mesh = SubResource("BoxMesh_2222i")
 
-[node name="MeshInstance3D7" type="MeshInstance3D" parent="walls"]
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="walls" unique_id=1694425435]
 transform = Transform3D(6.12323e-17, 0, 1, 0, 1, 0, -1, 0, 6.12323e-17, 23.9, 3, 11)
 material_override = SubResource("StandardMaterial3D_y5k6r")
 mesh = SubResource("BoxMesh_2c66u")
 
-[node name="CollisionShape3D7" type="CollisionShape3D" parent="walls"]
+[node name="CollisionShape3D7" type="CollisionShape3D" parent="walls" unique_id=1916140703]
 transform = Transform3D(6.12323e-17, 0, 1, 0, 1, 0, -1, 0, 6.12323e-17, 23.9, 3, 11)
 shape = SubResource("ConvexPolygonShape3D_hdsvi")
 
-[node name="CollisionShape3D3" type="CollisionShape3D" parent="walls"]
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="walls" unique_id=268793073]
 transform = Transform3D(6.12323e-17, 0, 1, 0, 1, 0, -1, 0, 6.12323e-17, -5.9, 3, 15)
 shape = SubResource("ConvexPolygonShape3D_hobux")
 
-[node name="shelves" type="StaticBody3D" parent="."]
+[node name="shelves" type="StaticBody3D" parent="." unique_id=1461375424]
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="shelves"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="shelves" unique_id=342838421]
 transform = Transform3D(6.12323e-17, 0, -1, 0, 1, 0, 1, 0, 6.12323e-17, 2, 0, 15)
 material_override = SubResource("StandardMaterial3D_npe1o")
 mesh = ExtResource("59_ug3dd")
 skeleton = NodePath("../..")
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="shelves"]
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="shelves" unique_id=2003669574]
 transform = Transform3D(6.12323e-17, 0, -1, 0, 1, 0, 1, 0, 6.12323e-17, 2, 0, 20)
 material_override = SubResource("StandardMaterial3D_npe1o")
 mesh = ExtResource("59_ug3dd")
 skeleton = NodePath("../..")
 
-[node name="MeshInstance3D3" type="MeshInstance3D" parent="shelves"]
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="shelves" unique_id=525640331]
 transform = Transform3D(6.12323e-17, 0, -1, 0, 1, 0, 1, 0, 6.12323e-17, 2, 0, 25)
 material_override = SubResource("StandardMaterial3D_npe1o")
 mesh = ExtResource("59_ug3dd")
 skeleton = NodePath("../..")
 
-[node name="MeshInstance3D4" type="MeshInstance3D" parent="shelves"]
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="shelves" unique_id=331089520]
 transform = Transform3D(6.12323e-17, 0, -1, 0, 1, 0, 1, 0, 6.12323e-17, 2, 0, 10)
 material_override = SubResource("StandardMaterial3D_npe1o")
 mesh = ExtResource("59_ug3dd")
 skeleton = NodePath("../..")
 
-[node name="MeshInstance3D5" type="MeshInstance3D" parent="shelves"]
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="shelves" unique_id=1676500408]
 transform = Transform3D(6.12323e-17, 0, -1, 0, 1, 0, 1, 0, 6.12323e-17, 2, 0, 5)
 material_override = SubResource("StandardMaterial3D_npe1o")
 mesh = ExtResource("59_ug3dd")
 skeleton = NodePath("../..")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="shelves"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="shelves" unique_id=889563306]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1.5, 25)
 shape = SubResource("BoxShape3D_3ty8w")
 
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="shelves"]
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="shelves" unique_id=315253958]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1.5, 20)
 shape = SubResource("BoxShape3D_3ty8w")
 
-[node name="CollisionShape3D3" type="CollisionShape3D" parent="shelves"]
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="shelves" unique_id=1681727662]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1.5, 15)
 shape = SubResource("BoxShape3D_3ty8w")
 
-[node name="CollisionShape3D4" type="CollisionShape3D" parent="shelves"]
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="shelves" unique_id=703548749]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1.5, 10)
 shape = SubResource("BoxShape3D_3ty8w")
 
-[node name="CollisionShape3D5" type="CollisionShape3D" parent="shelves"]
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="shelves" unique_id=165890866]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1.5, 5)
 shape = SubResource("BoxShape3D_3ty8w")
 
-[node name="gamma" parent="." instance=ExtResource("60_2rff6")]
+[node name="gamma" parent="." unique_id=1036118917 instance=ExtResource("60_2rff6")]
 transform = Transform3D(0.710977, 0, -0.703215, 0, 1, 0, 0.703215, 0, 0.710977, -0.380428, 1.47617, 22.359)
 
-[node name="Label3D" type="Label3D" parent="."]
+[node name="Label3D" type="Label3D" parent="." unique_id=183003713]
 transform = Transform3D(0.192845, 0.823077, 0.534187, -0.0608169, 0.553385, -0.830702, -0.979343, 0.127709, 0.156775, 3.62468, 51.3132, -23.1369)
 visible = false
 pixel_size = 0.0615
 modulate = Color(1, 0, 1, 1)
 text = "imagine this is really far away lol"
 
-[node name="symmie" parent="." instance=ExtResource("61_yy23m")]
+[node name="symmie" parent="." unique_id=177879995 instance=ExtResource("61_yy23m")]
 transform = Transform3D(-0.945289, 0, -0.326233, 0, 1, 0, 0.326233, 0, -0.945289, 17.0257, 1.30488, 7.17298)
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1283319945]
 stream = ExtResource("62_ad21t")
 bus = &"Music"
 
-[node name="Label" type="Label" parent="."]
+[node name="Label" type="Label" parent="." unique_id=1873495765]
 visible = false
 anchors_preset = 7
 anchor_left = 0.5
@@ -1668,13 +1662,13 @@ horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("63_78woi")
 
-[node name="lex" parent="." instance=ExtResource("64_wgidy")]
+[node name="lex" parent="." unique_id=1682666778 instance=ExtResource("64_wgidy")]
 transform = Transform3D(0.809128, 0, -0.587633, 0, 1, 0, 0.587633, 0, 0.809128, 6.41326, 0.763524, 17.7724)
 
-[node name="slidedoor3" parent="." instance=ExtResource("53_5cods")]
+[node name="slidedoor3" parent="." unique_id=1776364085 instance=ExtResource("53_5cods")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 150, 0, 30)
 
-[node name="planehydra" parent="." instance=ExtResource("65_2k2v1")]
+[node name="planehydra" parent="." unique_id=1357483162 instance=ExtResource("65_2k2v1")]
 transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, 168, 0, 30)
 
 [editable path="Player/player"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://dapjhqfssvf1m"]
+[gd_scene format=3 uid="uid://dapjhqfssvf1m"]
 
 [ext_resource type="Script" uid="uid://chuy0o0bf6171" path="res://Scenes/Characterz/zeepkiller.gd" id="1_du2xb"]
 [ext_resource type="PackedScene" uid="uid://bwfm0mqlilrui" path="res://Scenes/subparts/unwelcome.tscn" id="1_hhi53"]
@@ -155,14 +155,14 @@ _data = {
 &"new_animation": SubResource("Animation_mmd44")
 }
 
-[node name="zeepkiller" type="Node3D"]
+[node name="zeepkiller" type="Node3D" unique_id=839177062]
 script = ExtResource("1_du2xb")
 buttonNormal = SubResource("StyleBoxFlat_jmjbj")
 buttonFocus = SubResource("StyleBoxFlat_43a1p")
 
-[node name="Control" parent="." instance=ExtResource("1_hhi53")]
+[node name="Control" parent="." unique_id=45313399 instance=ExtResource("1_hhi53")]
 
-[node name="Control2" type="Control" parent="."]
+[node name="Control2" type="Control" parent="." unique_id=89850143]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -171,7 +171,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="killscreen" type="VBoxContainer" parent="Control2"]
+[node name="killscreen" type="VBoxContainer" parent="Control2" unique_id=90344478]
 visible = false
 layout_mode = 1
 anchors_preset = 13
@@ -184,12 +184,12 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="Control" type="Control" parent="Control2/killscreen"]
+[node name="Control" type="Control" parent="Control2/killscreen" unique_id=1027741645]
 custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
 mouse_filter = 2
 
-[node name="Label" type="Label" parent="Control2/killscreen"]
+[node name="Label" type="Label" parent="Control2/killscreen" unique_id=2079263454]
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_shadow_color = Color(0.345098, 0.156863, 0.0901961, 1)
@@ -201,7 +201,7 @@ theme_override_font_sizes/font_size = 126
 text = "YOU"
 horizontal_alignment = 1
 
-[node name="Label2" type="Label" parent="Control2/killscreen"]
+[node name="Label2" type="Label" parent="Control2/killscreen" unique_id=914512786]
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_shadow_color = Color(0.345098, 0.156863, 0.0901961, 1)
@@ -213,12 +213,12 @@ theme_override_font_sizes/font_size = 50
 text = "0/0 Checkpoints"
 horizontal_alignment = 1
 
-[node name="Control2" type="Control" parent="Control2/killscreen"]
+[node name="Control2" type="Control" parent="Control2/killscreen" unique_id=971221907]
 layout_mode = 2
 size_flags_vertical = 3
 mouse_filter = 2
 
-[node name="Label3" type="Label" parent="Control2/killscreen"]
+[node name="Label3" type="Label" parent="Control2/killscreen" unique_id=270355988]
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_shadow_color = Color(0.345098, 0.156863, 0.0901961, 1)
@@ -230,12 +230,12 @@ theme_override_font_sizes/font_size = 41
 text = "Press Enter to continue!"
 horizontal_alignment = 1
 
-[node name="Control3" type="Control" parent="Control2/killscreen"]
+[node name="Control3" type="Control" parent="Control2/killscreen" unique_id=2075452789]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 mouse_filter = 2
 
-[node name="statscreen" type="Panel" parent="Control2"]
+[node name="statscreen" type="Panel" parent="Control2" unique_id=1658601327]
 visible = false
 layout_mode = 1
 anchors_preset = 8
@@ -252,7 +252,7 @@ grow_vertical = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_jfick")
 
-[node name="Panel" type="Panel" parent="Control2/statscreen"]
+[node name="Panel" type="Panel" parent="Control2/statscreen" unique_id=239334260]
 layout_mode = 0
 offset_top = -60.0
 offset_right = 720.0
@@ -260,7 +260,7 @@ offset_bottom = 9.0
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_6li7a")
 
-[node name="Label4" type="Label" parent="Control2/statscreen/Panel"]
+[node name="Label4" type="Label" parent="Control2/statscreen/Panel" unique_id=1829018430]
 layout_mode = 0
 offset_left = 13.0
 offset_top = 12.0
@@ -275,7 +275,7 @@ theme_override_fonts/font = ExtResource("2_xefry")
 theme_override_font_sizes/font_size = 50
 text = "Level_Name"
 
-[node name="Label5" type="Label" parent="Control2/statscreen/Panel"]
+[node name="Label5" type="Label" parent="Control2/statscreen/Panel" unique_id=248063820]
 layout_mode = 0
 offset_left = 547.0
 offset_top = 36.0
@@ -290,7 +290,7 @@ theme_override_fonts/font = ExtResource("2_xefry")
 theme_override_font_sizes/font_size = 25
 text = "By CE-Studio"
 
-[node name="Label6" type="Label" parent="Control2/statscreen/Panel"]
+[node name="Label6" type="Label" parent="Control2/statscreen/Panel" unique_id=1228001209]
 layout_mode = 0
 offset_left = 547.0
 offset_top = 8.0
@@ -303,7 +303,7 @@ theme_override_font_sizes/font_size = 25
 text = "Platformer"
 horizontal_alignment = 2
 
-[node name="Label7" type="Label" parent="Control2/statscreen/Panel"]
+[node name="Label7" type="Label" parent="Control2/statscreen/Panel" unique_id=1114812963]
 layout_mode = 0
 offset_left = 7.0
 offset_top = -28.0
@@ -318,7 +318,7 @@ theme_override_fonts/font = ExtResource("3_5vfuc")
 theme_override_font_sizes/font_size = 21
 text = "12:12 PM - Wednesday, September 31, 2045"
 
-[node name="Panel2" type="Panel" parent="Control2/statscreen"]
+[node name="Panel2" type="Panel" parent="Control2/statscreen" unique_id=1966064006]
 layout_mode = 0
 offset_top = 328.0
 offset_right = 720.0
@@ -326,7 +326,7 @@ offset_bottom = 397.0
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_6li7a")
 
-[node name="Label4" type="Label" parent="Control2/statscreen/Panel2"]
+[node name="Label4" type="Label" parent="Control2/statscreen/Panel2" unique_id=932951781]
 layout_mode = 0
 offset_left = 13.0
 offset_top = 12.0
@@ -342,7 +342,7 @@ theme_override_font_sizes/font_size = 30
 text = "Press Enter to select!"
 vertical_alignment = 1
 
-[node name="Button" type="Button" parent="Control2/statscreen/Panel2"]
+[node name="Button" type="Button" parent="Control2/statscreen/Panel2" unique_id=2082996219]
 layout_mode = 0
 offset_left = 528.0
 offset_top = 7.0
@@ -353,7 +353,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_er6ve")
 theme_override_styles/hover = SubResource("StyleBoxFlat_43a1p")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_dx2sa")
 
-[node name="Label5" type="Label" parent="Control2/statscreen/Panel2/Button"]
+[node name="Label5" type="Label" parent="Control2/statscreen/Panel2/Button" unique_id=610463396]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -371,7 +371,7 @@ text = "Continue"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Button2" type="Button" parent="Control2/statscreen/Panel2"]
+[node name="Button2" type="Button" parent="Control2/statscreen/Panel2" unique_id=1907021339]
 layout_mode = 0
 offset_left = 337.0
 offset_top = 7.0
@@ -382,7 +382,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_er6ve")
 theme_override_styles/hover = SubResource("StyleBoxFlat_43a1p")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_5srhx")
 
-[node name="Label5" type="Label" parent="Control2/statscreen/Panel2/Button2"]
+[node name="Label5" type="Label" parent="Control2/statscreen/Panel2/Button2" unique_id=796008664]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -400,7 +400,7 @@ text = "Retry"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Label7" type="Label" parent="Control2/statscreen"]
+[node name="Label7" type="Label" parent="Control2/statscreen" unique_id=1104149991]
 layout_mode = 0
 offset_left = 316.0
 offset_top = 205.0
@@ -415,7 +415,7 @@ theme_override_fonts/font = ExtResource("2_xefry")
 theme_override_font_sizes/font_size = 50
 text = "Did not finish!"
 
-[node name="Label9" type="Label" parent="Control2/statscreen"]
+[node name="Label9" type="Label" parent="Control2/statscreen" unique_id=458889909]
 clip_children = 2
 layout_mode = 1
 anchors_preset = 8
@@ -435,7 +435,7 @@ theme_override_fonts/font = ExtResource("3_5vfuc")
 theme_override_font_sizes/font_size = 50
 text = "Better luck next time!"
 
-[node name="Label8" type="Label" parent="Control2/statscreen"]
+[node name="Label8" type="Label" parent="Control2/statscreen" unique_id=1160238045]
 clip_children = 2
 layout_mode = 1
 anchors_preset = 8
@@ -455,7 +455,7 @@ theme_override_fonts/font = ExtResource("3_5vfuc")
 theme_override_font_sizes/font_size = 50
 text = "Better luck next time!"
 
-[node name="Panel" type="Panel" parent="Control2/statscreen/Label8"]
+[node name="Panel" type="Panel" parent="Control2/statscreen/Label8" unique_id=1611970668]
 layout_mode = 0
 offset_top = 4.0
 offset_right = 601.0
@@ -463,64 +463,64 @@ offset_bottom = 39.0
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_oxf4i")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=33043503]
 mesh = SubResource("CapsuleMesh_7yhcj")
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="MeshInstance3D"]
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="MeshInstance3D" unique_id=225535138]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.299406, -1.18276, 0)
 mesh = SubResource("CapsuleMesh_klm0h")
 skeleton = NodePath("../..")
 
-[node name="MeshInstance3D3" type="MeshInstance3D" parent="MeshInstance3D"]
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="MeshInstance3D" unique_id=1070958690]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.299, -1.18261, 0)
 mesh = SubResource("CapsuleMesh_klm0h")
 skeleton = NodePath("../..")
 
-[node name="MeshInstance3D4" type="MeshInstance3D" parent="MeshInstance3D"]
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="MeshInstance3D" unique_id=1554952922]
 transform = Transform3D(6.12323e-17, 1, 0, -1, 6.12323e-17, 0, 0, 0, 1, -0.976323, 0.418512, 0)
 mesh = SubResource("CapsuleMesh_klm0h")
 skeleton = NodePath("../..")
 
-[node name="MeshInstance3D5" type="MeshInstance3D" parent="MeshInstance3D"]
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="MeshInstance3D" unique_id=226274970]
 transform = Transform3D(6.12323e-17, 1, 0, -1, 6.12323e-17, 0, 0, 0, 1, 0.976, 0.419, 0)
 mesh = SubResource("CapsuleMesh_klm0h")
 skeleton = NodePath("../..")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="MeshInstance3D"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="MeshInstance3D" unique_id=1924313887]
 transform = Transform3D(0.707107, -0.707107, 0, 0.707107, 0.707107, 0, 0, 0, 1, 0, 0.177404, -0.486337)
 mesh = SubResource("BoxMesh_x102d")
 
-[node name="MeshInstance3D6" type="MeshInstance3D" parent="MeshInstance3D/MeshInstance3D"]
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="MeshInstance3D/MeshInstance3D" unique_id=1320161878]
 transform = Transform3D(0, -1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0)
 mesh = SubResource("BoxMesh_x102d")
 skeleton = NodePath("../..")
 
-[node name="MeshInstance3D6" type="MeshInstance3D" parent="MeshInstance3D"]
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="MeshInstance3D" unique_id=210469355]
 transform = Transform3D(-0.904518, -0.426435, 0, 0.426435, -0.904518, 0, 0, 0, 1, -0.181442, 0.0428247, 0)
 mesh = SubResource("SphereMesh_ns7fe")
 
-[node name="MeshInstance3D7" type="MeshInstance3D" parent="MeshInstance3D/MeshInstance3D6"]
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="MeshInstance3D/MeshInstance3D6" unique_id=258951472]
 transform = Transform3D(0.601765, -0.798673, 0, 0.798673, 0.601765, 0, 0, 0, 1, -0.067715, -0.0337493, 0)
 mesh = SubResource("SphereMesh_ns7fe")
 skeleton = NodePath("../..")
 
-[node name="MeshInstance3D7" type="MeshInstance3D" parent="MeshInstance3D"]
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="MeshInstance3D" unique_id=476602935]
 transform = Transform3D(0.0676148, -0.0181173, -1.10937e-18, 0, 4.28626e-18, -0.07, 0.0181173, 0.0676148, 4.14021e-18, 0.204375, 0.579577, -0.486607)
 material_override = SubResource("StandardMaterial3D_gkq8i")
 mesh = ExtResource("5_r4a5u")
 
-[node name="MeshInstance3D8" type="MeshInstance3D" parent="MeshInstance3D"]
+[node name="MeshInstance3D8" type="MeshInstance3D" parent="MeshInstance3D" unique_id=1937093859]
 transform = Transform3D(0.0676148, 0.0181173, 1.10937e-18, 0, 4.28626e-18, -0.07, -0.0181173, 0.0676148, 4.14021e-18, -0.204, 0.579797, -0.486371)
 material_override = SubResource("StandardMaterial3D_gkq8i")
 mesh = ExtResource("5_r4a5u")
 
-[node name="Area3D" type="Area3D" parent="."]
+[node name="Area3D" type="Area3D" parent="." unique_id=914346417]
 monitorable = false
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1230530084]
 shape = SubResource("SphereShape3D_dttdj")
 
-[node name="Panel" type="Panel" parent="."]
+[node name="Panel" type="Panel" parent="." unique_id=1800132361]
 material = SubResource("ShaderMaterial_ismen")
 anchors_preset = 15
 anchor_right = 1.0
@@ -530,10 +530,8 @@ grow_vertical = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_eetk6")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_xyi4d")
-}
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=584317767]
+libraries/ = SubResource("AnimationLibrary_xyi4d")
 
 [connection signal="focus_entered" from="Control2/statscreen/Panel2/Button" to="." method="_on_button_focus_entered"]
 [connection signal="focus_exited" from="Control2/statscreen/Panel2/Button" to="." method="_on_button_focus_exited"]

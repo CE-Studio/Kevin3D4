@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://bjtuexpc3ovab"]
+[gd_scene format=3 uid="uid://bjtuexpc3ovab"]
 
 [ext_resource type="AudioStream" uid="uid://diefur77d32jo" path="res://Assets/Music/Title.wav" id="1_7lcl3"]
 [ext_resource type="PackedScene" uid="uid://8iobt4o8k61u" path="res://Scenes/Player.tscn" id="1_hr3a5"]
@@ -25,86 +25,86 @@ size = Vector3(25, 1, 25)
 [sub_resource type="SphereShape3D" id="SphereShape3D_fkn6q"]
 radius = 6.58196
 
-[node name="Game" type="Node3D"]
+[node name="Game" type="Node3D" unique_id=1972787502]
 
-[node name="StaticBody3D" type="StaticBody3D" parent="."]
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=364542679]
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D" unique_id=1591363268]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0244299, 0.467489, -0.00563931)
 mesh = SubResource("PlaneMesh_2msyu")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=366734145]
 shape = SubResource("BoxShape3D_0kk0c")
 
-[node name="GPUParticlesCollisionBox3D" type="GPUParticlesCollisionBox3D" parent="StaticBody3D"]
+[node name="GPUParticlesCollisionBox3D" type="GPUParticlesCollisionBox3D" parent="StaticBody3D" unique_id=1558304643]
 size = Vector3(25, 2, 25)
 
-[node name="StaticBody3D2" type="StaticBody3D" parent="."]
+[node name="StaticBody3D2" type="StaticBody3D" parent="." unique_id=1765645450]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.8472, 0, -26.5197)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D2"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D2" unique_id=243636087]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0244299, 0.467489, -0.00563931)
 mesh = SubResource("PlaneMesh_2msyu")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D2"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D2" unique_id=1015528945]
 shape = SubResource("BoxShape3D_0kk0c")
 
-[node name="GPUParticlesCollisionBox3D" type="GPUParticlesCollisionBox3D" parent="StaticBody3D2"]
+[node name="GPUParticlesCollisionBox3D" type="GPUParticlesCollisionBox3D" parent="StaticBody3D2" unique_id=1263719131]
 size = Vector3(25, 2, 25)
 
-[node name="Player" parent="." instance=ExtResource("1_hr3a5")]
+[node name="Player" parent="." unique_id=2144031682 instance=ExtResource("1_hr3a5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.35281, 3.09895, -3.56201)
 
-[node name="Enemy" parent="." instance=ExtResource("2_5y8gm")]
+[node name="Enemy" parent="." unique_id=1373187841 instance=ExtResource("2_5y8gm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 1, 8)
 
-[node name="Box" parent="." instance=ExtResource("3_i4ysk")]
+[node name="Box" parent="." unique_id=1065093397 instance=ExtResource("3_i4ysk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.225983, 0, 24.6132)
 
-[node name="Box2" parent="." instance=ExtResource("3_i4ysk")]
+[node name="Box2" parent="." unique_id=1450899271 instance=ExtResource("3_i4ysk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.55847, 0, 49.7487)
 
-[node name="Box3" parent="." instance=ExtResource("3_i4ysk")]
+[node name="Box3" parent="." unique_id=1792247763 instance=ExtResource("3_i4ysk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.1983, 10.6611, 55.7259)
 
-[node name="Switch" parent="." instance=ExtResource("5_nojmr")]
+[node name="Switch" parent="." unique_id=1113181868 instance=ExtResource("5_nojmr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 1.5, -5)
 
-[node name="Collectible" parent="." instance=ExtResource("6_k0kv0")]
+[node name="Collectible" parent="." unique_id=1316989824 instance=ExtResource("6_k0kv0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.7487, 1.07892, 0.992058)
 
-[node name="Collectible2" parent="." instance=ExtResource("6_k0kv0")]
+[node name="Collectible2" parent="." unique_id=623195970 instance=ExtResource("6_k0kv0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.43542, 0.5, 7.23753)
 
-[node name="Collectible3" parent="." instance=ExtResource("6_k0kv0")]
+[node name="Collectible3" parent="." unique_id=1057654955 instance=ExtResource("6_k0kv0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.20601, 0.5, -1.00059)
 
-[node name="Collectible4" parent="." instance=ExtResource("6_k0kv0")]
+[node name="Collectible4" parent="." unique_id=1922917956 instance=ExtResource("6_k0kv0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.4606, 0.5, 7.92155)
 
-[node name="Crumbling Platform" parent="." instance=ExtResource("6_v8lna")]
+[node name="Crumbling Platform" parent="." unique_id=938002275 instance=ExtResource("6_v8lna")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.5185, 5.4901, -2.34082)
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1529226745]
 stream = ExtResource("1_7lcl3")
 autoplay = true
 bus = &"Music"
 
-[node name="enviro" parent="." instance=ExtResource("8_yp6d2")]
+[node name="enviro" parent="." unique_id=1313197472 instance=ExtResource("8_yp6d2")]
 
-[node name="Sketchfab_Scene" parent="." instance=ExtResource("10_3d2x6")]
+[node name="Sketchfab_Scene" parent="." unique_id=942511619 instance=ExtResource("10_3d2x6")]
 transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -5.88581, 1.13844, -9.63108)
 
-[node name="gamma" parent="." instance=ExtResource("10_6x1mg")]
+[node name="gamma" parent="." unique_id=811222666 instance=ExtResource("10_6x1mg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.27818, 2.01518, 10.722)
 
-[node name="symmie" parent="." instance=ExtResource("11_03jl4")]
+[node name="symmie" parent="." unique_id=2071062561 instance=ExtResource("11_03jl4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.70037, 1.78877, 10.98)
 
-[node name="lex" parent="." instance=ExtResource("12_dap5h")]
+[node name="lex" parent="." unique_id=1856747042 instance=ExtResource("12_dap5h")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.6633, 1.28064, 1.39022)
 
-[node name="Label" type="Label" parent="."]
+[node name="Label" type="Label" parent="." unique_id=689397341]
 visible = false
 anchors_preset = 7
 anchor_left = 0.5
@@ -124,15 +124,15 @@ horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("13_03r3f")
 
-[node name="planehydra" parent="." instance=ExtResource("14_rmqw5")]
+[node name="planehydra" parent="." unique_id=554483762 instance=ExtResource("14_rmqw5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.4067, 0.5, -30.7356)
 
-[node name="ZKSpawner" type="Area3D" parent="."]
+[node name="ZKSpawner" type="Area3D" parent="." unique_id=1632977035]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.09986, 0)
 monitorable = false
 script = ExtResource("15_3m4x1")
 oneshot = false
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="ZKSpawner"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ZKSpawner" unique_id=236864485]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.46027, 0, -6.03029)
 shape = SubResource("SphereShape3D_fkn6q")

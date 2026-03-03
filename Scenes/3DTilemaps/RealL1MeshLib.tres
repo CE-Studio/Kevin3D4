@@ -1,4 +1,4 @@
-[gd_resource type="MeshLibrary" load_steps=79 format=4 uid="uid://i125w3qc6j8c"]
+[gd_resource type="MeshLibrary" format=4 uid="uid://i125w3qc6j8c"]
 
 [ext_resource type="Texture2D" uid="uid://clsleqekifnc0" path="res://Assets/Textures/LevelTextures/L1Tiles0.png" id="1_tb0f1"]
 [ext_resource type="Texture2D" uid="uid://3gmec1n4ny7i" path="res://Assets/Textures/LevelTextures/L1Tiles1.png" id="2_amj5s"]

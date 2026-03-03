@@ -1,4 +1,4 @@
-[gd_scene load_steps=75 format=3 uid="uid://xv0yvw7qwsad"]
+[gd_scene format=3 uid="uid://xv0yvw7qwsad"]
 
 [ext_resource type="Texture2D" uid="uid://cdch1vlk7mbnf" path="res://Assets/Textures/dust.png" id="4_6n1oa"]
 [ext_resource type="Texture2D" uid="uid://c4h5sp7v5b4r4" path="res://Assets/Textures/visoruv.png" id="5_oki8h"]
@@ -95,13 +95,13 @@ render_priority = 0
 shader = ExtResource("8_js7r1")
 shader_parameter/transparency = 0.0
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_uwsid"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_aikwf"]
 viewport_path = NodePath("SubViewport")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5qv8g"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_60ss8"]
 resource_local_to_scene = true
 shading_mode = 0
-albedo_texture = SubResource("ViewportTexture_uwsid")
+albedo_texture = SubResource("ViewportTexture_aikwf")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hswdw"]
 atlas = ExtResource("10_1wrwk")
@@ -202,10 +202,10 @@ stream_0/stream = ExtResource("58_n0cly")
 stream_1/stream = ExtResource("59_emftg")
 stream_2/stream = ExtResource("60_7e8g4")
 
-[node name="Player" type="Node3D"]
+[node name="Player" type="Node3D" unique_id=961220157]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.817601, 0)
 
-[node name="Double Jump Effect" type="GPUParticles3D" parent="."]
+[node name="Double Jump Effect" type="GPUParticles3D" parent="." unique_id=339169751]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.08992, 0)
 emitting = false
 amount = 1
@@ -213,7 +213,7 @@ process_material = SubResource("ParticleProcessMaterial_3540e")
 draw_pass_1 = SubResource("TorusMesh_nbihh")
 draw_skin = SubResource("Skin_vdfac")
 
-[node name="Sprint" type="GPUParticles3D" parent="."]
+[node name="Sprint" type="GPUParticles3D" parent="." unique_id=229417465]
 transform = Transform3D(0.41, 0, 0, 0, 0.41, 0, 0, 0, 0.41, 0, -0.464384, 0)
 cast_shadow = 0
 emitting = false
@@ -221,7 +221,7 @@ amount = 16
 process_material = SubResource("ParticleProcessMaterial_pq3ej")
 draw_pass_1 = SubResource("PlaneMesh_gtf2s")
 
-[node name="Dive" type="GPUParticles3D" parent="."]
+[node name="Dive" type="GPUParticles3D" parent="." unique_id=1997696895]
 transform = Transform3D(0.41, 0, 0, 0, 0.41, 0, 0, 0, 0.41, 0, -0.464384, 0)
 cast_shadow = 0
 emitting = false
@@ -229,10 +229,10 @@ amount = 16
 process_material = SubResource("ParticleProcessMaterial_pq3ej")
 draw_pass_1 = SubResource("PlaneMesh_gtf2s")
 
-[node name="SubViewport" type="SubViewport" parent="."]
+[node name="SubViewport" type="SubViewport" parent="." unique_id=719878578]
 disable_3d = true
 
-[node name="Panel" type="Panel" parent="SubViewport"]
+[node name="Panel" type="Panel" parent="SubViewport" unique_id=1840871151]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -240,24 +240,24 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_4qcyj")
 
-[node name="Sprite2D2" type="Sprite2D" parent="SubViewport"]
+[node name="Sprite2D2" type="Sprite2D" parent="SubViewport" unique_id=157227281]
 visible = false
 texture = ExtResource("5_oki8h")
 centered = false
 
-[node name="Sprite2D" type="Sprite2D" parent="SubViewport"]
+[node name="Sprite2D" type="Sprite2D" parent="SubViewport" unique_id=367060925]
 position = Vector2(80, 251.345)
 texture = ExtResource("6_3147m")
 
-[node name="Sprite2D3" type="Sprite2D" parent="SubViewport"]
+[node name="Sprite2D3" type="Sprite2D" parent="SubViewport" unique_id=1232663723]
 position = Vector2(432, 251.345)
 texture = ExtResource("6_3147m")
 flip_h = true
 
-[node name="player" parent="." instance=ExtResource("7_w1s62")]
+[node name="player" parent="." unique_id=765630569 instance=ExtResource("7_w1s62")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.78214, 0)
 
-[node name="Skeleton3D" parent="player/Armature" index="0"]
+[node name="Skeleton3D" parent="player/Armature" parent_id_path=PackedInt32Array(765630569, 1592993931) index="0" unique_id=1093833323]
 bones/0/rotation = Quaternion(-0.0206791, 0, 0, 0.999786)
 bones/3/rotation = Quaternion(0.0469459, 1.27529e-17, 2.16744e-17, 0.998897)
 bones/4/position = Vector3(2.18988e-19, 0.162917, -3.72529e-09)
@@ -298,92 +298,91 @@ bones/23/scale = Vector3(1, 0.999999, 1)
 bones/24/rotation = Quaternion(-0.596658, 0.0390387, 0.318369, 0.735606)
 bones/24/scale = Vector3(1, 1, 1)
 
-[node name="Vert" parent="player/Armature/Skeleton3D" index="0"]
+[node name="Vert" parent="player/Armature/Skeleton3D" index="0" unique_id=321690431]
 material_overlay = SubResource("ShaderMaterial_lnutk")
 surface_material_override/0 = ExtResource("9_fhnh2")
 
-[node name="Vert_001" parent="player/Armature/Skeleton3D" index="1"]
-surface_material_override/0 = SubResource("StandardMaterial3D_5qv8g")
+[node name="Vert_001" parent="player/Armature/Skeleton3D" index="1" unique_id=2140115685]
+surface_material_override/0 = SubResource("StandardMaterial3D_60ss8")
 
-[node name="BoneAttachment3D" type="BoneAttachment3D" parent="player/Armature/Skeleton3D" index="2"]
-transform = Transform3D(0.024502, 0.999699, 0.00121775, -0.999665, 0.0245112, -0.00828115, -0.00830851, -0.00101443, 0.999965, 0.843557, 1.63468, -0.0548184)
+[node name="BoneAttachment3D" type="BoneAttachment3D" parent="player/Armature/Skeleton3D" index="2" unique_id=2060022185]
+transform = Transform3D(0.024501838, 0.99969923, 0.001217746, -0.9996653, 0.024511155, -0.0082811555, -0.008308508, -0.0010144291, 0.999965, 0.84355694, 1.6346769, -0.054818407)
 bone_name = "Hand_R"
 bone_idx = 14
 
-[node name="Slangshot" type="AnimatedSprite3D" parent="player/Armature/Skeleton3D/BoneAttachment3D"]
+[node name="Slangshot" type="AnimatedSprite3D" parent="player/Armature/Skeleton3D/BoneAttachment3D" unique_id=1752078946]
 transform = Transform3D(1.80979, 0.114796, 0.843492, -0.833927, -0.15887, 1.81089, 0.170944, -1.99037, -0.0958952, 0.0244896, 0.190201, -0.121208)
 visible = false
 sprite_frames = SubResource("SpriteFrames_7woet")
 frame_progress = 0.629152
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1511831286]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, -0.805386, 0)
 material_override = SubResource("StandardMaterial3D_ym3iy")
 mesh = SubResource("PlaneMesh_cu1vt")
-skeleton = NodePath("")
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=526480241]
 stream = ExtResource("21_pkhg6")
 volume_db = -12.0
 
-[node name="stanleysounds" type="AudioStreamPlayer" parent="."]
+[node name="stanleysounds" type="AudioStreamPlayer" parent="." unique_id=1424616238]
 process_mode = 3
 stream = SubResource("AudioStreamRandomizer_w8adk")
 max_polyphony = 10
 bus = &"SFX"
 
-[node name="afk" type="AudioStreamPlayer" parent="."]
+[node name="afk" type="AudioStreamPlayer" parent="." unique_id=1771408187]
 process_mode = 3
 stream = SubResource("AudioStreamRandomizer_q58de")
 max_polyphony = 10
 
-[node name="beanpickup" type="AudioStreamPlayer" parent="."]
+[node name="beanpickup" type="AudioStreamPlayer" parent="." unique_id=752154756]
 process_mode = 3
 stream = SubResource("AudioStreamRandomizer_8sct6")
 max_polyphony = 10
 
-[node name="crumblejump" type="AudioStreamPlayer" parent="."]
+[node name="crumblejump" type="AudioStreamPlayer" parent="." unique_id=2023070569]
 process_mode = 3
 stream = SubResource("AudioStreamRandomizer_bw4xi")
 max_polyphony = 10
 
-[node name="die" type="AudioStreamPlayer" parent="."]
+[node name="die" type="AudioStreamPlayer" parent="." unique_id=1050536882]
 process_mode = 3
 stream = SubResource("AudioStreamRandomizer_4ra70")
 pitch_scale = 2.5
 max_polyphony = 10
 
-[node name="kill" type="AudioStreamPlayer" parent="."]
+[node name="kill" type="AudioStreamPlayer" parent="." unique_id=1717563542]
 process_mode = 3
 stream = SubResource("AudioStreamRandomizer_58kgp")
 max_polyphony = 10
 
-[node name="moving" type="AudioStreamPlayer" parent="."]
+[node name="moving" type="AudioStreamPlayer" parent="." unique_id=1004417475]
 process_mode = 3
 stream = SubResource("AudioStreamRandomizer_hciio")
 max_polyphony = 10
 
-[node name="resume" type="AudioStreamPlayer" parent="."]
+[node name="resume" type="AudioStreamPlayer" parent="." unique_id=230514804]
 process_mode = 3
 stream = SubResource("AudioStreamRandomizer_2sl5m")
 max_polyphony = 10
 
-[node name="sling" type="AudioStreamPlayer" parent="."]
+[node name="sling" type="AudioStreamPlayer" parent="." unique_id=1854176165]
 process_mode = 3
 stream = SubResource("AudioStreamRandomizer_i0ls6")
 max_polyphony = 10
 
-[node name="switch" type="AudioStreamPlayer" parent="."]
+[node name="switch" type="AudioStreamPlayer" parent="." unique_id=704641880]
 process_mode = 3
 stream = SubResource("AudioStreamRandomizer_3n03h")
 max_polyphony = 10
 
-[node name="platform" type="AudioStreamPlayer" parent="."]
+[node name="platform" type="AudioStreamPlayer" parent="." unique_id=1980425148]
 process_mode = 3
 stream = SubResource("AudioStreamRandomizer_vmnlf")
 max_polyphony = 10
 
-[node name="findswitch" type="AudioStreamPlayer" parent="."]
+[node name="findswitch" type="AudioStreamPlayer" parent="." unique_id=1143670957]
 process_mode = 3
 stream = ExtResource("61_3sw10")
 max_polyphony = 10

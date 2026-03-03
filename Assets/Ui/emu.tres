@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=39 format=3 uid="uid://ceb3ll16fgq5a"]
+[gd_resource type="Theme" format=3 uid="uid://ceb3ll16fgq5a"]
 
 [ext_resource type="FontFile" uid="uid://tbj4ssgaitfp" path="res://Assets/Ui/NotoSans-VariableFont_wdth,wght.ttf" id="1_bmw5f"]
 [ext_resource type="Texture2D" uid="uid://bdeqtsf7etf40" path="res://Assets/Ui/emubuttons/Page 5.png" id="2_5vcq6"]

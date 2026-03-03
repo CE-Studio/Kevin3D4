@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://drfuee8m57cua"]
+[gd_scene format=3 uid="uid://drfuee8m57cua"]
 
 [ext_resource type="Theme" uid="uid://ceb3ll16fgq5a" path="res://Assets/Ui/emu.tres" id="1_e1ig1"]
 [ext_resource type="Script" uid="uid://6ka3pxtanglm" path="res://Scripts/emuSettings.gd" id="2_pucsa"]
@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://qi8rrmvlfltq" path="res://Assets/Ui/emubuttons/opt/Page 2.png" id="4_bqev7"]
 [ext_resource type="Texture2D" uid="uid://pmiacqjpgnq" path="res://Assets/Ui/emubuttons/opt/Page 1.png" id="5_ccox1"]
 
-[node name="emuSettings" type="Control"]
+[node name="emuSettings" type="Control" unique_id=1407290083]
 process_mode = 3
 z_index = 1
 layout_mode = 3
@@ -18,44 +18,44 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_e1ig1")
 
-[node name="PanelContainer" type="PanelContainer" parent="."]
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1102245485]
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
 grow_horizontal = 2
 script = ExtResource("2_pucsa")
 
-[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=1155161354]
 layout_mode = 2
 theme_override_constants/margin_left = 4
 theme_override_constants/margin_top = 4
 theme_override_constants/margin_right = 4
 theme_override_constants/margin_bottom = 4
 
-[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer" unique_id=1432517012]
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/HBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/HBoxContainer" unique_id=1320787133]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="PanelContainer/MarginContainer/HBoxContainer/VBoxContainer"]
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/HBoxContainer/VBoxContainer" unique_id=1483836815]
 layout_mode = 2
 text = "Emulation Settings"
 
-[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/HBoxContainer/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/HBoxContainer/VBoxContainer" unique_id=1167736760]
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer" unique_id=987314270]
 layout_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer" unique_id=2045031036]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer" unique_id=1786242525]
 layout_mode = 2
 text = "GPU Clock"
 
-[node name="fps" type="OptionButton" parent="PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
+[node name="fps" type="OptionButton" parent="PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer/HBoxContainer" unique_id=1339497871]
 layout_mode = 2
 selected = 0
 item_count = 2
@@ -64,17 +64,17 @@ popup/item_0/id = 0
 popup/item_1/text = "60 Hz (overclocked)"
 popup/item_1/id = 1
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
+[node name="VBoxContainer2" type="VBoxContainer" parent="PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer" unique_id=1683892161]
 layout_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer2" unique_id=369672791]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer"]
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer" unique_id=744828791]
 layout_mode = 2
 text = "Textures"
 
-[node name="textures" type="OptionButton" parent="PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer"]
+[node name="textures" type="OptionButton" parent="PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer2/HBoxContainer" unique_id=1454435312]
 layout_mode = 2
 selected = 0
 item_count = 2
@@ -83,17 +83,17 @@ popup/item_0/id = 0
 popup/item_1/text = "Original"
 popup/item_1/id = 1
 
-[node name="VBoxContainer4" type="VBoxContainer" parent="PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
+[node name="VBoxContainer4" type="VBoxContainer" parent="PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer" unique_id=787864447]
 layout_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer4"]
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer4" unique_id=2020869010]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer4/HBoxContainer"]
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer4/HBoxContainer" unique_id=1733487893]
 layout_mode = 2
 text = "Movement"
 
-[node name="movefix" type="OptionButton" parent="PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer4/HBoxContainer"]
+[node name="movefix" type="OptionButton" parent="PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer4/HBoxContainer" unique_id=1773056531]
 layout_mode = 2
 selected = 0
 item_count = 2
@@ -102,19 +102,19 @@ popup/item_0/id = 0
 popup/item_1/text = "Updated"
 popup/item_1/id = 1
 
-[node name="VBoxContainer3" type="VBoxContainer" parent="PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer"]
+[node name="VBoxContainer3" type="VBoxContainer" parent="PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer" unique_id=593422591]
 layout_mode = 2
 
-[node name="Button" type="Button" parent="PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer3"]
+[node name="Button" type="Button" parent="PanelContainer/MarginContainer/HBoxContainer/VBoxContainer/HBoxContainer/VBoxContainer3" unique_id=375060559]
 layout_mode = 2
 toggle_mode = true
 text = "Sandbox Mode"
 
-[node name="Control2" type="Control" parent="PanelContainer/MarginContainer/HBoxContainer"]
+[node name="Control2" type="Control" parent="PanelContainer/MarginContainer/HBoxContainer" unique_id=638634381]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="load" type="MenuButton" parent="PanelContainer/MarginContainer/HBoxContainer"]
+[node name="load" type="MenuButton" parent="PanelContainer/MarginContainer/HBoxContainer" unique_id=725218086]
 layout_mode = 2
 tooltip_text = "Load savestate"
 icon = ExtResource("2_s1mk8")
@@ -129,7 +129,7 @@ popup/item_2/id = 2
 popup/item_3/text = "Slot 4"
 popup/item_3/id = 3
 
-[node name="save" type="MenuButton" parent="PanelContainer/MarginContainer/HBoxContainer"]
+[node name="save" type="MenuButton" parent="PanelContainer/MarginContainer/HBoxContainer" unique_id=352613150]
 layout_mode = 2
 tooltip_text = "Create savestate"
 focus_neighbor_right = NodePath("../patch")
@@ -145,18 +145,18 @@ popup/item_2/id = 2
 popup/item_3/text = "Slot 4"
 popup/item_3/id = 3
 
-[node name="patch" type="Button" parent="PanelContainer/MarginContainer/HBoxContainer"]
+[node name="patch" type="Button" parent="PanelContainer/MarginContainer/HBoxContainer" unique_id=1593899095]
 layout_mode = 2
 tooltip_text = "Load patch"
 focus_neighbor_left = NodePath("../save")
 icon = ExtResource("4_bqev7")
 
-[node name="fs" type="Button" parent="PanelContainer/MarginContainer/HBoxContainer"]
+[node name="fs" type="Button" parent="PanelContainer/MarginContainer/HBoxContainer" unique_id=1933245895]
 layout_mode = 2
 tooltip_text = "Fullscreen"
 icon = ExtResource("5_ccox1")
 
-[node name="FileDialog" type="FileDialog" parent="."]
+[node name="FileDialog" type="FileDialog" parent="." unique_id=1583463747]
 title = "Open a File"
 size = Vector2i(515, 174)
 ok_button_text = "Open"

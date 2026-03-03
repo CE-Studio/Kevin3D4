@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=3 uid="uid://d37w4md4gmfkx"]
+[gd_scene format=3 uid="uid://d37w4md4gmfkx"]
 
 [ext_resource type="MeshLibrary" uid="uid://bbbc72uw7x7rq" path="res://Scenes/3DTilemaps/PlanetMeshLib.tres" id="1_wodos"]
 [ext_resource type="MeshLibrary" uid="uid://cknd8psi154ho" path="res://Scenes/3DTilemaps/FactoryMeshLib.tres" id="2_onrda"]
@@ -121,8 +121,8 @@ tracks/0/path = NodePath(".:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat64Array(0, 1.75, 3.5, 5.75, 8, 9.75, 11.5, 13.75, 16),
-"transitions": PackedFloat64Array(3, 0.333333, 3, 0.333333, 3, 0.333333, 3, 0.333333, 1),
+"times": PackedFloat32Array(0, 1.75, 3.5, 5.75, 8, 9.75, 11.5, 13.75, 16),
+"transitions": PackedFloat32Array(3, 0.333333, 3, 0.333333, 3, 0.333333, 3, 0.333333, 1),
 "update": 0,
 "values": [Vector3(27, 4, -474), Vector3(27, 4, -504), Vector3(27, 4, -534), Vector3(79, 4, -540), Vector3(131, 4, -546), Vector3(126.5, 4, -521.5), Vector3(122, 4, -497), Vector3(74.5, 4, -485.5), Vector3(27, 4, -474)]
 }
@@ -133,8 +133,8 @@ tracks/1/path = NodePath("../MovingPlat2:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat64Array(0, 1.75, 3.5, 5.75, 8, 9.75, 11.5, 13.75, 16),
-"transitions": PackedFloat64Array(3, 0.333333, 3, 0.333333, 3, 0.333333, 3, 0.333333, 1),
+"times": PackedFloat32Array(0, 1.75, 3.5, 5.75, 8, 9.75, 11.5, 13.75, 16),
+"transitions": PackedFloat32Array(3, 0.333333, 3, 0.333333, 3, 0.333333, 3, 0.333333, 1),
 "update": 0,
 "values": [Vector3(219, 4, -599), Vector3(219, 4, -569), Vector3(219, 4, -539), Vector3(167, 4, -533), Vector3(115, 4, -527), Vector3(119.5, 4, -551.5), Vector3(124, 4, -576), Vector3(171.5, 4, -587.5), Vector3(219, 4, -599)]
 }
@@ -148,8 +148,8 @@ tracks/0/path = NodePath(".:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat64Array(0),
-"transitions": PackedFloat64Array(1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector3(27, 4, -474)]
 }
@@ -160,8 +160,8 @@ tracks/1/path = NodePath("../MovingPlat2:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat64Array(0),
-"transitions": PackedFloat64Array(1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector3(219, 4, -599)]
 }
@@ -192,9 +192,9 @@ orientation = 2
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_cv656"]
 
-[node name="Level1" type="Node3D"]
+[node name="Level1" type="Node3D" unique_id=57954595]
 
-[node name="GridMap" type="GridMap" parent="."]
+[node name="GridMap" type="GridMap" parent="." unique_id=1313928274]
 mesh_library = ExtResource("1_wodos")
 cell_size = Vector3(6, 6, 6)
 cell_scale = 3.0
@@ -203,7 +203,7 @@ data = {
 }
 metadata/_editor_floor_ = Vector3(0, -1, 0)
 
-[node name="FactoryMap" type="GridMap" parent="."]
+[node name="FactoryMap" type="GridMap" parent="." unique_id=1920827610]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
 mesh_library = ExtResource("2_onrda")
 data = {
@@ -211,25 +211,25 @@ data = {
 }
 metadata/_editor_floor_ = Vector3(0, 3, 0)
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1202022754]
 stream = ExtResource("2_rm3g3")
 autoplay = true
 bus = &"Music"
 
-[node name="Player" parent="." instance=ExtResource("3_hevgy")]
+[node name="Player" parent="." unique_id=708950326 instance=ExtResource("3_hevgy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.97716, 1.03612, -3.03442)
 
-[node name="enviro" type="Node3D" parent="."]
+[node name="enviro" type="Node3D" parent="." unique_id=607328142]
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="enviro"]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="enviro" unique_id=1898552414]
 environment = SubResource("Environment_0py0m")
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="enviro"]
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="enviro" unique_id=883037758]
 transform = Transform3D(-0.866024, -0.433016, 0.250001, 0.114966, 0.314154, 0.942385, -0.486606, 0.84487, -0.222282, 0, 0, 0)
 shadow_enabled = true
 shadow_opacity = 0.0
 
-[node name="Rocket" type="MeshInstance3D" parent="."]
+[node name="Rocket" type="MeshInstance3D" parent="." unique_id=1657108264]
 transform = Transform3D(-2.59808, 1.5, 0, -1.5, -2.59808, 0, 0, 0, 3, -2, 0, 7)
 mesh = ExtResource("5_kqyai")
 surface_material_override/0 = SubResource("StandardMaterial3D_3pk8o")
@@ -238,7 +238,7 @@ surface_material_override/2 = SubResource("StandardMaterial3D_ef8hq")
 surface_material_override/3 = SubResource("StandardMaterial3D_abc1h")
 surface_material_override/4 = SubResource("StandardMaterial3D_7gmso")
 
-[node name="CPUParticles3D" type="CPUParticles3D" parent="Rocket"]
+[node name="CPUParticles3D" type="CPUParticles3D" parent="Rocket" unique_id=1527186650]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 amount = 32
 lifetime = 2.0
@@ -250,305 +250,303 @@ initial_velocity_min = 0.5
 initial_velocity_max = 2.0
 scale_amount_max = 3.0
 
-[node name="Checkpoint" parent="." instance=ExtResource("8_x20hx")]
+[node name="Checkpoint" parent="." unique_id=218749631 instance=ExtResource("8_x20hx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 165, 5, -207)
 
-[node name="Checkpoint2" parent="." instance=ExtResource("8_x20hx")]
+[node name="Checkpoint2" parent="." unique_id=1909035530 instance=ExtResource("8_x20hx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27, 5, -453)
 
-[node name="Crumbles" type="Node3D" parent="."]
+[node name="Crumbles" type="Node3D" parent="." unique_id=459659722]
 
-[node name="Crumble1" parent="Crumbles" instance=ExtResource("9_eug0d")]
+[node name="Crumble1" parent="Crumbles" unique_id=758021880 instance=ExtResource("9_eug0d")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 45, 24, -407)
 
-[node name="Crumble2" parent="Crumbles" instance=ExtResource("9_eug0d")]
+[node name="Crumble2" parent="Crumbles" unique_id=624689640 instance=ExtResource("9_eug0d")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 25, 32, -407)
 
-[node name="MeshInstance3D" parent="Crumbles/Crumble2" index="3"]
+[node name="MeshInstance3D" parent="Crumbles/Crumble2" index="3" unique_id=356803624]
 mesh = SubResource("BoxMesh_e8mym")
 
-[node name="Crumble3" parent="Crumbles" instance=ExtResource("9_eug0d")]
+[node name="Crumble3" parent="Crumbles" unique_id=620486723 instance=ExtResource("9_eug0d")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 36, 37, -423)
 
-[node name="MeshInstance3D" parent="Crumbles/Crumble3" index="3"]
+[node name="MeshInstance3D" parent="Crumbles/Crumble3" index="3" unique_id=356803624]
 mesh = SubResource("BoxMesh_31u5l")
 
-[node name="Crumble4" parent="Crumbles" instance=ExtResource("9_eug0d")]
+[node name="Crumble4" parent="Crumbles" unique_id=1257248656 instance=ExtResource("9_eug0d")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 36, 44, -409)
 
-[node name="MeshInstance3D" parent="Crumbles/Crumble4" index="3"]
+[node name="MeshInstance3D" parent="Crumbles/Crumble4" index="3" unique_id=356803624]
 mesh = SubResource("BoxMesh_gv8cv")
 
-[node name="Crumble5" parent="Crumbles" instance=ExtResource("9_eug0d")]
+[node name="Crumble5" parent="Crumbles" unique_id=1122326499 instance=ExtResource("9_eug0d")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 14, 50, -424)
 
-[node name="MeshInstance3D" parent="Crumbles/Crumble5" index="3"]
+[node name="MeshInstance3D" parent="Crumbles/Crumble5" index="3" unique_id=356803624]
 mesh = SubResource("BoxMesh_g3t8r")
 
-[node name="Door1" parent="." instance=ExtResource("12_a5o72")]
+[node name="Door1" parent="." unique_id=823860394 instance=ExtResource("12_a5o72")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 165, 12, -219)
 
-[node name="Switch1" parent="." instance=ExtResource("13_g00mk")]
+[node name="Switch1" parent="." unique_id=903807813 instance=ExtResource("13_g00mk")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 219, 5, -147)
 
-[node name="Door2" parent="." instance=ExtResource("12_a5o72")]
+[node name="Door2" parent="." unique_id=1035393717 instance=ExtResource("12_a5o72")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27, 12, -459)
 
-[node name="Switch2" parent="." instance=ExtResource("13_g00mk")]
+[node name="Switch2" parent="." unique_id=984136037 instance=ExtResource("13_g00mk")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 45, 0, -416)
 
-[node name="Switch3" parent="." instance=ExtResource("13_g00mk")]
+[node name="Switch3" parent="." unique_id=110146638 instance=ExtResource("13_g00mk")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 36, 61, -438)
 
-[node name="MovingPlat1" parent="." instance=ExtResource("14_21s2h")]
+[node name="MovingPlat1" parent="." unique_id=1654717751 instance=ExtResource("14_21s2h")]
 transform = Transform3D(7, 0, 0, 0, 7, 0, 0, 0, 7, 27, 4, -474)
 
-[node name="AnimationPlayer" parent="MovingPlat1" index="2"]
-libraries = {
-"": SubResource("AnimationLibrary_ry3je")
-}
-autoplay = "PlanetPlatCycle"
+[node name="AnimationPlayer" parent="MovingPlat1" index="2" unique_id=1019626470]
+libraries/ = SubResource("AnimationLibrary_ry3je")
+autoplay = &"PlanetPlatCycle"
 
-[node name="MovingPlat2" parent="." instance=ExtResource("14_21s2h")]
+[node name="MovingPlat2" parent="." unique_id=282853067 instance=ExtResource("14_21s2h")]
 transform = Transform3D(7, 0, 0, 0, 7, 0, 0, 0, 7, 219, 4, -599)
 
-[node name="woerm" type="MeshInstance3D" parent="."]
+[node name="woerm" type="MeshInstance3D" parent="." unique_id=68048777]
 transform = Transform3D(-111.911, 0, -29.7648, 0, 115.802, 0, 29.7648, 0, -111.911, 516.407, 79, -629.59)
 mesh = SubResource("PlaneMesh_afqnx")
 
-[node name="RiverSkipWall" type="StaticBody3D" parent="."]
+[node name="RiverSkipWall" type="StaticBody3D" parent="." unique_id=1232695973]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 240, -3, -594)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="RiverSkipWall"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RiverSkipWall" unique_id=1015488012]
 shape = SubResource("BoxShape3D_gpbbj")
 
-[node name="Switch4" parent="." instance=ExtResource("13_g00mk")]
+[node name="Switch4" parent="." unique_id=839138102 instance=ExtResource("13_g00mk")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 84, 5, -732)
 
-[node name="door" parent="." instance=ExtResource("17_4otua")]
+[node name="door" parent="." unique_id=1228986051 instance=ExtResource("17_4otua")]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 219, 3, -729)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1400793052]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 219, 12, -744)
 mesh = SubResource("PlaneMesh_yt51b")
 
-[node name="Winnerbox" parent="." instance=ExtResource("18_idcjg")]
+[node name="Winnerbox" parent="." unique_id=299888120 instance=ExtResource("18_idcjg")]
 transform = Transform3D(18, 0, 0, 0, 18, 0, 0, 0, 18, 219, 12, -744)
 WinZone = SubResource("BoxShape3D_cv656")
 
-[node name="Enemies" type="Node3D" parent="."]
+[node name="Enemies" type="Node3D" parent="." unique_id=1891244923]
 
-[node name="Enemy" parent="Enemies" instance=ExtResource("19_vpuf8")]
+[node name="Enemy" parent="Enemies" unique_id=491699861 instance=ExtResource("19_vpuf8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 170, 21, -276)
 
-[node name="Enemy30" parent="Enemies" instance=ExtResource("19_vpuf8")]
+[node name="Enemy30" parent="Enemies" unique_id=566823414 instance=ExtResource("19_vpuf8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 170, 21, -516)
 
-[node name="Enemy31" parent="Enemies" instance=ExtResource("19_vpuf8")]
+[node name="Enemy31" parent="Enemies" unique_id=943867019 instance=ExtResource("19_vpuf8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 214, 21, -542)
 
-[node name="Enemy32" parent="Enemies" instance=ExtResource("19_vpuf8")]
+[node name="Enemy32" parent="Enemies" unique_id=1050378233 instance=ExtResource("19_vpuf8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 135, 21, -551)
 
-[node name="Enemy33" parent="Enemies" instance=ExtResource("19_vpuf8")]
+[node name="Enemy33" parent="Enemies" unique_id=1955434528 instance=ExtResource("19_vpuf8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 122, 21, -488)
 
-[node name="Enemy34" parent="Enemies" instance=ExtResource("19_vpuf8")]
+[node name="Enemy34" parent="Enemies" unique_id=1500091598 instance=ExtResource("19_vpuf8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 47, 21, -535)
 
-[node name="Enemy2" parent="Enemies" instance=ExtResource("19_vpuf8")]
+[node name="Enemy2" parent="Enemies" unique_id=466521732 instance=ExtResource("19_vpuf8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 134, 21, -278)
 
-[node name="Enemy3" parent="Enemies" instance=ExtResource("19_vpuf8")]
+[node name="Enemy3" parent="Enemies" unique_id=1078864309 instance=ExtResource("19_vpuf8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 139.303, 21, -317.015)
 
-[node name="Enemy4" parent="Enemies" instance=ExtResource("19_vpuf8")]
+[node name="Enemy4" parent="Enemies" unique_id=494713395 instance=ExtResource("19_vpuf8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 90.4722, 21, -306.515)
 
-[node name="Enemy5" parent="Enemies" instance=ExtResource("19_vpuf8")]
+[node name="Enemy5" parent="Enemies" unique_id=597693764 instance=ExtResource("19_vpuf8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.6882, 21, -313.699)
 
-[node name="Enemy6" parent="Enemies" instance=ExtResource("19_vpuf8")]
+[node name="Enemy6" parent="Enemies" unique_id=669712500 instance=ExtResource("19_vpuf8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.6882, 37, -438.699)
 
-[node name="Enemy7" parent="Enemies" instance=ExtResource("19_vpuf8")]
+[node name="Enemy7" parent="Enemies" unique_id=68464565 instance=ExtResource("19_vpuf8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 55.8835, 54, -405.699)
 
-[node name="Enemy8" parent="Enemies" instance=ExtResource("19_vpuf8")]
+[node name="Enemy8" parent="Enemies" unique_id=1133183393 instance=ExtResource("19_vpuf8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51.8835, 35.9589, -426.207)
 
-[node name="Enemy9" parent="Enemies" instance=ExtResource("19_vpuf8")]
+[node name="Enemy9" parent="Enemies" unique_id=2029828710 instance=ExtResource("19_vpuf8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.8835, 53.9589, -409.207)
 
-[node name="Enemy10" parent="Enemies" instance=ExtResource("19_vpuf8")]
+[node name="Enemy10" parent="Enemies" unique_id=1051115949 instance=ExtResource("19_vpuf8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, -2, -406)
 
-[node name="Enemy11" parent="Enemies" instance=ExtResource("19_vpuf8")]
+[node name="Enemy11" parent="Enemies" unique_id=1185740786 instance=ExtResource("19_vpuf8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 52, -2, -427)
 
-[node name="Enemy12" parent="Enemies" instance=ExtResource("19_vpuf8")]
+[node name="Enemy12" parent="Enemies" unique_id=661414708 instance=ExtResource("19_vpuf8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 10, -427)
 
-[node name="Enemy13" parent="Enemies" instance=ExtResource("19_vpuf8")]
+[node name="Enemy13" parent="Enemies" unique_id=668181064 instance=ExtResource("19_vpuf8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 10, -404)
 
-[node name="Enemy14" parent="Enemies" instance=ExtResource("19_vpuf8")]
+[node name="Enemy14" parent="Enemies" unique_id=1686920139 instance=ExtResource("19_vpuf8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 130.368, 10, -175.274)
 
-[node name="Enemy15" parent="Enemies" instance=ExtResource("19_vpuf8")]
+[node name="Enemy15" parent="Enemies" unique_id=2121730696 instance=ExtResource("19_vpuf8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 125.368, 10, -156.274)
 
-[node name="Enemy16" parent="Enemies" instance=ExtResource("19_vpuf8")]
+[node name="Enemy16" parent="Enemies" unique_id=748845834 instance=ExtResource("19_vpuf8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 194.368, 10, -154.274)
 
-[node name="Enemy17" parent="Enemies" instance=ExtResource("19_vpuf8")]
+[node name="Enemy17" parent="Enemies" unique_id=554703383 instance=ExtResource("19_vpuf8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 185.368, 10, -138.274)
 
-[node name="Enemy18" parent="Enemies" instance=ExtResource("19_vpuf8")]
+[node name="Enemy18" parent="Enemies" unique_id=51932878 instance=ExtResource("19_vpuf8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 200.368, 10, -168.274)
 
-[node name="Enemy19" parent="Enemies" instance=ExtResource("19_vpuf8")]
+[node name="Enemy19" parent="Enemies" unique_id=322349449 instance=ExtResource("19_vpuf8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 91.3679, 4, -107.274)
 
-[node name="Enemy20" parent="Enemies" instance=ExtResource("19_vpuf8")]
+[node name="Enemy20" parent="Enemies" unique_id=1979040071 instance=ExtResource("19_vpuf8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 69.3679, 4, -64.274)
 
-[node name="Enemy21" parent="Enemies" instance=ExtResource("19_vpuf8")]
+[node name="Enemy21" parent="Enemies" unique_id=1270370872 instance=ExtResource("19_vpuf8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.3679, 4, -61.274)
 
-[node name="Enemy22" parent="Enemies" instance=ExtResource("19_vpuf8")]
+[node name="Enemy22" parent="Enemies" unique_id=500973218 instance=ExtResource("19_vpuf8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 248.368, 4, -677.274)
 
-[node name="Enemy23" parent="Enemies" instance=ExtResource("19_vpuf8")]
+[node name="Enemy23" parent="Enemies" unique_id=1823041498 instance=ExtResource("19_vpuf8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 194.368, 4, -698.274)
 
-[node name="Enemy24" parent="Enemies" instance=ExtResource("19_vpuf8")]
+[node name="Enemy24" parent="Enemies" unique_id=941812522 instance=ExtResource("19_vpuf8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 188.368, 4, -647.274)
 
-[node name="Enemy25" parent="Enemies" instance=ExtResource("19_vpuf8")]
+[node name="Enemy25" parent="Enemies" unique_id=496920584 instance=ExtResource("19_vpuf8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 141.368, 4, -669.274)
 
-[node name="Enemy26" parent="Enemies" instance=ExtResource("19_vpuf8")]
+[node name="Enemy26" parent="Enemies" unique_id=1681854265 instance=ExtResource("19_vpuf8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 110.368, 4, -646.274)
 
-[node name="Enemy27" parent="Enemies" instance=ExtResource("19_vpuf8")]
+[node name="Enemy27" parent="Enemies" unique_id=383672969 instance=ExtResource("19_vpuf8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 85.3679, 4, -664.274)
 
-[node name="Enemy28" parent="Enemies" instance=ExtResource("19_vpuf8")]
+[node name="Enemy28" parent="Enemies" unique_id=1169952488 instance=ExtResource("19_vpuf8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 99.3679, 4, -696.274)
 
-[node name="Enemy29" parent="Enemies" instance=ExtResource("19_vpuf8")]
+[node name="Enemy29" parent="Enemies" unique_id=2060246782 instance=ExtResource("19_vpuf8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 84.3679, 4, -713.274)
 
-[node name="Beans" type="Node3D" parent="."]
+[node name="Beans" type="Node3D" parent="." unique_id=424264088]
 
-[node name="Collectible" parent="Beans" instance=ExtResource("20_hnk6g")]
+[node name="Collectible" parent="Beans" unique_id=422659115 instance=ExtResource("20_hnk6g")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 7, -15)
 
-[node name="Collectible2" parent="Beans" instance=ExtResource("20_hnk6g")]
+[node name="Collectible2" parent="Beans" unique_id=1159025282 instance=ExtResource("20_hnk6g")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 7, -15)
 
-[node name="Collectible3" parent="Beans" instance=ExtResource("20_hnk6g")]
+[node name="Collectible3" parent="Beans" unique_id=976520941 instance=ExtResource("20_hnk6g")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 7, -21)
 
-[node name="Collectible4" parent="Beans" instance=ExtResource("20_hnk6g")]
+[node name="Collectible4" parent="Beans" unique_id=1696648812 instance=ExtResource("20_hnk6g")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 7, -21)
 
-[node name="Collectible5" parent="Beans" instance=ExtResource("20_hnk6g")]
+[node name="Collectible5" parent="Beans" unique_id=903369078 instance=ExtResource("20_hnk6g")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 57, 13, -63)
 
-[node name="Collectible6" parent="Beans" instance=ExtResource("20_hnk6g")]
+[node name="Collectible6" parent="Beans" unique_id=2016670269 instance=ExtResource("20_hnk6g")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 75, 13, -81)
 
-[node name="Collectible7" parent="Beans" instance=ExtResource("20_hnk6g")]
+[node name="Collectible7" parent="Beans" unique_id=1073974194 instance=ExtResource("20_hnk6g")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 93, 13, -99)
 
-[node name="Collectible8" parent="Beans" instance=ExtResource("20_hnk6g")]
+[node name="Collectible8" parent="Beans" unique_id=4499461 instance=ExtResource("20_hnk6g")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 153, 7, -123)
 
-[node name="Collectible9" parent="Beans" instance=ExtResource("20_hnk6g")]
+[node name="Collectible9" parent="Beans" unique_id=2135550013 instance=ExtResource("20_hnk6g")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 141, 7, -135)
 
-[node name="Collectible10" parent="Beans" instance=ExtResource("20_hnk6g")]
+[node name="Collectible10" parent="Beans" unique_id=1813451951 instance=ExtResource("20_hnk6g")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 165, 7, -159)
 
-[node name="Collectible11" parent="Beans" instance=ExtResource("20_hnk6g")]
+[node name="Collectible11" parent="Beans" unique_id=1262925312 instance=ExtResource("20_hnk6g")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 177, 7, -183)
 
-[node name="Collectible12" parent="Beans" instance=ExtResource("20_hnk6g")]
+[node name="Collectible12" parent="Beans" unique_id=1704855523 instance=ExtResource("20_hnk6g")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 141, 7, -159)
 
-[node name="Collectible13" parent="Beans" instance=ExtResource("20_hnk6g")]
+[node name="Collectible13" parent="Beans" unique_id=867445611 instance=ExtResource("20_hnk6g")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 129, 7, -195)
 
-[node name="Collectible14" parent="Beans" instance=ExtResource("20_hnk6g")]
+[node name="Collectible14" parent="Beans" unique_id=1533062912 instance=ExtResource("20_hnk6g")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 201, 7, -195)
 
-[node name="Collectible15" parent="Beans" instance=ExtResource("20_hnk6g")]
+[node name="Collectible15" parent="Beans" unique_id=1430573455 instance=ExtResource("20_hnk6g")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 7, -393)
 
-[node name="Collectible16" parent="Beans" instance=ExtResource("20_hnk6g")]
+[node name="Collectible16" parent="Beans" unique_id=1722506762 instance=ExtResource("20_hnk6g")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 7, -405)
 
-[node name="Collectible17" parent="Beans" instance=ExtResource("20_hnk6g")]
+[node name="Collectible17" parent="Beans" unique_id=1747747226 instance=ExtResource("20_hnk6g")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 7, -417)
 
-[node name="Collectible18" parent="Beans" instance=ExtResource("20_hnk6g")]
+[node name="Collectible18" parent="Beans" unique_id=2008156645 instance=ExtResource("20_hnk6g")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 7, -429)
 
-[node name="Collectible19" parent="Beans" instance=ExtResource("20_hnk6g")]
+[node name="Collectible19" parent="Beans" unique_id=501095986 instance=ExtResource("20_hnk6g")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 7, -441)
 
-[node name="Collectible20" parent="Beans" instance=ExtResource("20_hnk6g")]
+[node name="Collectible20" parent="Beans" unique_id=1215051676 instance=ExtResource("20_hnk6g")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 219, 7, -639)
 
-[node name="Collectible21" parent="Beans" instance=ExtResource("20_hnk6g")]
+[node name="Collectible21" parent="Beans" unique_id=837220713 instance=ExtResource("20_hnk6g")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 219, 7, -651)
 
-[node name="Collectible22" parent="Beans" instance=ExtResource("20_hnk6g")]
+[node name="Collectible22" parent="Beans" unique_id=1302379585 instance=ExtResource("20_hnk6g")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 219, 7, -663)
 
-[node name="Collectible23" parent="Beans" instance=ExtResource("20_hnk6g")]
+[node name="Collectible23" parent="Beans" unique_id=2608645 instance=ExtResource("20_hnk6g")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 219, 7, -675)
 
-[node name="Collectible24" parent="Beans" instance=ExtResource("20_hnk6g")]
+[node name="Collectible24" parent="Beans" unique_id=1143332015 instance=ExtResource("20_hnk6g")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 219, 7, -687)
 
-[node name="VoiceTrigger" parent="." instance=ExtResource("21_0xbcg")]
+[node name="VoiceTrigger" parent="." unique_id=1010841971 instance=ExtResource("21_0xbcg")]
 transform = Transform3D(41.7568, 0, 0, 0, 21.8018, 0, 0, 0, 7.0493, 164.22, 12.35, -214.427)
 type = 1
 
-[node name="VoiceTrigger2" parent="." instance=ExtResource("21_0xbcg")]
+[node name="VoiceTrigger2" parent="." unique_id=1763724832 instance=ExtResource("21_0xbcg")]
 transform = Transform3D(18, 0, 0, 0, 1, 0, 0, 0, 12, 165, 4.5, -246)
 
-[node name="VoiceTrigger3" parent="." instance=ExtResource("21_0xbcg")]
+[node name="VoiceTrigger3" parent="." unique_id=1535946546 instance=ExtResource("21_0xbcg")]
 transform = Transform3D(18, 0, 0, 0, 1, 0, 0, 0, 24, 153, 10.5, -276)
 
-[node name="VoiceTrigger6" parent="." instance=ExtResource("21_0xbcg")]
+[node name="VoiceTrigger6" parent="." unique_id=300095591 instance=ExtResource("21_0xbcg")]
 transform = Transform3D(18, 0, 0, 0, 1, 0, 0, 0, 24, 39, 10.5, -336)
 
-[node name="VoiceTrigger7" parent="." instance=ExtResource("21_0xbcg")]
+[node name="VoiceTrigger7" parent="." unique_id=597142259 instance=ExtResource("21_0xbcg")]
 transform = Transform3D(12, 0, 0, 0, 1, 0, 0, 0, 12, 12, 16.5, -420)
 
-[node name="VoiceTrigger11" parent="." instance=ExtResource("21_0xbcg")]
+[node name="VoiceTrigger11" parent="." unique_id=1254418281 instance=ExtResource("21_0xbcg")]
 transform = Transform3D(12, 0, 0, 0, 1, 0, 0, 0, 12, -6, 4.5, -18)
 
-[node name="VoiceTrigger12" parent="." instance=ExtResource("21_0xbcg")]
+[node name="VoiceTrigger12" parent="." unique_id=818688451 instance=ExtResource("21_0xbcg")]
 transform = Transform3D(18, 0, 0, 0, 1, 0, 0, 0, 12, 21, 10.5, -30)
 
-[node name="VoiceTrigger8" parent="." instance=ExtResource("21_0xbcg")]
+[node name="VoiceTrigger8" parent="." unique_id=508196374 instance=ExtResource("21_0xbcg")]
 transform = Transform3D(12, 0, 0, 0, 1, 0, 0, 0, 12, 30, 22.5, -438)
 
-[node name="VoiceTrigger9" parent="." instance=ExtResource("21_0xbcg")]
+[node name="VoiceTrigger9" parent="." unique_id=438892607 instance=ExtResource("21_0xbcg")]
 transform = Transform3D(12, 0, 0, 0, 1, 0, 0, 0, 12, 36, 58.5, -438)
 
-[node name="VoiceTrigger10" parent="." instance=ExtResource("21_0xbcg")]
+[node name="VoiceTrigger10" parent="." unique_id=1435706473 instance=ExtResource("21_0xbcg")]
 transform = Transform3D(30, 0, 0, 0, 1, 0, 0, 0, 66, -105, -1.5, -417)
 
-[node name="VoiceTrigger4" parent="." instance=ExtResource("21_0xbcg")]
+[node name="VoiceTrigger4" parent="." unique_id=467962917 instance=ExtResource("21_0xbcg")]
 transform = Transform3D(18, 0, 0, 0, 1, 0, 0, 0, 18, 117, 10.5, -309)
 
-[node name="VoiceTrigger5" parent="." instance=ExtResource("21_0xbcg")]
+[node name="VoiceTrigger5" parent="." unique_id=902430376 instance=ExtResource("21_0xbcg")]
 transform = Transform3D(36, 0, 0, 0, 1, 0, 0, 0, 18, 84, 16.5, -279)
 
 [connection signal="on_switch_activate" from="Switch1" to="Door1" method="on_activate"]

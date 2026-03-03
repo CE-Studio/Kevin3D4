@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://diybr73ukni78"]
+[gd_scene format=3 uid="uid://diybr73ukni78"]
 
 [ext_resource type="Script" uid="uid://bhg5vs8vwlaxm" path="res://Checkpoint.gd" id="1_qlyhl"]
 [ext_resource type="ArrayMesh" uid="uid://df118epckjq7r" path="res://Assets/Models/check.obj" id="2_yd7nx"]
@@ -19,8 +19,8 @@ tracks/0/path = NodePath("MeshInstance3D:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat64Array(0),
-"transitions": PackedFloat64Array(1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector3(0, 0, 0)]
 }
@@ -31,8 +31,8 @@ tracks/1/path = NodePath("MeshInstance3D:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat64Array(0),
-"transitions": PackedFloat64Array(1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector3(0, 0, 0)]
 }
@@ -49,8 +49,8 @@ tracks/0/path = NodePath("MeshInstance3D:position")
 tracks/0/interp = 0
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat64Array(0, 0.25, 0.5, 0.75, 1, 1.25, 1.5, 1.75, 2),
-"transitions": PackedFloat64Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75, 1, 1.25, 1.5, 1.75, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [Vector3(0, 0, 0), Vector3(0, 0.273254, 0), Vector3(0, 0.546508, 0), Vector3(0, 0.819762, 0), Vector3(0, 1.09302, 0), Vector3(0, 0.819762, 0), Vector3(0, 0.546508, 0), Vector3(0, 0.273254, 0), Vector3(0, 0, 0)]
 }
@@ -61,8 +61,8 @@ tracks/1/path = NodePath("MeshInstance3D:rotation")
 tracks/1/interp = 0
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat64Array(0, 0.25, 0.5, 0.75, 1, 1.25, 1.5, 1.75, 2),
-"transitions": PackedFloat64Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75, 1, 1.25, 1.5, 1.75, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [Vector3(0, 0, 0), Vector3(0, -0.785398, 0), Vector3(0, -1.5708, 0), Vector3(0, -2.35619, 0), Vector3(0, -3.14159, 0), Vector3(0, -3.92699, 0), Vector3(0, -4.71239, 0), Vector3(0, -5.49779, 0), Vector3(0, -6.28319, 0)]
 }
@@ -73,27 +73,25 @@ _data = {
 &"new_animation": SubResource("Animation_bb4pc")
 }
 
-[node name="Checkpoint" type="Node3D"]
+[node name="Checkpoint" type="Node3D" unique_id=1409295846]
 script = ExtResource("1_qlyhl")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=642049590]
 transform = Transform3D(2.67, 0, 0, 0, 2.67, 0, 0, 0, 2.67, 0, 0, 0)
 mesh = ExtResource("2_yd7nx")
 surface_material_override/0 = SubResource("StandardMaterial3D_v5c23")
 
-[node name="Area3D" type="Area3D" parent="."]
+[node name="Area3D" type="Area3D" parent="." unique_id=1125479762]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1001849971]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.689524, 0)
 shape = SubResource("BoxShape3D_ohi4y")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_ou68l")
-}
-autoplay = "new_animation"
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2012967039]
+libraries/ = SubResource("AnimationLibrary_ou68l")
+autoplay = &"new_animation"
 
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=492823739]
 stream = ExtResource("3_y3wqe")
 bus = &"SFX"
 

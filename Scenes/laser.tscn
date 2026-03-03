@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://c5svu1bl8bnmm"]
+[gd_scene format=3 uid="uid://c5svu1bl8bnmm"]
 
 [ext_resource type="PackedScene" uid="uid://cbydsjrs8uohj" path="res://Assets/Models/laser.glb" id="1_uwyec"]
 [ext_resource type="Texture2D" uid="uid://fub3av523ir7" path="res://Assets/Textures/LevelTextures/stripes.png" id="2_nqrk1"]
@@ -24,8 +24,8 @@ tracks/0/path = NodePath("laser/Cube_003:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat64Array(0),
-"transitions": PackedFloat64Array(1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [true]
 }
@@ -36,8 +36,8 @@ tracks/1/path = NodePath("laser/Cube_002:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat64Array(0),
-"transitions": PackedFloat64Array(1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector3(0, 0, 0)]
 }
@@ -48,8 +48,8 @@ tracks/2/path = NodePath("General Killzone:monitoring")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat64Array(0),
-"transitions": PackedFloat64Array(1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [true]
 }
@@ -66,8 +66,8 @@ tracks/0/path = NodePath("laser/Cube_003:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat64Array(0, 0.75),
-"transitions": PackedFloat64Array(1, 1),
+"times": PackedFloat32Array(0, 0.75),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, false]
 }
@@ -78,8 +78,8 @@ tracks/1/path = NodePath("laser/Cube_002:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat64Array(0, 0.1, 0.75, 0.85),
-"transitions": PackedFloat64Array(0.277392, 0.297302, 4.28709, 4),
+"times": PackedFloat32Array(0, 0.1, 0.75, 0.85),
+"transitions": PackedFloat32Array(0.277392, 0.297302, 4.28709, 4),
 "update": 0,
 "values": [Vector3(0, 0, 0), Vector3(0.213436, 0, 0), Vector3(0.213436, 0, 0), Vector3(0, 0, 0)]
 }
@@ -90,8 +90,8 @@ tracks/2/path = NodePath("General Killzone:monitoring")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat64Array(0, 0.75),
-"transitions": PackedFloat64Array(1, 1),
+"times": PackedFloat32Array(0, 0.75),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, false]
 }
@@ -107,7 +107,7 @@ tracks/3/keys = {
 "start_offset": 0.0,
 "stream": ExtResource("3_jx1rm")
 }],
-"times": PackedFloat64Array(0)
+"times": PackedFloat32Array(0)
 }
 tracks/3/use_blend = true
 
@@ -120,33 +120,31 @@ _data = {
 [sub_resource type="BoxShape3D" id="BoxShape3D_6apls"]
 size = Vector3(6, 6, 1)
 
-[node name="laser" type="Node3D"]
+[node name="laser" type="Node3D" unique_id=384283691]
 
-[node name="laser" parent="." instance=ExtResource("1_uwyec")]
+[node name="laser" parent="." unique_id=1996662024 instance=ExtResource("1_uwyec")]
 
-[node name="Cube" parent="laser" index="0"]
+[node name="Cube" parent="laser" index="0" unique_id=1749179438]
 surface_material_override/0 = SubResource("StandardMaterial3D_jlj7w")
 
-[node name="Cube_001" parent="laser" index="1"]
+[node name="Cube_001" parent="laser" index="1" unique_id=897064044]
 material_override = SubResource("StandardMaterial3D_w2dew")
 
-[node name="Cube_002" parent="laser" index="2"]
+[node name="Cube_002" parent="laser" index="2" unique_id=2115308017]
 surface_material_override/0 = SubResource("StandardMaterial3D_jlj7w")
 
-[node name="Cube_003" parent="laser" index="3"]
+[node name="Cube_003" parent="laser" index="3" unique_id=631303560]
 surface_material_override/0 = SubResource("StandardMaterial3D_db3x4")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_1eunq")
-}
-autoplay = "new_animation"
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2013358815]
+libraries/ = SubResource("AnimationLibrary_1eunq")
+autoplay = &"new_animation"
 
-[node name="General Killzone" parent="." instance=ExtResource("4_lwakr")]
+[node name="General Killzone" parent="." unique_id=646405307 instance=ExtResource("4_lwakr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
 Killzone = SubResource("BoxShape3D_6apls")
 
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=499553658]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
 max_distance = 150.0
 bus = &"SFX"

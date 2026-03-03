@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dffdvmqlnswlb"]
+[gd_scene format=3 uid="uid://dffdvmqlnswlb"]
 
 [ext_resource type="Script" uid="uid://cy4kbnf6iviag" path="res://Scripts/BeanJectile.gd" id="1_7ftp6"]
 [ext_resource type="Texture2D" uid="uid://ckwu4s2rt1fhb" path="res://Assets/Textures/bean.png" id="2_h6lc3"]
@@ -70,21 +70,21 @@ animations = [{
 [sub_resource type="SphereShape3D" id="SphereShape3D_h5ux6"]
 radius = 1.5
 
-[node name="BeanJectile" type="Area3D"]
+[node name="BeanJectile" type="Area3D" unique_id=1970835272]
 script = ExtResource("1_7ftp6")
 
-[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="." unique_id=487757917]
 billboard = 1
 sprite_frames = SubResource("SpriteFrames_1m38i")
 frame_progress = 0.908691
 speed_scale = 5.0
 
-[node name="RayCast3D" type="RayCast3D" parent="."]
+[node name="RayCast3D" type="RayCast3D" parent="." unique_id=1645025421]
 target_position = Vector3(0, 0, -5)
 
-[node name="Timer" type="Timer" parent="."]
+[node name="Timer" type="Timer" parent="." unique_id=756925472]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1703599551]
 shape = SubResource("SphereShape3D_h5ux6")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

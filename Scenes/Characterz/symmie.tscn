@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://byssqbosbxe5x"]
+[gd_scene format=3 uid="uid://byssqbosbxe5x"]
 
 [ext_resource type="Texture2D" uid="uid://brdp2mfvfn31e" path="res://Assets/Textures/symmie.png" id="1_smmfn"]
 [ext_resource type="Texture2D" uid="uid://c77sxf41b6whs" path="res://Assets/Textures/idiotsynth.png" id="2_7ypsn"]
@@ -15,13 +15,13 @@ radius = 2.60072
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_wfc55"]
 
-[node name="symmie" type="Sprite3D"]
+[node name="symmie" type="Sprite3D" unique_id=1417434310]
 flip_h = true
 pixel_size = 0.0018
 texture = ExtResource("1_smmfn")
 script = ExtResource("2_f1lli")
 
-[node name="Panel" type="Panel" parent="."]
+[node name="Panel" type="Panel" parent="." unique_id=1026701709]
 visible = false
 z_index = -1
 anchors_preset = 15
@@ -32,7 +32,7 @@ grow_vertical = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_0t3oc")
 
-[node name="TextureRect" type="TextureRect" parent="Panel"]
+[node name="TextureRect" type="TextureRect" parent="Panel" unique_id=1106749722]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -44,7 +44,7 @@ texture = ExtResource("2_7ypsn")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="Control" type="Control" parent="Panel"]
+[node name="Control" type="Control" parent="Panel" unique_id=1186815367]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -57,14 +57,14 @@ grow_horizontal = 2
 grow_vertical = 0
 mouse_filter = 2
 
-[node name="Sprite2D" type="Sprite2D" parent="Panel/Control"]
+[node name="Sprite2D" type="Sprite2D" parent="Panel/Control" unique_id=1234009269]
 position = Vector2(-237, -25)
 rotation = 0.506173
 scale = Vector2(0.4505, 0.4505)
 texture = ExtResource("3_xeahp")
 flip_h = true
 
-[node name="Label" type="Label" parent="Panel/Control"]
+[node name="Label" type="Label" parent="Panel/Control" unique_id=708654892]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -85,17 +85,17 @@ text = "YOU'RE A FUCKING IDIOT, KEVIN!"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Area3D" type="Area3D" parent="."]
+[node name="Area3D" type="Area3D" parent="." unique_id=9707952]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1907004046]
 shape = SubResource("SphereShape3D_xc556")
 
-[node name="AnimatableBody3D" type="AnimatableBody3D" parent="."]
+[node name="AnimatableBody3D" type="AnimatableBody3D" parent="." unique_id=580099883]
 
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="AnimatableBody3D"]
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="AnimatableBody3D" unique_id=779576021]
 shape = SubResource("CylinderShape3D_wfc55")
 
-[node name="Label" type="Label" parent="."]
+[node name="Label" type="Label" parent="." unique_id=162255689]
 visible = false
 anchors_preset = 7
 anchor_left = 0.5
@@ -114,7 +114,7 @@ text = "heheheha"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=1637072195]
 stream = ExtResource("6_3a5ie")
 
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

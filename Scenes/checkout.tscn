@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://o6gbwsi4njpn"]
+[gd_scene format=3 uid="uid://o6gbwsi4njpn"]
 
 [ext_resource type="PackedScene" uid="uid://5pqdwusseft" path="res://Assets/Models/chechout.glb" id="1_wmriw"]
 
@@ -37,107 +37,107 @@ albedo_color = Color(0.129558, 0.129558, 0.129558, 1)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w3im4"]
 albedo_color = Color(0.129558, 0.129558, 0.129558, 1)
 
-[node name="checkout" type="Node3D"]
+[node name="checkout" type="Node3D" unique_id=1827180676]
 
-[node name="chechout" parent="." instance=ExtResource("1_wmriw")]
+[node name="chechout" parent="." unique_id=1467121201 instance=ExtResource("1_wmriw")]
 
-[node name="Cube" parent="chechout" index="0"]
+[node name="Cube" parent="chechout" index="0" unique_id=1191328379]
 material_override = SubResource("StandardMaterial3D_e2ruk")
 
-[node name="Cube_001" parent="chechout/Cube" index="0"]
+[node name="Cube_001" parent="chechout/Cube" index="0" unique_id=1698798833]
 material_override = SubResource("StandardMaterial3D_pfquw")
 
-[node name="Cylinder" parent="chechout/Cube/Cube_001" index="0"]
+[node name="Cylinder" parent="chechout/Cube/Cube_001" index="0" unique_id=470104002]
 material_override = SubResource("StandardMaterial3D_wv25j")
 
-[node name="Cube_002" parent="chechout/Cube/Cube_001/Cylinder" index="0"]
+[node name="Cube_002" parent="chechout/Cube/Cube_001/Cylinder" index="0" unique_id=764852420]
 material_override = SubResource("StandardMaterial3D_dkqlx")
 
-[node name="Cube_003" parent="chechout/Cube/Cube_001/Cylinder/Cube_002" index="0"]
+[node name="Cube_003" parent="chechout/Cube/Cube_001/Cylinder/Cube_002" index="0" unique_id=1332210433]
 material_override = SubResource("StandardMaterial3D_ambp2")
 
-[node name="Cube_004" parent="chechout/Cube/Cube_001/Cylinder/Cube_002" index="1"]
+[node name="Cube_004" parent="chechout/Cube/Cube_001/Cylinder/Cube_002" index="1" unique_id=1781008115]
 material_override = SubResource("StandardMaterial3D_ambp2")
 
-[node name="Cube_005" parent="chechout/Cube/Cube_001/Cylinder/Cube_002" index="2"]
+[node name="Cube_005" parent="chechout/Cube/Cube_001/Cylinder/Cube_002" index="2" unique_id=191741060]
 material_override = SubResource("StandardMaterial3D_ambp2")
 
-[node name="Cube_006" parent="chechout/Cube/Cube_001/Cylinder/Cube_002" index="3"]
+[node name="Cube_006" parent="chechout/Cube/Cube_001/Cylinder/Cube_002" index="3" unique_id=625127287]
 material_override = SubResource("StandardMaterial3D_ambp2")
 
-[node name="Cube_007" parent="chechout/Cube/Cube_001/Cylinder/Cube_002" index="4"]
+[node name="Cube_007" parent="chechout/Cube/Cube_001/Cylinder/Cube_002" index="4" unique_id=786776773]
 material_override = SubResource("StandardMaterial3D_ambp2")
 
-[node name="Cube_008" parent="chechout/Cube/Cube_001/Cylinder/Cube_002" index="5"]
+[node name="Cube_008" parent="chechout/Cube/Cube_001/Cylinder/Cube_002" index="5" unique_id=1244685086]
 material_override = SubResource("StandardMaterial3D_ambp2")
 
-[node name="Cube_009" parent="chechout/Cube/Cube_001/Cylinder/Cube_002" index="6"]
+[node name="Cube_009" parent="chechout/Cube/Cube_001/Cylinder/Cube_002" index="6" unique_id=1192861441]
 material_override = SubResource("StandardMaterial3D_ambp2")
 
-[node name="Cube_010" parent="chechout/Cube/Cube_001/Cylinder/Cube_002" index="7"]
+[node name="Cube_010" parent="chechout/Cube/Cube_001/Cylinder/Cube_002" index="7" unique_id=162241479]
 material_override = SubResource("StandardMaterial3D_ambp2")
 
-[node name="Cube_011" parent="chechout/Cube/Cube_001/Cylinder/Cube_002" index="8"]
+[node name="Cube_011" parent="chechout/Cube/Cube_001/Cylinder/Cube_002" index="8" unique_id=1864987884]
 material_override = SubResource("StandardMaterial3D_ambp2")
 
-[node name="Cube_012" parent="chechout/Cube/Cube_001/Cylinder/Cube_002" index="9"]
+[node name="Cube_012" parent="chechout/Cube/Cube_001/Cylinder/Cube_002" index="9" unique_id=1790898665]
 material_override = SubResource("StandardMaterial3D_ambp2")
 
-[node name="Cube_013" parent="chechout/Cube/Cube_001/Cylinder/Cube_002" index="10"]
+[node name="Cube_013" parent="chechout/Cube/Cube_001/Cylinder/Cube_002" index="10" unique_id=1744533818]
 material_override = SubResource("StandardMaterial3D_ambp2")
 
-[node name="Cube_014" parent="chechout/Cube/Cube_001/Cylinder/Cube_002" index="11"]
+[node name="Cube_014" parent="chechout/Cube/Cube_001/Cylinder/Cube_002" index="11" unique_id=169303262]
 material_override = SubResource("StandardMaterial3D_ambp2")
 
-[node name="Cube_015" parent="chechout/Cube/Cube_001/Cylinder/Cube_002" index="12"]
+[node name="Cube_015" parent="chechout/Cube/Cube_001/Cylinder/Cube_002" index="12" unique_id=535255844]
 material_override = SubResource("StandardMaterial3D_ambp2")
 
-[node name="Cube_016" parent="chechout/Cube/Cube_001/Cylinder/Cube_002" index="13"]
+[node name="Cube_016" parent="chechout/Cube/Cube_001/Cylinder/Cube_002" index="13" unique_id=704666476]
 material_override = SubResource("StandardMaterial3D_ambp2")
 
-[node name="Cube_017" parent="chechout/Cube/Cube_001/Cylinder/Cube_002" index="14"]
+[node name="Cube_017" parent="chechout/Cube/Cube_001/Cylinder/Cube_002" index="14" unique_id=1615265541]
 material_override = SubResource("StandardMaterial3D_ambp2")
 
-[node name="Cube_018" parent="chechout/Cube/Cube_001/Cylinder/Cube_002" index="15"]
+[node name="Cube_018" parent="chechout/Cube/Cube_001/Cylinder/Cube_002" index="15" unique_id=1981593515]
 material_override = SubResource("StandardMaterial3D_ambp2")
 
-[node name="Cube_019" parent="chechout/Cube/Cube_001/Cylinder/Cube_002" index="16"]
+[node name="Cube_019" parent="chechout/Cube/Cube_001/Cylinder/Cube_002" index="16" unique_id=1945903115]
 material_override = SubResource("StandardMaterial3D_ambp2")
 
-[node name="Cylinder_001" parent="chechout/Cube/Cube_001/Cylinder/Cube_002" index="17"]
+[node name="Cylinder_001" parent="chechout/Cube/Cube_001/Cylinder/Cube_002" index="17" unique_id=375022958]
 material_override = SubResource("StandardMaterial3D_uwsmc")
 
-[node name="Cylinder_002" parent="chechout/Cube/Cube_001/Cylinder/Cube_002" index="18"]
+[node name="Cylinder_002" parent="chechout/Cube/Cube_001/Cylinder/Cube_002" index="18" unique_id=1535801828]
 material_override = SubResource("StandardMaterial3D_uwsmc")
 
-[node name="Cylinder_003" parent="chechout/Cube/Cube_001/Cylinder/Cube_002" index="19"]
+[node name="Cylinder_003" parent="chechout/Cube/Cube_001/Cylinder/Cube_002" index="19" unique_id=275215051]
 material_override = SubResource("StandardMaterial3D_uwsmc")
 
-[node name="Cylinder_004" parent="chechout/Cube/Cube_001/Cylinder/Cube_002" index="20"]
+[node name="Cylinder_004" parent="chechout/Cube/Cube_001/Cylinder/Cube_002" index="20" unique_id=1380556361]
 material_override = SubResource("StandardMaterial3D_uwsmc")
 
-[node name="Cube_020" parent="chechout/Cube" index="1"]
+[node name="Cube_020" parent="chechout/Cube" index="1" unique_id=1807306795]
 material_override = SubResource("StandardMaterial3D_knq2d")
 
-[node name="Cube_021" parent="chechout/Cube" index="2"]
+[node name="Cube_021" parent="chechout/Cube" index="2" unique_id=6633843]
 material_override = SubResource("StandardMaterial3D_2o3he")
 
-[node name="Cube_022" parent="chechout/Cube/Cube_021" index="0"]
+[node name="Cube_022" parent="chechout/Cube/Cube_021" index="0" unique_id=1008826603]
 material_override = SubResource("StandardMaterial3D_bpm0m")
 
-[node name="Cube_023" parent="chechout/Cube" index="3"]
+[node name="Cube_023" parent="chechout/Cube" index="3" unique_id=1292706441]
 material_override = SubResource("StandardMaterial3D_cmuvd")
 
-[node name="Cube_024" parent="chechout/Cube/Cube_023" index="0"]
+[node name="Cube_024" parent="chechout/Cube/Cube_023" index="0" unique_id=1919411674]
 material_override = SubResource("StandardMaterial3D_cmuvd")
 
-[node name="Cube_025" parent="chechout/Cube/Cube_023/Cube_024" index="0"]
+[node name="Cube_025" parent="chechout/Cube/Cube_023/Cube_024" index="0" unique_id=258926069]
 material_override = SubResource("StandardMaterial3D_cmuvd")
 
-[node name="Cylinder_005" parent="chechout/Cube" index="4"]
+[node name="Cylinder_005" parent="chechout/Cube" index="4" unique_id=1587453434]
 material_override = SubResource("StandardMaterial3D_knq2d")
 
-[node name="Cube_026" parent="chechout/Cube/Cylinder_005" index="0"]
+[node name="Cube_026" parent="chechout/Cube/Cylinder_005" index="0" unique_id=1920610487]
 material_override = SubResource("StandardMaterial3D_w3im4")
 
 [editable path="chechout"]

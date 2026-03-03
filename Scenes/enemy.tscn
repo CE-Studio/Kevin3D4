@@ -1,7 +1,6 @@
-[gd_scene load_steps=12 format=3 uid="uid://hqroyuuds4po"]
+[gd_scene format=3 uid="uid://hqroyuuds4po"]
 
 [ext_resource type="Script" uid="uid://b8egfmhecftn7" path="res://Scripts/Enemy.gd" id="1_ypvxk"]
-[ext_resource type="Shader" uid="uid://dqcbpkck1cny8" path="res://Assets/Shaders/crumbling_platform.tres" id="2_6wadm"]
 [ext_resource type="PackedScene" uid="uid://dd2sj3qyx7rs7" path="res://Assets/Models/enemy.glb" id="2_txoyg"]
 [ext_resource type="Texture2D" uid="uid://c2u3ocfcpme4b" path="res://Assets/Textures/enem3.png" id="4_6l0s4"]
 [ext_resource type="AudioStream" uid="uid://bvsnfkxts5dxn" path="res://Assets/Sound Effects/realistic-gun-fire-100696.mp3" id="5_b2ufc"]
@@ -13,10 +12,83 @@ radius = 0.4
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_utlsw"]
 height = 1.0
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_6lxww"]
+[sub_resource type="VisualShaderNodeTexture" id="VisualShaderNodeTexture_287tu"]
+source = 5
+
+[sub_resource type="VisualShaderNodeTexture2DParameter" id="VisualShaderNodeTexture2DParameter_0830c"]
+parameter_name = "Albedo"
+texture_type = 1
+
+[sub_resource type="VisualShaderNodeInput" id="VisualShaderNodeInput_ghaa6"]
+input_name = "uv"
+
+[sub_resource type="VisualShaderNodeFloatParameter" id="VisualShaderNodeFloatParameter_1dp5w"]
+parameter_name = "FloatParameter"
+
+[sub_resource type="VisualShaderNodeVectorOp" id="VisualShaderNodeVectorOp_auwsv"]
+default_input_values = [0, Vector3(0, 0, 0), 1, Vector3(5.389, 5.33, 5.896)]
+operator = 3
+
+[sub_resource type="VisualShaderNodeVectorOp" id="VisualShaderNodeVectorOp_8uf12"]
+
+[sub_resource type="VisualShaderNodeInput" id="VisualShaderNodeInput_po0sg"]
+input_name = "vertex"
+
+[sub_resource type="VisualShaderNodeRandomRange" id="VisualShaderNodeRandomRange_haro7"]
+
+[sub_resource type="VisualShaderNodeRandomRange" id="VisualShaderNodeRandomRange_56vhr"]
+
+[sub_resource type="VisualShaderNodeRandomRange" id="VisualShaderNodeRandomRange_ta2yt"]
+
+[sub_resource type="VisualShaderNodeVectorCompose" id="VisualShaderNodeVectorCompose_m4x7e"]
+
+[sub_resource type="VisualShaderNodeVectorOp" id="VisualShaderNodeVectorOp_vt4ob"]
+operator = 2
+
+[sub_resource type="VisualShaderNodeInput" id="VisualShaderNodeInput_hgeoe"]
+input_name = "time"
+
+[sub_resource type="VisualShaderNodeVectorOp" id="VisualShaderNodeVectorOp_tk7xo"]
+
+[sub_resource type="VisualShader" id="VisualShader_scl1n"]
+resource_local_to_scene = true
+nodes/vertex/0/position = Vector2(1480, 140)
+nodes/vertex/2/node = SubResource("VisualShaderNodeInput_po0sg")
+nodes/vertex/2/position = Vector2(-380, 480)
+nodes/vertex/3/node = SubResource("VisualShaderNodeRandomRange_haro7")
+nodes/vertex/3/position = Vector2(620, 60)
+nodes/vertex/4/node = SubResource("VisualShaderNodeRandomRange_56vhr")
+nodes/vertex/4/position = Vector2(620, 200)
+nodes/vertex/5/node = SubResource("VisualShaderNodeRandomRange_ta2yt")
+nodes/vertex/5/position = Vector2(620, 340)
+nodes/vertex/6/node = SubResource("VisualShaderNodeVectorCompose_m4x7e")
+nodes/vertex/6/position = Vector2(860, 160)
+nodes/vertex/7/node = SubResource("VisualShaderNodeVectorOp_vt4ob")
+nodes/vertex/7/position = Vector2(1020, 120)
+nodes/vertex/8/node = SubResource("VisualShaderNodeInput_hgeoe")
+nodes/vertex/8/position = Vector2(-60, 240)
+nodes/vertex/9/node = SubResource("VisualShaderNodeVectorOp_tk7xo")
+nodes/vertex/9/position = Vector2(280, 180)
+nodes/vertex/10/node = SubResource("VisualShaderNodeFloatParameter_1dp5w")
+nodes/vertex/10/position = Vector2(20, 60)
+nodes/vertex/12/node = SubResource("VisualShaderNodeVectorOp_auwsv")
+nodes/vertex/12/position = Vector2(-20, 360)
+nodes/vertex/13/node = SubResource("VisualShaderNodeVectorOp_8uf12")
+nodes/vertex/13/position = Vector2(1260, 180)
+nodes/vertex/connections = PackedInt32Array(3, 0, 6, 0, 4, 0, 6, 1, 5, 0, 6, 2, 6, 0, 7, 0, 2, 0, 7, 1, 9, 0, 3, 0, 9, 0, 4, 0, 9, 0, 5, 0, 8, 0, 9, 0, 10, 0, 5, 2, 10, 0, 4, 2, 10, 0, 3, 2, 2, 0, 12, 0, 12, 0, 9, 1, 7, 0, 13, 0, 13, 0, 0, 0, 2, 0, 13, 1)
+nodes/fragment/0/position = Vector2(640, 140)
+nodes/fragment/2/node = SubResource("VisualShaderNodeTexture_287tu")
+nodes/fragment/2/position = Vector2(240, 120)
+nodes/fragment/3/node = SubResource("VisualShaderNodeTexture2DParameter_0830c")
+nodes/fragment/3/position = Vector2(-440, 0)
+nodes/fragment/4/node = SubResource("VisualShaderNodeInput_ghaa6")
+nodes/fragment/4/position = Vector2(-100, 140)
+nodes/fragment/connections = PackedInt32Array(2, 0, 0, 0, 3, 0, 2, 2, 4, 0, 2, 0)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dhkrs"]
 resource_local_to_scene = true
 render_priority = 0
-shader = ExtResource("2_6wadm")
+shader = SubResource("VisualShader_scl1n")
 shader_parameter/FloatParameter = 0.0
 shader_parameter/Albedo = ExtResource("4_6l0s4")
 
@@ -29,8 +101,8 @@ tracks/0/path = NodePath("enemy/Armature/Skeleton3D/Vert:blend_shapes/Key 1")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat64Array(0),
-"transitions": PackedFloat64Array(1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [0.0]
 }
@@ -45,8 +117,8 @@ tracks/0/path = NodePath("enemy/Armature/Skeleton3D/Vert:blend_shapes/Key 1")
 tracks/0/interp = 0
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat64Array(0, 0.5),
-"transitions": PackedFloat64Array(1, 1),
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [0.0, 1.0]
 }
@@ -57,47 +129,45 @@ _data = {
 &"new_animation": SubResource("Animation_o7ag6")
 }
 
-[node name="Enemy" type="Area3D"]
+[node name="Enemy" type="Area3D" unique_id=57941241]
 script = ExtResource("1_ypvxk")
 
-[node name="Timer" type="Timer" parent="."]
+[node name="Timer" type="Timer" parent="." unique_id=70298757]
 wait_time = 0.7
 one_shot = true
 
-[node name="StompArea" type="Area3D" parent="."]
+[node name="StompArea" type="Area3D" parent="." unique_id=1569624297]
 
-[node name="StompHitbox" type="CollisionShape3D" parent="StompArea"]
+[node name="StompHitbox" type="CollisionShape3D" parent="StompArea" unique_id=1347971595]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.345116, 0)
 shape = SubResource("CylinderShape3D_ixoq8")
 
-[node name="Collision" type="StaticBody3D" parent="."]
+[node name="Collision" type="StaticBody3D" parent="." unique_id=892727562]
 collision_layer = 2
 
-[node name="CollisionBody" type="CollisionShape3D" parent="Collision"]
+[node name="CollisionBody" type="CollisionShape3D" parent="Collision" unique_id=1932132247]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.318364, 0)
 shape = SubResource("CylinderShape3D_ixoq8")
 
-[node name="Hurtbox" type="CollisionShape3D" parent="."]
+[node name="Hurtbox" type="CollisionShape3D" parent="." unique_id=1029095844]
 shape = SubResource("CylinderShape3D_utlsw")
 
-[node name="enemy" parent="." instance=ExtResource("2_txoyg")]
+[node name="enemy" parent="." unique_id=63834796 instance=ExtResource("2_txoyg")]
 transform = Transform3D(0.46, 0, 0, 0, 0.46, 0, 0, 0, 0.46, 0, -0.485923, 0)
 
-[node name="Vert" parent="enemy/Armature/Skeleton3D" index="0"]
-surface_material_override/0 = SubResource("ShaderMaterial_6lxww")
+[node name="Vert" parent="enemy/Armature/Skeleton3D" parent_id_path=PackedInt32Array(63834796, 1111228434) index="0" unique_id=2057337445]
+surface_material_override/0 = SubResource("ShaderMaterial_dhkrs")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_yntx2")
-}
-autoplay = "new_animation"
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2133806496]
+libraries/ = SubResource("AnimationLibrary_yntx2")
+autoplay = &"new_animation"
 
-[node name="Timer2" type="Timer" parent="."]
+[node name="Timer2" type="Timer" parent="." unique_id=1309911262]
 wait_time = 5.0
 one_shot = true
 autostart = true
 
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=1979592340]
 stream = ExtResource("5_b2ufc")
 volume_db = 2.29
 bus = &"SFX"

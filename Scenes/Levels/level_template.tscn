@@ -1,13 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://wh7q646wpce"]
+[gd_scene format=3 uid="uid://wh7q646wpce"]
 
 [ext_resource type="MeshLibrary" uid="uid://i125w3qc6j8c" path="res://Scenes/3DTilemaps/RealL1MeshLib.tres" id="2_qmco0"]
 [ext_resource type="PackedScene" uid="uid://8iobt4o8k61u" path="res://Scenes/Player.tscn" id="3_8rifa"]
 [ext_resource type="AudioStream" uid="uid://diefur77d32jo" path="res://Assets/Music/Title.wav" id="4_5id5f"]
 [ext_resource type="PackedScene" uid="uid://byx5litoy380f" path="res://Scenes/enviro.tscn" id="4_hgc1o"]
 
-[node name="Level1" type="Node3D"]
+[node name="Level1" type="Node3D" unique_id=1058339316]
 
-[node name="GridMap" type="GridMap" parent="."]
+[node name="GridMap" type="GridMap" parent="." unique_id=1889253029]
 mesh_library = ExtResource("2_qmco0")
 cell_size = Vector3(6, 6, 6)
 cell_scale = 3.0
@@ -16,12 +16,12 @@ data = {
 }
 metadata/_editor_floor_ = Vector3(0, -1, 0)
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1681781062]
 stream = ExtResource("4_5id5f")
 autoplay = true
 bus = &"Music"
 
-[node name="Player" parent="." instance=ExtResource("3_8rifa")]
+[node name="Player" parent="." unique_id=1428078089 instance=ExtResource("3_8rifa")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.97716, 1.03612, -3.03442)
 
-[node name="enviro" parent="." instance=ExtResource("4_hgc1o")]
+[node name="enviro" parent="." unique_id=1392875131 instance=ExtResource("4_hgc1o")]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=74 format=3 uid="uid://dr1cnj1yn017v"]
+[gd_scene format=3 uid="uid://dr1cnj1yn017v"]
 
 [ext_resource type="MeshLibrary" uid="uid://cknd8psi154ho" path="res://Scenes/3DTilemaps/FactoryMeshLib.tres" id="1_4y3v1"]
 [ext_resource type="PackedScene" uid="uid://8iobt4o8k61u" path="res://Scenes/Player.tscn" id="2_6pvt8"]
@@ -53,8 +53,8 @@ tracks/0/path = NodePath(".:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat64Array(0),
-"transitions": PackedFloat64Array(1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector3(-112.967, -3.55271e-15, 66.4767)]
 }
@@ -69,8 +69,8 @@ tracks/0/path = NodePath(".:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat64Array(0, 10),
-"transitions": PackedFloat64Array(1, 1),
+"times": PackedFloat32Array(0, 10),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector3(-112.967, -3.55271e-15, 66.4767), Vector3(-98.7215, -3.55271e-15, 52.9229)]
 }
@@ -93,8 +93,8 @@ tracks/0/path = NodePath(".:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat64Array(0),
-"transitions": PackedFloat64Array(1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector3(-46.6881, -4.15641, -0.433372)]
 }
@@ -110,8 +110,8 @@ tracks/0/path = NodePath(".:position")
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat64Array(0, 1, 3, 4.8, 6.2, 8, 10),
-"transitions": PackedFloat64Array(1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 1, 3, 4.8, 6.2, 8, 10),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [Vector3(-46.6881, -4.15641, -0.433372), Vector3(-46.6881, -4.15641, -0.433372), Vector3(-50.0645, -6.01443, -10.2827), Vector3(-35.9925, -3.92681, -16.3673), Vector3(-16.2101, -8.31456, -11.1311), Vector3(-13.8972, 12.1528, -7.15751), Vector3(-13.8972, 14.2545, -3.94475)]
 }
@@ -142,8 +142,8 @@ tracks/0/path = NodePath(".:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat64Array(0),
-"transitions": PackedFloat64Array(1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector3(-30, 15.1483, 75)]
 }
@@ -159,8 +159,8 @@ tracks/0/path = NodePath(".:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat64Array(0, 2, 6, 8, 13.5, 15),
-"transitions": PackedFloat64Array(1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 2, 6, 8, 13.5, 15),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [Vector3(-30, 15.1483, 75), Vector3(-30, 15.1483, 75), Vector3(-1.00828, 15.1483, 75), Vector3(-1.00828, 15.1483, 75), Vector3(-1.00828, 15.1483, 26.3906), Vector3(-1.00828, 15.1483, 26.3906)]
 }
@@ -180,8 +180,8 @@ tracks/0/path = NodePath("AudioStreamPlayer:volume_db")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat64Array(0),
-"transitions": PackedFloat64Array(1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [-80.0]
 }
@@ -192,8 +192,8 @@ tracks/1/path = NodePath("../AudioStreamPlayer:volume_db")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat64Array(0),
-"transitions": PackedFloat64Array(1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [0.0]
 }
@@ -204,8 +204,8 @@ tracks/2/path = NodePath("../enviro/DirectionalLight3D:light_energy")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat64Array(0),
-"transitions": PackedFloat64Array(1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [1.0]
 }
@@ -216,8 +216,8 @@ tracks/3/path = NodePath("SpotLight3D:light_energy")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat64Array(0),
-"transitions": PackedFloat64Array(1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [0.0]
 }
@@ -228,8 +228,8 @@ tracks/4/path = NodePath("../enviro/WorldEnvironment:environment:ambient_light_e
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat64Array(0),
-"transitions": PackedFloat64Array(1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [0.6]
 }
@@ -240,8 +240,8 @@ tracks/5/path = NodePath("SpotLight3D:spot_angle")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat64Array(0),
-"transitions": PackedFloat64Array(1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [2.03035]
 }
@@ -252,8 +252,8 @@ tracks/6/path = NodePath("../room2nd/MeshInstance3D:visible")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
-"times": PackedFloat64Array(0),
-"transitions": PackedFloat64Array(1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [true]
 }
@@ -268,8 +268,8 @@ tracks/0/path = NodePath("AudioStreamPlayer:volume_db")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat64Array(0, 2),
-"transitions": PackedFloat64Array(1, 1),
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [-80.0, 0.0]
 }
@@ -280,8 +280,8 @@ tracks/1/path = NodePath("../AudioStreamPlayer:volume_db")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat64Array(0, 2),
-"transitions": PackedFloat64Array(1, 1),
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [0.0, -80.0]
 }
@@ -292,8 +292,8 @@ tracks/2/path = NodePath("../enviro/DirectionalLight3D:light_energy")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat64Array(0, 2),
-"transitions": PackedFloat64Array(1, 1),
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [1.0, 0.0]
 }
@@ -304,8 +304,8 @@ tracks/3/path = NodePath("SpotLight3D:light_energy")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat64Array(0, 2),
-"transitions": PackedFloat64Array(1, 1),
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [0.0, 16.0]
 }
@@ -316,8 +316,8 @@ tracks/4/path = NodePath("../enviro/WorldEnvironment:environment:ambient_light_e
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat64Array(0, 2),
-"transitions": PackedFloat64Array(1, 1),
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [0.6, 0.05]
 }
@@ -328,8 +328,8 @@ tracks/5/path = NodePath("SpotLight3D:spot_angle")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat64Array(0, 2),
-"transitions": PackedFloat64Array(1, 1),
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [2.03035, 41.034]
 }
@@ -340,8 +340,8 @@ tracks/6/path = NodePath("../room2nd/MeshInstance3D:visible")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
-"times": PackedFloat64Array(0, 0.1),
-"transitions": PackedFloat64Array(1, 1),
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, false]
 }
@@ -367,8 +367,8 @@ tracks/0/path = NodePath("Node3D:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat64Array(0),
-"transitions": PackedFloat64Array(1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector3(0, 0, 0)]
 }
@@ -379,8 +379,8 @@ tracks/1/path = NodePath("Node3D:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat64Array(0),
-"transitions": PackedFloat64Array(1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector3(0, 0, 0)]
 }
@@ -396,8 +396,8 @@ tracks/0/path = NodePath("Node3D:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat64Array(0, 4, 8),
-"transitions": PackedFloat64Array(1, 1, 1),
+"times": PackedFloat32Array(0, 4, 8),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector3(0, 0, 0), Vector3(0, 6.28319, 0), Vector3(0, 12.5664, 0)]
 }
@@ -408,8 +408,8 @@ tracks/1/path = NodePath("Node3D:position")
 tracks/1/interp = 2
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat64Array(0, 4, 8),
-"transitions": PackedFloat64Array(1, 1, 1),
+"times": PackedFloat32Array(0, 4, 8),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector3(0, 0, 0), Vector3(0, 0.485778, 0), Vector3(0, 0, 0)]
 }
@@ -429,8 +429,8 @@ tracks/0/path = NodePath("TextureRect:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat64Array(0),
-"transitions": PackedFloat64Array(1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Color(1, 1, 1, 0)]
 }
@@ -445,8 +445,8 @@ tracks/0/path = NodePath("TextureRect:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat64Array(0, 1),
-"transitions": PackedFloat64Array(1, 1),
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
@@ -457,8 +457,8 @@ tracks/1/path = NodePath("AudioStreamPlayer:playing")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat64Array(2.9),
-"transitions": PackedFloat64Array(1),
+"times": PackedFloat32Array(2.9),
+"transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [false]
 }
@@ -469,8 +469,8 @@ tracks/2/path = NodePath("AudioStreamPlayer:volume_db")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat64Array(0, 3),
-"transitions": PackedFloat64Array(1, 1),
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [0.0, -80.0]
 }
@@ -531,8 +531,8 @@ tracks/0/path = NodePath("Cube/Cube_001/Cube_002:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat64Array(0),
-"transitions": PackedFloat64Array(1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector3(0, -0.607235, 0)]
 }
@@ -543,8 +543,8 @@ tracks/1/path = NodePath("Cube/Cube_001/Cube_002/Cube_003/Cube_005:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat64Array(0),
-"transitions": PackedFloat64Array(1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector3(0, -4.39614, 29.2207)]
 }
@@ -561,8 +561,8 @@ tracks/0/path = NodePath("Cube/Cube_001/Cube_002:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat64Array(0, 1.5, 2.25, 3, 3.75, 4.5, 5.25, 6, 6.75, 7.5, 8.25, 9, 9.75, 10.5),
-"transitions": PackedFloat64Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 1.5, 2.25, 3, 3.75, 4.5, 5.25, 6, 6.75, 7.5, 8.25, 9, 9.75, 10.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [Vector3(0, -0.607235, 0), Vector3(0, -0.607235, 0), Vector3(0, -0.607235, 0), Vector3(0, -0.607235, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, -0.607235, 0), Vector3(0, -0.607235, 0), Vector3(0, -0.607235, 0), Vector3(0, -0.607235, 0)]
 }
@@ -573,8 +573,8 @@ tracks/1/path = NodePath("Cube/Cube_001/Cube_002/Cube_003/Cube_005:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat64Array(0, 1.5, 2.25, 3, 3.75, 4.5, 5.25, 6, 6.75, 7.5, 8.25, 9, 9.75, 10.5),
-"transitions": PackedFloat64Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 1.5, 2.25, 3, 3.75, 4.5, 5.25, 6, 6.75, 7.5, 8.25, 9, 9.75, 10.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [Vector3(0, -4.39614, 29.2207), Vector3(0, -4.39614, 29.2207), Vector3(0, 39.7487, 29.2207), Vector3(0, 39.7487, 29.2207), Vector3(0, 39.7487, 29.2207), Vector3(0, 39.7487, 29.2207), Vector3(0, 39.7487, 48.0368), Vector3(0, 39.7487, 48.0368), Vector3(0, 39.7487, 29.2207), Vector3(0, 39.7487, 29.2207), Vector3(0, 39.7487, 29.2207), Vector3(0, 39.7487, 29.2207), Vector3(0, -4.39614, 29.2207), Vector3(0, -4.39614, 29.2207)]
 }
@@ -588,9 +588,9 @@ _data = {
 [sub_resource type="BoxShape3D" id="BoxShape3D_cgimn"]
 size = Vector3(6, 6, 6)
 
-[node name="Level1" type="Node3D"]
+[node name="Level1" type="Node3D" unique_id=1883146967]
 
-[node name="GridMap" type="GridMap" parent="."]
+[node name="GridMap" type="GridMap" parent="." unique_id=1003301486]
 mesh_library = ExtResource("1_4y3v1")
 cell_size = Vector3(6, 6, 6)
 cell_scale = 3.0
@@ -599,349 +599,337 @@ data = {
 }
 metadata/_editor_floor_ = Vector3(-13, 14, -24)
 
-[node name="enviro" parent="." instance=ExtResource("4_fvhdq")]
+[node name="enviro" parent="." unique_id=518907687 instance=ExtResource("4_fvhdq")]
 
-[node name="WorldEnvironment" parent="enviro" index="0"]
+[node name="WorldEnvironment" parent="enviro" index="0" unique_id=1738281685]
 environment = SubResource("Environment_3q3yk")
 
-[node name="roomStart" type="Node3D" parent="."]
+[node name="roomStart" type="Node3D" parent="." unique_id=185419003]
 
-[node name="Switch" parent="roomStart" instance=ExtResource("5_88wly")]
+[node name="Switch" parent="roomStart" unique_id=1749946312 instance=ExtResource("5_88wly")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.38089, -1.59829, 3.75277)
 
-[node name="door" parent="roomStart" instance=ExtResource("6_0ynkj")]
+[node name="door" parent="roomStart" unique_id=1340572235 instance=ExtResource("6_0ynkj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, -3, -13.7968)
 
-[node name="laser" parent="roomStart" instance=ExtResource("7_ypb11")]
+[node name="laser" parent="roomStart" unique_id=68752445 instance=ExtResource("7_ypb11")]
 transform = Transform3D(6.12323e-17, 0, -1, 0, 1, 0, 1, 0, 6.12323e-17, -9, -2, -21)
 
-[node name="laser2" parent="roomStart" instance=ExtResource("7_ypb11")]
+[node name="laser2" parent="roomStart" unique_id=49536871 instance=ExtResource("7_ypb11")]
 transform = Transform3D(-1.83697e-16, 0, 1, 0, 1, 0, -1, 0, -1.83697e-16, -9, -2, -27)
 
-[node name="laser4" parent="roomStart" instance=ExtResource("7_ypb11")]
+[node name="laser4" parent="roomStart" unique_id=1832322433 instance=ExtResource("7_ypb11")]
 transform = Transform3D(-1, 0, -1.22465e-16, 0, 1, 0, 1.22465e-16, 0, -1, -45, -2, -63)
 
-[node name="laser5" parent="roomStart" instance=ExtResource("7_ypb11")]
+[node name="laser5" parent="roomStart" unique_id=965565902 instance=ExtResource("7_ypb11")]
 transform = Transform3D(1, 0, 2.44929e-16, 0, 1, 0, -2.44929e-16, 0, 1, -39, -2, -63)
 
-[node name="laser3" parent="roomStart" instance=ExtResource("7_ypb11")]
+[node name="laser3" parent="roomStart" unique_id=1174273483 instance=ExtResource("7_ypb11")]
 transform = Transform3D(-1, 0, -1.22465e-16, 0, 1, 0, 1.22465e-16, 0, -1, 39, -2, -44)
 
-[node name="Enemy" parent="roomStart" instance=ExtResource("7_1aqvv")]
+[node name="Enemy" parent="roomStart" unique_id=466608872 instance=ExtResource("7_1aqvv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.03433, -2.458, -20.1061)
 
-[node name="Enemy2" parent="roomStart" instance=ExtResource("7_1aqvv")]
+[node name="Enemy2" parent="roomStart" unique_id=1635396313 instance=ExtResource("7_1aqvv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.14108, -2.458, -25.7214)
 
-[node name="Enemy3" parent="roomStart" instance=ExtResource("7_1aqvv")]
+[node name="Enemy3" parent="roomStart" unique_id=522732092 instance=ExtResource("7_1aqvv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.1932, -2.458, -30.9601)
 
-[node name="Enemy4" parent="roomStart" instance=ExtResource("7_1aqvv")]
+[node name="Enemy4" parent="roomStart" unique_id=1598211972 instance=ExtResource("7_1aqvv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39.9214, -2.458, -22.7155)
 
-[node name="Collectible" parent="roomStart" instance=ExtResource("6_veq7k")]
+[node name="Collectible" parent="roomStart" unique_id=363011122 instance=ExtResource("6_veq7k")]
 
-[node name="Collectible2" parent="roomStart" instance=ExtResource("6_veq7k")]
+[node name="Collectible2" parent="roomStart" unique_id=847060818 instance=ExtResource("6_veq7k")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46.1129, -8.88178e-16, -20.7723)
 
-[node name="Collectible3" parent="roomStart" instance=ExtResource("6_veq7k")]
+[node name="Collectible3" parent="roomStart" unique_id=1288028238 instance=ExtResource("6_veq7k")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 44.9618, -8.88178e-16, -22.4482)
 
-[node name="Collectible4" parent="roomStart" instance=ExtResource("6_veq7k")]
+[node name="Collectible4" parent="roomStart" unique_id=924880648 instance=ExtResource("6_veq7k")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46.1129, -8.88178e-16, -23.0985)
 
-[node name="Collectible5" parent="roomStart" instance=ExtResource("6_veq7k")]
+[node name="Collectible5" parent="roomStart" unique_id=1841238881 instance=ExtResource("6_veq7k")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 44.9618, -8.88178e-16, -24.7743)
 
-[node name="Collectible6" parent="roomStart" instance=ExtResource("6_veq7k")]
+[node name="Collectible6" parent="roomStart" unique_id=1954709589 instance=ExtResource("6_veq7k")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46.1129, -8.88178e-16, -25.8251)
 
-[node name="Collectible7" parent="roomStart" instance=ExtResource("6_veq7k")]
+[node name="Collectible7" parent="roomStart" unique_id=378628557 instance=ExtResource("6_veq7k")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 44.9618, -8.88178e-16, -27.5009)
 
-[node name="Collectible8" parent="roomStart" instance=ExtResource("6_veq7k")]
+[node name="Collectible8" parent="roomStart" unique_id=510344214 instance=ExtResource("6_veq7k")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46.1129, -8.88178e-16, -28.1512)
 
-[node name="Collectible9" parent="roomStart" instance=ExtResource("6_veq7k")]
+[node name="Collectible9" parent="roomStart" unique_id=1190295346 instance=ExtResource("6_veq7k")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 44.9618, -8.88178e-16, -29.827)
 
-[node name="Collectible10" parent="roomStart" instance=ExtResource("6_veq7k")]
+[node name="Collectible10" parent="roomStart" unique_id=44755788 instance=ExtResource("6_veq7k")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.53435, 0, -0.434363)
 
-[node name="Collectible11" parent="roomStart" instance=ExtResource("6_veq7k")]
+[node name="Collectible11" parent="roomStart" unique_id=1343551114 instance=ExtResource("6_veq7k")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 44.5786, -8.88178e-16, -21.2067)
 
-[node name="Collectible12" parent="roomStart" instance=ExtResource("6_veq7k")]
+[node name="Collectible12" parent="roomStart" unique_id=191474595 instance=ExtResource("6_veq7k")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 43.4274, -8.88178e-16, -22.8825)
 
-[node name="Collectible13" parent="roomStart" instance=ExtResource("6_veq7k")]
+[node name="Collectible13" parent="roomStart" unique_id=2053072829 instance=ExtResource("6_veq7k")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 44.5786, -8.88178e-16, -23.5329)
 
-[node name="Collectible14" parent="roomStart" instance=ExtResource("6_veq7k")]
+[node name="Collectible14" parent="roomStart" unique_id=526873826 instance=ExtResource("6_veq7k")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 43.4274, -8.88178e-16, -25.2087)
 
-[node name="Collectible15" parent="roomStart" instance=ExtResource("6_veq7k")]
+[node name="Collectible15" parent="roomStart" unique_id=714103797 instance=ExtResource("6_veq7k")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 44.5786, -8.88178e-16, -26.2594)
 
-[node name="Collectible16" parent="roomStart" instance=ExtResource("6_veq7k")]
+[node name="Collectible16" parent="roomStart" unique_id=280393361 instance=ExtResource("6_veq7k")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 43.4274, -8.88178e-16, -27.9353)
 
-[node name="Collectible17" parent="roomStart" instance=ExtResource("6_veq7k")]
+[node name="Collectible17" parent="roomStart" unique_id=15655581 instance=ExtResource("6_veq7k")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 44.5786, -8.88178e-16, -28.5856)
 
-[node name="Collectible18" parent="roomStart" instance=ExtResource("6_veq7k")]
+[node name="Collectible18" parent="roomStart" unique_id=286946231 instance=ExtResource("6_veq7k")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 43.4274, -8.88178e-16, -30.2614)
 
-[node name="VoiceTrigger" parent="roomStart" instance=ExtResource("9_wnsao")]
+[node name="VoiceTrigger" parent="roomStart" unique_id=437262660 instance=ExtResource("9_wnsao")]
 transform = Transform3D(10.035, 0, 0, 0, 10.035, 0, 0, 0, 10.035, -7.46839, 0, -23.7924)
 type = 1
 
-[node name="roomMaze" type="Node3D" parent="."]
+[node name="roomMaze" type="Node3D" parent="." unique_id=1368100527]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 59, -2, -79)
 
-[node name="Switch" parent="roomMaze" instance=ExtResource("5_88wly")]
+[node name="Switch" parent="roomMaze" unique_id=301710858 instance=ExtResource("5_88wly")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, 28)
 
-[node name="Collectible2" parent="roomMaze" instance=ExtResource("6_veq7k")]
+[node name="Collectible2" parent="roomMaze" unique_id=575029833 instance=ExtResource("6_veq7k")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 52.1903, 0, 11.7144)
 
-[node name="Collectible" parent="roomMaze" instance=ExtResource("6_veq7k")]
+[node name="Collectible" parent="roomMaze" unique_id=95664774 instance=ExtResource("6_veq7k")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39.8939, 0, 14.4442)
 
-[node name="Collectible3" parent="roomMaze" instance=ExtResource("6_veq7k")]
+[node name="Collectible3" parent="roomMaze" unique_id=443176984 instance=ExtResource("6_veq7k")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.2259, -3.55271e-15, -0.788818)
 
-[node name="Collectible4" parent="roomMaze" instance=ExtResource("6_veq7k")]
+[node name="Collectible4" parent="roomMaze" unique_id=348146582 instance=ExtResource("6_veq7k")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.0973, -7.10543e-15, -23.7117)
 
-[node name="Collectible5" parent="roomMaze" instance=ExtResource("6_veq7k")]
+[node name="Collectible5" parent="roomMaze" unique_id=1314397045 instance=ExtResource("6_veq7k")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.876, -7.10543e-15, -38.0182)
 
-[node name="Collectible6" parent="roomMaze" instance=ExtResource("6_veq7k")]
+[node name="Collectible6" parent="roomMaze" unique_id=2103167182 instance=ExtResource("6_veq7k")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.4786, -7.10543e-15, -30.7471)
 
-[node name="Collectible7" parent="roomMaze" instance=ExtResource("6_veq7k")]
+[node name="Collectible7" parent="roomMaze" unique_id=167206990 instance=ExtResource("6_veq7k")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -49.1475, -7.10543e-15, -31.605)
 
-[node name="Collectible8" parent="roomMaze" instance=ExtResource("6_veq7k")]
+[node name="Collectible8" parent="roomMaze" unique_id=919061058 instance=ExtResource("6_veq7k")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50.9048, -7.10543e-15, 13.6305)
 
-[node name="Collectible9" parent="roomMaze" instance=ExtResource("6_veq7k")]
+[node name="Collectible9" parent="roomMaze" unique_id=2105694673 instance=ExtResource("6_veq7k")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.6084, -7.10543e-15, 16.3603)
 
-[node name="Collectible10" parent="roomMaze" instance=ExtResource("6_veq7k")]
+[node name="Collectible10" parent="roomMaze" unique_id=723390431 instance=ExtResource("6_veq7k")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.9404, -1.06581e-14, 1.12725)
 
-[node name="Collectible11" parent="roomMaze" instance=ExtResource("6_veq7k")]
+[node name="Collectible11" parent="roomMaze" unique_id=1363990671 instance=ExtResource("6_veq7k")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.8118, -1.42109e-14, -21.7956)
 
-[node name="Collectible12" parent="roomMaze" instance=ExtResource("6_veq7k")]
+[node name="Collectible12" parent="roomMaze" unique_id=531858834 instance=ExtResource("6_veq7k")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39.5905, -1.42109e-14, -36.1021)
 
-[node name="Collectible13" parent="roomMaze" instance=ExtResource("6_veq7k")]
+[node name="Collectible13" parent="roomMaze" unique_id=1226716922 instance=ExtResource("6_veq7k")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.7641, -1.42109e-14, -28.831)
 
-[node name="Collectible14" parent="roomMaze" instance=ExtResource("6_veq7k")]
+[node name="Collectible14" parent="roomMaze" unique_id=1880423354 instance=ExtResource("6_veq7k")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -50.433, -1.42109e-14, -29.6889)
 
-[node name="Collectible15" parent="roomMaze" instance=ExtResource("6_veq7k")]
+[node name="Collectible15" parent="roomMaze" unique_id=334351721 instance=ExtResource("6_veq7k")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51.0659, -7.10543e-15, 11.6544)
 
-[node name="Collectible16" parent="roomMaze" instance=ExtResource("6_veq7k")]
+[node name="Collectible16" parent="roomMaze" unique_id=1481529869 instance=ExtResource("6_veq7k")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.7695, -7.10543e-15, 14.3842)
 
-[node name="Collectible17" parent="roomMaze" instance=ExtResource("6_veq7k")]
+[node name="Collectible17" parent="roomMaze" unique_id=2071954021 instance=ExtResource("6_veq7k")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.1015, -1.06581e-14, -0.848849)
 
-[node name="Collectible18" parent="roomMaze" instance=ExtResource("6_veq7k")]
+[node name="Collectible18" parent="roomMaze" unique_id=482488395 instance=ExtResource("6_veq7k")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.9729, -1.42109e-14, -23.7717)
 
-[node name="Collectible19" parent="roomMaze" instance=ExtResource("6_veq7k")]
+[node name="Collectible19" parent="roomMaze" unique_id=1798476822 instance=ExtResource("6_veq7k")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39.7516, -1.42109e-14, -38.0782)
 
-[node name="Collectible20" parent="roomMaze" instance=ExtResource("6_veq7k")]
+[node name="Collectible20" parent="roomMaze" unique_id=973234234 instance=ExtResource("6_veq7k")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.603, -1.42109e-14, -30.8071)
 
-[node name="Collectible21" parent="roomMaze" instance=ExtResource("6_veq7k")]
+[node name="Collectible21" parent="roomMaze" unique_id=1053975692 instance=ExtResource("6_veq7k")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -50.2719, -1.42109e-14, -31.665)
 
-[node name="Enemy" parent="roomMaze" instance=ExtResource("7_1aqvv")]
+[node name="Enemy" parent="roomMaze" unique_id=1529933853 instance=ExtResource("7_1aqvv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.8035, -0.495305, 16.8535)
 
-[node name="Enemy2" parent="roomMaze" instance=ExtResource("7_1aqvv")]
+[node name="Enemy2" parent="roomMaze" unique_id=1451176975 instance=ExtResource("7_1aqvv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.5156, -0.495305, 10.8541)
 
-[node name="Enemy3" parent="roomMaze" instance=ExtResource("7_1aqvv")]
+[node name="Enemy3" parent="roomMaze" unique_id=1394794811 instance=ExtResource("7_1aqvv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32.2657, -0.495305, 15.589)
 
-[node name="Enemy4" parent="roomMaze" instance=ExtResource("7_1aqvv")]
+[node name="Enemy4" parent="roomMaze" unique_id=1735907829 instance=ExtResource("7_1aqvv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.41989, -0.495305, 10.7017)
 
-[node name="Enemy5" parent="roomMaze" instance=ExtResource("7_1aqvv")]
+[node name="Enemy5" parent="roomMaze" unique_id=1535191878 instance=ExtResource("7_1aqvv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.71189, -0.495305, 28.3097)
 
-[node name="MovingPlatform" parent="roomMaze" instance=ExtResource("9_5mcux")]
+[node name="MovingPlatform" parent="roomMaze" unique_id=1777005815 instance=ExtResource("9_5mcux")]
 transform = Transform3D(3.76, 0, 0, 0, 3.76, 0, 0, 0, 3.76, -112.967, -3.55271e-15, 66.4767)
 
-[node name="AnimationPlayer" parent="roomMaze/MovingPlatform" index="2"]
-libraries = {
-&"": SubResource("AnimationLibrary_f5jwf")
-}
-autoplay = "new_animation"
+[node name="AnimationPlayer" parent="roomMaze/MovingPlatform" index="2" unique_id=1019626470]
+libraries/ = SubResource("AnimationLibrary_f5jwf")
+autoplay = &"new_animation"
 
-[node name="minecart" parent="roomMaze" instance=ExtResource("16_2imoj")]
+[node name="minecart" parent="roomMaze" unique_id=1756852425 instance=ExtResource("16_2imoj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -44, -1, -20)
 beatMode = 2
 loopMode = 1
 waypoints = Array[Vector3]([Vector3(0, 0, 0), Vector3(0, 0, 1), Vector3(-3, 0, 1), Vector3(-3, 0, -2)])
 
-[node name="minecart2" parent="roomMaze" instance=ExtResource("16_2imoj")]
+[node name="minecart2" parent="roomMaze" unique_id=848319541 instance=ExtResource("16_2imoj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, -1, -8)
 beatMode = 2
 loopMode = 1
 waypoints = Array[Vector3]([Vector3(0, 0, 0), Vector3(0, 0, -1), Vector3(-3, 0, -1), Vector3(-3, 0, -5), Vector3(-1, 0, -5), Vector3(-1, 0, -3), Vector3(2, 0, -3), Vector3(2, 0, -1), Vector3(4, 0, -1)])
 
-[node name="minecart3" parent="roomMaze" instance=ExtResource("16_2imoj")]
+[node name="minecart3" parent="roomMaze" unique_id=310246876 instance=ExtResource("16_2imoj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28, -1, 22)
 loopMode = 1
 waypoints = Array[Vector3]([Vector3(0, 0, 0), Vector3(0, 0, 1), Vector3(4, 0, 1), Vector3(4, 0, -1)])
 
-[node name="room2nd" type="Node3D" parent="."]
+[node name="room2nd" type="Node3D" parent="." unique_id=631576690]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -69, 0, -100)
 
-[node name="Switch3" parent="room2nd" instance=ExtResource("5_88wly")]
+[node name="Switch3" parent="room2nd" unique_id=1645087441 instance=ExtResource("5_88wly")]
 transform = Transform3D(2.745, 0, 0, 0, 2.745, 0, 0, 0, 2.745, -63, 29.1921, -21.0472)
 
-[node name="Checkpoint" parent="room2nd" instance=ExtResource("11_u5rws")]
+[node name="Checkpoint" parent="room2nd" unique_id=1388416270 instance=ExtResource("11_u5rws")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, -1, 16)
 
-[node name="Crumbling Platform" parent="room2nd" instance=ExtResource("12_obcpi")]
+[node name="Crumbling Platform" parent="room2nd" unique_id=1147483107 instance=ExtResource("12_obcpi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 52.8983, 9.12682, 27.5808)
 
-[node name="Switch" parent="room2nd" instance=ExtResource("5_88wly")]
+[node name="Switch" parent="room2nd" unique_id=614148954 instance=ExtResource("5_88wly")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 52.9143, 10.8088, 30.5235)
 
-[node name="laser5" parent="room2nd" instance=ExtResource("7_ypb11")]
+[node name="laser5" parent="room2nd" unique_id=624256266 instance=ExtResource("7_ypb11")]
 transform = Transform3D(3.06162e-16, 0, -1, 0, 1, 0, 1, 0, 3.06162e-16, -36, -3, 61)
 
-[node name="door" parent="room2nd" instance=ExtResource("6_0ynkj")]
+[node name="door" parent="room2nd" unique_id=1322679987 instance=ExtResource("6_0ynkj")]
 transform = Transform3D(6.12323e-17, 0, 1, 0, 1, 0, -1, 0, 6.12323e-17, -34, -3, 61)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="room2nd"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="room2nd" unique_id=1902335099]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -36, 15, 85)
 material_override = SubResource("StandardMaterial3D_aak7n")
 mesh = ExtResource("14_3m7rg")
 
-[node name="Switch2" parent="room2nd" instance=ExtResource("5_88wly")]
+[node name="Switch2" parent="room2nd" unique_id=378703785 instance=ExtResource("5_88wly")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -44.294, -2.16955, 7.65355)
 
-[node name="MovingPlatform" parent="room2nd" instance=ExtResource("9_5mcux")]
+[node name="MovingPlatform" parent="room2nd" unique_id=1139354464 instance=ExtResource("9_5mcux")]
 transform = Transform3D(2.175, 0, 0, 0, 2.175, 0, 0, 0, 2.175, -46.6881, -4.15641, -0.433372)
 
-[node name="AnimationPlayer" parent="room2nd/MovingPlatform" index="2"]
-libraries = {
-&"": SubResource("AnimationLibrary_75jrg")
-}
-autoplay = "mov"
+[node name="AnimationPlayer" parent="room2nd/MovingPlatform" index="2" unique_id=1019626470]
+libraries/ = SubResource("AnimationLibrary_75jrg")
+autoplay = &"mov"
 
-[node name="minecart" parent="room2nd" instance=ExtResource("16_2imoj")]
+[node name="minecart" parent="room2nd" unique_id=1788665608 instance=ExtResource("16_2imoj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, -3, 7)
 beatMode = 2
 waypoints = Array[Vector3]([Vector3(0, 0, 0), Vector3(4, 0, 0), Vector3(4, 0, -2), Vector3(7, 0, -2), Vector3(7, 0, 3), Vector3(0, 0, 3)])
 
-[node name="minecart2" parent="room2nd" instance=ExtResource("16_2imoj")]
+[node name="minecart2" parent="room2nd" unique_id=126511342 instance=ExtResource("16_2imoj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -66, -3, 25)
 beatMode = 2
 waypoints = Array[Vector3]([Vector3(0, 0, 0), Vector3(4, 0, 0)])
 
-[node name="minecart3" parent="room2nd" instance=ExtResource("16_2imoj")]
+[node name="minecart3" parent="room2nd" unique_id=935207370 instance=ExtResource("16_2imoj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -42, -3, 49)
 beatMode = 2
 waypoints = Array[Vector3]([Vector3(0, 0, 0), Vector3(-4, 0, 0)])
 
-[node name="Crumbling Platform2" parent="room2nd" instance=ExtResource("12_obcpi")]
+[node name="Crumbling Platform2" parent="room2nd" unique_id=867146059 instance=ExtResource("12_obcpi")]
 transform = Transform3D(1.68, 0, 0, 0, 1.68, 0, 0, 0, 1.68, -52, 22, -15)
 
-[node name="MeshInstance3D" parent="room2nd/Crumbling Platform2" index="3"]
+[node name="MeshInstance3D" parent="room2nd/Crumbling Platform2" index="3" unique_id=356803624]
 mesh = SubResource("BoxMesh_eeurv")
 
-[node name="MovingPlatform2" parent="room2nd" instance=ExtResource("9_5mcux")]
+[node name="MovingPlatform2" parent="room2nd" unique_id=884415410 instance=ExtResource("9_5mcux")]
 transform = Transform3D(3.26, 0, 0, 0, 3.26, 0, 0, 0, 3.26, -30, 15.1483, 75)
 
-[node name="AnimationPlayer" parent="room2nd/MovingPlatform2" index="2"]
-libraries = {
-&"": SubResource("AnimationLibrary_c6tau")
-}
-autoplay = "new_animation"
+[node name="AnimationPlayer" parent="room2nd/MovingPlatform2" index="2" unique_id=1019626470]
+libraries/ = SubResource("AnimationLibrary_c6tau")
+autoplay = &"new_animation"
 
-[node name="rizzroom" type="Node3D" parent="."]
+[node name="rizzroom" type="Node3D" parent="." unique_id=1764202176]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -105, 15, 33)
 
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="rizzroom"]
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="rizzroom" unique_id=1582416238]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10, 0)
 stream = ExtResource("15_t3i0q")
 volume_db = 19.145
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="rizzroom"]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="rizzroom" unique_id=1567517014]
 stream = ExtResource("15_i4jbx")
 volume_db = -80.0
 autoplay = true
 bus = &"Music"
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="rizzroom"]
-libraries = {
-&"": SubResource("AnimationLibrary_nbkbq")
-}
+[node name="AnimationPlayer" type="AnimationPlayer" parent="rizzroom" unique_id=89122829]
+libraries/ = SubResource("AnimationLibrary_nbkbq")
 
-[node name="Area3D" type="Area3D" parent="rizzroom"]
+[node name="Area3D" type="Area3D" parent="rizzroom" unique_id=310625400]
 monitorable = false
 script = ExtResource("16_u3a3d")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="rizzroom/Area3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="rizzroom/Area3D" unique_id=870543739]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 33, -11.5)
 shape = SubResource("BoxShape3D_uwqyr")
 
-[node name="Area3D2" type="Area3D" parent="rizzroom"]
+[node name="Area3D2" type="Area3D" parent="rizzroom" unique_id=1224931118]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8, 0)
 monitorable = false
 script = ExtResource("17_lulna")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="rizzroom/Area3D2"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="rizzroom/Area3D2" unique_id=1546892291]
 shape = SubResource("BoxShape3D_4bc2b")
 
-[node name="Node3D" type="Node3D" parent="rizzroom/Area3D2"]
+[node name="Node3D" type="Node3D" parent="rizzroom/Area3D2" unique_id=923008394]
 
-[node name="Sprite3D" type="Sprite3D" parent="rizzroom/Area3D2/Node3D"]
+[node name="Sprite3D" type="Sprite3D" parent="rizzroom/Area3D2/Node3D" unique_id=1341794056]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.025)
 texture = ExtResource("17_uma0x")
 
-[node name="Sprite3D2" type="Sprite3D" parent="rizzroom/Area3D2/Node3D"]
+[node name="Sprite3D2" type="Sprite3D" parent="rizzroom/Area3D2/Node3D" unique_id=671139191]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.05)
 texture = ExtResource("17_uma0x")
 
-[node name="Sprite3D3" type="Sprite3D" parent="rizzroom/Area3D2/Node3D"]
+[node name="Sprite3D3" type="Sprite3D" parent="rizzroom/Area3D2/Node3D" unique_id=301230797]
 texture = ExtResource("17_uma0x")
 
-[node name="Sprite3D4" type="Sprite3D" parent="rizzroom/Area3D2/Node3D"]
+[node name="Sprite3D4" type="Sprite3D" parent="rizzroom/Area3D2/Node3D" unique_id=137403060]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.025)
 texture = ExtResource("17_uma0x")
 
-[node name="Sprite3D5" type="Sprite3D" parent="rizzroom/Area3D2/Node3D"]
+[node name="Sprite3D5" type="Sprite3D" parent="rizzroom/Area3D2/Node3D" unique_id=1998305042]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.05)
 texture = ExtResource("17_uma0x")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="rizzroom/Area3D2"]
-libraries = {
-&"": SubResource("AnimationLibrary_4va2t")
-}
-autoplay = "new_animation"
+[node name="AnimationPlayer" type="AnimationPlayer" parent="rizzroom/Area3D2" unique_id=1304089816]
+libraries/ = SubResource("AnimationLibrary_4va2t")
+autoplay = &"new_animation"
 
-[node name="AnimationPlayer2" type="AnimationPlayer" parent="rizzroom"]
-libraries = {
-&"": SubResource("AnimationLibrary_ia2vy")
-}
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="rizzroom" unique_id=2048459297]
+libraries/ = SubResource("AnimationLibrary_ia2vy")
 
-[node name="TextureRect" type="TextureRect" parent="rizzroom"]
+[node name="TextureRect" type="TextureRect" parent="rizzroom" unique_id=1937790165]
 modulate = Color(1, 1, 1, 0)
 anchors_preset = 15
 anchor_right = 1.0
@@ -951,136 +939,134 @@ grow_vertical = 2
 mouse_filter = 2
 texture = ExtResource("17_uma0x")
 
-[node name="SpotLight3D" type="SpotLight3D" parent="rizzroom"]
+[node name="SpotLight3D" type="SpotLight3D" parent="rizzroom" unique_id=1245658358]
 transform = Transform3D(1, 0, 0, 0, 6.12323e-17, 1, 0, -1, 6.12323e-17, 0, 19.098, 0)
 light_energy = 0.0
 spot_range = 1067.33
 spot_angle = 2.03035
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="rizzroom"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="rizzroom" unique_id=305753376]
 transform = Transform3D(1, 0, 0, 0, 6.12323e-17, 1, 0, -1, 6.12323e-17, 0, 56, 21)
 material_override = SubResource("StandardMaterial3D_wxvcq")
 mesh = SubResource("PlaneMesh_ttj3e")
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="rizzroom"]
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="rizzroom" unique_id=1299129601]
 transform = Transform3D(6.12323e-17, 1, -6.12323e-17, 0, 6.12323e-17, 1, 1, -6.12323e-17, 3.7494e-33, -21, 56, 0)
 material_override = SubResource("StandardMaterial3D_wxvcq")
 mesh = SubResource("PlaneMesh_ttj3e")
 
-[node name="MeshInstance3D3" type="MeshInstance3D" parent="rizzroom"]
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="rizzroom" unique_id=1009356434]
 transform = Transform3D(-1, -1.22465e-16, 7.4988e-33, 0, 6.12323e-17, 1, -1.22465e-16, 1, -6.12323e-17, 0, 56, -21)
 material_override = SubResource("StandardMaterial3D_wxvcq")
 mesh = SubResource("PlaneMesh_ttj3e")
 
-[node name="MeshInstance3D4" type="MeshInstance3D" parent="rizzroom"]
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="rizzroom" unique_id=183023433]
 transform = Transform3D(6.12323e-17, -1, 6.12323e-17, 0, 6.12323e-17, 1, -1, -6.12323e-17, 3.7494e-33, 21, 56, 0)
 material_override = SubResource("StandardMaterial3D_wxvcq")
 mesh = SubResource("PlaneMesh_ttj3e")
 
-[node name="MeshInstance3D5" type="MeshInstance3D" parent="rizzroom"]
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="rizzroom" unique_id=1325299700]
 transform = Transform3D(3.7494e-33, -1.22465e-16, -1, 6.12323e-17, -1, 1.22465e-16, -1, -6.12323e-17, 3.7494e-33, 0, 106, 0)
 material_override = SubResource("StandardMaterial3D_wxvcq")
 mesh = SubResource("PlaneMesh_iesj3")
 
-[node name="thefinalbits" type="Node3D" parent="."]
+[node name="thefinalbits" type="Node3D" parent="." unique_id=1395201758]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -105, 15, -99)
 
-[node name="minecart" parent="thefinalbits" instance=ExtResource("16_2imoj")]
+[node name="minecart" parent="thefinalbits" unique_id=440588784 instance=ExtResource("16_2imoj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 13)
 beatMode = 2
 waypoints = Array[Vector3]([Vector3(0, 0, 0), Vector3(0, 1, 0)])
 
-[node name="General Killzone" parent="thefinalbits/minecart" index="0"]
+[node name="General Killzone" parent="thefinalbits/minecart" index="0" unique_id=802050634]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, 0)
 Killzone = SubResource("BoxShape3D_2i6mi")
 
-[node name="Cube_001" parent="thefinalbits/minecart/faccart" index="0"]
+[node name="Cube_001" parent="thefinalbits/minecart/faccart" parent_id_path=PackedInt32Array(440588784, 1055275150) index="0" unique_id=2094065965]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.5, 0)
 mesh = SubResource("BoxMesh_0up3e")
 
-[node name="Plane" parent="thefinalbits/minecart/faccart" index="1"]
+[node name="Plane" parent="thefinalbits/minecart/faccart" parent_id_path=PackedInt32Array(440588784, 1055275150) index="1" unique_id=1807646503]
 visible = false
 
-[node name="MeshInstance3D" parent="thefinalbits/minecart" index="2"]
+[node name="MeshInstance3D" parent="thefinalbits/minecart" index="2" unique_id=165694243]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.595726, 0)
 mesh = SubResource("BoxMesh_b3ygo")
 
-[node name="minecart2" parent="thefinalbits" instance=ExtResource("16_2imoj")]
+[node name="minecart2" parent="thefinalbits" unique_id=247951774 instance=ExtResource("16_2imoj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, 30)
 beatMode = 2
 waypoints = Array[Vector3]([Vector3(0, 0, 0), Vector3(0, -1, 0)])
 
-[node name="General Killzone" parent="thefinalbits/minecart2" index="0"]
+[node name="General Killzone" parent="thefinalbits/minecart2" index="0" unique_id=802050634]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, 0)
 Killzone = SubResource("BoxShape3D_2i6mi")
 
-[node name="Cube_001" parent="thefinalbits/minecart2/faccart" index="0"]
+[node name="Cube_001" parent="thefinalbits/minecart2/faccart" parent_id_path=PackedInt32Array(247951774, 1055275150) index="0" unique_id=2094065965]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.5, 0)
 mesh = SubResource("BoxMesh_0up3e")
 
-[node name="Plane" parent="thefinalbits/minecart2/faccart" index="1"]
+[node name="Plane" parent="thefinalbits/minecart2/faccart" parent_id_path=PackedInt32Array(247951774, 1055275150) index="1" unique_id=1807646503]
 visible = false
 
-[node name="MeshInstance3D" parent="thefinalbits/minecart2" index="2"]
+[node name="MeshInstance3D" parent="thefinalbits/minecart2" index="2" unique_id=165694243]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.595726, 0)
 mesh = SubResource("BoxMesh_b3ygo")
 
-[node name="crane" parent="thefinalbits" instance=ExtResource("25_ga6sd")]
+[node name="crane" parent="thefinalbits" unique_id=1578604501 instance=ExtResource("25_ga6sd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 72, -12, -12)
 
-[node name="Cube" parent="thefinalbits/crane" index="0"]
+[node name="Cube" parent="thefinalbits/crane" index="0" unique_id=851537067]
 surface_material_override/0 = SubResource("StandardMaterial3D_at8vj")
 
-[node name="Cube_001" parent="thefinalbits/crane/Cube" index="0"]
+[node name="Cube_001" parent="thefinalbits/crane/Cube" index="0" unique_id=697557275]
 surface_material_override/0 = SubResource("StandardMaterial3D_6vu7s")
 
-[node name="Cube_002" parent="thefinalbits/crane/Cube/Cube_001" index="0"]
+[node name="Cube_002" parent="thefinalbits/crane/Cube/Cube_001" index="0" unique_id=1327479334]
 transform = Transform3D(0.821229, 0, -0.570599, 0, 1, 0, 0.570599, 0, 0.821229, 0, 0.5, 0)
 
-[node name="Cube_003" parent="thefinalbits/crane/Cube/Cube_001/Cube_002" index="0"]
+[node name="Cube_003" parent="thefinalbits/crane/Cube/Cube_001/Cube_002" index="0" unique_id=993369164]
 surface_material_override/0 = SubResource("StandardMaterial3D_3se35")
 
-[node name="Cube_005" parent="thefinalbits/crane/Cube/Cube_001/Cube_002/Cube_003" index="0"]
+[node name="Cube_005" parent="thefinalbits/crane/Cube/Cube_001/Cube_002/Cube_003" index="0" unique_id=1411793850]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4.39614, 29.2207)
 surface_material_override/0 = SubResource("StandardMaterial3D_gp6dw")
 
-[node name="Cube_006" parent="thefinalbits/crane/Cube/Cube_001/Cube_002/Cube_003/Cube_005" index="0"]
+[node name="Cube_006" parent="thefinalbits/crane/Cube/Cube_001/Cube_002/Cube_003/Cube_005" index="0" unique_id=1858094633]
 material_override = SubResource("StandardMaterial3D_sxsux")
 
-[node name="AnimatableBody3D" type="AnimatableBody3D" parent="thefinalbits/crane/Cube/Cube_001/Cube_002/Cube_003/Cube_005/Cube_006" index="0"]
+[node name="AnimatableBody3D" type="AnimatableBody3D" parent="thefinalbits/crane/Cube/Cube_001/Cube_002/Cube_003/Cube_005/Cube_006" index="0" unique_id=659591914]
 sync_to_physics = false
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="thefinalbits/crane/Cube/Cube_001/Cube_002/Cube_003/Cube_005/Cube_006/AnimatableBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="thefinalbits/crane/Cube/Cube_001/Cube_002/Cube_003/Cube_005/Cube_006/AnimatableBody3D" unique_id=468285697]
 shape = SubResource("BoxShape3D_knbhx")
 
-[node name="Cube_004" parent="thefinalbits/crane/Cube/Cube_001/Cube_002" index="1"]
+[node name="Cube_004" parent="thefinalbits/crane/Cube/Cube_001/Cube_002" index="1" unique_id=708926728]
 material_override = SubResource("StandardMaterial3D_f6vni")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="thefinalbits/crane"]
-libraries = {
-&"": SubResource("AnimationLibrary_2fqlw")
-}
-autoplay = "new_animation"
+[node name="AnimationPlayer" type="AnimationPlayer" parent="thefinalbits/crane" unique_id=1927999417]
+libraries/ = SubResource("AnimationLibrary_2fqlw")
+autoplay = &"new_animation"
 
-[node name="Checkpoint" parent="thefinalbits" instance=ExtResource("11_u5rws")]
+[node name="Checkpoint" parent="thefinalbits" unique_id=1879001530 instance=ExtResource("11_u5rws")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 13, 28)
 
-[node name="Checkpoint2" parent="thefinalbits" instance=ExtResource("11_u5rws")]
+[node name="Checkpoint2" parent="thefinalbits" unique_id=1644540124 instance=ExtResource("11_u5rws")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.372035, 2.3432, 44.3259)
 
-[node name="Winnerbox" parent="thefinalbits" instance=ExtResource("27_fb48c")]
+[node name="Winnerbox" parent="thefinalbits" unique_id=1173558582 instance=ExtResource("27_fb48c")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 66, 63, 90)
 WinZone = SubResource("BoxShape3D_cgimn")
 
-[node name="biglaser" parent="thefinalbits" instance=ExtResource("28_ab126")]
+[node name="biglaser" parent="thefinalbits" unique_id=1560855221 instance=ExtResource("28_ab126")]
 transform = Transform3D(6.12323e-17, 0, 1, 0, 1, 0, -1, 0, 6.12323e-17, 18, -18, 18)
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=734779021]
 stream = ExtResource("3_aoesn")
 bus = &"Music"
 script = ExtResource("3_ddjtl")
 
-[node name="Player" parent="." instance=ExtResource("2_6pvt8")]
+[node name="Player" parent="." unique_id=1676860442 instance=ExtResource("2_6pvt8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.97716, -1.31977, -3.03442)
 
 [connection signal="on_switch_activate" from="roomStart/Switch" to="roomStart/door" method="open"]

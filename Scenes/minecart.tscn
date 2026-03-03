@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://dbiu7q3trywau"]
+[gd_scene format=3 uid="uid://dbiu7q3trywau"]
 
 [ext_resource type="Script" uid="uid://kh5ypghhh7bo" path="res://Scripts/minecart.gd" id="1_sxwj7"]
 [ext_resource type="PackedScene" uid="uid://dgknntmd5h60" path="res://Scenes/general_killzone.tscn" id="1_x3tau"]
@@ -37,8 +37,8 @@ tracks/0/path = NodePath(".")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat64Array(0),
-"transitions": PackedFloat64Array(1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "values": [{
 "args": [],
 "method": &"tick"
@@ -57,8 +57,8 @@ tracks/0/path = NodePath(".")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat64Array(1.5),
-"transitions": PackedFloat64Array(1),
+"times": PackedFloat32Array(1.5),
+"transitions": PackedFloat32Array(1),
 "values": [{
 "args": [],
 "method": &"tick"
@@ -77,8 +77,8 @@ tracks/0/path = NodePath(".")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat64Array(0, 1.5),
-"transitions": PackedFloat64Array(1, 1),
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
 "values": [{
 "args": [],
 "method": &"tick"
@@ -100,8 +100,8 @@ tracks/0/path = NodePath(".")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat64Array(1.5, 3),
-"transitions": PackedFloat64Array(1, 1),
+"times": PackedFloat32Array(1.5, 3),
+"transitions": PackedFloat32Array(1, 1),
 "values": [{
 "args": [],
 "method": &"tick"
@@ -119,36 +119,34 @@ _data = {
 &"3": SubResource("Animation_b3ymu")
 }
 
-[node name="minecart" type="Node3D"]
+[node name="minecart" type="Node3D" unique_id=1192984033]
 script = ExtResource("1_sxwj7")
 
-[node name="General Killzone" parent="." instance=ExtResource("1_x3tau")]
+[node name="General Killzone" parent="." unique_id=802050634 instance=ExtResource("1_x3tau")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
 Killzone = SubResource("BoxShape3D_5xj0r")
 
-[node name="faccart" parent="." instance=ExtResource("2_c8dsn")]
+[node name="faccart" parent="." unique_id=1055275150 instance=ExtResource("2_c8dsn")]
 
-[node name="Cube_001" parent="faccart" index="0"]
+[node name="Cube_001" parent="faccart" index="0" unique_id=2094065965]
 surface_material_override/0 = SubResource("StandardMaterial3D_jnqf6")
 
-[node name="Plane" parent="faccart" index="1"]
+[node name="Plane" parent="faccart" index="1" unique_id=1807646503]
 material_override = SubResource("StandardMaterial3D_ii3a8")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=165694243]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.59573, 0)
 material_override = SubResource("StandardMaterial3D_lnkjm")
 mesh = SubResource("BoxMesh_egrw3")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_thgt8")
-}
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=680917525]
+libraries/ = SubResource("AnimationLibrary_thgt8")
 
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=403416083]
 stream = ExtResource("6_yqqno")
 pitch_scale = 2.5
 
-[node name="AudioStreamPlayer3D2" type="AudioStreamPlayer3D" parent="."]
+[node name="AudioStreamPlayer3D2" type="AudioStreamPlayer3D" parent="." unique_id=1135725073]
 stream = ExtResource("7_fmxnu")
 volume_db = 8.205
 pitch_scale = 1.31

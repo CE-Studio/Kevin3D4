@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=3 format=3 uid="uid://cq0aiywy00eam"]
+[gd_resource type="Theme" format=3 uid="uid://cq0aiywy00eam"]
 
 [ext_resource type="FontFile" uid="uid://bqyf1k3gpmwx" path="res://Assets/Ui/ClarenceOSTerminalNotMono.ttf" id="1_fk36g"]
 [ext_resource type="FontFile" uid="uid://bmewjb70ttfix" path="res://Assets/Ui/stanley.otf" id="2_fv864"]

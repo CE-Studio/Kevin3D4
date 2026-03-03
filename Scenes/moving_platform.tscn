@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://cev248w6qbej8"]
+[gd_scene format=3 uid="uid://cev248w6qbej8"]
 
 [ext_resource type="ArrayMesh" uid="uid://d3c3q86jeicyp" path="res://Assets/Models/MovingPlat.obj" id="1_a62lw"]
 [ext_resource type="Script" uid="uid://08l3bsd5uh5j" path="res://Scripts/moving_platform.gd" id="1_xw7d1"]
@@ -16,30 +16,30 @@ radius = 1.0
 [sub_resource type="BoxShape3D" id="BoxShape3D_pxkfk"]
 size = Vector3(1.495, 0.217438, 1.495)
 
-[node name="MovingPlatform" type="AnimatableBody3D"]
+[node name="MovingPlatform" type="AnimatableBody3D" unique_id=1690228219]
 sync_to_physics = false
 script = ExtResource("1_xw7d1")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1337563306]
 mesh = ExtResource("1_a62lw")
 surface_material_override/0 = SubResource("StandardMaterial3D_0jyv5")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1256651026]
 shape = SubResource("CylinderShape3D_vdfnl")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1019626470]
 speed_scale = 0.0
 
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=441072947]
 stream = ExtResource("4_6lqnc")
 max_distance = 150.0
 bus = &"SFX"
 
-[node name="Area3D" type="Area3D" parent="."]
+[node name="Area3D" type="Area3D" parent="." unique_id=720772721]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.291482, 0)
 monitorable = false
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1923913643]
 shape = SubResource("BoxShape3D_pxkfk")
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

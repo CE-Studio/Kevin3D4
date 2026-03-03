@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=3 uid="uid://eh2hv7rkpcn2"]
+[gd_scene format=3 uid="uid://eh2hv7rkpcn2"]
 
 [ext_resource type="Texture2D" uid="uid://bmjqqkktf4k17" path="res://Assets/Textures/LevelTextures/factoryTile0.png" id="1_lg2d8"]
 [ext_resource type="Texture2D" uid="uid://c0pr0cndw4via" path="res://Assets/Textures/LevelTextures/factoryTile1.png" id="2_lknck"]
@@ -94,185 +94,185 @@ material = SubResource("StandardMaterial3D_knfth")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_yy7vp"]
 
-[node name="RealL1MeshLib" type="Node3D"]
+[node name="RealL1MeshLib" type="Node3D" unique_id=208724975]
 
-[node name="GrassSolid" type="MeshInstance3D" parent="."]
+[node name="GrassSolid" type="MeshInstance3D" parent="." unique_id=136615923]
 mesh = SubResource("PlaneMesh_0hlc3")
 surface_material_override/0 = SubResource("StandardMaterial3D_vrnhy")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="GrassSolid"]
+[node name="StaticBody3D" type="StaticBody3D" parent="GrassSolid" unique_id=969615549]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="GrassSolid/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="GrassSolid/StaticBody3D" unique_id=1737791055]
 shape = SubResource("BoxShape3D_d1pqg")
 
-[node name="GrassTextured" type="MeshInstance3D" parent="."]
+[node name="GrassTextured" type="MeshInstance3D" parent="." unique_id=1299947595]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0)
 mesh = SubResource("PlaneMesh_dsby2")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="GrassTextured"]
+[node name="StaticBody3D" type="StaticBody3D" parent="GrassTextured" unique_id=828795145]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="GrassTextured/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="GrassTextured/StaticBody3D" unique_id=764492109]
 shape = SubResource("BoxShape3D_d1pqg")
 
-[node name="GrassSlopeEdge2" type="MeshInstance3D" parent="."]
+[node name="GrassSlopeEdge2" type="MeshInstance3D" parent="." unique_id=1374828091]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 2)
 mesh = ExtResource("3_pb1le")
 surface_material_override/0 = SubResource("StandardMaterial3D_w0nbe")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="GrassSlopeEdge2"]
+[node name="StaticBody3D" type="StaticBody3D" parent="GrassSlopeEdge2" unique_id=647413678]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="GrassSlopeEdge2/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="GrassSlopeEdge2/StaticBody3D" unique_id=2006711903]
 shape = SubResource("ConvexPolygonShape3D_5cpvy")
 
-[node name="GrassSlopeInner2" type="MeshInstance3D" parent="."]
+[node name="GrassSlopeInner2" type="MeshInstance3D" parent="." unique_id=480986363]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 2)
 mesh = ExtResource("4_q0yee")
 surface_material_override/0 = SubResource("StandardMaterial3D_w0nbe")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="GrassSlopeInner2"]
+[node name="StaticBody3D" type="StaticBody3D" parent="GrassSlopeInner2" unique_id=442475059]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="GrassSlopeInner2/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="GrassSlopeInner2/StaticBody3D" unique_id=2101163768]
 shape = SubResource("ConvexPolygonShape3D_5cpvy")
 
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="GrassSlopeInner2/StaticBody3D"]
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="GrassSlopeInner2/StaticBody3D" unique_id=1378560213]
 transform = Transform3D(6.12303e-17, 0, 1, 0, 1, 0, -1, 0, 6.12303e-17, 0, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_5cpvy")
 
-[node name="GrassSlopeOuter2" type="MeshInstance3D" parent="."]
+[node name="GrassSlopeOuter2" type="MeshInstance3D" parent="." unique_id=1116256484]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 2)
 mesh = ExtResource("5_jfvsa")
 surface_material_override/0 = SubResource("StandardMaterial3D_w0nbe")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="GrassSlopeOuter2"]
+[node name="StaticBody3D" type="StaticBody3D" parent="GrassSlopeOuter2" unique_id=142186729]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="GrassSlopeOuter2/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="GrassSlopeOuter2/StaticBody3D" unique_id=1401982927]
 shape = SubResource("ConvexPolygonShape3D_7wc58")
 
-[node name="GrassSlopeEdge4" type="MeshInstance3D" parent="."]
+[node name="GrassSlopeEdge4" type="MeshInstance3D" parent="." unique_id=100259556]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0)
 mesh = ExtResource("6_eu58y")
 surface_material_override/0 = SubResource("StandardMaterial3D_w0nbe")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="GrassSlopeEdge4"]
+[node name="StaticBody3D" type="StaticBody3D" parent="GrassSlopeEdge4" unique_id=974934008]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="GrassSlopeEdge4/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="GrassSlopeEdge4/StaticBody3D" unique_id=485704268]
 shape = SubResource("ConvexPolygonShape3D_ynauc")
 
-[node name="GrassSlopeInner4" type="MeshInstance3D" parent="."]
+[node name="GrassSlopeInner4" type="MeshInstance3D" parent="." unique_id=837278320]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 0)
 mesh = ExtResource("7_emngn")
 surface_material_override/0 = SubResource("StandardMaterial3D_w0nbe")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="GrassSlopeInner4"]
+[node name="StaticBody3D" type="StaticBody3D" parent="GrassSlopeInner4" unique_id=847333953]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="GrassSlopeInner4/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="GrassSlopeInner4/StaticBody3D" unique_id=520237991]
 shape = SubResource("ConvexPolygonShape3D_ynauc")
 
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="GrassSlopeInner4/StaticBody3D"]
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="GrassSlopeInner4/StaticBody3D" unique_id=1550671950]
 transform = Transform3D(6.12303e-17, 0, 1, 0, 1, 0, -1, 0, 6.12303e-17, 0, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_ynauc")
 
-[node name="GrassSlopeOuter4" type="MeshInstance3D" parent="."]
+[node name="GrassSlopeOuter4" type="MeshInstance3D" parent="." unique_id=983546502]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 0)
 mesh = ExtResource("8_t8skv")
 surface_material_override/0 = SubResource("StandardMaterial3D_w0nbe")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="GrassSlopeOuter4"]
+[node name="StaticBody3D" type="StaticBody3D" parent="GrassSlopeOuter4" unique_id=955054422]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="GrassSlopeOuter4/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="GrassSlopeOuter4/StaticBody3D" unique_id=393172889]
 shape = SubResource("ConvexPolygonShape3D_w8oqk")
 
-[node name="RoadStraight" type="MeshInstance3D" parent="."]
+[node name="RoadStraight" type="MeshInstance3D" parent="." unique_id=1916134459]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
 mesh = SubResource("PlaneMesh_7wrny")
 surface_material_override/0 = SubResource("StandardMaterial3D_rnuks")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="RoadStraight"]
+[node name="StaticBody3D" type="StaticBody3D" parent="RoadStraight" unique_id=1075107878]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="RoadStraight/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RoadStraight/StaticBody3D" unique_id=2043733328]
 shape = SubResource("BoxShape3D_d1pqg")
 
-[node name="RoadTurn" type="MeshInstance3D" parent="."]
+[node name="RoadTurn" type="MeshInstance3D" parent="." unique_id=565278878]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 2)
 material_override = SubResource("StandardMaterial3D_maens")
 mesh = SubResource("PlaneMesh_jc3tt")
 surface_material_override/0 = SubResource("StandardMaterial3D_maens")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="RoadTurn"]
+[node name="StaticBody3D" type="StaticBody3D" parent="RoadTurn" unique_id=1261557578]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="RoadTurn/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RoadTurn/StaticBody3D" unique_id=462028361]
 shape = SubResource("BoxShape3D_d1pqg")
 
-[node name="WallSolid" type="MeshInstance3D" parent="."]
+[node name="WallSolid" type="MeshInstance3D" parent="." unique_id=286058489]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 0)
 mesh = ExtResource("11_dfxrm")
 surface_material_override/0 = SubResource("StandardMaterial3D_xqysl")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="WallSolid"]
+[node name="StaticBody3D" type="StaticBody3D" parent="WallSolid" unique_id=138502674]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="WallSolid/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WallSolid/StaticBody3D" unique_id=2045426547]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("BoxShape3D_shfxx")
 
-[node name="WallBrick" type="MeshInstance3D" parent="."]
+[node name="WallBrick" type="MeshInstance3D" parent="." unique_id=2092708922]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 0)
 mesh = ExtResource("11_dfxrm")
 surface_material_override/0 = SubResource("StandardMaterial3D_cw2cj")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="WallBrick"]
+[node name="StaticBody3D" type="StaticBody3D" parent="WallBrick" unique_id=882726121]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="WallBrick/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WallBrick/StaticBody3D" unique_id=397790891]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("BoxShape3D_shfxx")
 
-[node name="WallWindowLit" type="MeshInstance3D" parent="."]
+[node name="WallWindowLit" type="MeshInstance3D" parent="." unique_id=2101693423]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 2)
 mesh = ExtResource("11_dfxrm")
 surface_material_override/0 = SubResource("StandardMaterial3D_1ocv1")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="WallWindowLit"]
+[node name="StaticBody3D" type="StaticBody3D" parent="WallWindowLit" unique_id=972556404]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="WallWindowLit/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WallWindowLit/StaticBody3D" unique_id=115063005]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("BoxShape3D_shfxx")
 
-[node name="WallWindowDark" type="MeshInstance3D" parent="."]
+[node name="WallWindowDark" type="MeshInstance3D" parent="." unique_id=1155449669]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 2)
 mesh = ExtResource("11_dfxrm")
 surface_material_override/0 = SubResource("StandardMaterial3D_pws6k")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="WallWindowDark"]
+[node name="StaticBody3D" type="StaticBody3D" parent="WallWindowDark" unique_id=676033554]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="WallWindowDark/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WallWindowDark/StaticBody3D" unique_id=902921115]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("BoxShape3D_shfxx")
 
-[node name="PlatformMiddle" type="MeshInstance3D" parent="."]
+[node name="PlatformMiddle" type="MeshInstance3D" parent="." unique_id=465652223]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2)
 mesh = ExtResource("16_y0ejc")
 surface_material_override/0 = SubResource("StandardMaterial3D_h4wvi")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="PlatformMiddle"]
+[node name="StaticBody3D" type="StaticBody3D" parent="PlatformMiddle" unique_id=1683570892]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="PlatformMiddle/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PlatformMiddle/StaticBody3D" unique_id=2029364197]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("BoxShape3D_tyi4p")
 
-[node name="PlatformEdge" type="MeshInstance3D" parent="."]
+[node name="PlatformEdge" type="MeshInstance3D" parent="." unique_id=1052259211]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -2)
 mesh = ExtResource("17_tkc83")
 surface_material_override/0 = SubResource("StandardMaterial3D_h4wvi")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="PlatformEdge"]
+[node name="StaticBody3D" type="StaticBody3D" parent="PlatformEdge" unique_id=1792872055]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="PlatformEdge/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PlatformEdge/StaticBody3D" unique_id=1207404301]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2, 0)
 shape = SubResource("BoxShape3D_r3rqq")
 
-[node name="Water" type="MeshInstance3D" parent="."]
+[node name="Water" type="MeshInstance3D" parent="." unique_id=642979104]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4)
 mesh = SubResource("PlaneMesh_0i1di")
 
-[node name="General Killzone" parent="Water" instance=ExtResource("19_3frnp")]
+[node name="General Killzone" parent="Water" unique_id=971321301 instance=ExtResource("19_3frnp")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, -1.1, 0)
 Killzone = SubResource("BoxShape3D_yy7vp")

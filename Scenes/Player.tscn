@@ -1,4 +1,4 @@
-[gd_scene load_steps=142 format=3 uid="uid://8iobt4o8k61u"]
+[gd_scene format=3 uid="uid://8iobt4o8k61u"]
 
 [ext_resource type="Script" uid="uid://cak8tvf23c33f" path="res://Scripts/Player.gd" id="1_rk3cd"]
 [ext_resource type="AudioStream" uid="uid://bqva2yr82ot7d" path="res://Assets/Sound Effects/IN.wav" id="2_gmnt1"]
@@ -234,13 +234,13 @@ render_priority = 0
 shader = ExtResource("8_g2vvp")
 shader_parameter/transparency = 0.0
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_hinrm"]
-viewport_path = NodePath("SubViewport")
+[sub_resource type="ViewportTexture" id="ViewportTexture_5gg6q"]
+viewport_path = NodePath("../SubViewport")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ghj7y"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wenux"]
 resource_local_to_scene = true
 shading_mode = 0
-albedo_texture = SubResource("ViewportTexture_hinrm")
+albedo_texture = SubResource("ViewportTexture_5gg6q")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hswdw"]
 atlas = ExtResource("9_mawub")
@@ -1288,29 +1288,27 @@ stream_0/stream = ExtResource("58_w56bo")
 stream_1/stream = ExtResource("59_4x32e")
 stream_2/stream = ExtResource("60_577ne")
 
-[node name="Player" type="CharacterBody3D"]
+[node name="Player" type="CharacterBody3D" unique_id=837746753]
 collision_mask = 3
 script = ExtResource("1_rk3cd")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=195816662]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.269613, 0)
 shape = SubResource("CapsuleShape3D_kp3bk")
 
-[node name="SpringArm3D" type="SpringArm3D" parent="."]
+[node name="SpringArm3D" type="SpringArm3D" parent="." unique_id=471353280]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
 spring_length = 8.0
 
-[node name="Camera3D" type="Camera3D" parent="SpringArm3D"]
+[node name="Camera3D" type="Camera3D" parent="SpringArm3D" unique_id=477165082]
 
-[node name="Shooter" type="RayCast3D" parent="SpringArm3D/Camera3D"]
+[node name="Shooter" type="RayCast3D" parent="SpringArm3D/Camera3D" unique_id=1807701038]
 target_position = Vector3(0, 0, -20)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="SpringArm3D"]
-libraries = {
-&"": SubResource("AnimationLibrary_aakw0")
-}
+[node name="AnimationPlayer" type="AnimationPlayer" parent="SpringArm3D" unique_id=759220728]
+libraries/ = SubResource("AnimationLibrary_aakw0")
 
-[node name="Double Jump Effect" type="GPUParticles3D" parent="."]
+[node name="Double Jump Effect" type="GPUParticles3D" parent="." unique_id=173641997]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.08992, 0)
 emitting = false
 amount = 1
@@ -1318,24 +1316,24 @@ process_material = SubResource("ParticleProcessMaterial_3540e")
 draw_pass_1 = SubResource("TorusMesh_nbihh")
 draw_skin = SubResource("Skin_vdfac")
 
-[node name="Sprint" type="GPUParticles3D" parent="."]
+[node name="Sprint" type="GPUParticles3D" parent="." unique_id=68479833]
 transform = Transform3D(0.41, 0, 0, 0, 0.41, 0, 0, 0, 0.41, 0, -0.464384, 0)
 cast_shadow = 0
 amount = 16
 process_material = SubResource("ParticleProcessMaterial_pq3ej")
 draw_pass_1 = SubResource("PlaneMesh_gtf2s")
 
-[node name="Dive" type="GPUParticles3D" parent="."]
+[node name="Dive" type="GPUParticles3D" parent="." unique_id=140876157]
 transform = Transform3D(0.41, 0, 0, 0, 0.41, 0, 0, 0, 0.41, 0, -0.464384, 0)
 cast_shadow = 0
 amount = 16
 process_material = SubResource("ParticleProcessMaterial_pq3ej")
 draw_pass_1 = SubResource("PlaneMesh_gtf2s")
 
-[node name="SubViewport" type="SubViewport" parent="."]
+[node name="SubViewport" type="SubViewport" parent="." unique_id=592678790]
 disable_3d = true
 
-[node name="Panel" type="Panel" parent="SubViewport"]
+[node name="Panel" type="Panel" parent="SubViewport" unique_id=1227794611]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -1343,106 +1341,104 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_4qcyj")
 
-[node name="Sprite2D2" type="Sprite2D" parent="SubViewport"]
+[node name="Sprite2D2" type="Sprite2D" parent="SubViewport" unique_id=542161837]
 visible = false
 texture = ExtResource("5_dbp68")
 centered = false
 
-[node name="Sprite2D" type="Sprite2D" parent="SubViewport"]
+[node name="Sprite2D" type="Sprite2D" parent="SubViewport" unique_id=697356045]
 position = Vector2(80, 251.345)
 texture = ExtResource("6_wmqvy")
 
-[node name="Sprite2D3" type="Sprite2D" parent="SubViewport"]
+[node name="Sprite2D3" type="Sprite2D" parent="SubViewport" unique_id=1559748074]
 position = Vector2(432, 251.345)
 texture = ExtResource("6_wmqvy")
 flip_h = true
 
-[node name="player" parent="." instance=ExtResource("3_gm1qw")]
+[node name="player" parent="." unique_id=1276431798 instance=ExtResource("3_gm1qw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.78214, 0)
 
-[node name="Skeleton3D" parent="player/Armature" index="0"]
-bones/3/rotation = Quaternion(0.046945926, 1.2752905e-17, 2.1674412e-17, 0.9988975)
+[node name="Skeleton3D" parent="player/Armature" parent_id_path=PackedInt32Array(1276431798, 1592993931) index="0" unique_id=1093833323]
+bones/3/rotation = Quaternion(0.046945926, 1.2752906e-17, 2.1674412e-17, 0.9988975)
 bones/4/position = Vector3(2.18988e-19, 0.162917, -3.72529e-09)
-bones/4/rotation = Quaternion(-0.4214799, -2.0835076e-23, -9.358738e-17, 0.9068378)
+bones/4/rotation = Quaternion(-0.4214799, -1.933484e-23, -9.358738e-17, 0.9068378)
 bones/4/scale = Vector3(1, 1, 1)
-bones/5/rotation = Quaternion(-0.41855806, -1.0184833e-23, -9.293851e-17, 0.90819013)
+bones/5/rotation = Quaternion(-0.41855806, -9.714504e-24, -9.293851e-17, 0.90819013)
 bones/5/scale = Vector3(1, 1, 1)
 bones/6/rotation = Quaternion(0.019020604, -1.0659382e-24, 4.223471e-18, 0.99981916)
 bones/6/scale = Vector3(1, 1, 1)
-bones/7/rotation = Quaternion(0.0127874985, -7.658066e-09, 0.84736687, 0.5308539)
+bones/7/rotation = Quaternion(0.012787499, -7.905265e-09, 0.84736687, 0.5308539)
 bones/7/scale = Vector3(1, 1, 1)
-bones/8/rotation = Quaternion(-0.010536604, 3.6616047e-08, -0.21201207, 0.97721034)
+bones/8/rotation = Quaternion(-0.010536604, 3.6970505e-08, -0.21201207, 0.97721034)
 bones/8/scale = Vector3(1, 1, 1)
-bones/9/rotation = Quaternion(0.000121731005, -7.07898e-08, 0.00244944, 0.9999971)
-bones/11/rotation = Quaternion(0.0127874985, 7.658066e-09, -0.84736687, 0.5308539)
+bones/9/rotation = Quaternion(0.000121731005, -7.078979e-08, 0.00244944, 0.9999971)
+bones/11/rotation = Quaternion(0.012787499, 7.905265e-09, -0.84736687, 0.5308539)
 bones/11/scale = Vector3(1, 1, 1)
-bones/12/rotation = Quaternion(-0.010536604, -3.6616047e-08, 0.21201207, 0.97721034)
+bones/12/rotation = Quaternion(-0.010536604, -3.6970505e-08, 0.21201207, 0.97721034)
 bones/12/scale = Vector3(1, 1, 1)
-bones/13/rotation = Quaternion(0.000121731005, 7.07898e-08, -0.00244944, 0.9999971)
+bones/13/rotation = Quaternion(0.000121731005, 7.078979e-08, -0.00244944, 0.9999971)
 bones/13/scale = Vector3(1, 1, 1)
 bones/14/scale = Vector3(1, 1, 1)
 bones/15/position = Vector3(-0.0839494, 0.0519439, 0)
 bones/15/rotation = Quaternion(-0.03503151, -0.088428915, 0.98889625, 0.11418103)
 bones/15/scale = Vector3(0.999998, 1, 0.999999)
-bones/16/rotation = Quaternion(0.5682879, 0.11468098, 0.28103098, 0.76479983)
+bones/16/rotation = Quaternion(0.5682879, 0.11468099, 0.28103098, 0.76479983)
 bones/16/scale = Vector3(1, 1, 1)
-bones/17/rotation = Quaternion(-0.59665805, -0.0390387, -0.31836903, 0.7356061)
+bones/17/rotation = Quaternion(-0.59665805, -0.0390387, -0.31836906, 0.73560613)
 bones/17/scale = Vector3(1, 1, 1)
-bones/18/rotation = Quaternion(0.81246376, -6.950047e-08, -9.685326e-08, 0.5830118)
+bones/18/rotation = Quaternion(0.81246376, -6.950048e-08, -9.685326e-08, 0.5830118)
 bones/19/rotation = Quaternion(0.002255761, -2.3841812e-07, -1.0756306e-09, 0.99999756)
-bones/20/rotation = Quaternion(-0.0035808387, 5.062643e-13, 2.5612288e-09, 0.99999356)
+bones/20/rotation = Quaternion(-0.0035808387, 5.062641e-13, 2.5612288e-09, 0.99999356)
 bones/21/rotation = Quaternion(-0.018697403, -1.1918803e-07, 1.5602302e-08, 0.99982524)
 bones/22/position = Vector3(0.0839494, 0.0519439, 0)
 bones/22/rotation = Quaternion(0.03503151, -0.088428915, 0.98889625, -0.11418103)
 bones/22/scale = Vector3(0.999998, 1, 0.999999)
-bones/23/rotation = Quaternion(0.5682879, -0.11468098, -0.28103098, 0.76479983)
+bones/23/rotation = Quaternion(0.5682879, -0.11468099, -0.28103098, 0.76479983)
 bones/23/scale = Vector3(1, 0.999999, 1)
-bones/24/rotation = Quaternion(-0.59665805, 0.0390387, 0.31836903, 0.7356061)
+bones/24/rotation = Quaternion(-0.59665805, 0.0390387, 0.31836906, 0.73560613)
 bones/24/scale = Vector3(1, 1, 1)
 
-[node name="Vert" parent="player/Armature/Skeleton3D" index="0"]
+[node name="Vert" parent="player/Armature/Skeleton3D" index="0" unique_id=321690431]
 material_overlay = SubResource("ShaderMaterial_lnutk")
 surface_material_override/0 = ExtResource("4_0kk71")
 
-[node name="Vert_001" parent="player/Armature/Skeleton3D" index="1"]
-surface_material_override/0 = SubResource("StandardMaterial3D_ghj7y")
+[node name="Vert_001" parent="player/Armature/Skeleton3D" index="1" unique_id=2140115685]
+surface_material_override/0 = SubResource("StandardMaterial3D_wenux")
 
-[node name="BoneAttachment3D" type="BoneAttachment3D" parent="player/Armature/Skeleton3D" index="2"]
-transform = Transform3D(0.024501892, 0.9996991, 0.0012177438, -0.99846673, 0.024532186, -0.049621988, -0.049636927, -4.0512532e-08, 0.99876744, 0.8435568, 1.6355456, 0.012821328)
+[node name="BoneAttachment3D" type="BoneAttachment3D" parent="player/Armature/Skeleton3D" index="2" unique_id=257316609]
+transform = Transform3D(0.024501896, 0.9996991, 0.0012177436, -0.99846673, 0.024532191, -0.04962199, -0.04963693, -3.632158e-08, 0.99876744, 0.8435568, 1.6355456, 0.012821331)
 bone_name = "Hand_R"
 bone_idx = 14
 
-[node name="Slangshot" type="AnimatedSprite3D" parent="player/Armature/Skeleton3D/BoneAttachment3D"]
+[node name="Slangshot" type="AnimatedSprite3D" parent="player/Armature/Skeleton3D/BoneAttachment3D" unique_id=532063156]
 transform = Transform3D(1.80979, 0.114796, 0.843492, -0.833927, -0.15887, 1.81089, 0.170944, -1.99037, -0.0958952, 0.0244896, 0.190201, -0.121208)
 visible = false
 sprite_frames = SubResource("SpriteFrames_7woet")
 frame_progress = 0.629152
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_pl0xx")
-}
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=749091403]
+libraries/ = SubResource("AnimationLibrary_pl0xx")
 
-[node name="AnimationTree" type="AnimationTree" parent="."]
+[node name="AnimationTree" type="AnimationTree" parent="." unique_id=932635809]
 deterministic = false
 tree_root = SubResource("AnimationNodeStateMachine_4uom6")
 advance_expression_base_node = NodePath("..")
 anim_player = NodePath("../AnimationPlayer")
 
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=866659333]
 max_db = 5.405
 bus = &"SFX"
 
-[node name="RayCast3D" type="RayCast3D" parent="."]
+[node name="RayCast3D" type="RayCast3D" parent="." unique_id=575597469]
 target_position = Vector3(0, -25, 0)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1166547526]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 material_override = SubResource("StandardMaterial3D_ym3iy")
 mesh = SubResource("PlaneMesh_cu1vt")
 skeleton = NodePath("../RayCast3D")
 
-[node name="Aiming" type="Control" parent="."]
+[node name="Aiming" type="Control" parent="." unique_id=1463248843]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -1451,7 +1447,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="CenterContainer" type="CenterContainer" parent="Aiming"]
+[node name="CenterContainer" type="CenterContainer" parent="Aiming" unique_id=1170204447]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -1460,12 +1456,12 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="TextureRect" type="TextureRect" parent="Aiming/CenterContainer"]
+[node name="TextureRect" type="TextureRect" parent="Aiming/CenterContainer" unique_id=2018246232]
 layout_mode = 2
 mouse_filter = 2
 texture = ExtResource("12_q2uw1")
 
-[node name="UI" type="Control" parent="."]
+[node name="UI" type="Control" parent="." unique_id=115083261]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -1474,7 +1470,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="Label" type="Label" parent="UI"]
+[node name="Label" type="Label" parent="UI" unique_id=1901129182]
 self_modulate = Color(1, 1, 1, 0.290196)
 layout_mode = 0
 offset_right = 817.0
@@ -1482,7 +1478,7 @@ offset_bottom = 45.0
 text = "because browsers are annoying use ~ or 1 to pause without
 the cursor doing weird garbage"
 
-[node name="BeanCounter" type="HBoxContainer" parent="UI"]
+[node name="BeanCounter" type="HBoxContainer" parent="UI" unique_id=1250768462]
 layout_mode = 0
 offset_left = 32.0
 offset_top = 32.0
@@ -1490,29 +1486,27 @@ offset_right = 467.0
 offset_bottom = 132.0
 mouse_filter = 2
 
-[node name="TextureRect" type="TextureRect" parent="UI/BeanCounter"]
+[node name="TextureRect" type="TextureRect" parent="UI/BeanCounter" unique_id=382198272]
 layout_mode = 2
 mouse_filter = 2
 texture = SubResource("AtlasTexture_p68ed")
 expand_mode = 2
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="UI/BeanCounter/TextureRect"]
-libraries = {
-&"": SubResource("AnimationLibrary_86rtg")
-}
-autoplay = "UIBeanSpin"
+[node name="AnimationPlayer" type="AnimationPlayer" parent="UI/BeanCounter/TextureRect" unique_id=1524376597]
+libraries/ = SubResource("AnimationLibrary_86rtg")
+autoplay = &"UIBeanSpin"
 
-[node name="VSeparator" type="VSeparator" parent="UI/BeanCounter"]
+[node name="VSeparator" type="VSeparator" parent="UI/BeanCounter" unique_id=966976895]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 mouse_filter = 2
 
-[node name="Label" type="Label" parent="UI/BeanCounter"]
+[node name="Label" type="Label" parent="UI/BeanCounter" unique_id=1441253415]
 layout_mode = 2
 theme_override_font_sizes/font_size = 100
 text = "0"
 
-[node name="Invinble Timer" type="Label" parent="UI"]
+[node name="Invinble Timer" type="Label" parent="UI" unique_id=1985607100]
 layout_mode = 0
 offset_left = 457.0
 offset_top = 26.0
@@ -1520,7 +1514,7 @@ offset_right = 497.0
 offset_bottom = 47.0
 scale = Vector2(6.28, 6.28)
 
-[node name="Panel" type="Panel" parent="."]
+[node name="Panel" type="Panel" parent="." unique_id=812114166]
 process_mode = 3
 visible = false
 anchors_preset = 15
@@ -1531,7 +1525,7 @@ grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("17_t16mw")
 
-[node name="Label" type="Label" parent="Panel"]
+[node name="Label" type="Label" parent="Panel" unique_id=376868731]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -1550,7 +1544,7 @@ text = "GaME,,,,,
 paUsed......'.'.'."
 horizontal_alignment = 1
 
-[node name="Button" type="Button" parent="Panel"]
+[node name="Button" type="Button" parent="Panel" unique_id=25676805]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -1566,7 +1560,7 @@ grow_vertical = 2
 rotation = 0.0872665
 text = "rezoom it plz kthx"
 
-[node name="Death Screen" type="Panel" parent="."]
+[node name="Death Screen" type="Panel" parent="." unique_id=74361458]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -1576,7 +1570,7 @@ mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_nkv7c")
 script = ExtResource("18_lqant")
 
-[node name="Label" type="Label" parent="Death Screen"]
+[node name="Label" type="Label" parent="Death Screen" unique_id=142699555]
 layout_mode = 0
 offset_left = 314.0
 offset_top = 244.0
@@ -1586,7 +1580,7 @@ rotation = -0.322088
 scale = Vector2(3.19444, 5.63418)
 text = "Skill Issue?"
 
-[node name="Button" type="Button" parent="Death Screen"]
+[node name="Button" type="Button" parent="Death Screen" unique_id=735505018]
 layout_mode = 0
 offset_left = 587.0
 offset_top = 325.0
@@ -1595,15 +1589,15 @@ offset_bottom = 354.0
 rotation = 0.336632
 text = "Death is not permanent"
 
-[node name="Timer" type="Timer" parent="."]
+[node name="Timer" type="Timer" parent="." unique_id=938186095]
 wait_time = 30.0
 one_shot = true
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1011725415]
 stream = ExtResource("20_2n6en")
 volume_db = -12.0
 
-[node name="stnaleypause" type="Panel" parent="."]
+[node name="stnaleypause" type="Panel" parent="." unique_id=1026620516]
 process_mode = 3
 visible = false
 material = SubResource("ShaderMaterial_cy6km")
@@ -1614,7 +1608,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
 
-[node name="Label" type="Label" parent="stnaleypause"]
+[node name="Label" type="Label" parent="stnaleypause" unique_id=1932823244]
 layout_mode = 1
 offset_left = 54.0
 offset_top = 48.0
@@ -1630,7 +1624,7 @@ theme_override_fonts/font = ExtResource("23_jwwsw")
 theme_override_font_sizes/font_size = 80
 text = "The game is now paused"
 
-[node name="TextureRect" type="TextureRect" parent="stnaleypause"]
+[node name="TextureRect" type="TextureRect" parent="stnaleypause" unique_id=1709427892]
 visible = false
 layout_mode = 1
 anchors_preset = 2
@@ -1643,7 +1637,7 @@ offset_bottom = 7.0
 grow_vertical = 0
 texture = ExtResource("24_djy54")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="stnaleypause"]
+[node name="VBoxContainer" type="VBoxContainer" parent="stnaleypause" unique_id=350404242]
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
@@ -1653,7 +1647,7 @@ offset_right = 435.0
 offset_bottom = -63.0
 grow_vertical = 0
 
-[node name="Button" type="Button" parent="stnaleypause/VBoxContainer"]
+[node name="Button" type="Button" parent="stnaleypause/VBoxContainer" unique_id=21932682]
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
@@ -1669,7 +1663,7 @@ theme_override_styles/focus = SubResource("StyleBoxTexture_tk1j5")
 text = "Resume the game"
 alignment = 0
 
-[node name="again" type="Button" parent="stnaleypause/VBoxContainer"]
+[node name="again" type="Button" parent="stnaleypause/VBoxContainer" unique_id=847835921]
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
@@ -1685,7 +1679,7 @@ theme_override_styles/focus = SubResource("StyleBoxTexture_tk1j5")
 text = "Begin the game again"
 alignment = 0
 
-[node name="set" type="Button" parent="stnaleypause/VBoxContainer"]
+[node name="set" type="Button" parent="stnaleypause/VBoxContainer" unique_id=1204962912]
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
@@ -1701,7 +1695,7 @@ theme_override_styles/focus = SubResource("StyleBoxTexture_tk1j5")
 text = "Settings"
 alignment = 0
 
-[node name="menu" type="Button" parent="stnaleypause/VBoxContainer"]
+[node name="menu" type="Button" parent="stnaleypause/VBoxContainer" unique_id=1747930154]
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
@@ -1717,73 +1711,73 @@ theme_override_styles/focus = SubResource("StyleBoxTexture_tk1j5")
 text = "Quit to menu"
 alignment = 0
 
-[node name="stanleysounds" type="AudioStreamPlayer" parent="."]
+[node name="stanleysounds" type="AudioStreamPlayer" parent="." unique_id=960988013]
 process_mode = 3
 stream = SubResource("AudioStreamRandomizer_w8adk")
 max_polyphony = 10
 bus = &"SFX"
 
-[node name="afk" type="AudioStreamPlayer" parent="."]
+[node name="afk" type="AudioStreamPlayer" parent="." unique_id=1315542024]
 process_mode = 3
 stream = SubResource("AudioStreamRandomizer_q58de")
 max_polyphony = 10
 
-[node name="Timerafk" type="Timer" parent="."]
+[node name="Timerafk" type="Timer" parent="." unique_id=1321363931]
 wait_time = 15.0
 autostart = true
 
-[node name="beanpickup" type="AudioStreamPlayer" parent="."]
+[node name="beanpickup" type="AudioStreamPlayer" parent="." unique_id=2072119598]
 process_mode = 3
 stream = SubResource("AudioStreamRandomizer_8sct6")
 max_polyphony = 10
 
-[node name="crumblejump" type="AudioStreamPlayer" parent="."]
+[node name="crumblejump" type="AudioStreamPlayer" parent="." unique_id=1463338418]
 process_mode = 3
 stream = SubResource("AudioStreamRandomizer_bw4xi")
 max_polyphony = 10
 
-[node name="die" type="AudioStreamPlayer" parent="."]
+[node name="die" type="AudioStreamPlayer" parent="." unique_id=1316678976]
 process_mode = 3
 stream = SubResource("AudioStreamRandomizer_4ra70")
 pitch_scale = 2.5
 max_polyphony = 10
 
-[node name="kill" type="AudioStreamPlayer" parent="."]
+[node name="kill" type="AudioStreamPlayer" parent="." unique_id=633711082]
 process_mode = 3
 stream = SubResource("AudioStreamRandomizer_58kgp")
 max_polyphony = 10
 
-[node name="moving" type="AudioStreamPlayer" parent="."]
+[node name="moving" type="AudioStreamPlayer" parent="." unique_id=1591588272]
 process_mode = 3
 stream = SubResource("AudioStreamRandomizer_hciio")
 max_polyphony = 10
 
-[node name="resume" type="AudioStreamPlayer" parent="."]
+[node name="resume" type="AudioStreamPlayer" parent="." unique_id=1265391748]
 process_mode = 3
 stream = SubResource("AudioStreamRandomizer_2sl5m")
 max_polyphony = 10
 
-[node name="sling" type="AudioStreamPlayer" parent="."]
+[node name="sling" type="AudioStreamPlayer" parent="." unique_id=1828781691]
 process_mode = 3
 stream = SubResource("AudioStreamRandomizer_i0ls6")
 max_polyphony = 10
 
-[node name="switch" type="AudioStreamPlayer" parent="."]
+[node name="switch" type="AudioStreamPlayer" parent="." unique_id=963912972]
 process_mode = 3
 stream = SubResource("AudioStreamRandomizer_3n03h")
 max_polyphony = 10
 
-[node name="platform" type="AudioStreamPlayer" parent="."]
+[node name="platform" type="AudioStreamPlayer" parent="." unique_id=727599013]
 process_mode = 3
 stream = SubResource("AudioStreamRandomizer_vmnlf")
 max_polyphony = 10
 
-[node name="findswitch" type="AudioStreamPlayer" parent="."]
+[node name="findswitch" type="AudioStreamPlayer" parent="." unique_id=1115735049]
 process_mode = 3
 stream = ExtResource("61_fb847")
 max_polyphony = 10
 
-[node name="Pausetimer" type="Timer" parent="."]
+[node name="Pausetimer" type="Timer" parent="." unique_id=1420391388]
 process_mode = 2
 one_shot = true
 

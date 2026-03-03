@@ -1,10 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://wupy01swke4p"]
+[gd_scene format=3 uid="uid://wupy01swke4p"]
 
 [ext_resource type="Theme" uid="uid://bvnoyoe88pos7" path="res://Assets/Ui/spawnmenu.tres" id="1_7xi5x"]
 [ext_resource type="Script" uid="uid://5d8mth8iuh0j" path="res://Scenes/subparts/spawntree.gd" id="1_me8ft"]
 [ext_resource type="AudioStream" uid="uid://bpp0y4kn0lyfx" path="res://Assets/Sound Effects/gm/buttonclickrelease.wav" id="3_s7rgv"]
 
-[node name="spawnmenu" type="Control"]
+[node name="spawnmenu" type="Control" unique_id=1115655023]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -13,7 +13,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_7xi5x")
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=501279860]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -25,36 +25,37 @@ theme_override_constants/margin_top = 50
 theme_override_constants/margin_right = 50
 theme_override_constants/margin_bottom = 50
 
-[node name="PanelContainer" type="PanelContainer" parent="MarginContainer"]
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer" unique_id=738202207]
 layout_mode = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer" unique_id=1938760472]
 layout_mode = 2
 theme_override_constants/margin_left = 5
 theme_override_constants/margin_top = 5
 theme_override_constants/margin_right = 5
 theme_override_constants/margin_bottom = 5
 
-[node name="HSplitContainer" type="HSplitContainer" parent="MarginContainer/PanelContainer/MarginContainer"]
+[node name="HSplitContainer" type="HSplitContainer" parent="MarginContainer/PanelContainer/MarginContainer" unique_id=1039877358]
 layout_mode = 2
 theme_override_constants/separation = 2
+split_offsets = PackedInt32Array(200)
 split_offset = 200
 
-[node name="Tree" type="Tree" parent="MarginContainer/PanelContainer/MarginContainer/HSplitContainer"]
+[node name="Tree" type="Tree" parent="MarginContainer/PanelContainer/MarginContainer/HSplitContainer" unique_id=2030117055]
 layout_mode = 2
 script = ExtResource("1_me8ft")
 
-[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/PanelContainer/MarginContainer/HSplitContainer"]
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/PanelContainer/MarginContainer/HSplitContainer" unique_id=1225571020]
 layout_mode = 2
 
-[node name="HFlowContainer" type="HFlowContainer" parent="MarginContainer/PanelContainer/MarginContainer/HSplitContainer/ScrollContainer"]
+[node name="HFlowContainer" type="HFlowContainer" parent="MarginContainer/PanelContainer/MarginContainer/HSplitContainer/ScrollContainer" unique_id=1391189453]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 alignment = 1
 last_wrap_alignment = 1
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1060359179]
 stream = ExtResource("3_s7rgv")
 
 [connection signal="item_selected" from="MarginContainer/PanelContainer/MarginContainer/HSplitContainer/Tree" to="MarginContainer/PanelContainer/MarginContainer/HSplitContainer/Tree" method="_on_item_selected"]

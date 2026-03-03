@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://byx5litoy380f"]
+[gd_scene format=3 uid="uid://byx5litoy380f"]
 
 [ext_resource type="Texture2D" uid="uid://dnjj0sh3xilgo" path="res://Assets/Textures/Skybox.png" id="1_8kkgc"]
 
@@ -15,12 +15,12 @@ ambient_light_source = 2
 ambient_light_color = Color(0.615686, 0.615686, 0.615686, 1)
 ambient_light_energy = 0.6
 
-[node name="enviro" type="Node3D"]
+[node name="enviro" type="Node3D" unique_id=156657098]
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1738281685]
 environment = SubResource("Environment_fk0rt")
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=853092770]
 transform = Transform3D(-0.866024, -0.433016, 0.250001, 0, 0.499998, 0.866026, -0.500003, 0.749999, -0.43301, 0, 0, 0)
 shadow_enabled = true
 shadow_opacity = 0.0

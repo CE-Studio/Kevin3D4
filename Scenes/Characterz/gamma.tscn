@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://bdef1g51whbvt"]
+[gd_scene format=3 uid="uid://bdef1g51whbvt"]
 
 [ext_resource type="Texture2D" uid="uid://cmpwbyjkqgjww" path="res://Assets/Textures/Gamma.png" id="1_ysuj7"]
 [ext_resource type="Script" uid="uid://cg4scefnlf4nn" path="res://Scenes/Characterz/gamma.gd" id="2_bxqn2"]
@@ -16,8 +16,8 @@ tracks/0/path = NodePath(".:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat64Array(0),
-"transitions": PackedFloat64Array(1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [0]
 }
@@ -34,8 +34,8 @@ tracks/0/path = NodePath(".:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat64Array(0, 0.4),
-"transitions": PackedFloat64Array(1, 1),
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [1, 0]
 }
@@ -52,8 +52,8 @@ tracks/0/path = NodePath(".:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat64Array(0, 0.4),
-"transitions": PackedFloat64Array(1, 1),
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [2, 0]
 }
@@ -124,25 +124,23 @@ shader_parameter/Texture2DParameter = SubResource("GradientTexture1D_kcjhf")
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_f76wg"]
 height = 2.59659
 
-[node name="gamma" type="Sprite3D"]
+[node name="gamma" type="Sprite3D" unique_id=623785475]
 pixel_size = 0.002
 texture = ExtResource("1_ysuj7")
 hframes = 3
 script = ExtResource("2_bxqn2")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_n7xhq")
-}
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1484526113]
+libraries/ = SubResource("AnimationLibrary_n7xhq")
 
-[node name="AnimationTree" type="AnimationTree" parent="."]
+[node name="AnimationTree" type="AnimationTree" parent="." unique_id=1225277374]
 tree_root = SubResource("AnimationNodeStateMachine_invf3")
 anim_player = NodePath("../AnimationPlayer")
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer3D" parent="."]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer3D" parent="." unique_id=425498956]
 stream = ExtResource("3_lra0o")
 
-[node name="MarginContainer2" type="MarginContainer" parent="."]
+[node name="MarginContainer2" type="MarginContainer" parent="." unique_id=777403668]
 visible = false
 anchors_preset = 12
 anchor_top = 1.0
@@ -156,31 +154,31 @@ theme_override_constants/margin_top = 4
 theme_override_constants/margin_right = 4
 theme_override_constants/margin_bottom = 4
 
-[node name="PanelContainer" type="PanelContainer" parent="MarginContainer2"]
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer2" unique_id=653149255]
 layout_mode = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="MarginContainer2/PanelContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer2/PanelContainer" unique_id=1016126672]
 layout_mode = 2
 theme_override_constants/margin_left = 4
 theme_override_constants/margin_top = 4
 theme_override_constants/margin_right = 4
 theme_override_constants/margin_bottom = 4
 
-[node name="Label" type="Label" parent="MarginContainer2/PanelContainer/MarginContainer"]
+[node name="Label" type="Label" parent="MarginContainer2/PanelContainer/MarginContainer" unique_id=1097053195]
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 0
 theme_override_fonts/font = ExtResource("3_htgv7")
 theme_override_font_sizes/font_size = 26
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=184807106]
 transform = Transform3D(2.60796e-17, 0.226629, 0.481867, -1.3877e-17, 0.481867, -0.226629, -0.5325, -1.45816e-18, 2.95058e-17, -1.01493, -0.644479, 0)
 mesh = ExtResource("5_nkn57")
 surface_material_override/0 = SubResource("ShaderMaterial_a2pvr")
 surface_material_override/1 = SubResource("ShaderMaterial_5rx6i")
 surface_material_override/2 = SubResource("ShaderMaterial_wuox8")
 
-[node name="StaticBody3D" type="AnimatableBody3D" parent="."]
+[node name="StaticBody3D" type="AnimatableBody3D" parent="." unique_id=1175792145]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1678213679]
 shape = SubResource("CylinderShape3D_f76wg")

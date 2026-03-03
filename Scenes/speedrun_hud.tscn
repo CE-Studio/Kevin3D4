@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bv3l2kes42xfa"]
+[gd_scene format=3 uid="uid://bv3l2kes42xfa"]
 
 [ext_resource type="Script" uid="uid://drc8o8c58o6f0" path="res://Scripts/speedrun_hud.gd" id="1_8tw3r"]
 [ext_resource type="AudioStream" uid="uid://bsddfexjp6jtg" path="res://Assets/Music/Jeff Thomas - Gods Pirates.mp3" id="1_tcj0g"]
@@ -14,8 +14,8 @@ tracks/0/path = NodePath("Label:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat64Array(0),
-"transitions": PackedFloat64Array(1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Color(1, 1, 1, 0.388235)]
 }
@@ -26,8 +26,8 @@ tracks/1/path = NodePath("VBoxContainer:modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat64Array(0),
-"transitions": PackedFloat64Array(1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Color(1, 1, 1, 1)]
 }
@@ -42,8 +42,8 @@ tracks/0/path = NodePath("Label:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat64Array(0, 0.3),
-"transitions": PackedFloat64Array(1, 1),
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0.388235)]
 }
@@ -54,8 +54,8 @@ tracks/1/path = NodePath("VBoxContainer:modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat64Array(0, 0.3),
-"transitions": PackedFloat64Array(1, 1),
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0.388235)]
 }
@@ -66,7 +66,7 @@ _data = {
 &"new_animation": SubResource("Animation_g06va")
 }
 
-[node name="speedrun hud" type="Control"]
+[node name="speedrun hud" type="Control" unique_id=1441781505]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -76,13 +76,13 @@ grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("1_8tw3r")
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=936453419]
 stream = ExtResource("1_tcj0g")
 volume_db = 10.992
 autoplay = true
 bus = &"Music"
 
-[node name="Label" type="Label" parent="."]
+[node name="Label" type="Label" parent="." unique_id=1021906040]
 modulate = Color(1, 1, 1, 0.388235)
 layout_mode = 1
 anchors_preset = 2
@@ -97,12 +97,10 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("3_eishi")
 text = "Gods & Pirates - Jeff Thomas"
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_8dojc")
-}
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=552900716]
+libraries/ = SubResource("AnimationLibrary_8dojc")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1945633318]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
@@ -112,14 +110,14 @@ offset_bottom = 40.0
 grow_horizontal = 0
 theme = ExtResource("4_wh5t7")
 
-[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer"]
+[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer" unique_id=97372717]
 layout_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/PanelContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/PanelContainer" unique_id=1788069877]
 layout_mode = 2
 alignment = 2
 
-[node name="mins" type="Label" parent="VBoxContainer/PanelContainer/HBoxContainer"]
+[node name="mins" type="Label" parent="VBoxContainer/PanelContainer/HBoxContainer" unique_id=1772842958]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 size_flags_vertical = 1
@@ -128,21 +126,21 @@ text = "0"
 horizontal_alignment = 2
 vertical_alignment = 2
 
-[node name="Label2" type="Label" parent="VBoxContainer/PanelContainer/HBoxContainer"]
+[node name="Label2" type="Label" parent="VBoxContainer/PanelContainer/HBoxContainer" unique_id=1720423136]
 layout_mode = 2
 size_flags_vertical = 1
 theme_override_font_sizes/font_size = 30
 text = ":"
 vertical_alignment = 2
 
-[node name="secs" type="Label" parent="VBoxContainer/PanelContainer/HBoxContainer"]
+[node name="secs" type="Label" parent="VBoxContainer/PanelContainer/HBoxContainer" unique_id=527347146]
 layout_mode = 2
 size_flags_vertical = 1
 theme_override_font_sizes/font_size = 30
 text = "00"
 vertical_alignment = 2
 
-[node name="Label4" type="Label" parent="VBoxContainer/PanelContainer/HBoxContainer"]
+[node name="Label4" type="Label" parent="VBoxContainer/PanelContainer/HBoxContainer" unique_id=1281198938]
 layout_mode = 2
 size_flags_vertical = 1
 theme_override_font_sizes/font_size = 23
@@ -150,13 +148,13 @@ text = ".
 "
 vertical_alignment = 2
 
-[node name="ms" type="Label" parent="VBoxContainer/PanelContainer/HBoxContainer"]
+[node name="ms" type="Label" parent="VBoxContainer/PanelContainer/HBoxContainer" unique_id=1950674158]
 layout_mode = 2
 size_flags_vertical = 1
 theme_override_font_sizes/font_size = 23
 text = "00"
 vertical_alignment = 2
 
-[node name="Control" type="Control" parent="VBoxContainer/PanelContainer/HBoxContainer"]
+[node name="Control" type="Control" parent="VBoxContainer/PanelContainer/HBoxContainer" unique_id=637142979]
 custom_minimum_size = Vector2(6, 0)
 layout_mode = 2
