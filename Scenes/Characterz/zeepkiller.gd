@@ -103,10 +103,10 @@ func _on_area_3d_body_entered(body: Node3D) -> void:
 			var time := Time.get_datetime_dict_from_system()
 			var timestr := "%s:%s %s - %s, %s %s, %s" % [
 				hours[time.hour][0],
-				time.minute,
+				str(time.minute).pad_zeros(2),
 				hours[time.hour][1],
 				weekday[time.weekday],
-				month[time.month],
+				month[time.month - 1],
 				time.day,
 				time.year,
 			]
