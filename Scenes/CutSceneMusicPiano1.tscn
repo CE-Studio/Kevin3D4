@@ -806,7 +806,7 @@ is_hemisphere = true
 bg_color = Color(0, 0, 0, 1)
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_dvb3w"]
-viewport_path = NodePath("SubViewport")
+viewport_path = NodePath("../SubViewport")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wivpe"]
 resource_local_to_scene = true

@@ -760,7 +760,7 @@ shader = ExtResource("7_250xw")
 shader_parameter/transparency = 0.0
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_xiek8"]
-viewport_path = NodePath("Player/SubViewport")
+viewport_path = NodePath("../SubViewport")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qb7xb"]
 resource_local_to_scene = true

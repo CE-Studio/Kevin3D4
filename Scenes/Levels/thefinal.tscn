@@ -2212,7 +2212,7 @@ material_override = SubResource("StandardMaterial3D_ym3iy")
 mesh = SubResource("PlaneMesh_cu1vt")
 
 [node name="Camera3D" type="Camera3D" parent="finalCutscenes" unique_id=914692924]
-transform = Transform3D(0.8929791, 0.045094267, 0.44783315, 0, 0.994969, -0.1001876, -0.45009786, 0.089465514, 0.88848597, 3.30278, -1.83692, 24.5646)
+transform = Transform3D(0.892979, 0.045094267, 0.44783315, 0, 0.994969, -0.1001876, -0.45009783, 0.089465514, 0.88848597, 3.30278, -1.83692, 24.5646)
 current = true
 
 [node name="Camera3D2" type="Camera3D" parent="finalCutscenes" unique_id=83647123]
@@ -2252,6 +2252,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 
 [node name="winnormal" type="Panel" parent="finalCutscenes/Control" unique_id=2022982229]
 visible = false
@@ -2261,6 +2262,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_dfjwb")
 
 [node name="Label" type="Label" parent="finalCutscenes/Control/winnormal" unique_id=1368523916]
@@ -2337,6 +2339,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_dfjwb")
 
 [node name="Label" type="Label" parent="finalCutscenes/Control/winspeed" unique_id=1054866924]
@@ -2399,6 +2402,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_dfjwb")
 
 [node name="TextureRect2" type="TextureRect" parent="finalCutscenes/Control/winrizz" unique_id=218266808]

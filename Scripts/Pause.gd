@@ -35,6 +35,8 @@ func pauseUnpause():
 		EMU.mouse_mode = Input.MOUSE_MODE_VISIBLE
 		$"../Pausetimer".start(30)
 		_tooktolong = false
+	if Player.instance.isDead:
+		DeathScreen.respawn()
 
 
 func _on_again_pressed():
