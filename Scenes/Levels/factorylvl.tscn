@@ -982,11 +982,11 @@ waypoints = Array[Vector3]([Vector3(0, 0, 0), Vector3(0, 1, 0)])
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, 0)
 Killzone = SubResource("BoxShape3D_2i6mi")
 
-[node name="Cube_001" parent="thefinalbits/minecart/faccart" parent_id_path=PackedInt32Array(440588784, 1055275150) index="0" unique_id=2094065965]
+[node name="Cube_001" parent="thefinalbits/minecart/faccart" parent_id_path=PackedInt32Array(440588784, 1055275150) index="0" unique_id=1999070564]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.5, 0)
 mesh = SubResource("BoxMesh_0up3e")
 
-[node name="Plane" parent="thefinalbits/minecart/faccart" parent_id_path=PackedInt32Array(440588784, 1055275150) index="1" unique_id=1807646503]
+[node name="Plane" parent="thefinalbits/minecart/faccart" parent_id_path=PackedInt32Array(440588784, 1055275150) index="1" unique_id=349076948]
 visible = false
 
 [node name="MeshInstance3D" parent="thefinalbits/minecart" index="2" unique_id=165694243]
@@ -1002,11 +1002,11 @@ waypoints = Array[Vector3]([Vector3(0, 0, 0), Vector3(0, -1, 0)])
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, 0)
 Killzone = SubResource("BoxShape3D_2i6mi")
 
-[node name="Cube_001" parent="thefinalbits/minecart2/faccart" parent_id_path=PackedInt32Array(247951774, 1055275150) index="0" unique_id=2094065965]
+[node name="Cube_001" parent="thefinalbits/minecart2/faccart" parent_id_path=PackedInt32Array(247951774, 1055275150) index="0" unique_id=1999070564]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.5, 0)
 mesh = SubResource("BoxMesh_0up3e")
 
-[node name="Plane" parent="thefinalbits/minecart2/faccart" parent_id_path=PackedInt32Array(247951774, 1055275150) index="1" unique_id=1807646503]
+[node name="Plane" parent="thefinalbits/minecart2/faccart" parent_id_path=PackedInt32Array(247951774, 1055275150) index="1" unique_id=349076948]
 visible = false
 
 [node name="MeshInstance3D" parent="thefinalbits/minecart2" index="2" unique_id=165694243]
@@ -1016,23 +1016,23 @@ mesh = SubResource("BoxMesh_b3ygo")
 [node name="crane" parent="thefinalbits" unique_id=1578604501 instance=ExtResource("25_ga6sd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 72, -12, -12)
 
-[node name="Cube" parent="thefinalbits/crane" index="0" unique_id=851537067]
+[node name="Cube" parent="thefinalbits/crane" index="0" unique_id=1137074619]
 surface_material_override/0 = SubResource("StandardMaterial3D_at8vj")
 
-[node name="Cube_001" parent="thefinalbits/crane/Cube" index="0" unique_id=697557275]
+[node name="Cube_001" parent="thefinalbits/crane/Cube" index="0" unique_id=1090164723]
 surface_material_override/0 = SubResource("StandardMaterial3D_6vu7s")
 
-[node name="Cube_002" parent="thefinalbits/crane/Cube/Cube_001" index="0" unique_id=1327479334]
+[node name="Cube_002" parent="thefinalbits/crane/Cube/Cube_001" index="0" unique_id=252014680]
 transform = Transform3D(0.821229, 0, -0.570599, 0, 1, 0, 0.570599, 0, 0.821229, 0, 0.5, 0)
 
-[node name="Cube_003" parent="thefinalbits/crane/Cube/Cube_001/Cube_002" index="0" unique_id=993369164]
+[node name="Cube_003" parent="thefinalbits/crane/Cube/Cube_001/Cube_002" index="0" unique_id=623204524]
 surface_material_override/0 = SubResource("StandardMaterial3D_3se35")
 
-[node name="Cube_005" parent="thefinalbits/crane/Cube/Cube_001/Cube_002/Cube_003" index="0" unique_id=1411793850]
+[node name="Cube_005" parent="thefinalbits/crane/Cube/Cube_001/Cube_002/Cube_003" index="0" unique_id=827566312]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4.39614, 29.2207)
 surface_material_override/0 = SubResource("StandardMaterial3D_gp6dw")
 
-[node name="Cube_006" parent="thefinalbits/crane/Cube/Cube_001/Cube_002/Cube_003/Cube_005" index="0" unique_id=1858094633]
+[node name="Cube_006" parent="thefinalbits/crane/Cube/Cube_001/Cube_002/Cube_003/Cube_005" index="0" unique_id=160005898]
 material_override = SubResource("StandardMaterial3D_sxsux")
 
 [node name="AnimatableBody3D" type="AnimatableBody3D" parent="thefinalbits/crane/Cube/Cube_001/Cube_002/Cube_003/Cube_005/Cube_006" index="0" unique_id=659591914]
@@ -1041,7 +1041,7 @@ sync_to_physics = false
 [node name="CollisionShape3D" type="CollisionShape3D" parent="thefinalbits/crane/Cube/Cube_001/Cube_002/Cube_003/Cube_005/Cube_006/AnimatableBody3D" unique_id=468285697]
 shape = SubResource("BoxShape3D_knbhx")
 
-[node name="Cube_004" parent="thefinalbits/crane/Cube/Cube_001/Cube_002" index="1" unique_id=708926728]
+[node name="Cube_004" parent="thefinalbits/crane/Cube/Cube_001/Cube_002" index="1" unique_id=1584069036]
 material_override = SubResource("StandardMaterial3D_f6vni")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="thefinalbits/crane" unique_id=1927999417]

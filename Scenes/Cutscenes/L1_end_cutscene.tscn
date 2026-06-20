@@ -88,7 +88,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_kpqaf")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 5.0
 }]
@@ -855,7 +855,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_75mv4")
 }],
-"loop": false,
+"loop": 0,
 "name": &"Boom",
 "speed": 20.0
 }]
@@ -930,7 +930,7 @@ flip_h = true
 [node name="player" parent="ActorParent/Player" unique_id=586298898 instance=ExtResource("8_ea3ut")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.78214, 0)
 
-[node name="Skeleton3D" parent="ActorParent/Player/player/Armature" parent_id_path=PackedInt32Array(586298898, 1592993931) index="0" unique_id=1093833323]
+[node name="Skeleton3D" parent="ActorParent/Player/player/Armature" parent_id_path=PackedInt32Array(586298898, 275939220) index="0" unique_id=1052335510]
 bones/0/rotation = Quaternion(-0.0206791, 0, 0, 0.999786)
 bones/2/rotation = Quaternion(0.015549903, 1.00710014e-16, 1.00710014e-16, 0.9998792)
 bones/3/rotation = Quaternion(0.49046648, 0.0004749668, 0.00047496674, 0.87145984)
@@ -974,11 +974,11 @@ bones/23/scale = Vector3(1, 0.999999, 1)
 bones/24/rotation = Quaternion(-0.596658, 0.0390387, 0.318369, 0.735606)
 bones/24/scale = Vector3(1, 1, 1)
 
-[node name="Vert" parent="ActorParent/Player/player/Armature/Skeleton3D" index="0" unique_id=321690431]
+[node name="Vert" parent="ActorParent/Player/player/Armature/Skeleton3D" index="0" unique_id=1742664098]
 material_overlay = SubResource("ShaderMaterial_lnutk")
 surface_material_override/0 = ExtResource("10_ufbjr")
 
-[node name="Vert_001" parent="ActorParent/Player/player/Armature/Skeleton3D" index="1" unique_id=2140115685]
+[node name="Vert_001" parent="ActorParent/Player/player/Armature/Skeleton3D" index="1" unique_id=705195421]
 surface_material_override/0 = SubResource("StandardMaterial3D_jjt3f")
 
 [node name="BoneAttachment3D" type="BoneAttachment3D" parent="ActorParent/Player/player/Armature/Skeleton3D" index="2" unique_id=1003055608]
@@ -993,7 +993,7 @@ sprite_frames = SubResource("SpriteFrames_7woet")
 frame_progress = 0.629152
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1694790240]
-transform = Transform3D(1, 0, 0, 0, 0.9766719, 0.21473542, 0, -0.21473542, 0.9766719, 0, 5.175, 6.665)
+transform = Transform3D(1, 0, 0, 0, 0.9766718, 0.2147354, 0, -0.2147354, 0.9766718, 0, 5.175, 6.665)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=5464913]
 libraries/ = SubResource("AnimationLibrary_d1clt")

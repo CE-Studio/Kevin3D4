@@ -4,8 +4,8 @@
 [ext_resource type="Script" uid="uid://b2r6d3hdu3jej" path="res://addons/scene_texture/editor/TextureView.gd" id="2_conow"]
 
 [node name="SceneTexturePreview" type="HBoxContainer" unique_id=1126336139]
-clip_contents = true
 custom_minimum_size = Vector2(0, 128)
+clip_contents = true
 offset_right = 309.0
 offset_bottom = 128.0
 size_flags_horizontal = 3

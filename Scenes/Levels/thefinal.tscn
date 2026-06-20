@@ -1925,7 +1925,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_kpqaf")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 5.0
 }]
@@ -2089,7 +2089,7 @@ transform = Transform3D(31.925, 0, 0, 0, 31.925, 0, 0, 0, 31.925, 0, 13, -48)
 [node name="enemy" parent="finalCutscenes/Boss" unique_id=17705302 instance=ExtResource("1_qjf2c")]
 transform = Transform3D(0.46, 0, 0, 0, 0.46, 0, 0, 0, 0.46, 0, -0.485923, 0)
 
-[node name="Vert" parent="finalCutscenes/Boss/enemy/Armature/Skeleton3D" parent_id_path=PackedInt32Array(17705302, 1111228434) index="0" unique_id=2057337445]
+[node name="Vert" parent="finalCutscenes/Boss/enemy/Armature/Skeleton3D" parent_id_path=PackedInt32Array(17705302, 138812808) index="0" unique_id=767807271]
 surface_material_override/0 = SubResource("ShaderMaterial_htw20")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="finalCutscenes/Boss" unique_id=635921697]
@@ -2137,7 +2137,7 @@ texture = ExtResource("7_v0r2x")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.78214, 0)
 visible = false
 
-[node name="Skeleton3D" parent="finalCutscenes/Player2/player/Armature" parent_id_path=PackedInt32Array(1559753549, 1592993931) index="0" unique_id=1093833323]
+[node name="Skeleton3D" parent="finalCutscenes/Player2/player/Armature" parent_id_path=PackedInt32Array(1559753549, 275939220) index="0" unique_id=1052335510]
 bones/2/rotation = Quaternion(0.015549903, 1.00710014e-16, 1.00710014e-16, 0.9998792)
 bones/2/scale = Vector3(1, 1, 1)
 bones/3/position = Vector3(8.17471e-17, 0.412314, 9.31321e-10)
@@ -2188,11 +2188,11 @@ bones/24/position = Vector3(1.58179e-08, 0.289712, 7.45058e-09)
 bones/24/rotation = Quaternion(-0.59665805, 0.0390387, 0.31836906, 0.73560613)
 bones/24/scale = Vector3(1, 1, 1)
 
-[node name="Vert" parent="finalCutscenes/Player2/player/Armature/Skeleton3D" index="0" unique_id=321690431]
+[node name="Vert" parent="finalCutscenes/Player2/player/Armature/Skeleton3D" index="0" unique_id=1742664098]
 material_overlay = SubResource("ShaderMaterial_lnutk")
 surface_material_override/0 = ExtResource("10_tjgnq")
 
-[node name="Vert_001" parent="finalCutscenes/Player2/player/Armature/Skeleton3D" index="1" unique_id=2140115685]
+[node name="Vert_001" parent="finalCutscenes/Player2/player/Armature/Skeleton3D" index="1" unique_id=705195421]
 surface_material_override/0 = SubResource("StandardMaterial3D_l56gg")
 
 [node name="BoneAttachment3D" type="BoneAttachment3D" parent="finalCutscenes/Player2/player/Armature/Skeleton3D" index="2" unique_id=1612853036]

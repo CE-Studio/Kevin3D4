@@ -248,13 +248,13 @@ script = ExtResource("1_37lhr")
 
 [node name="twodoors" parent="." unique_id=1279858216 instance=ExtResource("1_xi5if")]
 
-[node name="Plane" parent="twodoors" index="0" unique_id=787485918]
+[node name="Plane" parent="twodoors" index="0" unique_id=1863169581]
 surface_material_override/0 = SubResource("StandardMaterial3D_81pdb")
 
-[node name="Cylinder" parent="twodoors/Plane" index="0" unique_id=1723595579]
+[node name="Cylinder" parent="twodoors/Plane" index="0" unique_id=1403674827]
 surface_material_override/0 = SubResource("StandardMaterial3D_81pdb")
 
-[node name="Plane_001" parent="twodoors/Plane" index="1" unique_id=675085805]
+[node name="Plane_001" parent="twodoors/Plane" index="1" unique_id=1241723318]
 surface_material_override/0 = SubResource("StandardMaterial3D_ackrh")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="twodoors/Plane/Plane_001" index="0" unique_id=1132830547]
@@ -263,19 +263,19 @@ light_color = Color(0.968627, 1, 1, 1)
 light_energy = 0.195
 omni_range = 22.9077
 
-[node name="Plane_002" parent="twodoors/Plane" index="2" unique_id=1327512216]
+[node name="Plane_002" parent="twodoors/Plane" index="2" unique_id=565841975]
 surface_material_override/0 = SubResource("StandardMaterial3D_xvkf0")
 
-[node name="Plane_005" parent="twodoors" index="1" unique_id=239118445]
+[node name="Plane_005" parent="twodoors" index="1" unique_id=179328211]
 surface_material_override/0 = SubResource("StandardMaterial3D_81pdb")
 
-[node name="Cylinder_001" parent="twodoors/Plane_005" index="0" unique_id=1085202181]
+[node name="Cylinder_001" parent="twodoors/Plane_005" index="0" unique_id=1013712951]
 surface_material_override/0 = SubResource("StandardMaterial3D_81pdb")
 
-[node name="Plane_003" parent="twodoors/Plane_005" index="1" unique_id=264339306]
+[node name="Plane_003" parent="twodoors/Plane_005" index="1" unique_id=5102351]
 surface_material_override/0 = SubResource("StandardMaterial3D_xvkf0")
 
-[node name="Plane_004" parent="twodoors/Plane_005" index="2" unique_id=1191822421]
+[node name="Plane_004" parent="twodoors/Plane_005" index="2" unique_id=1001490036]
 surface_material_override/0 = SubResource("StandardMaterial3D_ackrh")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="twodoors/Plane_005/Plane_004" index="0" unique_id=1101574873]
@@ -284,13 +284,13 @@ light_color = Color(0.968627, 1, 1, 1)
 light_energy = 0.195
 omni_range = 22.9077
 
-[node name="Plane_006" parent="twodoors" index="2" unique_id=2045363243]
+[node name="Plane_006" parent="twodoors" index="2" unique_id=1863539668]
 surface_material_override/0 = SubResource("StandardMaterial3D_81pdb")
 
-[node name="Cylinder_002" parent="twodoors/Plane_006" index="0" unique_id=451895134]
+[node name="Cylinder_002" parent="twodoors/Plane_006" index="0" unique_id=22042859]
 surface_material_override/0 = SubResource("StandardMaterial3D_81pdb")
 
-[node name="Plane_007" parent="twodoors/Plane_006" index="1" unique_id=1435645817]
+[node name="Plane_007" parent="twodoors/Plane_006" index="1" unique_id=1830195203]
 surface_material_override/0 = SubResource("StandardMaterial3D_ackrh")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="twodoors/Plane_006/Plane_007" index="0" unique_id=2106068210]
@@ -299,19 +299,19 @@ light_color = Color(0.968627, 1, 1, 1)
 light_energy = 0.195
 omni_range = 22.9077
 
-[node name="Plane_008" parent="twodoors/Plane_006" index="2" unique_id=293872593]
+[node name="Plane_008" parent="twodoors/Plane_006" index="2" unique_id=335552878]
 surface_material_override/0 = SubResource("StandardMaterial3D_xvkf0")
 
-[node name="Plane_011" parent="twodoors" index="3" unique_id=468088989]
+[node name="Plane_011" parent="twodoors" index="3" unique_id=41686110]
 surface_material_override/0 = SubResource("StandardMaterial3D_81pdb")
 
-[node name="Cylinder_003" parent="twodoors/Plane_011" index="0" unique_id=811902124]
+[node name="Cylinder_003" parent="twodoors/Plane_011" index="0" unique_id=250953088]
 surface_material_override/0 = SubResource("StandardMaterial3D_81pdb")
 
-[node name="Plane_009" parent="twodoors/Plane_011" index="1" unique_id=1250583625]
+[node name="Plane_009" parent="twodoors/Plane_011" index="1" unique_id=92712364]
 surface_material_override/0 = SubResource("StandardMaterial3D_xvkf0")
 
-[node name="Plane_010" parent="twodoors/Plane_011" index="2" unique_id=1916750192]
+[node name="Plane_010" parent="twodoors/Plane_011" index="2" unique_id=1254039206]
 surface_material_override/0 = SubResource("StandardMaterial3D_ackrh")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="twodoors/Plane_011/Plane_010" index="0" unique_id=1821879875]
@@ -320,13 +320,13 @@ light_color = Color(0.968627, 1, 1, 1)
 light_energy = 0.195
 omni_range = 22.9077
 
-[node name="Plane_012" parent="twodoors" index="4" unique_id=1785415135]
+[node name="Plane_012" parent="twodoors" index="4" unique_id=99312174]
 surface_material_override/0 = SubResource("StandardMaterial3D_81pdb")
 
-[node name="Cylinder_004" parent="twodoors/Plane_012" index="0" unique_id=1365790004]
+[node name="Cylinder_004" parent="twodoors/Plane_012" index="0" unique_id=388602182]
 surface_material_override/0 = SubResource("StandardMaterial3D_81pdb")
 
-[node name="Plane_013" parent="twodoors/Plane_012" index="1" unique_id=1295588121]
+[node name="Plane_013" parent="twodoors/Plane_012" index="1" unique_id=1407037622]
 surface_material_override/0 = SubResource("StandardMaterial3D_ackrh")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="twodoors/Plane_012/Plane_013" index="0" unique_id=1917664655]
@@ -335,19 +335,19 @@ light_color = Color(0.968627, 1, 1, 1)
 light_energy = 0.195
 omni_range = 22.9077
 
-[node name="Plane_014" parent="twodoors/Plane_012" index="2" unique_id=607747795]
+[node name="Plane_014" parent="twodoors/Plane_012" index="2" unique_id=1378039801]
 surface_material_override/0 = SubResource("StandardMaterial3D_xvkf0")
 
-[node name="Plane_017" parent="twodoors" index="5" unique_id=806800014]
+[node name="Plane_017" parent="twodoors" index="5" unique_id=223854973]
 surface_material_override/0 = SubResource("StandardMaterial3D_81pdb")
 
-[node name="Cylinder_005" parent="twodoors/Plane_017" index="0" unique_id=1123680887]
+[node name="Cylinder_005" parent="twodoors/Plane_017" index="0" unique_id=2123552411]
 surface_material_override/0 = SubResource("StandardMaterial3D_81pdb")
 
-[node name="Plane_015" parent="twodoors/Plane_017" index="1" unique_id=13068797]
+[node name="Plane_015" parent="twodoors/Plane_017" index="1" unique_id=115373812]
 surface_material_override/0 = SubResource("StandardMaterial3D_xvkf0")
 
-[node name="Plane_016" parent="twodoors/Plane_017" index="2" unique_id=1234166414]
+[node name="Plane_016" parent="twodoors/Plane_017" index="2" unique_id=1147208002]
 surface_material_override/0 = SubResource("StandardMaterial3D_ackrh")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="twodoors/Plane_017/Plane_016" index="0" unique_id=1127430815]
@@ -356,13 +356,13 @@ light_color = Color(0.968627, 1, 1, 1)
 light_energy = 0.195
 omni_range = 22.9077
 
-[node name="Plane_018" parent="twodoors" index="6" unique_id=1804962764]
+[node name="Plane_018" parent="twodoors" index="6" unique_id=1524962266]
 surface_material_override/0 = SubResource("StandardMaterial3D_81pdb")
 
-[node name="Cylinder_006" parent="twodoors/Plane_018" index="0" unique_id=146337547]
+[node name="Cylinder_006" parent="twodoors/Plane_018" index="0" unique_id=315349922]
 surface_material_override/0 = SubResource("StandardMaterial3D_81pdb")
 
-[node name="Plane_019" parent="twodoors/Plane_018" index="1" unique_id=618725956]
+[node name="Plane_019" parent="twodoors/Plane_018" index="1" unique_id=1695789043]
 surface_material_override/0 = SubResource("StandardMaterial3D_ackrh")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="twodoors/Plane_018/Plane_019" index="0" unique_id=1288079120]
@@ -371,19 +371,19 @@ light_color = Color(0.968627, 1, 1, 1)
 light_energy = 0.195
 omni_range = 22.9077
 
-[node name="Plane_020" parent="twodoors/Plane_018" index="2" unique_id=1615668925]
+[node name="Plane_020" parent="twodoors/Plane_018" index="2" unique_id=1884616313]
 surface_material_override/0 = SubResource("StandardMaterial3D_xvkf0")
 
-[node name="Plane_023" parent="twodoors" index="7" unique_id=410447175]
+[node name="Plane_023" parent="twodoors" index="7" unique_id=964837870]
 surface_material_override/0 = SubResource("StandardMaterial3D_81pdb")
 
-[node name="Cylinder_007" parent="twodoors/Plane_023" index="0" unique_id=455637674]
+[node name="Cylinder_007" parent="twodoors/Plane_023" index="0" unique_id=59419780]
 surface_material_override/0 = SubResource("StandardMaterial3D_81pdb")
 
-[node name="Plane_021" parent="twodoors/Plane_023" index="1" unique_id=1345384930]
+[node name="Plane_021" parent="twodoors/Plane_023" index="1" unique_id=794473211]
 surface_material_override/0 = SubResource("StandardMaterial3D_xvkf0")
 
-[node name="Plane_022" parent="twodoors/Plane_023" index="2" unique_id=1987819862]
+[node name="Plane_022" parent="twodoors/Plane_023" index="2" unique_id=1197967070]
 surface_material_override/0 = SubResource("StandardMaterial3D_ackrh")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="twodoors/Plane_023/Plane_022" index="0" unique_id=1200104785]
@@ -392,61 +392,61 @@ light_color = Color(0.968627, 1, 1, 1)
 light_energy = 0.195
 omni_range = 22.9077
 
-[node name="Plane_024" parent="twodoors" index="8" unique_id=486244311]
+[node name="Plane_024" parent="twodoors" index="8" unique_id=1693470818]
 surface_material_override/0 = SubResource("StandardMaterial3D_81pdb")
 
-[node name="Cylinder_008" parent="twodoors/Plane_024" index="0" unique_id=1750795380]
+[node name="Cylinder_008" parent="twodoors/Plane_024" index="0" unique_id=158087417]
 surface_material_override/0 = SubResource("StandardMaterial3D_81pdb")
 
-[node name="Plane_025" parent="twodoors/Plane_024" index="1" unique_id=1888681081]
+[node name="Plane_025" parent="twodoors/Plane_024" index="1" unique_id=158113238]
 surface_material_override/0 = SubResource("StandardMaterial3D_1tj37")
 
-[node name="Plane_026" parent="twodoors/Plane_024" index="2" unique_id=1267084793]
+[node name="Plane_026" parent="twodoors/Plane_024" index="2" unique_id=2046249621]
 surface_material_override/0 = SubResource("StandardMaterial3D_hkugs")
 
-[node name="Plane_029" parent="twodoors" index="9" unique_id=933068419]
+[node name="Plane_029" parent="twodoors" index="9" unique_id=427519720]
 surface_material_override/0 = SubResource("StandardMaterial3D_81pdb")
 
-[node name="Cylinder_009" parent="twodoors/Plane_029" index="0" unique_id=1375485730]
+[node name="Cylinder_009" parent="twodoors/Plane_029" index="0" unique_id=843465007]
 surface_material_override/0 = SubResource("StandardMaterial3D_81pdb")
 
-[node name="Plane_027" parent="twodoors/Plane_029" index="1" unique_id=1843392504]
+[node name="Plane_027" parent="twodoors/Plane_029" index="1" unique_id=503186737]
 surface_material_override/0 = SubResource("StandardMaterial3D_hkugs")
 
-[node name="Plane_028" parent="twodoors/Plane_029" index="2" unique_id=2097894451]
+[node name="Plane_028" parent="twodoors/Plane_029" index="2" unique_id=1988286650]
 surface_material_override/0 = SubResource("StandardMaterial3D_1tj37")
 
-[node name="Plane_030" parent="twodoors" index="10" unique_id=2126082246]
+[node name="Plane_030" parent="twodoors" index="10" unique_id=1976922352]
 surface_material_override/0 = SubResource("StandardMaterial3D_81pdb")
 
-[node name="Cylinder_010" parent="twodoors/Plane_030" index="0" unique_id=1974902693]
+[node name="Cylinder_010" parent="twodoors/Plane_030" index="0" unique_id=1887217610]
 surface_material_override/0 = SubResource("StandardMaterial3D_81pdb")
 
-[node name="Plane_031" parent="twodoors/Plane_030" index="1" unique_id=1101411836]
+[node name="Plane_031" parent="twodoors/Plane_030" index="1" unique_id=5803659]
 surface_material_override/0 = SubResource("StandardMaterial3D_1tj37")
 
-[node name="Plane_032" parent="twodoors/Plane_030" index="2" unique_id=1349165143]
+[node name="Plane_032" parent="twodoors/Plane_030" index="2" unique_id=429462646]
 surface_material_override/0 = SubResource("StandardMaterial3D_hkugs")
 
-[node name="Plane_035" parent="twodoors" index="11" unique_id=1528814125]
+[node name="Plane_035" parent="twodoors" index="11" unique_id=248381868]
 surface_material_override/0 = SubResource("StandardMaterial3D_81pdb")
 
-[node name="Cylinder_011" parent="twodoors/Plane_035" index="0" unique_id=1106558175]
+[node name="Cylinder_011" parent="twodoors/Plane_035" index="0" unique_id=689301338]
 surface_material_override/0 = SubResource("StandardMaterial3D_81pdb")
 
-[node name="Plane_033" parent="twodoors/Plane_035" index="1" unique_id=665799444]
+[node name="Plane_033" parent="twodoors/Plane_035" index="1" unique_id=1329234261]
 surface_material_override/0 = SubResource("StandardMaterial3D_hkugs")
 
-[node name="Plane_034" parent="twodoors/Plane_035" index="2" unique_id=499497588]
+[node name="Plane_034" parent="twodoors/Plane_035" index="2" unique_id=680567373]
 surface_material_override/0 = SubResource("StandardMaterial3D_1tj37")
 
-[node name="Plane_036" parent="twodoors" index="12" unique_id=1835205120]
+[node name="Plane_036" parent="twodoors" index="12" unique_id=2029211246]
 surface_material_override/0 = SubResource("StandardMaterial3D_vksnr")
 
-[node name="Cube" parent="twodoors" index="13" unique_id=1943432664]
+[node name="Cube" parent="twodoors" index="13" unique_id=1438484503]
 surface_material_override/0 = SubResource("StandardMaterial3D_3iny2")
 
-[node name="Plane_037" parent="twodoors" index="14" unique_id=1226775876]
+[node name="Plane_037" parent="twodoors" index="14" unique_id=1447358414]
 surface_material_override/0 = SubResource("StandardMaterial3D_03mek")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="twodoors/Plane_037" index="0" unique_id=1248236149]
@@ -454,17 +454,17 @@ surface_material_override/0 = SubResource("StandardMaterial3D_03mek")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="twodoors/Plane_037/StaticBody3D" unique_id=2018354798]
 shape = SubResource("ConcavePolygonShape3D_qkvr0")
 
-[node name="Cube_001" parent="twodoors" index="15" unique_id=2014543746]
+[node name="Cube_001" parent="twodoors" index="15" unique_id=169058720]
 surface_material_override/0 = SubResource("StandardMaterial3D_s8t0c")
 
-[node name="Cube_002" parent="twodoors/Cube_001" index="0" unique_id=1585534691]
+[node name="Cube_002" parent="twodoors/Cube_001" index="0" unique_id=1146458340]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.82, 0, 0)
 surface_material_override/0 = SubResource("StandardMaterial3D_s8t0c")
 
-[node name="Cube_003" parent="twodoors/Cube_001/Cube_002" index="0" unique_id=1675535174]
+[node name="Cube_003" parent="twodoors/Cube_001/Cube_002" index="0" unique_id=48026227]
 surface_material_override/0 = SubResource("StandardMaterial3D_s8t0c")
 
-[node name="Cylinder_012" parent="twodoors/Cube_001/Cube_002" index="1" unique_id=1641141079]
+[node name="Cylinder_012" parent="twodoors/Cube_001/Cube_002" index="1" unique_id=982233467]
 surface_material_override/0 = SubResource("StandardMaterial3D_s8t0c")
 
 [node name="StaticBody3D" type="AnimatableBody3D" parent="twodoors/Cube_001/Cube_002" index="2" unique_id=54620996]
@@ -473,17 +473,17 @@ sync_to_physics = false
 [node name="CollisionShape3D" type="CollisionShape3D" parent="twodoors/Cube_001/Cube_002/StaticBody3D" unique_id=1909543184]
 shape = SubResource("ConcavePolygonShape3D_csljk")
 
-[node name="Cube_004" parent="twodoors" index="16" unique_id=767405368]
+[node name="Cube_004" parent="twodoors" index="16" unique_id=109192006]
 surface_material_override/0 = SubResource("StandardMaterial3D_s8t0c")
 
-[node name="Cube_005" parent="twodoors/Cube_004" index="0" unique_id=2065852172]
+[node name="Cube_005" parent="twodoors/Cube_004" index="0" unique_id=644857110]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.82, 0, 3.55271e-15)
 surface_material_override/0 = SubResource("StandardMaterial3D_s8t0c")
 
-[node name="Cube_006" parent="twodoors/Cube_004/Cube_005" index="0" unique_id=127889494]
+[node name="Cube_006" parent="twodoors/Cube_004/Cube_005" index="0" unique_id=754130016]
 surface_material_override/0 = SubResource("StandardMaterial3D_s8t0c")
 
-[node name="Cylinder_013" parent="twodoors/Cube_004/Cube_005" index="1" unique_id=1937035454]
+[node name="Cylinder_013" parent="twodoors/Cube_004/Cube_005" index="1" unique_id=1465901570]
 surface_material_override/0 = SubResource("StandardMaterial3D_s8t0c")
 
 [node name="StaticBody3D" type="AnimatableBody3D" parent="twodoors/Cube_004/Cube_005" index="2" unique_id=397408104]
@@ -492,17 +492,17 @@ sync_to_physics = false
 [node name="CollisionShape3D" type="CollisionShape3D" parent="twodoors/Cube_004/Cube_005/StaticBody3D" unique_id=329389343]
 shape = SubResource("ConcavePolygonShape3D_csljk")
 
-[node name="Cube_007" parent="twodoors" index="17" unique_id=1093251359]
+[node name="Cube_007" parent="twodoors" index="17" unique_id=1225442822]
 surface_material_override/0 = SubResource("StandardMaterial3D_s8t0c")
 
-[node name="Cube_008" parent="twodoors/Cube_007" index="0" unique_id=300046036]
+[node name="Cube_008" parent="twodoors/Cube_007" index="0" unique_id=907599876]
 transform = Transform3D(-3.6199901e-06, 0, -1, 0, 1, 0, 1, 0, -3.6199901e-06, -0.82, 0, 0)
 surface_material_override/0 = SubResource("StandardMaterial3D_s8t0c")
 
-[node name="Cube_009" parent="twodoors/Cube_007/Cube_008" index="0" unique_id=1299941091]
+[node name="Cube_009" parent="twodoors/Cube_007/Cube_008" index="0" unique_id=1129097523]
 surface_material_override/0 = SubResource("StandardMaterial3D_s8t0c")
 
-[node name="Cylinder_014" parent="twodoors/Cube_007/Cube_008" index="1" unique_id=708958063]
+[node name="Cylinder_014" parent="twodoors/Cube_007/Cube_008" index="1" unique_id=1108324699]
 surface_material_override/0 = SubResource("StandardMaterial3D_s8t0c")
 
 [node name="StaticBody3D" type="AnimatableBody3D" parent="twodoors/Cube_007/Cube_008" index="2" unique_id=1595211458]
@@ -516,49 +516,49 @@ transform = Transform3D(1.92943e-11, 1.43, 5.25268e-06, -1.43, 8.75622e-17, 5.25
 text = "fucc u
 get softlocked nerd"
 
-[node name="Cylinder_015" parent="twodoors" index="18" unique_id=606713262]
+[node name="Cylinder_015" parent="twodoors" index="18" unique_id=1193822761]
 surface_material_override/0 = SubResource("StandardMaterial3D_wewhg")
 
-[node name="Plane_038" parent="twodoors/Cylinder_015" index="0" unique_id=382035357]
+[node name="Plane_038" parent="twodoors/Cylinder_015" index="0" unique_id=208510945]
 surface_material_override/0 = SubResource("StandardMaterial3D_jtxox")
 
-[node name="Plane_039" parent="twodoors/Cylinder_015" index="1" unique_id=2104076090]
+[node name="Plane_039" parent="twodoors/Cylinder_015" index="1" unique_id=86442583]
 surface_material_override/0 = SubResource("StandardMaterial3D_jtxox")
 
-[node name="Plane_040" parent="twodoors/Cylinder_015" index="2" unique_id=775427558]
+[node name="Plane_040" parent="twodoors/Cylinder_015" index="2" unique_id=141046182]
 surface_material_override/0 = SubResource("StandardMaterial3D_jtxox")
 
-[node name="Plane_041" parent="twodoors/Cylinder_015" index="3" unique_id=1140284117]
+[node name="Plane_041" parent="twodoors/Cylinder_015" index="3" unique_id=1908326357]
 surface_material_override/0 = SubResource("StandardMaterial3D_jtxox")
 
-[node name="Plane_042" parent="twodoors/Cylinder_015" index="4" unique_id=1689958799]
+[node name="Plane_042" parent="twodoors/Cylinder_015" index="4" unique_id=2003894773]
 surface_material_override/0 = SubResource("StandardMaterial3D_jtxox")
 
-[node name="Plane_043" parent="twodoors/Cylinder_015" index="5" unique_id=305837638]
+[node name="Plane_043" parent="twodoors/Cylinder_015" index="5" unique_id=161342338]
 surface_material_override/0 = SubResource("StandardMaterial3D_jtxox")
 
-[node name="Plane_044" parent="twodoors/Cylinder_015" index="6" unique_id=1344220350]
+[node name="Plane_044" parent="twodoors/Cylinder_015" index="6" unique_id=1218472819]
 surface_material_override/0 = SubResource("StandardMaterial3D_jtxox")
 
-[node name="Plane_045" parent="twodoors/Cylinder_015" index="7" unique_id=1000869839]
+[node name="Plane_045" parent="twodoors/Cylinder_015" index="7" unique_id=1349977770]
 surface_material_override/0 = SubResource("StandardMaterial3D_jtxox")
 
-[node name="Plane_046" parent="twodoors/Cylinder_015" index="8" unique_id=187686105]
+[node name="Plane_046" parent="twodoors/Cylinder_015" index="8" unique_id=1360871738]
 surface_material_override/0 = SubResource("StandardMaterial3D_jtxox")
 
-[node name="Plane_047" parent="twodoors/Cylinder_015" index="9" unique_id=1951804066]
+[node name="Plane_047" parent="twodoors/Cylinder_015" index="9" unique_id=407057058]
 surface_material_override/0 = SubResource("StandardMaterial3D_jtxox")
 
-[node name="Plane_048" parent="twodoors/Cylinder_015" index="10" unique_id=1563622551]
+[node name="Plane_048" parent="twodoors/Cylinder_015" index="10" unique_id=916678428]
 surface_material_override/0 = SubResource("StandardMaterial3D_jtxox")
 
-[node name="Cube_010" parent="twodoors" index="19" unique_id=1955873850]
+[node name="Cube_010" parent="twodoors" index="19" unique_id=1824723844]
 surface_material_override/0 = SubResource("StandardMaterial3D_81pdb")
 
-[node name="Cube_011" parent="twodoors" index="20" unique_id=1810886123]
+[node name="Cube_011" parent="twodoors" index="20" unique_id=1727443769]
 surface_material_override/0 = SubResource("StandardMaterial3D_s8t0c")
 
-[node name="Plane_049" parent="twodoors" index="21" unique_id=213631135]
+[node name="Plane_049" parent="twodoors" index="21" unique_id=1820025109]
 surface_material_override/0 = SubResource("StandardMaterial3D_ackrh")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="twodoors/Plane_049" index="0" unique_id=347045366]
@@ -566,19 +566,19 @@ surface_material_override/0 = SubResource("StandardMaterial3D_ackrh")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="twodoors/Plane_049/StaticBody3D" unique_id=1404925228]
 shape = SubResource("ConcavePolygonShape3D_soixw")
 
-[node name="Cube_012" parent="twodoors" index="22" unique_id=520018468]
+[node name="Cube_012" parent="twodoors" index="22" unique_id=772250548]
 surface_material_override/0 = SubResource("StandardMaterial3D_xggqk")
 
-[node name="Cube_013" parent="twodoors" index="23" unique_id=721412788]
+[node name="Cube_013" parent="twodoors" index="23" unique_id=1955662908]
 surface_material_override/0 = SubResource("StandardMaterial3D_xggqk")
 
-[node name="Cube_014" parent="twodoors" index="24" unique_id=2066502594]
+[node name="Cube_014" parent="twodoors" index="24" unique_id=680253722]
 surface_material_override/0 = SubResource("StandardMaterial3D_xggqk")
 
-[node name="Cube_015" parent="twodoors" index="25" unique_id=1376428977]
+[node name="Cube_015" parent="twodoors" index="25" unique_id=852248345]
 surface_material_override/0 = SubResource("StandardMaterial3D_xggqk")
 
-[node name="Plane_050" parent="twodoors" index="26" unique_id=292978006]
+[node name="Plane_050" parent="twodoors" index="26" unique_id=955031603]
 surface_material_override/0 = SubResource("StandardMaterial3D_bkscn")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="twodoors" unique_id=1814976063]

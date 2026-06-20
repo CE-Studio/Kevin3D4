@@ -259,7 +259,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_kpqaf")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 5.0
 }]
@@ -1358,7 +1358,7 @@ flip_h = true
 [node name="player" parent="." unique_id=1276431798 instance=ExtResource("3_gm1qw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.78214, 0)
 
-[node name="Skeleton3D" parent="player/Armature" parent_id_path=PackedInt32Array(1276431798, 1592993931) index="0" unique_id=1093833323]
+[node name="Skeleton3D" parent="player/Armature" parent_id_path=PackedInt32Array(1276431798, 275939220) index="0" unique_id=1052335510]
 bones/3/rotation = Quaternion(0.046945926, 1.2752906e-17, 2.1674412e-17, 0.9988975)
 bones/4/position = Vector3(2.18988e-19, 0.162917, -3.72529e-09)
 bones/4/rotation = Quaternion(-0.4214799, -1.933484e-23, -9.358738e-17, 0.9068378)
@@ -1398,11 +1398,11 @@ bones/23/scale = Vector3(1, 0.999999, 1)
 bones/24/rotation = Quaternion(-0.59665805, 0.0390387, 0.31836906, 0.73560613)
 bones/24/scale = Vector3(1, 1, 1)
 
-[node name="Vert" parent="player/Armature/Skeleton3D" index="0" unique_id=321690431]
+[node name="Vert" parent="player/Armature/Skeleton3D" index="0" unique_id=1742664098]
 material_overlay = SubResource("ShaderMaterial_lnutk")
 surface_material_override/0 = ExtResource("4_0kk71")
 
-[node name="Vert_001" parent="player/Armature/Skeleton3D" index="1" unique_id=2140115685]
+[node name="Vert_001" parent="player/Armature/Skeleton3D" index="1" unique_id=705195421]
 surface_material_override/0 = SubResource("StandardMaterial3D_wenux")
 
 [node name="BoneAttachment3D" type="BoneAttachment3D" parent="player/Armature/Skeleton3D" index="2" unique_id=257316609]

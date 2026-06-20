@@ -277,44 +277,44 @@ size = Vector3(103.385, 15.5829, 14.2259)
 
 [node name="beeglaser" parent="." unique_id=1868890076 instance=ExtResource("1_sj3wn")]
 
-[node name="Cube" parent="beeglaser" index="0" unique_id=685968107]
+[node name="Cube" parent="beeglaser" index="0" unique_id=465641721]
 surface_material_override/0 = SubResource("StandardMaterial3D_olnex")
 
-[node name="Cube_001" parent="beeglaser" index="1" unique_id=123950413]
+[node name="Cube_001" parent="beeglaser" index="1" unique_id=2013126880]
 surface_material_override/0 = SubResource("StandardMaterial3D_521rg")
 
-[node name="Cube_002" parent="beeglaser" index="2" unique_id=195609518]
+[node name="Cube_002" parent="beeglaser" index="2" unique_id=702360659]
 surface_material_override/0 = SubResource("StandardMaterial3D_521rg")
 
-[node name="Cube_003" parent="beeglaser" index="3" unique_id=681690041]
+[node name="Cube_003" parent="beeglaser" index="3" unique_id=221190156]
 surface_material_override/0 = SubResource("StandardMaterial3D_521rg")
 
-[node name="Cube_004" parent="beeglaser" index="4" unique_id=1881527062]
+[node name="Cube_004" parent="beeglaser" index="4" unique_id=2081639418]
 surface_material_override/0 = SubResource("StandardMaterial3D_521rg")
 
-[node name="Cube_005" parent="beeglaser" index="5" unique_id=1815873641]
+[node name="Cube_005" parent="beeglaser" index="5" unique_id=160423517]
 surface_material_override/0 = SubResource("StandardMaterial3D_521rg")
 
-[node name="Cube_006" parent="beeglaser" index="6" unique_id=1611277083]
+[node name="Cube_006" parent="beeglaser" index="6" unique_id=458374965]
 transform = Transform3D(0.003216337, 0, -0.99999493, 0, 1, 0, 0.99999493, 0, 0.003216337, 0, 16, 0)
 surface_material_override/0 = SubResource("StandardMaterial3D_521rg")
 
-[node name="Plane_002" parent="beeglaser/Cube_006" index="0" unique_id=1867059729]
+[node name="Plane_002" parent="beeglaser/Cube_006" index="0" unique_id=314308268]
 surface_material_override/0 = SubResource("StandardMaterial3D_w6rvj")
 
-[node name="Cube_007" parent="beeglaser" index="7" unique_id=2118126641]
+[node name="Cube_007" parent="beeglaser" index="7" unique_id=127958009]
 surface_material_override/0 = SubResource("StandardMaterial3D_c7yw8")
 
-[node name="Cube_008" parent="beeglaser" index="8" unique_id=1518385528]
+[node name="Cube_008" parent="beeglaser" index="8" unique_id=955991107]
 surface_material_override/0 = SubResource("StandardMaterial3D_tr45t")
 
-[node name="Cube_009" parent="beeglaser" index="9" unique_id=456187703]
+[node name="Cube_009" parent="beeglaser" index="9" unique_id=1624959495]
 surface_material_override/0 = SubResource("StandardMaterial3D_avr6s")
 
-[node name="Cube_010" parent="beeglaser" index="10" unique_id=1781742135]
+[node name="Cube_010" parent="beeglaser" index="10" unique_id=1162166276]
 surface_material_override/0 = SubResource("StandardMaterial3D_6xy5r")
 
-[node name="Cube_011" parent="beeglaser" index="11" unique_id=97620687]
+[node name="Cube_011" parent="beeglaser" index="11" unique_id=1437332587]
 surface_material_override/0 = SubResource("StandardMaterial3D_n5h4x")
 
 [node name="Cube_012" type="MeshInstance3D" parent="beeglaser/Cube_011" index="0" unique_id=1947936064]

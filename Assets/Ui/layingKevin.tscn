@@ -183,7 +183,7 @@ flip_h = true
 [node name="player" parent="Player" unique_id=334497648 instance=ExtResource("3_pm3yo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.78214, 0)
 
-[node name="Skeleton3D" parent="Player/player/Armature" parent_id_path=PackedInt32Array(334497648, 1592993931) index="0" unique_id=1093833323]
+[node name="Skeleton3D" parent="Player/player/Armature" parent_id_path=PackedInt32Array(334497648, 275939220) index="0" unique_id=1052335510]
 transform = Transform3D(6.12323e-17, 1, 0, -1, 6.12323e-17, 0, 0, 0, 1, -1.10645, 1.00497, -4.44089e-16)
 bones/0/rotation = Quaternion(-0.0206791, 0, 0, 0.999786)
 bones/1/rotation = Quaternion(-1.92777e-34, 0, 0.0436351, 0.999048)
@@ -233,11 +233,11 @@ bones/23/scale = Vector3(1, 0.999999, 1)
 bones/24/rotation = Quaternion(-0.596658, 0.0390387, 0.318369, 0.735606)
 bones/24/scale = Vector3(1, 1, 1)
 
-[node name="Vert" parent="Player/player/Armature/Skeleton3D" index="0" unique_id=321690431]
+[node name="Vert" parent="Player/player/Armature/Skeleton3D" index="0" unique_id=1742664098]
 material_overlay = SubResource("ShaderMaterial_lnutk")
 surface_material_override/0 = ExtResource("5_u31ap")
 
-[node name="Vert_001" parent="Player/player/Armature/Skeleton3D" index="1" unique_id=2140115685]
+[node name="Vert_001" parent="Player/player/Armature/Skeleton3D" index="1" unique_id=705195421]
 surface_material_override/0 = SubResource("StandardMaterial3D_a7oar")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Player" unique_id=571885383]

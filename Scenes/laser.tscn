@@ -124,16 +124,16 @@ size = Vector3(6, 6, 1)
 
 [node name="laser" parent="." unique_id=1996662024 instance=ExtResource("1_uwyec")]
 
-[node name="Cube" parent="laser" index="0" unique_id=1749179438]
+[node name="Cube" parent="laser" index="0" unique_id=1162826980]
 surface_material_override/0 = SubResource("StandardMaterial3D_jlj7w")
 
-[node name="Cube_001" parent="laser" index="1" unique_id=897064044]
+[node name="Cube_001" parent="laser" index="1" unique_id=380402445]
 material_override = SubResource("StandardMaterial3D_w2dew")
 
-[node name="Cube_002" parent="laser" index="2" unique_id=2115308017]
+[node name="Cube_002" parent="laser" index="2" unique_id=280962480]
 surface_material_override/0 = SubResource("StandardMaterial3D_jlj7w")
 
-[node name="Cube_003" parent="laser" index="3" unique_id=631303560]
+[node name="Cube_003" parent="laser" index="3" unique_id=2096733110]
 surface_material_override/0 = SubResource("StandardMaterial3D_db3x4")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2013358815]

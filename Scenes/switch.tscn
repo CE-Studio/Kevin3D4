@@ -402,34 +402,34 @@ bus = &"SFX"
 [node name="switch" parent="ModelStuffs" unique_id=1878009445 instance=ExtResource("3_qxgg0")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, -0.432476, 0)
 
-[node name="Cylinder" parent="ModelStuffs/switch" index="0" unique_id=1876564049]
+[node name="Cylinder" parent="ModelStuffs/switch" index="0" unique_id=1923706052]
 surface_material_override/0 = SubResource("StandardMaterial3D_kvtia")
 
-[node name="Cone" parent="ModelStuffs/switch" index="1" unique_id=361240495]
+[node name="Cone" parent="ModelStuffs/switch" index="1" unique_id=601116688]
 surface_material_override/0 = SubResource("StandardMaterial3D_kvtia")
 
-[node name="Plane" parent="ModelStuffs/switch/Empty" parent_id_path=PackedInt32Array(1878009445, 127766588) index="0" unique_id=927333657]
+[node name="Plane" parent="ModelStuffs/switch/Empty" parent_id_path=PackedInt32Array(1878009445, 244577952) index="0" unique_id=259019568]
 surface_material_override/0 = SubResource("StandardMaterial3D_kvtia")
 
-[node name="Plane_001" parent="ModelStuffs/switch/Empty_001" parent_id_path=PackedInt32Array(1878009445, 29886701) index="0" unique_id=573032101]
+[node name="Plane_001" parent="ModelStuffs/switch/Empty_001" parent_id_path=PackedInt32Array(1878009445, 1165923506) index="0" unique_id=1778223798]
 surface_material_override/0 = SubResource("StandardMaterial3D_kvtia")
 
-[node name="Plane_002" parent="ModelStuffs/switch/Empty_002" parent_id_path=PackedInt32Array(1878009445, 1831741297) index="0" unique_id=472764285]
+[node name="Plane_002" parent="ModelStuffs/switch/Empty_002" parent_id_path=PackedInt32Array(1878009445, 725529207) index="0" unique_id=1909128834]
 surface_material_override/0 = SubResource("StandardMaterial3D_kvtia")
 
-[node name="Plane_003" parent="ModelStuffs/switch/Empty_003" parent_id_path=PackedInt32Array(1878009445, 1921018238) index="0" unique_id=1168540383]
+[node name="Plane_003" parent="ModelStuffs/switch/Empty_003" parent_id_path=PackedInt32Array(1878009445, 2135514972) index="0" unique_id=567572524]
 surface_material_override/0 = SubResource("StandardMaterial3D_kvtia")
 
-[node name="Plane_004" parent="ModelStuffs/switch/Empty_004" parent_id_path=PackedInt32Array(1878009445, 701149294) index="0" unique_id=1422167602]
+[node name="Plane_004" parent="ModelStuffs/switch/Empty_004" parent_id_path=PackedInt32Array(1878009445, 566138450) index="0" unique_id=449317344]
 surface_material_override/0 = SubResource("StandardMaterial3D_kvtia")
 
-[node name="Plane_005" parent="ModelStuffs/switch/Empty_005" parent_id_path=PackedInt32Array(1878009445, 1822450522) index="0" unique_id=1863022600]
+[node name="Plane_005" parent="ModelStuffs/switch/Empty_005" parent_id_path=PackedInt32Array(1878009445, 673802156) index="0" unique_id=1914765295]
 surface_material_override/0 = SubResource("StandardMaterial3D_kvtia")
 
-[node name="Plane_006" parent="ModelStuffs/switch/Empty_006" parent_id_path=PackedInt32Array(1878009445, 1977586949) index="0" unique_id=854661641]
+[node name="Plane_006" parent="ModelStuffs/switch/Empty_006" parent_id_path=PackedInt32Array(1878009445, 1395188532) index="0" unique_id=955475820]
 surface_material_override/0 = SubResource("StandardMaterial3D_kvtia")
 
-[node name="Plane_007" parent="ModelStuffs/switch/Empty_007" parent_id_path=PackedInt32Array(1878009445, 1617200026) index="0" unique_id=1615823853]
+[node name="Plane_007" parent="ModelStuffs/switch/Empty_007" parent_id_path=PackedInt32Array(1878009445, 1605924587) index="0" unique_id=1869498117]
 surface_material_override/0 = SubResource("StandardMaterial3D_kvtia")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="ModelStuffs" unique_id=258849175]

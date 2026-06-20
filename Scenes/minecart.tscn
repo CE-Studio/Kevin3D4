@@ -128,10 +128,10 @@ Killzone = SubResource("BoxShape3D_5xj0r")
 
 [node name="faccart" parent="." unique_id=1055275150 instance=ExtResource("2_c8dsn")]
 
-[node name="Cube_001" parent="faccart" index="0" unique_id=2094065965]
+[node name="Cube_001" parent="faccart" index="0" unique_id=1999070564]
 surface_material_override/0 = SubResource("StandardMaterial3D_jnqf6")
 
-[node name="Plane" parent="faccart" index="1" unique_id=1807646503]
+[node name="Plane" parent="faccart" index="1" unique_id=349076948]
 material_override = SubResource("StandardMaterial3D_ii3a8")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=165694243]

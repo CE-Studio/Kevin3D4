@@ -318,7 +318,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_kpqaf")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 5.0
 }]
@@ -385,7 +385,7 @@ spot_angle = 10.86
 [node name="player" parent="." unique_id=276685111 instance=ExtResource("4_vfmcd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.78214, -2.07581)
 
-[node name="Skeleton3D" parent="player/Armature" parent_id_path=PackedInt32Array(276685111, 1592993931) index="0" unique_id=1093833323]
+[node name="Skeleton3D" parent="player/Armature" parent_id_path=PackedInt32Array(276685111, 275939220) index="0" unique_id=1052335510]
 bones/3/rotation = Quaternion(0.211456, 0.000474932, 0.000474932, 0.977387)
 bones/4/position = Vector3(2.18988e-19, 0.162917, -3.72529e-09)
 bones/4/rotation = Quaternion(-0.601227, 0.000474739, 0.000474739, 0.799078)
@@ -426,10 +426,10 @@ bones/23/scale = Vector3(1, 0.999999, 1)
 bones/24/rotation = Quaternion(-0.596658, 0.0390387, 0.318369, 0.735606)
 bones/24/scale = Vector3(1, 1, 1)
 
-[node name="Vert" parent="player/Armature/Skeleton3D" index="0" unique_id=321690431]
+[node name="Vert" parent="player/Armature/Skeleton3D" index="0" unique_id=1742664098]
 surface_material_override/0 = ExtResource("5_xjph7")
 
-[node name="Vert_001" parent="player/Armature/Skeleton3D" index="1" unique_id=2140115685]
+[node name="Vert_001" parent="player/Armature/Skeleton3D" index="1" unique_id=705195421]
 surface_material_override/0 = SubResource("StandardMaterial3D_48y1q")
 
 [node name="BoneAttachment3D" type="BoneAttachment3D" parent="player/Armature/Skeleton3D" index="2" unique_id=916421980]

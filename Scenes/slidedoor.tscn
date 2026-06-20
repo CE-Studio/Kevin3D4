@@ -135,26 +135,26 @@ script = ExtResource("1_ojv0p")
 
 [node name="slidedoor" parent="." unique_id=2055959362 instance=ExtResource("2_ifwfd")]
 
-[node name="Cylinder" parent="slidedoor/Cube" parent_id_path=PackedInt32Array(2055959362, 1185297209) index="0" unique_id=927479212]
+[node name="Cylinder" parent="slidedoor/Cube" parent_id_path=PackedInt32Array(2055959362, 342807022) index="0" unique_id=1239537871]
 material_override = SubResource("StandardMaterial3D_safkm")
 
-[node name="Plane" parent="slidedoor/Cube" parent_id_path=PackedInt32Array(2055959362, 1185297209) index="1" unique_id=837848475]
+[node name="Plane" parent="slidedoor/Cube" parent_id_path=PackedInt32Array(2055959362, 342807022) index="1" unique_id=471577803]
 material_override = SubResource("StandardMaterial3D_m1d0k")
 
-[node name="AnimatableBody3D" type="AnimatableBody3D" parent="slidedoor/Cube" parent_id_path=PackedInt32Array(2055959362, 1185297209) index="2" unique_id=1311987280]
+[node name="AnimatableBody3D" type="AnimatableBody3D" parent="slidedoor/Cube" parent_id_path=PackedInt32Array(2055959362, 342807022) index="2" unique_id=1311987280]
 sync_to_physics = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="slidedoor/Cube/AnimatableBody3D" unique_id=569044421]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000499994, 1.5, 1)
 shape = SubResource("BoxShape3D_yf13b")
 
-[node name="Cylinder_001" parent="slidedoor/Cube_001" parent_id_path=PackedInt32Array(2055959362, 40595651) index="0" unique_id=583021405]
+[node name="Cylinder_001" parent="slidedoor/Cube_001" parent_id_path=PackedInt32Array(2055959362, 460716710) index="0" unique_id=1822949473]
 material_override = SubResource("StandardMaterial3D_d0q2s")
 
-[node name="Plane_001" parent="slidedoor/Cube_001" parent_id_path=PackedInt32Array(2055959362, 40595651) index="1" unique_id=1488668890]
+[node name="Plane_001" parent="slidedoor/Cube_001" parent_id_path=PackedInt32Array(2055959362, 460716710) index="1" unique_id=233729965]
 material_override = SubResource("StandardMaterial3D_end3s")
 
-[node name="AnimatableBody3D2" type="AnimatableBody3D" parent="slidedoor/Cube_001" parent_id_path=PackedInt32Array(2055959362, 40595651) index="2" unique_id=916985418]
+[node name="AnimatableBody3D2" type="AnimatableBody3D" parent="slidedoor/Cube_001" parent_id_path=PackedInt32Array(2055959362, 460716710) index="2" unique_id=916985418]
 sync_to_physics = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="slidedoor/Cube_001/AnimatableBody3D2" unique_id=2055767321]
